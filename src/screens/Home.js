@@ -1,7 +1,7 @@
 // src/screens/Home.js
 import React from 'react';
-import { Typography, Button, Box, Card, CardContent, CardActions } from '@mui/material';
-import { Link } from 'react-router-dom';
+import {Typography, Button, Box, Card, CardContent, CardActions} from '@mui/material';
+import {Link} from 'react-router-dom';
 import Layout from '../components/Layout';
 
 const styles = {
@@ -28,10 +28,11 @@ const styles = {
     },
     card: {
         width: '100%',
-        height: '350px',
+        height: '200px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
+        backgroundColor: '#f0f0f0',
     },
     cardContent: {
         flexGrow: 1,
