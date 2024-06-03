@@ -1,25 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import Home from './screens/Home';
+import Onboarding from './screens/Onboarding';
+import './index.css';
+import {createTheme, ThemeProvider} from '@mui/material/styles';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const theme = createTheme({
+    typography: {
+        fontFamily: 'Roboto Slab, Arial, sans-serif',
+    },
+});
+
+const App = () => {
+    return (
+        <ThemeProvider theme={theme}>
+            <Router>
+                <div>
+                    <Routes>
+                        <Route path="/" element={<Home/>}/>
+                        <Route path="/onboarding" element={<Onboarding/>}/>
+                    </Routes>
+                </div>
+            </Router>
+        </ThemeProvider>
+    );
+};
 
 export default App;
