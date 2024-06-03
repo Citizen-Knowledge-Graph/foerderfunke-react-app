@@ -2,11 +2,11 @@ import React from 'react';
 import {Box, AppBar, Toolbar, IconButton, Typography, Container} from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import {useNavigate} from 'react-router-dom';
-import useMediaQuery from '@mui/material/useMediaQuery';
+import { useStore } from './ViewportUpdater';
 
 const Layout = ({children}) => {
     const navigate = useNavigate();
-    const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
+    const isDesktop = useStore((state) => state.isDesktop);
 
     // Styles for navbar container
     const navbarStyle = {
@@ -29,7 +29,8 @@ const Layout = ({children}) => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'flex-start',
-        padding: isDesktop ? '20px' : '10px',
+        paddingLeft: isDesktop ? '40px' : '30px',
+        paddingRight: isDesktop ? '40px' : '30px',
     };
 
     return (
@@ -44,7 +45,7 @@ const Layout = ({children}) => {
                     </Typography>
                 </Toolbar>
             </AppBar>
-            <Container sx={contentContainerStyle}>
+            <Container sx={contentContainerStyle} data-testid="main-parent container">
                 {children}
             </Container>
         </Box>

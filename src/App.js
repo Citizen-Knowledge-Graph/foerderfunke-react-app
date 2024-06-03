@@ -4,6 +4,7 @@ import Home from './screens/Home';
 import Onboarding from './screens/Onboarding';
 import './index.css';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
+import ViewportUpdater from "./components/ViewportUpdater";
 
 const theme = createTheme({
     typography: {
@@ -14,6 +15,7 @@ const theme = createTheme({
 const App = () => {
     return (
         <ThemeProvider theme={theme}>
+            <ViewportUpdater/>
             <Router>
                 <div>
                     <Routes>
