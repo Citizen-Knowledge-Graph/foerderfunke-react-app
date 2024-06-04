@@ -1,6 +1,6 @@
 import React from 'react';
 import {Box, AppBar, Toolbar, IconButton, Typography, Container} from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
 import {useNavigate} from 'react-router-dom';
 import {useStore} from './ViewportUpdater';
 
@@ -42,7 +42,7 @@ const Layout = ({children}) => {
                 <AppBar position="static" sx={styles.navbarStyle}>
                     <Toolbar sx={{padding: '0px'}}>
                         <IconButton edge="start" color="inherit" aria-label="back" onClick={() => navigate(-1)}>
-                            <ArrowBackIcon/>
+                            <ArrowBackIosNewOutlinedIcon/>
                         </IconButton>
                         <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
                             Zurück

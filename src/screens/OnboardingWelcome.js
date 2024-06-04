@@ -11,11 +11,11 @@ const styles = {
     container: {
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center', // Center horizontally
-        textAlign: 'left', // Ensure text alignment is also centered
+        alignItems: 'flex-start',
+        textAlign: 'left',
     },
     titleText: {
-        fontWeight: 'bold', // Make text bold
+        fontWeight: 'bold',
     },
     subTitleText: {
         fontSize: '16px',
@@ -104,7 +104,7 @@ const OnboardingWelcome = () => {
             </Box>
             <Box sx={styles.buttonCardContainer} data-testid="button-card-container">
                 <Card sx={styles.buttonCard} data-testid="button-card">
-                    <ButtonBase component={Link} to="/onboarding">
+                    <ButtonBase component={Link} to="/onboarding-sections">
                         <CardContent sx={styles.buttonCardContent} data-testid="card-content">
                             <Typography variant="h6" gutterBottom sx={styles.buttonCardText}>
                                 Los geht's!

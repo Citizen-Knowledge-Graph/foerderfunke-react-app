@@ -6,6 +6,7 @@ import ViewportUpdater from "./components/ViewportUpdater";
 import Home from './screens/Home';
 import Onboarding from './screens/Onboarding';
 import OnboardingWelcome from "./screens/OnboardingWelcome";
+import OnboardingSectionsScreen from "./screens/onboarding-sections/OnboardingSectionsScreen";
 
 const theme = createTheme({
     typography: {
@@ -23,6 +24,7 @@ const App = () => {
                         <Route path="/" element={<Home/>}/>
                         <Route path="/onboarding" element={<Onboarding/>}/>
                         <Route path="/onboarding-welcome" element={<OnboardingWelcome/>}/>
+                        <Route path="/onboarding-sections" element={<OnboardingSectionsScreen/>}/>
                     </Routes>
                 </div>
             </Router>
