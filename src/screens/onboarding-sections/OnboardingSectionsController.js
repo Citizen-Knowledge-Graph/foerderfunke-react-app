@@ -26,12 +26,8 @@ const profileSections = [
 ];
 
 export const fetchOnboardingSectionsData = async (userId) => {
-    console.log("wer are here")
-
     const newProfileSectionsData = new ProfileSectionsData(userId);
     useProfileInputSectionStore.getState().resetSectionStore();
-
-    console.log('fetchOnboardingSectionsData: ', newProfileSectionsData);
 
     for (let i = 0; i < profileSections.length; i++) {
         const currentItem = profileSections[i];
