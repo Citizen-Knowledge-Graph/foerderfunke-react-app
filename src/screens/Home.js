@@ -10,7 +10,6 @@ const styles = {
         flexDirection: 'column',
         alignItems: 'center', // Center horizontally
         textAlign: 'center', // Ensure text alignment is also centered
-        padding: '20px', // Add padding for spacing
     },
     titleText: {
         fontWeight: 'bold', // Make text bold
@@ -29,10 +28,12 @@ const styles = {
     card: {
         width: '100%',
         height: '200px',
+        borderRadius: '20px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
         backgroundColor: '#f0f0f0',
+        boxShadow: 'none'
     },
     cardContent: {
         flexGrow: 1,
@@ -54,30 +55,24 @@ const Home = () => {
                 <Card sx={styles.card} data-testid="card">
                     <CardContent sx={styles.cardContent} data-testid="card-content">
                         <Typography variant="h5" component="div">
-                            Card Title
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                            This is some text inside the card.
+                            Entdecke personalisierte Leistungen
                         </Typography>
                     </CardContent>
                     <CardActions>
-                        <Button size="small" component={Link} to="/onboarding">
-                            Learn More
+                        <Button size="small" component={Link} to="/onboarding-welcome">
+                            Los geht's
                         </Button>
                     </CardActions>
                 </Card>
                 <Card sx={styles.card} data-testid="card">
                     <CardContent sx={styles.cardContent} data-testid="card-content">
                         <Typography variant="h5" component="div">
-                            Card Title
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                            This is some text inside the card.
+                            Browse den gesamten Katalog
                         </Typography>
                     </CardContent>
                     <CardActions>
                         <Button size="small" component={Link} to="/onboarding">
-                            Learn More
+                            Los geht's
                         </Button>
                     </CardActions>
                 </Card>
