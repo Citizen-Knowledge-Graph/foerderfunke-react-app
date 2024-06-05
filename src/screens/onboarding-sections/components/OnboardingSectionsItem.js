@@ -6,7 +6,7 @@ import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutl
 import SentimentSatisfiedOutlinedIcon from '@mui/icons-material/SentimentSatisfiedOutlined';
 import {Link} from "react-router-dom";
 import ButtonBase from "@mui/material/ButtonBase";
-import {green, yellow} from '@mui/material/colors';
+import {yellow} from '@mui/material/colors';
 
 
 const onboardingSectionsItem = ({section, active}) => {

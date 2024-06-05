@@ -104,7 +104,7 @@ const OnboardingWelcome = () => {
             </Box>
             <Box sx={styles.buttonCardContainer} data-testid="button-card-container">
                 <Card sx={styles.buttonCard} data-testid="button-card">
-                    <ButtonBase component={Link} to="/onboarding-sections">
+                    <ButtonBase component={Link} to="/onboarding-username">
                         <CardContent sx={styles.buttonCardContent} data-testid="card-content">
                             <Typography variant="h6" gutterBottom sx={styles.buttonCardText}>
                                 Los geht's!

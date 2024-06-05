@@ -39,18 +39,20 @@ const Layout = ({children}) => {
                 paddingLeft: isDesktop ? '40px' : '20px',
                 paddingRight: isDesktop ? '40px' : '20px',
             }}>
-                <AppBar position="static" sx={styles.navbarStyle}>
-                    <Toolbar sx={{padding: '0px'}}>
-                        <IconButton edge="start" color="inherit" aria-label="back" onClick={() => navigate(-1)}>
-                            <ArrowBackIosNewOutlinedIcon/>
-                        </IconButton>
-                        <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
-                            Zurück
-                        </Typography>
-                    </Toolbar>
-                </AppBar>
-                <Container sx={styles.contentContainerStyle} data-testid="main-parent container">
-                    {children}
+                <Container sx={{padding: '0px', width: isDesktop ? '40vw' : null}}>
+                    <AppBar position="static" sx={styles.navbarStyle}>
+                        <Toolbar sx={{padding: '0px'}}>
+                            <IconButton edge="start" color="inherit" aria-label="back" onClick={() => navigate(-1)}>
+                                <ArrowBackIosNewOutlinedIcon/>
+                            </IconButton>
+                            <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
+                                Zurück
+                            </Typography>
+                        </Toolbar>
+                    </AppBar>
+                    <Container sx={styles.contentContainerStyle} data-testid="main-parent container">
+                        {children}
+                    </Container>
                 </Container>
             </Box>
         )
