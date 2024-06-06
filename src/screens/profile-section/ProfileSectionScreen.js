@@ -31,7 +31,7 @@ const ProfileSectionScreen = () => {
     return (
         <Layout>
             {profileSectionData ? (
-                    <ProfileSectionContext title={profileSectionData.title}/>)
+                    <ProfileSectionContext title={profileSectionData.title} infoBox={id==='about-you'}/>)
                 :
                 null
             }
