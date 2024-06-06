@@ -7,7 +7,7 @@ import VStack from "../components/VStack";
 
 const OnboardingUsername = () => {
     const [username, setUsername] = useState();
-    const [error, setError] = useState('');
+    //const [error, setError] = useState('');
 
     const handleChange = (event) => {
         setUsername(event.target.value);
