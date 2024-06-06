@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Layout from '../../components/Layout';
 import OnboardingSectionsContext from "./components/OnboardingSectionsContext";
-import {useUserStore} from "../../storage/zustand";
-import {fetchOnboardingSectionsData} from "./OnboardingSectionsController";
 import OnboardingSectionsList from "./components/OnboardingSectionsList";
 import readJson from "../../utilities/readJson";
 import useInitializeProfileSections from "./hooks/useInitializeProfileSections";
