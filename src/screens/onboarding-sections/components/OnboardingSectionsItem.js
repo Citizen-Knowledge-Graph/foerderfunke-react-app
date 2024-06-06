@@ -9,7 +9,7 @@ import ButtonBase from "@mui/material/ButtonBase";
 import {yellow} from '@mui/material/colors';
 
 
-const onboardingSectionsItem = ({section, active}) => {
+const onboardingSectionsItem = ({section, active, first}) => {
     const backgroundColor = active ? yellow[500] : 'rgba(0, 0, 0, 0.1)'
 
     return (
@@ -23,9 +23,16 @@ const onboardingSectionsItem = ({section, active}) => {
                     </Card>
                     <Typography sx={styles.sectionTitle}>{section.title}</Typography>
                 </HStack>
-                <ButtonBase component={Link} to="/onboarding">
-                    <ArrowForwardIosOutlinedIcon/>
-                </ButtonBase>
+                {
+                    active ? (
+                        <ButtonBase component={Link} to="/onboarding">
+                            <HStack alignItems={'center'}>
+                                {first ? <Typography>Start</Typography> : null}
+                                <ArrowForwardIosOutlinedIcon/>
+                            </HStack>
+                        </ButtonBase>
+                    ) : null
+                }
             </HStack>
         </VStack>
     );
