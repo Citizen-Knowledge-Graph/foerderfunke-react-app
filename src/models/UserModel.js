@@ -21,7 +21,7 @@ export class UserModel {
 
     // set a new field in the user data
     static setField(userId, value, entityData, parentData) {
-        let userProfile = UserStore.retrieveUserData(userId);
+        let userProfile = UserModel.retrieveUserData(userId);
 
         if (!userProfile) {
             throw new Error(`User profile not found for userId: ${userId}`);
@@ -43,11 +43,11 @@ export class UserModel {
             );
         }
 
-        UserStore.storeUserData(userId, userProfile);
+        UserModel.storeUserData(userId, userProfile);
     }
 
     static retrieveUserField(userId, datafield, entityData) {
-        let userProfile = UserStore.retrieveUserData(userId);
+        let userProfile = UserModel.retrieveUserData(userId);
 
         if (!userProfile) {
             throw new Error(`User profile not found for userId: ${userId}`);
