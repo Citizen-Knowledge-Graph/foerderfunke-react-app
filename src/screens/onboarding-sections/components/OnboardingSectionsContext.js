@@ -1,6 +1,27 @@
 import React from 'react';
 import {Box, Typography} from '@mui/material';
 import {indigo} from '@mui/material/colors';
+import { useUserStore } from '../../../storage/zustand';
+
+
+const OnboardingSectionsContext = () => {
+    const userId = useUserStore((state) => state.userId);
+
+    return (
+        <>
+            <Box sx={styles.container}>
+                <Typography variant="h4" gutterBottom sx={styles.titleText}>
+                    Hallo {userId}!
+                </Typography>
+                <Typography variant="body1" gutterBottom sx={styles.subTitleText}>
+                    Wir benötigen noch ein paar Informationen von dir, um für dich
+                    nach geeigneten Sozialleistungen und anderen staatlichen
+                    Förderungen zu suchen.
+                </Typography>
+            </Box>
+        </>
+    );
+}
 
 const styles = {
     container: {
@@ -43,22 +64,5 @@ const styles = {
         margin: '0',
     }
 };
-
-const OnboardingSectionsContext = () => {
-    return (
-        <>
-            <Box sx={styles.container}>
-                <Typography variant="h4" gutterBottom sx={styles.titleText}>
-                    Dein Profil
-                </Typography>
-                <Typography variant="body1" gutterBottom sx={styles.subTitleText}>
-                    Wir benötigen noch ein paar Informationen von dir, um für dich
-                    nach geeigneten Sozialleistungen und anderen staatlichen
-                    Förderungen zu suchen.
-                </Typography>
-            </Box>
-        </>
-    );
-}
 
 export default OnboardingSectionsContext;
