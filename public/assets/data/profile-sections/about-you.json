@@ -1,0 +1,20 @@
+{
+  "title": "About you",
+  "fields": [
+    {
+      "datafield": "ff:hasBirthday",
+      "title": "When is your birthday?",
+      "datatype": "date"
+    },
+    {
+      "datafield": "ff:hasBirthPlace",
+      "title": "Where were you born?",
+      "datatype": "string"
+    },
+    {
+      "datafield": "ff:hasResidence",
+      "title": "Where do you live?",
+      "datatype": "string"
+    }
+  ]
+}

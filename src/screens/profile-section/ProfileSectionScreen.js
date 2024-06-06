@@ -1,37 +1,43 @@
-import React, {useState} from 'react';
-import { Typography } from '@mui/material';
-import VStack from "../../components/VStack";
+import React, {useState, useEffect} from 'react';
 import Layout from "../../components/Layout";
 import {useParams} from "react-router-dom";
+import readJson from "../../utilities/readJson";
+import ProfileSectionContext from "./components/ProfileSectionContext";
 
 const ProfileSectionScreen = () => {
     const { id } = useParams();
+    const [profileSectionData, setProfileSectionData] = useState();
+
+
     //const [data, setData] = useState(null);
+    useEffect(() => {
+        console.log("we are trying this: ", `assets/data/profile-sections/${id}.json`);
+
+        const fetchData = async () => {
+            const filePath = `assets/data/profile-sections/${id}.json`;
+            try {
+                const newProfileSectionData = await readJson(filePath);
+                setProfileSectionData(newProfileSectionData);
+            } catch (error) {
+                console.error('Failed to fetch profile input screen data:', error);
+            }
+        };
+
+        fetchData();
+    }, [id]);
+
+    console.log('Profile', profileSectionData);
 
     return (
         <Layout>
-            <VStack>
-                <VStack gap={1}>
-                    <Typography variant="h4" gutterBottom sx={styles.titleText}>
-                        {id}
-                    </Typography>
-                    <Typography variant="body1" gutterBottom sx={styles.subTitleText}>
-                        Bevor wir losgehen können, benötigen wir noch einen Benutzernamen von dir.
-                    </Typography>
-                </VStack>
-            </VStack>
+            {profileSectionData ? (
+                    <ProfileSectionContext title={profileSectionData.title}/>)
+                :
+                null
+            }
         </Layout>
-    );
-};
-
-const styles = {
-    titleText: {
-        fontWeight: 'bold',
-    },
-    subTitleText: {
-        fontSize: '16px',
-        fontWeight: '400'
-    }
+    )
+        ;
 };
 
 export default ProfileSectionScreen;
