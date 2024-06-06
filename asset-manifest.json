@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Citizen-Knowledge-Graph/foerderfunke-react-app/static/css/main.5d47009a.css",
+    "main.js": "/Citizen-Knowledge-Graph/foerderfunke-react-app/static/js/main.673dec1d.js",
+    "static/js/453.aedbccfd.chunk.js": "/Citizen-Knowledge-Graph/foerderfunke-react-app/static/js/453.aedbccfd.chunk.js",
+    "index.html": "/Citizen-Knowledge-Graph/foerderfunke-react-app/index.html",
+    "main.5d47009a.css.map": "/Citizen-Knowledge-Graph/foerderfunke-react-app/static/css/main.5d47009a.css.map",
+    "main.673dec1d.js.map": "/Citizen-Knowledge-Graph/foerderfunke-react-app/static/js/main.673dec1d.js.map",
+    "453.aedbccfd.chunk.js.map": "/Citizen-Knowledge-Graph/foerderfunke-react-app/static/js/453.aedbccfd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5d47009a.css",
+    "static/js/main.673dec1d.js"
+  ]
+}
