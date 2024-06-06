@@ -8,8 +8,8 @@ import HStack from "../../../components/HStack";
 const ProfileSectionContext = ({title, infoBox}) => {
 
     return (
-        <VStack>
-            <VStack gap={1} alignItems={'flex-start'}>
+        <VStack sx={{width: '100%'}}>
+            <VStack gap={1}>
                 <HStack>
                     <Typography variant="h4" gutterBottom sx={styles.titleText}>
                         {title}

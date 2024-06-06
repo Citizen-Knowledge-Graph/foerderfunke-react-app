@@ -3,9 +3,10 @@ import Layout from "../../components/Layout";
 import {useParams} from "react-router-dom";
 import readJson from "../../utilities/readJson";
 import ProfileSectionContext from "./components/ProfileSectionContext";
+import ProfileSectionList from "./components/ProfileSectionList";
 
 const ProfileSectionScreen = () => {
-    const { id } = useParams();
+    const {id} = useParams();
     const [profileSectionData, setProfileSectionData] = useState();
 
 
@@ -31,7 +32,10 @@ const ProfileSectionScreen = () => {
     return (
         <Layout>
             {profileSectionData ? (
-                    <ProfileSectionContext title={profileSectionData.title} infoBox={id==='about-you'}/>)
+                <>
+                    <ProfileSectionContext title={profileSectionData.title} infoBox={id === 'about-you'}/>
+                    <ProfileSectionList profileSectionData={profileSectionData}/>
+                </>)
                 :
                 null
             }
