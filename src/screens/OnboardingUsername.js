@@ -1,51 +1,50 @@
 import React, {useState} from 'react';
-import {Box, Card, CardContent, Typography, TextField} from '@mui/material';
+import {Card, CardContent, Typography, TextField, ButtonBase} from '@mui/material';
 import Layout from '../components/Layout';
-import {blue, indigo, green} from '@mui/material/colors';
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
-import ButtonBase from '@mui/material/ButtonBase';
+import {green} from '@mui/material/colors';
 import {Link} from "react-router-dom";
-import {Button} from "@mui/material";
 import VStack from "../components/VStack";
-import HStack from "../components/HStack";
 
 const OnboardingUsername = () => {
-    const [inputValue, setInputValue] = useState('');
+    const [username, setUsername] = useState();
+    const [error, setError] = useState('');
 
     const handleChange = (event) => {
-        setInputValue(event.target.value);
+        setUsername(event.target.value);
     };
 
     return (
         <Layout>
-            <HStack>
-                <Typography variant="h4" gutterBottom sx={styles.titleText}>
-                    Dein Username
-                </Typography>
-                <Typography variant="body1" gutterBottom sx={styles.subTitleText}>
-                    Bevor wir losgehen können, benötigen wir noch einen Benutzernamen von dir.
-                </Typography>
-            </HStack>
-            <HStack component="form" sx={styles.inputBox}>
-                <TextField
-                    label="Username"
-                    variant="outlined"
-                    value={inputValue}
-                    onChange={handleChange}
-                    fullWidth
-                />
-            </HStack>
-            <HStack data-testid="button-card-container">
-                <Card sx={styles.buttonCard} data-testid="button-card">
-                    <ButtonBase component={Link} to="/onboarding-sections">
-                        <CardContent sx={styles.buttonCardContent} data-testid="card-content">
-                            <Typography variant="h6" gutterBottom sx={styles.buttonCardText}>
-                                Los geht's!
-                            </Typography>
-                        </CardContent>
-                    </ButtonBase>
-                </Card>
-            </HStack>
+            <VStack>
+                <VStack gap={1}>
+                    <Typography variant="h4" gutterBottom sx={styles.titleText}>
+                        Dein Username
+                    </Typography>
+                    <Typography variant="body1" gutterBottom sx={styles.subTitleText}>
+                        Bevor wir losgehen können, benötigen wir noch einen Benutzernamen von dir.
+                    </Typography>
+                </VStack>
+                <VStack component="form">
+                    <TextField
+                        label="Username"
+                        variant="outlined"
+                        value={username}
+                        onChange={handleChange}
+                        fullWidth
+                    />
+                </VStack>
+                <VStack data-testid="button-card-container">
+                    <Card sx={styles.buttonCard} data-testid="button-card">
+                        <ButtonBase component={Link} to="/onboarding-sections">
+                            <CardContent sx={styles.buttonCardContent} data-testid="card-content">
+                                <Typography variant="h6" gutterBottom sx={styles.buttonCardText}>
+                                    Bestätigen
+                                </Typography>
+                            </CardContent>
+                        </ButtonBase>
+                    </Card>
+                </VStack>
+            </VStack>
         </Layout>
     );
 };
