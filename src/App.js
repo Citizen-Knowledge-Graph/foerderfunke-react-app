@@ -8,6 +8,7 @@ import Onboarding from './screens/Onboarding';
 import OnboardingWelcome from "./screens/OnboardingWelcome";
 import OnboardingSectionsScreen from "./screens/onboarding-sections/OnboardingSectionsScreen";
 import OnboardingUsername from "./screens/OnboardingUsername";
+import AppStartup from "./AppStartup";
 
 const theme = createTheme({
     typography: {
@@ -19,6 +20,7 @@ const App = () => {
     return (
         <ThemeProvider theme={theme}>
             <ViewportUpdater/>
+            <AppStartup/>
             <Router basename={process.env.PUBLIC_URL}>
                 <div>
                     <Routes>

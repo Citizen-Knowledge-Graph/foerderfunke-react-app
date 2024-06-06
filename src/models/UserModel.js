@@ -1,21 +1,19 @@
-import { storage } from '../storage/mmkv';
-
 export class UserModel {
     static initialiseNewUser(userId) {
         // check if the user already exists
-        if (storage.getString(userId)) {
+        if (sessionStorage.getItem(userId)) {
             throw new Error('User already exists');
         }
 
         // create a new user
         let userString = `{"@id":"${userId}","@type":"ff:Citizen"}`;
-        storage.set(userId, userString);
+        sessionStorage.setItem(userId, userString);
 
         // add the user to the list of user ids
-        const userIds = JSON.parse(storage.getString('userIds') || '[]');
+        const userIds = JSON.parse(sessionStorage.getItem('userIds') || '[]');
         if (!userIds.includes(userId)) {
             userIds.push(userId);
-            storage.set('userIds', JSON.stringify(userIds));
+            sessionStorage.setItem('userIds', JSON.stringify(userIds));
         }
     }
 
@@ -39,7 +37,7 @@ export class UserModel {
 
         if (!updated) {
             throw new Error(
-                `Could not set datafiled ${entityData.datafield} in user profile`
+                `Could not set datafield ${entityData.datafield} in user profile`
             );
         }
 
@@ -56,22 +54,23 @@ export class UserModel {
         return retrieveField(userProfile, datafield, entityData);
     }
 
-    // store user data to mmkv
-    static storeUserData(userId, userData) {
-        storage.set(userId, JSON.stringify(userData));
-        const userIds = JSON.parse(storage.getString('userIds') || '[]');
+    // store user data to session storage
+    static storeUserData(userData) {
+        const userId = userData['@id'];
+        sessionStorage.setItem(userId, JSON.stringify(userData));
+        const userIds = JSON.parse(sessionStorage.getItem('userIds') || '[]');
         if (!userIds.includes(userId)) {
             userIds.push(userId);
-            storage.set('userIds', JSON.stringify(userIds));
+            sessionStorage.setItem('userIds', JSON.stringify(userIds));
         }
     }
 
-    // retrieve the user data from mmkv
+    // retrieve the user data from session storage
     static retrieveUserData(entityId) {
-        let userString = storage.getString(entityId);
+        let userString = sessionStorage.getItem(entityId);
         if (!userString) {
             userString = `{"@id":"${entityId}", "@type":"ff:Citizen"}`;
-            storage.set(entityId, userString);
+            sessionStorage.setItem(entityId, userString);
         }
 
         return JSON.parse(userString);
@@ -79,7 +78,7 @@ export class UserModel {
 
     // return all user ids
     static retrieveAllUserIds() {
-        return JSON.parse(storage.getString('userIds') || '[]');
+        return JSON.parse(sessionStorage.getItem('userIds') || '[]');
     }
 }
 
