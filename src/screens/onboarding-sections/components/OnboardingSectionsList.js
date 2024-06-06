@@ -16,7 +16,7 @@ const OnboardingSectionsList = ({onboardingSectionsData}) => {
                     Profilbereiche
                 </Typography>
             </VStack>
-            {onboardingSectionsData.personalisedData.map((section, index) => (
+            {onboardingSectionsData.sections.map((section, index) => (
                 <OnboardingSectionsItem key={section.id} section={section} active={section.id === activeSection}
                                         first={index === 0}/>
                 ))}

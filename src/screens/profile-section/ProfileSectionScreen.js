@@ -9,8 +9,6 @@ const ProfileSectionScreen = () => {
     const {id} = useParams();
     const [profileSectionData, setProfileSectionData] = useState();
 
-
-    //const [data, setData] = useState(null);
     useEffect(() => {
         console.log("we are trying this: ", `assets/data/profile-sections/${id}.json`);
 

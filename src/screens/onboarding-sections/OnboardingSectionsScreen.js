@@ -4,26 +4,28 @@ import OnboardingSectionsContext from "./components/OnboardingSectionsContext";
 import {useUserStore} from "../../storage/zustand";
 import {fetchOnboardingSectionsData} from "./OnboardingSectionsController";
 import OnboardingSectionsList from "./components/OnboardingSectionsList";
+import readJson from "../../utilities/readJson";
+import useInitializeProfileSections from "./hooks/useInitializeProfileSections";
 
 const OnboardingSectionsScreen = () => {
     const [onboardingSectionsData, setOnboardingSectionsData] = useState();
-    const userId = useUserStore((state) => state.userId);
+    useInitializeProfileSections(onboardingSectionsData);
 
     useEffect(() => {
         const fetchData = async () => {
+            const filePath = `assets/data/profile-sections/registry.json`;
             try {
-                const newOnboardingSectionsData = await fetchOnboardingSectionsData(userId);
+                const newOnboardingSectionsData = await readJson(filePath);
                 setOnboardingSectionsData(newOnboardingSectionsData);
             } catch (error) {
-                console.error('Failed to fetch profile input screen data:', error);
+                console.error('Failed to fetch onboarding data:', error);
             }
         };
 
         fetchData();
-    }, [userId]);
+    }, []);
 
     console.log('Onboarding', onboardingSectionsData);
-
 
     return (
         <Layout>
