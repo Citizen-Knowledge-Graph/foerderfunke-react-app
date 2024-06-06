@@ -19,7 +19,7 @@ const App = () => {
     return (
         <ThemeProvider theme={theme}>
             <ViewportUpdater/>
-            <Router>
+            <Router basename={process.env.PUBLIC_URL}>
                 <div>
                     <Routes>
                         <Route path="/" element={<Home/>}/>
