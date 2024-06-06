@@ -1,15 +1,13 @@
 import React from "react";
-import VStack from "../../../components/VStack";
-import HStack from "../../../components/HStack";
-import {CardContent, Typography, Card} from "@mui/material";
+import { CardContent, Typography, Card, ButtonBase } from "@mui/material";
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
 import SentimentSatisfiedOutlinedIcon from '@mui/icons-material/SentimentSatisfiedOutlined';
-import {Link} from "react-router-dom";
-import ButtonBase from "@mui/material/ButtonBase";
-import {yellow} from '@mui/material/colors';
+import { yellow } from '@mui/material/colors';
+import { Link } from "react-router-dom";
+import VStack from "../../../components/VStack";
+import HStack from "../../../components/HStack";
 
-
-const onboardingSectionsItem = ({section, active, first}) => {
+const OnboardingSectionsItem = ({section, entityData, active, first}) => {
     const backgroundColor = active ? yellow[600] : 'rgba(0, 0, 0, 0.1)'
 
     return (
@@ -25,7 +23,11 @@ const onboardingSectionsItem = ({section, active, first}) => {
                 </HStack>
                 {
                     active ? (
-                        <ButtonBase component={Link} to={`/profile-section/${section.id}`}>
+                        <ButtonBase
+                            component={Link}
+                            to={`/profile-section/${section.id}`}
+                            state={{ entityData }}
+                        >
                             <HStack alignItems={'center'} gap={1}>
                                 {first ? <Typography>Start</Typography> : null}
                                 <ArrowForwardIosOutlinedIcon/>
@@ -67,4 +69,4 @@ const styles = {
     }
 }
 
-export default onboardingSectionsItem;
+export default OnboardingSectionsItem;

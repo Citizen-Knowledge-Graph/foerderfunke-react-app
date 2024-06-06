@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import VStack from "../../../components/VStack";
 import ProfileSectionField from "./ProfileSectionField";
 
-const ProfileSectionList = ({profileSectionData}) => {
+const ProfileSectionList = ({profileSectionData, entityData}) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const handleConfirm = () => {
@@ -38,6 +38,7 @@ const ProfileSectionList = ({profileSectionData}) => {
         <VStack sx={{width: '100%', paddingTop: '50px'}}>
             <VStack gap={1}>
                 <ProfileSectionField profileSectionField={currentSection}
+                                     entityData={entityData}
                                      currentIndex={currentIndex}
                                      handleConfirm={handleConfirm}
                                      handleBack={handleBack}
