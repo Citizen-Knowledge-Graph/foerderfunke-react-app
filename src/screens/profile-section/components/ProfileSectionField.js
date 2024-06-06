@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Button, Card, CardContent, TextField, Typography} from '@mui/material';
 import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
@@ -16,6 +16,11 @@ const ProfileSectionField = ({
     const [value, setValue] = React.useState('');
     const [error, setError] = React.useState('');
     const addProfileData = useAddProfileField(value, profileSectionField.datafield, entityData);
+
+    useEffect(() => {
+        setValue('');
+        setError('');
+    }, [profileSectionField]);
 
     const handleAddProfileData = () => {
         addProfileData()

@@ -30,9 +30,6 @@ export class UserModel {
             throw new Error(`User profile not found for userId: ${userId}`);
         }
 
-        console.log('userProfile: ', userProfile);
-        console.log('entityData: ', entityData);
-
         const updated = updateOrAddField(
             userProfile,
             entityData,
@@ -46,7 +43,7 @@ export class UserModel {
             );
         }
 
-        UserModel.storeUserData(userId, userProfile);
+        UserModel.storeUserData(userProfile);
     }
 
     static retrieveUserField(userId, datafield, entityData) {
