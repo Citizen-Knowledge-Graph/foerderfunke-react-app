@@ -5,6 +5,11 @@ export class UserModel {
             throw new Error('User already exists');
         }
 
+        // check that user id is not undefined
+        if (!userId) {
+            throw new Error('User id is undefined');
+        }
+
         // create a new user
         let userString = `{"@id":"${userId}","@type":"ff:Citizen"}`;
         sessionStorage.setItem(userId, userString);

@@ -1,10 +1,10 @@
-import { UserStore } from '../../../models/user-model';
+import { UserModel } from '../../models/UserModel';
 
 const useCreateUserprofile = (username) => {
     return () => {
         return new Promise((resolve, reject) => {
             try {
-                UserStore.initialiseNewUser(username);
+                UserModel.initialiseNewUser(username);
                 resolve();
             } catch (error) {
                 reject(error);

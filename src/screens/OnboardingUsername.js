@@ -1,16 +1,33 @@
-import React, {useState} from 'react';
-import {Card, CardContent, Typography, TextField, ButtonBase} from '@mui/material';
+import React, { useState } from 'react';
+import { Card, CardContent, Typography, TextField, ButtonBase } from '@mui/material';
+import { green } from '@mui/material/colors';
+import { Link, useNavigate } from 'react-router-dom';
 import Layout from '../components/Layout';
-import {green} from '@mui/material/colors';
-import {Link} from "react-router-dom";
 import VStack from "../components/VStack";
+import useCreateUserprofile from "./hooks/createUserProfile";
+import { useUserStore } from '../storage/zustand';
 
 const OnboardingUsername = () => {
-    const [username, setUsername] = useState();
-    //const [error, setError] = useState('');
+    const [username, setUsername] = useState('');
+    const [error, setError] = useState('');
+    const createUserprofile = useCreateUserprofile(username);
+    const updateUserId = useUserStore((state) => state.updateUserId);
+    const navigate = useNavigate();
 
-    const handleChange = (event) => {
+    const handleCreateProfile = () => {
+        createUserprofile()
+            .then(() => {
+                updateUserId(username);
+                navigate('/onboarding-sections');
+            })
+            .catch((err) => {
+                setError(err.message);
+            });
+    };
+
+    const handleUsernameChange = (event) => {
         setUsername(event.target.value);
+        setError('');
     };
 
     return (
@@ -29,13 +46,14 @@ const OnboardingUsername = () => {
                         label="Username"
                         variant="outlined"
                         value={username}
-                        onChange={handleChange}
+                        onChange={handleUsernameChange}
                         fullWidth
                     />
+                    {error && <Typography color="error">{error}</Typography>}
                 </VStack>
                 <VStack data-testid="button-card-container">
                     <Card sx={styles.buttonCard} data-testid="button-card">
-                        <ButtonBase component={Link} to="/onboarding-sections">
+                        <ButtonBase component={Link} onClick={handleCreateProfile}>
                             <CardContent sx={styles.buttonCardContent} data-testid="card-content">
                                 <Typography variant="h6" gutterBottom sx={styles.buttonCardText}>
                                     Bestätigen
