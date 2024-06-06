@@ -10,7 +10,7 @@ import {yellow} from '@mui/material/colors';
 
 
 const onboardingSectionsItem = ({section, active, first}) => {
-    const backgroundColor = active ? yellow[500] : 'rgba(0, 0, 0, 0.1)'
+    const backgroundColor = active ? yellow[600] : 'rgba(0, 0, 0, 0.1)'
 
     return (
         <VStack>
@@ -18,15 +18,15 @@ const onboardingSectionsItem = ({section, active, first}) => {
                 <HStack justifyContent={'flex-start'} alignItems={'center'}>
                     <Card sx={{...styles.iconCard, backgroundColor}}>
                         <CardContent sx={styles.iconCardContent} data-testid="card-content">
-                            <SentimentSatisfiedOutlinedIcon/>
+                            <SentimentSatisfiedOutlinedIcon sx={styles.icon}/>
                         </CardContent>
                     </Card>
                     <Typography sx={styles.sectionTitle}>{section.title}</Typography>
                 </HStack>
                 {
                     active ? (
-                        <ButtonBase component={Link} to="/onboarding">
-                            <HStack alignItems={'center'}>
+                        <ButtonBase component={Link} to={`/profile-section/${section.id}`}>
+                            <HStack alignItems={'center'} gap={1}>
                                 {first ? <Typography>Start</Typography> : null}
                                 <ArrowForwardIosOutlinedIcon/>
                             </HStack>
@@ -56,6 +56,10 @@ const styles = {
         "&:last-child": {
             paddingBottom: '0px',
         }
+    },
+    icon: {
+        width: '30px',
+        height: '30px',
     },
     sectionTitle: {
         fontSize: '20px',
