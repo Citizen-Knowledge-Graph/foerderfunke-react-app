@@ -2,13 +2,13 @@ import React from "react";
 import { CardContent, Typography, Card, ButtonBase } from "@mui/material";
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
 import SentimentSatisfiedOutlinedIcon from '@mui/icons-material/SentimentSatisfiedOutlined';
-import { yellow } from '@mui/material/colors';
+import { yellow, green } from '@mui/material/colors';
 import { Link } from "react-router-dom";
 import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
 
-const OnboardingSectionsItem = ({section, entityData, active, first}) => {
-    const backgroundColor = active ? yellow[600] : 'rgba(0, 0, 0, 0.1)'
+const OnboardingSectionsItem = ({section, entityData, active, completed, first}) => {
+    const backgroundColor = active ? yellow[600] : (completed ? green[500] : 'rgba(0, 0, 0, 0.1)')
 
     return (
         <VStack>
@@ -22,7 +22,7 @@ const OnboardingSectionsItem = ({section, entityData, active, first}) => {
                     <Typography sx={styles.sectionTitle}>{section.title}</Typography>
                 </HStack>
                 {
-                    active ? (
+                    active || completed ? (
                         <ButtonBase
                             component={Link}
                             to={`/profile-section/${section.id}`}

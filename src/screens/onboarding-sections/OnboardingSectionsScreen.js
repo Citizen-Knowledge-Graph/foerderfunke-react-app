@@ -7,7 +7,8 @@ import useInitializeProfileSections from "./hooks/useInitializeProfileSections";
 
 const OnboardingSectionsScreen = () => {
     const [onboardingSectionsData, setOnboardingSectionsData] = useState();
-    useInitializeProfileSections(onboardingSectionsData);
+    const [sectionStatusInitialized, setSectionStatusInitialized] = useState(false);
+    const initializeProfileSections = useInitializeProfileSections(onboardingSectionsData);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -23,10 +24,17 @@ const OnboardingSectionsScreen = () => {
         fetchData();
     }, []);
 
+    useEffect(() => {
+        if (onboardingSectionsData && !sectionStatusInitialized) {
+            initializeProfileSections(onboardingSectionsData);
+            setSectionStatusInitialized(true);
+        }
+    }, [initializeProfileSections, onboardingSectionsData, sectionStatusInitialized]);
+
     return (
         <Layout>
             <OnboardingSectionsContext/>
-            {onboardingSectionsData ? (
+            {onboardingSectionsData && sectionStatusInitialized? (
                     <OnboardingSectionsList onboardingSectionsData={onboardingSectionsData}/>)
                 :
                 null
