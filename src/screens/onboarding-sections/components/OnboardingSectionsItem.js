@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
 
-const OnboardingSectionsItem = ({section, entityData, active, completed, first}) => {
+const OnboardingSectionsItem = ({section, entityData, active, completed}) => {
     const backgroundColor = active ? yellow[600] : (completed ? green[500] : 'rgba(0, 0, 0, 0.1)')
 
     return (
@@ -29,7 +29,6 @@ const OnboardingSectionsItem = ({section, entityData, active, completed, first})
                             state={{ entityData }}
                         >
                             <HStack alignItems={'center'} gap={1}>
-                                {first ? <Typography>Start</Typography> : null}
                                 <ArrowForwardIosOutlinedIcon/>
                             </HStack>
                         </ButtonBase>

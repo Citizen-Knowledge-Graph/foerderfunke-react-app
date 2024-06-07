@@ -1,5 +1,6 @@
 {
-  "title": "Job",
+  "id": "income",
+  "title": "Income",
   "fields": [
     {
       "datafield": "ff:hasBirthday",

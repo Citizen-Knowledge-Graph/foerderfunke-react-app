@@ -14,9 +14,6 @@ const OnboardingSectionsList = ({onboardingSectionsData}) => {
     const sections = useProfileInputSectionStore((state) => state.sections);
     //const allCompleted = sections.every((obj) => obj.completed);
 
-    console.log('sections:', sections);
-    console.log('activeSection:', activeSection);
-
     return (
         <VStack gap={3} sx={{width: 'inherit'}}>
             <VStack gap={2}>
@@ -31,8 +28,7 @@ const OnboardingSectionsList = ({onboardingSectionsData}) => {
                                             section={section}
                                             entityData={entityData}
                                             active={section.id === activeSection}
-                                            completed={sectionStatus.completed}
-                                            first={index === 0}/>
+                                            completed={sectionStatus.completed}/>
                 )
             })}
         </VStack>

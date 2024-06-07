@@ -7,7 +7,7 @@ import {Button, Card, CardContent, Typography} from "@mui/material";
 import {green, yellow} from "@mui/material/colors";
 import SentimentSatisfiedOutlinedIcon from "@mui/icons-material/SentimentSatisfiedOutlined";
 
-const ProfileSectionCompleted = ({id}) => {
+const ProfileSectionCompleted = ({title, id}) => {
     const sectionStatus = useProfileInputSectionStore(
         (state) => state.sections
     );
@@ -22,7 +22,7 @@ const ProfileSectionCompleted = ({id}) => {
             <ProfileCompletedPieChart completedSections={completedSections} totalSections={sectionStatus.length}/>
             <HStack justifyContent={'center'} sx={{width: "100%"}}>
                 <VStack gap={1} alignItems={'center'}>
-                    <Typography variant="h4">About you</Typography>
+                    <Typography variant="h4">{title}</Typography>
                     <Typography variant="h6">Profilbereich vollständig!</Typography>
                 </VStack>
             </HStack>

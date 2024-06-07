@@ -1,5 +1,6 @@
 {
-  "title": "Job",
+  "id": "children",
+  "title": "Children",
   "fields": [
     {
       "datafield": "ff:hasBirthday",
