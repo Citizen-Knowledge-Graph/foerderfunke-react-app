@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import ProfileCompletedPieChart from "./ProfileCompletedPieChart";
 import {useProfileInputSectionStore} from "../../../storage/zustand";
 import VStack from "../../../components/VStack";
@@ -7,8 +7,10 @@ import {Button, Card, CardContent, Typography} from "@mui/material";
 import { Link } from "react-router-dom";
 import {green, yellow} from "@mui/material/colors";
 import SentimentSatisfiedOutlinedIcon from "@mui/icons-material/SentimentSatisfiedOutlined";
+import readJson from "../../../utilities/readJson";
 
 const ProfileSectionCompleted = ({title, id, entityData}) => {
+    const [nextSectionData, setNextSectionData] = useState(null);
     const sectionStatus = useProfileInputSectionStore(
         (state) => state.sections
     );
@@ -16,6 +18,21 @@ const ProfileSectionCompleted = ({title, id, entityData}) => {
         return section.completed ? acc + 1 : acc;
     }, 0);
     const nextSection = sectionStatus.find((section) => section.id === id).next;
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const filePath = `assets/data/profile-sections/${nextSection}.json`;
+            try {
+                const newNextSectionData = await readJson(filePath);
+                console.log('newNextSectionData:', newNextSectionData);
+                setNextSectionData(newNextSectionData);
+            } catch (error) {
+                console.error('Failed to fetch profile input screen data:', error);
+            }
+        };
+
+        fetchData();
+    }, [nextSection]);
 
     return (
         <VStack justifyContent={'center'}>
@@ -32,7 +49,7 @@ const ProfileSectionCompleted = ({title, id, entityData}) => {
                         <HStack justifyContent={'space-between'}>
                             <HStack justifyContent={'flex-start'} alignItems={'center'}>
                                 <SentimentSatisfiedOutlinedIcon sx={styles.icon}/>
-                                <Typography variant="h6">{nextSection}</Typography>
+                                <Typography variant="h6">{nextSectionData?.title}</Typography>
                             </HStack>
                             <Button variant="body1" sx={styles.buttonNext}
                                     component={Link}
