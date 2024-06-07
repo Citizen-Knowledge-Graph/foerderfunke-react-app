@@ -19,7 +19,7 @@ const ProfileCompletedPieChart = ({completedSections, totalSections}) => {
                 series={[
                     {
                         data,
-                        innerRadius: 105,
+                        innerRadius: 100,
                         outerRadius: 120,
                         paddingAngle: 5,
                         cornerRadius: 5,

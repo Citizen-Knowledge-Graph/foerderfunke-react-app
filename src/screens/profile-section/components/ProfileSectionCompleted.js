@@ -1,6 +1,9 @@
 import React from 'react';
 import ProfileCompletedPieChart from "./ProfileCompletedPieChart";
 import {useProfileInputSectionStore} from "../../../storage/zustand";
+import VStack from "../../../components/VStack";
+import HStack from "../../../components/HStack";
+import {Typography} from "@mui/material";
 
 const ProfileSectionCompleted = () => {
     const onboardingSectionsState = useProfileInputSectionStore(
@@ -13,7 +16,15 @@ const ProfileSectionCompleted = () => {
     const totalSections = onboardingSectionsState.length;
 
     return (
-        <ProfileCompletedPieChart completedSections={completedSections} totalSections={totalSections}/>
+        <VStack justifyContent={'center'}>
+            <ProfileCompletedPieChart completedSections={completedSections} totalSections={totalSections}/>
+            <HStack justifyContent={'center'} sx={{width: "100%"}}>
+                <VStack gap={1} alignItems={'center'}>
+                <Typography variant="h4">About you</Typography>
+                <Typography variant="h6">Profilbereich vollständig!</Typography>
+                    </VStack>
+            </HStack>
+        </VStack>
     );
 };
 

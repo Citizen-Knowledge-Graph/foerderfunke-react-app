@@ -35,7 +35,7 @@ const ProfileSectionScreen = () => {
                         {!completed ?
                             (<ProfileSectionList profileSectionData={profileSectionData} entityData={entityData}
                                                  setCompleted={setCompleted}/>)
-                            : (<ProfileSectionCompleted/>)
+                            : (<ProfileSectionCompleted id={id}/>)
                         }
                     </>)
                 :
