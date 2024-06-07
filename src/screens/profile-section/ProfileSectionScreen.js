@@ -4,6 +4,7 @@ import {useParams, useLocation} from "react-router-dom";
 import readJson from "../../utilities/readJson";
 import ProfileSectionContext from "./components/ProfileSectionContext";
 import ProfileSectionList from "./components/ProfileSectionList";
+import ProfileCompletionBar from "./components/ProfileCompletionBar";
 
 const ProfileSectionScreen = () => {
     const {id} = useParams();
