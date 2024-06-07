@@ -27,6 +27,11 @@ const ProfileSectionScreen = () => {
         fetchData();
     }, [id]);
 
+
+    useEffect(() => {
+        setCompleted(false);
+    }, [id]);
+
     return (
         <Layout>
             {profileSectionData ? (
@@ -35,7 +40,7 @@ const ProfileSectionScreen = () => {
                         {!completed ?
                             (<ProfileSectionList profileSectionData={profileSectionData} entityData={entityData}
                                                  setCompleted={setCompleted}/>)
-                            : (<ProfileSectionCompleted title={profileSectionData.title} id={id}/>)
+                            : (<ProfileSectionCompleted title={profileSectionData.title} id={id} entityData={entityData}/>)
                         }
                     </>)
                 :

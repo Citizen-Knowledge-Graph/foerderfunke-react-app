@@ -92,7 +92,7 @@ const styles = {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: yellow[200],
+        backgroundColor: yellow[400],
         boxShadow: 'none',
     },
     infoCardContent: {

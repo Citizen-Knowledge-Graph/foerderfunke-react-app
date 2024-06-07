@@ -4,19 +4,19 @@ import {useProfileInputSectionStore} from "../../../storage/zustand";
 import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
 import {Button, Card, CardContent, Typography} from "@mui/material";
+import { Link } from "react-router-dom";
 import {green, yellow} from "@mui/material/colors";
 import SentimentSatisfiedOutlinedIcon from "@mui/icons-material/SentimentSatisfiedOutlined";
 
-const ProfileSectionCompleted = ({title, id}) => {
+const ProfileSectionCompleted = ({title, id, entityData}) => {
     const sectionStatus = useProfileInputSectionStore(
         (state) => state.sections
     );
-    console.log("sectionStatus: ", sectionStatus)
     const completedSections = sectionStatus.reduce((acc, section) => {
         return section.completed ? acc + 1 : acc;
     }, 0);
     const nextSection = sectionStatus.find((section) => section.id === id).next;
-    console.log("nextSection: ", nextSection)
+
     return (
         <VStack justifyContent={'center'}>
             <ProfileCompletedPieChart completedSections={completedSections} totalSections={sectionStatus.length}/>
@@ -34,7 +34,11 @@ const ProfileSectionCompleted = ({title, id}) => {
                                 <SentimentSatisfiedOutlinedIcon sx={styles.icon}/>
                                 <Typography variant="h6">{nextSection}</Typography>
                             </HStack>
-                            <Button variant="body1" sx={styles.buttonNext}>
+                            <Button variant="body1" sx={styles.buttonNext}
+                                    component={Link}
+                                    to={`/profile-section/${nextSection}`}
+                                    state={{ entityData }}
+                            >
                                 Weiter
                             </Button>
                         </HStack>
