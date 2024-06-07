@@ -8,8 +8,8 @@ import HStack from "../../../components/HStack";
 const ProfileCompletedPieChart = ({completedSections, totalSections}) => {
 
     const data = [
-        { id: 0, value: 10 },
-        { id: 1, value: 90 },
+        { id: 0, value: completedSections },
+        { id: 1, value: totalSections - completedSections},
     ];
 
     return (
