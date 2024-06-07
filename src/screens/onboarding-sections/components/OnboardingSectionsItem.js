@@ -8,7 +8,7 @@ import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
 
 const OnboardingSectionsItem = ({section, entityData, active, completed}) => {
-    const backgroundColor = active ? yellow[600] : (completed ? green[500] : 'rgba(0, 0, 0, 0.1)')
+    const backgroundColor = completed ? green[600] : (active ? yellow[500] : 'rgba(0, 0, 0, 0.1)')
 
     return (
         <VStack>
