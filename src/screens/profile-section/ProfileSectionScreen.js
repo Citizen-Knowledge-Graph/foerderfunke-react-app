@@ -4,19 +4,16 @@ import {useParams, useLocation} from "react-router-dom";
 import readJson from "../../utilities/readJson";
 import ProfileSectionContext from "./components/ProfileSectionContext";
 import ProfileSectionList from "./components/ProfileSectionList";
-import ProfileCompletionBar from "./components/ProfileCompletionBar";
+import ProfileSectionCompleted from "./components/ProfileSectionCompleted";
 
 const ProfileSectionScreen = () => {
     const {id} = useParams();
     const location = useLocation();
-    const { entityData } = location.state || {};
+    const {entityData} = location.state || {};
     const [profileSectionData, setProfileSectionData] = useState();
-
-    console.log('Profile entity data', location.state);
+    const [completed, setCompleted] = useState(false);
 
     useEffect(() => {
-        console.log("we are trying this: ", `assets/data/profile-sections/${id}.json`);
-
         const fetchData = async () => {
             const filePath = `assets/data/profile-sections/${id}.json`;
             try {
@@ -30,21 +27,23 @@ const ProfileSectionScreen = () => {
         fetchData();
     }, [id]);
 
-    console.log('Profile', profileSectionData);
-
     return (
         <Layout>
             {profileSectionData ? (
-                <>
-                    <ProfileSectionContext title={profileSectionData.title} infoBox={id === 'about-you'}/>
-                    <ProfileSectionList profileSectionData={profileSectionData} entityData={entityData}/>
-                </>)
+                    <>
+                        <ProfileSectionContext title={profileSectionData.title} infoBox={id === 'about-you'}/>
+                        {!completed ?
+                            (<ProfileSectionList profileSectionData={profileSectionData} entityData={entityData}
+                                                 setCompleted={setCompleted}/>)
+                            : (<ProfileSectionCompleted/>)
+                        }
+                    </>)
                 :
                 null
             }
         </Layout>
-    )
-        ;
+
+    );
 };
 
 export default ProfileSectionScreen;

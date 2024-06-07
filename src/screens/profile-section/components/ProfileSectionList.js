@@ -2,15 +2,18 @@ import React, {useState} from 'react';
 import VStack from "../../../components/VStack";
 import ProfileSectionField from "./ProfileSectionField";
 import ProfileCompletionBar from "./ProfileCompletionBar";
+import useCompleteSection from "../hooks/useCompleteSection";
 
-const ProfileSectionList = ({profileSectionData, entityData}) => {
+const ProfileSectionList = ({profileSectionData, entityData, setCompleted}) => {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [completed, setCompleted] = useState(false);
+    const handleCompleteSection = useCompleteSection(profileSectionData.id);
 
-    const handleConfirm = () => {
+    const handleConfirm = async () => {
         if (currentIndex < profileSectionData.fields.length - 1) {
             setCurrentIndex(currentIndex + 1);
         } else {
+            console.log('All sections completed');
+            await handleCompleteSection();
             setCompleted(true);
         }
     };

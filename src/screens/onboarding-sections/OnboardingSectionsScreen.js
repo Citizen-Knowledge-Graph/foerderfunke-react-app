@@ -23,8 +23,6 @@ const OnboardingSectionsScreen = () => {
         fetchData();
     }, []);
 
-    console.log('Onboarding', onboardingSectionsData);
-
     return (
         <Layout>
             <OnboardingSectionsContext/>

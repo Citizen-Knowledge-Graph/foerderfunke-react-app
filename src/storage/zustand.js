@@ -19,11 +19,17 @@ export const useProfileInputSectionStore = create((set) => ({
         console.log(
             'STATE UPDATE: We are adding a new section to the sections store'
         );
-        const newSection = { id: id, next: nextId, completed: false };
-        set((state) => ({ sections: [...state.sections, newSection] }));
+        set((state) => {
+            if (state.sections.some(section => section.id === id)) {
+                console.log('Section already exists, not adding:', id);
+                return state; // No state update if the section exist
+            }
+            const newSection = { id, next: nextId, completed: false };
+            return { sections: [...state.sections, newSection] };
+        });
     },
     updateCompletedSections: (id) => {
-        console.log('STATE UPDATE: We are updating the completed sections');
+        console.log('STATE UPDATE: We are updating the completed sections: id', id);
         let nextSection;
         set((state) => ({
             sections: state.sections.map((section) => {
