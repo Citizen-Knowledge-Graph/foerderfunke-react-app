@@ -3,19 +3,14 @@
   "title": "Income",
   "fields": [
     {
-      "datafield": "ff:hasBirthday",
-      "title": "When is your birthday?",
-      "datatype": "date"
+      "datafield": "ff:hasIncomeBrutto",
+      "title": "What is your income BEFORE taxes?",
+      "datatype": "integer"
     },
     {
-      "datafield": "ff:hasBirthPlace",
-      "title": "Where were you born?",
-      "datatype": "string"
-    },
-    {
-      "datafield": "ff:hasResidence",
-      "title": "Where do you live?",
-      "datatype": "string"
+      "datafield": "ff:hasIncomeNetto",
+      "title": "What is your income AFTER taxes?",
+      "datatype": "integer"
     }
   ]
 }

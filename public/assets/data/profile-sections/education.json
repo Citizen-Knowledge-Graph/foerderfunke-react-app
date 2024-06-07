@@ -3,18 +3,8 @@
   "title": "Education",
   "fields": [
     {
-      "datafield": "ff:hasBirthday",
-      "title": "When is your birthday?",
-      "datatype": "date"
-    },
-    {
-      "datafield": "ff:hasBirthPlace",
-      "title": "Where were you born?",
-      "datatype": "string"
-    },
-    {
-      "datafield": "ff:hasResidence",
-      "title": "Where do you live?",
+      "datafield": "ff:hasEducationLevel",
+      "title": "What is your highest level of eduction?",
       "datatype": "string"
     }
   ]

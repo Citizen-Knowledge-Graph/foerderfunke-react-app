@@ -3,18 +3,13 @@
   "title": "Job",
   "fields": [
     {
-      "datafield": "ff:hasBirthday",
-      "title": "When is your birthday?",
-      "datatype": "date"
-    },
-    {
-      "datafield": "ff:hasBirthPlace",
-      "title": "Where were you born?",
+      "datafield": "ff:hasEmployment",
+      "title": "Where are you employed?",
       "datatype": "string"
     },
     {
-      "datafield": "ff:hasResidence",
-      "title": "Where do you live?",
+      "datafield": "ff:hasEmploymentType",
+      "title": "What is your employment type?",
       "datatype": "string"
     }
   ]
