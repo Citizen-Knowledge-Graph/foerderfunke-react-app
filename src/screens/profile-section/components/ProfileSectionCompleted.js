@@ -4,7 +4,7 @@ import {useProfileInputSectionStore} from "../../../storage/zustand";
 import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
 import {Button, Card, CardContent, Typography} from "@mui/material";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import {green, yellow} from "@mui/material/colors";
 import SentimentSatisfiedOutlinedIcon from "@mui/icons-material/SentimentSatisfiedOutlined";
 import readJson from "../../../utilities/readJson";
@@ -31,7 +31,9 @@ const ProfileSectionCompleted = ({title, id, entityData}) => {
             }
         };
 
-        fetchData();
+        if (nextSection) {
+            fetchData();
+        }
     }, [nextSection]);
 
     return (
@@ -54,7 +56,7 @@ const ProfileSectionCompleted = ({title, id, entityData}) => {
                             <Button variant="body1" sx={styles.buttonNext}
                                     component={Link}
                                     to={`/profile-section/${nextSection}`}
-                                    state={{ entityData }}
+                                    state={{entityData}}
                             >
                                 Weiter
                             </Button>
