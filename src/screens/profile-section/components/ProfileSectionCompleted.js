@@ -41,8 +41,19 @@ const ProfileSectionCompleted = ({title, id, entityData}) => {
             <ProfileCompletedPieChart completedSections={completedSections} totalSections={sectionStatus.length}/>
             <HStack justifyContent={'center'} sx={{width: "100%"}}>
                 <VStack gap={1} alignItems={'center'}>
-                    <Typography variant="h4">{title}</Typography>
-                    <Typography variant="h6">Profilbereich vollständig!</Typography>
+                    {nextSection ?
+                        (
+                            <>
+                                <Typography variant="h4">{title}</Typography>
+                                <Typography variant="h6">Profilbereich vollständig!</Typography>
+                            </>
+
+                        ) : (
+                            <>
+                                <Typography variant="h4">Fertig!</Typography>
+                            </>
+                        )
+                    }
                 </VStack>
             </HStack>
             <VStack data-testid="button-card-container">
@@ -65,41 +76,60 @@ const ProfileSectionCompleted = ({title, id, entityData}) => {
                 </Card>
             </VStack>
         </VStack>
-    );
+    )
+        ;
 };
 
 const styles = {
     buttonCard: {
         display: 'flex',
-        flexDirection: 'column',
-        backgroundColor: yellow[600],
-        borderRadius: '15px',
-        boxShadow: 'none',
-    },
+        flexDirection:
+            'column',
+        backgroundColor:
+            yellow[600],
+        borderRadius:
+            '15px',
+        boxShadow:
+            'none',
+    }
+    ,
     buttonCardContent: {
         padding: '16px',
-        "&:last-child": {
-            paddingBottom: '16px',
-        }
-    },
+        "&:last-child":
+            {
+                paddingBottom: '16px',
+            }
+    }
+    ,
     buttonCardText: {
         color: 'white',
-        fontWeight: '500',
-        textAlign: 'center',
-        margin: '0',
-    },
+        fontWeight:
+            '500',
+        textAlign:
+            'center',
+        margin:
+            '0',
+    }
+    ,
     icon: {
         width: '30px',
-        height: '30px',
-    },
+        height:
+            '30px',
+    }
+    ,
     buttonNext: {
         backgroundColor: green[500],
-        fontWeight: 'bold',
-        margin: '0px',
-        '&:focus': {
-            backgroundColor: green[500],
-        },
-    },
+        fontWeight:
+            'bold',
+        margin:
+            '0px',
+        '&:focus':
+            {
+                backgroundColor: green[500],
+            }
+        ,
+    }
+    ,
 };
 
 export default ProfileSectionCompleted;
