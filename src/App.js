@@ -11,6 +11,7 @@ import OnboardingUsername from "./screens/OnboardingUsername";
 import ProfileSectionScreen from "./screens/profile-section/ProfileSectionScreen";
 import EligibilityOverviewScreen from "./screens/eligibilty-overview/EligibilityOverviewScreen";
 import AppStartup from "./AppStartup";
+import AppValidation from "./AppValidation";
 
 const theme = createTheme({
     typography: {
@@ -23,6 +24,7 @@ const App = () => {
         <ThemeProvider theme={theme}>
             <ViewportUpdater/>
             <AppStartup/>
+            <AppValidation/>
             <Router basename={process.env.PUBLIC_URL}>
                 <div>
                     <Routes>

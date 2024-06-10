@@ -4,7 +4,7 @@ import {useUserStore} from '../../../storage/zustand';
 
 function useAddProfileField(value, datafield, entityData) {
     return useCallback(() => {
-        const userId = useUserStore.getState().userId;
+        const activeUserId = useUserStore.getState().activeUserId;
         return new Promise((resolve, reject) => {
             try {
                 const _entityData = {
@@ -17,7 +17,7 @@ function useAddProfileField(value, datafield, entityData) {
                     type: entityData.parentData.type,
                     datafield: entityData.parentData.datafield,
                 };
-                UserModel.setField(userId, value, _entityData, _parentData);
+                UserModel.setField(activeUserId, value, _entityData, _parentData);
                 resolve();
             } catch (error) {
                 reject(error);

@@ -1,10 +1,10 @@
 import { create } from 'zustand';
 
 export const useUserStore = create((set) => ({
-    userId: 'kinderzuschlag-user-profile',
+    activeUserId: 'kinderzuschlag-user-profile',
     updateUserId: (newUserId) => {
         console.log('STATE UPDATE: We are switching user');
-        set((state) => ({ userId: newUserId }));
+        set((state) => ({ activeUserId: newUserId }));
     },
 }));
 
