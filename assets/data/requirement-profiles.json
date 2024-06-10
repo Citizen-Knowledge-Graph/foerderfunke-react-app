@@ -1,0 +1,24 @@
+{
+  "datafields": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/datafields.ttl",
+  "queries": [
+    {
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/dev-kindergeld.ttl",
+      "rpUri": "https://foerderfunke.org/default#kindergeld",
+      "title": "Kindergeld",
+      "description": "Sie haben Anspruch auf Kindergeld."
+    },
+    {
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/dev-eauto.ttl",
+      "rpUri": "https://foerderfunke.org/default#eauto",
+      "title": "Unterstützung für den Kauf eines Elektroautos",
+      "description": "Sie haben Anspruch auf eine Förderung für ein neue E-Auto."
+    },
+    {
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/kinderzuschlag.ttl",
+      "rpUri": "https://foerderfunke.org/default#kinderzuschlag",
+      "title": "Kinderzuschlag",
+      "description": "Sie haben Anspruch auf den Kinderzuschlag."
+    }
+  ]
+}
+
