@@ -1,5 +1,6 @@
 {
   "datafields": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/datafields.ttl",
+  "materialization": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/materialization.ttl",
   "queries": [
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/dev-kindergeld.ttl",
