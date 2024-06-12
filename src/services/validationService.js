@@ -1,13 +1,14 @@
 import {UserModel} from "../models/UserModel";
 import {
-    //validateAll,
+    validateAll,
     validateUserProfile,
 } from '@foerderfunke/matching-engine';
 import {
-    convertUserProfileToTurtle,
+    convertUserProfileToTurtle, extractDatafieldsMetadata, extractRequirementProfilesMetadata,
 } from '@foerderfunke/matching-engine/src/utils';
 import readJson from "../utilities/readJson";
 import {fetchTurtleResource} from "./githubService";
+import { useMetadataStore, useValidationReportStore} from "../storage/zustand";
 
 export const runValidation = async (activeUser) => {
 
@@ -24,18 +25,35 @@ export const runValidation = async (activeUser) => {
         console.error('Invalid user profile');
     }
 
+    // load materialization scripts
+    const materializationString = await fetchTurtleResource(validationConfig['materialization']);
+
+
     // collect requirement profiles
-    //let requirementProfiles = {};
-    console.log('Fetching requirement profiles:', validationConfig['queries'][0]['fileUrl'])
-    const fileUrl = await fetchTurtleResource(validationConfig['queries'][0]['fileUrl']);
-    console.log(fileUrl);
+    let requirementProfiles = {};
+    for (const requirementProfile of validationConfig['queries']) {
+        const {fileUrl, rpUri} = requirementProfile;
+        requirementProfiles[rpUri] = await fetchTurtleResource(fileUrl);
+    }
+    console.log('Running validations for:', Object.keys(requirementProfiles));
 
-    // for (const requirementProfile in validationConfig['queries']) {
-    //     const fileUrl = requirementProfile['fileUrl'];
-    //     console.log('Fetching requirement profile:', fileUrl);
-    //     //requirementProfiles[rpUri] = await fetchTurtleResource(fileUrl);
-    // }
-    // console.log('Running validations for:', Object.keys(requirementProfiles));
+    let validateAllReport = await validateAll(
+        userProfileString,
+        requirementProfiles,
+        datafieldsString,
+        materializationString,
+        false
+    );
 
+    useValidationReportStore.getState().updateValidationReport(validateAllReport);
+
+    // fetch metadata
+    let metadata = {
+        df: await extractDatafieldsMetadata(datafieldsString),
+        rp: await extractRequirementProfilesMetadata(Object.values(requirementProfiles)),
+    };
+
+    useMetadataStore.getState().updateMetadata(metadata);
+    
     return null;
 }
