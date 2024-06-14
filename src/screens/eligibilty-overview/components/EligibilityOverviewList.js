@@ -2,7 +2,7 @@ import React from 'react';
 import {Typography} from '@mui/material';
 import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
-import {yellow, blue, green, red, grey} from "@mui/material/colors";
+import {green, red, grey} from "@mui/material/colors";
 import {Circle, Add} from "@mui/icons-material";
 
 const data = [
