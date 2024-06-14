@@ -54,6 +54,6 @@ export const runValidation = async (activeUser) => {
     };
 
     useMetadataStore.getState().updateMetadata(metadata);
-    
+
     return null;
 }

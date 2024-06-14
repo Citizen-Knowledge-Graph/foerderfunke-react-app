@@ -7,7 +7,9 @@ const EligibilityOverviewScreen = () => {
     return (
         <Layout>
             <EligibilityOverviewHeader/>
-            <EligibilityOverviewList/>
+            <EligibilityOverviewList eligble={'eligible'} />
+            <EligibilityOverviewList eligble={'non-eligible'} />
+            <EligibilityOverviewList eligble={'indeterminate'} />
         </Layout>
     );
 };

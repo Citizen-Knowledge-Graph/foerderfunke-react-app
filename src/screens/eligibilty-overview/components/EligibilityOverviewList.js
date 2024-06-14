@@ -2,7 +2,8 @@ import React from 'react';
 import {Typography} from '@mui/material';
 import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
-import {yellow, blue} from "@mui/material/colors";
+import {yellow, blue, green, red, grey} from "@mui/material/colors";
+import {Circle, Add} from "@mui/icons-material";
 
 const data = [
     {
@@ -19,88 +20,44 @@ const data = [
     }
 ]
 
-const EligibilityOverviewList = () => {
+const EligibilityOverviewList = ({eligble}) => {
+    const color = (eligble === 'eligible') ? green[500] : ((eligble === 'non-eligible') ? red[500] :
+        grey[500]);
+    const headerText = (eligble === 'eligible') ? 'Berechtigt für:' : ((eligble === 'non-eligible') ? 'Nicht berechtigt für:' :
+        'Unklar für:');
+
+
     return (
-        <VStack gap={1} alignItems={'center'} sx={{width: '100%'}}>
-            <VStack sx={{width: '100%'}}>
-                <HStack justifyContent={'flex-start'} sx={{width: '100%'}}>
-                    <Typography variant="h6" gutterBottom sx={styles.titleText}>
-                        Berechtigt für:
-                    </Typography>
-                </HStack>
-                <VStack gap={1} alignItems={'center'} sx={{width: '100%'}}>
-                    {data.map((item) => (
-                        <HStack justifyContent={'flex-start'} sx={{width: '100%'}}>
-                            <Typography variant="body1" gutterBottom>
+        <VStack sx={{width: '100%'}}>
+            <HStack justifyContent={'flex-start'} sx={{width: '100%'}}>
+                <Typography variant="h6" gutterBottom sx={styles.titleText}>
+                    {headerText}
+                </Typography>
+            </HStack>
+            <VStack gap={1} alignItems={'center'} sx={{width: '100%'}}>
+                {data.map((item, index) => (
+                    <HStack key={index} justifyContent={'space-between'} sx={{width: '100%'}}>
+                        <HStack justifyContent={'flex-start'}>
+                            <Circle sx={{color: color}}/>
+                            <Typography variant="body1" gutterBottom sx={styles.itemTitle}>
                                 {item.title}
                             </Typography>
                         </HStack>
-                    ))}
-                </VStack>
-            </VStack>
-            <VStack sx={{width: '100%'}}>
-                <HStack justifyContent={'flex-start'} sx={{width: '100%'}}>
-                    <Typography variant="h6" gutterBottom sx={styles.titleText}>
-                        Nicht berechtigt für:
-                    </Typography>
-                </HStack>
-                <VStack gap={1} alignItems={'center'} sx={{width: '100%'}}>
-                    {data.map((item) => (
-                        <HStack justifyContent={'flex-start'} sx={{width: '100%'}}>
-                            <Typography variant="body1" gutterBottom>
-                                {item.title}
-                            </Typography>
-                        </HStack>
-                    ))}
-                </VStack>
-            </VStack>
-            <VStack sx={{width: '100%'}}>
-                <HStack justifyContent={'flex-start'} sx={{width: '100%'}}>
-                    <Typography variant="h6" gutterBottom sx={styles.titleText}>
-                        Fehlende Informationen:
-                    </Typography>
-                </HStack>
-                <VStack gap={1} alignItems={'center'} sx={{width: '100%'}}>
-                    {data.map((item) => (
-                        <HStack justifyContent={'flex-start'} sx={{width: '100%'}}>
-                            <Typography variant="body1" gutterBottom>
-                                {item.title}
-                            </Typography>
-                        </HStack>
-                    ))}
-                </VStack>
+                        <Add/>
+                    </HStack>
+                ))}
             </VStack>
         </VStack>
+
     );
 };
 
 const styles = {
-    titleCard: {
-        width: '100%',
-        borderRadius: '0px',
-        backgroundColor: yellow[100],
-        boxShadow: 'none',
-        padding: 0,
-    },
-    cardContent: {
-        padding: '16px',
-        "&:last-child": {
-            paddingBottom: '16px',
-        }
-    },
-    subTitleCard: {
-        backgroundColor: blue[100],
-        width: '100%',
-        borderRadius: '0px',
-        boxShadow: 'none',
-        padding: 0,
-    },
     titleText: {
         fontWeight: 'bold',
     },
-    subTitleCardText: {
-        fontSize: '12px',
-        fontWeight: '400'
+    itemTitle: {
+        fontWeight: 'bold',
     }
 };
 
