@@ -55,7 +55,7 @@ export const useMetadataStore = create((set) => ({
 export const useValidationReportStore = create((set) => ({
     validationReport: {},
     updateValidationReport: (newValidationReport) => {
-        console.log('STATE UPDATE: We are updating the validation report');
+        console.log('STATE UPDATE: We are updating the validation report: ', newValidationReport);
         set((state) => ({ validationReport: newValidationReport }));
     },
 }));

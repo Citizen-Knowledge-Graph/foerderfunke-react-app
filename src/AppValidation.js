@@ -5,7 +5,6 @@ import { runValidation } from "./services/validationService";
 const AppValidation = () => {
     const activeUserId = useUserStore((state) => state.activeUserId);
 
-
     // initialise session store
     useEffect(() => {
         const validate = async () => {

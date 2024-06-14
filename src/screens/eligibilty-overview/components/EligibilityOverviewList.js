@@ -5,22 +5,7 @@ import HStack from "../../../components/HStack";
 import {green, red, grey} from "@mui/material/colors";
 import {Circle, Add} from "@mui/icons-material";
 
-const data = [
-    {
-        id: "Kindergeld",
-        title: 'Kindergeld',
-    },
-    {
-        id: "Elterngeld",
-        title: 'Elterngeld',
-    },
-    {
-        id: "Wohngeld",
-        title: 'Wohngeld',
-    }
-]
-
-const EligibilityOverviewList = ({eligble}) => {
+const EligibilityOverviewList = ({items, eligble}) => {
     const color = (eligble === 'eligible') ? green[500] : ((eligble === 'non-eligible') ? red[500] :
         grey[500]);
     const headerText = (eligble === 'eligible') ? 'Berechtigt für:' : ((eligble === 'non-eligible') ? 'Nicht berechtigt für:' :
@@ -35,12 +20,12 @@ const EligibilityOverviewList = ({eligble}) => {
                 </Typography>
             </HStack>
             <VStack gap={1} alignItems={'center'} sx={{width: '100%'}}>
-                {data.map((item, index) => (
+                {items.map((item, index) => (
                     <HStack key={index} justifyContent={'space-between'} sx={{width: '100%'}}>
                         <HStack justifyContent={'flex-start'}>
                             <Circle sx={{color: color}}/>
                             <Typography variant="body1" gutterBottom sx={styles.itemTitle}>
-                                {item.title}
+                                {item}
                             </Typography>
                         </HStack>
                         <Add/>
