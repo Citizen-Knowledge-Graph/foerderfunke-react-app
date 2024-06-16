@@ -17,7 +17,7 @@ export const runValidation = async (activeUser) => {
     const userProfileString = await convertUserProfileToTurtle(userProfile);
 
     // load validation config
-    const validationConfig = await readJson('assets/data/requirement-profiles.json');
+    const validationConfig = await readJson('assets/data/requirement-profiles/requirement-profiles.json');
 
     // validate user profile against datafields
     const datafieldsString = await fetchTurtleResource(validationConfig['datafields']);

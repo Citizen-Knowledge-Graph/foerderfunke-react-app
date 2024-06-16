@@ -4,15 +4,19 @@ import Layout from "../../components/Layout";
 import EligibilityOverviewList from "./components/EligibilityOverviewList";
 import { useValidationReportStore } from '../../storage/zustand';
 import {useFetchEligibilityReports} from "./hooks/useFetchEligibilityReports";
+import {useFetchHydrationData} from "./hooks/useFetchHydrationData";
 
 const EligibilityOverviewScreen = () => {
     const [eligibilityData, setEligibilityData] = useState();
     const validationReport = useValidationReportStore((state) => state.validationReport);
-    const fetchEligibilityReports = useFetchEligibilityReports({validationReport});
+    const hydrationData = useFetchHydrationData();
+    const fetchEligibilityReports = useFetchEligibilityReports({validationReport, hydrationData});
 
     useEffect(() => {
-        setEligibilityData(fetchEligibilityReports());
-    }, [fetchEligibilityReports]);
+        if (hydrationData) {
+            setEligibilityData(fetchEligibilityReports());
+        }
+    }, [fetchEligibilityReports, hydrationData]);
 
 
     return (

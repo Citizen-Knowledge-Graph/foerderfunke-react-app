@@ -25,7 +25,7 @@ const EligibilityOverviewList = ({items, eligble}) => {
                         <HStack justifyContent={'flex-start'}>
                             <Circle sx={{color: color}}/>
                             <Typography variant="body1" gutterBottom sx={styles.itemTitle}>
-                                {item}
+                                {item.title}
                             </Typography>
                         </HStack>
                         <Add/>
