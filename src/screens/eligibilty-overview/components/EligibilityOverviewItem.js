@@ -5,7 +5,7 @@ import HStack from "../../../components/HStack";
 import {green, red, grey} from "@mui/material/colors";
 import { Circle, Add, Remove } from "@mui/icons-material";
 
-const EligibilityOverviewList = ({items, eligble}) => {
+const EligibilityOverviewItem = ({items, eligble}) => {
     const [visibleDescriptions, setVisibleDescriptions] = useState({});
 
     const toggleDescription = (index) => {
@@ -64,4 +64,4 @@ const styles = {
     }
 };
 
-export default EligibilityOverviewList;
+export default EligibilityOverviewItem;

@@ -21,14 +21,16 @@ export const useFetchEligibilityReports = ({ validationReport, hydrationData }) 
         for (let report of reports) {
             let { rpUri, result } = report;
             const title = hydrationData[rpUri]?.title || 'Unknown Title';
+            const description = hydrationData[rpUri]?.description || 'Unknown Description';
+            const data = { uri: rpUri, title, description };
             if (result === ValidationResult.ELIGIBLE) {
-                eligibilityData.eligible.push({uri: rpUri, title: title});
+                eligibilityData.eligible.push(data);
             }
             if (result === ValidationResult.INELIGIBLE) {
-                eligibilityData.nonEligible.push({uri: rpUri, title: title});
+                eligibilityData.nonEligible.push(data);
             }
             if (result === ValidationResult.UNDETERMINABLE) {
-                eligibilityData.missingData.push({uri: rpUri, title: title});
+                eligibilityData.missingData.push(data);
             }
         }
 

@@ -1,11 +1,14 @@
 {
   "https://foerderfunke.org/default#eauto": {
-    "title": "E-Auto"
+    "title": "E-Auto",
+    "description": "It is a monthly fixed sum paid by the Family Benefits Office (Familienkasse), which is managed by the German Federal Employment Agency (Arbeitsagentur für Arbeit). Its purpose is to ensure that every child's basic needs are met."
   },
   "https://foerderfunke.org/default#kindergeld": {
-    "title": "Kindergeld"
+    "title": "Kindergeld",
+    "description": "It is a monthly fixed sum paid by the Family Benefits Office (Familienkasse), which is managed by the German Federal Employment Agency (Arbeitsagentur für Arbeit). Its purpose is to ensure that every child's basic needs are met."
   },
   "https://foerderfunke.org/default#kinderzuschlag": {
-    "title": "Kinderzuschlag"
+    "title": "Kinderzuschlag",
+    "description": "It is a monthly fixed sum paid by the Family Benefits Office (Familienkasse), which is managed by the German Federal Employment Agency (Arbeitsagentur für Arbeit). Its purpose is to ensure that every child's basic needs are met."
   }
 }
