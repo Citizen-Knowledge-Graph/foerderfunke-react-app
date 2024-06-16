@@ -1,0 +1,11 @@
+{
+  "https://foerderfunke.org/default#eauto": {
+    "title": "E-Auto"
+  },
+  "https://foerderfunke.org/default#kindergeld": {
+    "title": "Kindergeld"
+  },
+  "https://foerderfunke.org/default#kinderzuschlag": {
+    "title": "Kinderzuschlag"
+  }
+}
