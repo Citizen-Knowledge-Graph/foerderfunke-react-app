@@ -25,9 +25,9 @@ const EligibilityOverviewScreen = () => {
             {
                 eligibilityData ? (
                     <>
-                        <EligibilityOverviewList items={eligibilityData.eligible} eligble={'eligible'} />
-                        <EligibilityOverviewList items={eligibilityData.nonEligible} eligble={'non-eligible'} />
-                        <EligibilityOverviewList items={eligibilityData.missingData} eligble={'indeterminate'} />
+                        <EligibilityOverviewList items={eligibilityData.eligible} eligible={'eligible'} />
+                        <EligibilityOverviewList items={eligibilityData.nonEligible} eligible={'non-eligible'} />
+                        <EligibilityOverviewList items={eligibilityData.missingData} eligible={'indeterminate'} />
                     </>
                 ) : null
             }

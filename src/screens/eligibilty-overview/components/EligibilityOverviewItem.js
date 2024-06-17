@@ -31,8 +31,8 @@ const EligibilityOverviewItem = ({item, eligible}) => {
                 </VStack>
             </HStack>
             <VStack gap={0} alignItems={'flex-start'}>
-                <IconButton onClick={toggleDescription} size="small">
-                    {showDescription ? <Remove/> : <Add/>}
+                <IconButton onClick={toggleDescription} size="small" >
+                    {showDescription ? <Remove sx={{color: 'black'}}/> : <Add sx={{color: 'black'}}/>}
                 </IconButton>
             </VStack>
         </HStack>
