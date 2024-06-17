@@ -8,7 +8,7 @@ const styles = {
     layoutContainerStyle: {
         display: 'flex',
         flexDirection: 'column',
-        height: '100vh',
+        minHeight: '100vh',
         overflow: 'hidden',
     },
     navbarStyle: {
