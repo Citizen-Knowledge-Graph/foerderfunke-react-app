@@ -19,6 +19,24 @@
       "rpUri": "https://foerderfunke.org/default#kinderzuschlag",
       "title": "Kinderzuschlag",
       "description": "Sie haben Anspruch auf den Kinderzuschlag."
+    },
+    {
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/arbeitslosengeld.ttl",
+      "rpUri": "https://foerderfunke.org/default#arbeitslosengeld",
+      "title": "Arbeitslosengeld",
+      "description": "Sie haben Anspruch auf den Arbeitslosengeld."
+    },
+    {
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/bildungsgutschein.ttl",
+      "rpUri": "https://foerderfunke.org/default#bildungsgutschein",
+      "title": "Bildungsgutschein",
+      "description": "Sie haben Anspruch auf den Bildungsgutschein."
+    },
+    {
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/dev-daemmung.ttl",
+      "rpUri": "https://foerderfunke.org/default#daemmung",
+      "title": "Wärmedämmung",
+      "description": "Sie haben Anspruch auf eine Förderung für Wärmedämmung."
     }
   ]
 }
