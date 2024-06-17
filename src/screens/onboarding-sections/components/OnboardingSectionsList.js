@@ -6,13 +6,12 @@ import {useProfileInputSectionStore, useUserStore} from "../../../storage/zustan
 import useInitializeEntityData from "../hooks/useInitializeEntityData";
 
 const OnboardingSectionsList = ({onboardingSectionsData}) => {
-    const userId = useUserStore((state) => state.userId);
+    const userId = useUserStore((state) => state.activeUserId);
     const entityData = useInitializeEntityData(userId);
     const activeSection = useProfileInputSectionStore(
         (state) => state.activeSection
     );
     const sections = useProfileInputSectionStore((state) => state.sections);
-    //const allCompleted = sections.every((obj) => obj.completed);
 
     return (
         <VStack gap={3} sx={{width: 'inherit'}}>

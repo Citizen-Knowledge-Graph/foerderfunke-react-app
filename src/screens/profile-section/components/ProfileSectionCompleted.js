@@ -3,7 +3,7 @@ import ProfileCompletedPieChart from "./ProfileCompletedPieChart";
 import {useProfileInputSectionStore} from "../../../storage/zustand";
 import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
-import {Button, Card, CardContent, Typography} from "@mui/material";
+import {Button, ButtonBase, Card, CardContent, Typography} from "@mui/material";
 import {Link} from "react-router-dom";
 import {green, yellow} from "@mui/material/colors";
 import SentimentSatisfiedOutlinedIcon from "@mui/icons-material/SentimentSatisfiedOutlined";
@@ -11,9 +11,7 @@ import readJson from "../../../utilities/readJson";
 
 const ProfileSectionCompleted = ({title, id, entityData}) => {
     const [nextSectionData, setNextSectionData] = useState(null);
-    const sectionStatus = useProfileInputSectionStore(
-        (state) => state.sections
-    );
+    const sectionStatus = useProfileInputSectionStore((state) => state.sections);
     const completedSections = sectionStatus.reduce((acc, section) => {
         return section.completed ? acc + 1 : acc;
     }, 0);
@@ -37,27 +35,22 @@ const ProfileSectionCompleted = ({title, id, entityData}) => {
     }, [nextSection]);
 
     return (
-        <VStack justifyContent={'center'}>
+        <VStack justifyContent={'center'} gap={3}>
             <ProfileCompletedPieChart completedSections={completedSections} totalSections={sectionStatus.length}/>
             <HStack justifyContent={'center'} sx={{width: "100%"}}>
                 <VStack gap={1} alignItems={'center'}>
-                    {nextSection ?
-                        (
-                            <>
-                                <Typography variant="h4">{title}</Typography>
-                                <Typography variant="h6">Profilbereich vollständig!</Typography>
-                            </>
+                    {nextSection ? (<>
+                            <Typography variant="h4">{title}</Typography>
+                            <Typography variant="h6">Profilbereich vollständig!</Typography>
+                        </>
 
-                        ) : (
-                            <>
-                                <Typography variant="h4">Fertig!</Typography>
-                            </>
-                        )
-                    }
+                    ) : (<>
+                        <Typography variant="h4">Fertig!</Typography>
+                    </>)}
                 </VStack>
             </HStack>
             <VStack data-testid="button-card-container">
-                <Card sx={styles.buttonCard} data-testid="button-card">
+                {nextSection ? (<Card sx={styles.buttonCard} data-testid="button-card">
                     <CardContent sx={styles.buttonCardContent} data-testid="card-content">
                         <HStack justifyContent={'space-between'}>
                             <HStack justifyContent={'flex-start'} alignItems={'center'}>
@@ -73,63 +66,62 @@ const ProfileSectionCompleted = ({title, id, entityData}) => {
                             </Button>
                         </HStack>
                     </CardContent>
-                </Card>
+                </Card>) : (
+                    <Card sx={styles.buttonCardComplete} data-testid="button-card">
+                        <CardContent sx={styles.buttonCardContent} data-testid="card-content">
+                            <HStack justifyContent={'center'}>
+                                <ButtonBase component={Link} to={`/eligibility-overview`}>
+                                    <Typography variant="h6" gutterBottom sx={styles.buttonCardText}>
+                                        Zu deinen Benefits!
+                                    </Typography>
+                                </ButtonBase>
+                            </HStack>
+                        </CardContent>
+                    </Card>)}
             </VStack>
-        </VStack>
-    )
-        ;
+
+        </VStack>);
 };
 
 const styles = {
     buttonCard: {
         display: 'flex',
-        flexDirection:
-            'column',
-        backgroundColor:
-            yellow[600],
-        borderRadius:
-            '15px',
-        boxShadow:
-            'none',
-    }
-    ,
+        flexDirection: 'column',
+        backgroundColor: yellow[600],
+        borderRadius: '15px',
+        boxShadow: 'none',
+    },
+    buttonCardComplete: {
+        display: 'flex',
+        flexDirection: 'column',
+        backgroundColor: green[600],
+        borderRadius: '15px',
+        boxShadow: 'none',
+    },
     buttonCardContent: {
         padding: '16px',
-        "&:last-child":
-            {
-                paddingBottom: '16px',
-            }
-    }
-    ,
+        "&:last-child": {
+            paddingBottom: '16px',
+        }
+    },
     buttonCardText: {
         color: 'white',
-        fontWeight:
-            '500',
-        textAlign:
-            'center',
-        margin:
-            '0',
-    }
-    ,
+        fontWeight: '500',
+        textAlign: 'center',
+        margin: '0',
+    },
     icon: {
         width: '30px',
-        height:
-            '30px',
-    }
-    ,
+        height: '30px',
+    },
     buttonNext: {
         backgroundColor: green[500],
-        fontWeight:
-            'bold',
-        margin:
-            '0px',
-        '&:focus':
-            {
-                backgroundColor: green[500],
-            }
-        ,
-    }
-    ,
+        fontWeight: 'bold',
+        margin: '0px',
+        '&:focus': {
+            backgroundColor: green[500],
+        },
+    },
 };
 
 export default ProfileSectionCompleted;
