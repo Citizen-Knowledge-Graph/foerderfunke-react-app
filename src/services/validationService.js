@@ -27,7 +27,7 @@ export const runValidation = async (activeUser) => {
 
     // load materialization scripts
     const materializationString = await fetchTurtleResource(validationConfig['materialization']);
-
+    console.log('Materialization loaded: ', materializationString);
 
     // collect requirement profiles
     let requirementProfiles = {};

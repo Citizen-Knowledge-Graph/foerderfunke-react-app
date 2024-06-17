@@ -11,11 +11,15 @@
   "ff:hasIncomeNetto": 1600,
   "ff:hasChild": [
     {
+      "@id": "ff:child1",
+      "@type": "ff:Child",
       "ff:hasBirthday": "2013-01-23",
       "ff:hasMaritalStatus": "LD",
       "ff:receiveKindergeld": 250
     },
     {
+      "@id": "ff:child2",
+      "@type": "ff:Child",
       "ff:hasBirthday": "2008-02-15",
       "ff:hasMaritalStatus": "LD",
       "ff:receiveKindergeld": 250
