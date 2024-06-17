@@ -9,6 +9,7 @@ const styles = {
         display: 'flex',
         flexDirection: 'column',
         height: '100vh',
+        overflow: 'hidden',
     },
     navbarStyle: {
         display: 'flex',
