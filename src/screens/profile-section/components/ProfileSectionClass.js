@@ -9,14 +9,21 @@ import ClearIcon from '@mui/icons-material/Clear';
 import ButtonBase from "@mui/material/ButtonBase";
 
 const ProfileSectionClass = ({profileSectionField, entityData}) => {
-    const [objects, setObjects] = useState([]);
+    const [objectsMap, setObjectsMap] = useState({
+        index: 0,
+        objects: []
+    });
 
     const handleAddObjectLink = () => {
-        setObjects([...objects, {}]);
+        setObjectsMap({
+            index: objectsMap.index + 1,
+            objects: [...objectsMap.objects, `${profileSectionField.objectClass} ${objectsMap.index}`]
+        });
     };
 
     const handleRemoveObject = (index) => {
-        setObjects(objects.filter((_, i) => i !== index));
+        const newObjects = objectsMap.objects.filter((_, i) => i !== index);
+        setObjectsMap({index: objectsMap.index, objects: newObjects});
     };
 
     return (
@@ -27,7 +34,7 @@ const ProfileSectionClass = ({profileSectionField, entityData}) => {
                 </Button>
             </HStack>
             <VStack gap={2}>
-                {objects.map((_, index) => (
+                {objectsMap.objects.map((item, index) => (
                     <HStack key={index} sx={{width: '100%'}} justifyContent={'space-between'}>
                         <HStack alignItems={'center'}>
                             <Card sx={styles.iconCard}>
@@ -35,7 +42,7 @@ const ProfileSectionClass = ({profileSectionField, entityData}) => {
                                     <SentimentSatisfiedOutlinedIcon sx={styles.icon}/>
                                 </CardContent>
                             </Card>
-                            <Typography>{index}</Typography>
+                            <Typography>{item}</Typography>
                         </HStack>
                         <HStack alignItems={'center'} gap={3}>
                             <ButtonBase onClick={() => handleRemoveObject(index)}>
