@@ -4,32 +4,6 @@ import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutl
 import {useNavigate} from 'react-router-dom';
 import {useStore} from './ViewportUpdater';
 
-const styles = {
-    layoutContainerStyle: {
-        display: 'flex',
-        flexDirection: 'column',
-        minHeight: '100vh',
-        overflow: 'hidden',
-    },
-    navbarStyle: {
-        display: 'flex',
-        flexDirection: 'row',
-        backgroundColor: 'white',
-        boxShadow: 'none',
-        color: 'black',
-        height: '80px',
-    },
-    contentContainerStyle: {
-        flex: 1,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'flex-start',
-        gap: '20px',
-        padding: '0px'
-    }
-}
-
 const Layout = ({children}) => {
         const navigate = useNavigate();
         const isDesktop = useStore((state) => state.isDesktop);
@@ -60,5 +34,31 @@ const Layout = ({children}) => {
             ;
     }
 ;
+
+const styles = {
+    layoutContainerStyle: {
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh',
+        overflow: 'hidden',
+    },
+    navbarStyle: {
+        display: 'flex',
+        flexDirection: 'row',
+        backgroundColor: 'white',
+        boxShadow: 'none',
+        color: 'black',
+        height: '80px',
+    },
+    contentContainerStyle: {
+        flex: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+        gap: '20px',
+        padding: '0px'
+    }
+}
 
 export default Layout;

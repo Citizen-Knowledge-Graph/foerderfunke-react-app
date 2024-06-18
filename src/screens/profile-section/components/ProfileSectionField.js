@@ -4,6 +4,7 @@ import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
 import {yellow, green} from "@mui/material/colors";
 import useAddProfileField from "../hooks/useAddProfileField";
+import ProfileSectionInput from "./ProfileSectionInput";
 
 const ProfileSectionField = ({
                                  profileSectionField,
@@ -45,17 +46,7 @@ const ProfileSectionField = ({
                         </CardContent>
                     </Card>
                 </HStack>
-                <TextField
-                    variant="outlined"
-                    onChange={(e) => setValue(e.target.value)}
-                    value={value}
-                    fullWidth
-                />
-                {error ? (
-                    <Typography variant="body1" color="error">
-                        {error}
-                    </Typography>
-                ) : null}
+                <ProfileSectionInput value={value} setValue={setValue} error={error}/>
             </VStack>
             <VStack gap={2}>
                 <HStack justifyContent={'space-between'}>
