@@ -1,0 +1,11 @@
+{
+  "id": "education",
+  "title": "Child",
+  "fields": [
+    {
+      "datafield": "ff:hasEducationLevel",
+      "title": "What is your highest level of eduction?",
+      "datatype": "string"
+    }
+  ]
+}

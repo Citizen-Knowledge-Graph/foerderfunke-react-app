@@ -51,7 +51,7 @@ const ProfileSectionField = ({
                     profileSectionField.datatype !== 'class' ? (
                         <ProfileSectionInput value={value} setValue={setValue} error={error}/>
                     ) : (
-                        <ProfileSectionClass profileSectionField={profileSectionField}/>
+                        <ProfileSectionClass profileSectionField={profileSectionField} entityData={entityData}/>
                     )
                 }
             </VStack>

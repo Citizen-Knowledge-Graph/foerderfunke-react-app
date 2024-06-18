@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import HStack from "../../../components/HStack";
 import VStack from "../../../components/VStack";
 import {Button, Card, CardContent, Typography} from "@mui/material";
@@ -7,12 +7,18 @@ import SentimentSatisfiedOutlinedIcon from "@mui/icons-material/SentimentSatisfi
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
 import ClearIcon from '@mui/icons-material/Clear';
 import ButtonBase from "@mui/material/ButtonBase";
+import useCreateProfileObject from "../hooks/useCreateProfileObject";
+import {useNavigate} from "react-router-dom";
 
 const ProfileSectionClass = ({profileSectionField, entityData}) => {
+    const navigate = useNavigate();
+    const [selectedObject, setSelectedObject] = useState(null);
     const [objectsMap, setObjectsMap] = useState({
         index: 0,
         objects: []
     });
+    console.log("entituytserfw ", entityData)
+    const addObjectLinkData = useCreateProfileObject(selectedObject, profileSectionField, entityData.entityData);
 
     const handleAddObjectLink = () => {
         setObjectsMap({
@@ -25,6 +31,18 @@ const ProfileSectionClass = ({profileSectionField, entityData}) => {
         const newObjects = objectsMap.objects.filter((_, i) => i !== index);
         setObjectsMap({index: objectsMap.index, objects: newObjects});
     };
+
+    const handleCreateProfileObject = (currentObject) => {
+        setSelectedObject(currentObject);
+    };
+
+    useEffect(() => {
+        if (selectedObject !== null) {
+            const {id, entityData} = addObjectLinkData();
+            console.log('entityType', id, 'entityData', entityData)
+            navigate(`/profile-section/${id}`, {state: {entityData}})
+        }
+    }, [addObjectLinkData, navigate, selectedObject]);
 
     return (
         <VStack sx={{width: '100%'}}>
@@ -48,7 +66,9 @@ const ProfileSectionClass = ({profileSectionField, entityData}) => {
                             <ButtonBase onClick={() => handleRemoveObject(index)}>
                                 <ClearIcon/>
                             </ButtonBase>
-                            <ArrowForwardIosOutlinedIcon/>
+                            <ButtonBase onClick={() => handleCreateProfileObject(item)}>
+                                <ArrowForwardIosOutlinedIcon/>
+                            </ButtonBase>
                         </HStack>
                     </HStack>
                 ))}
