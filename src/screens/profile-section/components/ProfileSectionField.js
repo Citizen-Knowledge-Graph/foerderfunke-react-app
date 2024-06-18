@@ -1,10 +1,11 @@
 import React, {useEffect} from 'react';
-import {Button, Card, CardContent, TextField, Typography} from '@mui/material';
+import {Button, Card, CardContent, Typography} from '@mui/material';
 import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
 import {yellow, green} from "@mui/material/colors";
 import useAddProfileField from "../hooks/useAddProfileField";
 import ProfileSectionInput from "./ProfileSectionInput";
+import ProfileSectionClass from "./ProfileSectionClass";
 
 const ProfileSectionField = ({
                                  profileSectionField,
@@ -46,7 +47,13 @@ const ProfileSectionField = ({
                         </CardContent>
                     </Card>
                 </HStack>
-                <ProfileSectionInput value={value} setValue={setValue} error={error}/>
+                {
+                    profileSectionField.datatype !== 'class' ? (
+                        <ProfileSectionInput value={value} setValue={setValue} error={error}/>
+                    ) : (
+                        <ProfileSectionClass/>
+                    )
+                }
             </VStack>
             <VStack gap={2}>
                 <HStack justifyContent={'space-between'}>
