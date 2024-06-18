@@ -6,12 +6,17 @@ import {green, yellow} from "@mui/material/colors";
 import SentimentSatisfiedOutlinedIcon from "@mui/icons-material/SentimentSatisfiedOutlined";
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
 import ClearIcon from '@mui/icons-material/Clear';
+import ButtonBase from "@mui/material/ButtonBase";
 
 const ProfileSectionClass = ({profileSectionField, entityData}) => {
-    const [objectCount, setObjectCount] = useState(0);
+    const [objects, setObjects] = useState([]);
 
     const handleAddObjectLink = () => {
-        setObjectCount(objectCount + 1);
+        setObjects([...objects, {}]);
+    };
+
+    const handleRemoveObject = (index) => {
+        setObjects(objects.filter((_, i) => i !== index));
     };
 
     return (
@@ -22,7 +27,7 @@ const ProfileSectionClass = ({profileSectionField, entityData}) => {
                 </Button>
             </HStack>
             <VStack gap={2}>
-                {Array.from({length: objectCount}, (_, index) => (
+                {objects.map((_, index) => (
                     <HStack key={index} sx={{width: '100%'}} justifyContent={'space-between'}>
                         <HStack alignItems={'center'}>
                             <Card sx={styles.iconCard}>
@@ -30,10 +35,12 @@ const ProfileSectionClass = ({profileSectionField, entityData}) => {
                                     <SentimentSatisfiedOutlinedIcon sx={styles.icon}/>
                                 </CardContent>
                             </Card>
-                            <Typography>{objectCount}</Typography>
+                            <Typography>{index}</Typography>
                         </HStack>
                         <HStack alignItems={'center'} gap={3}>
-                            <ClearIcon/>
+                            <ButtonBase onClick={() => handleRemoveObject(index)}>
+                                <ClearIcon/>
+                            </ButtonBase>
                             <ArrowForwardIosOutlinedIcon/>
                         </HStack>
                     </HStack>
@@ -46,11 +53,14 @@ const ProfileSectionClass = ({profileSectionField, entityData}) => {
 const styles = {
     buttonText: {
         fontSize: '12px',
-        backgroundColor: green[500],
         borderRadius: '15px',
         fontWeight: 'bold',
         margin: '0px',
+        backgroundColor: green[500],
         '&:focus': {
+            backgroundColor: green[500],
+        },
+        '&:hover': {
             backgroundColor: green[500],
         },
     },
