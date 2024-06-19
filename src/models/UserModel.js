@@ -23,7 +23,7 @@ export class UserModel {
     }
 
     // set a new field in the user data
-    static setField(userId, value, entityData, parentData) {
+    static setField(userId, value, datafield, entityData) {
         let userProfile = UserModel.retrieveUserData(userId);
 
         if (!userProfile) {
@@ -32,9 +32,9 @@ export class UserModel {
 
         const updated = updateOrAddField(
             userProfile,
-            entityData,
-            parentData,
-            value
+            value,
+            datafield,
+            entityData
         );
 
         if (!updated) {
@@ -84,35 +84,35 @@ export class UserModel {
     }
 }
 
-function updateOrAddField(data, entityData, parentData, value) {
+function updateOrAddField(data, value, datafield, entityData) {
     if (data['@id'] === entityData.id && data['@type'] === entityData.type) {
-        data[entityData.datafield] = value;
+        data[datafield] = value;
         return true;
     }
 
-    if (data['@id'] === parentData.id && data['@type'] === parentData.type) {
-        if (Array.isArray(data[parentData.datafield])) {
-            for (let item of data[parentData.datafield]) {
-                if (updateOrAddField(item, entityData, parentData, value)) {
+    if (data['@id'] === entityData.parentData.id && data['@type'] === entityData.parentData.type) {
+        if (Array.isArray(data[entityData.parentData.datafield])) {
+            for (let item of data[entityData.parentData.datafield]) {
+                if (updateOrAddField(item, value, datafield, entityData)) {
                     return true;
                 }
             }
         } else {
-            data[parentData.datafield] = [];
+            data[entityData.parentData.datafield] = [];
         }
         const newChild = {
             '@id': entityData.id,
             '@type': entityData.type,
-            [entityData.datafield]: value,
+            [datafield]: value,
         };
-        data[parentData.datafield].push(newChild);
+        data[entityData.parentData.datafield].push(newChild);
         return true;
     }
 
     for (const key in data) {
         if (Array.isArray(data[key])) {
             for (let item of data[key]) {
-                if (updateOrAddField(item, entityData, parentData, value)) {
+                if (updateOrAddField(item, value, datafield, entityData)) {
                     return true;
                 }
             }

@@ -7,17 +7,7 @@ function useAddProfileField(value, datafield, entityData) {
         const activeUserId = useUserStore.getState().activeUserId;
         return new Promise((resolve, reject) => {
             try {
-                const _entityData = {
-                    id: entityData.entityData.id,
-                    type: entityData.entityData.type,
-                    datafield: datafield,
-                };
-                const _parentData = {
-                    id: entityData.parentData.id,
-                    type: entityData.parentData.type,
-                    datafield: entityData.parentData.datafield,
-                };
-                UserModel.setField(activeUserId, value, _entityData, _parentData);
+                UserModel.setField(activeUserId, value, datafield, entityData);
                 resolve();
             } catch (error) {
                 reject(error);

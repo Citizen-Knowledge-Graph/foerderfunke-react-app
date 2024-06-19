@@ -5,15 +5,14 @@ const useInitializeEntityData = (userId) => {
         if (!userId) return null;
 
         return {
-            entityData: {
-                id: userId,
-                type: 'ff:Citizen',
-            },
+            id: userId,
+            type: 'ff:Citizen',
             parentData: {
                 id: null,
                 type: null,
-                datafield: null,
+                datafield: null
             }
+
         };
     }, [userId]);
 };
