@@ -1,23 +1,17 @@
 import {useCallback} from 'react';
 
-function useCreateProfileObject(id, profileField, parentData) {
-
+function useCreateProfileObject(id, profileField, entityData) {
     return useCallback(() => {
-        const entityId = id;
-        const entityType = profileField.objectClass;
-        const parentId = parentData.id;
-        const parentType = parentData.type;
-
-        const entityData = {
-            id: entityId,
-            type: entityType,
-            parentId: parentId,
-            parentType: parentType,
+        const _entityData = {
+            id: id,
+            type: profileField.objectClass,
+            parentId: entityData.id,
+            parentType: entityData.type,
             parentDatafield: profileField.datafield,
         };
 
-        return {id: entityType, entityData};
-    }, [id, parentData.id, parentData.type, profileField.datafield, profileField.objectClass]);
+        return {id: profileField.objectClass, entityData: _entityData};
+    }, [id, profileField, entityData]);
 }
 
 export default useCreateProfileObject;

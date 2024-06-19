@@ -17,8 +17,16 @@ const ProfileSectionClass = ({profileSectionField, entityData}) => {
         index: 0,
         objects: []
     });
-    console.log("entituytserfw ", entityData)
-    const addObjectLinkData = useCreateProfileObject(selectedObject, profileSectionField, entityData.entityData);
+
+    useEffect(() => {
+        setSelectedObject(null);
+        setObjectsMap({
+            index: 0,
+            objects: []
+        });
+    }, [profileSectionField, entityData]);
+
+    const addObjectLinkData = useCreateProfileObject(selectedObject, profileSectionField, entityData);
 
     const handleAddObjectLink = () => {
         setObjectsMap({
@@ -37,12 +45,13 @@ const ProfileSectionClass = ({profileSectionField, entityData}) => {
     };
 
     useEffect(() => {
+        console.log('selectedObject', selectedObject)
         if (selectedObject !== null) {
             const {id, entityData} = addObjectLinkData();
             console.log('entityType', id, 'entityData', entityData)
             navigate(`/profile-section/${id}`, {state: {entityData}})
         }
-    }, [addObjectLinkData, navigate, selectedObject]);
+    }, [selectedObject, addObjectLinkData, navigate]);
 
     return (
         <VStack sx={{width: '100%'}}>
