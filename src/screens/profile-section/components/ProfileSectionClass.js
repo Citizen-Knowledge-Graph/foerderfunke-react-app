@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import HStack from "../../../components/HStack";
 import VStack from "../../../components/VStack";
 import {Button, Card, CardContent, Typography} from "@mui/material";
@@ -7,26 +7,14 @@ import SentimentSatisfiedOutlinedIcon from "@mui/icons-material/SentimentSatisfi
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
 import ClearIcon from '@mui/icons-material/Clear';
 import ButtonBase from "@mui/material/ButtonBase";
-import useCreateProfileObject from "../hooks/useCreateProfileObject";
 import {useNavigate} from "react-router-dom";
 
 const ProfileSectionClass = ({profileSectionField, entityData}) => {
     const navigate = useNavigate();
-    const [selectedObject, setSelectedObject] = useState(null);
     const [objectsMap, setObjectsMap] = useState({
         index: 0,
         objects: []
     });
-
-    useEffect(() => {
-        setSelectedObject(null);
-        setObjectsMap({
-            index: 0,
-            objects: []
-        });
-    }, [profileSectionField, entityData]);
-
-    const addObjectLinkData = useCreateProfileObject(selectedObject, profileSectionField, entityData);
 
     const handleAddObjectLink = () => {
         setObjectsMap({
@@ -40,18 +28,16 @@ const ProfileSectionClass = ({profileSectionField, entityData}) => {
         setObjectsMap({index: objectsMap.index, objects: newObjects});
     };
 
-    const handleCreateProfileObject = (currentObject) => {
-        setSelectedObject(currentObject);
+    const handleCreateProfileObject = (item) => {
+        const _entityData = {
+            id: item,
+            type: profileSectionField.objectClass,
+            parentId: entityData.id,
+            parentType: entityData.type,
+            parentDatafield: profileSectionField.datafield,
+        };
+        navigate(`/profile-section/${profileSectionField.objectClass}`, {state: {entityData:_entityData}})
     };
-
-    useEffect(() => {
-        console.log('selectedObject', selectedObject)
-        if (selectedObject !== null) {
-            const {id, entityData} = addObjectLinkData();
-            console.log('entityType', id, 'entityData', entityData)
-            navigate(`/profile-section/${id}`, {state: {entityData}})
-        }
-    }, [selectedObject, addObjectLinkData, navigate]);
 
     return (
         <VStack sx={{width: '100%'}}>

@@ -32,6 +32,8 @@ const ProfileSectionScreen = () => {
         setCompleted(false);
     }, [id]);
 
+    console.log('entityData', entityData)
+
     return (
         <Layout>
             {profileSectionData ? (
