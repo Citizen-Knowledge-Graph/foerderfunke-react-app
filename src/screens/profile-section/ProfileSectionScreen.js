@@ -18,6 +18,11 @@ const ProfileSectionScreen = () => {
             const filePath = `assets/data/profile-sections/${id}.json`;
             try {
                 const newProfileSectionData = await readJson(filePath);
+                newProfileSectionData.entityData = entityData;
+                newProfileSectionData.fields.map((field) => {
+                    field.nestedEntityData = null;
+                    return field;
+                });
                 setProfileSectionData(newProfileSectionData);
             } catch (error) {
                 console.error('Failed to fetch profile input screen data:', error);
@@ -40,9 +45,10 @@ const ProfileSectionScreen = () => {
                     <>
                         <ProfileSectionContext title={profileSectionData.title} infoBox={id === 'about-you'}/>
                         {!completed ?
-                            (<ProfileSectionList profileSectionData={profileSectionData} entityData={entityData}
+                            (<ProfileSectionList profileSectionData={profileSectionData}
+                                                 setProfileSectionData={setProfileSectionData}
                                                  setCompleted={setCompleted}/>)
-                            : (<ProfileSectionCompleted title={profileSectionData.title} id={id} entityData={entityData}/>)
+                            : (<ProfileSectionCompleted profileSectionData={profileSectionData}/>)
                         }
                     </>)
                 :

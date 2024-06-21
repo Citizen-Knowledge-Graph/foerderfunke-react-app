@@ -1,11 +1,16 @@
 {
-  "id": "education",
+  "id": "ff:Child",
   "title": "Child",
   "fields": [
     {
-      "datafield": "ff:hasEducationLevel",
-      "title": "What is your highest level of eduction?",
-      "datatype": "string"
+      "datafield": "ff:hasIncomeBrutto",
+      "title": "What is your income BEFORE taxes?",
+      "datatype": "integer"
+    },
+    {
+      "datafield": "ff:hasIncomeNetto",
+      "title": "What is your income AFTER taxes?",
+      "datatype": "integer"
     }
   ]
 }

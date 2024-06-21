@@ -15,7 +15,7 @@ export const useProfileInputSectionStore = create((set) => ({
         console.log('STATE UPDATE: We are resetting the section store');
         set((state) => ({ activeSection: 'about-you', sections: [] }));
     },
-    initialiseSection: (id, nextId) => {
+    initialiseSection: (id, nextId, sectionType) => {
         console.log(
             'STATE UPDATE: We are adding a new section to the sections store'
         );
@@ -24,12 +24,17 @@ export const useProfileInputSectionStore = create((set) => ({
                 console.log('Section already exists, not adding:', id);
                 return state; // No state update if the section exist
             }
-            const newSection = { id, next: nextId, completed: false };
+            const newSection = { id, next: nextId, sectionType: sectionType, completed: false };
             return { sections: [...state.sections, newSection] };
         });
     },
     updateCompletedSections: (id) => {
         console.log('STATE UPDATE: We are updating the completed sections: id', id);
+        const sectionExists = useProfileInputSectionStore.getState().sections.some(section => section.id === id);
+        if (!sectionExists) {
+            return;
+        }
+
         let nextSection;
         set((state) => ({
             sections: state.sections.map((section) => {
@@ -41,6 +46,18 @@ export const useProfileInputSectionStore = create((set) => ({
             }),
             activeSection: nextSection,
         }));
+    },
+}));
+
+export const useProfileSectionStore = create((set) => ({
+    profileSectionData: {},
+    initializeProfileSectionData: (newProfileSectionData) => {
+        console.log('STATE UPDATE: We are initializing the profile section data');
+        set((state) => ({ profileSectionData: newProfileSectionData }));
+    },
+    updateProfileSectionData: (newProfileSectionData) => {
+        console.log('STATE UPDATE: We are updating the profile section data');
+        set((state) => ({ profileSectionData: newProfileSectionData }));
     },
 }));
 

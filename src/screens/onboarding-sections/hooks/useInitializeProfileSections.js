@@ -11,7 +11,7 @@ const useInitializeProfileSections = () => {
             };
             useProfileInputSectionStore
                 .getState()
-                .initialiseSection(newDictEntry.id, newDictEntry.nextId, i === 0);
+                .initialiseSection(newDictEntry.id, newDictEntry.nextId, 'onboarding', i === 0);
         });
     };
 };

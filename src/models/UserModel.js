@@ -90,22 +90,22 @@ function updateOrAddField(data, value, datafield, entityData) {
         return true;
     }
 
-    if (data['@id'] === entityData.parentData.id && data['@type'] === entityData.parentData.type) {
-        if (Array.isArray(data[entityData.parentData.datafield])) {
-            for (let item of data[entityData.parentData.datafield]) {
+    if (data['@id'] === entityData.parentId && data['@type'] === entityData.parentType) {
+        if (Array.isArray(data[entityData.parentDatafield])) {
+            for (let item of data[entityData.parentDatafield]) {
                 if (updateOrAddField(item, value, datafield, entityData)) {
                     return true;
                 }
             }
         } else {
-            data[entityData.parentData.datafield] = [];
+            data[entityData.parentDatafield] = [];
         }
         const newChild = {
             '@id': entityData.id,
             '@type': entityData.type,
             [datafield]: value,
         };
-        data[entityData.parentData.datafield].push(newChild);
+        data[entityData.parentDatafield].push(newChild);
         return true;
     }
 

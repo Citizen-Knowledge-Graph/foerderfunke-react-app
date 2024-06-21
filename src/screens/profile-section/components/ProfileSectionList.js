@@ -4,7 +4,7 @@ import ProfileSectionField from "./ProfileSectionField";
 import ProfileCompletionBar from "./ProfileCompletionBar";
 import useCompleteSection from "../hooks/useCompleteSection";
 
-const ProfileSectionList = ({profileSectionData, entityData, setCompleted}) => {
+const ProfileSectionList = ({profileSectionData, setProfileSectionData, setCompleted}) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const handleCompleteSection = useCompleteSection(profileSectionData.id);
 
@@ -22,7 +22,6 @@ const ProfileSectionList = ({profileSectionData, entityData, setCompleted}) => {
         if (currentIndex > 0) {
             setCurrentIndex(currentIndex - 1);
         } else {
-            // Handle the case when all sections are completed
             console.log('All sections completed');
         }
     };
@@ -31,12 +30,12 @@ const ProfileSectionList = ({profileSectionData, entityData, setCompleted}) => {
         if (currentIndex < profileSectionData.fields.length - 1) {
             setCurrentIndex(currentIndex + 1);
         } else {
-            // Handle the case when all sections are completed
             console.log('All sections completed');
         }
     };
 
     const currentSection = profileSectionData.fields[currentIndex];
+    const entityData = profileSectionData.fields[currentIndex].nestedEntityData || profileSectionData.entityData
 
     return (
         <VStack sx={{width: '100%', paddingTop: '50px'}} gap={3}>
@@ -45,6 +44,7 @@ const ProfileSectionList = ({profileSectionData, entityData, setCompleted}) => {
                 <ProfileSectionField profileSectionField={currentSection}
                                      entityData={entityData}
                                      currentIndex={currentIndex}
+                                     setProfileSectionData={setProfileSectionData}
                                      handleConfirm={handleConfirm}
                                      handleBack={handleBack}
                                      handleSkip={handleSkip}/>

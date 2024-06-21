@@ -10,6 +10,7 @@ function useAddProfileField(value, datafield, entityData) {
                 UserModel.setField(activeUserId, value, datafield, entityData);
                 resolve();
             } catch (error) {
+                console.log('Error adding profile field')
                 reject(error);
             }
         });

@@ -11,6 +11,7 @@ const ProfileSectionField = ({
                                  profileSectionField,
                                  entityData,
                                  currentIndex,
+                                 setProfileSectionData,
                                  handleConfirm,
                                  handleBack,
                                  handleSkip
@@ -51,7 +52,8 @@ const ProfileSectionField = ({
                     profileSectionField.datatype !== 'class' ? (
                         <ProfileSectionInput value={value} setValue={setValue} error={error}/>
                     ) : (
-                        <ProfileSectionClass profileSectionField={profileSectionField} entityData={entityData}/>
+                        <ProfileSectionClass profileSectionField={profileSectionField}
+                                             setProfileSectionData={setProfileSectionData} entityData={entityData}/>
                     )
                 }
             </VStack>

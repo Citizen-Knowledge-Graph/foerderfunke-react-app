@@ -9,7 +9,8 @@ import {green, yellow} from "@mui/material/colors";
 import SentimentSatisfiedOutlinedIcon from "@mui/icons-material/SentimentSatisfiedOutlined";
 import readJson from "../../../utilities/readJson";
 
-const ProfileSectionCompleted = ({title, id, entityData}) => {
+const ProfileSectionCompleted = ({profileSectionData}) => {
+    const { title, id, entityData } = profileSectionData
     const [nextSectionData, setNextSectionData] = useState(null);
     const sectionStatus = useProfileInputSectionStore((state) => state.sections);
     const completedSections = sectionStatus.reduce((acc, section) => {

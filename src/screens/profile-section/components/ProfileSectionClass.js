@@ -9,7 +9,7 @@ import ClearIcon from '@mui/icons-material/Clear';
 import ButtonBase from "@mui/material/ButtonBase";
 import {useNavigate} from "react-router-dom";
 
-const ProfileSectionClass = ({profileSectionField, entityData}) => {
+const ProfileSectionClass = ({profileSectionField, setProfileSectionData,entityData}) => {
     const navigate = useNavigate();
     const [objectsMap, setObjectsMap] = useState({
         index: 0,
