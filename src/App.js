@@ -7,6 +7,7 @@ import Home from './screens/Home';
 import Onboarding from './screens/Onboarding';
 import OnboardingWelcome from "./screens/OnboardingWelcome";
 import OnboardingSectionsScreen from "./screens/onboarding-sections/OnboardingSectionsScreen";
+import OnboardingGamifiedScreen from "./screens/onboarding-gamified/OnboardingGamifiedScreen";
 import OnboardingUsername from "./screens/OnboardingUsername";
 import ProfileSectionScreen from "./screens/profile-section/ProfileSectionScreen";
 import EligibilityOverviewScreen from "./screens/eligibilty-overview/EligibilityOverviewScreen";
@@ -33,6 +34,7 @@ const App = () => {
                         <Route path="/onboarding-welcome" element={<OnboardingWelcome/>}/>
                         <Route path="/onboarding-username" element={<OnboardingUsername/>}/>
                         <Route path="/onboarding-sections" element={<OnboardingSectionsScreen/>}/>
+                        <Route path="/onboarding-gamified" element={<OnboardingGamifiedScreen/>}/>
                         <Route path="/eligibility-overview" element={<EligibilityOverviewScreen/>}/>
                         <Route path="/profile-section/:id" element={<ProfileSectionScreen/>}/>
                     </Routes>

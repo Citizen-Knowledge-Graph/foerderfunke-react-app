@@ -1,6 +1,7 @@
 import React from 'react';
 import {Box, Typography} from '@mui/material';
 import {indigo} from '@mui/material/colors';
+import {Link} from "react-router-dom";
 import { useUserStore } from '../../../storage/zustand';
 
 
@@ -17,6 +18,9 @@ const OnboardingSectionsContext = () => {
                     Wir benötigen noch ein paar Informationen von dir, um für dich
                     nach geeigneten Sozialleistungen und anderen staatlichen
                     Förderungen zu suchen.
+                </Typography>
+                <Typography variant="body1" gutterBottom sx={styles.smallLink} component={Link} to="/onboarding-gamified">
+                    Oder probiere einen alternativen Onboarding-Ansatz.
                 </Typography>
             </Box>
         </>
@@ -36,6 +40,9 @@ const styles = {
     subTitleText: {
         fontSize: '16px',
         fontWeight: '400'
+    },
+    smallLink: {
+        fontSize: '14px'
     },
     buttonCardContainer: {
         display: 'flex',
