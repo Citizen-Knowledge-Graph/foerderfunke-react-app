@@ -3,12 +3,10 @@ import Layout from "../../components/Layout";
 import readJson from "../../utilities/readJson";
 import ProfileSectionContext from "./components/ProfileSectionContext";
 import ProfileSectionList from "./components/ProfileSectionList";
-import useInitializeEntityData from "./hooks/useInitializeEntityData";
-import {useUserStore} from "../../storage/zustand";
+import useInitializeQuickCheckUser from "./hooks/useInitializeQuickCheckUser";
 
 const ProfileSectionScreen = () => {
-    const userId = useUserStore((state) => state.activeUserId);
-    const entityData = useInitializeEntityData(userId);
+    const entityData = useInitializeQuickCheckUser();
     const [profileSectionData, setProfileSectionData] = useState();
     const [completed, setCompleted] = useState(false);
 

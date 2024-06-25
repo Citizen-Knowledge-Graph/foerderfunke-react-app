@@ -1,4 +1,3 @@
-// src/screens/OnboardingChoice.js
 import React from 'react';
 import {Typography, Button, Box, Card, CardContent, CardActions} from '@mui/material';
 import {Link} from 'react-router-dom';
