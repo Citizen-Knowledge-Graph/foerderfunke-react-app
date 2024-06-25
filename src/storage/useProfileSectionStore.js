@@ -10,7 +10,12 @@ export const useProfileSectionStore = create((set, get) => ({
     retrieveCurrentEntityData() {
         const data = get().sectionStore;
         console.log(`STATE UPDATE: We are retrieving the current entity data`);
-        return findDeepest(data);
+        return findDeepestEntityData(data);
+    },
+    retrieveCurrentProfileSection() {
+        const data = get().sectionStore;
+        console.log(`STATE UPDATE: We are retrieving the current profile section`);
+        return findDeepestProfileSection(data);
     },
     updateDeepestDatafield: (newDatafield) =>
         console.log('STATE UPDATE: We are updating the deepest datafield') ||
@@ -21,6 +26,11 @@ export const useProfileSectionStore = create((set, get) => ({
         console.log('STATE UPDATE: We are updating the deepest nested section') ||
         set((state) => ({
             sectionStore: updateDeepestNestedSection(state.sectionStore, newNestedSection),
+        })),
+    deleteLastNestedSection: () =>
+        console.log('STATE UPDATE: We are deleting the last nested section') ||
+        set((state) => ({
+            sectionStore: findAndDeleteLastNestedSection(state.sectionStore),
         })),
 }));
 
@@ -38,11 +48,18 @@ const updateDeepestDatafield = (section, newDatafield) => {
     };
 };
 
-const findDeepest = (section) => {
+const findDeepestEntityData = (section) => {
     if (!section.nestedSection) {
         return section.entityData;
     }
-    return findDeepest(section.nestedSection);
+    return findDeepestEntityData(section.nestedSection);
+};
+
+const findDeepestProfileSection = (section) => {
+    if (!section.nestedSection) {
+        return section.profileSection;
+    }
+    return findDeepestProfileSection(section.nestedSection);
 };
 
 const updateDeepestNestedSection = (section, newNestedSection) => {
@@ -55,4 +72,20 @@ const updateDeepestNestedSection = (section, newNestedSection) => {
     };
 
     return findDeepestAndUpdate(section);
+};
+
+const findAndDeleteLastNestedSection = (section) => {
+    const findSecondToLast = (section) => {
+        if (!section.nestedSection || !section.nestedSection.nestedSection) {
+            return section;
+        }
+        return findSecondToLast(section.nestedSection);
+    };
+
+    const secondToLastSection = findSecondToLast(section);
+    if (secondToLastSection && secondToLastSection.nestedSection) {
+        secondToLastSection.nestedSection = null;
+    }
+
+    return section;
 };

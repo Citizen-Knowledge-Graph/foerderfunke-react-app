@@ -32,7 +32,7 @@ const ProfileSectionClass = ({currentField, entityData}) => {
 
     const handleCreateProfileObject = (item) => {
         updateProfileSectionStore(item, currentField, entityData)
-        navigate(`/profile-section/${currentField.objectClass}`)
+        navigate(`/profile-section/${currentField.objectClass}/nested`)
     };
 
         return (

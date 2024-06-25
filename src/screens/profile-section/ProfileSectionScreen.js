@@ -6,7 +6,7 @@ import ProfileSectionList from "./components/ProfileSectionList";
 import {useParams} from "react-router-dom";
 
 const ProfileSectionScreen = () => {
-    const {id} = useParams();
+    const {id, mode} = useParams();
     const [profileSectionData, setProfileSectionData] = useState();
     const [completed, setCompleted] = useState(false);
 
@@ -26,7 +26,9 @@ const ProfileSectionScreen = () => {
 
     useEffect(() => {
         setCompleted(false);
-    }, []);
+    }, [id]);
+
+    console.log("we are back here: ", profileSectionData)
 
     return (
         <Layout>
@@ -35,6 +37,7 @@ const ProfileSectionScreen = () => {
                         <ProfileSectionContext title={profileSectionData.title} infoBox={true}/>
                         {!completed ?
                             (<ProfileSectionList profileSectionData={profileSectionData}
+                                                 mode={mode}
                                                  setCompleted={setCompleted}
                             />)
                             : null

@@ -5,7 +5,7 @@ import ProfileCompletionBar from "./ProfileCompletionBar";
 import {useProfileSectionStore} from "../../../storage/useProfileSectionStore";
 import {useProfileSectionListHandlers} from "../hooks/useProfileSectionListHandlers";
 
-const ProfileSectionList = ({profileSectionData, setCompleted}) => {
+const ProfileSectionList = ({profileSectionData, mode, setCompleted}) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [entityData, setEntityData] = useState({});
     const retrieveCurrentEntityData = useProfileSectionStore((state) => state.retrieveCurrentEntityData);
@@ -13,16 +13,12 @@ const ProfileSectionList = ({profileSectionData, setCompleted}) => {
         handleConfirm,
         handleBack,
         handleSkip
-    } = useProfileSectionListHandlers(setCurrentIndex, profileSectionData, setCompleted);
+    } = useProfileSectionListHandlers(mode, setCurrentIndex, profileSectionData, setCompleted);
 
     useEffect(() => {
         setEntityData(retrieveCurrentEntityData());
         setCurrentIndex(0);
     }, [profileSectionData, retrieveCurrentEntityData]);
-
-    console.log(currentIndex)
-    console.log(profileSectionData)
-    console.log(entityData)
 
     const currentField = profileSectionData.fields[currentIndex];
     return (
