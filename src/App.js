@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import './index.css';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 import ViewportUpdater from "./components/ViewportUpdater";
-import Home from './screens/Home';
+import OnboardingChoice from './screens/OnboardingChoice';
 import OnboardingWelcome from "./screens/OnboardingWelcome";
 import OnboardingGamifiedScreen from "./screens/onboarding-gamified/OnboardingGamifiedScreen";
 import ProfileSectionScreen from "./screens/profile-section/ProfileSectionScreen";
@@ -26,7 +26,7 @@ const App = () => {
             <Router basename={process.env.PUBLIC_URL}>
                 <div>
                     <Routes>
-                        <Route path="/" element={<Home/>}/>
+                        <Route path="/" element={<OnboardingChoice/>}/>
                         <Route path="/onboarding-welcome" element={<OnboardingWelcome/>}/>
                         <Route path="/onboarding-gamified" element={<OnboardingGamifiedScreen/>}/>
                         <Route path="/eligibility-overview" element={<EligibilityOverviewScreen/>}/>

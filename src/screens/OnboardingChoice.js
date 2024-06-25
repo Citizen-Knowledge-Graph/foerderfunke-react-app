@@ -1,46 +1,10 @@
-// src/screens/Home.js
+// src/screens/OnboardingChoice.js
 import React from 'react';
 import {Typography, Button, Box, Card, CardContent, CardActions} from '@mui/material';
 import {Link} from 'react-router-dom';
 import Layout from '../components/Layout';
 
-const styles = {
-    container: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center', // Center horizontally
-        textAlign: 'center', // Ensure text alignment is also centered
-    },
-    titleText: {
-        fontWeight: 'bold', // Make text bold
-    },
-    subTitleText: {
-        fontSize: '20px',
-        fontWeight: '400'
-    },
-    cardContainer: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        width: '100%',
-        gap: '20px',
-    },
-    card: {
-        width: '100%',
-        height: '200px',
-        borderRadius: '20px',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        backgroundColor: '#f0f0f0',
-        boxShadow: 'none'
-    },
-    cardContent: {
-        flexGrow: 1,
-    },
-};
-
-const Home = () => {
+const OnboardingChoice = () => {
     return (
         <Layout>
             <Box sx={styles.container}>
@@ -81,4 +45,40 @@ const Home = () => {
     );
 };
 
-export default Home;
+const styles = {
+    container: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center', // Center horizontally
+        textAlign: 'center', // Ensure text alignment is also centered
+    },
+    titleText: {
+        fontWeight: 'bold', // Make text bold
+    },
+    subTitleText: {
+        fontSize: '20px',
+        fontWeight: '400'
+    },
+    cardContainer: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        width: '100%',
+        gap: '20px',
+    },
+    card: {
+        width: '100%',
+        height: '200px',
+        borderRadius: '20px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        backgroundColor: '#f0f0f0',
+        boxShadow: 'none'
+    },
+    cardContent: {
+        flexGrow: 1,
+    },
+};
+
+export default OnboardingChoice;
