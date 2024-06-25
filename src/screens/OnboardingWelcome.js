@@ -5,8 +5,13 @@ import {blue, indigo} from '@mui/material/colors';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import ButtonBase from '@mui/material/ButtonBase';
 import {Link} from "react-router-dom";
+import {useUserStore} from "../storage/zustand";
+import useInitializeEntityData from "./hooks/useInitializeEntityData";
 
 const OnboardingWelcome = () => {
+    const userId = useUserStore((state) => state.activeUserId);
+    const entityData = useInitializeEntityData(userId);
+
     return (
         <Layout>
             <Box sx={styles.container}>
@@ -35,7 +40,11 @@ const OnboardingWelcome = () => {
             </Box>
             <Box sx={styles.buttonCardContainer} data-testid="button-card-container">
                 <Card sx={styles.buttonCard} data-testid="button-card">
-                    <ButtonBase component={Link} to="/onboarding-username">
+                    <ButtonBase
+                        component={Link}
+                        to={`/profile-section/quick-check-profile`}
+                        state={{ entityData }}
+                    >
                         <CardContent sx={styles.buttonCardContent} data-testid="card-content">
                             <Typography variant="h6" gutterBottom sx={styles.buttonCardText}>
                                 Los geht's!

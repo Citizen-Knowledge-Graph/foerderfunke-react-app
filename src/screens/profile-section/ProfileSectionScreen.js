@@ -4,7 +4,6 @@ import {useParams, useLocation} from "react-router-dom";
 import readJson from "../../utilities/readJson";
 import ProfileSectionContext from "./components/ProfileSectionContext";
 import ProfileSectionList from "./components/ProfileSectionList";
-import ProfileSectionCompleted from "./components/ProfileSectionCompleted";
 
 const ProfileSectionScreen = () => {
     const {id} = useParams();
@@ -48,7 +47,7 @@ const ProfileSectionScreen = () => {
                             (<ProfileSectionList profileSectionData={profileSectionData}
                                                  setProfileSectionData={setProfileSectionData}
                                                  setCompleted={setCompleted}/>)
-                            : (<ProfileSectionCompleted profileSectionData={profileSectionData}/>)
+                            : null
                         }
                     </>)
                 :
