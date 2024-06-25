@@ -17,6 +17,11 @@ export const useProfileSectionStore = create((set, get) => ({
         console.log(`STATE UPDATE: We are retrieving the current profile section`);
         return findDeepestProfileSection(data);
     },
+    retrieveCurrentDatafield() {
+        const data = get().sectionStore;
+        console.log(`STATE UPDATE: We are retrieving the current datafield`);
+        return findDeepestDatafield(data);
+    },
     updateDeepestDatafield: (newDatafield) =>
         console.log('STATE UPDATE: We are updating the deepest datafield') ||
         set((state) => ({
@@ -53,6 +58,13 @@ const findDeepestEntityData = (section) => {
         return section.entityData;
     }
     return findDeepestEntityData(section.nestedSection);
+};
+
+const findDeepestDatafield = (section) => {
+    if (!section.nestedSection) {
+        return section.datafield;
+    }
+    return findDeepestDatafield(section.nestedSection);
 };
 
 const findDeepestProfileSection = (section) => {

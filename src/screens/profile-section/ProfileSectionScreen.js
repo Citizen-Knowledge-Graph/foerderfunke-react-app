@@ -28,8 +28,6 @@ const ProfileSectionScreen = () => {
         setCompleted(false);
     }, [id]);
 
-    console.log("we are back here: ", profileSectionData)
-
     return (
         <Layout>
             {profileSectionData ? (
