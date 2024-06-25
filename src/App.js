@@ -4,7 +4,6 @@ import './index.css';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 import ViewportUpdater from "./components/ViewportUpdater";
 import Home from './screens/Home';
-import Onboarding from './screens/Onboarding';
 import OnboardingWelcome from "./screens/OnboardingWelcome";
 import OnboardingGamifiedScreen from "./screens/onboarding-gamified/OnboardingGamifiedScreen";
 import ProfileSectionScreen from "./screens/profile-section/ProfileSectionScreen";
@@ -28,7 +27,6 @@ const App = () => {
                 <div>
                     <Routes>
                         <Route path="/" element={<Home/>}/>
-                        <Route path="/onboarding" element={<Onboarding/>}/>
                         <Route path="/onboarding-welcome" element={<OnboardingWelcome/>}/>
                         <Route path="/onboarding-gamified" element={<OnboardingGamifiedScreen/>}/>
                         <Route path="/eligibility-overview" element={<EligibilityOverviewScreen/>}/>
