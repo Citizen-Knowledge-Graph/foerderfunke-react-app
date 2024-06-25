@@ -4,7 +4,6 @@ import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
 import {yellow, green} from "@mui/material/colors";
 import useAddProfileField from "../hooks/useAddProfileField";
-import useFetchProfileField from "../hooks/useFetchProfileField";
 import ProfileSectionInput from "./ProfileSectionInput";
 import ProfileSectionClass from "./ProfileSectionClass";
 
@@ -19,13 +18,7 @@ const ProfileSectionField = ({
     const [value, setValue] = useState('');
     const [error, setError] = useState('');
     const addProfileData = useAddProfileField(value, currentField.datafield, entityData);
-    const fetchProfileField = useFetchProfileField(currentField.datafield, entityData);
-
-    useEffect(() => {
-        fetchProfileField()
-            .then(data => setValue(data))
-            .catch(error => console.error('Error fetching profile field:', error));
-    }, [fetchProfileField]);
+    //const fetchProfileField = useFetchProfileField(currentField.datafield, entityData);
 
     useEffect(() => {
         setValue('');
@@ -59,7 +52,8 @@ const ProfileSectionField = ({
                     currentField.datatype !== 'class' ? (
                         <ProfileSectionInput value={value} setValue={setValue} error={error}/>
                     ) : (
-                        <ProfileSectionClass currentField={currentField}
+                        <ProfileSectionClass value={value}
+                                             currentField={currentField}
                                              entityData={entityData}/>
                     )
                 }
@@ -76,7 +70,7 @@ const ProfileSectionField = ({
                 {
                     currentIndex !== 0 ? (
                             <HStack justifyContent={'flex-END'}>
-                                <Button variant="body1" onClick={handleBack}>
+                                <Button variant="body1" onClick={() => handleBack(currentIndex)}>
                                     Vorherige Frage
                                 </Button>
                             </HStack>)

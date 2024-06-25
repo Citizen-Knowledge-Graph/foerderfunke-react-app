@@ -27,19 +27,26 @@ const ProfileSectionList = ({profileSectionData, mode, setCompleted}) => {
         } else {
             setCurrentIndex(0);
         }
+
     }, [profileSectionData, retrieveCurrentDatafield, retrieveCurrentEntityData]);
 
+    console.log('ProfileSectionList', profileSectionData, entityData, currentIndex)
+
     const currentField = profileSectionData.fields[currentIndex];
+    console.log('currentField', currentIndex)
+
     return (
         <VStack sx={{width: '100%', paddingTop: '50px'}} gap={3}>
             <ProfileCompletionBar length={profileSectionData.fields.length} index={currentIndex}/>
             <VStack gap={1}>
-                <ProfileSectionField currentField={currentField}
-                                     currentIndex={currentIndex}
-                                     entityData={entityData}
-                                     handleConfirm={handleConfirm}
-                                     handleBack={handleBack}
-                                     handleSkip={handleSkip}/>
+                {currentField ? (
+                    <ProfileSectionField currentField={currentField}
+                                         currentIndex={currentIndex}
+                                         entityData={entityData}
+                                         handleConfirm={handleConfirm}
+                                         handleBack={handleBack}
+                                         handleSkip={handleSkip}/>
+                ) : null}
             </VStack>
         </VStack>
     );

@@ -8,6 +8,16 @@
       "datatype": "integer"
     },
     {
+      "datafield": "ff:hasBirthPlace",
+      "title": "Wo bist du geboren?",
+      "datatype": "string"
+    },
+    {
+      "datafield": "ff:hasResidence",
+      "title": "Wo lebst du?",
+      "datatype": "string"
+    },
+    {
       "datafield": "ff:hasChild",
       "title": "Do you want to add information on your children?",
       "datatype": "class",

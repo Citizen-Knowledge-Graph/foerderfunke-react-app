@@ -62,7 +62,7 @@ const findDeepestEntityData = (section) => {
 
 const findDeepestDatafield = (section) => {
     if (!section.nestedSection) {
-        return section.datafield;
+        return section.datafield ? section.datafield : null;
     }
     return findDeepestDatafield(section.nestedSection);
 };
