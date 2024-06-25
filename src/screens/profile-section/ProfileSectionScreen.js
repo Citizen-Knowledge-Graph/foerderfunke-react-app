@@ -3,6 +3,7 @@ import Layout from "../../components/Layout";
 import readJson from "../../utilities/readJson";
 import ProfileSectionContext from "./components/ProfileSectionContext";
 import ProfileSectionList from "./components/ProfileSectionList";
+import ProfileSectionCompleted from "./components/ProfileSectionCompleted";
 import {useParams} from "react-router-dom";
 
 const ProfileSectionScreen = () => {
@@ -40,7 +41,9 @@ const ProfileSectionScreen = () => {
                                                  mode={mode}
                                                  setCompleted={setCompleted}
                             />)
-                            : null
+                            : (
+                                <ProfileSectionCompleted/>
+                            )
                         }
                     </>)
                 :

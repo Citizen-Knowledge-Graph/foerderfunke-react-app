@@ -1,15 +1,11 @@
 import React from 'react';
-import {Typography} from '@mui/material';
 import {green, yellow} from '@mui/material/colors';
 import {PieChart} from "@mui/x-charts/PieChart";
 import VStack from "../../../components/VStack";
-import HStack from "../../../components/HStack";
-
-const ProfileCompletedPieChart = ({completedSections, totalSections}) => {
+const ProfileCompletedPieChart = () => {
 
     const data = [
-        { id: 0, value: completedSections },
-        { id: 1, value: totalSections - completedSections},
+        { id: 1, value: 100},
     ];
 
     return (
@@ -19,8 +15,8 @@ const ProfileCompletedPieChart = ({completedSections, totalSections}) => {
                 series={[
                     {
                         data,
-                        innerRadius: 100,
-                        outerRadius: 120,
+                        innerRadius: 60,
+                        outerRadius: 100,
                         paddingAngle: 5,
                         cornerRadius: 5,
                         startAngle: 0,
@@ -33,17 +29,6 @@ const ProfileCompletedPieChart = ({completedSections, totalSections}) => {
                 width={300}
                 height={300}
             />
-            <HStack
-                sx={{
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)',
-                    textAlign: 'center',
-                }}
-            >
-                <Typography variant="h3">{completedSections}/{totalSections}</Typography>
-            </HStack>
         </VStack>
     );
 };

@@ -1,6 +1,6 @@
 import createUserProfile from "../../hooks/createUserProfile";
 import {useUserStore} from "../../../storage/zustand";
-import useInitializeEntityData from "../../profile-section/hooks/useInitializeEntityData";
+import useInitializeEntityData from "./useInitializeEntityData";
 import {useEffect} from "react";
 
 const useInitializeQuickCheckUser = () => {

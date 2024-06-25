@@ -10,13 +10,12 @@ export const useProfileSectionListHandlers = (mode, setCurrentIndex, profileSect
         if (currentIndex < profileSectionData.fields.length - 1) {
             setCurrentIndex(currentIndex + 1);
         } else {
-            console.log('All sections completed');
             if (mode === 'nested') {
                 deleteLastNestedSection();
-                console.log("we are moving to: ", currentProfileSection());
                 navigate(`/profile-section/${currentProfileSection()}/return`);
+            } else {
+                setCompleted(true);
             }
-            setCompleted(true);
         }
     };
 
