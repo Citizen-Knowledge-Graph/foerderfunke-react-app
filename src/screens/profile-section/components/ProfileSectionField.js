@@ -1,9 +1,10 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Button, Card, CardContent, Typography} from '@mui/material';
 import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
 import {yellow, green} from "@mui/material/colors";
 import useAddProfileField from "../hooks/useAddProfileField";
+import useFetchProfileField from "../hooks/useFetchProfileField";
 import ProfileSectionInput from "./ProfileSectionInput";
 import ProfileSectionClass from "./ProfileSectionClass";
 
@@ -15,9 +16,16 @@ const ProfileSectionField = ({
                                  handleBack,
                                  handleSkip
                              }) => {
-    const [value, setValue] = React.useState('');
-    const [error, setError] = React.useState('');
+    const [value, setValue] = useState('');
+    const [error, setError] = useState('');
     const addProfileData = useAddProfileField(value, currentField.datafield, entityData);
+    const fetchProfileField = useFetchProfileField(currentField.datafield, entityData);
+
+    useEffect(() => {
+        fetchProfileField()
+            .then(data => setValue(data))
+            .catch(error => console.error('Error fetching profile field:', error));
+    }, [fetchProfileField]);
 
     useEffect(() => {
         setValue('');
