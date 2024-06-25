@@ -3,23 +3,18 @@ import Layout from "../../components/Layout";
 import readJson from "../../utilities/readJson";
 import ProfileSectionContext from "./components/ProfileSectionContext";
 import ProfileSectionList from "./components/ProfileSectionList";
-import useInitializeQuickCheckUser from "./hooks/useInitializeQuickCheckUser";
+import {useParams} from "react-router-dom";
 
 const ProfileSectionScreen = () => {
-    const entityData = useInitializeQuickCheckUser();
+    const {id} = useParams();
     const [profileSectionData, setProfileSectionData] = useState();
     const [completed, setCompleted] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
-            const filePath = `assets/data/profile-sections/quick-check-profile.json`;
+            const filePath = `assets/data/profile-sections/${id}.json`
             try {
                 const newProfileSectionData = await readJson(filePath);
-                newProfileSectionData.entityData = entityData;
-                newProfileSectionData.fields.map((field) => {
-                    field.nestedEntityData = null;
-                    return field;
-                });
                 setProfileSectionData(newProfileSectionData);
             } catch (error) {
                 console.error('Failed to fetch profile input screen data:', error);
@@ -27,14 +22,12 @@ const ProfileSectionScreen = () => {
         };
 
         fetchData();
-    }, [entityData]);
+    }, [id]);
 
 
     useEffect(() => {
         setCompleted(false);
     }, []);
-
-    console.log('entityData', entityData)
 
     return (
         <Layout>
@@ -43,8 +36,8 @@ const ProfileSectionScreen = () => {
                         <ProfileSectionContext title={profileSectionData.title} infoBox={true}/>
                         {!completed ?
                             (<ProfileSectionList profileSectionData={profileSectionData}
-                                                 setProfileSectionData={setProfileSectionData}
-                                                 setCompleted={setCompleted}/>)
+                                                 setCompleted={setCompleted}
+                            />)
                             : null
                         }
                     </>)

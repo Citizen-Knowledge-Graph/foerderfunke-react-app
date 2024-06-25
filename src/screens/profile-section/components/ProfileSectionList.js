@@ -1,47 +1,33 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import VStack from "../../../components/VStack";
 import ProfileSectionField from "./ProfileSectionField";
 import ProfileCompletionBar from "./ProfileCompletionBar";
+import {useProfileSectionStore} from "../../../storage/useProfileSectionStore";
+import {useProfileSectionListHandlers} from "../hooks/useProfileSectionListHandlers";
 
-const ProfileSectionList = ({profileSectionData, setProfileSectionData, setCompleted}) => {
+const ProfileSectionList = ({profileSectionData, setCompleted}) => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [entityData, setEntityData] = useState({});
+    const retrieveCurrentEntityData = useProfileSectionStore((state) => state.retrieveCurrentEntityData);
+    const {
+        handleConfirm,
+        handleBack,
+        handleSkip
+    } = useProfileSectionListHandlers(setCurrentIndex, profileSectionData, setCompleted);
 
-    const handleConfirm = async () => {
-        if (currentIndex < profileSectionData.fields.length - 1) {
-            setCurrentIndex(currentIndex + 1);
-        } else {
-            console.log('All sections completed');
-            setCompleted(true);
-        }
-    };
+    useEffect(() => {
+        setEntityData(retrieveCurrentEntityData());
+        setCurrentIndex(0);
+    }, [profileSectionData, retrieveCurrentEntityData]);
 
-    const handleBack = () => {
-        if (currentIndex > 0) {
-            setCurrentIndex(currentIndex - 1);
-        } else {
-            console.log('All sections completed');
-        }
-    };
-
-    const handleSkip = () => {
-        if (currentIndex < profileSectionData.fields.length - 1) {
-            setCurrentIndex(currentIndex + 1);
-        } else {
-            console.log('All sections completed');
-        }
-    };
-
-    const currentSection = profileSectionData.fields[currentIndex];
-    const entityData = profileSectionData.fields[currentIndex].nestedEntityData || profileSectionData.entityData
-
+    const currentField = profileSectionData.fields[currentIndex];
     return (
         <VStack sx={{width: '100%', paddingTop: '50px'}} gap={3}>
             <ProfileCompletionBar length={profileSectionData.fields.length} index={currentIndex}/>
             <VStack gap={1}>
-                <ProfileSectionField profileSectionField={currentSection}
-                                     entityData={entityData}
+                <ProfileSectionField currentField={currentField}
                                      currentIndex={currentIndex}
-                                     setProfileSectionData={setProfileSectionData}
+                                     entityData={entityData}
                                      handleConfirm={handleConfirm}
                                      handleBack={handleBack}
                                      handleSkip={handleSkip}/>

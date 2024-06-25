@@ -8,22 +8,21 @@ import ProfileSectionInput from "./ProfileSectionInput";
 import ProfileSectionClass from "./ProfileSectionClass";
 
 const ProfileSectionField = ({
-                                 profileSectionField,
+                                 currentField,
                                  entityData,
                                  currentIndex,
-                                 setProfileSectionData,
                                  handleConfirm,
                                  handleBack,
                                  handleSkip
                              }) => {
     const [value, setValue] = React.useState('');
     const [error, setError] = React.useState('');
-    const addProfileData = useAddProfileField(value, profileSectionField.datafield, entityData);
+    const addProfileData = useAddProfileField(value, currentField.datafield, entityData);
 
     useEffect(() => {
         setValue('');
         setError('');
-    }, [profileSectionField]);
+    }, [currentField]);
 
     const handleAddProfileData = () => {
         addProfileData()
@@ -43,17 +42,17 @@ const ProfileSectionField = ({
                     <Card sx={styles.infoCard} data-testid="card">
                         <CardContent sx={styles.infoCardContent} data-testid="card-content">
                             <Typography variant="body1" gutterBottom sx={styles.titleText}>
-                                {profileSectionField.title}
+                                {currentField.title}
                             </Typography>
                         </CardContent>
                     </Card>
                 </HStack>
                 {
-                    profileSectionField.datatype !== 'class' ? (
+                    currentField.datatype !== 'class' ? (
                         <ProfileSectionInput value={value} setValue={setValue} error={error}/>
                     ) : (
-                        <ProfileSectionClass profileSectionField={profileSectionField}
-                                             setProfileSectionData={setProfileSectionData} entityData={entityData}/>
+                        <ProfileSectionClass currentField={currentField}
+                                             entityData={entityData}/>
                     )
                 }
             </VStack>

@@ -14,7 +14,11 @@ export const runValidation = async (activeUser) => {
 
     // Get the active user profile
     const userProfile = UserModel.retrieveUserData(activeUser);
+    console.log('User profile:', userProfile)
+
     const userProfileString = await convertUserProfileToTurtle(userProfile);
+
+    console.log('User profile:', userProfileString)
 
     // load validation config
     const validationConfig = await readJson('assets/data/requirement-profiles/requirement-profiles.json');

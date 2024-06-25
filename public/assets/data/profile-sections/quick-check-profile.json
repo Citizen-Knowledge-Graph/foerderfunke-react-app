@@ -8,54 +8,10 @@
       "datatype": "integer"
     },
     {
-      "datafield": "ff:hasBirthPlace",
-      "title": "Wo bist du geboren?",
-      "datatype": "string"
-    },
-    {
-      "datafield": "ff:hasResidence",
-      "title": "Wo lebst du?",
-      "datatype": "string"
-    },
-    {
-      "datafield": "ff:hasIncomeBrutto",
-      "title": "What is your income BEFORE taxes?",
-      "datatype": "integer"
-    },
-    {
-      "datafield": "ff:hasIncomeNetto",
-      "title": "What is your income AFTER taxes?",
-      "datatype": "integer"
-    },
-    {
-      "datafield": "ff:hasEmployment",
-      "title": "Where are you employed?",
-      "datatype": "string"
-    },
-    {
-      "datafield": "ff:hasEmploymentType",
-      "title": "What is your employment type?",
-      "datatype": "string"
-    },
-    {
-      "datafield": "ff:hasIncomeBrutto",
-      "title": "What is your income BEFORE taxes?",
-      "datatype": "integer"
-    },
-    {
-      "datafield": "ff:hasIncomeNetto",
-      "title": "What is your income AFTER taxes?",
-      "datatype": "integer"
-    },
-    {
-      "datafield": "ff:hasEmployment",
-      "title": "Where are you employed?",
-      "datatype": "string"
-    },
-    {
-      "datafield": "ff:hasEmploymentType",
-      "title": "What is your employment type?",
-      "datatype": "string"
+      "datafield": "ff:hasChild",
+      "title": "Do you want to add information on your children?",
+      "datatype": "class",
+      "objectClass": "ff:Child"
     }
   ]
 }

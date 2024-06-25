@@ -1,12 +1,18 @@
 import React from 'react';
 import {Box, Card, CardContent, Typography} from '@mui/material';
-import Layout from '../components/Layout';
+import Layout from '../../components/Layout';
 import {blue, indigo} from '@mui/material/colors';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import ButtonBase from '@mui/material/ButtonBase';
 import {Link} from "react-router-dom";
+import useInitializeQuickCheckUser from "./hooks/useInitializeQuickCheckUser";
+import useInitializeProfileSectionStore from "./hooks/useInitializeProfileSectionStore";
 
 const OnboardingWelcome = () => {
+    const entityData = useInitializeQuickCheckUser();
+    const profileSection = 'quick-check-profile';
+    useInitializeProfileSectionStore(profileSection, entityData);
+
     return (
         <Layout>
             <Box sx={styles.container}>
@@ -37,7 +43,7 @@ const OnboardingWelcome = () => {
                 <Card sx={styles.buttonCard} data-testid="button-card">
                     <ButtonBase
                         component={Link}
-                        to={`/profile-section/quick-check-profile`}
+                        to={`/profile-section/${profileSection}`}
                     >
                         <CardContent sx={styles.buttonCardContent} data-testid="card-content">
                             <Typography variant="h6" gutterBottom sx={styles.buttonCardText}>

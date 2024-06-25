@@ -4,7 +4,7 @@ import './index.css';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 import ViewportUpdater from "./components/ViewportUpdater";
 import OnboardingChoice from './screens/OnboardingChoice';
-import OnboardingWelcome from "./screens/OnboardingWelcome";
+import OnboardingWelcome from "./screens/onboarding-welcome/OnboardingWelcome";
 import OnboardingGamifiedScreen from "./screens/onboarding-gamified/OnboardingGamifiedScreen";
 import ProfileSectionScreen from "./screens/profile-section/ProfileSectionScreen";
 import EligibilityOverviewScreen from "./screens/eligibilty-overview/EligibilityOverviewScreen";
