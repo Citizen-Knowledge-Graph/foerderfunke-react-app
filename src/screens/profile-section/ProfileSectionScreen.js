@@ -24,7 +24,6 @@ const ProfileSectionScreen = () => {
         fetchData();
     }, [id]);
 
-
     useEffect(() => {
         setCompleted(false);
     }, []);

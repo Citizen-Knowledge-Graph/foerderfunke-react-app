@@ -30,7 +30,7 @@ const App = () => {
                         <Route path="/onboarding-welcome" element={<OnboardingWelcome/>}/>
                         <Route path="/onboarding-gamified" element={<OnboardingGamifiedScreen/>}/>
                         <Route path="/eligibility-overview" element={<EligibilityOverviewScreen/>}/>
-                        <Route path="/profile-section/:id" element={<ProfileSectionScreen/>}/>
+                        <Route path="/profile-section/:id/:mode?" element={<ProfileSectionScreen/>}/>
                     </Routes>
                 </div>
             </Router>

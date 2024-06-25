@@ -17,6 +17,11 @@ export const useProfileSectionStore = create((set, get) => ({
         set((state) => ({
             sectionStore: updateDeepestDatafield(state.sectionStore, newDatafield),
         })),
+    updateDeepestNestedSection: (newNestedSection) =>
+        console.log('STATE UPDATE: We are updating the deepest nested section') ||
+        set((state) => ({
+            sectionStore: updateDeepestNestedSection(state.sectionStore, newNestedSection),
+        })),
 }));
 
 const updateDeepestDatafield = (section, newDatafield) => {
@@ -38,4 +43,16 @@ const findDeepest = (section) => {
         return section.entityData;
     }
     return findDeepest(section.nestedSection);
+};
+
+const updateDeepestNestedSection = (section, newNestedSection) => {
+    const findDeepestAndUpdate = (section) => {
+        if (!section.nestedSection) {
+            section.nestedSection = newNestedSection;
+            return section;
+        }
+        return findDeepestAndUpdate(section.nestedSection);
+    };
+
+    return findDeepestAndUpdate(section);
 };

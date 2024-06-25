@@ -27,7 +27,7 @@ const ProfileSectionField = ({
     const handleAddProfileData = () => {
         addProfileData()
             .then(() => {
-                handleConfirm();
+                handleConfirm(currentIndex);
                 console.log('Profile data added');
             })
             .catch((err) => {

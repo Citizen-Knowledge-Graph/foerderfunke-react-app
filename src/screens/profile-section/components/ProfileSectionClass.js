@@ -8,9 +8,11 @@ import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutl
 import ClearIcon from '@mui/icons-material/Clear';
 import ButtonBase from "@mui/material/ButtonBase";
 import {useNavigate} from "react-router-dom";
+import useUpdateProfileSectionStore from "../hooks/useUpdateProfileSectionStore";
 
 const ProfileSectionClass = ({currentField, entityData}) => {
     const navigate = useNavigate();
+    const updateProfileSectionStore = useUpdateProfileSectionStore();
     const [objectsMap, setObjectsMap] = useState({
         index: 0,
         objects: []
@@ -29,19 +31,9 @@ const ProfileSectionClass = ({currentField, entityData}) => {
     };
 
     const handleCreateProfileObject = (item) => {
-        const newEntityData = {
-            id: item.replace(" ", ""),
-            type: currentField.objectClass,
-            parentId: entityData.id,
-            parentType: entityData.type,
-            parentDatafield: currentField.datafield,
-        };
-        navigate(`/profile-section/${currentField.objectClass}`, {
-            state: {
-                entityData: newEntityData,
-            }})
-    }
-        ;
+        updateProfileSectionStore(item, currentField, entityData)
+        navigate(`/profile-section/${currentField.objectClass}`)
+    };
 
         return (
             <VStack sx={{width: '100%'}}>
