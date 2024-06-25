@@ -3,14 +3,19 @@
   "title": "Child",
   "fields": [
     {
-      "datafield": "ff:hasIncomeBrutto",
-      "title": "What is your income BEFORE taxes?",
-      "datatype": "integer"
+      "datafield": "ff:hasBirthday",
+      "title": "When is your child's birthday?",
+      "datatype": "string"
     },
     {
-      "datafield": "ff:hasIncomeNetto",
-      "title": "What is your income AFTER taxes?",
-      "datatype": "integer"
+      "datafield": "ff:hasMaritalStatus",
+      "title": "What is your child's marital status?",
+      "datatype": "string"
+    },
+    {
+      "datafield": "ff:receiveKindergeld",
+      "title": "How much if any Kindergeld do you receive?",
+      "datatype": "string"
     }
   ]
 }

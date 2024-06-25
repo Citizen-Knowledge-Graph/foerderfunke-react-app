@@ -8,13 +8,38 @@
       "datatype": "integer"
     },
     {
-      "datafield": "ff:hasBirthPlace",
-      "title": "Wo bist du geboren?",
+      "datafield": "ff:paysRentCold",
+      "title": "How much rent do you pay?",
+      "datatype": "string"
+    },
+    {
+      "datafield": "ff:hasLivingArea",
+      "title": "How many square meters do you have?",
       "datatype": "string"
     },
     {
       "datafield": "ff:hasResidence",
-      "title": "Wo lebst du?",
+      "title": "Where do you live",
+      "datatype": "string"
+    },
+    {
+      "datafield": "ff:parentingSetup",
+      "title": "What is your parenting setup?",
+      "datatype": "string"
+    },
+    {
+      "datafield": "ff:receivesWohngeld",
+      "title": "How much if any wohngeld do you receive?",
+      "datatype": "string"
+    },
+    {
+      "datafield": "ff:hasIncomeBrutto",
+      "title": "What is your income before taxes?",
+      "datatype": "string"
+    },
+    {
+      "datafield": "ff:hasIncomeNetto",
+      "title": "What is your income after taxes?",
       "datatype": "string"
     },
     {
