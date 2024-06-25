@@ -1,20 +1,20 @@
 import React, {useState, useEffect} from 'react';
 import Layout from "../../components/Layout";
-import {useParams, useLocation} from "react-router-dom";
 import readJson from "../../utilities/readJson";
 import ProfileSectionContext from "./components/ProfileSectionContext";
 import ProfileSectionList from "./components/ProfileSectionList";
+import useInitializeEntityData from "./hooks/useInitializeEntityData";
+import {useUserStore} from "../../storage/zustand";
 
 const ProfileSectionScreen = () => {
-    const {id} = useParams();
-    const location = useLocation();
-    const {entityData} = location.state || {};
+    const userId = useUserStore((state) => state.activeUserId);
+    const entityData = useInitializeEntityData(userId);
     const [profileSectionData, setProfileSectionData] = useState();
     const [completed, setCompleted] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
-            const filePath = `assets/data/profile-sections/${id}.json`;
+            const filePath = `assets/data/profile-sections/quick-check-profile.json`;
             try {
                 const newProfileSectionData = await readJson(filePath);
                 newProfileSectionData.entityData = entityData;
@@ -29,12 +29,12 @@ const ProfileSectionScreen = () => {
         };
 
         fetchData();
-    }, [id]);
+    }, [entityData]);
 
 
     useEffect(() => {
         setCompleted(false);
-    }, [id]);
+    }, []);
 
     console.log('entityData', entityData)
 
@@ -42,7 +42,7 @@ const ProfileSectionScreen = () => {
         <Layout>
             {profileSectionData ? (
                     <>
-                        <ProfileSectionContext title={profileSectionData.title} infoBox={id === 'about-you'}/>
+                        <ProfileSectionContext title={profileSectionData.title} infoBox={true}/>
                         {!completed ?
                             (<ProfileSectionList profileSectionData={profileSectionData}
                                                  setProfileSectionData={setProfileSectionData}
