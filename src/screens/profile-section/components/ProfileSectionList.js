@@ -30,10 +30,7 @@ const ProfileSectionList = ({profileSectionData, mode, setCompleted}) => {
 
     }, [profileSectionData, retrieveCurrentDatafield, retrieveCurrentEntityData]);
 
-    console.log('ProfileSectionList', profileSectionData, entityData, currentIndex)
-
     const currentField = profileSectionData.fields[currentIndex];
-    console.log('currentField', currentIndex)
 
     return (
         <VStack sx={{width: '100%', paddingTop: '50px'}} gap={3}>

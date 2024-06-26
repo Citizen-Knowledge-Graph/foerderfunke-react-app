@@ -7,6 +7,7 @@ export const useProfileSectionListHandlers = (mode, setCurrentIndex, profileSect
     const currentProfileSection = useProfileSectionStore((state) => state.retrieveCurrentProfileSection);
 
     const handleConfirm = async (currentIndex) => {
+        console.log('handleConfirm', currentIndex, profileSectionData);
         if (currentIndex < profileSectionData.fields.length - 1) {
             setCurrentIndex(currentIndex + 1);
         } else {

@@ -3,9 +3,11 @@ import {Button, Card, CardContent, Typography} from '@mui/material';
 import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
 import {yellow, green} from "@mui/material/colors";
-import useAddProfileField from "../hooks/useAddProfileField";
 import ProfileSectionInput from "./ProfileSectionInput";
 import ProfileSectionClass from "./ProfileSectionClass";
+import useAddProfileField from '../hooks/useAddProfileField';
+import useInputValidation from "../hooks/useInputValidation";
+
 
 const ProfileSectionField = ({
                                  currentField,
@@ -16,25 +18,36 @@ const ProfileSectionField = ({
                                  handleSkip
                              }) => {
     const [value, setValue] = useState('');
-    const [error, setError] = useState('');
-    const addProfileData = useAddProfileField(value, currentField.datafield, entityData);
+    const [localError, setLocalError] = useState('');
+    const validateValue = useInputValidation(currentField.datatype);
+    const addProfileData = useAddProfileField(currentField, entityData, handleConfirm);
     //const fetchProfileField = useFetchProfileField(currentField.datafield, entityData);
 
     useEffect(() => {
         setValue('');
-        setError('');
+        setLocalError('');
     }, [currentField]);
 
-    const handleAddProfileData = () => {
-        addProfileData()
+    const handleAddClick = () => {
+        validateValue(value)
             .then(() => {
-                handleConfirm(currentIndex);
-                console.log('Profile data added');
-            })
+                    addProfileData(value)
+                        .then(() => {
+                            handleConfirm(currentIndex);
+                            console.log('Profile data added')
+                        })
+                        .catch((err) => {
+                            console.log('Error adding profile data', err);
+                            setLocalError(err);
+                        });
+                }
+            )
             .catch((err) => {
-                setError(err.message);
-            });
-    };
+                    console.log('Error validating input', err);
+                    setLocalError(err);
+                }
+            )
+    }
 
     return (
         <VStack gap={7}>
@@ -50,7 +63,7 @@ const ProfileSectionField = ({
                 </HStack>
                 {
                     currentField.datatype !== 'class' ? (
-                        <ProfileSectionInput value={value} setValue={setValue} error={error}/>
+                        <ProfileSectionInput value={value} setValue={setValue} error={localError}/>
                     ) : (
                         <ProfileSectionClass value={value}
                                              currentField={currentField}
@@ -63,7 +76,7 @@ const ProfileSectionField = ({
                     <Button variant="body1" onClick={handleSkip}>
                         Skip
                     </Button>
-                    <Button variant="body1" sx={styles.buttonText} onClick={handleAddProfileData}>
+                    <Button variant="body1" sx={styles.buttonText} onClick={handleAddClick}>
                         Bestätigen
                     </Button>
                 </HStack>

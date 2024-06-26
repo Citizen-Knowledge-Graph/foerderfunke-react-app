@@ -29,8 +29,6 @@ const ProfileSectionScreen = () => {
         setCompleted(false);
     }, [id]);
 
-    console.log('ProfileSectionScreen', profileSectionData)
-
     return (
         <Layout>
             {profileSectionData ? (
