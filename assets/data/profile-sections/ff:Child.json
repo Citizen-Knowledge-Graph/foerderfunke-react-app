@@ -3,9 +3,9 @@
   "title": "Child",
   "fields": [
     {
-      "datafield": "ff:hasBirthday",
-      "title": "When is your child's birthday?",
-      "datatype": "string"
+      "datafield": "ff:age",
+      "title": "How old is the child?",
+      "datatype": "integer"
     },
     {
       "datafield": "ff:hasMaritalStatus",
