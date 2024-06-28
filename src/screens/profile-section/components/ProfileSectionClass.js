@@ -9,10 +9,12 @@ import ClearIcon from '@mui/icons-material/Clear';
 import ButtonBase from "@mui/material/ButtonBase";
 import {useNavigate} from "react-router-dom";
 import useUpdateProfileSectionStore from "../hooks/useUpdateProfileSectionStore";
+import useRemoveProfileObject from "../hooks/useRemoveProfileObject";
 
 const ProfileSectionClass = ({value, currentField, entityData}) => {
     const navigate = useNavigate();
     const updateProfileSectionStore = useUpdateProfileSectionStore();
+    const removeProfileObject = useRemoveProfileObject(currentField, entityData);
     const [objectsMap, setObjectsMap] = useState({
         index: 0,
         objects: []
@@ -35,8 +37,16 @@ const ProfileSectionClass = ({value, currentField, entityData}) => {
         });
     };
 
-    const handleRemoveObject = (index) => {
-        const newObjects = objectsMap.objects.filter((_, i) => i !== index);
+    const handleRemoveObject = (item) => {
+        removeProfileObject(item)
+            .then(() => {
+                console.log('Profile field removed');
+            })
+            .catch((err) => {
+                console.log('Error removing profile field', err);
+            });
+
+        const newObjects = objectsMap.objects.filter((obj) => obj !== item);
         setObjectsMap({index: objectsMap.index, objects: newObjects});
     };
 
@@ -64,7 +74,7 @@ const ProfileSectionClass = ({value, currentField, entityData}) => {
                                 <Typography>{item}</Typography>
                             </HStack>
                             <HStack alignItems={'center'} gap={3}>
-                                <ButtonBase onClick={() => handleRemoveObject(index)}>
+                                <ButtonBase onClick={() => handleRemoveObject(item)}>
                                     <ClearIcon/>
                                 </ButtonBase>
                                 <ButtonBase onClick={() => handleCreateProfileObject(item)}>

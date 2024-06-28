@@ -46,6 +46,25 @@ export class UserModel {
         UserModel.storeUserData(userProfile);
     }
 
+    static removeObjectFromField(userId, objectId, datafield, entityData) {
+        let userProfile = UserModel.retrieveUserData(userId);
+
+        if (!userProfile) {
+            throw new Error(`User profile not found for userId: ${userId}`);
+        }
+
+        console.log("we are here")
+        const removed = removeObjectFromField(userProfile, objectId, datafield, entityData);
+
+        if (!removed) {
+            throw new Error(
+                `Could not remove datafield ${entityData.datafield} in user profile`
+            );
+        }
+
+        UserModel.storeUserData(userProfile);
+    }
+
     static retrieveUserField(userId, datafield, entityData) {
         let userProfile = UserModel.retrieveUserData(userId);
 
@@ -141,4 +160,41 @@ function retrieveField(data, datafield, entityData) {
     }
 
     return null;
+}
+
+function removeObjectFromField(data, objectId, datafield, entityData) {
+    console.log('data 1', objectId)
+    console.log('data 2', datafield)
+    console.log('data 3', entityData)
+
+    if (data['@id'] === entityData.id && data['@type'] === entityData.type) {
+        if (Array.isArray(data[datafield])) {
+            data[datafield] = data[datafield].filter(child => child['@id'] !== objectId);
+            return true;
+        }
+        return false;
+    }
+
+    if (data['@id'] === entityData.parentId && data['@type'] === entityData.parentType) {
+        if (Array.isArray(data[entityData.parentDatafield])) {
+            for (let item of data[entityData.parentDatafield]) {
+                if (removeObjectFromField(item, objectId, datafield, entityData)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    for (const key in data) {
+        if (Array.isArray(data[key])) {
+            for (let item of data[key]) {
+                if (removeObjectFromField(item, objectId, datafield, entityData)) {
+                    return true;
+                }
+            }
+        }
+    }
+
+    return false;
 }

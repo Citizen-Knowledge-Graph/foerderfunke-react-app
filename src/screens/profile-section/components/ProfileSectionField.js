@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import {Button, Card, CardContent, Typography} from '@mui/material';
+import {Button, ButtonBase, Card, CardContent, Typography} from '@mui/material';
 import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
-import {yellow, green} from "@mui/material/colors";
+import {yellow, indigo} from "@mui/material/colors";
 import ProfileSectionInput from "./ProfileSectionInput";
 import ProfileSectionClass from "./ProfileSectionClass";
 import useAddProfileField from '../hooks/useAddProfileField';
@@ -57,8 +57,6 @@ const ProfileSectionField = ({
             )
     }
 
-    console.log('current value', value)
-
     return (
         <VStack gap={7}>
             <VStack gap={2}>
@@ -81,24 +79,32 @@ const ProfileSectionField = ({
                     )
                 }
             </VStack>
-            <VStack gap={2}>
+            <VStack data-testid="button-card-container">
                 <HStack justifyContent={'space-between'}>
                     <Button variant="body1" onClick={handleSkip}>
                         Skip
                     </Button>
-                    <Button variant="body1" sx={styles.buttonText} onClick={handleAddClick}>
-                        Bestätigen
-                    </Button>
+                    {
+                        currentIndex !== 0 ? (
+                                <HStack justifyContent={'flex-END'}>
+                                    <Button variant="body1" onClick={() => handleBack(currentIndex)}>
+                                        Vorherige Frage
+                                    </Button>
+                                </HStack>)
+                            : null
+                    }
                 </HStack>
-                {
-                    currentIndex !== 0 ? (
-                            <HStack justifyContent={'flex-END'}>
-                                <Button variant="body1" onClick={() => handleBack(currentIndex)}>
-                                    Vorherige Frage
-                                </Button>
-                            </HStack>)
-                        : null
-                }
+                <Card sx={styles.buttonCardComplete} data-testid="button-card">
+                    <CardContent sx={styles.buttonCardContent} data-testid="card-content">
+                        <HStack justifyContent={'center'}>
+                            <ButtonBase onClick={handleAddClick}>
+                                <Typography variant="h6" gutterBottom sx={styles.buttonCardText}>
+                                    Confirm
+                                </Typography>
+                            </ButtonBase>
+                        </HStack>
+                    </CardContent>
+                </Card>
             </VStack>
         </VStack>
     );
@@ -125,13 +131,24 @@ const styles = {
             paddingBottom: '16px',
         }
     },
-    buttonText: {
-        backgroundColor: green[200],
-        fontWeight: 'bold',
-        margin: '0px',
-        '&:focus': {
-            backgroundColor: green[200],
-        },
+    buttonCardComplete: {
+        display: 'flex',
+        flexDirection: 'column',
+        backgroundColor: indigo[900],
+        borderRadius: '15px',
+        boxShadow: 'none',
+    },
+    buttonCardContent: {
+        padding: '16px',
+        "&:last-child": {
+            paddingBottom: '16px',
+        }
+    },
+    buttonCardText: {
+        color: 'white',
+        fontWeight: '500',
+        textAlign: 'center',
+        margin: '0',
     },
 };
 
