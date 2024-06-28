@@ -8,6 +8,17 @@
       "datatype": "integer"
     },
     {
+      "datafield": "ff:hasGender",
+      "title": "What is your gender?",
+      "datatype": "selection",
+      "choices": [
+        "weiblich",
+        "männlich",
+        "divers",
+        "keine Angabe"
+      ]
+    },
+    {
       "datafield": "ff:paysRentCold",
       "title": "How much rent do you pay?",
       "datatype": "integer"
@@ -25,7 +36,11 @@
     {
       "datafield": "ff:parentingSetup",
       "title": "What is your parenting setup?",
-      "datatype": "string"
+      "datatype": "selection",
+      "choices": [
+        "ff:Alleinerziehend",
+        "ff:Elternpaar"
+      ]
     },
     {
       "datafield": "ff:receivesWohngeld",

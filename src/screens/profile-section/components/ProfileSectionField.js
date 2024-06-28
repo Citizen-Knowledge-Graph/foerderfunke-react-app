@@ -5,6 +5,7 @@ import HStack from "../../../components/HStack";
 import {yellow, indigo} from "@mui/material/colors";
 import ProfileSectionInput from "./ProfileSectionInput";
 import ProfileSectionClass from "./ProfileSectionClass";
+import ProfileSectionSelection from "./ProfileSectionSelection";
 import useAddProfileField from '../hooks/useAddProfileField';
 import useInputValidation from "../hooks/useInputValidation";
 import useFetchProfileField from "../hooks/useFetchProfileField";
@@ -41,6 +42,7 @@ const ProfileSectionField = ({
             .then(() => {
                     addProfileData(value)
                         .then(() => {
+                            setValue('')
                             handleConfirm(currentIndex);
                             console.log('Profile data added')
                         })
@@ -69,15 +71,15 @@ const ProfileSectionField = ({
                         </CardContent>
                     </Card>
                 </HStack>
-                {
-                    currentField.datatype !== 'class' ? (
-                        <ProfileSectionInput value={value} setValue={setValue} error={localError}/>
-                    ) : (
-                        <ProfileSectionClass value={value}
-                                             currentField={currentField}
-                                             entityData={entityData}/>
-                    )
-                }
+                {currentField.datatype === 'selection' ? (
+                    <ProfileSectionSelection value={value} setValue={setValue} currentField={currentField} error={localError} />
+                ) : currentField.datatype !== 'class' ? (
+                    <ProfileSectionInput value={value} setValue={setValue} error={localError} />
+                ) : (
+                    <ProfileSectionClass value={value}
+                                         currentField={currentField}
+                                         entityData={entityData} />
+                )}
             </VStack>
             <VStack data-testid="button-card-container">
                 <HStack justifyContent={'space-between'}>
