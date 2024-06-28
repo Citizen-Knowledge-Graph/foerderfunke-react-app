@@ -32,21 +32,19 @@ const ProfileSectionScreen = () => {
     return (
         <Layout>
             {profileSectionData ? (
+                !completed ? (
                     <>
                         <ProfileSectionContext title={profileSectionData.title} infoBox={true}/>
-                        {!completed ?
-                            (<ProfileSectionList profileSectionData={profileSectionData}
-                                                 mode={mode}
-                                                 setCompleted={setCompleted}
-                            />)
-                            : (
-                                <ProfileSectionCompleted/>
-                            )
-                        }
-                    </>)
-                :
-                null
-            }
+                        <ProfileSectionList
+                            profileSectionData={profileSectionData}
+                            mode={mode}
+                            setCompleted={setCompleted}
+                        />
+                    </>
+                ) : (
+                    <ProfileSectionCompleted/>
+                )
+            ) : null}
         </Layout>
 
     );

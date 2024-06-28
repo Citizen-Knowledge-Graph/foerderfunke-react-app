@@ -19,10 +19,11 @@ const ProfileSectionClass = ({value, currentField, entityData}) => {
     });
 
     useEffect(() => {
-        if (value.length > 0) {
+        if (Array.isArray(value)) {
+            console.log('value', value);
             setObjectsMap({
                 index: value.length,
-                objects: value.map(item => item['@id'])
+                objects: value?.map(item => item['@id'])
             });
         }
     }, [value]);
@@ -30,7 +31,7 @@ const ProfileSectionClass = ({value, currentField, entityData}) => {
     const handleAddObjectLink = () => {
         setObjectsMap({
             index: objectsMap.index + 1,
-            objects: [...objectsMap.objects, `${currentField.objectClass} ${objectsMap.index}`]
+            objects: [...objectsMap.objects, `${currentField.objectClass}${objectsMap.index}`]
         });
     };
 

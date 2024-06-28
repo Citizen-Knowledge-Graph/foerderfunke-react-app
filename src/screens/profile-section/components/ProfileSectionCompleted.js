@@ -4,13 +4,19 @@ import HStack from "../../../components/HStack";
 import {ButtonBase, Card, CardContent, Typography} from "@mui/material";
 import {Link} from "react-router-dom";
 import {green, yellow} from "@mui/material/colors";
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const ProfileSectionCompleted = () => {
     return (
-        <VStack justifyContent={'center'} gap={3}>
+        <VStack justifyContent={'center'} gap={3} sx={{height: "90vh"}}>
             <HStack justifyContent={'center'} sx={{width: "100%"}}>
-                <VStack gap={1} alignItems={'center'}>
-                    <Typography variant="h4">Your quick check profile is ready</Typography>
+                <VStack gap={1} alignItems={'center'} sx={styles.completeTextBox}>
+                    <CheckCircleIcon sx={styles.icon}/>
+                </VStack>
+            </HStack>
+            <HStack justifyContent={'center'} sx={{width: "100%"}}>
+                <VStack gap={1} alignItems={'center'} sx={styles.completeTextBox}>
+                    <Typography variant="h4" sx={styles.completeText}>Your quick check is complete</Typography>
                 </VStack>
             </HStack>
             <VStack data-testid="button-card-container">
@@ -56,9 +62,18 @@ const styles = {
         textAlign: 'center',
         margin: '0',
     },
+    completeTextBox: {
+        paddingLeft: '45px',
+        paddingRight: '45px',
+    },
+    completeText: {
+        fontWeight: 'bold',
+        textAlign: 'center',
+    },
     icon: {
-        width: '30px',
-        height: '30px',
+        width: '80px',
+        height: '80px',
+        color: green[500],
     },
     buttonNext: {
         backgroundColor: green[500],

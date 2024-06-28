@@ -48,7 +48,7 @@ const styles = {
         backgroundColor: 'white',
         boxShadow: 'none',
         color: 'black',
-        height: '80px',
+        height: '10vh',
     },
     contentContainerStyle: {
         flex: 1,
