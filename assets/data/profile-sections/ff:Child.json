@@ -10,7 +10,19 @@
     {
       "datafield": "ff:hasMaritalStatus",
       "title": "What is your child's marital status?",
-      "datatype": "string"
+      "datatype": "selection",
+      "choices": [
+        "LD",
+        "VH",
+        "VW",
+        "GS",
+        "EA",
+        "LP",
+        "LV",
+        "LA",
+        "LE",
+        "NB"
+      ]
     },
     {
       "datafield": "ff:receiveKindergeld",
