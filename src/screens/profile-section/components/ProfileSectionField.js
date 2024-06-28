@@ -7,7 +7,7 @@ import ProfileSectionInput from "./ProfileSectionInput";
 import ProfileSectionClass from "./ProfileSectionClass";
 import useAddProfileField from '../hooks/useAddProfileField';
 import useInputValidation from "../hooks/useInputValidation";
-
+import useFetchProfileField from "../hooks/useFetchProfileField";
 
 const ProfileSectionField = ({
                                  currentField,
@@ -21,12 +21,20 @@ const ProfileSectionField = ({
     const [localError, setLocalError] = useState('');
     const validateValue = useInputValidation(currentField.datatype);
     const addProfileData = useAddProfileField(currentField, entityData, handleConfirm);
-    //const fetchProfileField = useFetchProfileField(currentField.datafield, entityData);
+    const fetchProfileField = useFetchProfileField(currentField.datafield, entityData);
 
     useEffect(() => {
         setValue('');
         setLocalError('');
-    }, [currentField]);
+        fetchProfileField().then(fieldData => {
+            if (fieldData) {
+                console.log('Field data', fieldData);
+                setValue(fieldData);
+            }
+        }).catch(error => {
+            console.log('Error fetching profile field', error);
+        });
+    }, [currentField, fetchProfileField]);
 
     const handleAddClick = () => {
         validateValue(value)
