@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import HStack from "../../../components/HStack";
 import VStack from "../../../components/VStack";
 import {Button, Card, CardContent, Typography} from "@mui/material";
@@ -10,13 +10,22 @@ import ButtonBase from "@mui/material/ButtonBase";
 import {useNavigate} from "react-router-dom";
 import useUpdateProfileSectionStore from "../hooks/useUpdateProfileSectionStore";
 
-const ProfileSectionClass = ({currentField, entityData}) => {
+const ProfileSectionClass = ({value, currentField, entityData}) => {
     const navigate = useNavigate();
     const updateProfileSectionStore = useUpdateProfileSectionStore();
     const [objectsMap, setObjectsMap] = useState({
         index: 0,
         objects: []
     });
+
+    useEffect(() => {
+        if (value.length > 0) {
+            setObjectsMap({
+                index: value.length,
+                objects: value.map(item => item['@id'])
+            });
+        }
+    }, [value]);
 
     const handleAddObjectLink = () => {
         setObjectsMap({

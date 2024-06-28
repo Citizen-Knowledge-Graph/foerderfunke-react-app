@@ -57,6 +57,8 @@ const ProfileSectionField = ({
             )
     }
 
+    console.log('current value', value)
+
     return (
         <VStack gap={7}>
             <VStack gap={2}>
