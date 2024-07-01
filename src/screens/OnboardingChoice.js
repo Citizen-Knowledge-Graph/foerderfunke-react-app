@@ -24,7 +24,7 @@ const OnboardingChoice = () => {
                             <Card sx={styles.infoCard}>
                                 <CardContent sx={styles.infoCardContent}>
                                     <HStack gap={1}>
-                                        <AccessTimeIcon/>
+                                        <AccessTimeIcon sx={{color: "green"}}/>
                                         <Typography variant="body2" sx={styles.infoCardText}>
                                             5 Min.
                                         </Typography>
@@ -45,18 +45,32 @@ const OnboardingChoice = () => {
                     </VStack>
                 </Link>
             </VStack>
-            <VStack data-testid="card-container" sx={{width: "100%"}}>
+            <VStack data-testid="card-container" sx={styles.card}>
                 <Link to="/onboarding-welcome" style={{textDecoration: 'none', color: "black", width: '100%'}}>
-                    <HStack justifyContent={'flex-start'} gap={1} sx={styles.card}>
-                        <VStack gap={1} justifyContent={'flex-end'}>
-                            <Typography variant="body" sx={styles.cardContentTitle}>
-                                Browse benefits
-                            </Typography>
-                            <Typography variant="h6" sx={styles.cardContentSubTitle}>
-                                Filter by topic and from A-Z
-                            </Typography>
-                        </VStack>
-                    </HStack>
+                    <VStack justifyContent={'space-between'}>
+                        <HStack justifyContent={'flex-end'} gap={1}>
+                            <Card sx={styles.infoCard}>
+                                <CardContent sx={styles.infoCardContent}>
+                                    <HStack gap={1}>
+                                        <AccessTimeIcon sx={{color: "green"}}/>
+                                        <Typography variant="body2" sx={styles.infoCardText}>
+                                            At your own pace
+                                        </Typography>
+                                    </HStack>
+                                </CardContent>
+                            </Card>
+                        </HStack>
+                        <HStack justifyContent={'flex-start'} gap={1}>
+                            <VStack gap={0} justifyContent={'flex-end'}>
+                                <Typography sx={styles.cardContentTitle}>
+                                    Browse all benefits
+                                </Typography>
+                                <Typography sx={styles.cardContentSubTitle}>
+                                    Filter by topic and from A-Z
+                                </Typography>
+                            </VStack>
+                        </HStack>
+                    </VStack>
                 </Link>
             </VStack>
         </Layout>
