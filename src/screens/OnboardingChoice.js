@@ -1,9 +1,10 @@
 import React from 'react';
-import {Typography} from '@mui/material';
+import {Card, CardContent, Typography} from '@mui/material';
 import {Link} from 'react-router-dom';
 import Layout from '../components/Layout';
 import VStack from "../components/VStack";
 import HStack from "../components/HStack";
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 const OnboardingChoice = () => {
     return (
@@ -16,18 +17,32 @@ const OnboardingChoice = () => {
                     Three ways of discovering benefits for you
                 </Typography>
             </VStack>
-            <VStack data-testid="card-container" sx={{width: "100%"}}>
+            <VStack data-testid="card-container" sx={styles.card}>
                 <Link to="/onboarding-welcome" style={{textDecoration: 'none', color: "black", width: '100%'}}>
-                    <HStack justifyContent={'flex-start'} gap={1} sx={styles.card}>
-                        <VStack gap={0} justifyContent={'flex-end'}>
-                            <Typography sx={styles.cardContentTitle}>
-                                Quick eligibility check
-                            </Typography>
-                            <Typography sx={styles.cardContentSubTitle}>
-                                Based on 10 benefits
-                            </Typography>
-                        </VStack>
-                    </HStack>
+                    <VStack justifyContent={'space-between'}>
+                        <HStack justifyContent={'flex-end'} gap={1}>
+                            <Card sx={styles.infoCard}>
+                                <CardContent sx={styles.infoCardContent}>
+                                    <HStack gap={1}>
+                                        <AccessTimeIcon/>
+                                        <Typography variant="body2" sx={styles.infoCardText}>
+                                            5 Min.
+                                        </Typography>
+                                    </HStack>
+                                </CardContent>
+                            </Card>
+                        </HStack>
+                        <HStack justifyContent={'flex-start'} gap={1}>
+                            <VStack gap={0} justifyContent={'flex-end'}>
+                                <Typography sx={styles.cardContentTitle}>
+                                    Quick eligibility check
+                                </Typography>
+                                <Typography sx={styles.cardContentSubTitle}>
+                                    Based on 10 benefits
+                                </Typography>
+                            </VStack>
+                        </HStack>
+                    </VStack>
                 </Link>
             </VStack>
             <VStack data-testid="card-container" sx={{width: "100%"}}>
@@ -77,6 +92,22 @@ const styles = {
         fontSize: '16px',
         fontWeight: '400',
         color: "white"
+    },
+    infoCard: {
+        borderRadius: '12px',
+    },
+    infoCardContent: {
+        padding: "4px 12px",
+        paddingLeft: '4px',
+        paddingRight: '4px',
+        "&:last-child": {
+            paddingBottom: '4px',
+        }
+    },
+    infoCardText: {
+        color: "black",
+        fontSize: '16px',
+        fontWeight: '400',
     }
 };
 
