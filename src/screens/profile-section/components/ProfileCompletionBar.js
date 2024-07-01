@@ -1,28 +1,20 @@
 import React from "react";
-import {Card} from "@mui/material";
-import {green, yellow} from "@mui/material/colors";
 import HStack from "../../../components/HStack";
+import LinearProgress from '@mui/material/LinearProgress';
 
-const ProfileCompletionBar = ({ length, index }) => {
+const ProfileCompletionBar = ({length, index}) => {
     return (
-        <HStack justifyContent="space-between" sx={{ width: '100%' }} gap={1}>
-            {Array.from({ length: length }).map((_, i) => (
-                <Card
-                    key={i}
-                    sx={{
-                        flexGrow: 1,
-                        height: '10px',
-                        backgroundColor: i === index ? yellow[500] : (i < index ? green[500] : 'rgba(0, 0, 0, 0.1)'),
-                        boxShadow: 'none',
-                        margin: '0px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                    }}
-                />
-            ))}
+        <HStack justifyContent="space-between" sx={{width: '100%'}} gap={1}>
+            <LinearProgress variant="determinate" value={(index/length) * 100} sx={styles.progressBar}/>
         </HStack>
     );
+}
+
+const styles = {
+    progressBar: {
+        width: '100%',
+        height: '10px',
+    }
 }
 
 export default ProfileCompletionBar;
