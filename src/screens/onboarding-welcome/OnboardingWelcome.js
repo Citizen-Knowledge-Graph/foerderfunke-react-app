@@ -17,7 +17,7 @@ const OnboardingWelcome = () => {
         <Layout>
             <Box sx={styles.container}>
                 <Typography variant="h4" gutterBottom sx={styles.titleText}>
-                    Entdecke personalisierte Leistungen
+                    Quick eligibility check
                 </Typography>
                 <Typography variant="body1" gutterBottom sx={styles.subTitleText}>
                     Answer some questions about you and find out to which benefits you might be eligible to. The more
@@ -66,6 +66,7 @@ const styles = {
     },
     titleText: {
         fontWeight: 'bold',
+        fontSize: '28px',
     },
     subTitleText: {
         fontSize: '16px',

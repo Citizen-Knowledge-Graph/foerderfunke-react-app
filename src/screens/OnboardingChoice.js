@@ -1,10 +1,8 @@
 import React from 'react';
-import {Card, CardContent, Typography} from '@mui/material';
-import {Link} from 'react-router-dom';
+import {Typography} from '@mui/material';
 import Layout from '../components/Layout';
 import VStack from "../components/VStack";
-import HStack from "../components/HStack";
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import ClickCard from "../components/ClickCard";
 
 const OnboardingChoice = () => {
     return (
@@ -17,62 +15,20 @@ const OnboardingChoice = () => {
                     Three ways of discovering benefits for you
                 </Typography>
             </VStack>
-            <VStack data-testid="card-container" sx={styles.card}>
-                <Link to="/onboarding-welcome" style={{textDecoration: 'none', color: "black", width: '100%'}}>
-                    <VStack justifyContent={'space-between'}>
-                        <HStack justifyContent={'flex-end'} gap={1}>
-                            <Card sx={styles.infoCard}>
-                                <CardContent sx={styles.infoCardContent}>
-                                    <HStack gap={1}>
-                                        <AccessTimeIcon sx={{color: "green"}}/>
-                                        <Typography variant="body2" sx={styles.infoCardText}>
-                                            5 Min.
-                                        </Typography>
-                                    </HStack>
-                                </CardContent>
-                            </Card>
-                        </HStack>
-                        <HStack justifyContent={'flex-start'} gap={1}>
-                            <VStack gap={0} justifyContent={'flex-end'}>
-                                <Typography sx={styles.cardContentTitle}>
-                                    Quick eligibility check
-                                </Typography>
-                                <Typography sx={styles.cardContentSubTitle}>
-                                    Based on 10 benefits
-                                </Typography>
-                            </VStack>
-                        </HStack>
-                    </VStack>
-                </Link>
-            </VStack>
-            <VStack data-testid="card-container" sx={styles.card}>
-                <Link to="/onboarding-welcome" style={{textDecoration: 'none', color: "black", width: '100%'}}>
-                    <VStack justifyContent={'space-between'}>
-                        <HStack justifyContent={'flex-end'} gap={1}>
-                            <Card sx={styles.infoCard}>
-                                <CardContent sx={styles.infoCardContent}>
-                                    <HStack gap={1}>
-                                        <AccessTimeIcon sx={{color: "green"}}/>
-                                        <Typography variant="body2" sx={styles.infoCardText}>
-                                            At your own pace
-                                        </Typography>
-                                    </HStack>
-                                </CardContent>
-                            </Card>
-                        </HStack>
-                        <HStack justifyContent={'flex-start'} gap={1}>
-                            <VStack gap={0} justifyContent={'flex-end'}>
-                                <Typography sx={styles.cardContentTitle}>
-                                    Browse all benefits
-                                </Typography>
-                                <Typography sx={styles.cardContentSubTitle}>
-                                    Filter by topic and from A-Z
-                                </Typography>
-                            </VStack>
-                        </HStack>
-                    </VStack>
-                </Link>
-            </VStack>
+            <ClickCard
+                link="/onboarding-welcome"
+                time="5 Min."
+                title="Quick eligibility check"
+                subtitle="Based on 10 benefits"
+                backgroundImage="foerderfunke-react-app/assets/images/quick-check.jpg"
+            />
+            <ClickCard
+                link="/onboarding-welcome"
+                time="At your own pace"
+                title="Browse all benefits"
+                subtitle="Filter by topic or from A-Z"
+                backgroundImage="foerderfunke-react-app/assets/images/quick-check.jpg"
+            />
         </Layout>
     );
 };
