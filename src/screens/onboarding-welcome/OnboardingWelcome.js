@@ -1,12 +1,17 @@
 import React from 'react';
 import {Box, Card, CardContent, Typography} from '@mui/material';
 import Layout from '../../components/Layout';
-import {blue, indigo} from '@mui/material/colors';
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import {green, indigo, yellow} from '@mui/material/colors';
 import ButtonBase from '@mui/material/ButtonBase';
 import {Link} from "react-router-dom";
 import useInitializeQuickCheckUser from "./hooks/useInitializeQuickCheckUser";
 import useInitializeProfileSectionStore from "./hooks/useInitializeProfileSectionStore";
+import InfoCard from "../../components/InfoCard";
+import VStack from "../../components/VStack";
+import HStack from "../../components/HStack";
+import IconCard from "../../components/IconCard";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import StarBorderIcon from '@mui/icons-material/StarBorder';
 
 const OnboardingWelcome = () => {
     const entityData = useInitializeQuickCheckUser();
@@ -15,30 +20,19 @@ const OnboardingWelcome = () => {
 
     return (
         <Layout>
-            <Box sx={styles.container}>
+            <VStack gap={1}>
                 <Typography variant="h4" gutterBottom sx={styles.titleText}>
                     Quick eligibility check
                 </Typography>
+                <HStack>
+                    <IconCard icon={AccessTimeIcon} iconColor={green[500]} text="5 Min." />
+                    <IconCard icon={StarBorderIcon} iconColor={yellow[500]} text="Based on 15 Benefits" />
+                </HStack>
                 <Typography variant="body1" gutterBottom sx={styles.subTitleText}>
-                    Answer some questions about you and find out to which benefits you might be eligible to. The more
-                    questions you answer, the more accurate will be the results you get.
+                    Answer some questions about you and find out to which benefits you might be eligible to.
                 </Typography>
-            </Box>
-            <Box>
-                <Card sx={styles.infoCard} data-testid="card">
-                    <CardContent sx={styles.infoCardContent} data-testid="card-content">
-                        <Box sx={styles.infoCardRow}>
-                            <Box sx={styles.infoBox} datatest-id='infoBox'>
-                                <InfoOutlinedIcon/>
-                            </Box>
-                            <Typography variant="body2" component="div">
-                                All data is stored locally on your device. It never leaves your device at least you
-                                decide otherwise.
-                            </Typography>
-                        </Box>
-                    </CardContent>
-                </Card>
-            </Box>
+            </VStack>
+            <InfoCard text="All data is stored locally on your device. It never leaves your device at least you decide otherwise." />
             <Box sx={styles.buttonCardContainer} data-testid="button-card-container">
                 <Card sx={styles.buttonCard} data-testid="button-card">
                     <ButtonBase
@@ -71,32 +65,6 @@ const styles = {
     subTitleText: {
         fontSize: '16px',
         fontWeight: '400'
-    },
-    infoCard: {
-        width: '100%',
-        borderRadius: '15px',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        backgroundColor: blue[100],
-        boxShadow: 'none',
-    },
-    infoCardContent: {
-        padding: '16px',
-        "&:last-child": {
-            paddingBottom: '16px',
-        }
-    },
-    infoCardRow: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        gap: '10px',
-    },
-    infoBox: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'flex-start',
     },
     buttonCardContainer: {
         display: 'flex',

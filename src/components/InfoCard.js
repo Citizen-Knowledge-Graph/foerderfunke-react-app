@@ -1,19 +1,27 @@
 import React from 'react';
-import { Card, CardContent, Typography } from '@mui/material';
+import {Card, CardContent, Typography} from '@mui/material';
 import HStack from './HStack';
+import VStack from './VStack';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import {blue} from "@mui/material/colors";
 
-const InfoCard = ({ icon: Icon, iconColor, text }) => {
+
+const InfoCard = ({text}) => {
     return (
-        <Card sx={{ ...styles.infoCard, borderColor: iconColor }}>
-            <CardContent sx={styles.infoCardContent}>
-                <HStack gap={1}>
-                    <Icon sx={{...styles.icon, color: iconColor}} />
-                    <Typography variant="body2" sx={styles.infoCardText}>
-                        {text}
-                    </Typography>
-                </HStack>
-            </CardContent>
-        </Card>
+        <VStack>
+            <Card sx={{...styles.infoCard}} data-testid="card">
+                <CardContent sx={styles.infoCardContent} data-testid="card-content">
+                    <HStack justifyContent={'space-between'}>
+                        <VStack sx={styles.infoBox} justifyContent={'flex-start'} datatest-id='infoBox'>
+                            <InfoOutlinedIcon/>
+                        </VStack>
+                        <Typography variant="body2" component="div" sx={styles.infoCardText}>
+                            {text}
+                        </Typography>
+                    </HStack>
+                </CardContent>
+            </Card>
+        </VStack>
     );
 };
 
@@ -22,16 +30,13 @@ export default InfoCard;
 const styles = {
     infoCard: {
         borderRadius: '15px',
-        borderStyle: 'solid', // Add this line to define the border style
-        borderWidth: '1px',   // Add this line to define the border width
-    },
-    icon: {
-        height: '20px'
+        backgroundColor: blue[100],
+        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
     },
     infoCardContent: {
-        padding: "6px 8px 6px 8px",
+        padding: "10px",
         "&:last-child": {
-            paddingBottom: '6px',
+            paddingBottom: '10px',
         },
     },
     infoCardText: {

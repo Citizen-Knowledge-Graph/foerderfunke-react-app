@@ -3,7 +3,7 @@ import VStack from "./VStack";
 import HStack from "./HStack";
 import {Link} from 'react-router-dom';
 import {Typography} from '@mui/material';
-import InfoCard from "./InfoCard";
+import IconCard from "./IconCard";
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 const ClickCard = ({
@@ -24,7 +24,7 @@ const ClickCard = ({
             <Link to={link} style={{textDecoration: 'none', color: "black", width: '100%'}}>
                 <VStack justifyContent={'space-between'}>
                     <HStack justifyContent={'flex-end'} gap={1}>
-                        <InfoCard icon={icon} iconColor={iconColor} text={time}/>
+                        <IconCard icon={icon} iconColor={iconColor} text={time}/>
                     </HStack>
                     <HStack justifyContent={'flex-start'} gap={1}>
                         <VStack gap={0} justifyContent={'flex-end'}>
