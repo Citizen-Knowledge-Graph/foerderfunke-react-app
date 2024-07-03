@@ -5,6 +5,8 @@ import VStack from "../components/VStack";
 import ClickCard from "../components/ClickCard";
 
 const OnboardingChoice = () => {
+    const quickCheckImage = `${process.env.PUBLIC_URL}/assets/images/quick-check.jpg`;
+
     return (
         <Layout>
             <VStack gap={1} sx={styles.container} justifyContent={'center'}>
@@ -20,14 +22,14 @@ const OnboardingChoice = () => {
                 time="5 Min."
                 title="Quick eligibility check"
                 subtitle="Based on 10 benefits"
-                backgroundImage="foerderfunke-react-app/assets/images/quick-check.jpg"
+                backgroundImage={quickCheckImage}
             />
             <ClickCard
                 link="/onboarding-welcome"
                 time="At your own pace"
                 title="Browse all benefits"
                 subtitle="Filter by topic or from A-Z"
-                backgroundImage="foerderfunke-react-app/assets/images/quick-check.jpg"
+                backgroundImage={quickCheckImage}
             />
         </Layout>
     );
