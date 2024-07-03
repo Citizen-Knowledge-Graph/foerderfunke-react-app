@@ -12,6 +12,16 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import LinearProgress from "@mui/material/LinearProgress";
 import ButtonCard from "../../components/ButtonCard";
+import TextList from "../../components/TextList";
+
+const benefitsList = [
+    "Healthcare Assistance",
+    "Childcare Support",
+    "Unemployment Benefits",
+    "Education Grants",
+    "Housing Assistance",
+    "..."
+];
 
 const OnboardingWelcome = () => {
     const entityData = useInitializeQuickCheckUser();
@@ -30,8 +40,15 @@ const OnboardingWelcome = () => {
                     <IconCard icon={StarBorderIcon} iconColor={yellow[500]} text="Based on 15 Benefits"/>
                 </HStack>
                 <Typography variant="body1" gutterBottom sx={styles.subTitleText}>
-                    Answer some questions about you and find out to which benefits you might be eligible to.
+                    Answer some questions about you and find out to which benefits you might be eligible to. Our
+                    benefits catalogue covers a range of topics.
                 </Typography>
+                <VStack gap={0} sx={styles.container}>
+                    <Typography variant="body1" gutterBottom sx={styles.listHeader}>
+                        The quick check will include the following:
+                    </Typography>
+                    <TextList items={benefitsList}/>
+                </VStack>
             </VStack>
             <InfoCard text="All data will stored as part of this browser session. If you close your browser you data
                             will disappear. If you wish to come back at a later stage you can always export the current
@@ -56,6 +73,10 @@ const styles = {
     subTitleText: {
         fontSize: '16px',
         fontWeight: '400'
+    },
+    listHeader: {
+        fontSize: '16px',
+        fontWeight: 'bold',
     },
     buttonCardContainer: {
         display: 'flex',
