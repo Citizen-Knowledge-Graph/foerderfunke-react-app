@@ -1,12 +1,17 @@
 import React from "react";
 import HStack from "../../../components/HStack";
 import LinearProgress from '@mui/material/LinearProgress';
-import {grey} from "@mui/material/colors";
+import {grey, yellow} from "@mui/material/colors";
 
-const ProfileCompletionBar = ({length, index}) => {
+const ProfileCompletionBar = ({length, index, color = yellow[500]}) => {
     return (
         <HStack justifyContent="space-between" sx={{width: '100%'}} gap={1}>
-            <LinearProgress variant="determinate" value={(index/length) * 100} sx={styles.progressBar}/>
+            <LinearProgress variant="determinate" value={(index / length) * 100} sx={{
+                ...styles.progressBar,
+                "& .MuiLinearProgress-bar": {
+                    backgroundColor: color,
+                }
+            }}/>
         </HStack>
     );
 }
