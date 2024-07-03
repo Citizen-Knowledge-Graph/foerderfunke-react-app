@@ -119,7 +119,7 @@ const styles = {
     },
     infoCard: {
         width: '100%',
-        borderRadius: '5px',
+        borderRadius: '15px',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
