@@ -26,15 +26,18 @@ const OnboardingWelcome = () => {
                     Quick eligibility check
                 </Typography>
                 <HStack>
-                    <IconCard icon={AccessTimeIcon} iconColor={green[500]} text="5 Min." />
-                    <IconCard icon={StarBorderIcon} iconColor={yellow[500]} text="Based on 15 Benefits" />
+                    <IconCard icon={AccessTimeIcon} iconColor={green[500]} text="5 Min."/>
+                    <IconCard icon={StarBorderIcon} iconColor={yellow[500]} text="Based on 15 Benefits"/>
                 </HStack>
                 <Typography variant="body1" gutterBottom sx={styles.subTitleText}>
                     Answer some questions about you and find out to which benefits you might be eligible to.
                 </Typography>
             </VStack>
-            <InfoCard text="All data is stored locally on your device. It never leaves your device at least you decide otherwise." />
-            <ButtonCard text="Discover your benefits" backgroundColor={green[500]} />
+            <InfoCard text="All data will stored as part of this browser session. If you close your browser you data
+                            will disappear. If you wish to come back at a later stage you can always export the current
+                            state of your profile"/>
+            <ButtonCard link={`/profile-section/${profileSection}`} text="Discover your benefits"
+                        backgroundColor={green[500]}/>
         </Layout>
     );
 };
