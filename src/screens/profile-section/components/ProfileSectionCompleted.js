@@ -1,36 +1,36 @@
 import React from 'react';
 import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
-import {ButtonBase, Card, CardContent, Typography} from "@mui/material";
-import {Link} from "react-router-dom";
-import {green, yellow} from "@mui/material/colors";
+import {Typography} from "@mui/material";
+import {green, grey, yellow} from "@mui/material/colors";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import ButtonCard from "../../../components/ButtonCard";
+import LinearProgress from "@mui/material/LinearProgress";
 
 const ProfileSectionCompleted = () => {
     return (
-        <VStack justifyContent={'center'} gap={3} sx={{height: "90vh"}}>
-            <HStack justifyContent={'center'} sx={{width: "100%"}}>
-                <VStack gap={1} alignItems={'center'} sx={styles.completeTextBox}>
-                    <CheckCircleIcon sx={styles.icon}/>
-                </VStack>
-            </HStack>
-            <HStack justifyContent={'center'} sx={{width: "100%"}}>
-                <VStack gap={1} alignItems={'center'} sx={styles.completeTextBox}>
-                    <Typography variant="h4" sx={styles.completeText}>Your quick check is complete</Typography>
-                </VStack>
-            </HStack>
-            <VStack data-testid="button-card-container">
-                <Card sx={styles.buttonCardComplete} data-testid="button-card">
-                    <CardContent sx={styles.buttonCardContent} data-testid="card-content">
-                        <HStack justifyContent={'center'}>
-                            <ButtonBase component={Link} to={`/eligibility-overview`}>
-                                <Typography variant="h6" gutterBottom sx={styles.buttonCardText}>
-                                    Zu deinen Benefits!
-                                </Typography>
-                            </ButtonBase>
-                        </HStack>
-                    </CardContent>
-                </Card>
+        <VStack sx={{height: "90vh"}}>
+            <VStack sx={{height: "5vh"}}>
+            <LinearProgress variant="determinate" value={100} sx={{
+                ...styles.progressBar,
+                "& .MuiLinearProgress-bar": {
+                    backgroundColor: green[500],
+                }
+            }}/>
+            </VStack >
+            <VStack gap={5} justifyContent={'flex-start'} sx={{height: "85vh"}}>
+                <HStack justifyContent={'center'} sx={{width: "100%"}}>
+                    <VStack gap={1} alignItems={'center'} sx={styles.completeTextBox}>
+                        <CheckCircleIcon sx={styles.icon}/>
+                    </VStack>
+                </HStack>
+                <HStack justifyContent={'center'} sx={{width: "100%"}}>
+                    <VStack gap={1} alignItems={'center'} sx={styles.completeTextBox}>
+                        <Typography variant="h4" sx={styles.completeText}>Your quick check is complete</Typography>
+                    </VStack>
+                </HStack>
+                <ButtonCard link={`/eligibility-overview`} text="Discover your benefits"
+                            backgroundColor={green[500]}/>
             </VStack>
         </VStack>);
 };
@@ -83,6 +83,13 @@ const styles = {
             backgroundColor: green[500],
         },
     },
+    progressBar: {
+        width: '100%',
+        height: '10px',
+        backgroundColor: grey[300],
+        borderRadius: '5px',
+
+    }
 };
 
 export default ProfileSectionCompleted;
