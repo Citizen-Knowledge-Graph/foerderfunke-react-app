@@ -20,9 +20,9 @@ const ClickCard = ({
                    }) => {
     return (
         <VStack data-testid="card-container"
-                sx={{...styles.card, height: cardHeight, backgroundImage: `url(${backgroundImage})`}}>
+                sx={{...styles.card, minHeight: cardHeight, backgroundImage: `url(${backgroundImage})`}}>
             <Link to={link} style={{textDecoration: 'none', color: "black", width: '100%'}}>
-                <VStack justifyContent={'space-between'}>
+                <VStack sx={styles.cardContent} justifyContent={'space-between'}>
                     <HStack justifyContent={'flex-end'} gap={1}>
                         <IconCard icon={icon} iconColor={iconColor} text={time}/>
                     </HStack>
@@ -46,13 +46,15 @@ export default ClickCard;
 
 const styles = {
     card: {
-        height: '175px',
-        padding: '16px',
+        width: "100%",
         borderRadius: '15px',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+    },
+    cardContent: {
+        padding: "16px",
     },
     cardContentTitle: {
         fontSize: '36px',

@@ -1,9 +1,7 @@
 import React from 'react';
-import {Box, Card, CardContent, Typography} from '@mui/material';
+import {Typography} from '@mui/material';
 import Layout from '../../components/Layout';
-import {green, indigo, yellow} from '@mui/material/colors';
-import ButtonBase from '@mui/material/ButtonBase';
-import {Link} from "react-router-dom";
+import {green, grey, indigo, yellow} from '@mui/material/colors';
 import useInitializeQuickCheckUser from "./hooks/useInitializeQuickCheckUser";
 import useInitializeProfileSectionStore from "./hooks/useInitializeProfileSectionStore";
 import InfoCard from "../../components/InfoCard";
@@ -12,6 +10,8 @@ import HStack from "../../components/HStack";
 import IconCard from "../../components/IconCard";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import StarBorderIcon from '@mui/icons-material/StarBorder';
+import LinearProgress from "@mui/material/LinearProgress";
+import ButtonCard from "../../components/ButtonCard";
 
 const OnboardingWelcome = () => {
     const entityData = useInitializeQuickCheckUser();
@@ -20,7 +20,8 @@ const OnboardingWelcome = () => {
 
     return (
         <Layout>
-            <VStack gap={1}>
+            <VStack gap={2}>
+                <LinearProgress variant="determinate" value={0} sx={styles.progressBar}/>
                 <Typography variant="h4" gutterBottom sx={styles.titleText}>
                     Quick eligibility check
                 </Typography>
@@ -33,20 +34,7 @@ const OnboardingWelcome = () => {
                 </Typography>
             </VStack>
             <InfoCard text="All data is stored locally on your device. It never leaves your device at least you decide otherwise." />
-            <Box sx={styles.buttonCardContainer} data-testid="button-card-container">
-                <Card sx={styles.buttonCard} data-testid="button-card">
-                    <ButtonBase
-                        component={Link}
-                        to={`/profile-section/${profileSection}`}
-                    >
-                        <CardContent sx={styles.buttonCardContent} data-testid="card-content">
-                            <Typography variant="h6" gutterBottom sx={styles.buttonCardText}>
-                                Los geht's!
-                            </Typography>
-                        </CardContent>
-                    </ButtonBase>
-                </Card>
-            </Box>
+            <ButtonCard text="Discover your benefits" backgroundColor={green[500]} />
         </Layout>
     );
 };
@@ -91,6 +79,12 @@ const styles = {
         fontWeight: '500',
         textAlign: 'center',
         margin: '0',
+    },
+    progressBar: {
+        width: '100%',
+        height: '10px',
+        backgroundColor: grey[300],
+        borderRadius: '5px',
     }
 };
 
