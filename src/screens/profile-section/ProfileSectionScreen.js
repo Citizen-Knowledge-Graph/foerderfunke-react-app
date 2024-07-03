@@ -33,14 +33,11 @@ const ProfileSectionScreen = () => {
         <Layout>
             {profileSectionData ? (
                 !completed ? (
-                    <>
-                        <ProfileSectionContext title={profileSectionData.title} infoBox={true}/>
-                        <ProfileSectionList
-                            profileSectionData={profileSectionData}
-                            mode={mode}
-                            setCompleted={setCompleted}
-                        />
-                    </>
+                    <ProfileSectionList
+                        profileSectionData={profileSectionData}
+                        mode={mode}
+                        setCompleted={setCompleted}
+                    />
                 ) : (
                     <ProfileSectionCompleted/>
                 )

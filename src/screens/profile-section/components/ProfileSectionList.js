@@ -4,6 +4,8 @@ import ProfileSectionField from "./ProfileSectionField";
 import ProfileCompletionBar from "./ProfileCompletionBar";
 import {useProfileSectionStore} from "../../../storage/useProfileSectionStore";
 import {useProfileSectionListHandlers} from "../hooks/useProfileSectionListHandlers";
+import {Typography} from "@mui/material";
+import InfoCard from "../../../components/InfoCard";
 
 const ProfileSectionList = ({profileSectionData, mode, setCompleted}) => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -33,8 +35,13 @@ const ProfileSectionList = ({profileSectionData, mode, setCompleted}) => {
     const currentField = profileSectionData.fields[currentIndex];
 
     return (
-        <VStack sx={{width: '100%', paddingTop: '50px'}} gap={3}>
+        <VStack sx={{width: '100%'}} gap={3}>
             <ProfileCompletionBar length={profileSectionData.fields.length} index={currentIndex}/>
+            <Typography variant="h4" gutterBottom sx={styles.titleText}>
+                {profileSectionData.title}
+            </Typography>
+            <InfoCard hollow={true} text="Let’s start your profile to discover social benefits for you. If you need help
+                            you can always use the info icon."/>
             <VStack gap={1}>
                 {currentField ? (
                     <ProfileSectionField currentField={currentField}
@@ -48,5 +55,11 @@ const ProfileSectionList = ({profileSectionData, mode, setCompleted}) => {
         </VStack>
     );
 };
+
+const styles = {
+    titleText: {
+        fontWeight: 'bold',
+    },
+}
 
 export default ProfileSectionList;
