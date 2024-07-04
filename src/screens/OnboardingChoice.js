@@ -5,7 +5,8 @@ import VStack from "../components/VStack";
 import ClickCard from "../components/ClickCard";
 
 const OnboardingChoice = () => {
-    const quickCheckImage = `${process.env.PUBLIC_URL}/assets/images/quick-check.jpg`;
+    const quickCheckImage = `${process.env.PUBLIC_URL}/assets/images/quick-check-v2.jpg`;
+    const browseAllImage = `${process.env.PUBLIC_URL}/assets/images/browse-all.jpg`;
 
     return (
         <Layout>
@@ -29,7 +30,7 @@ const OnboardingChoice = () => {
                 time="At your own pace"
                 title="Browse all benefits"
                 subtitle="Filter by topic or from A-Z"
-                backgroundImage={quickCheckImage}
+                backgroundImage={browseAllImage}
             />
         </Layout>
     );

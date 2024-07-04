@@ -8,12 +8,11 @@ const ClickIconCard = ({link, text, icon: Icon, iconColor}) => {
         <Card sx={{...styles.infoCard, borderColor: iconColor}}>
             <Link to={link} style={{textDecoration: 'none', color: "black", width: '100%'}}>
                 <CardContent sx={styles.infoCardContent}>
-                    <HStack gap={1}>
+                    <HStack gap={1} alignItems={'center'}>
                         {Icon ? (
                             <Icon sx={{...styles.icon, color: iconColor}}/>
                         ): null}
-
-                        <Typography variant="body2" sx={styles.infoCardText}>
+                        <Typography sx={styles.infoCardText}>
                             {text}
                         </Typography>
                     </HStack>
@@ -35,9 +34,9 @@ const styles = {
         height: '20px'
     },
     infoCardContent: {
-        padding: "6px 8px 6px 8px",
+        padding: "3px 6px 4px 8px",
         "&:last-child": {
-            paddingBottom: '6px',
+            paddingBottom: '3px',
         },
     },
     infoCardText: {
