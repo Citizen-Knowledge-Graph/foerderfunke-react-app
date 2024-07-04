@@ -1,0 +1,17 @@
+{
+  "title": "Kindergeld",
+  "subtitle": "Kindergeld ist eine finanzielle Unterstützung für Familien mit Kindern.",
+  "what": "Kindergeld ist eine finanzielle Unterstützung für Familien mit Kindern.",
+  "who": "Eltern, die in Deutschland leben und Kinder haben",
+  "requirements": [
+    "Eltern müssen in Deutschland leben",
+    "Eltern müssen ein Kind haben",
+    "Das Kind muss unter 18 Jahre alt sein"
+  ],
+  "contact": {
+    "name": "Familienkasse",
+    "phone": "0800 4 5555 30",
+    "email": "email@email.de",
+    "website": "www.familienkasse.de"
+  }
+}
