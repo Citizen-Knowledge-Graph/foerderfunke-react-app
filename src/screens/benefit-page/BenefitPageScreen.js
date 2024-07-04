@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Layout from "../../components/Layout";
 import readJson from "../../utilities/readJson";
 import {useParams} from "react-router-dom";
+import BenefitPageHeader from "./components/BenefitPageHeader";
 
 const BenefitPageScreen = () => {
     const {id} = useParams();
@@ -25,10 +26,7 @@ const BenefitPageScreen = () => {
     return (
         <Layout>
             {benefitPageData ? (
-                <>
-                    <h1>{benefitPageData.title}</h1>
-                    <p>{benefitPageData.subtitle}</p>
-                </>
+                <BenefitPageHeader benefit={benefitPageData}/>
             ) : null}
         </Layout>
     );
