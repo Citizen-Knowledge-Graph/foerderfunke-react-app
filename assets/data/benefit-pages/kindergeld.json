@@ -2,11 +2,11 @@
   "title": "Kindergeld",
   "subtitle": "Kindergeld ist eine finanzielle Unterstützung für Familien mit Kindern.",
   "what": "Kindergeld ist eine finanzielle Unterstützung für Familien mit Kindern.",
-  "who": "Eltern, die in Deutschland leben und Kinder haben",
+  "who": "Eltern, die in Deutschland leben und Kinder haben.",
   "requirements": [
-    "Eltern müssen in Deutschland leben",
-    "Eltern müssen ein Kind haben",
-    "Das Kind muss unter 18 Jahre alt sein"
+    "Dokument 1",
+    "Dokument 2",
+    "Dokument 3"
   ],
   "contact": {
     "name": "Familienkasse",
