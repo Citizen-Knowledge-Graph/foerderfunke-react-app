@@ -25,7 +25,7 @@ const OnboardingChoice = () => {
                 backgroundImage={quickCheckImage}
             />
             <ClickCard
-                link="/onboarding-welcome"
+                link="/eligibility-overview"
                 time="At your own pace"
                 title="Browse all benefits"
                 subtitle="Filter by topic or from A-Z"

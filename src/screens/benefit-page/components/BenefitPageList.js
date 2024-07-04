@@ -3,6 +3,11 @@ import {Typography} from "@mui/material";
 import HStack from "../../../components/HStack";
 import Divider from '@mui/material/Divider';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import ApartmentIcon from '@mui/icons-material/Apartment';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import LanguageIcon from '@mui/icons-material/Language';
+import {grey} from "@mui/material/colors";
 
 const BenefitPageList = ({benefit}) => {
     return (
@@ -38,7 +43,7 @@ const BenefitPageList = ({benefit}) => {
                         <VStack gap={1}>
                             {benefit.requirements.map((requirement, index) => (
                                 <HStack gap={1} alignItems={'center'}>
-                                    <CheckCircleOutlineIcon sx={styles.checkIcon} />
+                                    <CheckCircleOutlineIcon sx={styles.checkIcon}/>
                                     <Typography key={index} sx={styles.sectionText}>
                                         {requirement}
                                     </Typography>
@@ -54,9 +59,32 @@ const BenefitPageList = ({benefit}) => {
                         <Typography sx={styles.sectionHeader}>
                             Contact
                         </Typography>
-                        <Typography sx={styles.sectionText}>
-                            What is it?
-                        </Typography>
+                        <VStack gap={1}>
+                            <HStack gap={1} alignItems={'center'}>
+                                <ApartmentIcon sx={styles.checkIcon}/>
+                                <Typography sx={styles.sectionText}>
+                                    {benefit.contact.name}
+                                </Typography>
+                            </HStack>
+                            <HStack gap={1} alignItems={'center'}>
+                                <LocalPhoneIcon sx={styles.checkIcon}/>
+                                <Typography sx={styles.sectionText}>
+                                    {benefit.contact.phone}
+                                </Typography>
+                            </HStack>
+                            <HStack gap={1} alignItems={'center'}>
+                                <AlternateEmailIcon sx={styles.checkIcon}/>
+                                <Typography sx={styles.sectionText}>
+                                    {benefit.contact.email}
+                                </Typography>
+                            </HStack>
+                            <HStack gap={1} alignItems={'center'}>
+                                <LanguageIcon sx={styles.checkIcon}/>
+                                <Typography sx={styles.sectionText}>
+                                    {benefit.contact.website}
+                                </Typography>
+                            </HStack>
+                        </VStack>
                     </VStack>
                 </HStack>
             </VStack>
@@ -76,7 +104,7 @@ const styles = {
         fontWeight: '400',
     },
     checkIcon: {
-        color: 'green',
+        color: grey[800],
         height: '20px'
     }
 };
