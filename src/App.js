@@ -8,6 +8,7 @@ import OnboardingWelcome from "./screens/onboarding-welcome/OnboardingWelcome";
 import OnboardingGamifiedScreen from "./screens/onboarding-gamified/OnboardingGamifiedScreen";
 import ProfileSectionScreen from "./screens/profile-section/ProfileSectionScreen";
 import EligibilityOverviewScreen from "./screens/eligibilty-overview/EligibilityOverviewScreen";
+import BenefitPageScreen from "./screens/benefit-page/BenefitPageScreen";
 import AppStartup from "./AppStartup";
 import AppValidation from "./AppValidation";
 
@@ -31,6 +32,7 @@ const App = () => {
                         <Route path="/onboarding-gamified" element={<OnboardingGamifiedScreen/>}/>
                         <Route path="/eligibility-overview" element={<EligibilityOverviewScreen/>}/>
                         <Route path="/profile-section/:id/:mode?" element={<ProfileSectionScreen/>}/>
+                        <Route path="/benefit-page/:id" element={<BenefitPageScreen/>}/>
                     </Routes>
                 </div>
             </Router>

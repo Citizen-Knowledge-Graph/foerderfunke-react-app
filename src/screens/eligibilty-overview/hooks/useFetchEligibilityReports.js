@@ -20,9 +20,10 @@ export const useFetchEligibilityReports = ({ validationReport, hydrationData }) 
 
         for (let report of reports) {
             let { rpUri, result } = report;
+            const id = hydrationData[rpUri]?.id || 'Unknown Id';
             const title = hydrationData[rpUri]?.title || 'Unknown Title';
             const description = hydrationData[rpUri]?.description || 'Unknown Description';
-            const data = { uri: rpUri, title, description };
+            const data = { uri: rpUri, id, title, description };
             if (result === ValidationResult.ELIGIBLE) {
                 eligibilityData.eligible.push(data);
             }

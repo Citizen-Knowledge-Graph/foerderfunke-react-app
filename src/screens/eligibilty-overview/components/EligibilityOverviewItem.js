@@ -25,7 +25,7 @@ const EligibilityOverviewItem = ({item, eligible}) => {
                         {item.title}
                     </Typography>
                     {showDescription && (
-                        <EligibilityOverviewItemDetails description={item.description}/>
+                        <EligibilityOverviewItemDetails item={item}/>
                     )}
                 </VStack>
             </HStack>

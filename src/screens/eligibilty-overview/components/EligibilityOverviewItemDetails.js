@@ -5,14 +5,14 @@ import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
 import {grey} from "@mui/material/colors";
 
-const EligibilityOverviewItemDetails = ({description}) => {
+const EligibilityOverviewItemDetails = ({item}) => {
     return (
-        <VStack gap={1} alignItems={'flex-start'}>
+        <VStack gap={0} alignItems={'flex-start'}>
             <Typography variant="body2" gutterBottom>
-                {description}
+                {item.description}
             </Typography>
             <HStack>
-                <ClickIconCard link={'/'} text={'Learn more'} iconColor={grey[500]} icon={null}/>
+                <ClickIconCard link={`/benefit-page/${item.id}`} text={'Learn more'} iconColor={grey[700]} icon={null}/>
             </HStack>
         </VStack>
     );

@@ -1,25 +1,31 @@
 {
   "https://foerderfunke.org/default#eauto": {
+    "id": "eauto",
     "title": "E-Auto",
     "description": "It is a monthly fixed sum paid by the Family Benefits Office (Familienkasse), which is managed by the German Federal Employment Agency (Arbeitsagentur für Arbeit). Its purpose is to ensure that every child's basic needs are met."
   },
   "https://foerderfunke.org/default#kindergeld": {
+    "id": "kindergeld",
     "title": "Kindergeld",
     "description": "It is a monthly fixed sum paid by the Family Benefits Office (Familienkasse), which is managed by the German Federal Employment Agency (Arbeitsagentur für Arbeit). Its purpose is to ensure that every child's basic needs are met."
   },
   "https://foerderfunke.org/default#kinderzuschlag": {
+    "id": "kinderzuschlag",
     "title": "Kinderzuschlag",
     "description": "It is a monthly fixed sum paid by the Family Benefits Office (Familienkasse), which is managed by the German Federal Employment Agency (Arbeitsagentur für Arbeit). Its purpose is to ensure that every child's basic needs are met."
   },
   "https://foerderfunke.org/default#arbeitslosengeld": {
+    "id": "arbeitslosengeld",
     "title": "Arbeitslosengeld",
     "description": "It is a monthly fixed sum paid by the Family Benefits Office (Familienkasse), which is managed by the German Federal Employment Agency (Arbeitsagentur für Arbeit). Its purpose is to ensure that every child's basic needs are met."
   },
   "https://foerderfunke.org/default#daemmung": {
+    "id": "daemmung",
     "title": "Wärmedämmung",
     "description": "It is a monthly fixed sum paid by the Family Benefits Office (Familienkasse), which is managed by the German Federal Employment Agency (Arbeitsagentur für Arbeit). Its purpose is to ensure that every child's basic needs are met."
   },
   "https://foerderfunke.org/default#bildungsgutschein": {
+    "id": "bildungsgutschein",
     "title": "Bildungsgutschein",
     "description": "It is a monthly fixed sum paid by the Family Benefits Office (Familienkasse), which is managed by the German Federal Employment Agency (Arbeitsagentur für Arbeit). Its purpose is to ensure that every child's basic needs are met."
   }
