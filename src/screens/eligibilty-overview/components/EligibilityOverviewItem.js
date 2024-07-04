@@ -4,6 +4,7 @@ import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
 import {green, red, grey} from "@mui/material/colors";
 import {Circle, Add, Remove} from "@mui/icons-material";
+import EligibilityOverviewItemDetails from "./EligibilityOverviewItemDetails";
 
 const EligibilityOverviewItem = ({item, eligible}) => {
     const [showDescription, setShowDescription] = useState(false);
@@ -24,9 +25,7 @@ const EligibilityOverviewItem = ({item, eligible}) => {
                         {item.title}
                     </Typography>
                     {showDescription && (
-                        <Typography variant="body2" gutterBottom>
-                            {item.description}
-                        </Typography>
+                        <EligibilityOverviewItemDetails description={item.description}/>
                     )}
                 </VStack>
             </HStack>
