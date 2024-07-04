@@ -29,7 +29,7 @@ const ProfileSectionScreen = () => {
     }, [id]);
 
     return (
-        <Layout>
+        <Layout back={'Back to quick check'}>
             {profileSectionData ? (
                 !completed ? (
                     <ProfileSectionList

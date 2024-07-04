@@ -20,7 +20,7 @@ const EligibilityOverviewScreen = () => {
 
 
     return (
-        <Layout>
+        <Layout logo={true}>
             <EligibilityOverviewHeader/>
             {
                 eligibilityData ? (

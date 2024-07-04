@@ -29,7 +29,7 @@ const OnboardingWelcome = () => {
     useInitializeProfileSectionStore(profileSection, entityData);
 
     return (
-        <Layout>
+        <Layout back={"Back to selection"}>
             <VStack gap={2}>
                 <LinearProgress variant="determinate" value={0} sx={styles.progressBar}/>
                 <Typography variant="h4" gutterBottom sx={styles.titleText}>

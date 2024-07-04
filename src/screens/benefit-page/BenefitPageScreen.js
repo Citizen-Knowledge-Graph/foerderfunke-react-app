@@ -25,7 +25,7 @@ const BenefitPageScreen = () => {
 
 
     return (
-        <Layout>
+        <Layout back={'Back'}>
             {benefitPageData ? (
                 <>
                     <BenefitPageHeader benefit={benefitPageData}/>
