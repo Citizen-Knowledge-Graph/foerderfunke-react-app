@@ -36,6 +36,14 @@ const LandingPage = () => {
                         <LandingPageImageList/>
                     </HStack>
                 </VStack>
+                <VStack gap={0} sx={styles.factHeaderBackground}>
+                    <HStack sx={{padding: "16px"}}>
+                        <Typography sx={styles.headerSectionTitle}>1 out of 5 households in Germany don’t claim social benefits they are entitled to.</Typography>
+                    </HStack>
+                    <HStack sx={{padding: "16px"}}>
+                        <Typography>We are on a mission to make social benefits in Germany accessible and easy to understand by everyone. We show you what social benefits you might be eligible for and point you the way to apply for them. </Typography>
+                    </HStack>
+                </VStack>
             </VStack>
         </Layout>
     );
@@ -44,23 +52,34 @@ const LandingPage = () => {
 const styles = {
     headerSectionTitle: {
         fontWeight: 'bold',
-        fontSize: '28px',
+        fontSize:
+            '28px',
     },
     headerSectionButtonCard: {
         backgroundColor: yellow[500],
-        boxShadow: 'none',
-        borderRadius: '12px',
+        boxShadow:
+            'none',
+        borderRadius:
+            '12px',
     },
     headerSectionButtonCardContent: {
         padding: "3px 6px 4px 8px",
-        "&:last-child": {
-            paddingBottom: '3px',
-        },
+        "&:last-child":
+            {
+                paddingBottom: '3px',
+            }
+        ,
     },
     headerSectionButtonCardText: {
         color: "black",
-        fontSize: '20px',
-        fontWeight: 'bold',
+        fontSize:
+            '20px',
+        fontWeight:
+            'bold',
+    },
+    factHeaderBackground: {
+        width: "100%",
+        backgroundColor: yellow[500]
     }
 }
 
