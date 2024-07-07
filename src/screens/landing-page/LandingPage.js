@@ -32,7 +32,7 @@ const LandingPage = () => {
                     </HStack>
                 </VStack>
                 <VStack sx={{width: "100%"}}>
-                    <HStack>
+                    <HStack justifyContent={'flex-end'}>
                         <LandingPageImageList/>
                     </HStack>
                 </VStack>

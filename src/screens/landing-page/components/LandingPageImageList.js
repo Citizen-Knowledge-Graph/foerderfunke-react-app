@@ -1,11 +1,28 @@
 import * as React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
-import {ImageListItemBar} from "@mui/material";
+import ImageListItemBar from '@mui/material/ImageListItemBar';
+import { styled } from '@mui/material/styles';
+
+const HorizontalImageList = styled(ImageList)({
+    flexWrap: 'nowrap',
+    // Display in row direction for horizontal scrolling
+    overflowX: 'scroll',
+    '&::-webkit-scrollbar': {
+        height: '8px',
+    },
+    '&::-webkit-scrollbar-thumb': {
+        backgroundColor: '#888',
+        borderRadius: '10px',
+    },
+    '&::-webkit-scrollbar-thumb:hover': {
+        backgroundColor: '#555',
+    },
+});
 
 export default function LandingPageImageList() {
     return (
-        <ImageList sx={{width: 500, height: 450}} cols={3} rowHeight={164}>
+        <HorizontalImageList sx={{ width: 400, height: 410 }} cols={1} rowHeight={400} variant="masonry">
             {itemData.map((item) => (
                 <ImageListItem key={item.img}>
                     <img
@@ -13,19 +30,19 @@ export default function LandingPageImageList() {
                         src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
                         alt={item.title}
                         loading="lazy"
-                        style={{borderRadius: '5px'}}
+                        style={{ borderRadius: '5px' }}
                     />
                     <ImageListItemBar
                         title={'Kindergeld'}
                         sx={{
                             '& .MuiImageListItemBar-title': {
-                                fontSize: '12px',
+                                fontSize: '30px', // Change the font size here
                             },
                         }}
                     />
                 </ImageListItem>
             ))}
-        </ImageList>
+        </HorizontalImageList>
     );
 }
 
@@ -65,5 +82,17 @@ const itemData = [
     {
         img: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
         title: 'Mushrooms',
-    }
+    },
+    {
+        img: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
+        title: 'Tomato basil',
+    },
+    {
+        img: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
+        title: 'Sea star',
+    },
+    {
+        img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
+        title: 'Bike',
+    },
 ];
