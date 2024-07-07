@@ -9,6 +9,7 @@ import OnboardingGamifiedScreen from "./screens/onboarding-gamified/OnboardingGa
 import ProfileSectionScreen from "./screens/profile-section/ProfileSectionScreen";
 import EligibilityOverviewScreen from "./screens/eligibilty-overview/EligibilityOverviewScreen";
 import BenefitPageScreen from "./screens/benefit-page/BenefitPageScreen";
+import LandingPage from "./screens/landing-page/LandingPage";
 import AppStartup from "./AppStartup";
 import AppValidation from "./AppValidation";
 
@@ -27,7 +28,8 @@ const App = () => {
             <Router basename={process.env.PUBLIC_URL}>
                 <div>
                     <Routes>
-                        <Route path="/" element={<OnboardingChoice/>}/>
+                        <Route path="/" element={<LandingPage/>}/>
+                        <Route path="/onboarding-choice" element={<OnboardingChoice/>}/>
                         <Route path="/onboarding-welcome" element={<OnboardingWelcome/>}/>
                         <Route path="/onboarding-gamified" element={<OnboardingGamifiedScreen/>}/>
                         <Route path="/eligibility-overview" element={<EligibilityOverviewScreen/>}/>
