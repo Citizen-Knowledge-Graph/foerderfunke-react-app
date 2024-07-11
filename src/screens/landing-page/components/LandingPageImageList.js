@@ -2,27 +2,10 @@ import * as React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
-import { styled } from '@mui/material/styles';
-
-const HorizontalImageList = styled(ImageList)({
-    flexWrap: 'nowrap',
-    // Display in row direction for horizontal scrolling
-    overflowX: 'scroll',
-    '&::-webkit-scrollbar': {
-        height: '8px',
-    },
-    '&::-webkit-scrollbar-thumb': {
-        backgroundColor: '#888',
-        borderRadius: '10px',
-    },
-    '&::-webkit-scrollbar-thumb:hover': {
-        backgroundColor: '#555',
-    },
-});
 
 export default function LandingPageImageList() {
     return (
-        <HorizontalImageList sx={{ width: 400, height: 410 }} cols={1} rowHeight={400} variant="masonry">
+        <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
             {itemData.map((item) => (
                 <ImageListItem key={item.img}>
                     <img
@@ -36,13 +19,13 @@ export default function LandingPageImageList() {
                         title={'Kindergeld'}
                         sx={{
                             '& .MuiImageListItemBar-title': {
-                                fontSize: '30px', // Change the font size here
+                                fontSize: '12px', // Change the font size here
                             },
                         }}
                     />
                 </ImageListItem>
             ))}
-        </HorizontalImageList>
+        </ImageList>
     );
 }
 

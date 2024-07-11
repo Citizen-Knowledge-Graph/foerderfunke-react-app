@@ -3,6 +3,7 @@ import {Card, CardContent, Typography} from "@mui/material";
 import Layout from "../../components/Layout";
 import HStack from "../../components/HStack";
 import LandingPageImageList from "./components/LandingPageImageList";
+import LandingPageHowItWorks from "./components/LandingPageHowItWorks";
 import {yellow} from "@mui/material/colors";
 import {Link} from "react-router-dom";
 import React from "react";
@@ -43,6 +44,9 @@ const LandingPage = () => {
                     <HStack sx={{padding: "16px"}}>
                         <Typography>We are on a mission to make social benefits in Germany accessible and easy to understand by everyone. We show you what social benefits you might be eligible for and point you the way to apply for them. </Typography>
                     </HStack>
+                </VStack>
+                <VStack sx={{width: "100%"}}>
+                    <LandingPageHowItWorks/>
                 </VStack>
             </VStack>
         </Layout>
