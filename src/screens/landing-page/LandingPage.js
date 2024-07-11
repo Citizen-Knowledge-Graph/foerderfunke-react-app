@@ -11,7 +11,7 @@ import React from "react";
 const LandingPage = () => {
     return (
         <Layout>
-            <VStack sx={{width: "100%"}} gap={3}>
+            <VStack sx={{width: "100%"}} gap={7}>
                 <VStack sx={{width: "100%"}}>
                     <HStack justifyContent={'flex-start'}>
                         <Typography sx={styles.headerSectionTitle}>Check personalised benefits and financial
