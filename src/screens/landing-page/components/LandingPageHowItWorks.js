@@ -4,6 +4,7 @@ import HStack from "../../../components/HStack";
 import {Typography} from "@mui/material";
 import LandingPageInfoCard from "./LandingPageInfoCard";
 import LandingPageImage from "./LandingPageImage";
+import LandingPageBasics from "./LandingPageBasics";
 
 const LandingPageHowItWorks = () => {
     const quickCheckImage = `${process.env.PUBLIC_URL}/assets/images/figma_phone_2.svg`;
@@ -31,6 +32,9 @@ const LandingPageHowItWorks = () => {
                     title="Get your potential benefits listed"
                     text="The more complete your profile is, the more accurate the list of benefits you get."/>
                 <LandingPageImage url={quickCheckImage}/>
+            </VStack>
+            <VStack gap={3} sx={{width: '100%'}}>
+                <LandingPageBasics/>
             </VStack>
         </VStack>
     );
