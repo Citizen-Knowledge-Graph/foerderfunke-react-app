@@ -5,6 +5,7 @@ import {Typography} from "@mui/material";
 import LandingPageInfoCard from "./LandingPageInfoCard";
 import LandingPageImage from "./LandingPageImage";
 import LandingPageBasics from "./LandingPageBasics";
+import LandingPageClaimCard from "./LandingPageClaimCard";
 
 const LandingPageHowItWorks = () => {
     const quickCheckImage = `${process.env.PUBLIC_URL}/assets/images/figma_phone_2.svg`;
@@ -35,6 +36,9 @@ const LandingPageHowItWorks = () => {
             </VStack>
             <VStack gap={3} sx={{width: '100%'}}>
                 <LandingPageBasics/>
+            </VStack>
+            <VStack>
+                <LandingPageClaimCard/>
             </VStack>
         </VStack>
     );
