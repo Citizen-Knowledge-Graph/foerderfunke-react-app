@@ -13,12 +13,12 @@ const LandingPageHowItWorks = () => {
     return (
         <VStack gap={3} alignItems={'center'} sx={{width: '100%'}}>
             <VStack>
-                <HStack justifyContent={'flex-start'} sx={{width: '100%'}}>
+                <HStack justifyContent={'center'} sx={{width: '100%'}}>
                     <Typography sx={styles.subTitleText}>
                         That's how it works
                     </Typography>
                 </HStack>
-                <HStack justifyContent={'flex-start'} sx={{width: '100%'}}>
+                <HStack justifyContent={'center'} sx={{width: '100%'}}>
                     <Typography sx={styles.titleText}>
                         The easy-peasy way to find social benefits for you
                     </Typography>

@@ -13,11 +13,7 @@ import LandingPage from "./screens/landing-page/LandingPage";
 import AppStartup from "./AppStartup";
 import AppValidation from "./AppValidation";
 
-const theme = createTheme({
-    typography: {
-        fontFamily: 'Roboto Slab, Arial, sans-serif',
-    },
-});
+const theme = createTheme({});
 
 const App = () => {
     return (

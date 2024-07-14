@@ -6,7 +6,7 @@ import {green} from "@mui/material/colors";
 
 const LandingPageBasics = () => {
     return (
-        <VStack>
+        <VStack alignItems={'center'} sx={{width: "100%"}}>
             <HStack>
                 <Typography sx={styles.titleText}>
                     The basics
