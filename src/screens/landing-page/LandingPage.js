@@ -10,7 +10,7 @@ import globalStyles from "../../styles/styles";
 const LandingPage = () => {
     return (
         <Layout>
-            <VStack gap={7}>
+            <VStack gap={9}>
                 <VStack sx={{padding: "16px"}}>
                     <HStack justifyContent={'center'}>
                         <Typography sx={styles.headerSectionTitle}>Check benefits and financial support you can get
