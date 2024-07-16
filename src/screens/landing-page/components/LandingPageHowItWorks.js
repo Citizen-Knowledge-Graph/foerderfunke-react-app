@@ -11,7 +11,7 @@ const LandingPageHowItWorks = () => {
     const quickCheckImage = `${process.env.PUBLIC_URL}/assets/images/figma_phone_2.svg`;
 
     return (
-        <VStack gap={3} alignItems={'center'} sx={{width: '100%'}}>
+        <VStack gap={3} alignItems={'center'} sx={{width: '100%', padding: "16px"}}>
             <VStack>
                 <HStack justifyContent={'center'} sx={{width: '100%'}}>
                     <Typography sx={styles.subTitleText}>

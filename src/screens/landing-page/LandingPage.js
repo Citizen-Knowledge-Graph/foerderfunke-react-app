@@ -4,13 +4,14 @@ import Layout from "../../components/Layout";
 import HStack from "../../components/HStack";
 import LandingPageImageSection from "./components/LandingPageImageSection";
 import LandingPageHowItWorks from "./components/LandingPageHowItWorks";
+import LandingPageOurPrinciples from "./components/LandingPageOurPrinciples";
 import React from "react";
 import globalStyles from "../../styles/styles";
 
 const LandingPage = () => {
     return (
         <Layout>
-            <VStack gap={9}>
+            <VStack gap={7}>
                 <VStack sx={{padding: "16px"}}>
                     <HStack justifyContent={'center'}>
                         <Typography sx={styles.headerSectionTitle}>Check benefits and financial support you can get
@@ -20,19 +21,22 @@ const LandingPage = () => {
                 <VStack alignItems={'center'} sx={{padding: "16px"}}>
                     <LandingPageImageSection/>
                 </VStack>
-                <VStack gap={0} sx={styles.factHeaderBackground}>
-                    <HStack sx={{padding: "16px"}}>
+                <VStack gap={2} sx={styles.factHeaderBackground}>
+                    <HStack>
                         <Typography sx={styles.headerSectionTitle}>1 out of 5 households in Germany don’t claim
                             social benefits they are entitled to.</Typography>
                     </HStack>
-                    <HStack sx={{padding: "16px"}}>
-                        <Typography>We are on a mission to make social benefits in Germany accessible and easy to
-                            understand by everyone. We show you what social benefits you might be eligible for and
-                            point you the way to apply for them. </Typography>
+                    <HStack>
+                        <Typography sx={styles.headerSectionText}>We are on a mission to make social benefits in Germany
+                            accessible and easy to understand by everyone. We show you what social benefits you might be
+                            eligible for and point you the way to apply for them. </Typography>
                     </HStack>
                 </VStack>
-                <VStack sx={{width: "100%", padding: "16px"}}>
+                <VStack sx={{width: "100%"}}>
                     <LandingPageHowItWorks/>
+                </VStack>
+                <VStack sx={{width: "100%"}}>
+                    <LandingPageOurPrinciples/>
                 </VStack>
             </VStack>
         </Layout>
@@ -43,6 +47,10 @@ const styles = {
     headerSectionTitle: {
         fontWeight: 'bold',
         fontSize: '28px',
+        textAlign: 'center',
+    },
+    headerSectionText: {
+        fontSize: '20px',
         textAlign: 'center',
     },
     headerSectionButtonCard: {
