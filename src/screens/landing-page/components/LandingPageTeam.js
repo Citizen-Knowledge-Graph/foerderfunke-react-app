@@ -1,6 +1,7 @@
 import VStack from "../../../components/VStack";
 import {Typography} from "@mui/material";
 import HStack from "../../../components/HStack";
+import LandingPagePFCard from "./LandingPagePFCard";
 import React from "react";
 
 const LandingPageTeam = () => {
@@ -84,6 +85,9 @@ const LandingPageTeam = () => {
                         </Typography>
                     </VStack>
                 </HStack>
+            </VStack>
+            <VStack>
+                <LandingPagePFCard/>
             </VStack>
         </VStack>
     )
