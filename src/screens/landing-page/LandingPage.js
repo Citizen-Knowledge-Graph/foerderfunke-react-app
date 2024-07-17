@@ -5,6 +5,7 @@ import HStack from "../../components/HStack";
 import LandingPageImageSection from "./components/LandingPageImageSection";
 import LandingPageHowItWorks from "./components/LandingPageHowItWorks";
 import LandingPageOurPrinciples from "./components/LandingPageOurPrinciples";
+import LandingPageTeam from "./components/LandingPageTeam";
 import React from "react";
 import globalStyles from "../../styles/styles";
 
@@ -37,6 +38,9 @@ const LandingPage = () => {
                 </VStack>
                 <VStack sx={{width: "100%"}}>
                     <LandingPageOurPrinciples/>
+                </VStack>
+                <VStack>
+                    <LandingPageTeam/>
                 </VStack>
             </VStack>
         </Layout>
