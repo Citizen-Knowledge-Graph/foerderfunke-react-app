@@ -6,6 +6,7 @@ import LandingPageImageSection from "./components/LandingPageImageSection";
 import LandingPageHowItWorks from "./components/LandingPageHowItWorks";
 import LandingPageOurPrinciples from "./components/LandingPageOurPrinciples";
 import LandingPageTeam from "./components/LandingPageTeam";
+import LandingPageFooter from "./components/LandingPageFooter";
 import React from "react";
 import globalStyles from "../../styles/styles";
 
@@ -40,7 +41,10 @@ const LandingPage = () => {
                     <LandingPageOurPrinciples/>
                 </VStack>
                 <VStack>
-                    <LandingPageTeam/>
+                    <LandingPageTeam />
+                </VStack>
+                <VStack>
+                    <LandingPageFooter />
                 </VStack>
             </VStack>
         </Layout>
