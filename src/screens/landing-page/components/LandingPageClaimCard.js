@@ -24,12 +24,6 @@ const LandingPageClaimCard = () => {
                     </HStack>
                 </VStack>
                 <HStack justifyContent={'center'} sx={{width: '100%'}}>
-                    <HStack justifyContent={'center'} sx={{width: '200px', height: '200px', overflow: 'hidden'}}>
-                        <img src={quickCheckImage} alt="Landing Page"
-                             style={{width: "100%", height: "auto", borderRadius: "50%"}}/>
-                    </HStack>
-                </HStack>
-                <HStack justifyContent={'center'} sx={{width: '100%'}}>
                     <Card sx={styles.headerSectionButtonCard}>
                         <Link to={'/onboarding-choice'}
                               style={{textDecoration: 'none', color: "black", width: '100%'}}>

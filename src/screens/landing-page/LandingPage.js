@@ -7,18 +7,16 @@ import LandingPageHowItWorks from "./components/LandingPageHowItWorks";
 import LandingPageOurPrinciples from "./components/LandingPageOurPrinciples";
 import LandingPageTeam from "./components/LandingPageTeam";
 import LandingPageFooter from "./components/LandingPageFooter";
+import LandingPageHeader from "./components/LandingPageHeader";
 import React from "react";
 import globalStyles from "../../styles/styles";
 
 const LandingPage = () => {
     return (
         <Layout>
-            <VStack gap={7}>
+            <VStack gap={5}>
                 <VStack sx={{padding: "16px"}}>
-                    <HStack justifyContent={'center'}>
-                        <Typography sx={styles.headerSectionTitle}>Check benefits and financial support you can get
-                            support</Typography>
-                    </HStack>
+                    <LandingPageHeader/>
                 </VStack>
                 <VStack alignItems={'center'} sx={{padding: "16px"}}>
                     <LandingPageImageSection/>

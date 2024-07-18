@@ -1,7 +1,7 @@
 import React from 'react';
 import {AppBar, Toolbar, IconButton, Typography} from '@mui/material';
 import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
-import {useNavigate} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 //import {useStore} from './ViewportUpdater';
 import HStack from "./HStack";
 import VStack from "./VStack";
@@ -12,16 +12,18 @@ const Layout = ({children, logo = true, back = null}) => {
     const quickCheckImage = `${process.env.PUBLIC_URL}/assets/images/logo.svg`;
 
     return (
-        <VStack
-            data-testid={'layout-container'}
-        >
+        <VStack data-testid={'layout-container'}>
             <AppBar position="static" sx={styles.navbarStyle}>
                 {logo ? (
-                    <HStack alignItems={'center'} sx={{padding: '0px'}}>
-                        <img src={quickCheckImage} alt="logo" style={{height: '40px'}}/>
-                        <Typography sx={styles.logoText}>
-                            FörderFunke
-                        </Typography>
+                    <HStack alignItems={'center'}>
+                        <Link to={"/"} style={{textDecoration: 'none', color: "black", width: '100%'}}>
+                            <HStack alignItems={'center'} sx={{padding: '0px'}}>
+                                <img src={quickCheckImage} alt="logo" style={{height: '40px'}}/>
+                                <Typography sx={styles.logoText}>
+                                    FörderFunke
+                                </Typography>
+                            </HStack>
+                        </Link>
                     </HStack>
                 ) : null
                 }
