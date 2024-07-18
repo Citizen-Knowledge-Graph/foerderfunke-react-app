@@ -8,6 +8,7 @@ import LandingPageOurPrinciples from "./components/LandingPageOurPrinciples";
 import LandingPageTeam from "./components/LandingPageTeam";
 import LandingPageFooter from "./components/LandingPageFooter";
 import LandingPageHeader from "./components/LandingPageHeader";
+import LandingPageFact from "./components/LandingPageFact";
 import React from "react";
 import globalStyles from "../../styles/styles";
 
@@ -21,16 +22,8 @@ const LandingPage = () => {
                 <VStack alignItems={'center'} sx={{padding: "16px"}}>
                     <LandingPageImageSection/>
                 </VStack>
-                <VStack gap={2} sx={styles.factHeaderBackground}>
-                    <HStack>
-                        <Typography sx={styles.headerSectionTitle}>1 out of 5 households in Germany don’t claim
-                            social benefits they are entitled to.</Typography>
-                    </HStack>
-                    <HStack>
-                        <Typography sx={styles.headerSectionText}>We are on a mission to make social benefits in Germany
-                            accessible and easy to understand by everyone. We show you what social benefits you might be
-                            eligible for and point you the way to apply for them. </Typography>
-                    </HStack>
+                <VStack>
+                    <LandingPageFact/>
                 </VStack>
                 <VStack sx={{width: "100%"}}>
                     <LandingPageHowItWorks/>
@@ -50,15 +43,7 @@ const LandingPage = () => {
 }
 
 const styles = {
-    headerSectionTitle: {
-        fontWeight: 'bold',
-        fontSize: '28px',
-        textAlign: 'center',
-    },
-    headerSectionText: {
-        fontSize: '20px',
-        textAlign: 'center',
-    },
+
     headerSectionButtonCard: {
         backgroundColor: globalStyles.primaryColor,
         boxShadow: 'none',
@@ -77,11 +62,7 @@ const styles = {
         fontSize: '20px',
         fontWeight: 'bold',
     },
-    factHeaderBackground: {
-        width: "100%",
-        padding: "16px",
-        backgroundColor: globalStyles.primaryColor,
-    }
+
 }
 
 export default LandingPage;
