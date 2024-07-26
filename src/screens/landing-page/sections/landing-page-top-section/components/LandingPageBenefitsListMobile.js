@@ -16,47 +16,38 @@ const benefits = [
 
 const LandingPageBenefitsListMobile = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const cardHeight = 500;
+    const [isTransitioning, setIsTransitioning] = useState(false);
 
     const handlePrevClick = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + benefits.length) % benefits.length);
+        if (isTransitioning) return;
+        setIsTransitioning(true);
+        setTimeout(() => {
+            setCurrentIndex((prevIndex) => (prevIndex - 1 + benefits.length) % benefits.length);
+            setIsTransitioning(false);
+        }, 300); // Duration of the transition
     };
 
     const handleNextClick = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % benefits.length);
+        if (isTransitioning) return;
+        setIsTransitioning(true);
+        setTimeout(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % benefits.length);
+            setIsTransitioning(false);
+        }, 300); // Duration of the transition
     };
 
     return (
         <VStack gap={3} alignItems={'center'}>
             <HStack>
-                <IconButton onClick={handlePrevClick}>
+                <IconButton onClick={handlePrevClick} disabled={isTransitioning}>
                     <ChevronLeftIcon/>
                 </IconButton>
-                <IconButton onClick={handleNextClick}>
+                <IconButton onClick={handleNextClick} disabled={isTransitioning}>
                     <ChevronRightIcon/>
                 </IconButton>
             </HStack>
-            <HStack style={{position: "relative", width: "100%", height: `${cardHeight}px`, overflow: "hidden"}}>
-                <HStack
-                    justifyContent={'center'}
-                    gap={0}
-                    sx={{
-                        transform: `translateX(-${currentIndex * 325}px)`,
-                        transition: "transform 1s ease-in-out",
-                        width: `${benefits.length * 325}px`,
-                        position: "absolute",
-                    }}
-                >
-                    {benefits.map((benefit, index) => (
-                        <HStack
-                            key={index}
-                            justifyContent={'center'}
-                            alignItems={'center'}
-                        >
-                            <LandingPageBenefitsCardMobile benefit={benefit} cardHeight={cardHeight}/>
-                        </HStack>
-                    ))}
-                </HStack>
+            <HStack justifyContent={'center'} sx={{ width: '100%', overflow: 'hidden' }}>
+                <LandingPageBenefitsCardMobile benefit={benefits[currentIndex]} isTransitioning={isTransitioning} />
             </HStack>
         </VStack>
     );
