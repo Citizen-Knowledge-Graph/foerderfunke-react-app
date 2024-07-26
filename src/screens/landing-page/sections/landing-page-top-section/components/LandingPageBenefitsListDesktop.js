@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import HStack from "../../../../../components/HStack";
-import LandingPageBenefitsCard from "./LandingPageBenefitsCard";
+import LandingPageBenefitsCardDesktop from "./LandingPageBenefitsCardDesktop";
 
 const benefits = [
     { id: 1, name: "Benefit 1" },
@@ -15,7 +15,7 @@ const LandingPageBenefitsListDesktop = () => {
     return (
         <HStack justifyContent={'center'}>
             {benefits.map((benefit, index) => (
-                <LandingPageBenefitsCard
+                <LandingPageBenefitsCardDesktop
                     key={index}
                     benefit={benefit}
                     isHovered={hoveredIndex === index}

@@ -1,27 +1,23 @@
 import React from "react";
 import HStack from "../../../../../components/HStack";
 
-const LandingPageBenefitsCard = ({isHovered, onMouseEnter, onMouseLeave}) => {
+const LandingPageBenefitsCardMobile = ({benefit, cardHeight}) => {
     const quickCheckImage = `${process.env.PUBLIC_URL}/assets/images/family-stock-gpt4o.png`;
 
     return (
         <HStack
             justifyContent={'center'}
-            sx={{position: "relative", width: isHovered ? '325px' : '75px', overflow: 'hidden'}}
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
+            sx={{position: "relative", width: '325px', height: `${cardHeight}px`, overflow: 'hidden'}}
         >
             <img
                 src={quickCheckImage}
                 alt="Landing Page"
                 style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
                     borderRadius: "15px"
-                }}/>
+                }}
+            />
         </HStack>
     );
 }
 
-export default LandingPageBenefitsCard;
+export default LandingPageBenefitsCardMobile;
