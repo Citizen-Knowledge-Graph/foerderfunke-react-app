@@ -9,7 +9,7 @@ const benefits = [
     { id: 3, name: "Benefit 3" },
 ];
 
-const LandingPageBenefitsList = () => {
+const LandingPageBenefitsListDesktop = () => {
     const [hoveredIndex, setHoveredIndex] = useState(0);
 
     return (
@@ -26,4 +26,4 @@ const LandingPageBenefitsList = () => {
     );
 }
 
-export default LandingPageBenefitsList;
+export default LandingPageBenefitsListDesktop;

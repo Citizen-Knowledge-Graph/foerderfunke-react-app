@@ -1,16 +1,19 @@
 import React from "react";
 import {Typography} from "@mui/material";
 import VStack from "../../../../../components/VStack";
-import HStack from "../../../../../components/HStack";
+import LandingPageWAppButton from "../../../components/LandingPageWAppButton";
+import LandingPageBenefitsListMobile from "../components/LandingPageBenefitsListMobile";
 
 const LandingPageTopSectionMobile = () => {
     return (
         <VStack>
-            <HStack justifyContent={'center'}>
+            <VStack alignItems={'center'}>
                 <Typography sx={styles.headerSectionTitle}>
-                    Mobile view
+                    Check benefits and financial support you can get support
                 </Typography>
-            </HStack>
+                <LandingPageWAppButton/>
+            </VStack>
+            <LandingPageBenefitsListMobile/>
         </VStack>
     );
 }

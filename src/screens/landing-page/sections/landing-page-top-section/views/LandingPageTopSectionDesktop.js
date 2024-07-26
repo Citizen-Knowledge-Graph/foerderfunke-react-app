@@ -3,7 +3,7 @@ import {Typography} from "@mui/material";
 import VStack from "../../../../../components/VStack";
 import HStack from "../../../../../components/HStack";
 import LandingPageWAppButton from "../../../components/LandingPageWAppButton";
-import LandingPageBenefitsList from "../components/LandingPageBenefitsList";
+import LandingPageBenefitsListDesktop from "../components/LandingPageBenefitsListDesktop";
 
 const LandingPageTopSectionDesktop = () => {
 
@@ -17,7 +17,7 @@ const LandingPageTopSectionDesktop = () => {
             </VStack>
             <VStack sx={{maxWidth: '60%'}}>
                 <HStack>
-                    <LandingPageBenefitsList/>
+                    <LandingPageBenefitsListDesktop/>
                 </HStack>
             </VStack>
         </HStack>
