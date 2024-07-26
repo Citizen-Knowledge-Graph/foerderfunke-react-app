@@ -11,16 +11,15 @@ import {useStore} from "../../components/ViewportUpdater";
 
 const LandingPage = () => {
     const isDesktop = useStore((state) => state.isDesktop);
-    const horizontalPadding = 16
 
     return (
         <Layout>
             <VStack gap={5}>
                 <VStack>
-                    <LandingPageTopSection isDesktop={isDesktop} horizontalPadding={horizontalPadding} />
+                    <LandingPageTopSection isDesktop={isDesktop} />
                 </VStack>
                 <VStack>
-                    <LandingPageFact/>
+                    <LandingPageFact isDesktop={isDesktop}/>
                 </VStack>
                 <VStack>
                     <LandingPageHowItWorks/>
