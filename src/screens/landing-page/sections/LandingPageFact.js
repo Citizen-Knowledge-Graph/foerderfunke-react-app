@@ -9,7 +9,7 @@ const LandingPageFact = ({isDesktop}) => {
     return (
         <LandingPageSectionWrapper backgroundColor={globalStyles.primaryColor} isDesktop={isDesktop}>
             <VStack alignItems={'center'} sx={{width: '100%'}}>
-                <VStack sx={{width: '75%', padding: '16px'}}>
+                <VStack sx={{width: '50%', padding: '16px'}}>
                     <HStack>
                         <Typography sx={styles.headerSectionTitle}>1 out of 5 households in Germany don’t claim
                             social benefits they are entitled to.</Typography>
