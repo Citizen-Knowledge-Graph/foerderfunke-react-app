@@ -6,7 +6,6 @@ import {Link} from "react-router-dom";
 import React from "react";
 
 const LandingPageClaimCard = () => {
-    const quickCheckImage = `${process.env.PUBLIC_URL}/assets/images/quick-check-v2.jpg`;
 
     return (
         <VStack sx={{width: "100%"}}>
