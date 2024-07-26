@@ -1,34 +1,34 @@
 import VStack from "../../components/VStack";
-import {Typography} from "@mui/material";
 import Layout from "../../components/Layout";
-import HStack from "../../components/HStack";
-import LandingPageImageSection from "./components/LandingPageImageSection";
-import LandingPageHowItWorks from "./components/LandingPageHowItWorks";
-import LandingPageOurPrinciples from "./components/LandingPageOurPrinciples";
-import LandingPageTeam from "./components/LandingPageTeam";
-import LandingPageFooter from "./components/LandingPageFooter";
-import LandingPageHeader from "./components/LandingPageHeader";
-import LandingPageFact from "./components/LandingPageFact";
+import LandingPageImageSection from "./sections/LandingPageImageSection";
+import LandingPageHowItWorks from "./sections/LandingPageHowItWorks";
+import LandingPageOurPrinciples from "./sections/LandingPageOurPrinciples";
+import LandingPageTeam from "./sections/LandingPageTeam";
+import LandingPageFooter from "./sections/LandingPageFooter";
+import LandingPageHeader from "./sections/LandingPageHeader";
+import LandingPageFact from "./sections/LandingPageFact";
+import LandingPageTopSection from "./sections/landing-page-top-section/LandingPageTopSection";
 import React from "react";
 import globalStyles from "../../styles/styles";
+import {useStore} from "../../components/ViewportUpdater";
 
 const LandingPage = () => {
+    const isDesktop = useStore((state) => state.isDesktop);
+    const horizontalPadding = 16
+
     return (
         <Layout>
             <VStack gap={5}>
-                <VStack sx={{padding: "16px"}}>
-                    <LandingPageHeader/>
-                </VStack>
-                <VStack alignItems={'center'} sx={{padding: "16px"}}>
-                    <LandingPageImageSection/>
+                <VStack>
+                    <LandingPageTopSection isDesktop={isDesktop} horizontalPadding={horizontalPadding} />
                 </VStack>
                 <VStack>
                     <LandingPageFact/>
                 </VStack>
-                <VStack sx={{width: "100%"}}>
+                <VStack>
                     <LandingPageHowItWorks/>
                 </VStack>
-                <VStack sx={{width: "100%"}}>
+                <VStack>
                     <LandingPageOurPrinciples/>
                 </VStack>
                 <VStack>

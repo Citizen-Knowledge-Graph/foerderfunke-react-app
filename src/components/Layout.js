@@ -2,13 +2,11 @@ import React from 'react';
 import {AppBar, Toolbar, IconButton, Typography} from '@mui/material';
 import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
 import {Link, useNavigate} from 'react-router-dom';
-//import {useStore} from './ViewportUpdater';
 import HStack from "./HStack";
 import VStack from "./VStack";
 
 const Layout = ({children, logo = true, back = null}) => {
     const navigate = useNavigate();
-    //const isDesktop = useStore((state) => state.isDesktop);
     const quickCheckImage = `${process.env.PUBLIC_URL}/assets/images/logo.svg`;
 
     return (
