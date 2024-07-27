@@ -1,5 +1,5 @@
-import VStack from "../../../components/VStack";
-import HStack from "../../../components/HStack";
+import VStack from "../../../../../components/VStack";
+import HStack from "../../../../../components/HStack";
 import {Typography} from "@mui/material";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import {green} from "@mui/material/colors";

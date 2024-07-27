@@ -1,5 +1,5 @@
-import VStack from "../../../components/VStack";
-import HStack from "../../../components/HStack";
+import VStack from "../../../../../components/VStack";
+import HStack from "../../../../../components/HStack";
 import {Card, CardContent, Typography} from "@mui/material";
 import {green} from "@mui/material/colors";
 import {Link} from "react-router-dom";

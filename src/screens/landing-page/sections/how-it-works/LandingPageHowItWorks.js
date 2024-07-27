@@ -5,8 +5,8 @@ import LandingPageSectionWrapper from "../../components/LandingPageSectionWrappe
 import VStack from "../../../../components/VStack";
 import HStack from "../../../../components/HStack";
 import {Typography} from "@mui/material";
-import LandingPageBasics from "../LandingPageBasics";
-import LandingPageClaimCard from "../LandingPageClaimCard";
+import LandingPageBasics from "./components/LandingPageBasics";
+import LandingPageClaimCard from "./components/LandingPageClaimCard";
 
 const LandingPageHowItWorks = ({isDesktop}) => {
     return (
