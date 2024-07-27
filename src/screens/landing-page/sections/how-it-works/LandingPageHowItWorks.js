@@ -5,6 +5,8 @@ import LandingPageSectionWrapper from "../../components/LandingPageSectionWrappe
 import VStack from "../../../../components/VStack";
 import HStack from "../../../../components/HStack";
 import {Typography} from "@mui/material";
+import LandingPageBasics from "../LandingPageBasics";
+import LandingPageClaimCard from "../LandingPageClaimCard";
 
 const LandingPageHowItWorks = ({isDesktop}) => {
     return (
@@ -23,6 +25,12 @@ const LandingPageHowItWorks = ({isDesktop}) => {
                     </HStack>
                 </VStack>
                 {isDesktop ? <LandingPageHowItWorksDesktop/> : <LandingPageHowItWorksMobile/>}
+                <VStack>
+                    <LandingPageBasics/>
+                </VStack>
+                <VStack>
+                    <LandingPageClaimCard/>
+                </VStack>
             </VStack>
         </LandingPageSectionWrapper>
     );

@@ -16,25 +16,25 @@ const LandingPageBasics = () => {
                 <VStack>
                     <HStack alignItems={'center'}>
                         <CheckCircleIcon sx={styles.icon}/>
-                        <Typography>
+                        <Typography sx={styles.itemText}>
                             FörderFunke is <strong>free to use</strong>
                         </Typography>
                     </HStack>
                     <HStack alignItems={'center'}>
                         <CheckCircleIcon sx={styles.icon}/>
-                        <Typography>
+                        <Typography sx={styles.itemText}>
                             <strong>Your data is yours!</strong> All the information you fill in is stored locally only on your device
                         </Typography>
                     </HStack>
                     <HStack alignItems={'center'}>
                         <CheckCircleIcon sx={styles.icon}/>
-                        <Typography>
+                        <Typography sx={styles.itemText}>
                             <strong>No registration</strong>, no login, no bullsh*t
                         </Typography>
                     </HStack>
                     <HStack alignItems={'center'}>
                         <CheckCircleIcon sx={styles.icon}/>
-                        <Typography>
+                        <Typography sx={styles.itemText}>
                             You can use the <strong>desktop or mobile version</strong>
                         </Typography>
                     </HStack>
@@ -52,6 +52,9 @@ const styles = {
     icon: {
         color: green[500],
         fontSize: '34px',
+    },
+    itemText: {
+        fontSize: '20px'
     }
 }
 

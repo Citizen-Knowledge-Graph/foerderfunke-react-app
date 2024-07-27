@@ -8,12 +8,12 @@ import React from "react";
 const LandingPageClaimCard = () => {
 
     return (
-        <VStack sx={{width: "100%"}}>
+        <VStack alignItems={'center'} sx={{width: "100%"}}>
             <VStack gap={5} sx={styles.infoCard}>
-                <VStack>
+                <VStack alignItems={'center'}>
                     <HStack>
                         <Typography sx={styles.titleText}>
-                            Claim your benefits
+                            Find benefits and support programmes for you!
                         </Typography>
                     </HStack>
                     <HStack>
@@ -43,6 +43,7 @@ const LandingPageClaimCard = () => {
 
 const styles = {
     infoCard: {
+        width: '840px',
         borderRadius: '15px',
         backgroundColor: green[500],
         padding: '32px 16px 32px 16px',
@@ -52,10 +53,12 @@ const styles = {
         fontWeight: 'bold',
         fontSize: '28px',
         color: 'white',
+        textAlign: 'center',
     },
     subTitleText: {
         fontSize: '24px',
         color: 'white',
+        textAlign: 'center',
     },
     imageContainer: {
         borderRadius: '15px',
