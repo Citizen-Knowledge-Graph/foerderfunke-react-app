@@ -21,16 +21,16 @@ const LandingPage = () => {
                 <VStack>
                     <LandingPageFact isDesktop={isDesktop}/>
                 </VStack>
-                <VStack>
-                    <LandingPageHowItWorks/>
+                <VStack id="how-it-works">
+                    <LandingPageHowItWorks />
                 </VStack>
-                <VStack>
+                <VStack id="principles">
                     <LandingPageOurPrinciples/>
                 </VStack>
-                <VStack>
+                <VStack id="about-us">
                     <LandingPageTeam />
                 </VStack>
-                <VStack>
+                <VStack id="find-your-benefits">
                     <LandingPageFooter />
                 </VStack>
             </VStack>

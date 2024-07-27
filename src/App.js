@@ -12,6 +12,7 @@ import BenefitPageScreen from "./screens/benefit-page/BenefitPageScreen";
 import LandingPage from "./screens/landing-page/LandingPage";
 import AppStartup from "./AppStartup";
 import AppValidation from "./AppValidation";
+import ScrollToTop from './ScrollToTop';
 
 const theme = createTheme({});
 
@@ -22,6 +23,7 @@ const App = () => {
             <AppStartup/>
             <AppValidation/>
             <Router basename={process.env.PUBLIC_URL}>
+                <ScrollToTop />
                 <div>
                     <Routes>
                         <Route path="/" element={<LandingPage/>}/>
