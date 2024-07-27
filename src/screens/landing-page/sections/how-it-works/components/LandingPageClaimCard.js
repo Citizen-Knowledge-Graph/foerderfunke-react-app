@@ -43,7 +43,7 @@ const LandingPageClaimCard = () => {
 
 const styles = {
     infoCard: {
-        width: '840px',
+        maxWidth: '840px',
         borderRadius: '15px',
         backgroundColor: green[500],
         padding: '32px 16px 32px 16px',
