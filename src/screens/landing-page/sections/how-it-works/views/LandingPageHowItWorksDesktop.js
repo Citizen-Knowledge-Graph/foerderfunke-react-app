@@ -1,33 +1,47 @@
 import React from "react";
-import {Typography} from "@mui/material";
 import VStack from "../../../../../components/VStack";
 import HStack from "../../../../../components/HStack";
+import LandingPageInfoCard from "../components/LandingPageInfoCard";
 
 const LandingPageHowItWorksDesktop = () => {
+    const figma_phone_1 = `${process.env.PUBLIC_URL}/assets/images/figma_phone_1.svg`;
+    const figma_phone_2 = `${process.env.PUBLIC_URL}/assets/images/figma_phone_2.svg`;
+
     return (
-        <VStack>
-            <HStack justifyContent={'center'} sx={{width: '100%'}}>
-                <Typography sx={styles.subTitleText}>
-                    That's how it works
-                </Typography>
+        <VStack gap={5} alignItems={'center'}>
+            <HStack justifyContent={'space-between'} sx={{width: '60%'}}>
+                <LandingPageInfoCard
+                    title="Answer some basic questions"
+                    text="Do a quick check, create your profile, or browse our list of social benefits. Your choice."/>
+                <LandingPageInfoCard
+                    title="Get your potential benefits listed"
+                    text="The more complete your profile is, the more accurate the list of benefits you get."/>
             </HStack>
-            <HStack justifyContent={'center'} sx={{width: '100%'}}>
-                <Typography sx={styles.titleText}>
-                    The easy-peasy way to find social benefits for you
-                </Typography>
+            <HStack justifyContent={'space-between'} alignItems={'center'} sx={{position: 'relative'}}>
+                <img
+                    src={figma_phone_1}
+                    style={{
+                        width: '500px',
+                        height: 'auto',
+                        zIndex: 1,
+                        position: 'relative',
+                        marginRight: '-100px',
+                        marginTop: '-50px'
+                    }}
+                    alt={'phone 1'}/>
+                <img
+                    src={figma_phone_2}
+                    style={{
+                        width: '600px',
+                        height: 'auto',
+                        zIndex: 2,
+                        position: 'relative',
+                        marginLeft: '-50px'
+                    }}
+                    alt={'phone 1'}/>
             </HStack>
         </VStack>
     )
 }
-
-const styles = {
-    titleText: {
-        fontWeight: 'bold',
-        fontSize: '36px',
-    },
-    subTitleText: {
-        fontSize: '30px',
-    }
-};
 
 export default LandingPageHowItWorksDesktop;

@@ -1,11 +1,11 @@
-import VStack from "../../../components/VStack";
-import HStack from "../../../components/HStack";
+import VStack from "../../../../../components/VStack";
+import HStack from "../../../../../components/HStack";
 import {Typography} from "@mui/material";
 import {green} from "@mui/material/colors";
 
 const LandingPageInfoCard = ({title, text}) => {
     return (
-        <VStack gap={0} sx={{width: '100%'}}>
+        <VStack gap={0} sx={{width: '400px'}}>
             <VStack gap={1} sx={styles.infoCard}>
                 <HStack>
                     <Typography sx={styles.titleText}>

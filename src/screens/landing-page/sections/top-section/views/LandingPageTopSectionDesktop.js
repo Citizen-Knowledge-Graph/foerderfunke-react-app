@@ -27,7 +27,7 @@ const LandingPageTopSectionDesktop = () => {
 const styles = {
     headerSectionTitle: {
         fontWeight: 'bold',
-        fontSize: '28px',
+        fontSize: '44px',
         textAlign: 'left',
     }
 }
