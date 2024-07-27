@@ -1,11 +1,11 @@
 import VStack from "../../components/VStack";
 import Layout from "../../components/Layout";
-import LandingPageHowItWorks from "./sections/LandingPageHowItWorks";
+import LandingPageHowItWorks from "./sections/how-it-works/LandingPageHowItWorks";
 import LandingPageOurPrinciples from "./sections/LandingPageOurPrinciples";
 import LandingPageTeam from "./sections/LandingPageTeam";
 import LandingPageFooter from "./sections/LandingPageFooter";
 import LandingPageFact from "./sections/LandingPageFact";
-import LandingPageTopSection from "./sections/landing-page-top-section/LandingPageTopSection";
+import LandingPageTopSection from "./sections/top-section/LandingPageTopSection";
 import React from "react";
 import {useStore} from "../../components/ViewportUpdater";
 
@@ -22,7 +22,7 @@ const LandingPage = () => {
                     <LandingPageFact isDesktop={isDesktop}/>
                 </VStack>
                 <VStack id="how-it-works">
-                    <LandingPageHowItWorks />
+                    <LandingPageHowItWorks isDesktop={isDesktop}/>
                 </VStack>
                 <VStack id="principles">
                     <LandingPageOurPrinciples/>

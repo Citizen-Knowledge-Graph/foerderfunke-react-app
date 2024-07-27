@@ -6,10 +6,12 @@ import LandingPageSectionWrapper from "../components/LandingPageSectionWrapper";
 import VStack from "../../../components/VStack";
 
 const LandingPageFact = ({isDesktop}) => {
+    const width = isDesktop ? '840px' : '100%';
+
     return (
         <LandingPageSectionWrapper backgroundColor={globalStyles.primaryColor} isDesktop={isDesktop}>
             <VStack alignItems={'center'} sx={{width: '100%'}}>
-                <VStack sx={{width: '500px', padding: '16px'}}>
+                <VStack sx={{width: width, padding: '16px'}}>
                     <HStack>
                         <Typography sx={styles.headerSectionTitle}>1 out of 5 households in Germany don’t claim
                             social benefits they are entitled to.</Typography>

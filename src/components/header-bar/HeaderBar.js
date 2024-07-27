@@ -17,7 +17,7 @@ const HeaderBar = ({isDesktop, logo = true, back = null}) => {
                 <HStack alignItems={'center'}>
                     <Link to={"/"} style={{textDecoration: 'none', color: "black", width: '100%'}}>
                         <HStack alignItems={'center'} sx={{padding: '0px'}}>
-                            <img src={quickCheckImage} alt="logo" style={{height: '40px'}}/>
+                            <img src={quickCheckImage} alt="logo" style={{height: '50px'}}/>
                             <Typography sx={styles.logoText}>
                                 FörderFunke
                             </Typography>
