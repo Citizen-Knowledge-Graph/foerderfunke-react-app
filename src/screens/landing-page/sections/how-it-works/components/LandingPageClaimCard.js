@@ -16,11 +16,6 @@ const LandingPageClaimCard = () => {
                             Find benefits and support programmes for you!
                         </Typography>
                     </HStack>
-                    <HStack>
-                        <Typography sx={styles.subTitleText}>
-                            Find benefits and support programmes for you!
-                        </Typography>
-                    </HStack>
                 </VStack>
                 <HStack justifyContent={'center'} sx={{width: '100%'}}>
                     <Card sx={styles.headerSectionButtonCard}>
