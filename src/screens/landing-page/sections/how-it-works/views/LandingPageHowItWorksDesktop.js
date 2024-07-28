@@ -3,9 +3,7 @@ import VStack from "../../../../../components/VStack";
 import HStack from "../../../../../components/HStack";
 import LandingPageInfoCard from "../components/LandingPageInfoCard";
 
-const LandingPageHowItWorksDesktop = () => {
-    const figma_phone_1 = `${process.env.PUBLIC_URL}/assets/images/figma_phone_1.svg`;
-    const figma_phone_2 = `${process.env.PUBLIC_URL}/assets/images/figma_phone_2.svg`;
+const LandingPageHowItWorksDesktop = ({figma_phone_1, figma_phone_2}) => {
 
     return (
         <VStack gap={5} alignItems={'center'}>

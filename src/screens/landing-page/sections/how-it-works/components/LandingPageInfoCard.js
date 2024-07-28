@@ -5,7 +5,7 @@ import {green} from "@mui/material/colors";
 
 const LandingPageInfoCard = ({title, text}) => {
     return (
-        <VStack gap={0} sx={{width: '400px'}}>
+        <VStack gap={0} sx={{maxWidth: '400px'}}>
             <VStack gap={1} sx={styles.infoCard}>
                 <HStack>
                     <Typography sx={styles.titleText}>
