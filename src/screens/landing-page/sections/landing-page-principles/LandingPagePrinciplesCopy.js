@@ -1,13 +1,13 @@
-import VStack from "../../../components/VStack";
-import HStack from "../../../components/HStack";
+import VStack from "../../../../components/VStack";
+import HStack from "../../../../components/HStack";
 import {Typography} from "@mui/material";
-import globalStyles from "../../../styles/styles";
+import globalStyles from "../../../../styles/styles";
 import SecurityIcon from '@mui/icons-material/Security';
 import OpenWithIcon from '@mui/icons-material/OpenWith';
 import FaceIcon from '@mui/icons-material/Face';
 import {green} from "@mui/material/colors";
 
-const LandingPageOurPrinciples = () => {
+const LandingPagePrinciples = () => {
     return (
         <VStack sx={styles.principlesContainer}>
             <HStack justifyContent={'center'} sx={{padding: "16px"}}>
@@ -89,4 +89,4 @@ const styles = {
     }
 }
 
-export default LandingPageOurPrinciples;
+export default LandingPagePrinciples;

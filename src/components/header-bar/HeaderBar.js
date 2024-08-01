@@ -7,7 +7,7 @@ import HeaderBarDesktop from "./views/HeaderBarDesktop";
 
 const HeaderBar = ({isDesktop, logo = true, back = null}) => {
     //const navigate = useNavigate();
-    const horizontalPadding = isDesktop ? '40px' : '16px';
+    const horizontalPadding = isDesktop ? '60px' : '16px';
     const quickCheckImage = `${process.env.PUBLIC_URL}/assets/images/logo.svg`;
 
     return (

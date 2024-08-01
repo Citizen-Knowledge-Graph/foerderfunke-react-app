@@ -1,7 +1,7 @@
 import VStack from "../../components/VStack";
 import Layout from "../../components/Layout";
 import LandingPageHowItWorks from "./sections/how-it-works/LandingPageHowItWorks";
-import LandingPageOurPrinciples from "./sections/LandingPageOurPrinciples";
+import LandingPagePrinciples from "./sections/landing-page-principles/LandingPagePrinciples";
 import LandingPageTeam from "./sections/LandingPageTeam";
 import LandingPageFooter from "./sections/LandingPageFooter";
 import LandingPageFact from "./sections/LandingPageFact";
@@ -25,7 +25,7 @@ const LandingPage = () => {
                     <LandingPageHowItWorks isDesktop={isDesktop}/>
                 </VStack>
                 <VStack id="principles">
-                    <LandingPageOurPrinciples/>
+                    <LandingPagePrinciples isDesktop={isDesktop}/>
                 </VStack>
                 <VStack id="about-us">
                     <LandingPageTeam />
