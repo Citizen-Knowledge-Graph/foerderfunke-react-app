@@ -4,7 +4,6 @@ import LandingPagePrincipleCardData from '../components/LandingPagePrincipleCard
 import LandingPagePrincipleCardPrivacy from '../components/LandingPagePrincipleCardPrivacy';
 import LandingPagePrincipleCardUser from "../components/LandingPagePrincipleCardUser";
 
-
 const LandingPagePrinciplesDesktop = () => {
     return (
         <HStack justifyContent={'center'} sx={{width: '100%'}}>
