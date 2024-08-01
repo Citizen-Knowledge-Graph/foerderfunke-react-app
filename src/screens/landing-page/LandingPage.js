@@ -2,7 +2,7 @@ import VStack from "../../components/VStack";
 import Layout from "../../components/Layout";
 import LandingPageHowItWorks from "./sections/how-it-works/LandingPageHowItWorks";
 import LandingPagePrinciples from "./sections/principles/LandingPagePrinciples";
-import LandingPageTeam from "./sections/LandingPageTeam";
+import LandingPageTeam from "./sections/team/LandingPageTeam";
 import LandingPageFooter from "./sections/LandingPageFooter";
 import LandingPageFact from "./sections/LandingPageFact";
 import LandingPageTopSection from "./sections/top-section/LandingPageTopSection";
@@ -14,7 +14,7 @@ const LandingPage = () => {
 
     return (
         <Layout>
-            <VStack gap={5}>
+            <VStack gap={0}>
                 <VStack>
                     <LandingPageTopSection isDesktop={isDesktop} />
                 </VStack>
@@ -28,7 +28,7 @@ const LandingPage = () => {
                     <LandingPagePrinciples isDesktop={isDesktop}/>
                 </VStack>
                 <VStack id="about-us">
-                    <LandingPageTeam />
+                    <LandingPageTeam isDesktop={isDesktop}/>
                 </VStack>
                 <VStack id="find-your-benefits">
                     <LandingPageFooter />

@@ -7,7 +7,7 @@ import LandingPagePrincipleCardUser from "../components/LandingPagePrincipleCard
 const LandingPagePrinciplesMobile = () => {
     return (
         <VStack gap={5}>
-            <VStack justifyContent={'center'} sx={{width: '100%'}}>
+            <VStack gap={5} justifyContent={'center'} sx={{width: '100%'}}>
                 <LandingPagePrincipleCardData/>
                 <LandingPagePrincipleCardPrivacy/>
                 <LandingPagePrincipleCardUser />

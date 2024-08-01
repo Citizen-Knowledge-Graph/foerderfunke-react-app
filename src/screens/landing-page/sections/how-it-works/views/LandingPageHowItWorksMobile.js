@@ -22,7 +22,7 @@ const LandingPageHowItWorksMobile = ({figma_phone_1, figma_phone_2}) => {
             <img
                 src={figma_phone_2}
                 style={{
-                    maxWidth: '400px',
+                    maxWidth: '350px',
                     height: 'auto',
                     position: 'relative',
                 }}

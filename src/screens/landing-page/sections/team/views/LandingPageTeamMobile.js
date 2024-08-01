@@ -1,0 +1,17 @@
+import React from "react";
+import {MemberCardBen, MemberCardBenjamin, MemberCardVanessa} from "../components/LandingPageMembers";
+import VStack from "../../../../../components/VStack";
+
+const LandingPageTeamMobile = () => {
+    return (
+        <VStack gap={5}>
+            <VStack gap={5} justifyContent={'center'} sx={{width: '100%'}}>
+                <MemberCardBenjamin/>
+                <MemberCardVanessa/>
+                <MemberCardBen/>
+            </VStack>
+        </VStack>
+    )
+}
+
+export default LandingPageTeamMobile;
