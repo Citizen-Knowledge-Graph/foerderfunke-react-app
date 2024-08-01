@@ -1,6 +1,8 @@
 import React from "react";
 import {MemberCardBen, MemberCardBenjamin, MemberCardVanessa} from "../components/LandingPageMembers";
 import VStack from "../../../../../components/VStack";
+import HStack from "../../../../../components/HStack";
+import LandingPageSupportCard from "../components/LandingPageSupportCard";
 
 const LandingPageTeamMobile = () => {
     return (
@@ -10,6 +12,9 @@ const LandingPageTeamMobile = () => {
                 <MemberCardVanessa/>
                 <MemberCardBen/>
             </VStack>
+            <HStack justifyContent={'center'} sx={{width: '100%'}}>
+                <LandingPageSupportCard isDesktop={false}/>
+            </HStack>
         </VStack>
     )
 }

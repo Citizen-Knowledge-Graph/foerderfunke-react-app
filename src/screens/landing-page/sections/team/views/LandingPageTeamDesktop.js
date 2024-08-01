@@ -12,8 +12,8 @@ const LandingPageTeamDesktop = () => {
                 <MemberCardVanessa/>
                 <MemberCardBen/>
             </HStack>
-            <HStack justifyContent={'center'} sx={{width: '100%'}} data-testid='this'>
-                <LandingPageSupportCard/>
+            <HStack justifyContent={'center'} sx={{width: '100%'}}>
+                <LandingPageSupportCard isDesktop={true}/>
             </HStack>
         </VStack>
     )

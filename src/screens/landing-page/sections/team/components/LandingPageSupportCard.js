@@ -3,13 +3,28 @@ import HStack from "../../../../../components/HStack";
 import {Typography} from "@mui/material";
 import {green} from "@mui/material/colors";
 
+const Stacker = ({isDesktop, children}) => {
+    return (
+        isDesktop ? (
+                <HStack gap={5} alignItems={'center'}>
+                    {children}
+                </HStack>
+            )
+            : (
+                <VStack gap={3} sx={{flex: 1}}>
+                    {children}
+                </VStack>
+            )
+    );
+}
+
 const LandingPageSupportCard = ({isDesktop}) => {
     const PFLogoUrl = `${process.env.PUBLIC_URL}/assets/images/logos/PF_logo.svg`;
     const BMBFUrl = `${process.env.PUBLIC_URL}/assets/images/logos/BMBF_logo.svg`;
 
     return (
         <VStack sx={styles.infoCard}>
-            <HStack gap={5}>
+            <Stacker isDesktop={isDesktop}>
                 <VStack gap={1} sx={{flex: 1}}>
                     <HStack>
                         <Typography sx={styles.titleText}>
@@ -24,14 +39,15 @@ const LandingPageSupportCard = ({isDesktop}) => {
                     </HStack>
                 </VStack>
                 <VStack>
-                    <img src={PFLogoUrl} alt={'Prototype Fund Logo'} style={{height: '200px'}}/>
+                    <img src={PFLogoUrl} alt={'Prototype Fund Logo'} style={{height: '175px'}}/>
                 </VStack>
                 <VStack>
-                    <img src={BMBFUrl} alt={'Prototype Fund Logo'} style={{height: '200px'}}/>
+                    <img src={BMBFUrl} alt={'Prototype Fund Logo'} style={{height: '175px'}}/>
                 </VStack>
-            </HStack>
+            </Stacker>
         </VStack>
-    );
+    )
+        ;
 }
 
 const styles = {
