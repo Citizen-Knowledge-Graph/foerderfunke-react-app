@@ -1,11 +1,12 @@
 import LandingPageMemberCard from "./LandingPageMemberCard";
 
-const quickCheckImage = `${process.env.PUBLIC_URL}/assets/images/quick-check-v2.jpg`;
 
 export const MemberCardBenjamin = () => {
+    const portraitUrl = `${process.env.PUBLIC_URL}/assets/images/portraits/Portrait_Benjamin_Cropped.png`;
+
     return (
         <LandingPageMemberCard
-            imageUrl={quickCheckImage}
+            imageUrl={portraitUrl}
             name={"Benjamin Degenhart"}
             position={"Knowledge Engineer"}
             email={"benjamin.degenhart@foerderfunke.org"}
@@ -15,9 +16,11 @@ export const MemberCardBenjamin = () => {
 }
 
 export const MemberCardVanessa = () => {
+    const portraitUrl = `${process.env.PUBLIC_URL}/assets/images/portraits/Portrait_Vanessa.jpeg`;
+
     return (
         <LandingPageMemberCard
-            imageUrl={quickCheckImage}
+            imageUrl={portraitUrl}
             name={"Vanessa Espinosa"}
             position={"UI/UX Designer"}
             email={"vanessa.espinosa@foerderfunke.org"}
@@ -27,9 +30,11 @@ export const MemberCardVanessa = () => {
 }
 
 export const MemberCardBen = () => {
+    const portraitUrl = `${process.env.PUBLIC_URL}/assets/images/portraits/Portrait_Ben_Cropped.png`;
+
     return (
         <LandingPageMemberCard
-            imageUrl={quickCheckImage}
+            imageUrl={portraitUrl}
             name={"Ben Gläser"}
             position={"Software Engineer"}
             email={"ben.glaeser@foerderfunke.org"}
