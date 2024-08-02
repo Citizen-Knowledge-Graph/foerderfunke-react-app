@@ -7,19 +7,14 @@ import LandingPageWAppButton from "../../../components/LandingPageWAppButton";
 import NarBarLink from "../../../../../components/NavBarLink";
 import EmailLink from "../../../../../components/EmailLink";
 import LinkedInLink from "../../../../../components/LinkedInLink";
+import LogoBar from "../../../../../components/LogoBar";
 
 const LandingPageFooterDesktop = () => {
-    const quickCheckImage = `${process.env.PUBLIC_URL}/assets/images/logos/FF_logo.svg`;
 
     return (
         <VStack>
             <HStack justifyContent={'space-between'} alignItems={'center'}>
-                <HStack alignItems={'center'}>
-                    <img src={quickCheckImage} alt="logo" style={{height: '75px'}}/>
-                    <Typography sx={styles.logoText}>
-                        FörderFunke
-                    </Typography>
-                </HStack>
+                <LogoBar/>
                 <HStack gap={3} justifyContent={'center'} alignItems={'center'}>
                     <Typography sx={styles.navbarItemText}>
                         Impressum
@@ -47,10 +42,6 @@ const LandingPageFooterDesktop = () => {
 }
 
 const styles = {
-    logoText: {
-        fontSize: '32px',
-        fontWeight: 'bold',
-    },
     navbarItemText: {
         fontSize: '18px',
     },
