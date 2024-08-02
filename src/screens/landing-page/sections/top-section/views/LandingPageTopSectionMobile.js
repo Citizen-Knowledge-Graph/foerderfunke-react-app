@@ -11,7 +11,7 @@ const LandingPageTopSectionMobile = () => {
                 <Typography sx={styles.headerSectionTitle}>
                     Check benefits and financial support you can get support
                 </Typography>
-                <LandingPageWAppButton/>
+                <LandingPageWAppButton backgroundColor={'primary'}/>
             </VStack>
             <LandingPageBenefitsListMobile/>
         </VStack>
