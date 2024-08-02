@@ -2,6 +2,8 @@ import React from "react";
 import {Typography} from "@mui/material";
 import HStack from "../../../../../components/HStack";
 import VStack from "../../../../../components/VStack";
+import EmailLink from "../../../../../components/EmailLink";
+import LinkedInLink from "../../../../../components/LinkedInLink";
 
 const LandingPageMemberCard = ({imageUrl, name, position, email, linkedin}) => {
     return (
@@ -13,19 +15,15 @@ const LandingPageMemberCard = ({imageUrl, name, position, email, linkedin}) => {
                 </HStack>
             </HStack>
             <HStack justifyContent={'center'}>
-                <VStack gap={1}>
+                <VStack gap={1} alignItems={'center'}>
                     <Typography sx={styles.itemTitle}>
                         {name}
                     </Typography>
                     <Typography sx={styles.itemText}>
                         {position}
                     </Typography>
-                    <Typography sx={styles.itemEmail}>
-                        {email}
-                    </Typography>
-                    <Typography sx={styles.itemEmail}>
-                        {linkedin}
-                    </Typography>
+                    <EmailLink email={email}/>
+                    <LinkedInLink linkedin={linkedin}/>
                 </VStack>
             </HStack>
         </VStack>)

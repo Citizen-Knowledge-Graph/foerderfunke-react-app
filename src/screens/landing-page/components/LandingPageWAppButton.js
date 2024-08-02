@@ -4,14 +4,36 @@ import {Link} from "react-router-dom";
 import HStack from "../../../components/HStack";
 import globalStyles from "../../../styles/styles";
 
-const LandingPageWAppButton = () => {
+const LandingPageWAppButton = ({backgroundColor}) => {
+    const buttonColor = (() => {
+        switch (backgroundColor) {
+            case 'primary':
+                return globalStyles.primaryColor;
+            case 'secondary':
+                return globalStyles.secondaryColor;
+            default:
+                return 'white'
+        }
+    })();
+
+    const textColor = (() => {
+        switch (backgroundColor) {
+            case 'primary':
+                return 'black';
+            case 'secondary':
+                return 'white';
+            default:
+                return 'black'
+        }
+    })();
+
     return (
-        <Card sx={styles.headerSectionButtonCard}>
+        <Card sx={{...styles.headerSectionButtonCard, backgroundColor: buttonColor}}>
             <Link to={'/onboarding-choice'}
                   style={{textDecoration: 'none', color: "black", width: '100%'}}>
                 <CardContent sx={styles.headerSectionButtonCardContent}>
                     <HStack gap={1} alignItems={'center'}>
-                        <Typography sx={styles.headerSectionButtonCardText}>
+                        <Typography sx={{...styles.headerSectionButtonCardText, color: textColor}}>
                             Try FörderFunke
                         </Typography>
                     </HStack>
@@ -23,7 +45,6 @@ const LandingPageWAppButton = () => {
 
 const styles = {
     headerSectionButtonCard: {
-        backgroundColor: globalStyles.primaryColor,
         boxShadow: 'none',
         borderRadius: '12px',
     },
@@ -36,7 +57,6 @@ const styles = {
         ,
     },
     headerSectionButtonCardText: {
-        color: "black",
         fontSize: '20px',
         fontWeight: 'bold',
     },

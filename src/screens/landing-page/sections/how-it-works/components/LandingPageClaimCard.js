@@ -1,9 +1,11 @@
+import React from "react";
+import {Link} from "react-router-dom";
 import VStack from "../../../../../components/VStack";
 import HStack from "../../../../../components/HStack";
 import {Card, CardContent, Typography} from "@mui/material";
 import {green} from "@mui/material/colors";
-import {Link} from "react-router-dom";
-import React from "react";
+import LandingPageWAppButton from "../../../components/LandingPageWAppButton";
+
 
 const LandingPageClaimCard = () => {
 
@@ -18,18 +20,7 @@ const LandingPageClaimCard = () => {
                     </HStack>
                 </VStack>
                 <HStack justifyContent={'center'} sx={{width: '100%'}}>
-                    <Card sx={styles.headerSectionButtonCard}>
-                        <Link to={'/onboarding-choice'}
-                              style={{textDecoration: 'none', color: "black", width: '100%'}}>
-                            <CardContent sx={styles.headerSectionButtonCardContent}>
-                                <HStack gap={1} alignItems={'center'}>
-                                    <Typography sx={styles.headerSectionButtonCardText}>
-                                        Try FörderFunke
-                                    </Typography>
-                                </HStack>
-                            </CardContent>
-                        </Link>
-                    </Card>
+                    <LandingPageWAppButton/>
                 </HStack>
             </VStack>
         </VStack>
