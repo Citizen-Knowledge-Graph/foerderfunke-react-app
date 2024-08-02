@@ -3,10 +3,11 @@ import HStack from "../../../../../components/HStack";
 import LandingPageBenefitsCardDesktop from "./LandingPageBenefitsCardDesktop";
 
 const benefits = [
-    { id: 1, name: "Benefit 1" },
-    { id: 2, name: "Benefit 2" },
-    { id: 3, name: "Benefit 3" },
-    { id: 3, name: "Benefit 3" },
+    { id: 1, name: "Kinderzuschlag", url: "Kinderzuschlag.png" },
+    { id: 2, name: "Wohngeld", url: "Wohngeld.png" },
+    { id: 3, name: "Grundsicherung", url: "Grundsicherung.png" },
+    { id: 4, name: "Bildungsgutschein", url:  "Bildungsgutschein.png" },
+    { id: 5, name: "Viele Weitere", url:  "VieleWeitere.png" },
 ];
 
 const LandingPageBenefitsListDesktop = () => {

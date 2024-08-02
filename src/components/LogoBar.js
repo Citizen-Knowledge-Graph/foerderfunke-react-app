@@ -2,8 +2,8 @@ import React from "react";
 import HStack from "./HStack";
 import {Typography} from "@mui/material";
 
-const LogoBar = ({size='large'}) => {
-    const quickCheckImage = `${process.env.PUBLIC_URL}/assets/images/logos/FF_logo.svg`;
+const LogoBar = ({size = 'large', secondary = false}) => {
+    const logoUrl =`${process.env.PUBLIC_URL}/assets/images/logos/FF_logo.svg`;
 
     const styles = (() => {
         switch (size) {
@@ -34,7 +34,7 @@ const LogoBar = ({size='large'}) => {
 
     return (
         <HStack alignItems={'center'}>
-            <img src={quickCheckImage} alt="logo" style={{height: styles.img.height}}/>
+            <img src={logoUrl} alt="logo" style={{height: styles.img.height}}/>
             <Typography sx={styles.title}>
                 FörderFunke
             </Typography>
