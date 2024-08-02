@@ -1,8 +1,8 @@
 import React from 'react';
 import Typography from '@mui/material/Typography';
-import HStack from "../../HStack";
-import LandingPageWAppButton from "../../../screens/landing-page/components/LandingPageWAppButton";
-import NarBarLink from "../../NavBarLink";
+import HStack from "../../../../../components/HStack";
+import LandingPageWAppButton from "../../../components/LandingPageWAppButton";
+import NarBarLink from "../../../../../components/NavBarLink";
 
 const HeaderBarDesktop = () => {
     return (

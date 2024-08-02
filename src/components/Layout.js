@@ -1,6 +1,6 @@
 import React from 'react';
 import VStack from "./VStack";
-import HeaderBar from "./header-bar/HeaderBar";
+import HeaderBar from "../screens/landing-page/sections/header/HeaderBar";
 import {useStore} from "./ViewportUpdater";
 
 const Layout = ({children, logo = true, back = null}) => {

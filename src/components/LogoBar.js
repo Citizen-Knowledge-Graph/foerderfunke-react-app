@@ -10,10 +10,10 @@ const LogoBar = ({size='large'}) => {
             case 'small':
                 return {
                     img: {
-                        height: '60px'
+                        height: '50px'
                     },
                     title: {
-                        fontSize: '28px',
+                        fontSize: '24px',
                         fontWeight: 'bold',
                     }
                 }
