@@ -1,8 +1,7 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import VStack from "../../../../../components/VStack";
 import HStack from "../../../../../components/HStack";
-import {Card, CardContent, Typography} from "@mui/material";
+import {Typography} from "@mui/material";
 import {green} from "@mui/material/colors";
 import LandingPageWAppButton from "../../../components/LandingPageWAppButton";
 
