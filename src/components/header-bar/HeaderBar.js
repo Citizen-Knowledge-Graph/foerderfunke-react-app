@@ -8,7 +8,7 @@ import HeaderBarDesktop from "./views/HeaderBarDesktop";
 const HeaderBar = ({isDesktop, logo = true, back = null}) => {
     //const navigate = useNavigate();
     const horizontalPadding = isDesktop ? '60px' : '16px';
-    const quickCheckImage = `${process.env.PUBLIC_URL}/assets/images/logo.svg`;
+    const quickCheckImage = `${process.env.PUBLIC_URL}/assets/images/logos/FF_logo.svg`;
 
     return (
         <AppBar position="static"

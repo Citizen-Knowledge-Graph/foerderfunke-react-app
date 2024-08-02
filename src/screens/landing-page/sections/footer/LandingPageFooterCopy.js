@@ -1,7 +1,7 @@
-import VStack from "../../../components/VStack";
-import HStack from "../../../components/HStack";
+import VStack from "../../../../components/VStack";
+import HStack from "../../../../components/HStack";
 import {Card, CardContent, Typography} from "@mui/material";
-import globalStyles from "../../../styles/styles";
+import globalStyles from "../../../../styles/styles";
 import Divider from '@mui/material/Divider';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
