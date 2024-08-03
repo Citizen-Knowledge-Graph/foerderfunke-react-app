@@ -23,19 +23,4 @@ const HeaderBar = ({isDesktop}) => {
     )
 }
 
-const styles = {
-    navbarStyle: {
-        display: 'flex',
-        flexDirection: 'row',
-        backgroundColor: 'white',
-        boxShadow: 'none',
-        color: 'black',
-        height: '10vh',
-    },
-    logoText: {
-        fontSize: '32px',
-        fontWeight: 'bold',
-    }
-}
-
 export default HeaderBar;

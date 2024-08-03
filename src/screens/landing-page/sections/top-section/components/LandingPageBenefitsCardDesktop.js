@@ -1,6 +1,6 @@
 import React from "react";
 import HStack from "../../../../../components/HStack";
-import {Box, Typography} from "@mui/material";
+import {Typography} from "@mui/material";
 
 const LandingPageBenefitsCardDesktop = ({benefit, isHovered, onMouseEnter, onMouseLeave}) => {
     const benefitImage = `${process.env.PUBLIC_URL}/assets/images/benefit-cards/${benefit.url}`;
