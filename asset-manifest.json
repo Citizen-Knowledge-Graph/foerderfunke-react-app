@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/foerderfunke-react-app/static/css/main.81ad5936.css",
-    "main.js": "/foerderfunke-react-app/static/js/main.66a7d9e2.js",
+    "main.js": "/foerderfunke-react-app/static/js/main.5907daaf.js",
     "static/js/453.dc53165d.chunk.js": "/foerderfunke-react-app/static/js/453.dc53165d.chunk.js",
     "index.html": "/foerderfunke-react-app/index.html",
     "main.81ad5936.css.map": "/foerderfunke-react-app/static/css/main.81ad5936.css.map",
-    "main.66a7d9e2.js.map": "/foerderfunke-react-app/static/js/main.66a7d9e2.js.map",
+    "main.5907daaf.js.map": "/foerderfunke-react-app/static/js/main.5907daaf.js.map",
     "453.dc53165d.chunk.js.map": "/foerderfunke-react-app/static/js/453.dc53165d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.81ad5936.css",
-    "static/js/main.66a7d9e2.js"
+    "static/js/main.5907daaf.js"
   ]
 }
