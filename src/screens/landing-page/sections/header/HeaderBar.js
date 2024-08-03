@@ -6,7 +6,7 @@ import HeaderBarDesktop from "./views/HeaderBarDesktop";
 import LandingPageSectionWrapper from "../../components/LandingPageSectionWrapper";
 import LogoBar from "../../../../components/LogoBar";
 
-const HeaderBar = ({isDesktop}) => {
+const HeaderBar = ({isApp, isDesktop}) => {
     const size = isDesktop ? 'large' : 'small';
 
     return (
@@ -17,7 +17,7 @@ const HeaderBar = ({isDesktop}) => {
                         <LogoBar size={size}/>
                     </Link>
                 </HStack>
-                {isDesktop ? <HeaderBarDesktop/> : <HeaderBarMobile/>}
+                {isDesktop ? <HeaderBarDesktop isApp={isApp}/> : <HeaderBarMobile/>}
             </HStack>
         </LandingPageSectionWrapper>
     )

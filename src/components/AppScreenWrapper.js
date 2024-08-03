@@ -1,7 +1,7 @@
 import React from "react";
-import VStack from "../../../components/VStack";
+import VStack from "./VStack";
 
-const LandingPageSectionWrapper = ({backgroundColor = 'white', isDesktop, isTop = false, children}) => {
+const AppScreenWrapper = ({isDesktop, isTop = false, children}) => {
     const horizontalPadding = isDesktop ? '60px' : '16px';
     const verticalPadding = isDesktop
         ? isTop
@@ -11,8 +11,7 @@ const LandingPageSectionWrapper = ({backgroundColor = 'white', isDesktop, isTop 
             ? '28px'
             : '60px';
     return (
-        <VStack sx={{
-            backgroundColor: backgroundColor,
+        <VStack alignItems={'center'} sx={{
             width: '100%',
             paddingLeft: horizontalPadding,
             paddingRight: horizontalPadding,
@@ -24,4 +23,4 @@ const LandingPageSectionWrapper = ({backgroundColor = 'white', isDesktop, isTop 
     )
 }
 
-export default LandingPageSectionWrapper;
+export default AppScreenWrapper;

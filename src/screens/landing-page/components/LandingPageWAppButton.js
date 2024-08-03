@@ -29,7 +29,7 @@ const LandingPageWAppButton = ({backgroundColor}) => {
 
     return (
         <Card sx={{...styles.headerSectionButtonCard, backgroundColor: buttonColor}}>
-            <Link to={'/onboarding-choice'}
+            <Link to={'/info-privacy'}
                   style={{textDecoration: 'none', color: "black", width: '100%'}}>
                 <CardContent sx={styles.headerSectionButtonCardContent}>
                     <HStack gap={1} alignItems={'center'}>
