@@ -4,7 +4,7 @@ import VStack from "../../../../../components/VStack";
 import LandingPageWAppButton from "../../../components/LandingPageWAppButton";
 import LandingPageBenefitsListMobile from "../components/LandingPageBenefitsListMobile";
 
-const LandingPageTopSectionMobile = () => {
+const LandingPageTopSectionMobile = ({benefits}) => {
     return (
         <VStack>
             <VStack alignItems={'center'}>
@@ -13,7 +13,7 @@ const LandingPageTopSectionMobile = () => {
                 </Typography>
                 <LandingPageWAppButton backgroundColor={'primary'}/>
             </VStack>
-            <LandingPageBenefitsListMobile/>
+            <LandingPageBenefitsListMobile benefits={benefits}/>
         </VStack>
     );
 }

@@ -6,15 +6,7 @@ import HStack from "../../../../../components/HStack";
 import IconButton from '@mui/material/IconButton';
 import LandingPageBenefitsCardMobile from "./LandingPageBenefitsCardMobile";
 
-const benefits = [
-    {id: 1, name: "Benefit 1"},
-    {id: 2, name: "Benefit 2"},
-    {id: 3, name: "Benefit 3"},
-    {id: 4, name: "Benefit 4"},
-    {id: 5, name: "Benefit 5"},
-];
-
-const LandingPageBenefitsListMobile = () => {
+const LandingPageBenefitsListMobile = ({benefits}) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isTransitioning, setIsTransitioning] = useState(false);
 

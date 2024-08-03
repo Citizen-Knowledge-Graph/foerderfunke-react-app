@@ -5,7 +5,7 @@ import HStack from "../../../../../components/HStack";
 import LandingPageWAppButton from "../../../components/LandingPageWAppButton";
 import LandingPageBenefitsListDesktop from "../components/LandingPageBenefitsListDesktop";
 
-const LandingPageTopSectionDesktop = () => {
+const LandingPageTopSectionDesktop = ({benefits}) => {
 
     return (
         <HStack justifyContent={'space-between'} alignItems={'center'}>
@@ -17,7 +17,7 @@ const LandingPageTopSectionDesktop = () => {
             </VStack>
             <VStack sx={{maxWidth: '60%'}}>
                 <HStack>
-                    <LandingPageBenefitsListDesktop/>
+                    <LandingPageBenefitsListDesktop benefits={benefits}/>
                 </HStack>
             </VStack>
         </HStack>
