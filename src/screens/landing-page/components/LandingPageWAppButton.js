@@ -1,8 +1,9 @@
 import React from "react";
-import {Card, CardContent, Typography} from "@mui/material";
+import {Button, Card, CardContent, Typography} from "@mui/material";
 import {Link} from "react-router-dom";
 import HStack from "../../../components/HStack";
 import globalStyles from "../../../styles/styles";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 const LandingPageWAppButton = ({backgroundColor}) => {
     const buttonColor = (() => {
@@ -28,38 +29,19 @@ const LandingPageWAppButton = ({backgroundColor}) => {
     })();
 
     return (
-        <Card sx={{...styles.headerSectionButtonCard, backgroundColor: buttonColor}}>
-            <Link to={'/info-privacy'}
-                  style={{textDecoration: 'none', color: "black", width: '100%'}}>
-                <CardContent sx={styles.headerSectionButtonCardContent}>
-                    <HStack gap={1} alignItems={'center'}>
-                        <Typography sx={{...styles.headerSectionButtonCardText, color: textColor}}>
-                            Try FörderFunke
-                        </Typography>
-                    </HStack>
-                </CardContent>
-            </Link>
-        </Card>
+        <Button variant="text" sx={{...styles.button, backgroundColor: buttonColor, color: textColor}} component={Link}
+                to="/info-privacy">Try FörderFunke</Button>
     );
 }
 
 const styles = {
-    headerSectionButtonCard: {
-        boxShadow: 'none',
+    button: {
         borderRadius: '12px',
-    },
-    headerSectionButtonCardContent: {
-        padding: "3px 6px 4px 8px",
-        "&:last-child":
-            {
-                paddingBottom: '3px',
-            }
-        ,
-    },
-    headerSectionButtonCardText: {
+        color: 'black',
         fontSize: '20px',
         fontWeight: 'bold',
-    },
+        textTransform: 'none'
+    }
 }
 
 export default LandingPageWAppButton;
