@@ -1,9 +1,7 @@
 import React from "react";
-import {Button, Card, CardContent, Typography} from "@mui/material";
+import {Button} from "@mui/material";
 import {Link} from "react-router-dom";
-import HStack from "../../../components/HStack";
 import globalStyles from "../../../styles/styles";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 const LandingPageWAppButton = ({backgroundColor}) => {
     const buttonColor = (() => {

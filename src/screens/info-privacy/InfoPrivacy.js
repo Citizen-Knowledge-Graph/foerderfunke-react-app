@@ -6,13 +6,15 @@ import Layout from "../../components/Layout";
 import AppScreenWrapper from "../../components/AppScreenWrapper";
 import VStack from "../../components/VStack";
 import HStack from "../../components/HStack";
+import {useStore} from "../../components/ViewportUpdater";
 
 const InfoPrivacy = () => {
+    const isDesktop = useStore((state) => state.isDesktop);
     const privacyImageUrl = `${process.env.PUBLIC_URL}/assets/images/info-screens/privacy_1.svg`;
 
     return (
         <Layout isApp={true}>
-            <AppScreenWrapper>
+            <AppScreenWrapper isDesktop={isDesktop}>
                 <VStack alignItems={'center'} gap={5} sx={{maxWidth: '840px'}}>
                     <Typography sx={styles.title}>Your data is only stored locally</Typography>
                     <img src={privacyImageUrl} alt="logo" style={{height: '225px'}}/>
