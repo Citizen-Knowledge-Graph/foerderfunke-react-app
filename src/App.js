@@ -4,7 +4,7 @@ import './index.css';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 import ViewportUpdater from "./components/ViewportUpdater";
 import OnboardingChoice from './screens/onboarding-choice/OnboardingChoice';
-import OnboardingWelcome from "./screens/onboarding-welcome/OnboardingWelcome";
+import OnboardingWelcomeOverview from "./screens/onboarding-welcome/OnboardingWelcomeOverview";
 import OnboardingGamifiedScreen from "./screens/onboarding-gamified/OnboardingGamifiedScreen";
 import ProfileSectionScreen from "./screens/profile-section/ProfileSectionScreen";
 import EligibilityOverviewScreen from "./screens/eligibilty-overview/EligibilityOverviewScreen";
@@ -15,6 +15,7 @@ import AppValidation from "./AppValidation";
 import ScrollToTop from './ScrollToTop';
 import InfoScreenPrivacy from "./screens/info-screen/InfoScreenPrivacy";
 import InfoScreenAccount from "./screens/info-screen/InfoScreenAccount";
+import OnboardingWelcomeTopics from "./screens/onboarding-welcome/OnboardingWelcomeTopics";
 
 const theme = createTheme({});
 
@@ -32,7 +33,8 @@ const App = () => {
                         <Route path="/info-privacy" element={<InfoScreenPrivacy/>}/>
                         <Route path="/info-account" element={<InfoScreenAccount/>}/>
                         <Route path="/onboarding-choice" element={<OnboardingChoice/>}/>
-                        <Route path="/onboarding-welcome" element={<OnboardingWelcome/>}/>
+                        <Route path="/onboarding-welcome-topics" element={<OnboardingWelcomeTopics/>}/>
+                        <Route path="/onboarding-welcome" element={<OnboardingWelcomeOverview/>}/>
                         <Route path="/onboarding-gamified" element={<OnboardingGamifiedScreen/>}/>
                         <Route path="/eligibility-overview" element={<EligibilityOverviewScreen/>}/>
                         <Route path="/profile-section/:id/:mode?" element={<ProfileSectionScreen/>}/>

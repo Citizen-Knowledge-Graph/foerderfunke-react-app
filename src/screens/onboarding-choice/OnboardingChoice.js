@@ -22,7 +22,7 @@ const OnboardingChoice = () => {
                     </Typography>
                 </VStack>
                 <ClickCard
-                    link="/onboarding-welcome"
+                    link="/onboarding-welcome-topics"
                     time="5 Min."
                     title="Quick eligibility check"
                     subtitle="Based on 10 benefits"
