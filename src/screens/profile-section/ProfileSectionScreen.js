@@ -33,7 +33,7 @@ const ProfileSectionScreen = () => {
 
     return (
         <Layout isApp={true} logo={false} back={'Back to quick check'}>
-            <AppScreenWrapper isDesktop={isDesktop}>
+            <AppScreenWrapper isDesktop={isDesktop} back={true}>
                 {profileSectionData ? (
                     !completed ? (
                         <ProfileSectionList

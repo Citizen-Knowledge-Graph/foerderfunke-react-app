@@ -22,7 +22,7 @@ const InfoScreenPrivacy = () => {
 
 const styles = {
     infoText: {
-        fontSize: 20,
+        fontSize: 16,
         textAlign: 'left',
     },
 }

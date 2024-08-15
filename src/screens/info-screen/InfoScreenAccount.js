@@ -29,7 +29,7 @@ const InfoScreenAccount = () => {
 
 const styles = {
     infoText: {
-        fontSize: 20,
+        fontSize: 16,
         textAlign: 'left',
     },
     list: {
@@ -40,7 +40,7 @@ const styles = {
         marginBottom: '8px',
     },
     itemText: {
-        fontSize: 20,
+        fontSize: 16,
         textAlign: 'left',
     }
 }

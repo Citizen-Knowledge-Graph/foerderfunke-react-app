@@ -1,14 +1,15 @@
 import React from "react";
 import VStack from "./VStack";
+import AppScreenHeader from "./AppScreenHeader";
 
-const AppScreenWrapper = ({isDesktop, isTop = true, children}) => {
-    const horizontalPadding = isDesktop ? '60px' : '16px';
+const AppScreenWrapper = ({isDesktop, isTop = true, children, back=false}) => {
+    const horizontalPadding = isDesktop ? '60px' : '30px';
     const verticalPadding = isDesktop
         ? isTop
             ? '32px'
             : '60px'
         : isTop
-            ? '28px'
+            ? '16px'
             : '60px';
     return (
         <VStack alignItems={'center'} sx={{
@@ -22,10 +23,14 @@ const AppScreenWrapper = ({isDesktop, isTop = true, children}) => {
                 <VStack sx={{
                     maxWidth: '840px',
                 }}>
+                    {back && <AppScreenHeader/>}
                     {children}
                 </VStack>
             ) : (
-                children
+                <>
+                    {back && <AppScreenHeader/>}
+                    {children}
+                </>
             )}
         </VStack>
     )

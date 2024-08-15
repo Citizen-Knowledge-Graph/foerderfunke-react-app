@@ -31,8 +31,8 @@ const OnboardingWelcome = () => {
     useInitializeProfileSectionStore(profileSection, entityData);
 
     return (
-        <Layout isApp={true} logo={false} back={"Back to selection"}>
-            <AppScreenWrapper isDesktop={isDesktop}>
+        <Layout isApp={true} logo={false} >
+            <AppScreenWrapper isDesktop={isDesktop} back={true}>
                 <VStack gap={2}>
                     <Typography variant="h4" gutterBottom sx={styles.titleText}>
                         Quick eligibility check

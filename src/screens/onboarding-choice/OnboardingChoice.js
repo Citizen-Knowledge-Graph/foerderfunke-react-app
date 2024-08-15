@@ -8,12 +8,10 @@ import {useStore} from "../../components/ViewportUpdater";
 
 const OnboardingChoice = () => {
     const isDesktop = useStore((state) => state.isDesktop);
-    const quickCheckImage = `${process.env.PUBLIC_URL}/assets/images/quick-check-v2.jpg`;
-    const browseAllImage = `${process.env.PUBLIC_URL}/assets/images/browse-all.jpg`;
 
     return (
         <Layout isApp={true}>
-            <AppScreenWrapper isDesktop={isDesktop}>
+            <AppScreenWrapper isDesktop={isDesktop} back={true}>
                 <VStack gap={1} sx={styles.container} justifyContent={'center'}>
                     <Typography variant="h3" gutterBottom sx={styles.titleText}>
                         Your choice
@@ -27,14 +25,12 @@ const OnboardingChoice = () => {
                     time="5 Min."
                     title="Quick eligibility check"
                     subtitle="Based on 10 benefits"
-                    backgroundImage={quickCheckImage}
                 />
                 <ClickCard
                     link="/eligibility-overview"
                     time="At your own pace"
                     title="Browse all benefits"
                     subtitle="Filter by topic or from A-Z"
-                    backgroundImage={browseAllImage}
                 />
             </AppScreenWrapper>
         </Layout>
