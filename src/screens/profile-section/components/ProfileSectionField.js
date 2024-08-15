@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import {Button, ButtonBase, Card, CardContent, Typography} from '@mui/material';
 import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
-import {indigo} from "@mui/material/colors";
 import ProfileSectionInput from "./ProfileSectionInput";
 import ProfileSectionClass from "./ProfileSectionClass";
 import ProfileSectionSelection from "./ProfileSectionSelection";

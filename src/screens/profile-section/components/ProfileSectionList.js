@@ -3,7 +3,6 @@ import VStack from "../../../components/VStack";
 import ProfileSectionField from "./ProfileSectionField";
 import {useProfileSectionStore} from "../../../storage/useProfileSectionStore";
 import {useProfileSectionListHandlers} from "../hooks/useProfileSectionListHandlers";
-import {Typography} from "@mui/material";
 
 const ProfileSectionList = ({profileSectionData, mode, setCompleted}) => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -47,11 +46,5 @@ const ProfileSectionList = ({profileSectionData, mode, setCompleted}) => {
         </VStack>
     );
 };
-
-const styles = {
-    titleText: {
-        fontWeight: 'bold',
-    },
-}
 
 export default ProfileSectionList;
