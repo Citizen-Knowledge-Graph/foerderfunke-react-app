@@ -12,14 +12,14 @@ const ClickCard = ({
                        time,
                        title,
                        subtitle,
+                       backgroundColor,
                        cardHeight = '175px',
-                       subtitleColor = 'white',
                        icon = AccessTimeIcon,
                        iconColor = "green"
                    }) => {
     return (
         <VStack data-testid="card-container"
-                sx={{...styles.card, minHeight: cardHeight}}>
+                sx={{...styles.card, minHeight: cardHeight, backgroundColor: backgroundColor}}>
             <Link to={link} style={{textDecoration: 'none', color: "black", width: '100%'}}>
                 <VStack sx={styles.cardContent} justifyContent={'space-between'}>
                     <HStack justifyContent={'flex-end'} gap={1}>
@@ -47,8 +47,7 @@ const styles = {
     card: {
         width: "100%",
         borderRadius: '15px',
-        backgroundColor: globalStyles.tertiaryColor,
-        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+        backgroundColor: globalStyles.tertiaryColor
     },
     cardContent: {
         padding: "16px",
@@ -56,11 +55,9 @@ const styles = {
     cardContentTitle: {
         fontSize: '36px',
         fontWeight: 'bold',
-        color: 'white'
     },
     cardContentSubTitle: {
         fontSize: '16px',
         fontWeight: '400',
-        color: 'white'
     }
 };

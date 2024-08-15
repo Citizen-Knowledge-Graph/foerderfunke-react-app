@@ -54,9 +54,6 @@ const styles = {
         padding: '16px',
         backgroundColor: globalStyles.primaryColorTransparent,
         borderRadius: '12px',
-        borderStyle: 'solid',
-        borderWidth: '1px',
-        borderColor: globalStyles.primaryColor,
     },
     title: {
         fontWeight: 'bold',
@@ -65,10 +62,7 @@ const styles = {
     infoWrapper: {
         padding: '16px',
         backgroundColor: globalStyles.primaryColorTransparent,
-        borderRadius: '12px',
-        borderStyle: 'solid',
-        borderWidth: '1px',
-        borderColor: globalStyles.primaryColor,
+        borderRadius: '12px'
     },
     button: {
         color: 'black',
