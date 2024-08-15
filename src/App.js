@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import './index.css';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 import ViewportUpdater from "./components/ViewportUpdater";
-import OnboardingChoice from './screens/OnboardingChoice';
+import OnboardingChoice from './screens/onboarding-choice/OnboardingChoice';
 import OnboardingWelcome from "./screens/onboarding-welcome/OnboardingWelcome";
 import OnboardingGamifiedScreen from "./screens/onboarding-gamified/OnboardingGamifiedScreen";
 import ProfileSectionScreen from "./screens/profile-section/ProfileSectionScreen";

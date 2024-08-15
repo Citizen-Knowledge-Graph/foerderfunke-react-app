@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import VStack from "../../../components/VStack";
 import ProfileSectionField from "./ProfileSectionField";
-import ProfileCompletionBar from "./ProfileCompletionBar";
 import {useProfileSectionStore} from "../../../storage/useProfileSectionStore";
 import {useProfileSectionListHandlers} from "../hooks/useProfileSectionListHandlers";
 import {Typography} from "@mui/material";
@@ -36,7 +35,6 @@ const ProfileSectionList = ({profileSectionData, mode, setCompleted}) => {
 
     return (
         <VStack sx={{width: '100%'}} gap={3}>
-            <ProfileCompletionBar length={profileSectionData.fields.length} index={currentIndex}/>
             <Typography variant="h4" gutterBottom sx={styles.titleText}>
                 {profileSectionData.title}
             </Typography>

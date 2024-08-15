@@ -5,7 +5,7 @@ import InfoScreen from "./components/InfoScreen";
 const InfoScreenAccount = () => {
     return (
         <InfoScreen title="Full control over your data" imageUrl="privacy_1" backLink={'/info-privacy'}
-                    forwardLink="/info-account">
+                    forwardLink="/onboarding-choice">
             <Typography sx={styles.infoText}>
                 Before leaving the website, you have three options:
             </Typography>

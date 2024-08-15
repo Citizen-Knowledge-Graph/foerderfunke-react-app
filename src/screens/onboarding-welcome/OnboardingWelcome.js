@@ -10,9 +10,10 @@ import HStack from "../../components/HStack";
 import IconCard from "../../components/IconCard";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import StarBorderIcon from '@mui/icons-material/StarBorder';
-import LinearProgress from "@mui/material/LinearProgress";
 import ButtonCard from "../../components/ButtonCard";
 import TextList from "../../components/TextList";
+import {useStore} from "../../components/ViewportUpdater";
+import AppScreenWrapper from "../../components/AppScreenWrapper";
 
 const benefitsList = [
     "Healthcare Assistance",
@@ -24,37 +25,39 @@ const benefitsList = [
 ];
 
 const OnboardingWelcome = () => {
+    const isDesktop = useStore((state) => state.isDesktop);
     const entityData = useInitializeQuickCheckUser();
     const profileSection = 'quick-check-profile';
     useInitializeProfileSectionStore(profileSection, entityData);
 
     return (
-        <Layout logo={false} back={"Back to selection"}>
-            <VStack gap={2}>
-                <LinearProgress variant="determinate" value={0} sx={styles.progressBar}/>
-                <Typography variant="h4" gutterBottom sx={styles.titleText}>
-                    Quick eligibility check
-                </Typography>
-                <HStack>
-                    <IconCard icon={AccessTimeIcon} iconColor={green[500]} text="5 Min."/>
-                    <IconCard icon={StarBorderIcon} iconColor={yellow[500]} text="Based on 15 Benefits"/>
-                </HStack>
-                <Typography variant="body1" gutterBottom sx={styles.subTitleText}>
-                    Answer some questions about you and find out to which benefits you might be eligible to. Our
-                    benefits catalogue covers a range of topics.
-                </Typography>
-                <VStack gap={0} sx={styles.container}>
-                    <Typography variant="body1" gutterBottom sx={styles.listHeader}>
-                        The quick check will include the following:
+        <Layout isApp={true} logo={false} back={"Back to selection"}>
+            <AppScreenWrapper isDesktop={isDesktop}>
+                <VStack gap={2}>
+                    <Typography variant="h4" gutterBottom sx={styles.titleText}>
+                        Quick eligibility check
                     </Typography>
-                    <TextList items={benefitsList}/>
+                    <HStack>
+                        <IconCard icon={AccessTimeIcon} iconColor={green[500]} text="5 Min."/>
+                        <IconCard icon={StarBorderIcon} iconColor={yellow[500]} text="Based on 15 Benefits"/>
+                    </HStack>
+                    <Typography variant="body1" gutterBottom sx={styles.subTitleText}>
+                        Answer some questions about you and find out to which benefits you might be eligible to. Our
+                        benefits catalogue covers a range of topics.
+                    </Typography>
+                    <VStack gap={0} sx={styles.container}>
+                        <Typography variant="body1" gutterBottom sx={styles.listHeader}>
+                            The quick check will include the following:
+                        </Typography>
+                        <TextList items={benefitsList}/>
+                    </VStack>
                 </VStack>
-            </VStack>
-            <InfoCard text="All data will stored as part of this browser session. If you close your browser you data
+                <InfoCard text="All data will stored as part of this browser session. If you close your browser you data
                             will disappear. If you wish to come back at a later stage you can always export the current
                             state of your profile"/>
-            <ButtonCard link={`/profile-section/${profileSection}`} text="Discover your benefits"
-                        backgroundColor={green[500]}/>
+                <ButtonCard link={`/profile-section/${profileSection}`} text="Discover your benefits"
+                            backgroundColor={green[500]}/>
+            </AppScreenWrapper>
         </Layout>
     );
 };

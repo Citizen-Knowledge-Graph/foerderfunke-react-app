@@ -9,6 +9,7 @@ import ProfileSectionSelection from "./ProfileSectionSelection";
 import useAddProfileField from '../hooks/useAddProfileField';
 import useInputValidation from "../hooks/useInputValidation";
 import useFetchProfileField from "../hooks/useFetchProfileField";
+import globalStyles from "../../../styles/styles";
 
 const ProfileSectionField = ({
                                  currentField,
@@ -124,7 +125,7 @@ const styles = {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: yellow[400],
+        backgroundColor: globalStyles.primaryColor,
         boxShadow: 'none',
     },
     infoCardContent: {

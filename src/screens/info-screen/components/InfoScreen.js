@@ -15,6 +15,8 @@ const InfoScreen = ({title, children, imageUrl, backLink, forwardLink}) => {
     const privacyImageUrl = `${process.env.PUBLIC_URL}/assets/images/info-screens/${imageUrl}.svg`;
     let stackType;
 
+    const titleFontSize = isDesktop ? 40 : 30;
+
     if (backLink === undefined) {
         stackType = 'flex-end';
     } else {
@@ -26,7 +28,7 @@ const InfoScreen = ({title, children, imageUrl, backLink, forwardLink}) => {
             <AppScreenWrapper isDesktop={isDesktop}>
                 <VStack alignItems={'center'} gap={5} sx={{width: "100%"}}>
                     <HStack sx={styles.titleWrapper}>
-                        <Typography sx={styles.title}>{title}</Typography>
+                        <Typography sx={{...styles.title, fontSize: titleFontSize}}>{title}</Typography>
                     </HStack>
                     <img src={privacyImageUrl} alt="logo" style={{height: '225px'}}/>
                     <VStack gap={5} sx={styles.infoWrapper}>
@@ -57,7 +59,6 @@ const styles = {
         borderColor: globalStyles.primaryColor,
     },
     title: {
-        fontSize: 40,
         fontWeight: 'bold',
         textAlign: 'left',
     },
