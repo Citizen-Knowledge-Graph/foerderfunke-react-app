@@ -4,8 +4,11 @@ import readJson from "../../utilities/readJson";
 import {useParams} from "react-router-dom";
 import BenefitPageHeader from "./components/BenefitPageHeader";
 import BenefitPageList from "./components/BenefitPageList";
+import AppScreenWrapper from "../../components/AppScreenWrapper";
+import {useStore} from "../../components/ViewportUpdater";
 
 const BenefitPageScreen = () => {
+    const isDesktop = useStore((state) => state.isDesktop);
     const {id} = useParams();
     const [benefitPageData, setBenefitPageData] = useState();
 
@@ -25,13 +28,15 @@ const BenefitPageScreen = () => {
 
 
     return (
-        <Layout logo={false} back={'Back'}>
-            {benefitPageData ? (
-                <>
-                    <BenefitPageHeader benefit={benefitPageData}/>
-                    <BenefitPageList benefit={benefitPageData}/>
-                </>
-            ) : null}
+        <Layout isApp={true} logo={false} back={'Back'}>
+            <AppScreenWrapper isDesktop={isDesktop}>
+                {benefitPageData ? (
+                    <>
+                        <BenefitPageHeader benefit={benefitPageData}/>
+                        <BenefitPageList benefit={benefitPageData}/>
+                    </>
+                ) : null}
+            </AppScreenWrapper>
         </Layout>
     );
 };
