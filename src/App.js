@@ -13,8 +13,8 @@ import LandingPage from "./screens/landing-page/LandingPage";
 import AppStartup from "./AppStartup";
 import AppValidation from "./AppValidation";
 import ScrollToTop from './ScrollToTop';
-import InfoPrivacy from "./screens/info-privacy/InfoPrivacy";
-import InfoAccount from "./screens/info-account/InfoAccount";
+import InfoScreenPrivacy from "./screens/info-screen/InfoScreenPrivacy";
+import InfoScreenAccount from "./screens/info-screen/InfoScreenAccount";
 
 const theme = createTheme({});
 
@@ -29,8 +29,8 @@ const App = () => {
                 <div>
                     <Routes>
                         <Route path="/" element={<LandingPage/>}/>
-                        <Route path="/info-privacy" element={<InfoPrivacy/>}/>
-                        <Route path="/info-account" element={<InfoAccount/>}/>
+                        <Route path="/info-privacy" element={<InfoScreenPrivacy/>}/>
+                        <Route path="/info-account" element={<InfoScreenAccount/>}/>
                         <Route path="/onboarding-choice" element={<OnboardingChoice/>}/>
                         <Route path="/onboarding-welcome" element={<OnboardingWelcome/>}/>
                         <Route path="/onboarding-gamified" element={<OnboardingGamifiedScreen/>}/>

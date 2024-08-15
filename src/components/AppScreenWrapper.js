@@ -21,13 +21,6 @@ const AppScreenWrapper = ({isDesktop, isTop = true, children}) => {
             {isDesktop ? (
                 <VStack sx={{
                     maxWidth: '840px',
-                    borderWidth: '2px',
-                    borderStyle: 'solid',
-                    borderColor: 'rgba(25, 31, 52, 0.25)',
-                    paddingLeft: horizontalPadding,
-                    paddingRight: horizontalPadding,
-                    paddingTop: verticalPadding,
-                    paddingBottom: verticalPadding,
                 }}>
                     {children}
                 </VStack>
