@@ -1,18 +1,27 @@
 import React from 'react';
 import {Typography} from '@mui/material';
+import CircleIcon from '@mui/icons-material/Circle';
 import useInitializeQuickCheckUser from "./hooks/useInitializeQuickCheckUser";
 import useInitializeProfileSectionStore from "./hooks/useInitializeProfileSectionStore";
 import VStack from "../../components/VStack";
-import TextList from "../../components/TextList";
 import OnboardingWelcomeScreen from "./components/OnboardingWelcomeScreen";
+import HStack from "../../components/HStack";
 
 const benefitsList = [
-    "Healthcare Assistance",
-    "Childcare Support",
-    "Unemployment Benefits",
-    "Education Grants",
-    "Housing Assistance",
-    "..."
+    {
+        "topic": "Services for Families",
+        "benefits": [
+            "Child Benefit",
+            "Child Care Benefit",
+        ]
+    },
+    {
+        "topic": "Housing",
+        "benefits": [
+            "Housing Benefit",
+            "Rent Subsidy",
+        ]
+    }
 ];
 
 const OnboardingWelcomeOverview = () => {
@@ -22,15 +31,35 @@ const OnboardingWelcomeOverview = () => {
 
     return (
         <OnboardingWelcomeScreen buttonText={'Discover your benefits'} link={`/profile-section/${profileSection}`}>
-            <Typography variant="body1" gutterBottom sx={styles.subTitleText}>
-                Answer some questions about you and find out to which benefits you might be eligible to. Our
-                benefits catalogue covers a range of topics.
-            </Typography>
-            <VStack gap={0} sx={styles.container}>
-                <Typography variant="body1" gutterBottom sx={styles.listHeader}>
-                    The quick check will include the following:
+            <VStack gap={3}>
+                <Typography variant="body1" gutterBottom sx={styles.subTitleText}>
+                    Based on your chosen topics we will provide you with a list of benefits you may be eligible for.
                 </Typography>
-                <TextList items={benefitsList}/>
+                <VStack alignItems={'flex-start'}>
+                    {benefitsList.map((benefit, index) => (
+                        <VStack key={index} gap={2} alignItems={'flex-start'}>
+                            <Typography variant="h6" sx={styles.listHeader}>
+                                {benefit.topic}
+                            </Typography>
+                            <VStack gap={1} alignItems={'flex-start'}>
+                                {benefit.benefits.map((benefit, index) => (
+                                    <HStack key={index} gap={1} alignItems={'center'}>
+                                        <CircleIcon sx={{
+                                            width: '8px',
+                                            height: '8px',
+                                        }}/>
+                                        <Typography key={index} variant="body1" sx={styles.listItem}>
+                                            {benefit}
+                                        </Typography>
+                                    </HStack>
+                                ))}
+                            </VStack>
+                        </VStack>
+                    ))}
+                </VStack>
+                <Typography variant="body1" gutterBottom sx={styles.subTitleText}>
+                    The quick check does not include a check for all benefits in the selected topics to keep it quick.
+                </Typography>
             </VStack>
         </OnboardingWelcomeScreen>
     );

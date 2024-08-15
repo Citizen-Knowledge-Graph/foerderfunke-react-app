@@ -35,7 +35,7 @@ const OnboardingWelcomeTopics = () => {
             <Typography variant="body1" gutterBottom sx={styles.titleText}>
                 Which topic/s are you interested in exploring benefits for?
             </Typography>
-            <VStack alignItems={'center'} sx={styles.container}>
+            <VStack alignItems={'center'}>
                 {topicsList.map((topic, index) => (
                     <Button
                         key={index}
@@ -66,14 +66,8 @@ const OnboardingWelcomeTopics = () => {
 };
 
 const styles = {
-    container: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'flex-start',
-        textAlign: 'left',
-    },
     titleText: {
-        fontSize: '16px',
+        fontSize: '28px',
         fontWeight: 'bold'
     },
     topicItemButton: {

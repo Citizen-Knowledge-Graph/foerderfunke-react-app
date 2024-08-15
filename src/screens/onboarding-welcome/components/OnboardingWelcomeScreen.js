@@ -18,48 +18,31 @@ const OnboardingWelcomeScreen = ({children, buttonText, link}) => {
     return (
         <Layout isApp={true} logo={false}>
             <AppScreenWrapper isDesktop={isDesktop} back={true}>
-                <VStack gap={2}>
-                    <Typography gutterBottom sx={styles.titleText}>
-                        Quick eligibility check
-                    </Typography>
-                    <HStack>
-                        <IconCard icon={AccessTimeIcon} iconColor={globalStyles.secondaryColor} text="5 Min."/>
-                        <IconCard icon={StarBorderIcon} iconColor={globalStyles.primaryColor}
-                                  text="Based on 15 Benefits"/>
-                    </HStack>
-                        {children}
+                <VStack gap={5}>
+                    <VStack gap={2}>
+                        <Typography sx={styles.titleText}>
+                            Quick eligibility check
+                        </Typography>
+                        <HStack>
+                            <IconCard icon={AccessTimeIcon} iconColor={globalStyles.secondaryColor} text="5 Min."/>
+                            <IconCard icon={StarBorderIcon} iconColor={globalStyles.primaryColor}
+                                      text="Based on 15 Benefits"/>
+                        </HStack>
+                    </VStack>
+                    {children}
                     <ButtonCard link={link} text={buttonText}
                                 backgroundColor={globalStyles.secondaryColor}/>
                 </VStack>
             </AppScreenWrapper>
         </Layout>
-    );
+    )
+        ;
 };
 
 const styles = {
-    container: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'flex-start',
-        textAlign: 'left',
-    },
     titleText: {
         fontWeight: 'bold',
-        fontSize: '28px',
-    },
-    subTitleText: {
-        fontSize: '16px',
-        fontWeight: '400'
-    },
-    listHeader: {
-        fontSize: '16px',
-        fontWeight: 'bold',
-    },
-    buttonCardContainer: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        width: '100%',
+        fontSize: '36px',
     }
 };
 
