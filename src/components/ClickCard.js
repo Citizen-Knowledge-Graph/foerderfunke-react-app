@@ -55,9 +55,11 @@ const styles = {
     cardContentTitle: {
         fontSize: '36px',
         fontWeight: 'bold',
+        color: 'white',
     },
     cardContentSubTitle: {
         fontSize: '16px',
         fontWeight: '400',
+        color: 'white',
     }
 };

@@ -26,14 +26,14 @@ const OnboardingChoice = () => {
                     time="5 Min."
                     title="Quick eligibility check"
                     subtitle="Based on 10 benefits"
-                    backgroundColor={globalStyles.primaryColorTransparent}
+                    backgroundColor={globalStyles.colorAmberOrange}
                 />
                 <ClickCard
                     link="/eligibility-overview"
                     time="At your own pace"
                     title="Browse all benefits"
                     subtitle="Filter by topic or from A-Z"
-                    backgroundColor={globalStyles.tertiaryColorTransparent}
+                    backgroundColor={globalStyles.colorTangerineOrange}
                 />
             </AppScreenWrapper>
         </Layout>
