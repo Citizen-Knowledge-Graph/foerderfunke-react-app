@@ -66,7 +66,7 @@ const ProfileSectionField = ({
                 <HStack>
                     <Card sx={styles.infoCard} data-testid="card">
                         <CardContent sx={styles.infoCardContent} data-testid="card-content">
-                            <Typography variant="body1" gutterBottom sx={styles.titleText}>
+                            <Typography sx={styles.titleText}>
                                 {currentField.title}
                             </Typography>
                         </CardContent>
@@ -101,7 +101,7 @@ const ProfileSectionField = ({
                     <CardContent sx={styles.buttonCardContent} data-testid="card-content">
                         <HStack justifyContent={'center'}>
                             <ButtonBase onClick={handleAddClick}>
-                                <Typography variant="h6" gutterBottom sx={styles.buttonCardText}>
+                                <Typography sx={styles.buttonCardText}>
                                     Confirm
                                 </Typography>
                             </ButtonBase>
@@ -115,6 +115,7 @@ const ProfileSectionField = ({
 
 const styles = {
     titleText: {
+        fontSize: '20px',
         fontWeight: 'bold',
         margin: '0px',
     },
@@ -125,10 +126,11 @@ const styles = {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: globalStyles.primaryColor,
+        backgroundColor: globalStyles.primaryColorTransparent,
         boxShadow: 'none',
     },
     infoCardContent: {
+        width: '100%',
         padding: '16px',
         "&:last-child": {
             paddingBottom: '16px',
@@ -137,7 +139,7 @@ const styles = {
     buttonCardComplete: {
         display: 'flex',
         flexDirection: 'column',
-        backgroundColor: indigo[900],
+        backgroundColor: globalStyles.primaryColor,
         borderRadius: '15px',
         boxShadow: 'none',
     },
@@ -148,8 +150,7 @@ const styles = {
         }
     },
     buttonCardText: {
-        color: 'white',
-        fontWeight: '500',
+        fontWeight: 'bold',
         textAlign: 'center',
         margin: '0',
     },
