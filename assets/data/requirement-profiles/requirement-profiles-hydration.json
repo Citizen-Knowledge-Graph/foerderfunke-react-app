@@ -1,32 +1,112 @@
 {
-  "https://foerderfunke.org/default#eauto": {
-    "id": "eauto",
-    "title": "E-Auto",
-    "description": "It is a monthly fixed sum paid by the Family Benefits Office (Familienkasse), which is managed by the German Federal Employment Agency (Arbeitsagentur für Arbeit). Its purpose is to ensure that every child's basic needs are met."
+  "https://foerderfunke.org/default#01-hilfe-zum-lebensunterhalt": {
+    "id": "ff:01-hilfe-zum-lebensunterhalt",
+    "title": {
+      "de": "Hilfe zum Lebensunterhalt",
+      "en": "Cost-of-living assistance"
+    },
+    "description": {
+      "de": "Die „Hilfe zum Lebensunterhalt“ richtet sich an Menschen, die eine Zeit lang nicht oder nur wenig arbeiten können. Sie dient dazu grundlegende Bedürfnisse wie Essen, Kleidung und Miete zu bezahlen. Hilfe zum Lebensunterhalt erhalten Personen, für die andere staatliche Leistungen, wie etwa Rente oder Bürgergeld (früher ALG II), nicht infrage kommen.",
+      "en": "If you are currently unable to work due to health reasons, you may be entitled to cost of living assistance. The prerequisite is that you are temporarily unable to earn your living yourself or with the help of other people, for example a partner or your family."
+    }
   },
-  "https://foerderfunke.org/default#kindergeld": {
-    "id": "kindergeld",
-    "title": "Kindergeld",
-    "description": "It is a monthly fixed sum paid by the Family Benefits Office (Familienkasse), which is managed by the German Federal Employment Agency (Arbeitsagentur für Arbeit). Its purpose is to ensure that every child's basic needs are met."
+  "https://foerderfunke.org/default#02-kindergeld": {
+    "id": "ff:02-kindergeld",
+    "title": {
+      "de": "Kindergeld",
+      "en": "Child benefit"
+    },
+    "description": {
+      "de": "Das Kindergeld ist eine staatliche Förderung, die Eltern und Erziehungsberechtigte ab der Geburt des ersten Kindes beantragen können. Damit soll die Grundversorgung eines Kindes gesichert werden. Kindergeld wird mindestens bis zum 18. und höchstens bis zum 25. Geburtstag eines Kindes gezahlt. Alle Familien erhalten Kindergeld, unabhängig davon, wie viel sie verdienen.",
+      "en": "Parents and guardians are entitled to receive child benefit from the state starting with their first child. Find out here whether you qualify for child benefit and how you can apply."
+    }
   },
-  "https://foerderfunke.org/default#kinderzuschlag": {
-    "id": "kinderzuschlag",
-    "title": "Kinderzuschlag",
-    "description": "It is a monthly fixed sum paid by the Family Benefits Office (Familienkasse), which is managed by the German Federal Employment Agency (Arbeitsagentur für Arbeit). Its purpose is to ensure that every child's basic needs are met."
+  "https://foerderfunke.org/default#03-kinderzuschlag": {
+    "id": "ff:03-kinderzuschlag",
+    "title": {
+      "de": "Kinderzuschlag",
+      "en": "Child allowance"
+    },
+    "description": {
+      "de": "Wenn Sie ein geringes Einkommen haben und Kindergeld beziehen, können Sie zusätzlich den Kinderzuschlag, abgekürzt auch KiZ genannt, beantragen.",
+      "en": "If you are a low-earner and receive child benefit, you can also apply for the child allowance."
+    }
   },
-  "https://foerderfunke.org/default#arbeitslosengeld": {
-    "id": "arbeitslosengeld",
-    "title": "Arbeitslosengeld",
-    "description": "It is a monthly fixed sum paid by the Family Benefits Office (Familienkasse), which is managed by the German Federal Employment Agency (Arbeitsagentur für Arbeit). Its purpose is to ensure that every child's basic needs are met."
+  "https://foerderfunke.org/default#04-bafoeg": {
+    "id": "ff:04-bafoeg",
+    "title": {
+      "de": "BAföG",
+      "en": "BAföG"
+    },
+    "description": {
+      "de": "Mit dem Bundesausbildungsförderungsgesetz (BAföG) werden junge Menschen finanziell bei der Schulausbildung und dem Studium unterstützt. Es gibt zwei Arten von BAföG: das Schüler-BAföG und das Studenten-BAföG. Schülerinnen und Schüler sowie Studierende können einen Zuschuss oder ein zinsloses Darlehen erhalten. Die Höhe der Förderung ist von den Lebensumständen der Antragstellerinnen und Antragsteller abhängig.",
+      "en": "Are you looking to study or complete your secondary school education and require financial support? Then BAföG is just what you need. Keep reading to find out all the details about Germany’s student support scheme and how to apply for BAföG."
+    }
   },
-  "https://foerderfunke.org/default#daemmung": {
-    "id": "daemmung",
-    "title": "Wärmedämmung",
-    "description": "It is a monthly fixed sum paid by the Family Benefits Office (Familienkasse), which is managed by the German Federal Employment Agency (Arbeitsagentur für Arbeit). Its purpose is to ensure that every child's basic needs are met."
+  "https://foerderfunke.org/default#05-buergergeld": {
+    "id": "ff:05-buergergeld",
+    "title": {
+      "de": "Bürgergeld",
+      "en": "Citizen's benefit"
+    },
+    "description": {
+      "de": "Das Bürgergeld (vorher ALG II) ist Teil der sogenannten Grundsicherung für Arbeitsuchende. Bürgergeld wird oft im Anschluss an das Arbeitslosengeld gezahlt, wenn weiterhin Unterstützung notwendig ist. Bürgergeld erhalten auch Personen, die noch nie gearbeitet oder ein geringes Einkommen haben. Für das Bürgergeld sind die Jobcenter zuständig.",
+      "en": "If you are not currently employed and are not entitled to unemployment benefit, you may be entitled to unemployment benefit II. This also applies if you earn so little that you cannot meet your living costs."
+    }
   },
-  "https://foerderfunke.org/default#bildungsgutschein": {
-    "id": "bildungsgutschein",
-    "title": "Bildungsgutschein",
-    "description": "It is a monthly fixed sum paid by the Family Benefits Office (Familienkasse), which is managed by the German Federal Employment Agency (Arbeitsagentur für Arbeit). Its purpose is to ensure that every child's basic needs are met."
+  "https://foerderfunke.org/default#06-arbeitslosengeld": {
+    "id": "ff:06-arbeitslosengeld",
+    "title": {
+      "de": "Arbeitslosengeld",
+      "en": "Unemployment benefit"
+    },
+    "description": {
+      "de": "Das Arbeitslosengeld (ALG) sichert Sie sozial ab, wenn Sie Ihre Arbeit oder Ihren Ausbildungsplatz verlieren. Es ersetzt einen Teil Ihres fehlenden Einkommens, damit Sie weiterhin Ihren Lebensunterhalt bestreiten können. Sie haben Anspruch auf diese Leistung, wenn Sie vor Ihrer Arbeitslosigkeit eine bestimmte Zeit pflichtversichert oder freiwillig versichert waren und monatlich Versicherungsbeiträge gezahlt haben.",
+      "en": "Unemployment benefit, or ALG (from the German word Arbeitslosengeld), provides a social safety net in case you lose your job or training position. It replaces part of your missing income so that you can continue to pay your bills."
+    }
+  },
+  "https://foerderfunke.org/default#07-berufsausbildungsbeihilfe-bab": {
+    "id": "ff:07-berufsausbildungsbeihilfe-bab",
+    "title": {
+      "de": "Berufsausbildungsbeihilfe (BAB)",
+      "en": "Vocational training allowance (BAB)"
+    },
+    "description": {
+      "de": "Berufsausbildungsbeihilfe (BAB) ist ein finanzieller Zuschuss für junge Menschen in ihrer ersten Berufsausbildung. Sie hilft zum Beispiel dabei, Miete, Lebensmittel oder Fahrtkosten zu bezahlen.",
+      "en": "Vocational training allowance, or Berufsausbildungsbeihilfe (BAB), is a form of financial assistance for young people who are in vocational training for the first time. It helps them pay for things like rent, food or transport costs."
+    }
+  },
+  "https://foerderfunke.org/default#08-wohngeld": {
+    "id": "ff:08-wohngeld",
+    "title": {
+      "de": "Wohngeld",
+      "en": "Housing benefit"
+    },
+    "description": {
+      "de": "Das „Wohngeld“ ist ein finanzieller Zuschuss zur Miete oder zu den Kosten, die entstehen, falls Sie ein Haus oder eine Eigentumswohnung besitzen. Um Wohngeld zu bekommen, müssen Sie einen Antrag stellen. Die Gemeindeverwaltung in Ihrer Stadt prüft den Antrag und gibt ihnen Bescheid, ob Sie Wohngeld erhalten.",
+      "en": "In the event that you earn too little to pay for your apartment, you can apply for housing benefit."
+    }
+  },
+  "https://foerderfunke.org/default#09-grundsicherung-im-alter-und-bei-erwerbsminderung": {
+    "id": "ff:09-grundsicherung-im-alter-und-bei-erwerbsminderung",
+    "title": {
+      "de": "Grundsicherung im Alter und bei Erwerbsminderung",
+      "en": "Basic welfare for the elderly and people with reduced earnings capacity"
+    },
+    "description": {
+      "de": "Sie sind im Rentenalter, aber Ihr Geld reicht nicht aus, um Ihren Lebensunterhalt zu bezahlen? Oder sind Sie zwar noch jünger, können aber aus gesundheitlichen Gründen dauerhaft nicht arbeiten? Dann können Sie die finanzielle „Grundsicherung im Alter und bei Erwerbsminderung“ beantragen.",
+      "en": "Are you receiving your pension but don’t have enough money to get by? Or are you younger but unable to work for health-related reasons? If so, you may be entitled to claim basic financial welfare for the elderly and people with reduced earnings capacity."
+    }
+  },
+  "https://foerderfunke.org/default#10-bildung-und-teilhabe-bei-bezug-von-buergergeld": {
+    "id": "ff:10-bildung-und-teilhabe-bei-bezug-von-buergergeld",
+    "title": {
+      "de": "Bildung und Teilhabe - bei Bezug von Bürgergeld",
+      "en": "Education and participation - with citizen's benefit"
+    },
+    "description": {
+      "de": "In Deutschland sollen Kinder, Jugendliche und junge Erwachsene die gleichen Chancen haben. Wichtige Voraussetzungen für Chancengleichheit sind Bildung und die Teilnahme am sozialen und kulturellen Leben. Deswegen fördert der Staat Leistungen zur Bildung und Teilhabe, auch Bildungs- und Teilhabepaket genannt.",
+      "en": "In Germany, children, teens and young adults are supposed to have equal opportunities. Education and participation in social and cultural activities are important factors in ensuring equal opportunity. For this reason, the state provides benefits to support education and participation. This is also known as the education and participation package."
+    }
   }
 }

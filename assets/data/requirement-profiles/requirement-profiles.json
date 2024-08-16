@@ -1,42 +1,46 @@
 {
-  "datafields": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/datafields.ttl",
-  "materialization": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/materialization.ttl",
+  "datafields": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/sozialplattform/datafields.ttl",
+  "materialization": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/sozialplattform/materialization.ttl",
   "queries": [
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/dev-kindergeld.ttl",
-      "rpUri": "https://foerderfunke.org/default#kindergeld",
-      "title": "Kindergeld",
-      "description": "Sie haben Anspruch auf Kindergeld."
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/sozialplattform/shacl/01-hilfe-zum-lebensunterhalt.ttl",
+      "rpUri": "https://foerderfunke.org/default#hilfe-zum-lebensunterhalt"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/dev-eauto.ttl",
-      "rpUri": "https://foerderfunke.org/default#eauto",
-      "title": "Unterstützung für den Kauf eines Elektroautos",
-      "description": "Sie haben Anspruch auf eine Förderung für ein neue E-Auto."
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/sozialplattform/shacl/02-kindergeld.ttl",
+      "rpUri": "https://foerderfunke.org/default#kindergeld"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/kinderzuschlag.ttl",
-      "rpUri": "https://foerderfunke.org/default#kinderzuschlag",
-      "title": "Kinderzuschlag",
-      "description": "Sie haben Anspruch auf den Kinderzuschlag."
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/sozialplattform/shacl/03-kinderzuschlag.ttl",
+      "rpUri": "https://foerderfunke.org/default#kinderzuschlag"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/arbeitslosengeld.ttl",
-      "rpUri": "https://foerderfunke.org/default#arbeitslosengeld",
-      "title": "Arbeitslosengeld",
-      "description": "Sie haben Anspruch auf den Arbeitslosengeld."
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/sozialplattform/shacl/04-bafoeg.ttl",
+      "rpUri": "https://foerderfunke.org/default#bafoeg"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/bildungsgutschein.ttl",
-      "rpUri": "https://foerderfunke.org/default#bildungsgutschein",
-      "title": "Bildungsgutschein",
-      "description": "Sie haben Anspruch auf den Bildungsgutschein."
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/sozialplattform/shacl/05-buergergeld.ttl",
+      "rpUri": "https://foerderfunke.org/default#buergergeld"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/dev-daemmung.ttl",
-      "rpUri": "https://foerderfunke.org/default#daemmung",
-      "title": "Wärmedämmung",
-      "description": "Sie haben Anspruch auf eine Förderung für Wärmedämmung."
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/sozialplattform/shacl/06-arbeitslosengeld.ttl",
+      "rpUri": "https://foerderfunke.org/default#arbeitslosengeld"
+    },
+    {
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/sozialplattform/shacl/07-berufsausbildungsbeihilfe-bab.ttl",
+      "rpUri": "https://foerderfunke.org/default#berufsausbildungsbeihilfe-bab"
+    },
+    {
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/sozialplattform/shacl/08-wohngeld.ttl",
+      "rpUri": "https://foerderfunke.org/default#wohngeld"
+    },
+    {
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/sozialplattform/shacl/09-grundsicherung-im-alter-und-bei-erwerbsminderung.ttl",
+      "rpUri": "https://foerderfunke.org/default#grundsicherung-im-alter-und-bei-erwerbsminderung"
+    },
+    {
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/sozialplattform/shacl/10-bildung-und-teilhabe-bei-bezug-von-buergergeld.ttl",
+      "rpUri": "https://foerderfunke.org/default#bildung-und-teilhabe-bei-bezug-von-buergergeld"
     }
   ]
 }
