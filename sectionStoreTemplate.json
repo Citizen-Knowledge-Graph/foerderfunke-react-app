@@ -1,0 +1,36 @@
+[
+  {
+    "profileSection": "quick-check-profile",
+    "entityData": {
+      "id": "quick-check-profile",
+      "type": "ff:Citizen",
+      "parentId": null,
+      "parentType": null,
+      "parentDataField": null
+    },
+    "dataField": null,
+    "nestedSection": null
+  },
+  {
+    "profileSection": "quick-check-profile",
+    "entityData": {
+      "id": "quick-check-profile",
+      "type": "ff:Citizen",
+      "parentId": null,
+      "parentType": null,
+      "parentDataField": null
+    },
+    "nestedSection": {
+      "profileSection": "ff:Child",
+      "entityData": {
+        "id": "ff:child:1",
+        "type": "ff:Child",
+        "parentId": "quick-check-profile",
+        "parentType": "ff:Citizen",
+        "parentDataField": "ff:hasChild"
+      },
+      "nestedSection": null
+    }
+  }
+]
+

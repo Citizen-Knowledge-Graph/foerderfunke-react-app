@@ -17,15 +17,15 @@ export const useProfileSectionStore = create((set, get) => ({
         console.log(`STATE UPDATE: We are retrieving the current profile section`);
         return findDeepestProfileSection(data);
     },
-    retrieveCurrentDatafield() {
+    retrieveCurrentDataField() {
         const data = get().sectionStore;
         console.log(`STATE UPDATE: We are retrieving the current datafield`);
-        return findDeepestDatafield(data);
+        return findDeepestDataField(data);
     },
-    updateDeepestDatafield: (newDatafield) =>
+    updateDeepestDataField: (newDataField) =>
         console.log('STATE UPDATE: We are updating the deepest datafield') ||
         set((state) => ({
-            sectionStore: updateDeepestDatafield(state.sectionStore, newDatafield),
+            sectionStore: updateDeepestDataField(state.sectionStore, newDataField),
         })),
     updateDeepestNestedSection: (newNestedSection) =>
         console.log('STATE UPDATE: We are updating the deepest nested section') ||
@@ -39,17 +39,17 @@ export const useProfileSectionStore = create((set, get) => ({
         })),
 }));
 
-const updateDeepestDatafield = (section, newDatafield) => {
+const updateDeepestDataField = (section, newDataField) => {
     if (!section.nestedSection) {
         return {
             ...section,
-            datafield: newDatafield,
+            dataField: newDataField,
         };
     }
 
     return {
         ...section,
-        nestedSection: updateDeepestDatafield(section.nestedSection, newDatafield),
+        nestedSection: updateDeepestDataField(section.nestedSection, newDataField),
     };
 };
 
@@ -60,11 +60,11 @@ const findDeepestEntityData = (section) => {
     return findDeepestEntityData(section.nestedSection);
 };
 
-const findDeepestDatafield = (section) => {
+const findDeepestDataField = (section) => {
     if (!section.nestedSection) {
-        return section.datafield ? section.datafield : null;
+        return section.dataField ? section.dataField : null;
     }
-    return findDeepestDatafield(section.nestedSection);
+    return findDeepestDataField(section.nestedSection);
 };
 
 const findDeepestProfileSection = (section) => {

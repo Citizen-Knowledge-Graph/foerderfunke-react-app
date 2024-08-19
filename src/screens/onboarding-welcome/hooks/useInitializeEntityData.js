@@ -6,13 +6,7 @@ const useInitializeEntityData = (userId) => {
 
         return {
             id: userId,
-            type: 'ff:Citizen',
-            parentData: {
-                id: null,
-                type: null,
-                datafield: null
-            }
-
+            type: 'ff:Citizen'
         };
     }, [userId]);
 };

@@ -1,46 +1,24 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {Typography} from '@mui/material';
-import CircleIcon from '@mui/icons-material/Circle';
 import useInitializeQuickCheckUser from "./hooks/useInitializeQuickCheckUser";
 import useInitializeProfileSectionStore from "./hooks/useInitializeProfileSectionStore";
+import useInitializeQuestionsArray from "./hooks/useInitializeQuestionsArray";
 import VStack from "../../components/VStack";
 import OnboardingWelcomeScreen from "./components/OnboardingWelcomeScreen";
-import HStack from "../../components/HStack";
-import questionsService from "../../services/questionsService";
-import {useSelectedTopicsStore, useUserStore} from "../../storage/zustand";
+import {useQuestionsStore, useSelectedTopicsStore} from "../../storage/zustand";
 
-const benefitsList = [
-    {
-        "topic": "Services for Families",
-        "benefits": [
-            "Child Benefit",
-            "Child Care Benefit",
-        ]
-    },
-    {
-        "topic": "Housing",
-        "benefits": [
-            "Housing Benefit",
-            "Rent Subsidy",
-        ]
-    }
-];
 
 const OnboardingWelcomeOverview = () => {
     const entityData = useInitializeQuickCheckUser();
     const profileSection = 'quick-check-profile';
     useInitializeProfileSectionStore(profileSection, entityData);
 
-    const [prioritizedQuestions, setPrioritizedQuestions] = useState(null);
     // fetch prioritised quick check questions
-    const activeUser = useUserStore((state) => state.activeUserId);
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
-    useEffect(() => {
-        const newPrioritizedQuestions = questionsService(activeUser, selectedTopics)
-        setPrioritizedQuestions(newPrioritizedQuestions);
-    }, [activeUser, selectedTopics]);
+    useInitializeQuestionsArray(selectedTopics);
 
-    console.log('prioritized questions: ', prioritizedQuestions);
+    const questionsStore = useQuestionsStore((state) => state.questions);
+    console.log('prioritized questions: ', questionsStore);
 
     return (
         <OnboardingWelcomeScreen buttonText={'Discover your benefits'} link={`/profile-section/${profileSection}`}>
@@ -49,24 +27,11 @@ const OnboardingWelcomeOverview = () => {
                     Based on your chosen topics we will provide you with a list of benefits you may be eligible for.
                 </Typography>
                 <VStack alignItems={'flex-start'}>
-                    {benefitsList.map((benefit, index) => (
+                    {selectedTopics.map((benefit, index) => (
                         <VStack key={index} gap={2} alignItems={'flex-start'}>
                             <Typography variant="h6" sx={styles.listHeader}>
-                                {benefit.topic}
+                                {benefit}
                             </Typography>
-                            <VStack gap={1} alignItems={'flex-start'}>
-                                {benefit.benefits.map((benefit, index) => (
-                                    <HStack key={index} gap={1} alignItems={'center'}>
-                                        <CircleIcon sx={{
-                                            width: '8px',
-                                            height: '8px',
-                                        }}/>
-                                        <Typography key={index} variant="body1" sx={styles.listItem}>
-                                            {benefit}
-                                        </Typography>
-                                    </HStack>
-                                ))}
-                            </VStack>
                         </VStack>
                     ))}
                 </VStack>
@@ -79,12 +44,6 @@ const OnboardingWelcomeOverview = () => {
 };
 
 const styles = {
-    container: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'flex-start',
-        textAlign: 'left',
-    },
     subTitleText: {
         fontSize: '16px',
         fontWeight: '400'

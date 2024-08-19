@@ -1,7 +1,7 @@
 import {useProfileSectionStore} from "../../../storage/useProfileSectionStore";
 
 const useUpdateProfileSectionStore = () => {
-    const updateDeepestDatafield = useProfileSectionStore((state) => state.updateDeepestDatafield);
+    const updateDeepestDataField = useProfileSectionStore((state) => state.updateDeepestDataField);
     const updateDeepestNestedSection = useProfileSectionStore((state) => state.updateDeepestNestedSection);
 
     return (item, currentField, currentEntityData) => {
@@ -19,7 +19,7 @@ const useUpdateProfileSectionStore = () => {
             nestedSection: null
         };
 
-        updateDeepestDatafield(currentField.datafield);
+        updateDeepestDataField(currentField.datafield);
         updateDeepestNestedSection(newSectionStore);
     };
 };

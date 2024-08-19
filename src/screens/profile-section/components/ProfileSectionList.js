@@ -8,7 +8,7 @@ const ProfileSectionList = ({profileSectionData, mode, setCompleted}) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [entityData, setEntityData] = useState({});
     const retrieveCurrentEntityData = useProfileSectionStore((state) => state.retrieveCurrentEntityData);
-    const retrieveCurrentDatafield = useProfileSectionStore((state) => state.retrieveCurrentDatafield);
+    const retrieveCurrentDataField = useProfileSectionStore((state) => state.retrieveCurrentDataField);
     const {
         handleConfirm,
         handleBack,
@@ -17,9 +17,9 @@ const ProfileSectionList = ({profileSectionData, mode, setCompleted}) => {
 
     useEffect(() => {
         setEntityData(retrieveCurrentEntityData());
-        const datafield = retrieveCurrentDatafield();
-        if (datafield) {
-            const index = profileSectionData.fields.findIndex((field) => field.datafield === datafield);
+        const dataField = retrieveCurrentDataField();
+        if (dataField) {
+            const index = profileSectionData.fields.findIndex((field) => field.datafield === dataField);
             if (index !== -1) {
                 setCurrentIndex(index);
             }
@@ -27,7 +27,7 @@ const ProfileSectionList = ({profileSectionData, mode, setCompleted}) => {
             setCurrentIndex(0);
         }
 
-    }, [profileSectionData, retrieveCurrentDatafield, retrieveCurrentEntityData]);
+    }, [profileSectionData, retrieveCurrentDataField, retrieveCurrentEntityData]);
 
     const currentField = profileSectionData.fields[currentIndex];
 

@@ -36,5 +36,5 @@ export const useProfileSectionListHandlers = (mode, setCurrentIndex, profileSect
         }
     };
 
-    return { handleConfirm, handleBack, handleSkip };
+    return {  handleConfirm, handleBack, handleSkip };
 };
