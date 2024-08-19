@@ -1,36 +1,17 @@
 import React, {useEffect, useState} from 'react';
 import {Button, Typography} from '@mui/material';
-import useInitializeQuickCheckUser from "./hooks/useInitializeQuickCheckUser";
-import useInitializeProfileSectionStore from "./hooks/useInitializeProfileSectionStore";
 import {useSelectedTopicsStore} from "../../storage/zustand";
 import OnboardingWelcomeScreen from "./components/OnboardingWelcomeScreen";
 import VStack from "../../components/VStack";
 import globalStyles from "../../styles/styles";
 import readJson from "../../utilities/readJson";
 
-
-const topicColors = [
-    [globalStyles.colorAmberOrange, globalStyles.colorAmberOrangeTransparent],
-    [globalStyles.colorTangerineOrange, globalStyles.colorTangerineOrangeTransparent],
-    [globalStyles.colorCoralRed, globalStyles.colorCoralRedTransparent],
-    [globalStyles.colorPlumPurple, globalStyles.colorPlumPurpleTransparent],
-    [globalStyles.colorMauvePurple, globalStyles.colorMauvePurpleTransparent],
-    [globalStyles.colorSteelBlue, globalStyles.colorSteelBlueTransparent],
-    [globalStyles.colorDeepTeal, globalStyles.colorDeepTealTransparent],
-    [globalStyles.colorPineGreen, globalStyles.colorPineGreenTransparent]
-];
-
 const OnboardingWelcomeTopics = () => {
     const [topicsData, setTopicsData] = useState([]);
-    const [selectedTopics, setSelectedTopics] = useState(new Array(topicsData.length).fill(false));
+    const [selectedTopics, setSelectedTopics] = useState([]);
     const selectedTopicsStore = useSelectedTopicsStore((state) => state.selectedTopics);
     const addSelectedTopic = useSelectedTopicsStore((state) => state.addSelectedTopic);
     const removeSelectedTopic = useSelectedTopicsStore((state) => state.removeSelectedTopic);
-
-    const entityData = useInitializeQuickCheckUser();
-    const profileSection = 'quick-check-profile';
-    useInitializeProfileSectionStore(profileSection, entityData);
-
 
     useEffect(() => {
         const fetchData = async () => {
@@ -46,6 +27,16 @@ const OnboardingWelcomeTopics = () => {
         fetchData();
     }, []);
 
+    useEffect(() => {
+        const newSelectedTopics = new Array(topicsData.length).fill(false);
+        selectedTopicsStore.forEach((selectedTopic) => {
+            const index = topicsData.findIndex((topic) => topic.id === selectedTopic);
+            if (index !== -1) {
+                newSelectedTopics[index] = true;
+            }
+        });
+        setSelectedTopics(newSelectedTopics);
+    }, [selectedTopicsStore, topicsData]);
 
     const handleButtonClick = (index) => {
         const newSelectedTopics = [...selectedTopics];
@@ -72,28 +63,25 @@ const OnboardingWelcomeTopics = () => {
                         onClick={() => handleButtonClick(index)}
                         sx={{
                             ...styles.topicItemButton,
-                            backgroundColor: selectedTopics[index] ? topicColors[index][0] : topicColors[index][1],
+                            backgroundColor: selectedTopics[index] ? globalStyles.primaryColor : globalStyles.colorDarkGreyTransparent,
                             '&:hover': {
-                                backgroundColor: selectedTopics[index] ? topicColors[index][0] : topicColors[index][1],
+                                backgroundColor: selectedTopics[index] ? globalStyles.primaryColor : globalStyles.colorDarkGreyTransparent,
                             },
                             '&:active': {
-                                backgroundColor: selectedTopics[index] ? topicColors[index][0] : topicColors[index][1],
+                                backgroundColor: selectedTopics[index] ? globalStyles.primaryColor : globalStyles.colorDarkGreyTransparent,
                             },
                             '&:focus': {
-                                backgroundColor: selectedTopics[index] ? topicColors[index][0] : topicColors[index][1],
+                                backgroundColor: selectedTopics[index] ? globalStyles.primaryColor : globalStyles.colorDarkGreyTransparent,
                             },
                         }}>
-                        <Typography sx={{
-                            ...styles.topicText,
-                            color: selectedTopics[index] ? 'white' : 'black'
-                        }}>
+                        <Typography sx={styles.topicText}>
                             {topic.title}
                         </Typography>
                     </Button>))}
             </VStack>
         </OnboardingWelcomeScreen>
     );
-};
+}
 
 const styles = {
     titleText: {
@@ -119,6 +107,7 @@ const styles = {
         fontWeight: 'bold',
         textAlign: 'left',
         textTransform: 'none',
+        color: 'black',
     }
 };
 

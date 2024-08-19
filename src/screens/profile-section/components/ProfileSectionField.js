@@ -9,6 +9,7 @@ import useAddProfileField from '../hooks/useAddProfileField';
 import useInputValidation from "../hooks/useInputValidation";
 import useFetchProfileField from "../hooks/useFetchProfileField";
 import globalStyles from "../../../styles/styles";
+import {useProfileSectionStore} from "../../../storage/useProfileSectionStore";
 
 const ProfileSectionField = ({
                                  currentField,
@@ -23,6 +24,7 @@ const ProfileSectionField = ({
     const validateValue = useInputValidation(currentField.datatype);
     const addProfileData = useAddProfileField(currentField, entityData, handleConfirm);
     const fetchProfileField = useFetchProfileField(currentField.datafield, entityData);
+    const profileSectionStore = useProfileSectionStore((state) => state.sectionStore);
 
     useEffect(() => {
         setValue('');
@@ -58,6 +60,8 @@ const ProfileSectionField = ({
                 }
             )
     }
+
+    console.log("profileSection store:", profileSectionStore)
 
     return (
         <VStack gap={7}>

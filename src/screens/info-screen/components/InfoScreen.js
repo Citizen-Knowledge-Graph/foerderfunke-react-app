@@ -7,7 +7,6 @@ import AppScreenWrapper from "../../../components/AppScreenWrapper";
 import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
 import {useStore} from "../../../components/ViewportUpdater";
-import globalStyles from "../../../styles/styles";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 
 const InfoScreen = ({title, children, imageUrl, backLink, forwardLink}) => {
@@ -52,7 +51,6 @@ const styles = {
         width: '100%',
         boxSizing: 'border-box',
         padding: '16px',
-        backgroundColor: globalStyles.primaryColorTransparent,
         borderRadius: '12px',
     },
     title: {
@@ -61,7 +59,6 @@ const styles = {
     },
     infoWrapper: {
         padding: '16px',
-        backgroundColor: globalStyles.primaryColorTransparent,
         borderRadius: '12px'
     },
     button: {

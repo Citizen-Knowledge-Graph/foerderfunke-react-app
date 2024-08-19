@@ -35,3 +35,11 @@ export const useSelectedTopicsStore = create((set) => ({
         set((state) => ({selectedTopics: state.selectedTopics.filter((topic) => topic !== selectedTopic)}));
     }
 }));
+
+export const useQuestionsStore = create((set) => ({
+    questions: {},
+    updateQuestions: (newQuestions) => {
+        console.log('STATE UPDATE: We are updating the questions');
+        set((state) => ({questions: newQuestions}));
+    },
+}));

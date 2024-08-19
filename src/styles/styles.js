@@ -22,6 +22,8 @@ const globalStyles = {
     colorDeepTealTransparent: 'rgba(0, 63, 92, 0.1)',
     colorPineGreen: '#1C4E4F',
     colorPineGreenTransparent: 'rgba(28, 78, 79, 0.1)',
+    colorDarkGrey: '#333333',
+    colorDarkGreyTransparent: 'rgba(51, 51, 51, 0.1)',
     primaryPadding: '16px'
 }
 

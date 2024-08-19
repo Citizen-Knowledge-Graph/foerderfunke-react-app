@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Typography} from '@mui/material';
 import CircleIcon from '@mui/icons-material/Circle';
 import useInitializeQuickCheckUser from "./hooks/useInitializeQuickCheckUser";
@@ -6,6 +6,8 @@ import useInitializeProfileSectionStore from "./hooks/useInitializeProfileSectio
 import VStack from "../../components/VStack";
 import OnboardingWelcomeScreen from "./components/OnboardingWelcomeScreen";
 import HStack from "../../components/HStack";
+import questionsService from "../../services/questionsService";
+import {useSelectedTopicsStore, useUserStore} from "../../storage/zustand";
 
 const benefitsList = [
     {
@@ -28,6 +30,17 @@ const OnboardingWelcomeOverview = () => {
     const entityData = useInitializeQuickCheckUser();
     const profileSection = 'quick-check-profile';
     useInitializeProfileSectionStore(profileSection, entityData);
+
+    const [prioritizedQuestions, setPrioritizedQuestions] = useState(null);
+    // fetch prioritised quick check questions
+    const activeUser = useUserStore((state) => state.activeUserId);
+    const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
+    useEffect(() => {
+        const newPrioritizedQuestions = questionsService(activeUser, selectedTopics)
+        setPrioritizedQuestions(newPrioritizedQuestions);
+    }, [activeUser, selectedTopics]);
+
+    console.log('prioritized questions: ', prioritizedQuestions);
 
     return (
         <OnboardingWelcomeScreen buttonText={'Discover your benefits'} link={`/profile-section/${profileSection}`}>
