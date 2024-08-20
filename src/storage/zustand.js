@@ -26,6 +26,10 @@ export const useValidationReportStore = create((set) => ({
 
 export const useSelectedTopicsStore = create((set) => ({
     selectedTopics: [],
+    setSelectedTopics(newSelectedTopics) {
+        console.log('STATE UPDATE: We are setting the selected topics');
+        set({selectedTopics: newSelectedTopics});
+    },
     addSelectedTopic: (newSelectedTopic) => {
         console.log('STATE UPDATE: We are updating the selected topics');
         set((state) => ({selectedTopics: state.selectedTopics.includes(newSelectedTopic) ? state.selectedTopics : [...state.selectedTopics, newSelectedTopic]}));

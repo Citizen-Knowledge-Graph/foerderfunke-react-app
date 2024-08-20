@@ -8,8 +8,9 @@ import readJson from "../../utilities/readJson";
 
 const OnboardingWelcomeTopics = () => {
     const [topicsData, setTopicsData] = useState([]);
-    const [selectedTopics, setSelectedTopics] = useState([]);
+    const [selectedTopicsBoolean, setSelectedTopicsBoolean] = useState([]);
     const selectedTopicsStore = useSelectedTopicsStore((state) => state.selectedTopics);
+    const setSelectedTopics = useSelectedTopicsStore((state) => state.setSelectedTopics);
     const addSelectedTopic = useSelectedTopicsStore((state) => state.addSelectedTopic);
     const removeSelectedTopic = useSelectedTopicsStore((state) => state.removeSelectedTopic);
 
@@ -35,19 +36,31 @@ const OnboardingWelcomeTopics = () => {
                 newSelectedTopics[index] = true;
             }
         });
-        setSelectedTopics(newSelectedTopics);
+        setSelectedTopicsBoolean(newSelectedTopics);
     }, [selectedTopicsStore, topicsData]);
 
     const handleButtonClick = (index) => {
-        const newSelectedTopics = [...selectedTopics];
+        const newSelectedTopics = [...selectedTopicsBoolean];
         newSelectedTopics[index] = !newSelectedTopics[index];
-        setSelectedTopics(newSelectedTopics);
+        setSelectedTopicsBoolean(newSelectedTopics);
         if (newSelectedTopics[index]) {
             addSelectedTopic(topicsData[index].id);
         } else {
             removeSelectedTopic(topicsData[index].id);
         }
     };
+
+    const handleSelectAll = () => {
+        const newSelectedTopics = new Array(topicsData.length).fill(true);
+        setSelectedTopicsBoolean(newSelectedTopics);
+        setSelectedTopics(topicsData.map((topic) => topic.id));
+    }
+
+    const handleUnselectAll = () => {
+        const newSelectedTopics = new Array(topicsData.length).fill(false);
+        setSelectedTopicsBoolean(newSelectedTopics);
+        setSelectedTopics([]);
+    }
 
     console.log('selected Topics', selectedTopicsStore);
 
@@ -63,21 +76,24 @@ const OnboardingWelcomeTopics = () => {
                         onClick={() => handleButtonClick(index)}
                         sx={{
                             ...styles.topicItemButton,
-                            backgroundColor: selectedTopics[index] ? globalStyles.primaryColor : globalStyles.colorDarkGreyTransparent,
+                            backgroundColor: selectedTopicsBoolean[index] ? globalStyles.primaryColor : globalStyles.colorDarkGreyTransparent,
                             '&:hover': {
-                                backgroundColor: selectedTopics[index] ? globalStyles.primaryColor : globalStyles.colorDarkGreyTransparent,
+                                backgroundColor: selectedTopicsBoolean[index] ? globalStyles.primaryColor : globalStyles.colorDarkGreyTransparent,
                             },
                             '&:active': {
-                                backgroundColor: selectedTopics[index] ? globalStyles.primaryColor : globalStyles.colorDarkGreyTransparent,
+                                backgroundColor: selectedTopicsBoolean[index] ? globalStyles.primaryColor : globalStyles.colorDarkGreyTransparent,
                             },
                             '&:focus': {
-                                backgroundColor: selectedTopics[index] ? globalStyles.primaryColor : globalStyles.colorDarkGreyTransparent,
+                                backgroundColor: selectedTopicsBoolean[index] ? globalStyles.primaryColor : globalStyles.colorDarkGreyTransparent,
                             },
                         }}>
                         <Typography sx={styles.topicText}>
                             {topic.title}
                         </Typography>
                     </Button>))}
+                <Typography sx={styles.selectText}>
+                    <span onClick={handleSelectAll}>select all</span> / <span onClick={handleUnselectAll}>unselect all</span>
+                </Typography>
             </VStack>
         </OnboardingWelcomeScreen>
     );
@@ -108,6 +124,10 @@ const styles = {
         textAlign: 'left',
         textTransform: 'none',
         color: 'black',
+    },
+    selectText: {
+        fontSize: '15px',
+        color: 'gray',
     }
 };
 
