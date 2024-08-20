@@ -5,7 +5,7 @@ import {useEffect} from "react";
 
 const useInitializeQuickCheckUser = () => {
     const updateUserId = useUserStore((state) => state.updateUserId);
-    const userId = "quick-check-user";
+    const userId = "ff:quick-check-user";
 
     useEffect(() => {
         createUserProfile(userId);

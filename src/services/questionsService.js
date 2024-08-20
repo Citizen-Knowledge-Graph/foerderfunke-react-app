@@ -36,7 +36,7 @@ const questionsService = async (activeUser, activeTopics) => {
         "en"
     );
 
-    useQuestionsStore.getState().updateQuestions(questionsResponse);
+    useQuestionsStore.getState().updateQuestions(questionsResponse.prioritizedMissingDataFields);
 
     return null;
 }
