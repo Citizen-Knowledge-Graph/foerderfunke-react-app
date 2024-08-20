@@ -9,6 +9,7 @@ import readJson from "../../utilities/readJson";
 const OnboardingWelcomeTopics = () => {
     const [topicsData, setTopicsData] = useState([]);
     const [selectedTopicsBoolean, setSelectedTopicsBoolean] = useState([]);
+    const setTopicTitles = useSelectedTopicsStore((state) => state.setTopicTitles);
     const selectedTopicsStore = useSelectedTopicsStore((state) => state.selectedTopics);
     const setSelectedTopics = useSelectedTopicsStore((state) => state.setSelectedTopics);
     const addSelectedTopic = useSelectedTopicsStore((state) => state.addSelectedTopic);
@@ -37,6 +38,9 @@ const OnboardingWelcomeTopics = () => {
             }
         });
         setSelectedTopicsBoolean(newSelectedTopics);
+        let topicTitles = {};
+        topicsData.forEach((topic) => topicTitles[topic.id] = topic.title);
+        setTopicTitles(topicTitles);
     }, [selectedTopicsStore, topicsData]);
 
     const handleButtonClick = (index) => {

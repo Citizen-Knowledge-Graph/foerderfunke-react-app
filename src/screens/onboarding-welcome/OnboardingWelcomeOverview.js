@@ -15,6 +15,7 @@ const OnboardingWelcomeOverview = () => {
 
     // fetch prioritised quick check questions
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
+    const topicTitles = useSelectedTopicsStore((state) => state.topicTitles);
     useInitializeQuestionsArray(selectedTopics);
 
     const questionsStore = useQuestionsStore((state) => state.questions);
@@ -27,10 +28,10 @@ const OnboardingWelcomeOverview = () => {
                     Based on your chosen topics we will provide you with a list of benefits you may be eligible for.
                 </Typography>
                 <VStack alignItems={'flex-start'}>
-                    {selectedTopics.map((benefit, index) => (
+                    {selectedTopics.map((topic, index) => (
                         <VStack key={index} gap={2} alignItems={'flex-start'}>
                             <Typography variant="h6" sx={styles.listHeader}>
-                                {benefit}
+                                {topicTitles[topic]}
                             </Typography>
                         </VStack>
                     ))}

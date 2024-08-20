@@ -25,6 +25,11 @@ export const useValidationReportStore = create((set) => ({
 }));
 
 export const useSelectedTopicsStore = create((set) => ({
+    topicTitles: {},
+    setTopicTitles(newTopicTitles) {
+        console.log('STATE UPDATE: We are setting the topic titles');
+        set({topicTitles: newTopicTitles});
+    },
     selectedTopics: [],
     setSelectedTopics(newSelectedTopics) {
         console.log('STATE UPDATE: We are setting the selected topics');
