@@ -60,12 +60,6 @@ const OnboardingWelcomeTopics = () => {
         setSelectedTopics(topicsData.map((topic) => topic.id));
     }
 
-    const handleUnselectAll = () => {
-        const newSelectedTopics = new Array(topicsData.length).fill(false);
-        setSelectedTopicsBoolean(newSelectedTopics);
-        setSelectedTopics([]);
-    }
-
     console.log('selected Topics', selectedTopicsStore);
 
     return (
@@ -96,7 +90,7 @@ const OnboardingWelcomeTopics = () => {
                         </Typography>
                     </Button>))}
                 <Typography sx={styles.selectText}>
-                    <span onClick={handleSelectAll}>select all</span> / <span onClick={handleUnselectAll}>unselect all</span>
+                    <span onClick={handleSelectAll}>select all</span>
                 </Typography>
             </VStack>
         </OnboardingWelcomeScreen>
