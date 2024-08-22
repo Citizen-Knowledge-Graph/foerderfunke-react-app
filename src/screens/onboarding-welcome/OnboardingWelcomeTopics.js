@@ -41,7 +41,7 @@ const OnboardingWelcomeTopics = () => {
         let topicTitles = {};
         topicsData.forEach((topic) => topicTitles[topic.id] = topic.title);
         setTopicTitles(topicTitles);
-    }, [selectedTopicsStore, topicsData]);
+    }, [selectedTopicsStore, setTopicTitles, topicsData]);
 
     const handleButtonClick = (index) => {
         const newSelectedTopics = [...selectedTopicsBoolean];

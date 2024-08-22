@@ -10,8 +10,7 @@ import {useQuestionsStore, useSelectedTopicsStore} from "../../storage/zustand";
 
 const OnboardingWelcomeOverview = () => {
     const entityData = useInitializeQuickCheckUser();
-    const profileSection = 'quick-check-profile';
-    useInitializeProfileSectionStore(profileSection, entityData);
+    useInitializeProfileSectionStore(entityData);
 
     // fetch prioritised quick check questions
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
@@ -22,7 +21,7 @@ const OnboardingWelcomeOverview = () => {
     console.log('prioritized questions: ', questionsStore);
 
     return (
-        <OnboardingWelcomeScreen buttonText={'Discover your benefits'} link={`/profile-section/${profileSection}`}>
+        <OnboardingWelcomeScreen buttonText={'Discover your benefits'} link={`/profile-section`}>
             <VStack gap={3}>
                 <Typography variant="body1" gutterBottom sx={styles.subTitleText}>
                     Based on your chosen topics we will provide you with a list of benefits you may be eligible for.

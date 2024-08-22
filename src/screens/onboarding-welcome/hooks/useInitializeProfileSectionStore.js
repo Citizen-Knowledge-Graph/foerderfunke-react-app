@@ -1,17 +1,16 @@
 import {useProfileSectionStore} from "../../../storage/useProfileSectionStore";
 import {useEffect} from "react";
 
-const useInitializeProfileSectionStore = (profileSection, entityData) => {
+const useInitializeProfileSectionStore = (entityData) => {
     const initializeSectionStore = useProfileSectionStore((state) => state.initializeSectionStore);
 
     useEffect(() => {
         const newSectionStore = {
-            profileSection: profileSection,
             entityData: entityData,
             nestedSection: null,
         }
         initializeSectionStore(newSectionStore);
-    }, [entityData, initializeSectionStore, profileSection]);
+    }, [entityData, initializeSectionStore]);
 }
 
 export default useInitializeProfileSectionStore;

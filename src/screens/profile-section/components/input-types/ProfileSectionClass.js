@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
-import HStack from "../../../components/HStack";
-import VStack from "../../../components/VStack";
+import HStack from "../../../../components/HStack";
+import VStack from "../../../../components/VStack";
 import {Button, Card, CardContent, Typography} from "@mui/material";
 import {green, yellow} from "@mui/material/colors";
 import SentimentSatisfiedOutlinedIcon from "@mui/icons-material/SentimentSatisfiedOutlined";
@@ -8,8 +8,8 @@ import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutl
 import ClearIcon from '@mui/icons-material/Clear';
 import ButtonBase from "@mui/material/ButtonBase";
 import {useNavigate} from "react-router-dom";
-import useUpdateProfileSectionStore from "../hooks/useUpdateProfileSectionStore";
-import useRemoveProfileObject from "../hooks/useRemoveProfileObject";
+import useUpdateProfileSectionStore from "../../hooks/useUpdateProfileSectionStore";
+import useRemoveProfileObject from "../../hooks/useRemoveProfileObject";
 
 const ProfileSectionClass = ({value, currentField, entityData}) => {
     const navigate = useNavigate();

@@ -37,7 +37,7 @@ const App = () => {
                         <Route path="/onboarding-welcome" element={<OnboardingWelcomeOverview/>}/>
                         <Route path="/onboarding-gamified" element={<OnboardingGamifiedScreen/>}/>
                         <Route path="/eligibility-overview" element={<EligibilityOverviewScreen/>}/>
-                        <Route path="/profile-section/:id/:mode?" element={<ProfileSectionScreen/>}/>
+                        <Route path="/profile-section" element={<ProfileSectionScreen/>}/>
                         <Route path="/benefit-page/:id" element={<BenefitPageScreen/>}/>
                     </Routes>
                 </div>

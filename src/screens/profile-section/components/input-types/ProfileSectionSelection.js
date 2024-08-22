@@ -14,10 +14,11 @@ const ProfileSectionSelection = ({value, setValue, currentField}) => {
                 id="demo-simple-select"
                 value={value}
                 onChange={handleChange}
+                variant="outlined"
             >
                 {
                     currentField.choices.map((choice, i) => (
-                        <MenuItem key={i} value={choice}>{choice}</MenuItem>
+                        <MenuItem key={i} value={choice.value}>{choice.label}</MenuItem>
                     ))
                 }
             </Select>

@@ -12,6 +12,11 @@ const useInputValidation = (expectedType) => {
                         reject('Invalid value type. Expected string.');
                     }
                     break;
+                case 'selection-multiple':
+                    if (typeof value !== 'string') {
+                        reject('Invalid value type. Expected string.');
+                    }
+                    break;
                 case 'integer':
                     if (isNaN(value)) {
                         reject('Invalid value type. Expected number.');

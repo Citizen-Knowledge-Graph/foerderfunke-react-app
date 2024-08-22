@@ -6,6 +6,7 @@ const ProfileSectionInput = ({value, setValue, error}) => {
         <>
             <TextField
                 variant="outlined"
+                label="Value"
                 onChange={(e) => setValue(e.target.value)}
                 value={value}
                 fullWidth

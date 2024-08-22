@@ -2,14 +2,11 @@ import React, {useEffect, useState} from 'react';
 import {Button, ButtonBase, Card, CardContent, Typography} from '@mui/material';
 import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
-import ProfileSectionInput from "./ProfileSectionInput";
-import ProfileSectionClass from "./ProfileSectionClass";
-import ProfileSectionSelection from "./ProfileSectionSelection";
 import useAddProfileField from '../hooks/useAddProfileField';
 import useInputValidation from "../hooks/useInputValidation";
 import useFetchProfileField from "../hooks/useFetchProfileField";
 import globalStyles from "../../../styles/styles";
-import {useProfileSectionStore} from "../../../storage/useProfileSectionStore";
+import ProfileSectionInputSwitch from "./input-types/ProfileSectionInputSwitch";
 
 const ProfileSectionField = ({
                                  currentField,
@@ -24,7 +21,6 @@ const ProfileSectionField = ({
     const validateValue = useInputValidation(currentField.datatype);
     const addProfileData = useAddProfileField(currentField, entityData, handleConfirm);
     const fetchProfileField = useFetchProfileField(currentField.datafield, entityData);
-    const profileSectionStore = useProfileSectionStore((state) => state.sectionStore);
 
     useEffect(() => {
         setValue('');
@@ -61,8 +57,6 @@ const ProfileSectionField = ({
             )
     }
 
-    console.log("profileSection store:", profileSectionStore)
-
     return (
         <VStack gap={7}>
             <VStack gap={2}>
@@ -75,15 +69,11 @@ const ProfileSectionField = ({
                         </CardContent>
                     </Card>
                 </HStack>
-                {currentField.datatype === 'selection' ? (
-                    <ProfileSectionSelection value={value} setValue={setValue} currentField={currentField} error={localError} />
-                ) : currentField.datatype !== 'class' ? (
-                    <ProfileSectionInput value={value} setValue={setValue} error={localError} />
-                ) : (
-                    <ProfileSectionClass value={value}
-                                         currentField={currentField}
-                                         entityData={entityData} />
-                )}
+                <ProfileSectionInputSwitch value={value}
+                                           setValue={setValue}
+                                           currentField={currentField}
+                                           entityData={entityData}
+                                           error={localError}/>
             </VStack>
             <VStack data-testid="button-card-container">
                 <HStack justifyContent={'space-between'}>
