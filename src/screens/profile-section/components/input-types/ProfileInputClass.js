@@ -11,7 +11,7 @@ import {useNavigate} from "react-router-dom";
 import useUpdateProfileSectionStore from "../../hooks/useUpdateProfileSectionStore";
 import useRemoveProfileObject from "../../hooks/useRemoveProfileObject";
 
-const ProfileSectionClass = ({value, currentField, entityData}) => {
+const ProfileInputClass = ({value, currentField, entityData}) => {
     const navigate = useNavigate();
     const updateProfileSectionStore = useUpdateProfileSectionStore();
     const removeProfileObject = useRemoveProfileObject(currentField, entityData);
@@ -122,4 +122,4 @@ const ProfileSectionClass = ({value, currentField, entityData}) => {
         },
     };
 
-    export default ProfileSectionClass;
+    export default ProfileInputClass;

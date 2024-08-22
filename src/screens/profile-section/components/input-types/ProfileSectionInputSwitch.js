@@ -1,34 +1,40 @@
-import ProfileSectionSelection from "./ProfileSectionSelection";
-import ProfileSectionClass from "./ProfileSectionClass";
-import ProfileSectionInput from "./ProfileSectionInput";
-import ProfileSectionDate from "./ProfileSectionDate";
+import ProfileInputSelection from "./ProfileInputSelection";
+import ProfileInputClass from "./ProfileInputClass";
+import ProfileInputText from "./ProfileInputText";
+import ProfileInputDate from "./ProfileInputDate";
+import ProfileInputBoolean from "./ProfileInputBoolean";
 
 const ProfileSectionInputSwitch = ({value, setValue, currentField, entityData, error}) => {
     switch (currentField.datatype) {
         case 'selection':
-            return <ProfileSectionSelection
+            return <ProfileInputSelection
                 value={value}
                 setValue={setValue}
                 currentField={currentField}
                 error={error}/>;
         case 'selection-multiple':
-            return <ProfileSectionSelection
+            return <ProfileInputSelection
                 value={value}
                 setValue={setValue}
                 currentField={currentField}
                 error={error}/>;
         case 'date':
-            return <ProfileSectionDate
+            return <ProfileInputDate
                 value={value}
                 setValue={setValue}
                 error={error}/>;
         case 'class':
-            return <ProfileSectionClass
+            return <ProfileInputClass
                 value={value}
                 currentField={currentField}
                 entityData={entityData}/>;
+        case 'boolean':
+            return <ProfileInputBoolean
+                value={value}
+                setValue={setValue}
+                error={error}/>;
         default:
-            return <ProfileSectionInput
+            return <ProfileInputText
                 value={value}
                 setValue={setValue}
                 error={error}/>;

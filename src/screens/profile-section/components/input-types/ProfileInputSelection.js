@@ -1,7 +1,7 @@
 import React from 'react';
 import {FormControl, MenuItem, Select} from "@mui/material";
 
-const ProfileSectionSelection = ({value, setValue, currentField}) => {
+const ProfileInputSelection = ({value, setValue, currentField}) => {
 
     const handleChange = (event) => {
         setValue(event.target.value);
@@ -26,4 +26,4 @@ const ProfileSectionSelection = ({value, setValue, currentField}) => {
     );
 };
 
-export default ProfileSectionSelection;
+export default ProfileInputSelection;

@@ -1,3 +1,5 @@
+import dayjs from "dayjs";
+
 const useInputValidation = (expectedType) => {
     return (value) => {
         return new Promise((resolve, reject) => {
@@ -23,8 +25,13 @@ const useInputValidation = (expectedType) => {
                     }
                     break;
                 case 'boolean':
-                    if (value !== 'true' && value !== 'false') {
+                    if (value !== true && value !== false) {
                         reject('Invalid value type. Expected boolean.');
+                    }
+                    break;
+                case 'date':
+                    if (!dayjs(value).isValid()) {
+                        reject('Invalid value type. Expected a valid date.');
                     }
                     break;
                 case 'class':

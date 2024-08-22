@@ -15,6 +15,7 @@ const OnboardingWelcomeOverview = () => {
     // fetch prioritised quick check questions
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
     const topicTitles = useSelectedTopicsStore((state) => state.topicTitles);
+    console.log('selected topics: ', selectedTopics);
     useInitializeQuestionsArray(selectedTopics);
 
     const questionsStore = useQuestionsStore((state) => state.questions);

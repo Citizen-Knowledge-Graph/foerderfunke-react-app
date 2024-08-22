@@ -1,7 +1,7 @@
 import React from 'react';
 import {TextField, Typography} from '@mui/material';
 
-const ProfileSectionInput = ({value, setValue, error}) => {
+const ProfileInputText = ({value, setValue, error}) => {
     return (
         <>
             <TextField
@@ -20,4 +20,4 @@ const ProfileSectionInput = ({value, setValue, error}) => {
     );
 };
 
-export default ProfileSectionInput;
+export default ProfileInputText;

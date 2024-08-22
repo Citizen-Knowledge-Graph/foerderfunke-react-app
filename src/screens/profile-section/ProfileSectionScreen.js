@@ -15,6 +15,8 @@ const ProfileSectionScreen = () => {
     //     setCompleted(false);
     // }, [id]);
 
+    console.log('profile questions', profileQuestions);
+
     return (
         <Layout isApp={true} logo={false} back={'Back to quick check'}>
             <AppScreenWrapper isDesktop={isDesktop} back={true}>

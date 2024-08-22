@@ -4,7 +4,6 @@ export const useProfileSectionStore = create((set, get) => ({
     sectionStore: {},
     initializeSectionStore(newSectionStore) {
         console.log(`STATE UPDATE: We are initializing the section store`);
-        console.log(newSectionStore)
         set({sectionStore: newSectionStore});
     },
     retrieveCurrentEntityData() {
