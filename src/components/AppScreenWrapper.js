@@ -21,7 +21,7 @@ const AppScreenWrapper = ({isDesktop, isTop = true, children, back=false}) => {
         }}>
             {isDesktop ? (
                 <VStack sx={{
-                    maxWidth: '840px',
+                    width: '780px',
                 }}>
                     {back && <AppScreenHeader/>}
                     {children}
