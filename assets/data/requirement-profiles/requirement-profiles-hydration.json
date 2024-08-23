@@ -1,6 +1,6 @@
 {
-  "https://foerderfunke.org/default#01-hilfe-zum-lebensunterhalt": {
-    "id": "ff:01-hilfe-zum-lebensunterhalt",
+  "https://foerderfunke.org/default#hilfe-zum-lebensunterhalt": {
+    "id": "ff:hilfe-zum-lebensunterhalt",
     "title": {
       "de": "Hilfe zum Lebensunterhalt",
       "en": "Cost-of-living assistance"
@@ -10,8 +10,8 @@
       "en": "If you are currently unable to work due to health reasons, you may be entitled to cost of living assistance. The prerequisite is that you are temporarily unable to earn your living yourself or with the help of other people, for example a partner or your family."
     }
   },
-  "https://foerderfunke.org/default#02-kindergeld": {
-    "id": "ff:02-kindergeld",
+  "https://foerderfunke.org/default#kindergeld": {
+    "id": "ff:kindergeld",
     "title": {
       "de": "Kindergeld",
       "en": "Child benefit"
@@ -21,8 +21,8 @@
       "en": "Parents and guardians are entitled to receive child benefit from the state starting with their first child. Find out here whether you qualify for child benefit and how you can apply."
     }
   },
-  "https://foerderfunke.org/default#03-kinderzuschlag": {
-    "id": "ff:03-kinderzuschlag",
+  "https://foerderfunke.org/default#kinderzuschlag": {
+    "id": "ff:kinderzuschlag",
     "title": {
       "de": "Kinderzuschlag",
       "en": "Child allowance"
@@ -32,8 +32,8 @@
       "en": "If you are a low-earner and receive child benefit, you can also apply for the child allowance."
     }
   },
-  "https://foerderfunke.org/default#04-bafoeg": {
-    "id": "ff:04-bafoeg",
+  "https://foerderfunke.org/default#bafoeg": {
+    "id": "ff:bafoeg",
     "title": {
       "de": "BAföG",
       "en": "BAföG"
@@ -43,8 +43,8 @@
       "en": "Are you looking to study or complete your secondary school education and require financial support? Then BAföG is just what you need. Keep reading to find out all the details about Germany’s student support scheme and how to apply for BAföG."
     }
   },
-  "https://foerderfunke.org/default#05-buergergeld": {
-    "id": "ff:05-buergergeld",
+  "https://foerderfunke.org/default#buergergeld": {
+    "id": "ff:buergergeld",
     "title": {
       "de": "Bürgergeld",
       "en": "Citizen's benefit"
@@ -54,8 +54,8 @@
       "en": "If you are not currently employed and are not entitled to unemployment benefit, you may be entitled to unemployment benefit II. This also applies if you earn so little that you cannot meet your living costs."
     }
   },
-  "https://foerderfunke.org/default#06-arbeitslosengeld": {
-    "id": "ff:06-arbeitslosengeld",
+  "https://foerderfunke.org/default#arbeitslosengeld": {
+    "id": "ff:arbeitslosengeld",
     "title": {
       "de": "Arbeitslosengeld",
       "en": "Unemployment benefit"
@@ -65,8 +65,8 @@
       "en": "Unemployment benefit, or ALG (from the German word Arbeitslosengeld), provides a social safety net in case you lose your job or training position. It replaces part of your missing income so that you can continue to pay your bills."
     }
   },
-  "https://foerderfunke.org/default#07-berufsausbildungsbeihilfe-bab": {
-    "id": "ff:07-berufsausbildungsbeihilfe-bab",
+  "https://foerderfunke.org/default#berufsausbildungsbeihilfe-bab": {
+    "id": "ff:berufsausbildungsbeihilfe-bab",
     "title": {
       "de": "Berufsausbildungsbeihilfe (BAB)",
       "en": "Vocational training allowance (BAB)"
@@ -76,8 +76,8 @@
       "en": "Vocational training allowance, or Berufsausbildungsbeihilfe (BAB), is a form of financial assistance for young people who are in vocational training for the first time. It helps them pay for things like rent, food or transport costs."
     }
   },
-  "https://foerderfunke.org/default#08-wohngeld": {
-    "id": "ff:08-wohngeld",
+  "https://foerderfunke.org/default#wohngeld": {
+    "id": "ff:wohngeld",
     "title": {
       "de": "Wohngeld",
       "en": "Housing benefit"
@@ -87,8 +87,8 @@
       "en": "In the event that you earn too little to pay for your apartment, you can apply for housing benefit."
     }
   },
-  "https://foerderfunke.org/default#09-grundsicherung-im-alter-und-bei-erwerbsminderung": {
-    "id": "ff:09-grundsicherung-im-alter-und-bei-erwerbsminderung",
+  "https://foerderfunke.org/default#grundsicherung-im-alter-und-bei-erwerbsminderung": {
+    "id": "ff:grundsicherung-im-alter-und-bei-erwerbsminderung",
     "title": {
       "de": "Grundsicherung im Alter und bei Erwerbsminderung",
       "en": "Basic welfare for the elderly and people with reduced earnings capacity"
@@ -98,8 +98,8 @@
       "en": "Are you receiving your pension but don’t have enough money to get by? Or are you younger but unable to work for health-related reasons? If so, you may be entitled to claim basic financial welfare for the elderly and people with reduced earnings capacity."
     }
   },
-  "https://foerderfunke.org/default#10-bildung-und-teilhabe-bei-bezug-von-buergergeld": {
-    "id": "ff:10-bildung-und-teilhabe-bei-bezug-von-buergergeld",
+  "https://foerderfunke.org/default#bildung-und-teilhabe-bei-bezug-von-buergergeld": {
+    "id": "ff:bildung-und-teilhabe-bei-bezug-von-buergergeld",
     "title": {
       "de": "Bildung und Teilhabe - bei Bezug von Bürgergeld",
       "en": "Education and participation - with citizen's benefit"
