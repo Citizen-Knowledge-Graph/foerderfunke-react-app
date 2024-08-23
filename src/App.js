@@ -5,7 +5,6 @@ import {createTheme, ThemeProvider} from '@mui/material/styles';
 import ViewportUpdater from "./components/ViewportUpdater";
 import OnboardingChoice from './screens/onboarding-choice/OnboardingChoice';
 import OnboardingWelcomeOverview from "./screens/onboarding-welcome/OnboardingWelcomeOverview";
-import OnboardingGamifiedScreen from "./screens/onboarding-gamified/OnboardingGamifiedScreen";
 import ProfileSectionScreen from "./screens/profile-section/ProfileSectionScreen";
 import EligibilityOverviewScreen from "./screens/eligibilty-overview/EligibilityOverviewScreen";
 import BenefitPageScreen from "./screens/benefit-page/BenefitPageScreen";
@@ -35,7 +34,6 @@ const App = () => {
                         <Route path="/onboarding-choice" element={<OnboardingChoice/>}/>
                         <Route path="/onboarding-welcome-topics" element={<OnboardingWelcomeTopics/>}/>
                         <Route path="/onboarding-welcome" element={<OnboardingWelcomeOverview/>}/>
-                        <Route path="/onboarding-gamified" element={<OnboardingGamifiedScreen/>}/>
                         <Route path="/eligibility-overview" element={<EligibilityOverviewScreen/>}/>
                         <Route path="/profile-section" element={<ProfileSectionScreen/>}/>
                         <Route path="/benefit-page/:id" element={<BenefitPageScreen/>}/>
