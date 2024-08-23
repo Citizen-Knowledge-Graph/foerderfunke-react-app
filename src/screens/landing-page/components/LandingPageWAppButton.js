@@ -28,7 +28,7 @@ const LandingPageWAppButton = ({backgroundColor}) => {
 
     return (
         <Button variant="text" sx={{...styles.button, backgroundColor: buttonColor, color: textColor}} component={Link}
-                to="/info-privacy">Try FörderFunke</Button>
+                to="/user-routing">Try FörderFunke</Button>
     );
 }
 

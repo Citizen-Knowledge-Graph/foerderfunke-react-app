@@ -29,7 +29,7 @@ const InfoScreen = ({title, children, imageUrl, backLink, forwardLink}) => {
                     <HStack sx={styles.titleWrapper}>
                         <Typography sx={{...styles.title, fontSize: titleFontSize}}>{title}</Typography>
                     </HStack>
-                    <img src={privacyImageUrl} alt="logo" style={{height: '225px'}}/>
+                    {imageUrl && <img src={privacyImageUrl} alt="logo" style={{height: '225px'}}/>}
                     <VStack gap={3} sx={styles.infoWrapper}>
                         {children}
                     </VStack>
