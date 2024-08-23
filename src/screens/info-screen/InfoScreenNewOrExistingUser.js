@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import InfoScreen from "./components/InfoScreen";
 import useInitializeQuickCheckUser from "../onboarding-welcome/hooks/useInitializeQuickCheckUser";
 import useInitializeProfileSectionStore from "../onboarding-welcome/hooks/useInitializeProfileSectionStore";
@@ -9,11 +9,11 @@ const InfoScreenNewOrExistingUser = () => {
     const entityData = useInitializeQuickCheckUser();
     useInitializeProfileSectionStore(entityData);
     const navigate = useNavigate();
-    const [existingUserFound, setExistingUserFound] = useState(false); // TODO
+    const existingUserFound = false; // TODO
 
     useEffect(() => {
         navigate('/info-privacy');
-    }, [entityData]);
+    }, [entityData, navigate]);
 
     return (
         existingUserFound ? (
