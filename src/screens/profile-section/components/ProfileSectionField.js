@@ -64,7 +64,7 @@ const ProfileSectionField = ({
                     <Card sx={styles.infoCard} data-testid="card">
                         <CardContent sx={styles.infoCardContent} data-testid="card-content">
                             <Typography sx={styles.titleText}>
-                                {currentField.title}
+                                {currentField.question}
                             </Typography>
                         </CardContent>
                     </Card>
