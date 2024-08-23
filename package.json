@@ -2,7 +2,7 @@
   "name": "foerderfunke-react-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://citizen-knowledge-graph.github.io/foerderfunke-react-app",
+  "homepage": "https://foerderfunke.org/",
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/plugin-transform-private-property-in-object": "^7.24.7",
