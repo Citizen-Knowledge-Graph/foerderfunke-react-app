@@ -18,11 +18,13 @@ export const useFetchEligibilityReports = ({ validationReport, hydrationData }) 
             missingData: []
         };
 
+        const lang = 'en'; // TODO pass as param
+
         for (let report of reports) {
             let { rpUri, result } = report;
             const id = hydrationData[rpUri]?.id || 'Unknown Id';
-            const title = hydrationData[rpUri]?.title || 'Unknown Title';
-            const description = hydrationData[rpUri]?.description || 'Unknown Description';
+            const title = hydrationData[rpUri]?.title?.[lang] || 'Unknown Title';
+            const description = hydrationData[rpUri]?.description?.[lang] || 'Unknown Description';
             const data = { uri: rpUri, id, title, description };
             if (result === ValidationResult.ELIGIBLE) {
                 eligibilityData.eligible.push(data);
