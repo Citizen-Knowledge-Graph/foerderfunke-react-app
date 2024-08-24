@@ -4,12 +4,16 @@ import ProfileSectionList from "./components/ProfileSectionList";
 import ProfileSectionCompleted from "./components/ProfileSectionCompleted";
 import AppScreenWrapper from "../../components/AppScreenWrapper";
 import {useStore} from "../../components/ViewportUpdater";
-import {useQuestionsStore} from "../../storage/zustand";
+import {useQuestionsStore, useTopQuestionStore} from "../../storage/zustand";
+import ProfileSectionTopQuestion from "./components/ProfileSectionTopQuestion";
 
 const ProfileSectionScreen = () => {
     const isDesktop = useStore((state) => state.isDesktop);
     const profileQuestions = useQuestionsStore((state) => state.questions);
+    const topQuestion = useTopQuestionStore((state) => state.topQuestion);
     const [completed, setCompleted] = useState(false);
+
+    const fixedSetOfQuestionsMode = true; // true means, the next top question is computed after each step
 
     // useEffect(() => {
     //     setCompleted(false);
@@ -22,10 +26,17 @@ const ProfileSectionScreen = () => {
             <AppScreenWrapper isDesktop={isDesktop} back={true}>
                 {profileQuestions ? (
                     !completed ? (
-                        <ProfileSectionList
-                            profileQuestions={profileQuestions}
-                            setCompleted={setCompleted}
-                        />
+                        fixedSetOfQuestionsMode ? (
+                                <ProfileSectionList
+                                    profileQuestions={profileQuestions}
+                                    setCompleted={setCompleted}
+                                />
+                            ) : (
+                                <ProfileSectionTopQuestion
+                                    topQuestion={topQuestion}
+                                    setCompleted={setCompleted}
+                                 />
+                            )
                     ) : (
                         <ProfileSectionCompleted/>
                     )

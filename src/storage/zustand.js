@@ -45,6 +45,14 @@ export const useSelectedTopicsStore = create((set) => ({
     }
 }));
 
+export const useTopQuestionStore = create((set) => ({
+    topQuestion: {},
+    updateTopQuestion: (newTopQuestion) => {
+        console.log('STATE UPDATE: We are updating the top question');
+        set((state) => ({topQuestion: newTopQuestion}));
+    },
+}));
+
 export const useQuestionsStore = create((set) => ({
     questions: {},
     updateQuestions: (newQuestions) => {
