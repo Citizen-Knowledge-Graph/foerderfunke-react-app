@@ -20,15 +20,17 @@ const LandingPageFooterMobile = () => {
             </VStack>
             <Divider variant="middle" sx={{borderBottomWidth: '2px'}}/>
             <VStack alignItems={'center'}>
-                <Typography sx={styles.navbarItemText}>
-                    Impressum
-                </Typography>
                 <NarBarLink to={"/#how-it-works"} title={'How it works'}/>
                 <NarBarLink to={"/#principles"} title={'Principles'}/>
                 <NarBarLink to={"/#about-us"} title={'About us'}/>
                 <LandingPageWAppButton backgroundColor={'secondary'}/>
                 <Typography sx={styles.copyrightText}>
                     ©  2024 by FörderFunke. All rights reserved.
+                    <br/>
+                    Degenhart, Espinosa, Gläser - FörderFuchs GbR,
+                    c/o Impact Hub Berlin,
+                    Rollbergstraße 28A,
+                    12053 Berlin
                 </Typography>
             </VStack>
         </VStack>
