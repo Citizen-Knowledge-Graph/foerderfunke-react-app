@@ -2,7 +2,7 @@ import LandingPageMemberCard from "./LandingPageMemberCard";
 
 
 export const MemberCardBenjamin = () => {
-    const portraitUrl = `${process.env.PUBLIC_URL}/assets/images/portraits/Portrait_Benjamin_Cropped.png`;
+    const portraitUrl = `${process.env.PUBLIC_URL}/assets/images/portraits/Portrait_Benjamin_Cropped.jpg`;
 
     return (
         <LandingPageMemberCard
@@ -16,7 +16,7 @@ export const MemberCardBenjamin = () => {
 }
 
 export const MemberCardVanessa = () => {
-    const portraitUrl = `${process.env.PUBLIC_URL}/assets/images/portraits/Portrait_Vanessa.jpeg`;
+    const portraitUrl = `${process.env.PUBLIC_URL}/assets/images/portraits/Portrait_Vanessa_Cropped.jpg`;
 
     return (
         <LandingPageMemberCard
@@ -30,7 +30,7 @@ export const MemberCardVanessa = () => {
 }
 
 export const MemberCardBen = () => {
-    const portraitUrl = `${process.env.PUBLIC_URL}/assets/images/portraits/Portrait_Ben_Cropped.png`;
+    const portraitUrl = `${process.env.PUBLIC_URL}/assets/images/portraits/Portrait_Ben_Cropped.jpg`;
 
     return (
         <LandingPageMemberCard
