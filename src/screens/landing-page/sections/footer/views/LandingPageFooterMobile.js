@@ -15,7 +15,7 @@ const LandingPageFooterMobile = () => {
                 <LogoBar size={'small'}/>
                 <VStack gap={2}>
                     <EmailLink email={'info@foerderfunke.org'}/>
-                    <LinkedInLink profileUrl={'https://www.linkedin.com/company/foerderfunke'}/>
+                    <LinkedInLink linkedin={'https://www.linkedin.com/company/foerderfunke'}/>
                 </VStack>
             </VStack>
             <Divider variant="middle" sx={{borderBottomWidth: '2px'}}/>

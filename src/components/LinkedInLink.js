@@ -3,11 +3,11 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import {Link} from "@mui/material";
 import React from "react";
 
-const LinkedInLink = ({profileUrl}) => (
+const LinkedInLink = ({linkedin}) => (
     <HStack gap={1} alignItems={'center'}>
         <LinkedInIcon/>
         <Link
-            href={profileUrl}
+            href={linkedin}
             target="_blank"
             rel="noopener noreferrer"
             sx={{ textDecoration: 'underline', color: 'inherit' }}

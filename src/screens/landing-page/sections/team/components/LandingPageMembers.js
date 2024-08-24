@@ -10,7 +10,7 @@ export const MemberCardBenjamin = () => {
             name={"Benjamin Degenhart"}
             position={"Knowledge Engineer"}
             email={"benjamin.degenhart@foerderfunke.org"}
-            linkedin={"LinkedIn"}
+            linkedin={"https://www.linkedin.com/in/bdegenhart"}
         />
     );
 }
@@ -24,7 +24,7 @@ export const MemberCardVanessa = () => {
             name={"Vanessa Espinosa"}
             position={"UI/UX Designer"}
             email={"vanessa.espinosa@foerderfunke.org"}
-            linkedin={"LinkedIn"}
+            linkedin={"https://www.linkedin.com/in/espinosaureta"}
         />
     );
 }
@@ -38,7 +38,7 @@ export const MemberCardBen = () => {
             name={"Ben Gläser"}
             position={"Software Engineer"}
             email={"ben.glaeser@foerderfunke.org"}
-            linkedin={"LinkedIn"}
+            linkedin={"https://www.linkedin.com/in/ben-gl%C3%A4ser-42227b133/"}
         />
     );
 }
