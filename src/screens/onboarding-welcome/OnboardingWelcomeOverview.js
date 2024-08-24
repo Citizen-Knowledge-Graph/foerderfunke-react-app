@@ -1,7 +1,5 @@
 import React from 'react';
 import {Typography} from '@mui/material';
-import useInitializeQuickCheckUser from "./hooks/useInitializeQuickCheckUser";
-import useInitializeProfileSectionStore from "./hooks/useInitializeProfileSectionStore";
 import useInitializeQuestionsArray from "./hooks/useInitializeQuestionsArray";
 import VStack from "../../components/VStack";
 import OnboardingWelcomeScreen from "./components/OnboardingWelcomeScreen";
@@ -9,9 +7,6 @@ import {useQuestionsStore, useSelectedTopicsStore} from "../../storage/zustand";
 
 
 const OnboardingWelcomeOverview = () => {
-    const entityData = useInitializeQuickCheckUser();
-    useInitializeProfileSectionStore(entityData);
-
     // fetch prioritised quick check questions
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
     const topicTitles = useSelectedTopicsStore((state) => state.topicTitles);
