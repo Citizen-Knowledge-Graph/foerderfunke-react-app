@@ -4,7 +4,6 @@ import ProfileSectionField from "./ProfileSectionField";
 import {useProfileSectionStore} from "../../../storage/useProfileSectionStore";
 
 const ProfileSectionTopQuestion = ({topQuestion, setCompleted}) => {
-    const [currentIndex, setCurrentIndex] = useState(0);
     const [entityData, setEntityData] = useState({});
     const retrieveCurrentEntityData = useProfileSectionStore((state) => state.retrieveCurrentEntityData);
 
