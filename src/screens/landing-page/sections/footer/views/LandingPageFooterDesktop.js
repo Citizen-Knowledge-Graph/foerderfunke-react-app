@@ -29,7 +29,7 @@ const LandingPageFooterDesktop = () => {
             <HStack justifyContent={'space-between'} alignItems={'center'}>
                 <HStack>
                     <EmailLink email={'info@foerderfunke.org'}/>
-                    <LinkedInLink linkedin={'https://www.linkedin.com/company/foerderfunke'}/>
+                    <LinkedInLink profileUrl={'https://www.linkedin.com/company/foerderfunke'}/>
                 </HStack>
                 <HStack>
                     <Typography sx={styles.copyrightText}>

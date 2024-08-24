@@ -6,7 +6,12 @@ import React from "react";
 const LinkedInLink = ({profileUrl}) => (
     <HStack gap={1} alignItems={'center'}>
         <LinkedInIcon/>
-        <Link href={profileUrl} sx={{ textDecoration: 'underline', color: 'inherit' }}>LinkedIn</Link>
+        <Link
+            href={profileUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ textDecoration: 'underline', color: 'inherit' }}
+        >LinkedIn</Link>
     </HStack>
 );
 
