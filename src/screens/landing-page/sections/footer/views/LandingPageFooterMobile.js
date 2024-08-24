@@ -7,6 +7,7 @@ import Divider from "@mui/material/Divider";
 import {Typography} from "@mui/material";
 import NarBarLink from "../../../../../components/NavBarLink";
 import LandingPageWAppButton from "../../../components/LandingPageWAppButton";
+import GitHubLink from "../../../../../components/GitHubLink";
 
 const LandingPageFooterMobile = () => {
     return (
@@ -16,6 +17,7 @@ const LandingPageFooterMobile = () => {
                 <VStack gap={2}>
                     <EmailLink email={'info@foerderfunke.org'}/>
                     <LinkedInLink linkedin={'https://www.linkedin.com/company/foerderfunke'}/>
+                    <GitHubLink href={"https://github.com/Citizen-Knowledge-Graph"}/>
                 </VStack>
             </VStack>
             <Divider variant="middle" sx={{borderBottomWidth: '2px'}}/>

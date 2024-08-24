@@ -8,6 +8,7 @@ import NarBarLink from "../../../../../components/NavBarLink";
 import EmailLink from "../../../../../components/EmailLink";
 import LinkedInLink from "../../../../../components/LinkedInLink";
 import LogoBar from "../../../../../components/LogoBar";
+import GitHubLink from "../../../../../components/GitHubLink";
 
 const LandingPageFooterDesktop = () => {
 
@@ -27,6 +28,7 @@ const LandingPageFooterDesktop = () => {
                 <HStack>
                     <EmailLink email={'info@foerderfunke.org'}/>
                     <LinkedInLink linkedin={'https://www.linkedin.com/company/foerderfunke'}/>
+                    <GitHubLink href={"https://github.com/Citizen-Knowledge-Graph"}/>
                 </HStack>
                 <HStack>
                     <Typography sx={styles.copyrightText}>
