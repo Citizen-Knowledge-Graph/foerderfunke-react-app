@@ -68,7 +68,7 @@ const LandingPageFooter = () => {
                             <CardContent sx={styles.headerSectionButtonCardContent}>
                                 <HStack gap={1} alignItems={'center'}>
                                     <Typography sx={styles.headerSectionButtonCardText}>
-                                        Try FörderFunke
+                                        Discover benefits
                                     </Typography>
                                 </HStack>
                             </CardContent>
