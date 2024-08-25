@@ -3,7 +3,7 @@ import {convertUserProfileToTurtle} from "@foerderfunke/matching-engine/src/util
 import readJson from "../utilities/readJson";
 import {fetchTurtleResource} from "./githubService";
 import {getPrioritizedMissingDataFieldsJson} from "@foerderfunke/matching-engine/src/prematch";
-import {useQuestionsStore, useTopQuestionStore, useValidationReportStore} from "../storage/zustand";
+import {useQuestionsStore, useValidationReportStore} from "../storage/zustand";
 
 const questionsService = async (activeUser, activeTopics) => {
 
@@ -38,7 +38,6 @@ const questionsService = async (activeUser, activeTopics) => {
 
     useValidationReportStore.getState().updateValidationReport(questionsResponse.validationReport);
     useQuestionsStore.getState().updateQuestions(questionsResponse.prioritizedMissingDataFields);
-    useTopQuestionStore.getState().updateTopQuestion(questionsResponse.prioritizedMissingDataFields.fields[0]);
 
     return null;
 }

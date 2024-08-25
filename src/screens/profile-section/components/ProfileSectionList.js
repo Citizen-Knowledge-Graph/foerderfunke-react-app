@@ -29,14 +29,7 @@ const ProfileSectionList = ({profileQuestions, mode, setCompleted}) => {
 
     }, [profileQuestions, retrieveCurrentDataField, retrieveCurrentEntityData]);
 
-    let currentField;
-    try {
-        currentField = profileQuestions.fields[currentIndex];
-    } catch (error) {
-        console.log('Error getting current field', error);
-        console.log("profile questions", profileQuestions)
-    }
-
+    const currentField = profileQuestions.fields[currentIndex];
     return (
         <VStack sx={{width: '100%'}} gap={3}>
             <VStack gap={1}>
