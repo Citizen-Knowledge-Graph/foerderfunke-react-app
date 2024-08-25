@@ -14,18 +14,14 @@ export const runValidation = async (activeUser) => {
 
     // Get the active user profile
     const userProfile = UserModel.retrieveUserData(activeUser);
-    console.log('User profile:', userProfile)
-
     const userProfileString = await convertUserProfileToTurtle(userProfile);
-
-    console.log('User profile:', userProfileString)
 
     // load validation config
     const validationConfig = await readJson('assets/data/requirement-profiles/requirement-profiles.json');
 
     // validate user profile against datafields
-    const datafieldsString = await fetchTurtleResource(validationConfig['datafields']);
-    if (!(await validateUserProfile(userProfileString, datafieldsString))) {
+    const dataFieldsString = await fetchTurtleResource(validationConfig['datafields']);
+    if (!(await validateUserProfile(userProfileString, dataFieldsString))) {
         console.error('Invalid user profile');
     }
 
@@ -43,7 +39,7 @@ export const runValidation = async (activeUser) => {
     let validateAllReport = await validateAll(
         userProfileString,
         requirementProfiles,
-        datafieldsString,
+        dataFieldsString,
         materializationString,
         false
     );
@@ -52,7 +48,7 @@ export const runValidation = async (activeUser) => {
 
     // fetch metadata
     let metadata = {
-        df: await extractDatafieldsMetadata(datafieldsString),
+        df: await extractDatafieldsMetadata(dataFieldsString),
         rp: await extractRequirementProfilesMetadata(Object.values(requirementProfiles)),
     };
 

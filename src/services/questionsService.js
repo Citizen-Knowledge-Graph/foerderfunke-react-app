@@ -8,8 +8,10 @@ import {useQuestionsStore, useValidationReportStore} from "../storage/zustand";
 const questionsService = async (activeUser, activeTopics) => {
 
     // Get the active user profile
-    const userProfile = UserModel.retrieveUserData(activeUser);
-    const userProfileString = await convertUserProfileToTurtle(userProfile);
+    let userProfileString = `
+        @prefix ff: <https://foerderfunke.org/default#> .
+        ff:mainPerson a ff:Citizen .
+    `
 
     // load validation config
     const validationConfig = await readJson('assets/data/requirement-profiles/requirement-profiles.json');
@@ -25,6 +27,10 @@ const questionsService = async (activeUser, activeTopics) => {
         requirementProfiles[rpUri] = await fetchTurtleResource(fileUrl);
     }
     console.log('Fetching questions array for:', activeTopics);
+    console.log('Fetching questions array for:', userProfileString);
+    console.log('Fetching questions array for:', dataFieldsString);
+    console.log('Fetching questions array for:', requirementProfiles);
+    console.log('Fetching questions array for:', materializationString);
 
     let questionsResponse = await getPrioritizedMissingDataFieldsJson(
         activeTopics,
