@@ -3,6 +3,7 @@ import VStack from "../../../components/VStack";
 import ProfileSectionField from "./ProfileSectionField";
 import {useProfileSectionStore} from "../../../storage/useProfileSectionStore";
 import {useProfileSectionListHandlers} from "../hooks/useProfileSectionListHandlers";
+import ProfileSectionHeader from "./ProfileSectionHeader";
 
 const ProfileSectionList = ({profileQuestions, mode, setCompleted}) => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -12,7 +13,6 @@ const ProfileSectionList = ({profileQuestions, mode, setCompleted}) => {
     const {
         handleConfirm,
         handleBack,
-        handleSkip
     } = useProfileSectionListHandlers(mode, setCurrentIndex, profileQuestions, setCompleted);
 
     useEffect(() => {
@@ -30,16 +30,17 @@ const ProfileSectionList = ({profileQuestions, mode, setCompleted}) => {
     }, [profileQuestions, retrieveCurrentDataField, retrieveCurrentEntityData]);
 
     const currentField = profileQuestions.fields[currentIndex];
+    console.log('current field', currentIndex);
+
     return (
         <VStack sx={{width: '100%'}} gap={3}>
+            <ProfileSectionHeader handleBack={() => handleBack(currentIndex)}/>
             <VStack gap={1}>
                 {currentField ? (
                     <ProfileSectionField currentField={currentField}
                                          currentIndex={currentIndex}
                                          entityData={entityData}
-                                         handleConfirm={handleConfirm}
-                                         handleBack={handleBack}
-                                         handleSkip={handleSkip}/>
+                                         handleConfirm={handleConfirm}/>
                 ) : null}
             </VStack>
         </VStack>

@@ -1,29 +1,13 @@
 import React from "react";
-import {Button} from "@mui/material";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import TemplateViewHeader from "./TemplateViewHeader";
 import {useNavigate} from "react-router-dom";
-import HStack from "./HStack";
 
 const AppScreenHeader = () => {
-    const navigate = useNavigate();  // Initialize the navigate function
+    const navigate = useNavigate();
 
     return (
-        <HStack justifyContent={'flex-start'} sx={{width: '100%'}}>
-            <Button
-                variant="text"
-                sx={styles.button}
-                startIcon={<ChevronLeftIcon />}
-                onClick={() => navigate(-1)}  // Navigate back on click
-            >Back</Button>
-        </HStack>
+        <TemplateViewHeader onClick={() => navigate(-1)} />
     );
-}
-
-const styles = {
-    button: {
-        color: 'black',
-        fontSize: 16,
-    }
 }
 
 export default AppScreenHeader;

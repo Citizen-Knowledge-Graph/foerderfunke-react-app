@@ -30,7 +30,7 @@ const ProfileSectionScreen = () => {
 
     return (
         <Layout isApp={true} logo={false} back={'Back to quick check'}>
-            <AppScreenWrapper isDesktop={isDesktop} back={true}>
+            <AppScreenWrapper isDesktop={isDesktop}>
                 {profileQuestions ? (
                     !completed ? (
                         fixedSetOfQuestionsMode ? (

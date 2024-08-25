@@ -24,17 +24,9 @@ export const useProfileSectionListHandlers = (mode, setCurrentIndex, profileSect
         if (currentIndex > 0) {
             setCurrentIndex(currentIndex - 1);
         } else {
-            console.log('All sections completed');
+            navigate(-1);
         }
     };
 
-    const handleSkip = (currentIndex) => {
-        if (currentIndex < profileSectionData.fields.length - 1) {
-            setCurrentIndex(currentIndex + 1);
-        } else {
-            console.log('All sections completed');
-        }
-    };
-
-    return {  handleConfirm, handleBack, handleSkip };
+    return {  handleConfirm, handleBack };
 };

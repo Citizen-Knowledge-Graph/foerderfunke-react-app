@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Button, ButtonBase, Card, CardContent, Typography} from '@mui/material';
+import {ButtonBase, Card, CardContent, Typography} from '@mui/material';
 import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
 import useAddProfileField from '../hooks/useAddProfileField';
@@ -13,8 +13,6 @@ const ProfileSectionField = ({
                                  entityData,
                                  currentIndex,
                                  handleConfirm,
-                                 handleBack,
-                                 handleSkip
                              }) => {
     const [value, setValue] = useState('');
     const [localError, setLocalError] = useState('');
