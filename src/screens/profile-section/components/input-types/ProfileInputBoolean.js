@@ -3,7 +3,6 @@ import { FormControlLabel, Switch, Typography } from '@mui/material';
 
 const ProfileInputBoolean = ({ value, setValue, error }) => {
     const handleToggle = (event) => {
-        console.log('event.target.checked', event.target.checked);
         setValue(event.target.checked);
     };
 
@@ -12,7 +11,7 @@ const ProfileInputBoolean = ({ value, setValue, error }) => {
             <FormControlLabel
                 control={
                     <Switch
-                        checked={value}
+                        checked={value ? value : false}
                         onChange={handleToggle}
                         color="primary"
                     />

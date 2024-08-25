@@ -30,8 +30,6 @@ const ProfileSectionList = ({profileQuestions, mode, setCompleted}) => {
     }, [profileQuestions, retrieveCurrentDataField, retrieveCurrentEntityData]);
 
     const currentField = profileQuestions.fields[currentIndex];
-    console.log('current field', currentIndex);
-
     return (
         <VStack sx={{width: '100%'}} gap={3}>
             <ProfileSectionHeader handleBack={() => handleBack(currentIndex)}/>

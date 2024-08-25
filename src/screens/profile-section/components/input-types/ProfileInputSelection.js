@@ -12,7 +12,7 @@ const ProfileInputSelection = ({value, setValue, currentField}) => {
             <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
-                value={value}
+                value={value ? value : ''}
                 onChange={handleChange}
                 variant="outlined"
             >
