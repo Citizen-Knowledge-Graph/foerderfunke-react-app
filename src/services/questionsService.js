@@ -1,5 +1,3 @@
-import {UserModel} from "../models/UserModel";
-import {convertUserProfileToTurtle} from "@foerderfunke/matching-engine/src/utils";
 import readJson from "../utilities/readJson";
 import {fetchTurtleResource} from "./githubService";
 import {getPrioritizedMissingDataFieldsJson} from "@foerderfunke/matching-engine/src/prematch";
