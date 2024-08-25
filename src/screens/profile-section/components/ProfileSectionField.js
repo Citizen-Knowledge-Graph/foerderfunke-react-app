@@ -76,20 +76,6 @@ const ProfileSectionField = ({
                                            error={localError}/>
             </VStack>
             <VStack data-testid="button-card-container">
-                <HStack justifyContent={'space-between'}>
-                    <Button variant="body1" onClick={handleSkip}>
-                        Skip
-                    </Button>
-                    {
-                        currentIndex !== 0 ? (
-                                <HStack justifyContent={'flex-END'}>
-                                    <Button variant="body1" onClick={() => handleBack(currentIndex)}>
-                                        Vorherige Frage
-                                    </Button>
-                                </HStack>)
-                            : null
-                    }
-                </HStack>
                 <Card sx={styles.buttonCardComplete} data-testid="button-card">
                     <CardContent sx={styles.buttonCardContent} data-testid="card-content">
                         <HStack justifyContent={'center'}>
