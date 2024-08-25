@@ -11,7 +11,8 @@ const ProfileSectionScreen = () => {
     const isDesktop = useStore((state) => state.isDesktop);
     const profileQuestions = useQuestionsStore((state) => state.questions);
     const retrieveTopQuestion = useQuestionsStore((state) => state.retrieveTopQuestion);
-    const [topQuestion, setTopQuestion] = useState(retrieveTopQuestion);
+
+    const [topQuestion, setTopQuestion] = useState(retrieveTopQuestion());
     const [completed, setCompleted] = useState(false);
 
     const fixedSetOfQuestionsMode = true; // true means, the next top question is computed after each step
@@ -21,15 +22,9 @@ const ProfileSectionScreen = () => {
         }
     }, [fixedSetOfQuestionsMode, profileQuestions, retrieveTopQuestion]);
 
-    // useEffect(() => {
-    //     setCompleted(false);
-    // }, [id]);
-
-    console.log('profile questions', profileQuestions);
-    console.log('top question', topQuestion);
 
     return (
-        <Layout isApp={true} logo={false} back={'Back to quick check'}>
+        <Layout isApp={true} logo={false}>
             <AppScreenWrapper isDesktop={isDesktop}>
                 {profileQuestions ? (
                     !completed ? (

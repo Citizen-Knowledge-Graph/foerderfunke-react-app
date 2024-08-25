@@ -25,11 +25,6 @@ export const useValidationReportStore = create((set) => ({
 }));
 
 export const useSelectedTopicsStore = create((set) => ({
-    topicTitles: {},
-    setTopicTitles(newTopicTitles) {
-        console.log('STATE UPDATE: We are setting the topic titles');
-        set({topicTitles: newTopicTitles});
-    },
     selectedTopics: [],
     setSelectedTopics(newSelectedTopics) {
         console.log('STATE UPDATE: We are setting the selected topics');
@@ -37,11 +32,17 @@ export const useSelectedTopicsStore = create((set) => ({
     },
     addSelectedTopic: (newSelectedTopic) => {
         console.log('STATE UPDATE: We are updating the selected topics');
-        set((state) => ({selectedTopics: state.selectedTopics.includes(newSelectedTopic) ? state.selectedTopics : [...state.selectedTopics, newSelectedTopic]}));
+        set((state) => ({
+            selectedTopics: state.selectedTopics.some(topic => topic.id === newSelectedTopic.id)
+                ? state.selectedTopics
+                : [...state.selectedTopics, newSelectedTopic]
+        }));
     },
-    removeSelectedTopic: (selectedTopic) => {
+    removeSelectedTopic: (topicId) => {
         console.log('STATE UPDATE: We are removing a selected topic');
-        set((state) => ({selectedTopics: state.selectedTopics.filter((topic) => topic !== selectedTopic)}));
+        set((state) => ({
+            selectedTopics: state.selectedTopics.filter(topic => topic.id !== topicId)
+        }));
     }
 }));
 

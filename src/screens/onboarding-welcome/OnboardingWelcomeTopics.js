@@ -1,66 +1,41 @@
 import React, {useEffect, useState} from 'react';
 import {Button, Typography} from '@mui/material';
 import {useSelectedTopicsStore} from "../../storage/zustand";
+import useFetchData from "../../services/fetchResourceService";
 import OnboardingWelcomeScreen from "./components/OnboardingWelcomeScreen";
 import VStack from "../../components/VStack";
 import globalStyles from "../../styles/styles";
-import readJson from "../../utilities/readJson";
+import useTopicSelectionHandlers from "./hooks/useTopicSelectionHandlers";
 
 const OnboardingWelcomeTopics = () => {
     const [topicsData, setTopicsData] = useState([]);
+    const [loaded, setLoaded] = useState(false);
     const [selectedTopicsBoolean, setSelectedTopicsBoolean] = useState([]);
-    const setTopicTitles = useSelectedTopicsStore((state) => state.setTopicTitles);
-    const selectedTopicsStore = useSelectedTopicsStore((state) => state.selectedTopics);
-    const setSelectedTopics = useSelectedTopicsStore((state) => state.setSelectedTopics);
-    const addSelectedTopic = useSelectedTopicsStore((state) => state.addSelectedTopic);
-    const removeSelectedTopic = useSelectedTopicsStore((state) => state.removeSelectedTopic);
+    const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
 
+    // fetch local resource
+    useFetchData('assets/data/topics/topics-list.json', setTopicsData, setLoaded);
     useEffect(() => {
-        const fetchData = async () => {
-            const filePath = `assets/data/topics/topics-list.json`
-            try {
-                const newTopicsData = await readJson(filePath);
-                setTopicsData(newTopicsData);
-            } catch (error) {
-                console.error('Failed to fetch profile input screen data:', error);
-            }
-        };
-
-        fetchData();
-    }, []);
-
-    useEffect(() => {
-        const newSelectedTopics = new Array(topicsData.length).fill(false);
-        selectedTopicsStore.forEach((selectedTopic) => {
-            const index = topicsData.findIndex((topic) => topic.id === selectedTopic);
-            if (index !== -1) {
-                newSelectedTopics[index] = true;
-            }
-        });
-        setSelectedTopicsBoolean(newSelectedTopics);
-        let topicTitles = {};
-        topicsData.forEach((topic) => topicTitles[topic.id] = topic.title);
-        setTopicTitles(topicTitles);
-    }, [selectedTopicsStore, setTopicTitles, topicsData]);
-
-    const handleButtonClick = (index) => {
-        const newSelectedTopics = [...selectedTopicsBoolean];
-        newSelectedTopics[index] = !newSelectedTopics[index];
-        setSelectedTopicsBoolean(newSelectedTopics);
-        if (newSelectedTopics[index]) {
-            addSelectedTopic(topicsData[index].id);
-        } else {
-            removeSelectedTopic(topicsData[index].id);
+        if (loaded) {
+            setSelectedTopicsBoolean(Array(topicsData.length).fill(false));
         }
-    };
+    }, [loaded, topicsData]);
 
-    const handleSelectAll = () => {
-        const newSelectedTopics = new Array(topicsData.length).fill(true);
-        setSelectedTopicsBoolean(newSelectedTopics);
-        setSelectedTopics(topicsData.map((topic) => topic.id));
-    }
+    // Update selected topics boolean array when selected topics change
+    useEffect(() => {
+        if (selectedTopicsBoolean.length > 0 && selectedTopics.length > 0) {
+            const newSelectedTopicsBoolean = topicsData.map(topic =>
+                selectedTopics.some(selectedTopic => selectedTopic.id === topic.id)
+            );
+            setSelectedTopicsBoolean(newSelectedTopicsBoolean);
+        }
+    }, [topicsData, selectedTopics, selectedTopicsBoolean.length]);
 
-    console.log('selected Topics', selectedTopicsStore);
+    const {handleButtonClick, handleSelectAll} = useTopicSelectionHandlers(
+        topicsData,
+        selectedTopicsBoolean,
+        setSelectedTopicsBoolean
+    );
 
     return (
         <OnboardingWelcomeScreen buttonText={'Confirm'} link={`/onboarding-welcome`}>
@@ -71,7 +46,7 @@ const OnboardingWelcomeTopics = () => {
                 {topicsData.map((topic, index) => (
                     <Button
                         key={index}
-                        onClick={() => handleButtonClick(index)}
+                        onClick={() => handleButtonClick(topic, index)}
                         sx={{
                             ...styles.topicItemButton,
                             backgroundColor: selectedTopicsBoolean[index] ? globalStyles.primaryColor : globalStyles.colorDarkGreyTransparent,
