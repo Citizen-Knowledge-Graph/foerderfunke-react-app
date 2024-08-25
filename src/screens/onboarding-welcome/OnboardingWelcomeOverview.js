@@ -1,27 +1,16 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {Typography} from '@mui/material';
 import useInitializeQuestionsArray from "./hooks/useInitializeQuestionsArray";
 import VStack from "../../components/VStack";
 import OnboardingWelcomeScreen from "./components/OnboardingWelcomeScreen";
-import {useQuestionsStore, useSelectedTopicsStore} from "../../storage/zustand";
-
+import { useSelectedTopicsStore} from "../../storage/zustand";
 
 const OnboardingWelcomeOverview = () => {
     // fetch state hooks
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
 
     // Use the custom hook and get the loading state
-    const loading = useInitializeQuestionsArray();
-
-    // Access questions store, but don't use it until loading is done
-    const questionsStore = useQuestionsStore((state) => state.questions);
-
-    // Effect to log questions once loading is complete
-    useEffect(() => {
-        if (!loading) {
-            console.log('Prioritized questions loaded:', questionsStore);
-        }
-    }, [loading, questionsStore]);
+    useInitializeQuestionsArray();
 
     return (
         <OnboardingWelcomeScreen buttonText={'Discover your benefits'} link={`/profile-section`}>

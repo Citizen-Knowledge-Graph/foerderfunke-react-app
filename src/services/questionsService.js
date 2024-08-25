@@ -24,7 +24,6 @@ const questionsService = async (activeUser, activeTopics) => {
         const {fileUrl, rpUri} = requirementProfile;
         requirementProfiles[rpUri] = await fetchTurtleResource(fileUrl);
     }
-    console.log('Fetching questions array for:', activeTopics);
 
     let questionsResponse = await getPrioritizedMissingDataFieldsJson(
         activeTopics,
