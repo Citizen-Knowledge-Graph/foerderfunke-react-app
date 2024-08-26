@@ -53,3 +53,20 @@ export const useQuestionsStore = create((set) => ({
         set((state) => ({questions: newQuestions}));
     }
 }));
+
+export const useDynamicQuestionsStore = create((set, get) => ({
+    dynamicQuestions: [],
+    updateDynamicQuestions: (newDynamicQuestions, index) => {
+        console.log('STATE UPDATE: We are updating the dynamic questions');
+        set((state) => {
+            let updatedQuestions = [...state.dynamicQuestions];
+            updatedQuestions.splice(index, updatedQuestions.length - index, ...newDynamicQuestions);
+            return { dynamicQuestions: updatedQuestions };
+        });
+    },
+
+    retrieveDynamicQuestions: () => {
+        console.log('STATE UPDATE: We are retrieving the dynamic questions');
+        return get().dynamicQuestions;
+    }
+}));

@@ -16,6 +16,7 @@ const ProfileSectionField = ({
                              }) => {
     const [value, setValue] = useState('');
     const [localError, setLocalError] = useState('');
+
     const validateValue = useInputValidation(currentField.datatype);
     const addProfileData = useAddProfileField(currentField, entityData);
     const fetchProfileField = useFetchProfileField(currentField.datafield, entityData);
