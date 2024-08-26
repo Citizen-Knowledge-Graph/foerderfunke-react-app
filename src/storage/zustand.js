@@ -51,14 +51,5 @@ export const useQuestionsStore = create((set) => ({
     updateQuestions: (newQuestions) => {
         console.log('STATE UPDATE: We are updating the questions');
         set((state) => ({questions: newQuestions}));
-    },
-    retrieveTopQuestion: () => {
-        console.log('STATE UPDATE: We are retrieving the top question');
-        return set((state) => {
-            if (state.questions.fields && state.questions.fields.length > 0) {
-                return state.questions.fields[0];
-            }
-            return null;
-        });
     }
 }));

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Layout from "../../components/Layout";
 import ProfileSectionList from "./components/ProfileSectionList";
 import ProfileSectionCompleted from "./components/ProfileSectionCompleted";
@@ -10,18 +10,8 @@ import ProfileSectionTopQuestion from "./components/ProfileSectionTopQuestion";
 const ProfileSectionScreen = () => {
     const isDesktop = useStore((state) => state.isDesktop);
     const profileQuestions = useQuestionsStore((state) => state.questions);
-    const retrieveTopQuestion = useQuestionsStore((state) => state.retrieveTopQuestion);
-
-    const [topQuestion, setTopQuestion] = useState(retrieveTopQuestion());
     const [completed, setCompleted] = useState(false);
-
-    const fixedSetOfQuestionsMode = true; // true means, the next top question is computed after each step
-    useEffect(() => {
-        if (fixedSetOfQuestionsMode) {
-            setTopQuestion(retrieveTopQuestion())
-        }
-    }, [fixedSetOfQuestionsMode, profileQuestions, retrieveTopQuestion]);
-
+    const fixedSetOfQuestionsMode = false; // true means, the next top question is computed after each step
 
     return (
         <Layout isApp={true} logo={false}>
@@ -35,7 +25,6 @@ const ProfileSectionScreen = () => {
                                 />
                             ) : (
                                 <ProfileSectionTopQuestion
-                                    topQuestion={topQuestion}
                                     setCompleted={setCompleted}
                                  />
                             )
