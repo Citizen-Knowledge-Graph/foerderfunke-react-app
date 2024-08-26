@@ -47,16 +47,12 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
         }
     }, [retrieveCurrentEntityData, profileQuestions, currentQuestion, topQuestionsStack, setCompleted, validationReport, negativeStackIndex]);
 
-    const handleConfirm = async (currentIndex) => {
-        if (negativeStackIndex === 1) {
-            setNegativeStackIndex(0);
-        }
-        if (negativeStackIndex > 1) {
+    const handleConfirm = async () => {
+        if (negativeStackIndex > 0) {
             setNegativeStackIndex(negativeStackIndex - 1);
             return;
         }
         try {
-            console.log("Calling questions service")
             await questionsService(activeUser, selectedTopics.map((topic) => topic.id));
             setPreviousNumberOfOpenQuestions(profileQuestions.fields.length);
             setPreviousEligibilityStats(computeEligibilityStats(validationReport));
@@ -100,7 +96,9 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
 
     return (
         <VStack sx={{width: '100%'}} gap={3}>
-            <ProfileSectionHeader handleBack={handleBack}/>
+            {negativeStackIndex < topQuestionsStack.length - 1 &&
+                <ProfileSectionHeader handleBack={handleBack}/>
+            }
             <VStack gap={1}>
                 {currentQuestion ? (
                     <>
