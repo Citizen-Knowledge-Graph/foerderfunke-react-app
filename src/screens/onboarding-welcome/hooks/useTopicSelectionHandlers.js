@@ -23,7 +23,7 @@ const useTopicSelectionHandlers = (topicsData, selectedTopicsBoolean, setSelecte
     const handleSelectAll = useCallback(() => {
         const newSelectedTopics = new Array(topicsData.length).fill(true);
         setSelectedTopicsBoolean(newSelectedTopics);
-        setSelectedTopics(topicsData.map((topic) => topic.id));
+        setSelectedTopics(topicsData);
     }, [topicsData, setSelectedTopicsBoolean, setSelectedTopics]);
 
     return {
