@@ -35,6 +35,7 @@ const LandingPageWAppButton = ({backgroundColor}) => {
 const styles = {
     button: {
         borderRadius: '12px',
+        padding: '4px 12px',
         color: 'black',
         fontSize: '20px',
         fontWeight: 'bold',
