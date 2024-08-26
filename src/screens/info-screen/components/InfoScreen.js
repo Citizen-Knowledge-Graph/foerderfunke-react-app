@@ -58,6 +58,7 @@ const styles = {
         textAlign: 'left',
     },
     infoWrapper: {
+        width: '100%',
         padding: '16px',
         borderRadius: '12px'
     },
