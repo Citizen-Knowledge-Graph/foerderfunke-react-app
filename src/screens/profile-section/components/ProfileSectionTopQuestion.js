@@ -51,12 +51,13 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
         }
     };
 
-    const computeEligibilityStats = (validationReport) => {
-        return {
-            eligible: validationReport.reports.filter(report => report.result === ValidationResult.ELIGIBLE).length,
-            ineligible: validationReport.reports.filter(report => report.result === ValidationResult.INELIGIBLE).length,
-            undeterminable: validationReport.reports.filter(report => report.result === ValidationResult.UNDETERMINABLE).length,
+    const buildQuestionsLeftString = () => {
+        let str = `${topQuestionsStack.length} questions answered / ${profileQuestions.fields.length} more to go`;
+        if (previousNumberOfOpenQuestions - profileQuestions.fields.length > 1) {
+            str += ` (${previousNumberOfOpenQuestions - profileQuestions.fields.length} become obsolet after your previous answer)`;
         }
+        // the number of remaining questions can also increase based on answers (e.g. if you add a child and then their details are required) in the future (not now)
+        return str;
     };
 
     const buildEligibilityUpdateString = () => {
@@ -71,18 +72,21 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
         return `Yes: ${calc(ValidationResult.ELIGIBLE)} / No: ${calc(ValidationResult.INELIGIBLE)} / Missing data: ${calc(ValidationResult.UNDETERMINABLE)}`;
     };
 
+    const computeEligibilityStats = (validationReport) => {
+        return {
+            eligible: validationReport.reports.filter(report => report.result === ValidationResult.ELIGIBLE).length,
+            ineligible: validationReport.reports.filter(report => report.result === ValidationResult.INELIGIBLE).length,
+            undeterminable: validationReport.reports.filter(report => report.result === ValidationResult.UNDETERMINABLE).length,
+        }
+    };
+
     return (
         <VStack sx={{width: '100%'}} gap={3}>
             <VStack gap={1}>
                 {currentQuestion ? (
                     <>
                         <span>
-                            {topQuestionsStack.length} questions answered / {profileQuestions.fields.length} more to go
-                            {previousNumberOfOpenQuestions - profileQuestions.fields.length > 1 ? (
-                                <span>
-                                    {" "}({previousNumberOfOpenQuestions - profileQuestions.fields.length} become obsolet after your previous answer)
-                                </span>
-                            ) : null}
+                            {buildQuestionsLeftString()}
                         </span>
                         <span>
                             Eligibility status for {validationReport.reports.length} benefits: {buildEligibilityUpdateString()}
