@@ -25,7 +25,6 @@ const ProfileSectionField = ({
         setLocalError('');
         fetchProfileField().then(fieldData => {
             if (fieldData) {
-                console.log('Field data', fieldData);
                 setValue(fieldData);
             }
         }).catch(error => {
@@ -40,7 +39,6 @@ const ProfileSectionField = ({
                         .then(() => {
                             setValue('')
                             handleConfirm(currentIndex);
-                            console.log('Profile data added')
                         })
                         .catch((err) => {
                             console.log('Error adding profile data', err);
