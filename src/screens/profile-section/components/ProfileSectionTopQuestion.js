@@ -17,6 +17,7 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
     const retrieveCurrentEntityData = useProfileSectionStore((state) => state.retrieveCurrentEntityData);
     const profileQuestions = useQuestionsStore((state) => state.questions);
     const [topQuestionsStack, setTopQuestionsStack] = useState([]);
+    const [negativeStackIndex, setNegativeStackIndex] = useState(0);
     const [currentQuestion, setCurrentQuestion] = useState(null);
     const activeUser = useUserStore((state) => state.activeUserId);
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
@@ -30,6 +31,10 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
             setCompleted(true);
             return;
         }
+        if (negativeStackIndex > 0) {
+            setCurrentQuestion(topQuestionsStack[topQuestionsStack.length - 1 - negativeStackIndex]);
+            return;
+        }
         const firstQuestion = profileQuestions.fields[0];
         if (!currentQuestion) {
             setCurrentQuestion(firstQuestion);
@@ -40,10 +45,18 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
             setCurrentQuestion(firstQuestion);
             setTopQuestionsStack([...topQuestionsStack, firstQuestion]);
         }
-    }, [retrieveCurrentEntityData, profileQuestions, currentQuestion, topQuestionsStack, setCompleted, validationReport]);
+    }, [retrieveCurrentEntityData, profileQuestions, currentQuestion, topQuestionsStack, setCompleted, validationReport, negativeStackIndex]);
 
     const handleConfirm = async (currentIndex) => {
+        if (negativeStackIndex === 1) {
+            setNegativeStackIndex(0);
+        }
+        if (negativeStackIndex > 1) {
+            setNegativeStackIndex(negativeStackIndex - 1);
+            return;
+        }
         try {
+            console.log("Calling questions service")
             await questionsService(activeUser, selectedTopics.map((topic) => topic.id));
             setPreviousNumberOfOpenQuestions(profileQuestions.fields.length);
             setPreviousEligibilityStats(computeEligibilityStats(validationReport));
@@ -82,7 +95,7 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
     };
 
     const handleBack = () => {
-        // TODO
+        setNegativeStackIndex(negativeStackIndex + 1);
     };
 
     return (
