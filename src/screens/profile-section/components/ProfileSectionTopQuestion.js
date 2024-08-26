@@ -9,7 +9,6 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
     const [entityData, setEntityData] = useState({});
     const retrieveCurrentEntityData = useProfileSectionStore((state) => state.retrieveCurrentEntityData);
     const profileQuestions = useQuestionsStore((state) => state.questions);
-    const [topQuestion, setTopQuestion] = useState({});
     const [topQuestionsStack, setTopQuestionsStack] = useState([]);
     const [currentQuestion, setCurrentQuestion] = useState(null);
     const activeUser = useUserStore((state) => state.activeUserId);
@@ -29,7 +28,7 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
             setCurrentQuestion(firstQuestion);
             setTopQuestionsStack([...topQuestionsStack, firstQuestion]);
         }
-    }, [retrieveCurrentEntityData, profileQuestions]);
+    }, [retrieveCurrentEntityData, profileQuestions, currentQuestion, topQuestionsStack]);
 
     const handleConfirm = async (currentIndex) => {
         try {
