@@ -32,7 +32,7 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
             setCurrentQuestion(firstQuestion);
             setTopQuestionsStack([...topQuestionsStack, firstQuestion]);
         }
-    }, [retrieveCurrentEntityData, profileQuestions, currentQuestion, topQuestionsStack]);
+    }, [retrieveCurrentEntityData, profileQuestions, currentQuestion, topQuestionsStack, setCompleted]);
 
     const handleConfirm = async (currentIndex) => {
         try {
