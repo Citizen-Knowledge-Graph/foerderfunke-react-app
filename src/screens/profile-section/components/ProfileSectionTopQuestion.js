@@ -10,6 +10,7 @@ import {
 } from "../../../storage/zustand";
 import questionsService from "../../../services/questionsService";
 import {ValidationResult} from "@foerderfunke/matching-engine";
+import ProfileSectionHeader from "./ProfileSectionHeader";
 
 const ProfileSectionTopQuestion = ({setCompleted}) => {
     const [entityData, setEntityData] = useState({});
@@ -80,8 +81,13 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
         }
     };
 
+    const handleBack = () => {
+        // TODO
+    };
+
     return (
         <VStack sx={{width: '100%'}} gap={3}>
+            <ProfileSectionHeader handleBack={handleBack}/>
             <VStack gap={1}>
                 {currentQuestion ? (
                     <>
