@@ -29,9 +29,6 @@ const questionsService = async (activeUser, activeTopics) => {
         requirementProfiles[rpUri] = await fetchTurtleResource(fileUrl);
     }
 
-    console.log("user profile JSON", userProfile);
-    console.log("user profile Turtle", userProfileString);
-
     let questionsResponse = await getPrioritizedMissingDataFieldsJson(
         activeTopics,
         [],
@@ -41,8 +38,6 @@ const questionsService = async (activeUser, activeTopics) => {
         materializationString,
         "en"
     );
-
-    console.log("prioritizedMissingDataFields", questionsResponse.prioritizedMissingDataFields);
 
     useValidationReportStore.getState().updateValidationReport(questionsResponse.validationReport);
     useQuestionsStore.getState().updateQuestions(questionsResponse.prioritizedMissingDataFields);
