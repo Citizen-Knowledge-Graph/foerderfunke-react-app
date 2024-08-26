@@ -18,6 +18,10 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
 
     useEffect(() => {
         setEntityData(retrieveCurrentEntityData());
+        if (profileQuestions.fields.length === 0) {
+            setCompleted(true);
+            return;
+        }
         const firstQuestion = profileQuestions.fields[0];
         if (!currentQuestion) {
             setCurrentQuestion(firstQuestion);
