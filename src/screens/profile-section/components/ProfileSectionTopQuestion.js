@@ -13,6 +13,7 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
     const [currentQuestion, setCurrentQuestion] = useState(null);
     const activeUser = useUserStore((state) => state.activeUserId);
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
+    const [previousNumberOfOpenQuestions, setPreviousNumberOfOpenQuestions] = useState(0);
 
     // TODO use stack to support back button
 
@@ -37,6 +38,7 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
     const handleConfirm = async (currentIndex) => {
         try {
             await questionsService(activeUser, selectedTopics.map((topic) => topic.id));
+            setPreviousNumberOfOpenQuestions(profileQuestions.fields.length);
         } catch (error) {
             console.error('Error fetching prioritized questions in ProfileSectionTopQuestions:', error);
         }
@@ -46,12 +48,22 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
         <VStack sx={{width: '100%'}} gap={3}>
             <VStack gap={1}>
                 {currentQuestion ? (
-                    <ProfileSectionField
-                        currentField={currentQuestion}
-                        currentIndex={0}
-                        entityData={entityData}
-                        handleConfirm={handleConfirm}
-                    />
+                    <>
+                        <span>
+                            {topQuestionsStack.length} questions answered / {profileQuestions.fields.length} more to go
+                            {previousNumberOfOpenQuestions - profileQuestions.fields.length > 1 ? (
+                                <span>
+                                    {" "}({previousNumberOfOpenQuestions - profileQuestions.fields.length} become obsolet after your previous answer)
+                                </span>
+                            ) : null}
+                        </span>
+                        <ProfileSectionField
+                            currentField={currentQuestion}
+                            currentIndex={0}
+                            entityData={entityData}
+                            handleConfirm={handleConfirm}
+                        />
+                    </>
                 ) : null}
             </VStack>
         </VStack>
