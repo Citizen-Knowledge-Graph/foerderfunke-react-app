@@ -8,7 +8,7 @@
     "@babel/plugin-transform-private-property-in-object": "^7.24.7",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
-    "@foerderfunke/matching-engine": "^0.6.2",
+    "@foerderfunke/matching-engine": "^0.6.3",
     "@mui/icons-material": "^5.15.19",
     "@mui/material": "^5.15.19",
     "@mui/x-charts": "^7.6.2",
