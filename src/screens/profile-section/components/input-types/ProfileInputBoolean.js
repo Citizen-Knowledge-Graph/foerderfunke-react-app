@@ -1,7 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { FormControlLabel, Switch, Typography } from '@mui/material';
 
 const ProfileInputBoolean = ({ value, setValue, error }) => {
+    useEffect(() => {
+        if (value === undefined || value === null || value === '') {
+            setValue(false);
+        }
+    }, [value, setValue]);
+
     const handleToggle = (event) => {
         setValue(event.target.checked);
     };
@@ -11,7 +17,7 @@ const ProfileInputBoolean = ({ value, setValue, error }) => {
             <FormControlLabel
                 control={
                     <Switch
-                        checked={value ? value : false}
+                        checked={!!value}
                         onChange={handleToggle}
                         color="primary"
                     />
