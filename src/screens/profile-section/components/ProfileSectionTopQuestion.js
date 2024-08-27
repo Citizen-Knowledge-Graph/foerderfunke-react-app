@@ -28,6 +28,9 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
 
     useEffect(() => {
         setEntityData(retrieveCurrentEntityData());
+    }, [currentQuestion, retrieveCurrentEntityData]);
+
+    useEffect(() => {
         if (profileQuestions.fields.length === 0) {
             setCompleted(true);
             return;
