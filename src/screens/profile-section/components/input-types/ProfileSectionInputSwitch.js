@@ -3,6 +3,7 @@ import ProfileInputClass from "./ProfileInputClass";
 import ProfileInputText from "./ProfileInputText";
 import ProfileInputDate from "./ProfileInputDate";
 import ProfileInputBoolean from "./ProfileInputBoolean";
+import ProfileInputMultiSelection from "./ProfileInputMultiSelection";
 
 const ProfileSectionInputSwitch = ({value, setValue, currentField, entityData, error}) => {
     switch (currentField.datatype) {
@@ -13,7 +14,7 @@ const ProfileSectionInputSwitch = ({value, setValue, currentField, entityData, e
                 currentField={currentField}
                 error={error}/>;
         case 'selection-multiple':
-            return <ProfileInputSelection
+            return <ProfileInputMultiSelection
                 value={value}
                 setValue={setValue}
                 currentField={currentField}

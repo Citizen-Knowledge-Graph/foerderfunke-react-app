@@ -15,11 +15,11 @@ import isEqual from 'lodash/isEqual';
 
 const ProfileSectionTopQuestion = ({setCompleted}) => {
     const [entityData, setEntityData] = useState({});
-    const retrieveCurrentEntityData = useProfileSectionStore((state) => state.retrieveCurrentEntityData);
     const [topQuestionsStack, setTopQuestionsStack] = useState([]);
     const [inStackNavMode, setInStackNavMode] = useState(false);
     const [stepsBackwardsFromStackFront, setStepsBackwardsFromStackFront] = useState(0);
     const [currentQuestion, setCurrentQuestion] = useState(null);
+    const retrieveCurrentEntityData = useProfileSectionStore((state) => state.retrieveCurrentEntityData);
     const activeUser = useUserStore((state) => state.activeUserId);
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
     const [previousNumberOfOpenQuestions, setPreviousNumberOfOpenQuestions] = useState(0);
@@ -104,7 +104,7 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
         setInStackNavMode(true);
         setStepsBackwardsFromStackFront(stepsBackwardsFromStackFront + 1);
     };
-    
+
     return (
         <VStack sx={{width: '100%'}} gap={3}>
             {stepsBackwardsFromStackFront < topQuestionsStack.length - 1 &&

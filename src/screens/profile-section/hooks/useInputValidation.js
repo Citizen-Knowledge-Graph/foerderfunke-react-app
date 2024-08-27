@@ -15,8 +15,10 @@ const useInputValidation = (expectedType) => {
                     }
                     break;
                 case 'selection-multiple':
-                    if (typeof value !== 'string') {
-                        reject('Invalid value type. Expected string.');
+                    if (!Array.isArray(value)) {
+                        reject('Invalid value type. Expected an array.');
+                    } else if (!value.every(item => typeof item === 'string')) {
+                        reject('Invalid array contents. Expected all elements to be strings.');
                     }
                     break;
                 case 'integer':
