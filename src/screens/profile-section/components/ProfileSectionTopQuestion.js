@@ -11,11 +11,11 @@ import {
 import questionsService from "../../../services/questionsService";
 import {ValidationResult} from "@foerderfunke/matching-engine";
 import ProfileSectionHeader from "./ProfileSectionHeader";
+import isEqual from 'lodash/isEqual';
 
 const ProfileSectionTopQuestion = ({setCompleted}) => {
     const [entityData, setEntityData] = useState({});
     const retrieveCurrentEntityData = useProfileSectionStore((state) => state.retrieveCurrentEntityData);
-    const profileQuestions = useQuestionsStore((state) => state.questions);
     const [topQuestionsStack, setTopQuestionsStack] = useState([]);
     const [inStackNavMode, setInStackNavMode] = useState(false);
     const [stepsBackwardsFromStackFront, setStepsBackwardsFromStackFront] = useState(0);
@@ -24,11 +24,15 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
     const [previousNumberOfOpenQuestions, setPreviousNumberOfOpenQuestions] = useState(0);
     const [previousEligibilityStats, setPreviousEligibilityStats] = useState(null);
+    const profileQuestions = useQuestionsStore((state) => state.questions);
     const validationReport = useValidationReportStore((state) => state.validationReport);
 
     useEffect(() => {
-        setEntityData(retrieveCurrentEntityData());
-    }, [currentQuestion, retrieveCurrentEntityData]);
+        const newEntityData = retrieveCurrentEntityData();
+        if (!isEqual(newEntityData, entityData)) {
+            setEntityData(newEntityData);
+        }
+    }, [currentQuestion, entityData, retrieveCurrentEntityData]);
 
     useEffect(() => {
         if (profileQuestions.fields.length === 0) {
@@ -49,7 +53,7 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
             setCurrentQuestion(firstQuestion);
             setTopQuestionsStack([...topQuestionsStack, firstQuestion]);
         }
-    }, [retrieveCurrentEntityData, profileQuestions, currentQuestion, topQuestionsStack, setCompleted, validationReport, stepsBackwardsFromStackFront, inStackNavMode]);
+    }, [profileQuestions, currentQuestion, topQuestionsStack, setCompleted, stepsBackwardsFromStackFront, inStackNavMode]);
 
     const handleConfirm = async () => {
         if (inStackNavMode) {
@@ -100,7 +104,7 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
         setInStackNavMode(true);
         setStepsBackwardsFromStackFront(stepsBackwardsFromStackFront + 1);
     };
-
+    
     return (
         <VStack sx={{width: '100%'}} gap={3}>
             {stepsBackwardsFromStackFront < topQuestionsStack.length - 1 &&
