@@ -46,7 +46,7 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
             setCurrentQuestion(firstQuestion);
             setTopQuestionsStack([...topQuestionsStack, firstQuestion]);
         }
-    }, [retrieveCurrentEntityData, profileQuestions, currentQuestion, topQuestionsStack, setCompleted, validationReport, stepsBackwardsFromStackFront]);
+    }, [retrieveCurrentEntityData, profileQuestions, currentQuestion, topQuestionsStack, setCompleted, validationReport, stepsBackwardsFromStackFront, inStackNavMode]);
 
     const handleConfirm = async () => {
         if (inStackNavMode) {
