@@ -17,7 +17,8 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
     const retrieveCurrentEntityData = useProfileSectionStore((state) => state.retrieveCurrentEntityData);
     const profileQuestions = useQuestionsStore((state) => state.questions);
     const [topQuestionsStack, setTopQuestionsStack] = useState([]);
-    const [negativeStackIndex, setNegativeStackIndex] = useState(0);
+    const [inStackNavMode, setInStackNavMode] = useState(false);
+    const [stepsBackwardsFromStackFront, setStepsBackwardsFromStackFront] = useState(0);
     const [currentQuestion, setCurrentQuestion] = useState(null);
     const activeUser = useUserStore((state) => state.activeUserId);
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
@@ -31,8 +32,8 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
             setCompleted(true);
             return;
         }
-        if (negativeStackIndex > 0) {
-            setCurrentQuestion(topQuestionsStack[topQuestionsStack.length - 1 - negativeStackIndex]);
+        if (inStackNavMode) {
+            setCurrentQuestion(topQuestionsStack[topQuestionsStack.length - 1 - stepsBackwardsFromStackFront]);
             return;
         }
         const firstQuestion = profileQuestions.fields[0];
@@ -45,11 +46,13 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
             setCurrentQuestion(firstQuestion);
             setTopQuestionsStack([...topQuestionsStack, firstQuestion]);
         }
-    }, [retrieveCurrentEntityData, profileQuestions, currentQuestion, topQuestionsStack, setCompleted, validationReport, negativeStackIndex]);
+    }, [retrieveCurrentEntityData, profileQuestions, currentQuestion, topQuestionsStack, setCompleted, validationReport, stepsBackwardsFromStackFront]);
 
     const handleConfirm = async () => {
-        if (negativeStackIndex > 0) {
-            setNegativeStackIndex(negativeStackIndex - 1);
+        if (inStackNavMode) {
+            let steps = stepsBackwardsFromStackFront - 1
+            setStepsBackwardsFromStackFront(steps);
+            if (steps === 0) setInStackNavMode(false);
             return;
         }
         try {
@@ -91,12 +94,13 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
     };
 
     const handleBack = () => {
-        setNegativeStackIndex(negativeStackIndex + 1);
+        setInStackNavMode(true);
+        setStepsBackwardsFromStackFront(stepsBackwardsFromStackFront + 1);
     };
 
     return (
         <VStack sx={{width: '100%'}} gap={3}>
-            {negativeStackIndex < topQuestionsStack.length - 1 &&
+            {stepsBackwardsFromStackFront < topQuestionsStack.length - 1 &&
                 <ProfileSectionHeader handleBack={handleBack}/>
             }
             <VStack gap={1}>
