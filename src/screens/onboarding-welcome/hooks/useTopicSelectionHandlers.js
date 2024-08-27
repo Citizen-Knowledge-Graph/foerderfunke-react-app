@@ -26,9 +26,15 @@ const useTopicSelectionHandlers = (topicsData, selectedTopicsBoolean, setSelecte
         setSelectedTopics(topicsData);
     }, [topicsData, setSelectedTopicsBoolean, setSelectedTopics]);
 
+    const handleUnselectAll = useCallback(() => {
+        setSelectedTopicsBoolean(Array(topicsData.length).fill(false));
+        setSelectedTopics([]);
+    }, [topicsData, setSelectedTopicsBoolean, setSelectedTopics]);
+
     return {
         handleButtonClick,
         handleSelectAll,
+        handleUnselectAll,
     };
 };
 

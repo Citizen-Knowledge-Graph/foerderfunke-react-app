@@ -31,7 +31,7 @@ const OnboardingWelcomeTopics = () => {
         }
     }, [topicsData, selectedTopics, selectedTopicsBoolean.length]);
 
-    const {handleButtonClick, handleSelectAll} = useTopicSelectionHandlers(
+    const {handleButtonClick, handleSelectAll, handleUnselectAll} = useTopicSelectionHandlers(
         topicsData,
         selectedTopicsBoolean,
         setSelectedTopicsBoolean
@@ -66,6 +66,8 @@ const OnboardingWelcomeTopics = () => {
                     </Button>))}
                 <Typography sx={styles.selectText}>
                     <span onClick={handleSelectAll}>select all</span>
+                    {' / '}
+                    <span onClick={handleUnselectAll}>unselect all</span>
                 </Typography>
             </VStack>
         </OnboardingWelcomeScreen>
