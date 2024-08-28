@@ -10,10 +10,10 @@ const OnboardingWelcomeOverview = () => {
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
 
     // Use the custom hook and get the loading state
-    useInitializeQuestionsArray();
+    const isLoading = useInitializeQuestionsArray();
 
     return (
-        <OnboardingWelcomeScreen buttonText={'Discover your benefits'} link={`/profile-section`}>
+        <OnboardingWelcomeScreen buttonText={'Discover your benefits'} link={`/profile-section`} isLoading={isLoading}>
             <VStack gap={3}>
                 <Typography variant="body1" gutterBottom sx={styles.subTitleText}>
                     Based on your chosen topics we will provide you with a list of benefits you may be eligible for.

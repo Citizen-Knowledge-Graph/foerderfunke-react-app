@@ -1,17 +1,21 @@
-import {useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import questionsService from "../../../services/questionsService";
 import {useSelectedTopicsStore, useUserStore} from "../../../storage/zustand";
 
 function useInitializeQuestionsArray() {
     const activeUser = useUserStore((state) => state.activeUserId);
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         const fetchPrioritizedQuestions = async () => {
+            setIsLoading(true);
             try {
                 await questionsService(activeUser, selectedTopics.map((topic) => topic.id));
             } catch (error) {
                 console.error('Error fetching prioritized questions:', error);
+            } finally {
+                setIsLoading(false);
             }
         }
 
@@ -19,6 +23,8 @@ function useInitializeQuestionsArray() {
             fetchPrioritizedQuestions();
         }
     }, [activeUser, selectedTopics]);
+
+    return isLoading;
 }
 
 export default useInitializeQuestionsArray;

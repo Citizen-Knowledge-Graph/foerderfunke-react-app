@@ -1,9 +1,10 @@
 import React from 'react';
-import {Card, CardContent, Typography} from '@mui/material';
+import {Card, CardContent, Typography, CircularProgress} from '@mui/material';
 import HStack from './HStack';
 import VStack from './VStack';
 import {blue} from "@mui/material/colors";
 import {Link} from "react-router-dom";
+import globalStyles from "../styles/styles";
 
 
 const ButtonCard = ({
@@ -11,17 +12,24 @@ const ButtonCard = ({
                         text,
                         backgroundColor,
                         color = "white",
+                        isLoading = false
                     }) => {
     return (
         <VStack sx={styles.buttonContainer}>
             <Link to={link} style={{textDecoration: 'none', width: '100%'}}>
-                <Card sx={{...styles.buttonCard, backgroundColor: backgroundColor, color: color}}
+                <Card sx={{...styles.buttonCard, backgroundColor: isLoading ? globalStyles.primaryColorDisabled : backgroundColor, color: color}}
                       data-testid="card">
                     <CardContent sx={styles.buttonCardContent} data-testid="card-content">
                         <HStack justifyContent={'center'}>
-                            <Typography variant="h6" component="div" sx={styles.buttonCardText}>
-                                {text}
-                            </Typography>
+                            {isLoading ?
+                                (
+                                    <CircularProgress size={26}/>
+                                ) : (
+                                    <Typography variant="h6" component="div" sx={styles.buttonCardText}>
+                                        {text}
+                                    </Typography>
+                                )
+                            }
                         </HStack>
                     </CardContent>
                 </Card>

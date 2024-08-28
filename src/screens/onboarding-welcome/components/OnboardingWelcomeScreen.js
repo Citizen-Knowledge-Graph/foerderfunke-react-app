@@ -12,7 +12,7 @@ import AppScreenWrapper from "../../../components/AppScreenWrapper";
 import globalStyles from "../../../styles/styles";
 
 
-const OnboardingWelcomeScreen = ({children, buttonText, link}) => {
+const OnboardingWelcomeScreen = ({children, buttonText, link, isLoading = false}) => {
     const isDesktop = useStore((state) => state.isDesktop);
 
     return (
@@ -31,7 +31,7 @@ const OnboardingWelcomeScreen = ({children, buttonText, link}) => {
                     </VStack>
                     {children}
                     <ButtonCard link={link} text={buttonText}
-                                backgroundColor={globalStyles.secondaryColor}/>
+                                backgroundColor={globalStyles.secondaryColor} isLoading={isLoading}/>
                 </VStack>
             </AppScreenWrapper>
         </Layout>
