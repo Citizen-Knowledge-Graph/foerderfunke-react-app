@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {ButtonBase, Card, CardContent, Typography} from '@mui/material';
+import {ButtonBase, Card, CardContent, Typography, CircularProgress} from '@mui/material';
 import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
 import useAddProfileField from '../hooks/useAddProfileField';
@@ -13,6 +13,7 @@ const ProfileSectionField = ({
                                  entityData,
                                  currentIndex,
                                  handleConfirm,
+                                 isLoading,
                              }) => {
     const [value, setValue] = useState('');
     const [localError, setLocalError] = useState('');
@@ -72,14 +73,25 @@ const ProfileSectionField = ({
                                            error={localError}/>
             </VStack>
             <VStack data-testid="button-card-container">
-                <Card sx={styles.buttonCardComplete} data-testid="button-card">
+                <Card
+                    sx={{
+                        ...styles.buttonCardComplete,
+                        backgroundColor: isLoading ? globalStyles.primaryColorDisabled : globalStyles.primaryColor
+                    }}
+                    data-testid="button-card">
                     <CardContent sx={styles.buttonCardContent} data-testid="card-content">
                         <HStack justifyContent={'center'}>
-                            <ButtonBase onClick={handleAddClick}>
-                                <Typography sx={styles.buttonCardText}>
-                                    Confirm
-                                </Typography>
-                            </ButtonBase>
+                            {isLoading ?
+                                (
+                                    <CircularProgress size={24}/>
+                                ) : (
+                                    <ButtonBase onClick={handleAddClick}>
+                                        <Typography sx={styles.buttonCardText}>
+                                            Confirm
+                                        </Typography>
+                                    </ButtonBase>
+                                )
+                            }
                         </HStack>
                     </CardContent>
                 </Card>

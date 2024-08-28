@@ -24,6 +24,7 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
     const profileQuestions = useQuestionsStore((state) => state.questions);
     const validationReport = useValidationReportStore((state) => state.validationReport);
+    const [isLoading, setIsLoading] = useState(false); // passed as props to ProfileSectionField
 
     useEffect(() => {
         const newEntityData = retrieveCurrentEntityData();
@@ -60,10 +61,13 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
             if (steps === 0) setInStackNavMode(false);
             return;
         }
+        setIsLoading(true);
         try {
             await questionsService(activeUser, selectedTopics.map((topic) => topic.id));
         } catch (error) {
             console.error('Error fetching prioritized questions in ProfileSectionTopQuestions:', error);
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -103,6 +107,7 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
                             currentIndex={0}
                             entityData={entityData}
                             handleConfirm={handleConfirm}
+                            isLoading={isLoading}
                         />
                     </>
                 ) : null}

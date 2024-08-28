@@ -2,6 +2,7 @@ const globalStyles = {
     primaryColor: '#FCD755',
     primaryColorTransparent: 'rgba(252, 215, 85, 0.2)',
     primaryColorTransparent5: 'rgba(252, 215, 85, 0.5)',
+    primaryColorDisabled: '#d3d3d3',
     secondaryColor: '#0BAF12',
     secondaryColorTransparent: 'rgba(11, 175, 18, 0.2)',
     tertiaryColor: '#00274D',
