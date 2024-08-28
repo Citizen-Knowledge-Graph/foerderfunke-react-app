@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import { FormControlLabel, Switch, Typography } from '@mui/material';
+import {FormControlLabel, Typography, Radio, RadioGroup} from '@mui/material';
 
 const ProfileInputBoolean = ({ value, setValue, error }) => {
     useEffect(() => {
@@ -8,27 +8,29 @@ const ProfileInputBoolean = ({ value, setValue, error }) => {
         }
     }, [value, setValue]);
 
-    const handleToggle = (event) => {
-        setValue(event.target.checked);
+    const handleChange = (event) => {
+        setValue(event.target.value === 'true');
     };
 
     return (
         <>
-            <FormControlLabel
-                control={
-                    <Switch
-                        checked={!!value}
-                        onChange={handleToggle}
-                        color="primary"
-                    />
-                }
-                label="Yes"
-            />
-            {error ? (
+            <RadioGroup row value={String(!!value)} onChange={handleChange}>
+                <FormControlLabel
+                    value="false"
+                    control={<Radio color="primary" />}
+                    label="No"
+                />
+                <FormControlLabel
+                    value="true"
+                    control={<Radio color="primary" />}
+                    label="Yes"
+                />
+            </RadioGroup>
+            {error && (
                 <Typography variant="body1" color="error">
                     {error}
                 </Typography>
-            ) : null}
+            )}
         </>
     );
 };
