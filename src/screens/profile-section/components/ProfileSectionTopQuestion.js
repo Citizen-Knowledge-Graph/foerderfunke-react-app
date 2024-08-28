@@ -15,15 +15,13 @@ import isEqual from 'lodash/isEqual';
 
 const ProfileSectionTopQuestion = ({setCompleted}) => {
     const [entityData, setEntityData] = useState({});
-    const [topQuestionsStack, setTopQuestionsStack] = useState([]);
+    const [stack, setStack] = useState([]);
     const [inStackNavMode, setInStackNavMode] = useState(false);
     const [stepsBackwardsFromStackFront, setStepsBackwardsFromStackFront] = useState(0);
     const [currentQuestion, setCurrentQuestion] = useState(null);
     const retrieveCurrentEntityData = useProfileSectionStore((state) => state.retrieveCurrentEntityData);
     const activeUser = useUserStore((state) => state.activeUserId);
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
-    // const [previousNumberOfOpenQuestions, setPreviousNumberOfOpenQuestions] = useState(0);
-    const [previousEligibilityStats, setPreviousEligibilityStats] = useState(null);
     const profileQuestions = useQuestionsStore((state) => state.questions);
     const validationReport = useValidationReportStore((state) => state.validationReport);
 
@@ -40,20 +38,20 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
             return;
         }
         if (inStackNavMode) {
-            setCurrentQuestion(topQuestionsStack[topQuestionsStack.length - 1 - stepsBackwardsFromStackFront]);
+            setCurrentQuestion(stack[stack.length - 1 - stepsBackwardsFromStackFront]);
             return;
         }
         const firstQuestion = profileQuestions.fields[0];
         if (!currentQuestion) {
             setCurrentQuestion(firstQuestion);
-            setTopQuestionsStack([firstQuestion]);
+            setStack([firstQuestion]);
             return;
         }
         if (firstQuestion !== currentQuestion) {
             setCurrentQuestion(firstQuestion);
-            setTopQuestionsStack([...topQuestionsStack, firstQuestion]);
+            setStack([...stack, firstQuestion]);
         }
-    }, [profileQuestions, currentQuestion, topQuestionsStack, setCompleted, stepsBackwardsFromStackFront, inStackNavMode]);
+    }, [profileQuestions, currentQuestion, stack, setCompleted, stepsBackwardsFromStackFront, inStackNavMode]);
 
     const handleConfirm = async () => {
         if (inStackNavMode) {
@@ -64,41 +62,18 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
         }
         try {
             await questionsService(activeUser, selectedTopics.map((topic) => topic.id));
-            // setPreviousNumberOfOpenQuestions(profileQuestions.fields.length);
-            setPreviousEligibilityStats(computeEligibilityStats(validationReport));
         } catch (error) {
             console.error('Error fetching prioritized questions in ProfileSectionTopQuestions:', error);
         }
     };
 
     const buildQuestionsLeftString = () => {
-        /*if (previousNumberOfOpenQuestions - profileQuestions.fields.length > 1) {
-            str += ` (${previousNumberOfOpenQuestions - profileQuestions.fields.length} become obsolet after your previous answer)`;
-        }*/
-        // the number of remaining questions can also increase based on answers (e.g. if you add a child and then their details are required) in the future (not now)
-        return `Question: ${topQuestionsStack.length} / ${topQuestionsStack.length + profileQuestions.fields.length}`;
+        return `Question: ${stack.length} / ${stack.length + profileQuestions.fields.length}`;
     };
 
     const buildEligibilityUpdateString = () => {
-        const stats = computeEligibilityStats(validationReport);
-        const calc = (type) => {
-            let part = stats[type];
-            if (!previousEligibilityStats) return part;
-            let diff = stats[type] - previousEligibilityStats[type];
-            if (diff !== 0) part += ` (${diff > 0 ? '+' : ''}${diff})`;
-            return part;
-        }
-        //return `Yes: ${calc(ValidationResult.ELIGIBLE)} / No: ${calc(ValidationResult.INELIGIBLE)} / Missing data: ${calc(ValidationResult.UNDETERMINABLE)}`;
-        const eligible = calc(ValidationResult.ELIGIBLE);
+        const eligible = validationReport.reports.filter(report => report.result === ValidationResult.ELIGIBLE).length;
         return eligible > 0 ? `You unlocked ${eligible} potential benefit based on your answers until now.` : "";
-    };
-
-    const computeEligibilityStats = (validationReport) => {
-        return {
-            eligible: validationReport.reports.filter(report => report.result === ValidationResult.ELIGIBLE).length,
-            ineligible: validationReport.reports.filter(report => report.result === ValidationResult.INELIGIBLE).length,
-            undeterminable: validationReport.reports.filter(report => report.result === ValidationResult.UNDETERMINABLE).length,
-        }
     };
 
     const handleBack = () => {
@@ -108,7 +83,7 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
 
     return (
         <VStack sx={{width: '100%'}} gap={3}>
-            {stepsBackwardsFromStackFront < topQuestionsStack.length - 1 &&
+            {stepsBackwardsFromStackFront < stack.length - 1 &&
                 <ProfileSectionHeader handleBack={handleBack}/>
             }
             <VStack gap={1}>
