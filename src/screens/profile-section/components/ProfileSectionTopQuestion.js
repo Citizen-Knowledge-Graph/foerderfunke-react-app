@@ -9,9 +9,9 @@ import {
     useValidationReportStore
 } from "../../../storage/zustand";
 import questionsService from "../../../services/questionsService";
-import {ValidationResult} from "@foerderfunke/matching-engine";
 import ProfileSectionHeader from "./ProfileSectionHeader";
 import isEqual from 'lodash/isEqual';
+import ProfileSectionTopHeader from "./ProfileSectionTopHeader";
 
 const ProfileSectionTopQuestion = ({setCompleted}) => {
     const [entityData, setEntityData] = useState({});
@@ -71,15 +71,6 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
         }
     };
 
-    const buildQuestionsLeftString = () => {
-        return `Question: ${stack.length} / ${stack.length + profileQuestions.fields.length}`;
-    };
-
-    const buildEligibilityUpdateString = () => {
-        const eligible = validationReport.reports.filter(report => report.result === ValidationResult.ELIGIBLE).length;
-        return eligible > 0 ? `You unlocked ${eligible} potential benefit based on your answers until now.` : "";
-    };
-
     const handleBack = () => {
         setInStackNavMode(true);
         setStepsBackwardsFromStackFront(stepsBackwardsFromStackFront + 1);
@@ -92,16 +83,9 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
             }
             <VStack gap={1}>
                 {currentQuestion ? (
-                    <>
-                        <span>
-                            We update the number of questions and potential benefits depending on your answers.
-                        </span>
-                        <span>
-                            {buildQuestionsLeftString()}
-                        </span>
-                        <span>
-                            {buildEligibilityUpdateString()}
-                        </span>
+                    <VStack>
+                        <ProfileSectionTopHeader stack={stack} profileQuestions={profileQuestions}
+                                                 validationReport={validationReport}/>
                         <ProfileSectionField
                             currentField={currentQuestion}
                             currentIndex={0}
@@ -109,7 +93,7 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
                             handleConfirm={handleConfirm}
                             isLoading={isLoading}
                         />
-                    </>
+                    </VStack>
                 ) : null}
             </VStack>
         </VStack>
