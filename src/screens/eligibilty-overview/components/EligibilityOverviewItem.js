@@ -43,7 +43,7 @@ const styles = {
         fontWeight: 'bold',
     },
     itemTitle: {
-        fontWeight: 'bold',
+        fontWeight: '400',
     }
 };
 
