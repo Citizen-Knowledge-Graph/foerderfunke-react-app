@@ -76,7 +76,7 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
             str += ` (${previousNumberOfOpenQuestions - profileQuestions.fields.length} become obsolet after your previous answer)`;
         }*/
         // the number of remaining questions can also increase based on answers (e.g. if you add a child and then their details are required) in the future (not now)
-        return `Question: ${topQuestionsStack.length} / ${profileQuestions.fields.length}`;
+        return `Question: ${topQuestionsStack.length} / ${topQuestionsStack.length + profileQuestions.fields.length}`;
     };
 
     const buildEligibilityUpdateString = () => {
@@ -121,7 +121,7 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
                             {buildQuestionsLeftString()}
                         </span>
                         <span>
-                            Eligibility status for {validationReport.reports.length} benefits: {buildEligibilityUpdateString()}
+                            {buildEligibilityUpdateString()}
                         </span>
                         <ProfileSectionField
                             currentField={currentQuestion}
