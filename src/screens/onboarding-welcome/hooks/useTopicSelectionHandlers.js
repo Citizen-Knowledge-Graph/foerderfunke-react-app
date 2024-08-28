@@ -20,21 +20,22 @@ const useTopicSelectionHandlers = (topicsData, selectedTopicsBoolean, setSelecte
         }
     }, [selectedTopicsBoolean, addSelectedTopic, removeSelectedTopic, setSelectedTopicsBoolean]);
 
-    const handleSelectAll = useCallback(() => {
-        const newSelectedTopics = new Array(topicsData.length).fill(true);
-        setSelectedTopicsBoolean(newSelectedTopics);
-        setSelectedTopics(topicsData);
-    }, [topicsData, setSelectedTopicsBoolean, setSelectedTopics]);
+    const handleToggleSelectAll = useCallback((event) => {
+        const isChecked = event.target.checked;
 
-    const handleUnselectAll = useCallback(() => {
-        setSelectedTopicsBoolean(Array(topicsData.length).fill(false));
-        setSelectedTopics([]);
+        if (isChecked) {
+            const newSelectedTopics = new Array(topicsData.length).fill(true);
+            setSelectedTopicsBoolean(newSelectedTopics);
+            setSelectedTopics(topicsData);
+        } else {
+            setSelectedTopicsBoolean(Array(topicsData.length).fill(false));
+            setSelectedTopics([]);
+        }
     }, [topicsData, setSelectedTopicsBoolean, setSelectedTopics]);
 
     return {
         handleButtonClick,
-        handleSelectAll,
-        handleUnselectAll,
+        handleToggleSelectAll
     };
 };
 

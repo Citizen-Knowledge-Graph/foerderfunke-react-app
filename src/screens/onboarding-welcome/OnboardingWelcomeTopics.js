@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Button, Typography} from '@mui/material';
+import {Button, Checkbox, FormControlLabel, Typography} from '@mui/material';
 import {useSelectedTopicsStore} from "../../storage/zustand";
 import useFetchData from "../../services/fetchResourceService";
 import OnboardingWelcomeScreen from "./components/OnboardingWelcomeScreen";
@@ -31,7 +31,7 @@ const OnboardingWelcomeTopics = () => {
         }
     }, [topicsData, selectedTopics, selectedTopicsBoolean.length]);
 
-    const {handleButtonClick, handleSelectAll, handleUnselectAll} = useTopicSelectionHandlers(
+    const {handleButtonClick, handleToggleSelectAll} = useTopicSelectionHandlers(
         topicsData,
         selectedTopicsBoolean,
         setSelectedTopicsBoolean
@@ -64,11 +64,7 @@ const OnboardingWelcomeTopics = () => {
                             {topic.title}
                         </Typography>
                     </Button>))}
-                <Typography sx={styles.selectText}>
-                    <span onClick={handleSelectAll}>select all</span>
-                    {' / '}
-                    <span onClick={handleUnselectAll}>unselect all</span>
-                </Typography>
+                <FormControlLabel control={<Checkbox onChange={handleToggleSelectAll}/>} label="Select all"/>
             </VStack>
         </OnboardingWelcomeScreen>
     );
