@@ -22,7 +22,7 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
     const retrieveCurrentEntityData = useProfileSectionStore((state) => state.retrieveCurrentEntityData);
     const activeUser = useUserStore((state) => state.activeUserId);
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
-    const [previousNumberOfOpenQuestions, setPreviousNumberOfOpenQuestions] = useState(0);
+    // const [previousNumberOfOpenQuestions, setPreviousNumberOfOpenQuestions] = useState(0);
     const [previousEligibilityStats, setPreviousEligibilityStats] = useState(null);
     const profileQuestions = useQuestionsStore((state) => state.questions);
     const validationReport = useValidationReportStore((state) => state.validationReport);
@@ -64,7 +64,7 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
         }
         try {
             await questionsService(activeUser, selectedTopics.map((topic) => topic.id));
-            setPreviousNumberOfOpenQuestions(profileQuestions.fields.length);
+            // setPreviousNumberOfOpenQuestions(profileQuestions.fields.length);
             setPreviousEligibilityStats(computeEligibilityStats(validationReport));
         } catch (error) {
             console.error('Error fetching prioritized questions in ProfileSectionTopQuestions:', error);
@@ -72,12 +72,11 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
     };
 
     const buildQuestionsLeftString = () => {
-        let str = `${topQuestionsStack.length} questions answered / ${profileQuestions.fields.length} more to go`;
-        if (previousNumberOfOpenQuestions - profileQuestions.fields.length > 1) {
+        /*if (previousNumberOfOpenQuestions - profileQuestions.fields.length > 1) {
             str += ` (${previousNumberOfOpenQuestions - profileQuestions.fields.length} become obsolet after your previous answer)`;
-        }
+        }*/
         // the number of remaining questions can also increase based on answers (e.g. if you add a child and then their details are required) in the future (not now)
-        return str;
+        return `Question: ${topQuestionsStack.length} / ${profileQuestions.fields.length}`;
     };
 
     const buildEligibilityUpdateString = () => {
@@ -89,7 +88,9 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
             if (diff !== 0) part += ` (${diff > 0 ? '+' : ''}${diff})`;
             return part;
         }
-        return `Yes: ${calc(ValidationResult.ELIGIBLE)} / No: ${calc(ValidationResult.INELIGIBLE)} / Missing data: ${calc(ValidationResult.UNDETERMINABLE)}`;
+        //return `Yes: ${calc(ValidationResult.ELIGIBLE)} / No: ${calc(ValidationResult.INELIGIBLE)} / Missing data: ${calc(ValidationResult.UNDETERMINABLE)}`;
+        const eligible = calc(ValidationResult.ELIGIBLE);
+        return eligible > 0 ? `You unlocked ${eligible} potential benefit based on your answers until now.` : "";
     };
 
     const computeEligibilityStats = (validationReport) => {
@@ -113,6 +114,9 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
             <VStack gap={1}>
                 {currentQuestion ? (
                     <>
+                        <span>
+                            We update the number of questions and potential benefits depending on your answers.
+                        </span>
                         <span>
                             {buildQuestionsLeftString()}
                         </span>
