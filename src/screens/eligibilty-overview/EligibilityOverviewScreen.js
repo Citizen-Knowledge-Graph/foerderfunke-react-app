@@ -8,6 +8,7 @@ import {useFetchHydrationData} from "./hooks/useFetchHydrationData";
 import EligibilityOverviewFilter from "./components/EligibilityOverviewFilter";
 import AppScreenWrapper from "../../components/AppScreenWrapper";
 import {useStore} from "../../components/ViewportUpdater";
+import Divider from "@mui/material/Divider";
 
 const EligibilityOverviewScreen = () => {
     const isDesktop = useStore((state) => state.isDesktop);
@@ -22,11 +23,11 @@ const EligibilityOverviewScreen = () => {
         }
     }, [fetchEligibilityReports, hydrationData]);
 
-
     return (
         <Layout isApp={true} logo={true}>
             <AppScreenWrapper isDesktop={isDesktop}>
                 <EligibilityOverviewHeader/>
+                <Divider sx={{width: "100%"}}/>
                 {
                     eligibilityData ? (
                         <>
