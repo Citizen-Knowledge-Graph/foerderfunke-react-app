@@ -10,12 +10,12 @@ const useInputValidation = (expectedType) => {
                     }
                     break;
                 case 'selection':
-                    if (typeof value !== 'string') {
+                    if (!value || typeof value !== 'string') {
                         reject('Invalid value type. Expected string.');
                     }
                     break;
                 case 'selection-multiple':
-                    if (!Array.isArray(value)) {
+                    if (!Array.isArray(value) || value.length === 0) {
                         reject('Invalid value type. Expected an array.');
                     } else if (!value.every(item => typeof item === 'string')) {
                         reject('Invalid array contents. Expected all elements to be strings.');
