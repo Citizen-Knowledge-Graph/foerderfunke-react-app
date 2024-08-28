@@ -83,7 +83,7 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
             }
             <VStack gap={1}>
                 {currentQuestion ? (
-                    <VStack>
+                    <VStack gap={5}>
                         <ProfileSectionTopHeader stack={stack} profileQuestions={profileQuestions}
                                                  validationReport={validationReport}/>
                         <ProfileSectionField
