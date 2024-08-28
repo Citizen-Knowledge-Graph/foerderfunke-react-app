@@ -26,7 +26,7 @@ const OnboardingWelcomeScreen = ({children, buttonText, link}) => {
                         <HStack>
                             <IconCard icon={AccessTimeIcon} iconColor={globalStyles.secondaryColor} text="5 Min."/>
                             <IconCard icon={StarBorderIcon} iconColor={globalStyles.primaryColor}
-                                      text="Based on 15 Benefits"/>
+                                      text="Based on 10 Benefits"/>
                         </HStack>
                     </VStack>
                     {children}
