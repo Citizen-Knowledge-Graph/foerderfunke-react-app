@@ -41,7 +41,7 @@ const EligibilityOverviewScreen = () => {
                 <VStack>
                     <HStack justifyContent={'flex-start'}>
                         <HStack sx={styles.enterInfoBox}>
-                            <Typography>
+                            <Typography sx={styles.enterInfoText}>
                                 Enter more information in your profile and discover if you are eligible for more
                                 benefits
                             </Typography>
@@ -50,9 +50,9 @@ const EligibilityOverviewScreen = () => {
                 </VStack>
                 <VStack>
                     <HStack justifyContent={'flex-start'}>
-                        <HStack sx={styles.liableInfoBox}>
-                            <InfoIcon sx={{color: globalStyles.tertiaryColor}}/>
-                            <Typography>
+                        <HStack sx={styles.liableInfoBox} alignItems={'center'}>
+                            <InfoIcon sx={{color: globalStyles.tertiaryColor, fontSize: '16px'}}/>
+                            <Typography sx={styles.liableInfoText}>
                                 Results are not legally binding.
                             </Typography>
                         </HStack>
@@ -76,14 +76,20 @@ const styles = {
         fontSize: '12px'
     },
     enterInfoBox: {
-        padding: '16px',
+        padding: '12px',
         borderRadius: '12px',
         backgroundColor: globalStyles.primaryColorTransparent,
     },
+    enterInfoText: {
+        fontSize: '12px'
+    },
     liableInfoBox: {
-        padding: '16px',
+        padding: '12px',
         borderRadius: '12px',
         backgroundColor: globalStyles.tertiaryColorTransparent,
+    },
+    liableInfoText: {
+        fontSize: '12px'
     }
 };
 
