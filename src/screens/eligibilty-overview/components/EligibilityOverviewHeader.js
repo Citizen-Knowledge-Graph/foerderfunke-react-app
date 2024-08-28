@@ -1,30 +1,64 @@
 import React from 'react';
-import {Card, CardContent, Typography} from '@mui/material';
+import {Typography} from '@mui/material';
 import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
-import {yellow, blue} from "@mui/material/colors";
+import CircleIcon from '@mui/icons-material/Circle';
+import InfoIcon from '@mui/icons-material/Info';
+import globalStyles from "../../../styles/styles";
 
 const EligibilityOverviewScreen = () => {
     return (
-        <VStack gap={0} alignItems={'center'} sx={{width: '100%'}}>
-            <HStack justifyContent={'center'} sx={{width: '100%'}}>
-                <VStack>
-                    <Typography variant="h6" gutterBottom sx={styles.titleText}>
-                        Deine Fördermöglichkeiten
+        <VStack gap={0} alignItems={'flex-start'}>
+            <VStack gap={3}>
+                <VStack gap={1}>
+                    <Typography sx={styles.titleText}>
+                        Your potential benefits
                     </Typography>
-                    <Typography variant="body1" gutterBottom>
-                        Ergebnisse basieren auf den von Ihnen ausgefüllten Informationen. Denken Sie daran:
-                        Je vollständiger Ihr Profil ist, desto genauer werden Ihre Ergebnisse sein.
+                    <HStack justifyContent={'flex-start'}>
+                        <HStack justifyContent={'flex-start'} alignItems={'center'}>
+                            <CircleIcon sx={{color: globalStyles.secondaryColor}}/>
+                            <Typography sx={styles.circleText}>
+                                Eligible
+                            </Typography>
+                        </HStack>
+                        <HStack justifyContent={'flex-start'} alignItems={'center'}>
+                            <CircleIcon sx={{color: globalStyles.colorLightGrey}}/>
+                            <Typography sx={styles.circleText}>
+                                Missing data
+                            </Typography>
+                        </HStack>
+                        <HStack justifyContent={'flex-start'} alignItems={'center'}>
+                            <CircleIcon sx={{color: globalStyles.colorRed}}/>
+                            <Typography sx={styles.circleText}>
+                                Not eligible
+                            </Typography>
+                        </HStack>
+                    </HStack>
+                    <Typography sx={styles.subTitleCardText}>
+                        Results are based on the information you provided.
                     </Typography>
                 </VStack>
-            </HStack>
-            <HStack justifyContent={'flex-start'} sx={{width: '100%'}}>
                 <VStack>
-                    <Typography variant="body1" gutterBottom sx={styles.subTitleCardText}>
-                        Die folgenden Ergebnisse sind rechtlich nicht bindend.
-                    </Typography>
+                    <HStack justifyContent={'flex-start'}>
+                        <HStack sx={styles.enterInfoBox}>
+                            <Typography>
+                                Enter more information in your profile and discover if you are eligible for more
+                                benefits
+                            </Typography>
+                        </HStack>
+                    </HStack>
                 </VStack>
-            </HStack>
+                <VStack>
+                    <HStack justifyContent={'flex-start'}>
+                        <HStack sx={styles.liableInfoBox}>
+                            <InfoIcon sx={{color: globalStyles.tertiaryColor}}/>
+                            <Typography>
+                                Results are not legally binding.
+                            </Typography>
+                        </HStack>
+                    </HStack>
+                </VStack>
+            </VStack>
         </VStack>
     );
 };
@@ -32,10 +66,24 @@ const EligibilityOverviewScreen = () => {
 const styles = {
     titleText: {
         fontWeight: 'bold',
+        fontSize: '32px',
     },
     subTitleCardText: {
-        fontSize: '12px',
+        fontSize: '16px',
         fontWeight: '400'
+    },
+    circleText: {
+        fontSize: '12px'
+    },
+    enterInfoBox: {
+        padding: '16px',
+        borderRadius: '12px',
+        backgroundColor: globalStyles.primaryColorTransparent,
+    },
+    liableInfoBox: {
+        padding: '16px',
+        borderRadius: '12px',
+        backgroundColor: globalStyles.tertiaryColorTransparent,
     }
 };
 

@@ -24,7 +24,11 @@ const globalStyles = {
     colorPineGreenTransparent: 'rgba(28, 78, 79, 0.1)',
     colorDarkGrey: '#333333',
     colorDarkGreyTransparent: 'rgba(51, 51, 51, 0.1)',
-    primaryPadding: '16px'
+    colorLightGrey: '#BDBDBD',
+    colorLightGreyTransparent: 'rgba(189, 189, 189, 0.1)',
+    colorRed: '#FF3D00',
+    colorRedTransparent: 'rgba(255, 61, 0, 0.1)',
+    primaryPadding: '16px',
 }
 
 export default globalStyles;
