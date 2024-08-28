@@ -1,7 +1,7 @@
 import React from 'react';
-import {FormControl, MenuItem, Select} from "@mui/material";
+import {FormControl, MenuItem, Select, Typography} from "@mui/material";
 
-const ProfileInputSelection = ({value, setValue, currentField}) => {
+const ProfileInputSelection = ({value, setValue, currentField, error}) => {
 
     const handleChange = (event) => {
         setValue(event.target.value);
@@ -22,6 +22,11 @@ const ProfileInputSelection = ({value, setValue, currentField}) => {
                     ))
                 }
             </Select>
+            {error && (
+                <Typography variant="body1" color="error">
+                    {error}
+                </Typography>
+            )}
         </FormControl>
     );
 };

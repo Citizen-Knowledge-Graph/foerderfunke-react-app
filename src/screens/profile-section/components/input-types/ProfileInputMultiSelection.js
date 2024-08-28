@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
-import { Autocomplete, TextField, Chip } from '@mui/material';
+import { Autocomplete, TextField, Chip, Typography } from '@mui/material';
 
-const ProfileInputMultiSelection = ({ value, setValue, currentField }) => {
+const ProfileInputMultiSelection = ({ value, setValue, currentField, error }) => {
 
     const choices = useMemo(() => {
         const map = {};
@@ -16,27 +16,34 @@ const ProfileInputMultiSelection = ({ value, setValue, currentField }) => {
     };
 
     return (
-        <Autocomplete
-            multiple
-            id="multi-select-autocomplete"
-            options={currentField.choices.map((choice) => choice.value)}
-            value={value ? value : []}
-            onChange={handleChange}
-            getOptionLabel={(option) => choices[option]}
-            renderTags={(value, getTagProps) =>
-                value.map((option, index) => (
-                    <Chip variant="outlined" label={choices[option]} {...getTagProps({ index })} key={option} />
-                ))
-            }
-            renderInput={(params) => (
-                <TextField
-                    {...params}
-                    variant="outlined"
-                    label={currentField.label || "Select multiple values"}
-                    placeholder="Choose options"
-                />
+        <>
+            <Autocomplete
+                multiple
+                id="multi-select-autocomplete"
+                options={currentField.choices.map((choice) => choice.value)}
+                value={value ? value : []}
+                onChange={handleChange}
+                getOptionLabel={(option) => choices[option]}
+                renderTags={(value, getTagProps) =>
+                    value.map((option, index) => (
+                        <Chip variant="outlined" label={choices[option]} {...getTagProps({ index })} key={option} />
+                    ))
+                }
+                renderInput={(params) => (
+                    <TextField
+                        {...params}
+                        variant="outlined"
+                        label={currentField.label || "Select multiple values"}
+                        placeholder="Choose options"
+                    />
+                )}
+            />
+            {error && (
+                <Typography variant="body1" color="error">
+                    {error}
+                </Typography>
             )}
-        />
+        </>
     );
 };
 
