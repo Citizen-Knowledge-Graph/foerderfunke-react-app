@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {transformRulesFromRequirementProfile} from "@foerderfunke/matching-engine/src/prematch";
+import {RuleType, transformRulesFromRequirementProfile} from "@foerderfunke/matching-engine/src/prematch";
 import readJson from "../../../utilities/readJson";
 import {fetchTurtleResource} from "../../../services/githubService";
 import {useMetadataStore} from "../../../storage/zustand";
@@ -13,54 +13,56 @@ const BenefitPageRules = ({benefitId}) => {
         return uri.startsWith("ff:") ? "https://foerderfunke.org/default#" + uri.split(":")[1] : uri;
     }
 
-    const buildValueInAndValueNotInText = (valueInOrNotIn) => {
-        let part = "";
-        for (let dfUri of Object.keys(valueInOrNotIn)) {
-            let dfObj = metadata.df[dfUri];
-            part += dfObj.label + " (";
-            for (let choiceValue of valueInOrNotIn[dfUri]) {
-                if (choiceValue === "true") {
-                    part += "Ja, ";
-                    continue;
-                }
-                if (choiceValue === "false") {
-                    part += "Nein, ";
-                    continue;
-                }
-                let choice = dfObj.choices.find(choice => expand(choice.value) === choiceValue);
-                part += choice.label + ", ";
-            }
-            part += "), ";
-        }
-        return part;
+    const getChoiceLabel = (value, dfObj) => {
+        if (value === "true") return "yes";
+        if (value === "false") return "no";
+        return dfObj.choices.find(choice => expand(choice.value) === value).label;
     }
 
-    const buildRulesText = () => {
-        let existencePart = "";
-        if (rulesData.existence.length > 0) {
-            existencePart += "The following data fields are required: ";
-            existencePart += rulesData.existence.map(dfUri => metadata.df[dfUri].label).join(", ");
+    const trim = (str) => {
+        return str.substring(0, str.length - 2);
+    }
+
+    const buildSingleRuleOutput = (rulesObj, dfObj) => {
+        let msg = "";
+        switch(rulesObj.type) {
+            case RuleType.EXISTENCE:
+                return "Needs to exist";
+            case RuleType.VALUE_IN:
+                msg += "Must be " + (rulesObj.values.length === 1 ? "exactly: " : "one of: ");
+                for (let value of rulesObj.values) {
+                    msg += getChoiceLabel(value, dfObj) + ", ";
+                }
+                return trim(msg);
+            case RuleType.VALUE_NOT_IN:
+                msg += "Must not be " + (rulesObj.values.length === 1 ? "exactly: " : "one of: ");
+                for (let value of rulesObj.values) {
+                    msg += getChoiceLabel(value, dfObj) + ", ";
+                }
+                return trim(msg);
+            case RuleType.OR:
+                msg += "One or both of the following must be true: ";
+                for (let element of rulesObj.elements) {
+                    // this is pretty hardcoded for the very limited OR-cases we support for now, compare the respective code in matching-engine TODO
+                    msg += metadata.df[element.path].label + ": " + getChoiceLabel(element.valueIn[0], null) + ", ";
+                }
+                return trim(msg);
+            default:
+                return "Unknown rule type";
         }
-        let valueInPart = "";
-        if (Object.keys(rulesData.valueIn).length > 0) {
-            valueInPart += "The following data fields must have one of the following values: ";
-            valueInPart += buildValueInAndValueNotInText(rulesData.valueIn);
+    }
+
+    const buildRulesOutput = () => {
+        const elements = [];
+        for (let dfUri of Object.keys(rulesData)) {
+            let rulesObj = rulesData[dfUri];
+            let dfObj = metadata.df[dfUri];
+            elements.push(<h3 key={dfUri}>{dfObj?.label ?? "Or-Rule"}</h3>);
+            elements.push(<div key={dfUri + "_rule"}>{buildSingleRuleOutput(rulesObj, dfObj)}</div>);
+            elements.push(<br key={dfUri + "_br"}/>)
         }
-        let valueNotInPart = "";
-        if (Object.keys(rulesData.valueNotIn).length > 0) {
-            valueNotInPart += "The following data fields must have NOT one of the following values: ";
-            valueNotInPart += buildValueInAndValueNotInText(rulesData.valueNotIn);
-        }
-        let orPart = "";
-        return (
-            <>
-                {existencePart}<br/>
-                {valueInPart}<br/>
-                {valueNotInPart}<br/>
-                {orPart}<br/>
-            </>
-        );
-    };
+        return elements;
+    }
 
     useEffect(() => {
         if (loaded) return;
@@ -70,7 +72,7 @@ const BenefitPageRules = ({benefitId}) => {
             let query = validationConfig['queries'].find(query => query['rpUri'] === rpUri);
             let rpTurtleStr = await fetchTurtleResource(query.fileUrl);
             let results = await transformRulesFromRequirementProfile(rpTurtleStr);
-            setRulesData(results);
+            setRulesData(results.rulesByDf);
             setLoaded(true);
         };
         fetchRulesData();
@@ -79,7 +81,7 @@ const BenefitPageRules = ({benefitId}) => {
     return (
         <>
             {loaded &&
-                <span>{buildRulesText()}</span>
+                <span>{buildRulesOutput()}</span>
             }
         </>
     );
