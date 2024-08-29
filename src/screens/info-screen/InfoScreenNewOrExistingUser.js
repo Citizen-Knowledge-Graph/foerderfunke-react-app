@@ -70,14 +70,14 @@ const InfoScreenNewOrExistingUser = () => {
 
     return (
         userExists ? (
-            <InfoScreen title="New or existing user">
-                <h3>Oh, hey there!</h3>
-                <div>We found a profile in the local storage of your browser. We will continue using this unless you want to start from scratch.</div>
+            <InfoScreen title="New or existing user" hideNextButton={true}>
+                <h2>Oh, hey there!</h2>
+                <div>We found a profile in the local storage of your browser. Do you want to continue using it?</div>
 
                 <small style={{color: "gray"}} onClick={exportProfile}>Export profile</small>
 
-                <div onClick={continueWithExisting}>Continue with existing profile --></div>
-                <div onClick={startOver}>Delete existing and continue with a new one --></div>
+                <h3 onClick={continueWithExisting}>Continue with existing profile --></h3>
+                <h3 style={{marginTop: -10}} onClick={startOver}>Delete existing and continue with a new one --></h3>
             </InfoScreen>
         ) : (
             <>

@@ -9,7 +9,7 @@ import HStack from "../../../components/HStack";
 import {useStore} from "../../../components/ViewportUpdater";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 
-const InfoScreen = ({title, children, imageUrl, backLink, forwardLink}) => {
+const InfoScreen = ({title, children, imageUrl, backLink, forwardLink, hideNextButton = false}) => {
     const isDesktop = useStore((state) => state.isDesktop);
     const privacyImageUrl = `${process.env.PUBLIC_URL}/assets/images/info-screens/${imageUrl}.svg`;
     let stackType;
@@ -37,8 +37,8 @@ const InfoScreen = ({title, children, imageUrl, backLink, forwardLink}) => {
                         {backLink !== undefined &&
                             <Button variant="text" sx={styles.button} startIcon={<ChevronLeftIcon/>} component={Link}
                                     to={backLink}>Previous</Button>}
-                        <Button variant="text" sx={styles.button} endIcon={<ChevronRightIcon/>} component={Link}
-                                to={forwardLink}>Next</Button>
+                        {!hideNextButton && <Button variant="text" sx={styles.button} endIcon={<ChevronRightIcon/>} component={Link}
+                                to={forwardLink}>Next</Button>}
                     </HStack>
                 </VStack>
             </AppScreenWrapper>
