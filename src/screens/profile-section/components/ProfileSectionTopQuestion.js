@@ -92,7 +92,8 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
                     <VStack gap={8}>
 
                         <VStack gap={0}>
-                            <ProfileSectionQuestionsCount stack={stack} profileQuestions={profileQuestions}/>
+                            <ProfileSectionQuestionsCount stepsBackwardsFromStackFront={stepsBackwardsFromStackFront}
+                                                          stack={stack} profileQuestions={profileQuestions}/>
                             <ProfileSectionField
                                 currentField={currentQuestion}
                                 currentIndex={0}

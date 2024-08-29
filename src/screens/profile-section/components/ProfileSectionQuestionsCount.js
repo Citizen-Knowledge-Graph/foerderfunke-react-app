@@ -6,10 +6,10 @@ import globalStyles from "../../../styles/styles";
 import CloseIcon from "@mui/icons-material/Close";
 import InfoIcon from "@mui/icons-material/Info";
 
-const ProfileSectionQuestionsCount = ({stack, profileQuestions}) => {
+const ProfileSectionQuestionsCount = ({stepsBackwardsFromStackFront, stack, profileQuestions}) => {
     const [isVisible, setIsVisible] = useState(false);
 
-    const questionsAnswered = stack.length;
+    const questionsAnswered = stack.length - stepsBackwardsFromStackFront;
     const questionsLeft = stack.length + profileQuestions.fields.length
 
     return (
