@@ -13,7 +13,7 @@ const BenefitPageHeader = ({benefit}) => {
                     </Typography>
                 </HStack>
                 <Typography variant="body1" sx={styles.subtitleText}>
-                    {benefit.subtitle}
+                    LeiKa-Id: {benefit.leikaId}
                 </Typography>
             </VStack>
         </VStack>

@@ -1,39 +1,46 @@
 import React, {useEffect, useState} from 'react';
 import Layout from "../../components/Layout";
-import readJson from "../../utilities/readJson";
 import {useParams} from "react-router-dom";
 import BenefitPageHeader from "./components/BenefitPageHeader";
-import BenefitPageList from "./components/BenefitPageList";
 import AppScreenWrapper from "../../components/AppScreenWrapper";
 import {useStore} from "../../components/ViewportUpdater";
+import {useMetadataStore} from "../../storage/zustand";
+import useFetchData from "../../services/fetchResourceService";
 
 const BenefitPageScreen = () => {
     const isDesktop = useStore((state) => state.isDesktop);
     const {id} = useParams();
     const [benefitPageData, setBenefitPageData] = useState();
+    const metadata = useMetadataStore((state) => state.metadata);
+    const [topicsData, setTopicsData] = useState([]);
+    const [topicsLoaded, setTopicsLoaded] = useState(false);
+
+    useFetchData('assets/data/topics/topics-list.json', setTopicsData, setTopicsLoaded);
 
     useEffect(() => {
-        const fetchData = async () => {
-            const filePath = `assets/data/benefit-pages/${id}.json`
-            try {
-                const newBenefitPageData = await readJson(filePath);
-                setBenefitPageData(newBenefitPageData);
-            } catch (error) {
-                console.error('Failed to fetch benefit page screen data:', error);
-            }
-        };
+        let rpUri = id.startsWith("ff:") ? "https://foerderfunke.org/default#" + id.split(":")[1] : id;
+        setBenefitPageData(metadata.rp[rpUri]);
+    }, [id, topicsLoaded, topicsData, metadata]);
 
-        fetchData();
-    }, [id]);
+    const getTopicTitle = (topicUri) => {
+        let topicId = topicUri.startsWith("https") ? "ff:" + topicUri.split("#")[1] : topicUri;
+        return topicsData.find(topic => topic.id === topicId).title;
+    }
 
+    const getCategoryTitles = () => {
+        return benefitPageData.categories.map(categoryUri => getTopicTitle(categoryUri)).join(', ');
+    }
 
     return (
         <Layout isApp={true} logo={false} back={'Back'}>
             <AppScreenWrapper isDesktop={isDesktop}>
-                {benefitPageData ? (
+                {benefitPageData && topicsLoaded ? (
                     <>
                         <BenefitPageHeader benefit={benefitPageData}/>
-                        <BenefitPageList benefit={benefitPageData}/>
+                        {/*<BenefitPageList benefit={benefitPageData}/>*/}
+                        <small>Topics: {getCategoryTitles()}</small>
+                        <div>{benefitPageData.benefitInfo}</div>
+                        <div>More info: <a target="_blank" rel="noreferrer" href={benefitPageData.seeAlso}>{benefitPageData.seeAlso}</a></div>
                     </>
                 ) : null}
             </AppScreenWrapper>
