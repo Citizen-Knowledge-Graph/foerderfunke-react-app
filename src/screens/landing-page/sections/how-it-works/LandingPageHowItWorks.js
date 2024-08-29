@@ -9,8 +9,8 @@ import LandingPageBasics from "./components/LandingPageBasics";
 import LandingPageClaimCard from "./components/LandingPageClaimCard";
 
 const LandingPageHowItWorks = ({isDesktop}) => {
-    const figma_phone_1 = `${process.env.PUBLIC_URL}/assets/images/figma_phone_1.svg`;
-    const figma_phone_2 = `${process.env.PUBLIC_URL}/assets/images/figma_phone_2.svg`;
+    const figma_phone_1 = `${process.env.PUBLIC_URL}/assets/images/figma_phone_v1.svg`;
+    const figma_phone_2 = `${process.env.PUBLIC_URL}/assets/images/figma_phone_v2.svg`;
 
     return (
         <LandingPageSectionWrapper isDesktop={isDesktop}>
