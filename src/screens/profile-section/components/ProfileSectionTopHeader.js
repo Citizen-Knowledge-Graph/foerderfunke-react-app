@@ -7,14 +7,18 @@ import globalStyles from "../../../styles/styles";
 import CloseIcon from "@mui/icons-material/Close";
 import InfoIcon from "@mui/icons-material/Info";
 import RedeemIcon from '@mui/icons-material/Redeem';
-
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 const ProfileSectionTopHeader = ({stack, profileQuestions, validationReport}) => {
     const [isVisible, setIsVisible] = useState(true);
+    const [benefitsListVisible, setBenefitsListVisible] = useState(false);
 
     const questionsAnswered = stack.length;
     const questionsLeft = stack.length + profileQuestions.fields.length
-    const eligibleCount = validationReport.reports.filter(report => report.result === ValidationResult.ELIGIBLE).length;
+    const eligibleRpUris = validationReport.reports
+        .filter(report => report.result === ValidationResult.ELIGIBLE)
+        .map(report => report.rpUri);
 
     return (
         <VStack>
@@ -49,20 +53,45 @@ const ProfileSectionTopHeader = ({stack, profileQuestions, validationReport}) =>
                 )
             }
             {
-                eligibleCount > 0 && (
+                eligibleRpUris.length > 0 && (
                     <VStack>
                         <HStack>
-                            <HStack justifyContent={'flex-start'} alignItems={'center'} sx={styles.benefitsUnlockedBox}>
-                                <RedeemIcon sx={{fontSize: '20px', color: globalStyles.tertiaryColor}}/>
-                                <VStack gap={0}>
-                                    <Typography sx={styles.benefitsUnlockedText}>
-                                        You have unlocked {eligibleCount} benefits
-                                    </Typography>
-                                    <Typography sx={styles.benefitsUnlockedSubText}>
-                                        based on your answers.
-                                    </Typography>
-                                </VStack>
-                            </HStack>
+                            <VStack sx={styles.benefitsUnlockedBox}>
+                                <HStack justifyContent={'space-between'} alignItems={'center'}>
+                                    <RedeemIcon sx={{fontSize: '24px', color: globalStyles.tertiaryColor}}/>
+                                    <VStack gap={0}>
+                                        <Typography sx={styles.benefitsUnlockedText}>
+                                            You have unlocked {eligibleRpUris.length} benefits
+                                        </Typography>
+                                        <Typography sx={styles.benefitsUnlockedSubText}>
+                                            based on your answers.
+                                        </Typography>
+                                    </VStack>
+                                    {
+                                        !benefitsListVisible ? (
+                                            <KeyboardArrowDownIcon
+                                                sx={{fontSize: '24px', color: globalStyles.secondaryColor}}
+                                                onClick={() => setBenefitsListVisible(true)}
+                                            />
+                                        ) : (
+                                            <KeyboardArrowUpIcon
+                                                sx={{fontSize: '24px', color: globalStyles.secondaryColor}}
+                                                onClick={() => setBenefitsListVisible(false)}
+                                            />)
+                                    }
+                                </HStack>
+                                {
+                                    benefitsListVisible && (
+                                        <VStack>
+                                            {eligibleRpUris.map((scheme, index) => (
+                                                <Typography key={index} sx={styles.benefitsUnlockedSubText}>
+                                                    {scheme}
+                                                </Typography>
+                                            ))}
+                                        </VStack>
+                                    )
+                                }
+                            </VStack>
                         </HStack>
                     </VStack>
                 )
@@ -88,17 +117,18 @@ const styles = {
         fontSize: '12px'
     },
     benefitsUnlockedBox: {
+        width: "100%",
         padding: '12px',
         borderRadius: '12px',
         backgroundColor: globalStyles.secondaryColorTransparent,
     },
     benefitsUnlockedText: {
-        fontSize: '12px',
+        fontSize: '14px',
         fontWeight: 'bold',
         color: globalStyles.secondaryColor
     },
     benefitsUnlockedSubText: {
-        fontSize: '12px',
+        fontSize: '14px',
         color: globalStyles.secondaryColor
     }
 };
