@@ -6,6 +6,7 @@ import AppScreenWrapper from "../../components/AppScreenWrapper";
 import {useStore} from "../../components/ViewportUpdater";
 import {useMetadataStore} from "../../storage/zustand";
 import useFetchData from "../../services/fetchResourceService";
+import BenefitPageRules from "./components/BenefitPageRules";
 
 const BenefitPageScreen = () => {
     const isDesktop = useStore((state) => state.isDesktop);
@@ -41,6 +42,7 @@ const BenefitPageScreen = () => {
                         <small>Topics: {getCategoryTitles()}</small>
                         <div>{benefitPageData.benefitInfo}</div>
                         <div>More info: <a target="_blank" rel="noreferrer" href={benefitPageData.seeAlso}>{benefitPageData.seeAlso}</a></div>
+                        <BenefitPageRules benefitId={id}/>
                     </>
                 ) : null}
             </AppScreenWrapper>
