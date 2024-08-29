@@ -1,7 +1,7 @@
 export class UserModel {
     static initialiseNewUser(userId) {
         // check if the user already exists
-        if (sessionStorage.getItem(userId)) {
+        if (localStorage.getItem(userId)) {
             throw new Error('User already exists');
         }
 
@@ -12,13 +12,13 @@ export class UserModel {
 
         // create a new user
         let userString = `{"@id":"${userId}","@type":"ff:Citizen"}`;
-        sessionStorage.setItem(userId, userString);
+        localStorage.setItem(userId, userString);
 
         // add the user to the list of user ids
-        const userIds = JSON.parse(sessionStorage.getItem('userIds') || '[]');
+        const userIds = JSON.parse(localStorage.getItem('userIds') || '[]');
         if (!userIds.includes(userId)) {
             userIds.push(userId);
-            sessionStorage.setItem('userIds', JSON.stringify(userIds));
+            localStorage.setItem('userIds', JSON.stringify(userIds));
         }
     }
 
@@ -75,23 +75,23 @@ export class UserModel {
         return retrieveField(userProfile, datafield, entityData);
     }
 
-    // store user data to session storage
+    // store user data to local storage
     static storeUserData(userData) {
         const userId = userData['@id'];
-        sessionStorage.setItem(userId, JSON.stringify(userData));
-        const userIds = JSON.parse(sessionStorage.getItem('userIds') || '[]');
+        localStorage.setItem(userId, JSON.stringify(userData));
+        const userIds = JSON.parse(localStorage.getItem('userIds') || '[]');
         if (!userIds.includes(userId)) {
             userIds.push(userId);
-            sessionStorage.setItem('userIds', JSON.stringify(userIds));
+            localStorage.setItem('userIds', JSON.stringify(userIds));
         }
     }
 
-    // retrieve the user data from session storage
+    // retrieve the user data from local storage
     static retrieveUserData(entityId) {
-        let userString = sessionStorage.getItem(entityId);
+        let userString = localStorage.getItem(entityId);
         if (!userString) {
             userString = `{"@id":"${entityId}", "@type":"ff:Citizen"}`;
-            sessionStorage.setItem(entityId, userString);
+            localStorage.setItem(entityId, userString);
         }
 
         return JSON.parse(userString);
@@ -99,7 +99,7 @@ export class UserModel {
 
     // return all user ids
     static retrieveAllUserIds() {
-        return JSON.parse(sessionStorage.getItem('userIds') || '[]');
+        return JSON.parse(localStorage.getItem('userIds') || '[]');
     }
 }
 
