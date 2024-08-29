@@ -47,9 +47,10 @@ export const runValidation = async (activeUser) => {
     useValidationReportStore.getState().updateValidationReport(validateAllReport);
 
     // fetch metadata
+    const lang = "en";
     let metadata = {
-        df: await extractDatafieldsMetadata(dataFieldsString),
-        rp: await extractRequirementProfilesMetadata(Object.values(requirementProfiles)),
+        df: await extractDatafieldsMetadata(dataFieldsString, lang),
+        rp: await extractRequirementProfilesMetadata(Object.values(requirementProfiles), lang),
     };
 
     useMetadataStore.getState().updateMetadata(metadata);
