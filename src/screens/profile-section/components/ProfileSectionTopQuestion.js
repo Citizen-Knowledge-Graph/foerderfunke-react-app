@@ -22,12 +22,13 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
     const [inStackNavMode, setInStackNavMode] = useState(false);
     const [stepsBackwardsFromStackFront, setStepsBackwardsFromStackFront] = useState(0);
     const [currentQuestion, setCurrentQuestion] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
+
     const retrieveCurrentEntityData = useProfileSectionStore((state) => state.retrieveCurrentEntityData);
     const activeUser = useUserStore((state) => state.activeUserId);
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
     const profileQuestions = useQuestionsStore((state) => state.questions);
     const validationReport = useValidationReportStore((state) => state.validationReport);
-    const [isLoading, setIsLoading] = useState(false); // passed as props to ProfileSectionField
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -54,7 +55,12 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
         }
         if (firstQuestion !== currentQuestion) {
             setCurrentQuestion(firstQuestion);
-            setStack([...stack, firstQuestion]);
+            setStack((prevStack) => {
+                if (!prevStack.includes(firstQuestion)) {
+                    return [...prevStack, firstQuestion];
+                }
+                return prevStack;
+            });
         }
     }, [profileQuestions, currentQuestion, stack, setCompleted, stepsBackwardsFromStackFront, inStackNavMode]);
 
@@ -83,6 +89,13 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
             setStepsBackwardsFromStackFront(stepsBackwardsFromStackFront + 1);
         }
     };
+
+    console.log('***** ProfileSectionTopQuestion rendering *****');
+    console.log('currentQuestion:', currentQuestion);
+    console.log('entityData:', entityData);
+    console.log('stack:', stack);
+    console.log('stepsBackwardsFromStackFront:', stepsBackwardsFromStackFront);
+    console.log('inStackNavMode:', inStackNavMode);
 
     return (
         <VStack sx={{width: '100%'}} gap={3}>
