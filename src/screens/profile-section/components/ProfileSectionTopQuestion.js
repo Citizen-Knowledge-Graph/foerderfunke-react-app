@@ -13,6 +13,7 @@ import ProfileSectionHeader from "./ProfileSectionHeader";
 import isEqual from 'lodash/isEqual';
 import ProfileSectionTopHeader from "./ProfileSectionTopHeader";
 import {useNavigate} from "react-router-dom";
+import ProfileSectionQuestionsCount from "./ProfileSectionQuestionsCount";
 
 
 const ProfileSectionTopQuestion = ({setCompleted}) => {
@@ -89,15 +90,19 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
             <VStack gap={1}>
                 {currentQuestion ? (
                     <VStack gap={8}>
+
+                        <VStack gap={0}>
+                            <ProfileSectionQuestionsCount stack={stack} profileQuestions={profileQuestions}/>
+                            <ProfileSectionField
+                                currentField={currentQuestion}
+                                currentIndex={0}
+                                entityData={entityData}
+                                handleConfirm={handleConfirm}
+                                isLoading={isLoading}
+                            />
+                        </VStack>
                         <ProfileSectionTopHeader stack={stack} profileQuestions={profileQuestions}
                                                  validationReport={validationReport}/>
-                        <ProfileSectionField
-                            currentField={currentQuestion}
-                            currentIndex={0}
-                            entityData={entityData}
-                            handleConfirm={handleConfirm}
-                            isLoading={isLoading}
-                        />
                     </VStack>
                 ) : null}
             </VStack>
