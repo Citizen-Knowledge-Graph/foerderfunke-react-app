@@ -19,7 +19,7 @@ const TemplateViewHeader = ({onClick}) => {
 const styles = {
     button: {
         color: 'black',
-        fontSize: 16,
+        fontSize: 12,
     }
 }
 

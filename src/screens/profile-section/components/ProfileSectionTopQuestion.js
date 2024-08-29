@@ -12,6 +12,8 @@ import questionsService from "../../../services/questionsService";
 import ProfileSectionHeader from "./ProfileSectionHeader";
 import isEqual from 'lodash/isEqual';
 import ProfileSectionTopHeader from "./ProfileSectionTopHeader";
+import {useNavigate} from "react-router-dom";
+
 
 const ProfileSectionTopQuestion = ({setCompleted}) => {
     const [entityData, setEntityData] = useState({});
@@ -25,6 +27,7 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
     const profileQuestions = useQuestionsStore((state) => state.questions);
     const validationReport = useValidationReportStore((state) => state.validationReport);
     const [isLoading, setIsLoading] = useState(false); // passed as props to ProfileSectionField
+    const navigate = useNavigate();
 
     useEffect(() => {
         const newEntityData = retrieveCurrentEntityData();
@@ -73,14 +76,16 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
 
     const handleBack = () => {
         setInStackNavMode(true);
-        setStepsBackwardsFromStackFront(stepsBackwardsFromStackFront + 1);
+        if (stepsBackwardsFromStackFront === stack.length - 1) {
+            navigate(-1)
+        } else {
+            setStepsBackwardsFromStackFront(stepsBackwardsFromStackFront + 1);
+        }
     };
 
     return (
         <VStack sx={{width: '100%'}} gap={3}>
-            {stepsBackwardsFromStackFront < stack.length - 1 &&
-                <ProfileSectionHeader handleBack={handleBack}/>
-            }
+            <ProfileSectionHeader handleBack={handleBack}/>
             <VStack gap={1}>
                 {currentQuestion ? (
                     <VStack gap={8}>
