@@ -26,7 +26,7 @@ const EligibilityOverviewScreen = () => {
     return (
         <Layout isApp={true} logo={true}>
             <AppScreenWrapper isDesktop={isDesktop}>
-                <EligibilityOverviewHeader/>
+                <EligibilityOverviewHeader isDesktop={isDesktop}/>
                 <Divider sx={{width: "100%"}}/>
                 {
                     eligibilityData ? (
