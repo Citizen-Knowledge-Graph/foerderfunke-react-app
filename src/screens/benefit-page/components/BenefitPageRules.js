@@ -2,8 +2,10 @@ import {useEffect, useState} from "react";
 import {RuleType, transformRulesFromRequirementProfile} from "@foerderfunke/matching-engine/src/prematch";
 import readJson from "../../../utilities/readJson";
 import {fetchTurtleResource} from "../../../services/githubService";
-import {useMetadataStore, useValidationReportStore} from "../../../storage/zustand";
+import {useMetadataStore, useUserStore, useValidationReportStore} from "../../../storage/zustand";
 import {ValidationResult} from "@foerderfunke/matching-engine";
+import {UserModel} from "../../../models/UserModel";
+import dayjs from "dayjs";
 
 const BenefitPageRules = ({benefitId}) => {
     const [loaded, setLoaded] = useState(false);
@@ -11,6 +13,8 @@ const BenefitPageRules = ({benefitId}) => {
     const metadata = useMetadataStore((state) => state.metadata);
     const validationReport = useValidationReportStore((state) => state.validationReport);
     const [benefitReport, setBenefitReport] = useState({});
+    const activeUser = useUserStore((state) => state.activeUserId);
+    const userProfile = UserModel.retrieveUserData(activeUser);
 
     const expand = (uri) => {
         return uri.startsWith("ff:") ? "https://foerderfunke.org/default#" + uri.split(":")[1] : uri;
@@ -19,7 +23,7 @@ const BenefitPageRules = ({benefitId}) => {
     const getChoiceLabel = (value, dfObj) => {
         if (value === "true") return "yes";
         if (value === "false") return "no";
-        return dfObj.choices.find(choice => expand(choice.value) === value).label;
+        return dfObj.choices.find(choice => expand(choice.value) === expand(value)).label;
     }
 
     const trim = (str) => {
@@ -68,6 +72,27 @@ const BenefitPageRules = ({benefitId}) => {
         return [];
     }
 
+    const convertUserValueRaw = (raw, dfObj) => {
+        if (Array.isArray(raw)) {
+            return raw.map(r => getChoiceLabel(r, dfObj)).join(", ");
+        }
+        if (raw.startsWith("ff:")) {
+            return getChoiceLabel(raw, dfObj);
+        }
+        if (dayjs(raw).isValid()) {
+            return dayjs(raw).format("YYYY-MM-DD");
+        }
+        return raw;
+    }
+
+    const showUserValue = (dfObj) => {
+        if (dfObj.datafield && userProfile[dfObj.datafield]) { // ff:pensionable and ff:age don't have it, they will also not show up in the profile as they are materialized on the fly
+            let userValueRaw = userProfile[dfObj.datafield];
+            return convertUserValueRaw(userValueRaw, dfObj);
+        }
+        return "-";
+    }
+
     const buildRulesOutput = () => {
         const elements = [];
         for (let dfUri of Object.keys(rulesData)) {
@@ -79,6 +104,7 @@ const BenefitPageRules = ({benefitId}) => {
                 dfObj.uri = dfUri;
                 const [color, msg] = buildSingleRuleReportOutput(dfObj, benefitReport.result === ValidationResult.ELIGIBLE);
                 elements.push(<div key={dfUri + "_report"} style={{ color: color }}>{msg}</div>);
+                elements.push(<small key={dfUri + "_value"}>{showUserValue(dfObj)}</small>);
             }
             elements.push(<br key={dfUri + "_br"}/>)
         }
