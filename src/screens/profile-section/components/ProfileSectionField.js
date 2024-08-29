@@ -2,11 +2,13 @@ import React, {useEffect, useState} from 'react';
 import {ButtonBase, Card, CardContent, Typography, CircularProgress} from '@mui/material';
 import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
-import useAddProfileField from '../hooks/useAddProfileField';
-import useInputValidation from "../hooks/useInputValidation";
+
 import useFetchProfileField from "../hooks/useFetchProfileField";
 import globalStyles from "../../../styles/styles";
 import ProfileSectionInputSwitch from "./input-types/ProfileSectionInputSwitch";
+
+// import handlers
+import {useHandleAddClick} from "../handlers/addClickHandler";
 
 const ProfileSectionField = ({
                                  currentField,
@@ -16,10 +18,12 @@ const ProfileSectionField = ({
                                  isLoading,
                              }) => {
     const [value, setValue] = useState('');
-    const [localError, setLocalError] = useState('');
-    const validateValue = useInputValidation(currentField.datatype);
-    const addProfileData = useAddProfileField(currentField, entityData);
     const fetchProfileField = useFetchProfileField(currentField.datafield, entityData);
+    const {
+        handleAddClick,
+        localError,
+        setLocalError
+    } = useHandleAddClick(currentField, entityData, handleConfirm, setValue);
 
     useEffect(() => {
         setValue('');
@@ -31,28 +35,7 @@ const ProfileSectionField = ({
         }).catch(error => {
             console.log('Error fetching profile field', error);
         });
-    }, [currentField, fetchProfileField]);
-
-    const handleAddClick = () => {
-        validateValue(value)
-            .then(() => {
-                    addProfileData(value)
-                        .then(() => {
-                            setValue('')
-                            handleConfirm(currentIndex);
-                        })
-                        .catch((err) => {
-                            console.log('Error adding profile data', err);
-                            setLocalError(err);
-                        });
-                }
-            )
-            .catch((err) => {
-                    console.log('Error validating input', err);
-                    setLocalError(err);
-                }
-            )
-    }
+    }, [currentField, fetchProfileField, setLocalError]);
 
     return (
         <VStack gap={7}>
@@ -85,7 +68,7 @@ const ProfileSectionField = ({
                                 (
                                     <CircularProgress size={24}/>
                                 ) : (
-                                    <ButtonBase onClick={handleAddClick}>
+                                    <ButtonBase onClick={() => handleAddClick(value, currentIndex)}>
                                         <Typography sx={styles.buttonCardText}>
                                             Confirm
                                         </Typography>
