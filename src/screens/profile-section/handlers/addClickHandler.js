@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import useAddProfileField from '../hooks/useAddProfileField';
 import useInputValidation from "../hooks/useInputValidation";
 

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import {ButtonBase, Card, CardContent, Typography, CircularProgress} from '@mui/material';
 import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
@@ -9,15 +9,17 @@ import ProfileSectionInputSwitch from "./input-types/ProfileSectionInputSwitch";
 
 // import handlers
 import {useHandleAddClick} from "../handlers/addClickHandler";
+import {useProfileSectionStore} from "../../../storage/useProfileSectionStore";
 
 const ProfileSectionField = ({
                                  currentField,
-                                 entityData,
                                  currentIndex,
                                  handleConfirm,
                                  isLoading,
                              }) => {
     const [value, setValue] = useState('');
+    const retrieveCurrentEntityData = useProfileSectionStore((state) => state.retrieveCurrentEntityData)
+    const entityData = useMemo(() => retrieveCurrentEntityData(), [retrieveCurrentEntityData]);
     const fetchProfileField = useFetchProfileField(currentField.datafield, entityData);
     const {
         handleAddClick,

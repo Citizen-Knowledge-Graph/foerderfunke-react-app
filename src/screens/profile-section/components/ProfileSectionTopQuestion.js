@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import VStack from "../../../components/VStack";
 import ProfileSectionField from "./ProfileSectionField";
-import {useProfileSectionStore} from "../../../storage/useProfileSectionStore";
 import {
     useQuestionsStore,
     useSelectedTopicsStore,
@@ -10,33 +9,23 @@ import {
 } from "../../../storage/zustand";
 import questionsService from "../../../services/questionsService";
 import ProfileSectionHeader from "./ProfileSectionHeader";
-import isEqual from 'lodash/isEqual';
 import ProfileSectionTopHeader from "./ProfileSectionTopHeader";
 import {useNavigate} from "react-router-dom";
 import ProfileSectionQuestionsCount from "./ProfileSectionQuestionsCount";
 
 
 const ProfileSectionTopQuestion = ({setCompleted}) => {
-    const [entityData, setEntityData] = useState({});
     const [stack, setStack] = useState([]);
     const [inStackNavMode, setInStackNavMode] = useState(false);
     const [stepsBackwardsFromStackFront, setStepsBackwardsFromStackFront] = useState(0);
     const [currentQuestion, setCurrentQuestion] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
 
-    const retrieveCurrentEntityData = useProfileSectionStore((state) => state.retrieveCurrentEntityData);
     const activeUser = useUserStore((state) => state.activeUserId);
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
     const profileQuestions = useQuestionsStore((state) => state.questions);
     const validationReport = useValidationReportStore((state) => state.validationReport);
     const navigate = useNavigate();
-
-    useEffect(() => {
-        const newEntityData = retrieveCurrentEntityData();
-        if (!isEqual(newEntityData, entityData)) {
-            setEntityData(newEntityData);
-        }
-    }, [currentQuestion, entityData, retrieveCurrentEntityData]);
 
     useEffect(() => {
         if (profileQuestions.fields.length === 0) {
@@ -90,13 +79,6 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
         }
     };
 
-    console.log('***** ProfileSectionTopQuestion rendering *****');
-    console.log('currentQuestion:', currentQuestion);
-    console.log('entityData:', entityData);
-    console.log('stack:', stack);
-    console.log('stepsBackwardsFromStackFront:', stepsBackwardsFromStackFront);
-    console.log('inStackNavMode:', inStackNavMode);
-
     return (
         <VStack sx={{width: '100%'}} gap={3}>
             <ProfileSectionHeader handleBack={handleBack}/>
@@ -110,7 +92,6 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
                             <ProfileSectionField
                                 currentField={currentQuestion}
                                 currentIndex={0}
-                                entityData={entityData}
                                 handleConfirm={handleConfirm}
                                 isLoading={isLoading}
                             />
