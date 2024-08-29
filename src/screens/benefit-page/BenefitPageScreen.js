@@ -14,14 +14,13 @@ const BenefitPageScreen = () => {
     const [benefitPageData, setBenefitPageData] = useState();
     const metadata = useMetadataStore((state) => state.metadata);
     const [topicsData, setTopicsData] = useState([]);
-    const [topicsLoaded, setTopicsLoaded] = useState(false);
 
-    useFetchData('assets/data/topics/topics-list.json', setTopicsData, setTopicsLoaded);
+    useFetchData('assets/data/topics/topics-list.json', setTopicsData);
 
     useEffect(() => {
         let rpUri = id.startsWith("ff:") ? "https://foerderfunke.org/default#" + id.split(":")[1] : id;
         setBenefitPageData(metadata.rp[rpUri]);
-    }, [id, topicsLoaded, topicsData, metadata]);
+    }, [id, topicsData, metadata]);
 
     const getTopicTitle = (topicUri) => {
         let topicId = topicUri.startsWith("https") ? "ff:" + topicUri.split("#")[1] : topicUri;
@@ -35,7 +34,7 @@ const BenefitPageScreen = () => {
     return (
         <Layout isApp={true} logo={false} back={'Back'}>
             <AppScreenWrapper isDesktop={isDesktop}>
-                {benefitPageData && topicsLoaded ? (
+                {benefitPageData && topicsData.length > 0 ? (
                     <>
                         <BenefitPageHeader benefit={benefitPageData}/>
                         {/*<BenefitPageList benefit={benefitPageData}/>*/}
