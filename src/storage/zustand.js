@@ -22,6 +22,10 @@ export const useValidationReportStore = create((set) => ({
         console.log('STATE UPDATE: We are updating the validation report');
         set((state) => ({validationReport: newValidationReport}));
     },
+    clear: () => {
+        console.log('STATE UPDATE: We are clearing the validation report');
+        set({validationReport: {}});
+    }
 }));
 
 export const useSelectedTopicsStore = create((set) => ({
