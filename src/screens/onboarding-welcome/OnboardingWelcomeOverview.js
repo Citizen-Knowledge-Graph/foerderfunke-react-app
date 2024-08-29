@@ -6,10 +6,9 @@ import OnboardingWelcomeScreen from "./components/OnboardingWelcomeScreen";
 import { useSelectedTopicsStore} from "../../storage/zustand";
 
 const OnboardingWelcomeOverview = () => {
-    // fetch state hooks
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
 
-    // Use the custom hook and get the loading state
+    // hooks
     const isLoading = useInitializeQuestionsArray();
 
     return (
