@@ -7,9 +7,11 @@ import globalStyles from "../../../styles/styles";
 import RedeemIcon from '@mui/icons-material/Redeem';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import {useMetadataStore} from "../../../storage/zustand";
 
 const ProfileSectionTopHeader = ({validationReport}) => {
     const [benefitsListVisible, setBenefitsListVisible] = useState(false);
+    const metadata = useMetadataStore((state) => state.metadata);
 
     const eligibleRpUris = validationReport.reports
         .filter(report => report.result === ValidationResult.ELIGIBLE)
@@ -48,9 +50,9 @@ const ProfileSectionTopHeader = ({validationReport}) => {
                                 {
                                     benefitsListVisible && (
                                         <VStack>
-                                            {eligibleRpUris.map((scheme, index) => (
+                                            {eligibleRpUris.map((rpUri, index) => (
                                                 <Typography key={index} sx={styles.benefitsUnlockedSubText}>
-                                                    {scheme}
+                                                    {metadata.rp[rpUri].title}
                                                 </Typography>
                                             ))}
                                         </VStack>
