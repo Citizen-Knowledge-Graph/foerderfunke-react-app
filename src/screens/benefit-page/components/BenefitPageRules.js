@@ -2,12 +2,15 @@ import {useEffect, useState} from "react";
 import {RuleType, transformRulesFromRequirementProfile} from "@foerderfunke/matching-engine/src/prematch";
 import readJson from "../../../utilities/readJson";
 import {fetchTurtleResource} from "../../../services/githubService";
-import {useMetadataStore} from "../../../storage/zustand";
+import {useMetadataStore, useValidationReportStore} from "../../../storage/zustand";
+import {ValidationResult} from "@foerderfunke/matching-engine";
 
 const BenefitPageRules = ({benefitId}) => {
     const [loaded, setLoaded] = useState(false);
     const [rulesData, setRulesData] = useState({});
     const metadata = useMetadataStore((state) => state.metadata);
+    const validationReport = useValidationReportStore((state) => state.validationReport);
+    const [benefitReport, setBenefitReport] = useState({});
 
     const expand = (uri) => {
         return uri.startsWith("ff:") ? "https://foerderfunke.org/default#" + uri.split(":")[1] : uri;
@@ -52,6 +55,19 @@ const BenefitPageRules = ({benefitId}) => {
         }
     }
 
+    const buildSingleRuleReportOutput = (dfObj, isValid = false) => {
+        if (isValid) {
+            return ["green", "--> Your input is valid"];
+        }
+        if (benefitReport.missingUserInput.find(missing => missing.dfUri === dfObj.uri)) {
+            return ["gray", "--> Your input is missing"];
+        }
+        if (benefitReport.violations.find(violation => violation.path === dfObj.uri)) {
+            return ["red", "--> Your input is invalid"];
+        }
+        return [];
+    }
+
     const buildRulesOutput = () => {
         const elements = [];
         for (let dfUri of Object.keys(rulesData)) {
@@ -59,6 +75,11 @@ const BenefitPageRules = ({benefitId}) => {
             let dfObj = metadata.df[dfUri];
             elements.push(<h3 key={dfUri}>{dfObj?.label ?? "Or-Rule"}</h3>);
             elements.push(<div key={dfUri + "_rule"}>{buildSingleRuleOutput(rulesObj, dfObj)}</div>);
+            if (dfObj) { // for or-cases this is undefined
+                dfObj.uri = dfUri;
+                const [color, msg] = buildSingleRuleReportOutput(dfObj, benefitReport.result === ValidationResult.ELIGIBLE);
+                elements.push(<div key={dfUri + "_report"} style={{ color: color }}>{msg}</div>);
+            }
             elements.push(<br key={dfUri + "_br"}/>)
         }
         return elements;
@@ -73,10 +94,11 @@ const BenefitPageRules = ({benefitId}) => {
             let rpTurtleStr = await fetchTurtleResource(query.fileUrl);
             let results = await transformRulesFromRequirementProfile(rpTurtleStr);
             setRulesData(results.rulesByDf);
+            setBenefitReport(validationReport.reports.find(report => report.rpUri === rpUri));
             setLoaded(true);
         };
         fetchRulesData();
-    }, [benefitId, rulesData, metadata, loaded]);
+    }, [benefitId, rulesData, metadata, loaded, validationReport]);
 
     return (
         <>
