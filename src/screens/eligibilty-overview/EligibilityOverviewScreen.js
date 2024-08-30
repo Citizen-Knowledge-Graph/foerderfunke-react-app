@@ -31,9 +31,12 @@ const EligibilityOverviewScreen = () => {
                 {
                     eligibilityData ? (
                         <>
-                            <EligibilityOverviewList items={eligibilityData.eligible} eligible={'eligible'}/>
-                            <EligibilityOverviewList items={eligibilityData.missingData} eligible={'indeterminate'}/>
-                            <EligibilityOverviewList items={eligibilityData.nonEligible} eligible={'non-eligible'}/>
+                            {eligibilityData.eligible.length > 0 &&
+                                <EligibilityOverviewList items={eligibilityData.eligible} eligible={'eligible'}/>}
+                            {eligibilityData.missingData.length > 0 &&
+                                <EligibilityOverviewList items={eligibilityData.missingData} eligible={'indeterminate'}/>}
+                            {eligibilityData.nonEligible.length > 0 &&
+                                <EligibilityOverviewList items={eligibilityData.nonEligible} eligible={'non-eligible'}/>}
                         </>
                     ) : null
                 }
