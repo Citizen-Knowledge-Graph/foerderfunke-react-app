@@ -31,7 +31,6 @@ const EligibilityOverviewScreen = () => {
                 {
                     eligibilityData ? (
                         <>
-                            <EligibilityOverviewFilter/>
                             <EligibilityOverviewList items={eligibilityData.eligible} eligible={'eligible'}/>
                             <EligibilityOverviewList items={eligibilityData.missingData} eligible={'indeterminate'}/>
                             <EligibilityOverviewList items={eligibilityData.nonEligible} eligible={'non-eligible'}/>
