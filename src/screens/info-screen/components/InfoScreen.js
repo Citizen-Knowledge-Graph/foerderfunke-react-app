@@ -8,6 +8,7 @@ import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
 import {useStore} from "../../../components/ViewportUpdater";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import globalStyles from "../../../styles/styles";
 
 const InfoScreen = ({title, children, imageUrl, backLink, forwardLink, hideNextButton = false}) => {
     const isDesktop = useStore((state) => state.isDesktop);
@@ -37,8 +38,9 @@ const InfoScreen = ({title, children, imageUrl, backLink, forwardLink, hideNextB
                         {backLink !== undefined &&
                             <Button variant="text" sx={styles.button} startIcon={<ChevronLeftIcon/>} component={Link}
                                     to={backLink}>Previous</Button>}
-                        {!hideNextButton && <Button variant="text" sx={styles.button} endIcon={<ChevronRightIcon/>} component={Link}
-                                to={forwardLink}>Next</Button>}
+                        {!hideNextButton &&
+                            <Button variant="text" sx={styles.button} endIcon={<ChevronRightIcon/>} component={Link}
+                                    to={forwardLink}>Next</Button>}
                     </HStack>
                 </VStack>
             </AppScreenWrapper>
@@ -48,10 +50,10 @@ const InfoScreen = ({title, children, imageUrl, backLink, forwardLink, hideNextB
 
 const styles = {
     titleWrapper: {
-        width: '100%',
         boxSizing: 'border-box',
         padding: '16px',
         borderRadius: '12px',
+        backgroundColor: globalStyles.secondaryColorTransparent,
     },
     title: {
         fontWeight: 'bold',
