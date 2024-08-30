@@ -61,7 +61,7 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
         }
         setIsLoading(true);
         try {
-            await questionsService(activeUser, selectedTopics.map((topic) => topic.id));
+            await questionsService(activeUser, selectedTopics.map((topic) => topic.id), null);
         } catch (error) {
             console.error('Error fetching prioritized questions in ProfileSectionTopQuestions:', error);
         } finally {

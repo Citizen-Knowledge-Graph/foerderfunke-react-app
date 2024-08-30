@@ -5,7 +5,7 @@ import {fetchTurtleResource} from "./githubService";
 import {getPrioritizedMissingDataFieldsJson} from "@foerderfunke/matching-engine/src/prematch";
 import {useQuestionsStore, useValidationReportStore} from "../storage/zustand";
 
-const questionsService = async (activeUser, activeTopics) => {
+const questionsService = async (activeUser, topicIds, benefitId) => {
 
     // Get the active user profile
     const userProfile = UserModel.retrieveUserData(activeUser);
@@ -29,9 +29,13 @@ const questionsService = async (activeUser, activeTopics) => {
         requirementProfiles[rpUri] = await fetchTurtleResource(fileUrl);
     }
 
+    const expand = (id) => {
+        return id.startsWith("ff:") ? "https://foerderfunke.org/default#" + id.split(":")[1] : id;
+    }
+
     let questionsResponse = await getPrioritizedMissingDataFieldsJson(
-        activeTopics,
-        [],
+        topicIds,
+        benefitId ? [expand(benefitId)] : [],
         userProfileString,
         dataFieldsString,
         Object.values(requirementProfiles),

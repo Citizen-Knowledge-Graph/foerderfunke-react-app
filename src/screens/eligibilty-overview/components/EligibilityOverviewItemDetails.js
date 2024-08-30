@@ -5,13 +5,22 @@ import HStack from "../../../components/HStack";
 import {Link} from "react-router-dom";
 import globalStyles from "../../../styles/styles";
 
-const EligibilityOverviewItemDetails = ({item}) => {
+const EligibilityOverviewItemDetails = ({item, eligible}) => {
     return (
         <VStack alignItems={'flex-start'}>
             <Typography sx={styles.itemDescription}>
                 {item.description}
             </Typography>
             <HStack>
+                {eligible === 'indeterminate' &&
+                    <Button
+                        sx={styles.checkEligibilityButton}
+                        variant="text"
+                        component={Link}
+                        to={`/onboarding-welcome/${item.id}`}>
+                        Check eligibility
+                    </Button>
+                }
                 <Button
                     sx={styles.learnMoreButton}
                     variant="text"
@@ -28,6 +37,17 @@ const styles = {
     itemDescription: {
         fontSize: '16px',
         fontWeight: '400',
+    },
+    checkEligibilityButton: {
+        borderWidth: '1px',
+        borderStyle: 'solid',
+        borderRadius: '15px',
+        borderColor: globalStyles.secondaryColor,
+        backgroundColor: globalStyles.secondaryColor,
+        color: 'white',
+        fontSize: '14px',
+        fontWeight: 'bold',
+        textTransform: 'none',
     },
     learnMoreButton: {
         borderWidth: '1px',
