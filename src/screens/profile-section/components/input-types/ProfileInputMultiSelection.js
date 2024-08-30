@@ -1,7 +1,5 @@
 import React, { useMemo } from 'react';
 import {Checkbox, FormControlLabel, FormGroup, FormLabel, Typography} from '@mui/material';
-import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
-import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
 
 const ProfileInputMultiSelection = ({ value, setValue, currentField, error }) => {
     const choices = useMemo(() => {
