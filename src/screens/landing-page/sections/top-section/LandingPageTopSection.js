@@ -4,11 +4,11 @@ import LandingPageTopSectionMobile from "./views/LandingPageTopSectionMobile";
 import LandingPageSectionWrapper from "../../components/LandingPageSectionWrapper";
 
 const benefits = [
-    {id: 1, name: "Kinderzuschlag", url: "Kinderzuschlag.png"},
-    {id: 2, name: "Wohngeld", url: "Wohngeld.png"},
-    {id: 3, name: "Grundsicherung", url: "Grundsicherung.png"},
-    {id: 4, name: "Bildungsgutschein", url: "Bildungsgutschein.png"},
-    {id: 5, name: "Viele Weitere", url: "VieleWeitere.png"},
+    {id: 1, name: "Child allowance", url: "Kinderzuschlag.png"},
+    {id: 2, name: "Housing benefit", url: "Wohngeld.png"},
+    {id: 3, name: "Cost-of-living assistance", url: "Grundsicherung.png"},
+    {id: 4, name: "Vocational training allowance", url: "Bildungsgutschein.png"},
+    {id: 5, name: "More", url: "VieleWeitere.png"},
 ];
 
 const LandingPageTopSection = ({isDesktop}) => {
