@@ -18,7 +18,7 @@ const OnboardingChoice = () => {
                         Your choice
                     </Typography>
                     <Typography variant="body1" gutterBottom sx={styles.subTitleText}>
-                        Three ways of discovering benefits for you
+                        Two ways of discovering benefits for you
                     </Typography>
                 </VStack>
                 <ClickCard
