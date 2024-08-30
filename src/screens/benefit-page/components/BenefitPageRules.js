@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Typography} from '@mui/material';
 import {RuleType, transformRulesFromRequirementProfile} from "@foerderfunke/matching-engine/src/prematch";
 import readJson from "../../../utilities/readJson";
 import {fetchTurtleResource} from "../../../services/githubService";
@@ -98,25 +99,25 @@ const BenefitPageRules = ({benefitId}) => {
         for (let dfUri of Object.keys(rulesData)) {
             let rulesObj = rulesData[dfUri];
             let dfObj = metadata.df[dfUri];
-            let td1 = <h3>{dfObj?.label ?? "Or-Rule"}</h3>;
-            let td2 = <div>{buildSingleRuleOutput(rulesObj, dfObj)}</div>;
-            let td3, td4;
-            if (dfObj) { // for or-cases this is undefined
+            let labelCell = <Typography variant="h6">{dfObj?.label ?? "Or-Rule"}</Typography>;
+            let ruleCell = <Typography>{buildSingleRuleOutput(rulesObj, dfObj)}</Typography>;
+            let userValueCell, validityCell;
+            if (dfObj) {
                 dfObj.uri = dfUri;
                 const [color, msg] = buildSingleRuleReportOutput(dfObj, benefitReport.result === ValidationResult.ELIGIBLE);
-                td3 = <small>{showUserValue(dfObj)}</small>;
-                td4 = <div style={{ color: color }}>{msg}</div>;
+                userValueCell = <Typography>{showUserValue(dfObj)}</Typography>;
+                validityCell = <Typography style={{ color: color }}>{msg}</Typography>;
             }
             elements.push(
-                <tr key={dfUri}>
-                    <td style={{border: "1px solid black"}}>{td1}</td>
-                    <td style={{border: "1px solid black"}}>{td2}</td>
-                    <td style={{border: "1px solid black"}}>{td3 ?? "-"}</td>
-                    <td style={{border: "1px solid black"}}>{td4 ?? "-"}</td>
-                </tr>
+                <TableRow key={dfUri}>
+                    <TableCell>{labelCell}</TableCell>
+                    <TableCell>{ruleCell}</TableCell>
+                    <TableCell>{userValueCell ?? "-"}</TableCell>
+                    <TableCell>{validityCell ?? "-"}</TableCell>
+                </TableRow>
             );
         }
-        return elements
+        return elements;
     }
 
     useEffect(() => {
@@ -136,15 +137,23 @@ const BenefitPageRules = ({benefitId}) => {
 
     return (
         <>
-            {loaded &&
-                <table style={{border: "1px solid black"}}>
-                    <th style={{border: "1px solid black"}}>Data field</th>
-                    <th style={{border: "1px solid black"}}>Rule</th>
-                    <th style={{border: "1px solid black"}}>Your value</th>
-                    <th style={{border: "1px solid black"}}>Validity</th>
-                    {buildRulesOutput()}
-                </table>
-            }
+            {loaded && (
+                <TableContainer component={Paper}>
+                    <Table>
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>Data field</TableCell>
+                                <TableCell>Rule</TableCell>
+                                <TableCell>Your value</TableCell>
+                                <TableCell>Validity</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {buildRulesOutput()}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            )}
         </>
     );
 }
