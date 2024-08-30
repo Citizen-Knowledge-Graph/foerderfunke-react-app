@@ -47,6 +47,10 @@ export const useSelectedTopicsStore = create((set) => ({
         set((state) => ({
             selectedTopics: state.selectedTopics.filter(topic => topic.id !== topicId)
         }));
+    },
+    clear: () => {
+        console.log('STATE UPDATE: We are clearing the selected topics');
+        set({selectedTopics: []});
     }
 }));
 
