@@ -1,5 +1,5 @@
 import React, {useEffect, useMemo, useState} from 'react';
-import {ButtonBase, Card, CardContent, Typography, CircularProgress, Button} from '@mui/material';
+import {Card, CardContent, Typography, CircularProgress, Button} from '@mui/material';
 import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
 
@@ -10,7 +10,6 @@ import ProfileSectionInputSwitch from "./input-types/ProfileSectionInputSwitch";
 // import handlers
 import {useHandleAddClick} from "../handlers/addClickHandler";
 import {useProfileSectionStore} from "../../../storage/useProfileSectionStore";
-import {Link} from "react-router-dom";
 
 const ProfileSectionField = ({
                                  currentField,

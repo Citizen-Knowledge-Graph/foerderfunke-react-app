@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormControl, FormControlLabel, FormLabel, RadioGroup, Radio, Typography } from "@mui/material";
+import { FormControl, FormControlLabel, RadioGroup, Radio, Typography } from "@mui/material";
 
 const ProfileInputSelection = ({ value, setValue, currentField, error }) => {
 
