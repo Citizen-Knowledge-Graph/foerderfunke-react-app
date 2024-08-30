@@ -26,9 +26,6 @@ const OnboardingWelcomeOverview = () => {
                         </VStack>
                     ))}
                 </VStack>
-                <Typography variant="body1" gutterBottom sx={styles.subTitleText}>
-                    The quick check does not include a check for all benefits in the selected topics to keep it quick.
-                </Typography>
             </VStack>
         </OnboardingWelcomeScreen>
     );
