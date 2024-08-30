@@ -53,7 +53,6 @@ const styles = {
         boxSizing: 'border-box',
         padding: '16px',
         borderRadius: '12px',
-        backgroundColor: globalStyles.secondaryColorTransparent,
     },
     title: {
         fontWeight: 'bold',
