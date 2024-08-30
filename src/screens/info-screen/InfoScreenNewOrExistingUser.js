@@ -70,8 +70,7 @@ const InfoScreenNewOrExistingUser = () => {
 
     return (
         userExists ? (
-            <InfoScreen title="New or existing user" hideNextButton={true}>
-                <h2>Oh, hey there!</h2>
+            <InfoScreen title="Oh, hey there!" hideNextButton={true}>
                 <div>We found a profile in the local storage of your browser. Do you want to continue using it?</div>
 
                 <small style={{color: "gray"}} onClick={exportProfile}>Export profile</small>
