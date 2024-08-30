@@ -1,27 +1,29 @@
 import React from 'react';
-import {FormControl, MenuItem, Select, Typography} from "@mui/material";
+import { FormControl, FormControlLabel, FormLabel, RadioGroup, Radio, Typography } from "@mui/material";
 
-const ProfileInputSelection = ({value, setValue, currentField, error}) => {
+const ProfileInputSelection = ({ value, setValue, currentField, error }) => {
 
     const handleChange = (event) => {
         setValue(event.target.value);
     };
 
     return (
-        <FormControl fullWidth>
-            <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={value ? value : ''}
+        <FormControl component="fieldset" fullWidth>
+            <RadioGroup
+                value={value}
                 onChange={handleChange}
-                variant="outlined"
             >
                 {
                     currentField.choices.map((choice, i) => (
-                        <MenuItem key={i} value={choice.value}>{choice.label}</MenuItem>
+                        <FormControlLabel
+                            key={i}
+                            value={choice.value}
+                            control={<Radio />}
+                            label={choice.label}
+                        />
                     ))
                 }
-            </Select>
+            </RadioGroup>
             {error && (
                 <Typography variant="body1" color="error">
                     {error}
