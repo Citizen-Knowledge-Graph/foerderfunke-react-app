@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import VStack from "../../../components/VStack";
 import ProfileSectionField from "./ProfileSectionField";
 import {
+    questionsStackStore,
     useQuestionsStore,
     useSelectedTopicsStore,
     useUserStore,
@@ -15,12 +16,15 @@ import ProfileSectionQuestionsCount from "./ProfileSectionQuestionsCount";
 
 
 const ProfileSectionTopQuestion = ({setCompleted}) => {
-    const [stack, setStack] = useState([]);
-    const [inStackNavMode, setInStackNavMode] = useState(false);
-    const [stepsBackwardsFromStackFront, setStepsBackwardsFromStackFront] = useState(0);
     const [currentQuestion, setCurrentQuestion] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
 
+    const questionsStack = questionsStackStore((state) => state.questionsStack);
+    const stackCounter = questionsStackStore((state) => state.stackCounter);
+    const stackMode = questionsStackStore((state) => state.stackMode);
+    const addQuestionToStack = questionsStackStore((state) => state.addQuestionToStack);
+    const setStackCounter = questionsStackStore((state) => state.setStackCounter);
+    const setStackMode = questionsStackStore((state) => state.setStackMode);
     const activeUser = useUserStore((state) => state.activeUserId);
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
     const profileQuestions = useQuestionsStore((state) => state.questions);
@@ -32,32 +36,27 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
             setCompleted(true);
             return;
         }
-        if (inStackNavMode) {
-            setCurrentQuestion(stack[stack.length - 1 - stepsBackwardsFromStackFront]);
+        if (stackMode) {
+            setCurrentQuestion(questionsStack[questionsStack.length - 1 - stackCounter]);
             return;
         }
         const firstQuestion = profileQuestions.fields[0];
         if (!currentQuestion) {
             setCurrentQuestion(firstQuestion);
-            setStack([firstQuestion]);
+            addQuestionToStack(firstQuestion);
             return;
         }
         if (firstQuestion !== currentQuestion) {
             setCurrentQuestion(firstQuestion);
-            setStack((prevStack) => {
-                if (!prevStack.includes(firstQuestion)) {
-                    return [...prevStack, firstQuestion];
-                }
-                return prevStack;
-            });
+            addQuestionToStack(firstQuestion);
         }
-    }, [profileQuestions, currentQuestion, stack, setCompleted, stepsBackwardsFromStackFront, inStackNavMode]);
+    }, [profileQuestions, currentQuestion, setCompleted, setStackCounter, stackMode, questionsStack, addQuestionToStack, stackCounter]);
 
     const handleConfirm = async () => {
-        if (inStackNavMode) {
-            let steps = stepsBackwardsFromStackFront - 1
-            setStepsBackwardsFromStackFront(steps);
-            if (steps === 0) setInStackNavMode(false);
+        if (stackMode) {
+            let steps = stackCounter - 1
+            setStackCounter(steps);
+            if (steps === 0) setStackMode(false);
             return;
         }
         setIsLoading(true);
@@ -71,13 +70,15 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
     };
 
     const handleBack = () => {
-        setInStackNavMode(true);
-        if (stepsBackwardsFromStackFront === stack.length - 1) {
+        setStackMode(true);
+        if (stackCounter === questionsStack.length - 1) {
             navigate(-1)
         } else {
-            setStepsBackwardsFromStackFront(stepsBackwardsFromStackFront + 1);
+            setStackCounter(stackCounter + 1);
         }
     };
+
+    console.log('ProfileSectionTopQuestion render', questionsStack);
 
     return (
         <VStack sx={{width: '100%'}} gap={3}>
@@ -87,8 +88,8 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
                     <VStack gap={8}>
 
                         <VStack gap={0}>
-                            <ProfileSectionQuestionsCount stepsBackwardsFromStackFront={stepsBackwardsFromStackFront}
-                                                          stack={stack} profileQuestions={profileQuestions}/>
+                            <ProfileSectionQuestionsCount stepsBackwardsFromStackFront={stackCounter}
+                                                          stack={questionsStack} profileQuestions={profileQuestions}/>
                             <ProfileSectionField
                                 currentField={currentQuestion}
                                 currentIndex={0}
@@ -96,7 +97,7 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
                                 isLoading={isLoading}
                             />
                         </VStack>
-                        <ProfileSectionTopHeader stack={stack} profileQuestions={profileQuestions}
+                        <ProfileSectionTopHeader stack={questionsStack} profileQuestions={profileQuestions}
                                                  validationReport={validationReport}/>
                     </VStack>
                 ) : null}

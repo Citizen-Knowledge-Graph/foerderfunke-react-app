@@ -1,10 +1,12 @@
 import { useCallback } from 'react';
 import { useSelectedTopicsStore } from "../../../storage/zustand";
+import { questionsStackStore } from "../../../storage/zustand";
 
 const useTopicSelectionHandlers = (topicsData, selectedTopicsBoolean, setSelectedTopicsBoolean) => {
     const addSelectedTopic = useSelectedTopicsStore((state) => state.addSelectedTopic);
     const removeSelectedTopic = useSelectedTopicsStore((state) => state.removeSelectedTopic);
     const setSelectedTopics = useSelectedTopicsStore((state) => state.setSelectedTopics);
+    const resetQuestionsStack = questionsStackStore((state) => state.resetQuestionsStack);
 
     const handleButtonClick = useCallback((topic, index) => {
         // Update the selected topics boolean array
@@ -18,7 +20,10 @@ const useTopicSelectionHandlers = (topicsData, selectedTopicsBoolean, setSelecte
         } else {
             removeSelectedTopic(topic.id);
         }
-    }, [selectedTopicsBoolean, addSelectedTopic, removeSelectedTopic, setSelectedTopicsBoolean]);
+
+        // Reset the questions stack
+        resetQuestionsStack();
+    }, [selectedTopicsBoolean, setSelectedTopicsBoolean, resetQuestionsStack, addSelectedTopic, removeSelectedTopic]);
 
     const handleToggleSelectAll = useCallback((event) => {
         const isChecked = event.target.checked;

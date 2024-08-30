@@ -61,3 +61,30 @@ export const useQuestionsStore = create((set) => ({
         set((state) => ({questions: newQuestions}));
     }
 }));
+
+export const questionsStackStore = create((set) => ({
+    questionsStack: [],
+    stackCounter: 0,
+    stackMode: false,
+    addQuestionToStack: (newQuestion) => {
+        console.log('STATE UPDATE: We are adding a question to the stack');
+        set((state) => ({
+            questionsStack: state.questionsStack.some(question => question.datafield === newQuestion.datafield)
+                ? state.questionsStack
+                : [...state.questionsStack, newQuestion]
+        }));
+    },
+    resetQuestionsStack: () => {
+        console.log('STATE UPDATE: We are clearing the questions stack');
+        set({questionsStack: [], stackMode: false, stackCounter: 0});
+    },
+    setStackCounter: (newCounter) => {
+        console.log('STATE UPDATE: We are setting the stack counter');
+        set({stackCounter: newCounter});
+    },
+    setStackMode: (newMode) => {
+        console.log('STATE UPDATE: We are setting the stack mode');
+        set({stackMode: newMode});
+    },
+}));
+

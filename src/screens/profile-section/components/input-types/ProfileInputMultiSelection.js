@@ -32,7 +32,7 @@ const ProfileInputMultiSelection = ({ value, setValue, currentField, error }) =>
                         key={key}
                         control={
                             <Checkbox
-                                checked={value.includes(key)}
+                                checked={value? value.includes(key) : false}
                                 onChange={handleChange}
                                 name={key}
                                 icon={<RadioButtonUncheckedIcon />}
