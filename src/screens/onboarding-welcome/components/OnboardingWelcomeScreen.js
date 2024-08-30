@@ -10,10 +10,25 @@ import ButtonCard from "../../../components/ButtonCard";
 import {useStore} from "../../../components/ViewportUpdater";
 import AppScreenWrapper from "../../../components/AppScreenWrapper";
 import globalStyles from "../../../styles/styles";
+import {useMetadataStore, useSelectedTopicsStore} from "../../../storage/zustand";
 
 
 const OnboardingWelcomeScreen = ({children, buttonText, link, isLoading = false}) => {
     const isDesktop = useStore((state) => state.isDesktop);
+    const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
+    const metadata = useMetadataStore((state) => state.metadata);
+
+    const calculateNumberOfBenefits = () => {
+        let distinctRPs = {};
+        for (let topic of selectedTopics) {
+            const topicUri = "https://foerderfunke.org/default#" + topic.id.split(":")[1];
+            const rps = Object.values(metadata.rp).filter(rp => rp.categories.includes(topicUri));
+            for (let rp of rps) {
+                distinctRPs[rp.uri] = true;
+            }
+        }
+        return Object.keys(distinctRPs).length;
+    }
 
     return (
         <Layout isApp={true} logo={false}>
@@ -26,7 +41,7 @@ const OnboardingWelcomeScreen = ({children, buttonText, link, isLoading = false}
                         <HStack>
                             <IconCard icon={AccessTimeIcon} iconColor={globalStyles.secondaryColor} text="5 Min."/>
                             <IconCard icon={StarBorderIcon} iconColor={globalStyles.primaryColor}
-                                      text="Based on 10 Benefits"/>
+                                      text={`Based on ${calculateNumberOfBenefits()} Benefits`}/>
                         </HStack>
                     </VStack>
                     {children}
