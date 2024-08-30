@@ -1,5 +1,5 @@
 import React, {useEffect, useMemo, useState} from 'react';
-import {ButtonBase, Card, CardContent, Typography, CircularProgress} from '@mui/material';
+import {ButtonBase, Card, CardContent, Typography, CircularProgress, Button} from '@mui/material';
 import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
 
@@ -10,6 +10,7 @@ import ProfileSectionInputSwitch from "./input-types/ProfileSectionInputSwitch";
 // import handlers
 import {useHandleAddClick} from "../handlers/addClickHandler";
 import {useProfileSectionStore} from "../../../storage/useProfileSectionStore";
+import {Link} from "react-router-dom";
 
 const ProfileSectionField = ({
                                  currentField,
@@ -57,29 +58,28 @@ const ProfileSectionField = ({
                                            entityData={entityData}
                                            error={localError}/>
             </VStack>
-            <VStack data-testid="button-card-container">
-                <Card
-                    sx={{
-                        ...styles.buttonCardComplete,
-                        backgroundColor: isLoading ? globalStyles.primaryColorDisabled : globalStyles.primaryColor
-                    }}
-                    data-testid="button-card">
-                    <CardContent sx={styles.buttonCardContent} data-testid="card-content">
-                        <HStack justifyContent={'center'}>
-                            {isLoading ?
-                                (
-                                    <CircularProgress size={24}/>
-                                ) : (
-                                    <ButtonBase onClick={() => handleAddClick(value, currentIndex)}>
-                                        <Typography sx={styles.buttonCardText}>
-                                            Confirm
-                                        </Typography>
-                                    </ButtonBase>
-                                )
-                            }
-                        </HStack>
-                    </CardContent>
-                </Card>
+            <VStack alignItems={'center'} sx={{
+                width: '100%',
+                backgroundColor: isLoading ? null : globalStyles.primaryColor,
+                borderRadius: '12px'
+            }}>
+                {
+                    isLoading ?
+                        (
+                            <CircularProgress size={24}/>
+                        ) : (
+                            <Button variant="text"
+                                    sx={{
+                                        fontSize: '16px',
+                                        color: 'black',
+                                        fontWeight: 'bold',
+                                        textTransform: 'none',
+                                        padding: '12px'
+                                    }}
+                                    onClick={() => handleAddClick(value, currentIndex)}
+                            >Confirm</Button>
+                        )
+                }
             </VStack>
         </VStack>
     );
@@ -93,7 +93,7 @@ const styles = {
     },
     infoCard: {
         width: '100%',
-        borderRadius: '15px',
+        borderRadius: '12px',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
