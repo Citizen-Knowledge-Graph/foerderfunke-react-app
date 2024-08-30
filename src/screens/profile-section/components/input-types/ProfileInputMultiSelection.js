@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { Checkbox, FormControlLabel, FormGroup, Typography } from '@mui/material';
+import {Checkbox, FormControlLabel, FormGroup, FormLabel, Typography} from '@mui/material';
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
 
@@ -26,6 +26,7 @@ const ProfileInputMultiSelection = ({ value, setValue, currentField, error }) =>
     return (
         <>
             <FormGroup>
+                <FormLabel component="legend">Multiple answers possible</FormLabel>
                 {Object.entries(choices).map(([key, label]) => (
                     <FormControlLabel
                         key={key}
