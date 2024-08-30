@@ -3,13 +3,26 @@ import {Typography} from '@mui/material';
 import useInitializeQuestionsArray from "./hooks/useInitializeQuestionsArray";
 import VStack from "../../components/VStack";
 import OnboardingWelcomeScreen from "./components/OnboardingWelcomeScreen";
-import { useSelectedTopicsStore} from "../../storage/zustand";
+import {useMetadataStore, useSelectedTopicsStore} from "../../storage/zustand";
 
 const OnboardingWelcomeOverview = () => {
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
+    const metadata = useMetadataStore((state) => state.metadata);
 
     // hooks
     const isLoading = useInitializeQuestionsArray();
+
+    const listRPsForTopic = (topic) => {
+        const topicUri = "https://foerderfunke.org/default#" + topic.id.split(":")[1];
+        const rps = Object.values(metadata.rp).filter(rp => rp.categories.includes(topicUri));
+        return (
+            <ul style={{marginTop: -8}}>
+                {rps.map((rp, index) => (
+                    <li key={index}>{rp.title}</li>
+                ))}
+            </ul>
+        );
+    };
 
     return (
         <OnboardingWelcomeScreen buttonText={'Discover your benefits'} link={`/profile-section`} isLoading={isLoading}>
@@ -23,6 +36,7 @@ const OnboardingWelcomeOverview = () => {
                             <Typography variant="h6" sx={styles.listHeader}>
                                 {topic.title}
                             </Typography>
+                            {listRPsForTopic(topic)}
                         </VStack>
                     ))}
                 </VStack>
