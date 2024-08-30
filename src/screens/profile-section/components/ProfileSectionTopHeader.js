@@ -104,7 +104,7 @@ const styles = {
         color: globalStyles.secondaryColor
     },
     benefitsUnlocked: {
-        fontSize: '16px',
+        fontSize: '14px',
         padding: '8px',
         fontWeight: 'bold',
         color: globalStyles.secondaryColor
