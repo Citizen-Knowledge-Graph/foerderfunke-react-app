@@ -35,7 +35,7 @@ const EligibilityOverviewScreen = ({isDesktop}) => {
                                     Results are not legally binding
                                 </Typography>
                                 <Close
-                                    sx={{color: 'white', fontSize: '16px'}}
+                                    sx={{fontSize: '16px'}}
                                     onClick={() => setVisible(false)}
                                 />
                             < /HStack>
@@ -99,12 +99,11 @@ const styles = {
         borderRadius:
             '12px',
         backgroundColor:
-        globalStyles.tertiaryColor,
+        globalStyles.colorLightGrey,
     }
     ,
     liableInfoText: {
-        fontSize: '14px',
-        color: 'white'
+        fontSize: '14px'
     }
 };
 
