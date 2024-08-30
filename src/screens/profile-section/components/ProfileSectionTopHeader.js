@@ -26,7 +26,7 @@ const ProfileSectionTopHeader = ({validationReport}) => {
                         <HStack>
                             <VStack sx={styles.benefitsUnlockedBox}>
                                 <HStack justifyContent={'space-between'} alignItems={'center'}>
-                                    <RedeemIcon sx={{fontSize: '24px', color: globalStyles.tertiaryColor}}/>
+                                    <RedeemIcon sx={{fontSize: '24px', color: globalStyles.secondaryColor}}/>
                                     <VStack gap={0}>
                                         <Typography sx={styles.benefitsUnlockedText}>
                                             You have unlocked {eligibleRpUris.length} benefits

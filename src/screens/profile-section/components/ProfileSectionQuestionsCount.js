@@ -24,7 +24,7 @@ const ProfileSectionQuestionsCount = ({stepsBackwardsFromStackFront, stack, prof
                                     answers.
                                 </Typography>
                                 <CloseIcon
-                                    sx={{fontSize: '20px', color: globalStyles.tertiaryColor, cursor: 'pointer'}}
+                                    sx={{fontSize: '20px', color: 'black', cursor: 'pointer'}}
                                     onClick={() => setIsVisible(false)}
                                 /> </HStack>
                         </HStack>
@@ -38,7 +38,7 @@ const ProfileSectionQuestionsCount = ({stepsBackwardsFromStackFront, stack, prof
                             Question: {questionsAnswered} / {questionsLeft}
                         </Typography>
                         <InfoIcon
-                            sx={{fontSize: '20px', color: globalStyles.tertiaryColorTransparent, cursor: 'pointer'}}
+                            sx={{fontSize: '20px', color: globalStyles.colorLightGrey, cursor: 'pointer'}}
                             onClick={() => setIsVisible(true)}
                         />
                     </HStack>
@@ -52,7 +52,7 @@ const styles = {
     updateInfoBox: {
         padding: '12px',
         borderRadius: '12px',
-        backgroundColor: globalStyles.tertiaryColorTransparent,
+        backgroundColor: globalStyles.colorLightGrey,
     },
     updateInfoText: {
         fontSize: '12px'
