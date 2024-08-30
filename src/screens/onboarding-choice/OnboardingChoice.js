@@ -30,7 +30,6 @@ const OnboardingChoice = () => {
                 />
                 <ClickCard
                     link="/eligibility-overview"
-                    time="At your own pace"
                     title="Browse all benefits"
                     subtitle="Filter by topic or from A-Z"
                     backgroundColor={globalStyles.colorTangerineOrange}

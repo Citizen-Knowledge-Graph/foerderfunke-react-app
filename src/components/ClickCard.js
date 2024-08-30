@@ -9,21 +9,25 @@ import globalStyles from "../styles/styles";
 
 const ClickCard = ({
                        link,
-                       time,
                        title,
                        subtitle,
                        backgroundColor,
+                       time = null,
                        cardHeight = '175px',
                        icon = AccessTimeIcon,
                        iconColor = "green"
                    }) => {
     return (
-        <VStack data-testid="card-container"
+        <VStack justifyContent={'flex-end'}
+            data-testid="card-container"
                 sx={{...styles.card, minHeight: cardHeight, backgroundColor: backgroundColor}}>
             <Link to={link} style={{textDecoration: 'none', color: "black", width: '100%'}}>
-                <VStack sx={styles.cardContent} justifyContent={'space-between'}>
+                <VStack sx={styles.cardContent} >
                     <HStack justifyContent={'flex-end'} gap={1}>
-                        <IconCard icon={icon} iconColor={iconColor} text={time}/>
+                        {
+                            time &&
+                            <IconCard icon={icon} iconColor={iconColor} text={time}/>
+                        }
                     </HStack>
                     <HStack justifyContent={'flex-start'} gap={1}>
                         <VStack gap={0} justifyContent={'flex-end'}>
