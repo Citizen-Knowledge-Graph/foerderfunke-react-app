@@ -29,6 +29,9 @@ const ProfileSectionCompleted = () => {
         if (Array.isArray(raw)) {
             return raw.map(r => getChoiceLabel(r, dfObj)).join(", ");
         }
+        if (typeof raw === 'boolean') {
+            return raw ? "yes" : "no";
+        }
         if (raw.startsWith("ff:")) {
             return getChoiceLabel(raw, dfObj);
         }
@@ -41,6 +44,9 @@ const ProfileSectionCompleted = () => {
     const buildUserProfile = () => {
         const elements = [];
         for (const [key, value] of Object.entries(userProfile)) {
+            console.log("***** new key value *****")
+            console.log("key: ", key)
+            console.log("value: ", value)
             if (key.startsWith("@")) continue;
             let dfObj = metadata.df[expand(key)];
             let dfLabel = dfObj.label;

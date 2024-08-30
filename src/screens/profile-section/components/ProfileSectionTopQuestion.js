@@ -78,8 +78,6 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
         }
     };
 
-    console.log('ProfileSectionTopQuestion render', questionsStack);
-
     return (
         <VStack sx={{width: '100%'}} gap={3}>
             <ProfileSectionHeader handleBack={handleBack}/>
