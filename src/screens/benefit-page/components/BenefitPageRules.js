@@ -61,13 +61,13 @@ const BenefitPageRules = ({benefitId}) => {
 
     const buildSingleRuleReportOutput = (dfObj, isValid = false) => {
         if (isValid) {
-            return ["green", "--> Your input is valid"];
+            return ["green", "Valid"];
         }
         if (benefitReport.missingUserInput.find(missing => missing.dfUri === dfObj.uri)) {
-            return ["gray", "--> Your input is missing"];
+            return ["gray", "Missing"];
         }
         if (benefitReport.violations.find(violation => violation.path === dfObj.uri)) {
-            return ["red", "--> Your input is invalid"];
+            return ["red", "Invalid"];
         }
         return [];
     }
@@ -98,17 +98,25 @@ const BenefitPageRules = ({benefitId}) => {
         for (let dfUri of Object.keys(rulesData)) {
             let rulesObj = rulesData[dfUri];
             let dfObj = metadata.df[dfUri];
-            elements.push(<h3 key={dfUri}>{dfObj?.label ?? "Or-Rule"}</h3>);
-            elements.push(<div key={dfUri + "_rule"}>{buildSingleRuleOutput(rulesObj, dfObj)}</div>);
+            let td1 = <h3>{dfObj?.label ?? "Or-Rule"}</h3>;
+            let td2 = <div>{buildSingleRuleOutput(rulesObj, dfObj)}</div>;
+            let td3, td4;
             if (dfObj) { // for or-cases this is undefined
                 dfObj.uri = dfUri;
                 const [color, msg] = buildSingleRuleReportOutput(dfObj, benefitReport.result === ValidationResult.ELIGIBLE);
-                elements.push(<div key={dfUri + "_report"} style={{ color: color }}>{msg}</div>);
-                elements.push(<small key={dfUri + "_value"}>{showUserValue(dfObj)}</small>);
+                td3 = <small>{showUserValue(dfObj)}</small>;
+                td4 = <div style={{ color: color }}>{msg}</div>;
             }
-            elements.push(<br key={dfUri + "_br"}/>)
+            elements.push(
+                <tr key={dfUri}>
+                    <td style={{border: "1px solid black"}}>{td1}</td>
+                    <td style={{border: "1px solid black"}}>{td2}</td>
+                    <td style={{border: "1px solid black"}}>{td3 ?? "-"}</td>
+                    <td style={{border: "1px solid black"}}>{td4 ?? "-"}</td>
+                </tr>
+            );
         }
-        return elements;
+        return elements
     }
 
     useEffect(() => {
@@ -129,7 +137,13 @@ const BenefitPageRules = ({benefitId}) => {
     return (
         <>
             {loaded &&
-                <span>{buildRulesOutput()}</span>
+                <table style={{border: "1px solid black"}}>
+                    <th style={{border: "1px solid black"}}>Data field</th>
+                    <th style={{border: "1px solid black"}}>Rule</th>
+                    <th style={{border: "1px solid black"}}>Your value</th>
+                    <th style={{border: "1px solid black"}}>Validity</th>
+                    {buildRulesOutput()}
+                </table>
             }
         </>
     );
