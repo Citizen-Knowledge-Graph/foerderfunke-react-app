@@ -1,5 +1,4 @@
 import React from 'react';
-import {Typography} from "@mui/material";
 import HStack from "../../../../../components/HStack";
 import LandingPageWAppButton from "../../../components/LandingPageWAppButton";
 import NarBarLink from "../../../../../components/NavBarLink";

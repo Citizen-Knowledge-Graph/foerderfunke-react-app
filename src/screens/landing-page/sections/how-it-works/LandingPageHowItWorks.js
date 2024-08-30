@@ -6,7 +6,6 @@ import VStack from "../../../../components/VStack";
 import HStack from "../../../../components/HStack";
 import {Typography} from "@mui/material";
 import LandingPageBasics from "./components/LandingPageBasics";
-import LandingPageClaimCard from "./components/LandingPageClaimCard";
 import LandingPageWAppButton from "../../components/LandingPageWAppButton";
 
 const LandingPageHowItWorks = ({isDesktop}) => {

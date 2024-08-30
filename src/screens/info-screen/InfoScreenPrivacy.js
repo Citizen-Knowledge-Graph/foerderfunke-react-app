@@ -2,7 +2,6 @@ import React from "react";
 import {Typography} from "@mui/material";
 import InfoScreen from "./components/InfoScreen";
 import VStack from "../../components/VStack";
-import HStack from "../../components/HStack";
 
 const InfoScreenPrivacy = () => {
     return (

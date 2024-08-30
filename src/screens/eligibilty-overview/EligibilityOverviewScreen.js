@@ -5,7 +5,6 @@ import EligibilityOverviewList from "./components/EligibilityOverviewList";
 import {useValidationReportStore} from '../../storage/zustand';
 import {useFetchEligibilityReports} from "./hooks/useFetchEligibilityReports";
 import {useFetchHydrationData} from "./hooks/useFetchHydrationData";
-import EligibilityOverviewFilter from "./components/EligibilityOverviewFilter";
 import AppScreenWrapper from "../../components/AppScreenWrapper";
 import {useStore} from "../../components/ViewportUpdater";
 import Divider from "@mui/material/Divider";
