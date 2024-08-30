@@ -8,6 +8,7 @@ import RedeemIcon from '@mui/icons-material/Redeem';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import {useMetadataStore} from "../../../storage/zustand";
+import Divider from "@mui/material/Divider";
 
 const ProfileSectionTopHeader = ({validationReport}) => {
     const [benefitsListVisible, setBenefitsListVisible] = useState(false);
@@ -49,13 +50,17 @@ const ProfileSectionTopHeader = ({validationReport}) => {
                                 </HStack>
                                 {
                                     benefitsListVisible && (
-                                        <VStack>
-                                            {eligibleRpUris.map((rpUri, index) => (
-                                                <Typography key={index} sx={styles.benefitsUnlockedSubText}>
-                                                    {metadata.rp[rpUri].title}
-                                                </Typography>
-                                            ))}
-                                        </VStack>
+                                        <>
+                                            <Divider sx={{backgroundColor: globalStyles.secondaryColor}}/>
+                                            <VStack alignItems={'center'}>
+                                                {eligibleRpUris.map((rpUri, index) => (
+
+                                                    <Typography key={index} sx={styles.benefitsUnlocked}>
+                                                        {metadata.rp[rpUri].title}
+                                                    </Typography>
+                                                ))}
+                                            </VStack>
+                                        </>
                                     )
                                 }
                             </VStack>
@@ -96,6 +101,12 @@ const styles = {
     },
     benefitsUnlockedSubText: {
         fontSize: '14px',
+        color: globalStyles.secondaryColor
+    },
+    benefitsUnlocked: {
+        fontSize: '16px',
+        padding: '8px',
+        fontWeight: 'bold',
         color: globalStyles.secondaryColor
     }
 };
