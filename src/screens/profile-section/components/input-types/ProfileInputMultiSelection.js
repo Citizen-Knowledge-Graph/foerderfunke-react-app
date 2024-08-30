@@ -1,8 +1,7 @@
 import React, { useMemo } from 'react';
-import { Autocomplete, TextField, Chip, Typography } from '@mui/material';
+import { Checkbox, FormControlLabel, FormGroup, Typography } from '@mui/material';
 
 const ProfileInputMultiSelection = ({ value, setValue, currentField, error }) => {
-
     const choices = useMemo(() => {
         const map = {};
         currentField.choices.forEach((choice) => {
@@ -11,33 +10,34 @@ const ProfileInputMultiSelection = ({ value, setValue, currentField, error }) =>
         return map;
     }, [currentField.choices]);
 
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
+    const handleChange = (event) => {
+        const selectedValue = event.target.name;
+        const isChecked = event.target.checked;
+
+        if (isChecked) {
+            setValue([...value, selectedValue]);
+        } else {
+            setValue(value.filter((item) => item !== selectedValue));
+        }
     };
 
     return (
         <>
-            <Autocomplete
-                multiple
-                id="multi-select-autocomplete"
-                options={currentField.choices.map((choice) => choice.value)}
-                value={value ? value : []}
-                onChange={handleChange}
-                getOptionLabel={(option) => choices[option]}
-                renderTags={(value, getTagProps) =>
-                    value.map((option, index) => (
-                        <Chip variant="outlined" label={choices[option]} {...getTagProps({ index })} key={option} />
-                    ))
-                }
-                renderInput={(params) => (
-                    <TextField
-                        {...params}
-                        variant="outlined"
-                        label={currentField.label || "Select multiple values"}
-                        placeholder="Choose options"
+            <FormGroup>
+                {Object.entries(choices).map(([key, label]) => (
+                    <FormControlLabel
+                        key={key}
+                        control={
+                            <Checkbox
+                                checked={value.includes(key)}
+                                onChange={handleChange}
+                                name={key}
+                            />
+                        }
+                        label={label}
                     />
-                )}
-            />
+                ))}
+            </FormGroup>
             {error && (
                 <Typography variant="body1" color="error">
                     {error}
