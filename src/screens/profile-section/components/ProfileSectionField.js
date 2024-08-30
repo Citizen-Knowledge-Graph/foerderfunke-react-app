@@ -69,6 +69,7 @@ const ProfileSectionField = ({
                         ) : (
                             <Button variant="text"
                                     sx={{
+                                        width: '100%',
                                         fontSize: '16px',
                                         color: 'black',
                                         fontWeight: 'bold',
