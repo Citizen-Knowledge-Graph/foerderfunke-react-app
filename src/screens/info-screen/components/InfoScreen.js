@@ -8,7 +8,6 @@ import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
 import {useStore} from "../../../components/ViewportUpdater";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import globalStyles from "../../../styles/styles";
 
 const InfoScreen = ({title, children, imageUrl, backLink, forwardLink, hideNextButton = false}) => {
     const isDesktop = useStore((state) => state.isDesktop);
