@@ -1,17 +1,21 @@
 import HStack from "../../../../../components/HStack";
-import {green} from "@mui/material/colors";
 import VStack from "../../../../../components/VStack";
 import {Typography} from "@mui/material";
 import React from "react";
+import globalStyles from "../../../../../styles/styles";
 
-const LandingPagePrincipleCard = ({ isDesktop, icon, title, text }) => {
+const LandingPagePrincipleCard = ({ isDesktop, icon, gif, title, text }) => {
     const padding = isDesktop ? '24px' : '0px';
+    const gifUrl = `${process.env.PUBLIC_URL}/assets/images/landing-page/${gif}.gif`; // Construct your GIF URL
 
     return (
         <VStack gap={2} sx={{flex: 1}}>
             <HStack justifyContent={'center'}>
-                {React.createElement(icon, { sx: { fontSize: 120, color: green[500] } })}
-            </HStack>
+                {gif ? (
+                    <img src={gifUrl} alt="gif" style={{ width: '120px', height: '120px', borderRadius: '12px' }} />
+                ) : (
+                    React.createElement(icon, { sx: { fontSize: 120, color: globalStyles.secondaryColor } })
+                )}            </HStack>
             <VStack gap={1} sx={{padding: padding}}>
                 <HStack>
                     <Typography sx={styles.itemHeaderText}>

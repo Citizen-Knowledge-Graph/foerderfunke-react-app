@@ -15,7 +15,7 @@ const ProfileSectionScreen = () => {
 
     return (
         <Layout isApp={true} logo={false}>
-            <AppScreenWrapper isDesktop={isDesktop}>
+            <AppScreenWrapper isDesktop={isDesktop} data-testid={"app wrapper"}>
                 {profileQuestions ? (
                     !completed ? (
                         fixedSetOfQuestionsMode ? (

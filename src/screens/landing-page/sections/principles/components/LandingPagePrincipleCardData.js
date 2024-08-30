@@ -7,9 +7,10 @@ const LandingPagePrincipleCardData = ({isDesktop}) => {
     const text = 'It is important to us that you maintain control over your data. That\'s why your data ' +
         'remains encrypted on your end device.';
     const icon = OpenWithIcon;
+    const gif = 'privacy-by-design';
 
     return (
-        <LandingPagePrincipleCard isDesktop={isDesktop} icon={icon} title={title} text={text}/>
+        <LandingPagePrincipleCard isDesktop={isDesktop} icon={icon} gif={gif} title={title} text={text}/>
     )
 }
 

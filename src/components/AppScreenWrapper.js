@@ -18,6 +18,8 @@ const AppScreenWrapper = ({isDesktop, isTop = true, children, back=false}) => {
             paddingRight: horizontalPadding,
             paddingTop: verticalPadding,
             paddingBottom: verticalPadding,
+            minHeight: '100%',
+            boxSizing: 'border-box',
         }}>
             {isDesktop ? (
                 <VStack sx={{
