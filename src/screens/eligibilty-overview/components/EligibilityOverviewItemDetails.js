@@ -1,21 +1,44 @@
 import React from 'react';
-import {Typography} from '@mui/material';
-import ClickIconCard from "../../../components/ClickIconCard";
+import {Button, Typography} from '@mui/material';
 import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
-import {grey} from "@mui/material/colors";
+import {Link} from "react-router-dom";
+import globalStyles from "../../../styles/styles";
 
 const EligibilityOverviewItemDetails = ({item}) => {
     return (
-        <VStack gap={0} alignItems={'flex-start'}>
-            <Typography variant="body2" gutterBottom>
+        <VStack alignItems={'flex-start'}>
+            <Typography sx={styles.itemDescription}>
                 {item.description}
             </Typography>
             <HStack>
-                <ClickIconCard link={`/benefit-page/${item.id}`} text={'Learn more'} iconColor={grey[700]} icon={null}/>
+                <Button
+                    sx={styles.learnMoreButton}
+                    variant="text"
+                    component={Link}
+                    to={`/benefit-page/${item.id}`}>
+                    Learn More
+                </Button>
             </HStack>
         </VStack>
     );
+};
+
+const styles = {
+    itemDescription: {
+        fontSize: '16px',
+        fontWeight: '400',
+    },
+    learnMoreButton: {
+        borderWidth: '1px',
+        borderStyle: 'solid',
+        borderRadius: '15px',
+        borderColor: globalStyles.colorDarkGrey,
+        color: globalStyles.colorDarkGrey,
+        fontSize: '14px',
+        fontWeight: 'bold',
+        textTransform: 'none',
+    }
 };
 
 export default EligibilityOverviewItemDetails;

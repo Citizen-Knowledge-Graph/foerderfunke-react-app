@@ -13,15 +13,18 @@ const EligibilityOverviewItem = ({item, eligible}) => {
         setShowDescription(prevState => !prevState);
     };
 
+    const bottomMargin = showDescription ? '16px' : '0';
+    const fontWeight = showDescription ? 'bold' : '400';
+
     const color = (eligible === 'eligible') ? green[500] : ((eligible === 'non-eligible') ? red[500] :
         grey[500]);
 
     return (
-        <HStack justifyContent={'flex-start'} sx={{width: '100%'}}>
+        <HStack justifyContent={'flex-start'} sx={{width: '100%', marginBottom: bottomMargin}}>
             <Circle sx={{color: color}}/>
             <HStack justifyContent={'space-between'} sx={{width: '100%'}}>
-                <VStack gap={0} alignItems={'flex-start'}>
-                    <Typography variant="body1" gutterBottom sx={styles.itemTitle}>
+                <VStack gap={1} alignItems={'flex-start'}>
+                    <Typography sx={{...styles.itemTitle, fontWeight: fontWeight}}>
                         {item.title}
                     </Typography>
                     {showDescription && (
@@ -39,11 +42,8 @@ const EligibilityOverviewItem = ({item, eligible}) => {
 };
 
 const styles = {
-    titleText: {
-        fontWeight: 'bold',
-    },
     itemTitle: {
-        fontWeight: '400',
+        fontSize: '20px',
     }
 };
 
