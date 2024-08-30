@@ -99,8 +99,7 @@ const BenefitPageRules = ({benefitId}) => {
         for (let dfUri of Object.keys(rulesData)) {
             let rulesObj = rulesData[dfUri];
             let dfObj = metadata.df[dfUri];
-            let labelCell = <Typography variant="h6">{dfObj?.label ?? "Or-Rule"}</Typography>;
-            let ruleCell = <Typography>{buildSingleRuleOutput(rulesObj, dfObj)}</Typography>;
+            let requirementCell = <Typography><strong>{dfObj?.label ?? "Or-Rule"}</strong>: {buildSingleRuleOutput(rulesObj, dfObj)}</Typography>;
             let userValueCell, validityCell;
             if (dfObj) {
                 dfObj.uri = dfUri;
@@ -110,8 +109,7 @@ const BenefitPageRules = ({benefitId}) => {
             }
             elements.push(
                 <TableRow key={dfUri}>
-                    <TableCell>{labelCell}</TableCell>
-                    <TableCell>{ruleCell}</TableCell>
+                    <TableCell>{requirementCell}</TableCell>
                     <TableCell>{userValueCell ?? "-"}</TableCell>
                     <TableCell>{validityCell ?? "-"}</TableCell>
                 </TableRow>
@@ -142,9 +140,8 @@ const BenefitPageRules = ({benefitId}) => {
                     <Table>
                         <TableHead>
                             <TableRow>
-                                <TableCell>Data field</TableCell>
-                                <TableCell>Rule</TableCell>
-                                <TableCell>Your value</TableCell>
+                                <TableCell>Requirements</TableCell>
+                                <TableCell>Your answer</TableCell>
                                 <TableCell>Validity</TableCell>
                             </TableRow>
                         </TableHead>
