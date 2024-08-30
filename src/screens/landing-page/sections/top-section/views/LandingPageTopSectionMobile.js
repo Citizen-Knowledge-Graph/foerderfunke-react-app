@@ -9,7 +9,7 @@ const LandingPageTopSectionMobile = ({benefits}) => {
         <VStack>
             <VStack alignItems={'center'}>
                 <Typography sx={styles.headerSectionTitle}>
-                    Check benefits and financial support you can get support
+                    Check benefits and financial support you can get
                 </Typography>
                 <LandingPageWAppButton backgroundColor={'primary'}/>
             </VStack>

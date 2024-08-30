@@ -10,9 +10,9 @@ const LandingPageHowItWorksDesktop = ({figma_phone_1, figma_phone_2}) => {
             <HStack justifyContent={'space-between'} sx={{width: '60%'}}>
                 <LandingPageInfoCard
                     title="Answer some basic questions"
-                    text="Do a quick check, create your profile, or browse our list of social benefits. Your choice."/>
+                    text="Do a quick check, create your profile, or browse our list of social benefits by topic. Your choice."/>
                 <LandingPageInfoCard
-                    title="Get your potential benefits listed"
+                    title="See your potential benefits"
                     text="The more complete your profile is, the more accurate the list of benefits you get."/>
             </HStack>
             <HStack justifyContent={'space-between'} alignItems={'center'} sx={{position: 'relative'}}>

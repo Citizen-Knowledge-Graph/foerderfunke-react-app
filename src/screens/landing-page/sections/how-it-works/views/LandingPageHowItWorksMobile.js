@@ -7,7 +7,7 @@ const LandingPageHowItWorksMobile = ({figma_phone_1, figma_phone_2}) => {
         <VStack alignItems={'center'}>
             <LandingPageInfoCard
                 title="Get your potential benefits listed"
-                text="The more complete your profile is, the more accurate the list of benefits you get."/>
+                text="Do a quick check, create your profile, or browse our list of social benefits by topic. Your choice."/>
             <img
                 src={figma_phone_1}
                 style={{
@@ -17,7 +17,7 @@ const LandingPageHowItWorksMobile = ({figma_phone_1, figma_phone_2}) => {
                 }}
                 alt={'phone 1'}/>
             <LandingPageInfoCard
-                title="Get your potential benefits listed"
+                title="See your potential benefits"
                 text="The more complete your profile is, the more accurate the list of benefits you get."/>
             <img
                 src={figma_phone_2}

@@ -23,19 +23,19 @@ const LandingPageBasics = () => {
                     <HStack alignItems={'center'}>
                         <CheckCircleIcon sx={styles.icon}/>
                         <Typography sx={styles.itemText}>
-                            <strong>Your data is yours!</strong> All the information you fill in is stored locally only on your device
+                            <strong>Your data is yours!</strong> All the information you fill in is stored only locally on your device
                         </Typography>
                     </HStack>
                     <HStack alignItems={'center'}>
                         <CheckCircleIcon sx={styles.icon}/>
                         <Typography sx={styles.itemText}>
-                            <strong>No registration</strong>, no login, no bullsh*t
+                            <strong>No registration</strong>, no login needed
                         </Typography>
                     </HStack>
                     <HStack alignItems={'center'}>
                         <CheckCircleIcon sx={styles.icon}/>
                         <Typography sx={styles.itemText}>
-                            You can use the <strong>desktop or mobile version</strong>
+                            You can use it on the <strong>phone or laptop</strong>
                         </Typography>
                     </HStack>
                 </VStack>

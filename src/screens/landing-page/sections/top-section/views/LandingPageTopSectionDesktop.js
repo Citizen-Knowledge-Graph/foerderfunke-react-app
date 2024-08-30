@@ -11,7 +11,7 @@ const LandingPageTopSectionDesktop = ({benefits}) => {
         <HStack justifyContent={'space-between'} alignItems={'center'}>
             <VStack alignItems={'flex-start'} sx={{maxWidth: '40%'}}>
                 <Typography sx={styles.headerSectionTitle}>
-                    Check benefits and financial support you can get support
+                    Check benefits and financial support you can get
                 </Typography>
                 <LandingPageWAppButton backgroundColor={'primary'}/>
             </VStack>

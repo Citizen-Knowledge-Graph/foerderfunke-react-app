@@ -7,6 +7,7 @@ import HStack from "../../../../components/HStack";
 import {Typography} from "@mui/material";
 import LandingPageBasics from "./components/LandingPageBasics";
 import LandingPageClaimCard from "./components/LandingPageClaimCard";
+import LandingPageWAppButton from "../../components/LandingPageWAppButton";
 
 const LandingPageHowItWorks = ({isDesktop}) => {
     const figma_phone_1 = `${process.env.PUBLIC_URL}/assets/images/figma_phone_v1.svg`;
@@ -34,8 +35,8 @@ const LandingPageHowItWorks = ({isDesktop}) => {
                 <VStack>
                     <LandingPageBasics/>
                 </VStack>
-                <VStack>
-                    <LandingPageClaimCard/>
+                <VStack alignItems={'center'}>
+                    <LandingPageWAppButton backgroundColor={'primary'}/>
                 </VStack>
             </VStack>
         </LandingPageSectionWrapper>

@@ -2,6 +2,7 @@ import React from "react";
 import {Button} from "@mui/material";
 import {Link} from "react-router-dom";
 import globalStyles from "../../../styles/styles";
+import HStack from "../../../components/HStack";
 
 const LandingPageWAppButton = ({backgroundColor}) => {
     const buttonColor = (() => {
@@ -27,8 +28,11 @@ const LandingPageWAppButton = ({backgroundColor}) => {
     })();
 
     return (
-        <Button variant="text" sx={{...styles.button, backgroundColor: buttonColor, color: textColor}} component={Link}
-                to="/user-routing">Discover benefits</Button>
+        <HStack>
+            <Button variant="text" sx={{...styles.button, backgroundColor: buttonColor, color: textColor}}
+                    component={Link}
+                    to="/user-routing">Discover benefits</Button>
+        </HStack>
     );
 }
 
