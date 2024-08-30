@@ -5,8 +5,8 @@ import HStack from "../../../components/HStack";
 import EligibilityOverviewItem from "./EligibilityOverviewItem";
 
 const EligibilityOverviewList = ({items, eligible}) => {
-    const headerText = (eligible === 'eligible') ? 'Berechtigt für:' : ((eligible === 'non-eligible') ? 'Nicht berechtigt für:' :
-        'Unklar für:');
+    const headerText = (eligible === 'eligible') ? 'Eligible:' : ((eligible === 'non-eligible') ? 'Missing data:' :
+        'Not eligible:');
 
     return (
         <VStack sx={{width: '100%'}}>
