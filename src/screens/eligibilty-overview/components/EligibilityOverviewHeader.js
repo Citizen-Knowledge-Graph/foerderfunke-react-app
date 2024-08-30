@@ -12,7 +12,12 @@ const EligibilityOverviewScreen = ({isDesktop}) => {
 
 
     return (
-        <VStack gap={0} alignItems={'flex-start'} sx={{width: '100%'}}>
+        <VStack gap={0} alignItems={'flex-start'} sx={{
+            width: '100%',
+            backgroundColor: globalStyles.primaryColorTransparent,
+            padding: '16px',
+            borderRadius: '12px'
+        }}>
             <VStack alignItems={'flex-start'} gap={3}>
                 <VStack gap={1}>
                     <Typography sx={{...styles.titleText, fontSize: titleFontSize}}>
@@ -22,16 +27,6 @@ const EligibilityOverviewScreen = ({isDesktop}) => {
                         Results are based on the information you provided.
                     </Typography>
                 </VStack>
-                {/*
-                <HStack justifyContent={'flex-start'}>
-                    <HStack sx={styles.enterInfoBox}>
-                        <Typography sx={styles.enterInfoText}>
-                            Enter more information in your profile and discover if you are eligible for more
-                            benefits
-                        </Typography>
-                    </HStack>
-                </HStack>
-                */}
                 {
                     visible && (
                         <HStack justifyContent={'flex-start'}>
@@ -40,7 +35,7 @@ const EligibilityOverviewScreen = ({isDesktop}) => {
                                     Results are not legally binding
                                 </Typography>
                                 <Close
-                                    sx={{color: globalStyles.tertiaryColor, fontSize: '16px'}}
+                                    sx={{color: 'white', fontSize: '16px'}}
                                     onClick={() => setVisible(false)}
                                 />
                             < /HStack>
@@ -104,11 +99,12 @@ const styles = {
         borderRadius:
             '12px',
         backgroundColor:
-        globalStyles.tertiaryColorTransparent,
+        globalStyles.tertiaryColor,
     }
     ,
     liableInfoText: {
-        fontSize: '12px'
+        fontSize: '14px',
+        color: 'white'
     }
 };
 

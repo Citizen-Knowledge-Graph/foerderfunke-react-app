@@ -51,7 +51,7 @@ const ProfileSectionTopHeader = ({validationReport}) => {
                                 {
                                     benefitsListVisible && (
                                         <>
-                                            <Divider sx={{backgroundColor: globalStyles.secondaryColor}}/>
+                                            <Divider sx={{backgroundColor: globalStyles.colorLightGreyTransparent}}/>
                                             <VStack alignItems={'center'}>
                                                 {eligibleRpUris.map((rpUri, index) => (
 
