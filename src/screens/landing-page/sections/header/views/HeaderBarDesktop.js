@@ -13,9 +13,6 @@ const HeaderBarDesktop = ({isApp}) => {
                 <NarBarLink to={"/#about-us"} title={'About us'}/>
                 {isApp ? null : <LandingPageWAppButton backgroundColor={'primary'}/>}
             </HStack>
-            <Typography>
-                EN/DE
-            </Typography>
         </HStack>
     )
 }
