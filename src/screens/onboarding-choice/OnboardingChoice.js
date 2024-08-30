@@ -25,7 +25,7 @@ const OnboardingChoice = () => {
                     link="/onboarding-welcome-topics"
                     time="5 Min."
                     title="Quick eligibility check"
-                    subtitle="Based on 10 benefits"
+                    subtitle="Based on up to 10 benefits"
                     backgroundColor={globalStyles.colorAmberOrange}
                 />
                 <ClickCard

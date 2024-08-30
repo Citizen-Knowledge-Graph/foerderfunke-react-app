@@ -41,7 +41,7 @@ const OnboardingWelcomeScreen = ({children, buttonText, link, isLoading = false}
                         <HStack>
                             <IconCard icon={AccessTimeIcon} iconColor={globalStyles.secondaryColor} text="5 Min."/>
                             <IconCard icon={StarBorderIcon} iconColor={globalStyles.primaryColor}
-                                      text={`Based on ${calculateNumberOfBenefits()} Benefits`}/>
+                                      text={`Based on ${calculateNumberOfBenefits()} benefits`}/>
                         </HStack>
                     </VStack>
                     {children}
