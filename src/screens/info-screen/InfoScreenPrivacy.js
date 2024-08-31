@@ -12,12 +12,12 @@ const InfoScreenPrivacy = () => {
                     not offer user accounts</strong> managed by us.
                 </Typography>
                 <Typography sx={styles.infoText}>
-                    All of your information is only <strong>stored locally on your browser</strong>.
+                    All of your information is only <strong>stored locally in your browser</strong>.
                 </Typography>
             </VStack>
             <VStack gap={1} sx={styles.optionsBox}>
                 <Typography sx={styles.infoText}>
-                    You do have some <strong>options</strong> though
+                    You do have some <strong>options</strong> though:
                 </Typography>
                 <ul style={styles.list}>
                     <li>
@@ -25,7 +25,7 @@ const InfoScreenPrivacy = () => {
                             file.</Typography>
                     </li>
                     <li>
-                        <Typography sx={styles.infoText}>You can <strong>export your data and erase it</strong> from the
+                        <Typography sx={styles.infoText}>You can <strong>erase it</strong> from the
                             browser with one click.</Typography>
                     </li>
                 </ul>
