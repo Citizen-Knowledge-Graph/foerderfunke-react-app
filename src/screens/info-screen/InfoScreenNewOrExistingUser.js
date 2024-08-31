@@ -69,12 +69,18 @@ const InfoScreenNewOrExistingUser = () => {
         initNewUser();
     }
 
+    const deleteProfile = () => {
+        localStorage.clear();
+        window.location.href = '/';
+    }
+
     return (
         userExists ? (
             <InfoScreen title="Oh, hey there!" hideNextButton={true}>
                 <div>We found a profile in the local storage of your browser. Do you want to continue using it?</div>
 
                 <small style={{color: "gray"}} onClick={exportProfile}>Export profile</small>
+                <small style={{color: "gray"}} onClick={deleteProfile}>Delete profile</small>
 
                 <h3 onClick={continueWithExisting}>Continue with existing profile --></h3>
                 <h3 style={{marginTop: -10}} onClick={startOver}>Delete existing and continue with a new one --></h3>
