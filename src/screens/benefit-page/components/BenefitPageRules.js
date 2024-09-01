@@ -77,6 +77,9 @@ const BenefitPageRules = ({benefitId}) => {
         if (Array.isArray(raw)) {
             return raw.map(r => getChoiceLabel(r, dfObj)).join(", ");
         }
+        if (typeof raw === 'boolean') {
+            return raw ? "yes" : "no";
+        }
         if (raw.startsWith("ff:")) {
             return getChoiceLabel(raw, dfObj);
         }
@@ -84,7 +87,7 @@ const BenefitPageRules = ({benefitId}) => {
             return dayjs(raw).format("YYYY-MM-DD");
         }
         return raw;
-    }
+    };
 
     const showUserValue = (dfObj) => {
         if (dfObj.datafield && userProfile[dfObj.datafield]) { // ff:pensionable and ff:age don't have it, they will also not show up in the profile as they are materialized on the fly
