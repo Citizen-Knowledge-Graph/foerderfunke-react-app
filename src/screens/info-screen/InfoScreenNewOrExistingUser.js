@@ -128,35 +128,36 @@ const InfoScreenNewOrExistingUser = () => {
                             </VStack>
                         </VStack>
                         <HStack justifyContent={'center'}>
-                            <VStack gap={1} sx={styles.optionsBox} alignItems={'center'}>
-                                <Typography sx={styles.optionsText}>
-                                    You have some more options:
-                                </Typography>
-                                <VStack gap={1}>
-                                    <Button variant="text"
-                                            sx={{
-                                                fontSize: '12px',
-                                                padding: '8px',
-                                                color: globalStyles.colorDarkGrey,
-                                                textTransform: 'none',
-                                                borderRadius: '12px',
-                                            }}
-                                            startIcon={<FileDownloadIcon sx={{color: globalStyles.colorDarkGrey}}/>}
-                                            onClick={exportProfile}
-                                    >Export your profile</Button>
-                                    <Button variant="text"
-                                            sx={{
-                                                fontSize: '12px',
-                                                color: globalStyles.colorDarkGrey,
-                                                textTransform: 'none',
-                                                padding: '8px',
-                                                borderRadius: '12px',
-                                            }}
-                                            startIcon={<DeleteIcon sx={{color: globalStyles.colorDarkGrey}}/>}
-                                            onClick={deleteProfile}
-                                    >Delete your profile</Button>
-                                </VStack>
-                            </VStack>
+                            <HStack gap={3}>
+                                <Button variant="text"
+                                        sx={{
+                                            fontSize: '10px',
+                                            padding: '8px',
+                                            color: globalStyles.colorDarkGrey,
+                                            textTransform: 'none',
+                                            borderRadius: '12px',
+                                            borderWidth: '1px',
+                                            borderStyle: 'solid',
+                                            borderColor: globalStyles.colorDarkGrey
+                                        }}
+                                        startIcon={<FileDownloadIcon sx={{color: globalStyles.colorDarkGrey}}/>}
+                                        onClick={exportProfile}
+                                >Export your profile</Button>
+                                <Button variant="text"
+                                        sx={{
+                                            fontSize: '10px',
+                                            color: globalStyles.colorDarkGrey,
+                                            textTransform: 'none',
+                                            padding: '8px',
+                                            borderRadius: '12px',
+                                            borderWidth: '1px',
+                                            borderStyle: 'solid',
+                                            borderColor: globalStyles.colorDarkGrey
+                                        }}
+                                        startIcon={<DeleteIcon sx={{color: globalStyles.colorDarkGrey}}/>}
+                                        onClick={deleteProfile}
+                                >Delete your profile</Button>
+                            </HStack>
                         </HStack>
                     </VStack>
                 </InfoScreen>
@@ -180,17 +181,6 @@ const styles = {
     infoBox: {
         width: '100%',
     },
-    optionsText: {
-        fontSize: '16px',
-    },
-    optionsBox: {
-        backgroundColor: '#F5F5F5',
-        borderRadius: '12px',
-        padding: '16px',
-    },
-    list: {
-        listStyleType: 'disc',
-    }
 }
 
 export default InfoScreenNewOrExistingUser;
