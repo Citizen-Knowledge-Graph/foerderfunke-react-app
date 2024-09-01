@@ -11,6 +11,7 @@ const ClickCard = ({
                        link,
                        title,
                        subtitle,
+                       backgroundImage,
                        backgroundColor,
                        time = null,
                        cardHeight = '175px',
@@ -19,8 +20,31 @@ const ClickCard = ({
                    }) => {
     return (
         <VStack justifyContent={'flex-end'}
-            data-testid="card-container"
-                sx={{...styles.card, minHeight: cardHeight, backgroundColor: backgroundColor}}>
+                data-testid="card-container"
+                sx={{
+                    ...styles.card,
+                    minHeight: cardHeight,
+                    backgroundColor: backgroundColor,
+                    backgroundImage: `url(${backgroundImage})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    '&::before': {
+                        content: '""',
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                        zIndex: 1,
+                    },
+                    '& > *': {
+                        position: 'relative',
+                        zIndex: 2,
+                    }
+                }}>
             <Link to={link} style={{textDecoration: 'none', color: "black", width: '100%'}}>
                 <VStack sx={styles.cardContent} >
                     <HStack justifyContent={'flex-end'} gap={1}>

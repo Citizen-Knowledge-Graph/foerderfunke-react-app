@@ -5,10 +5,12 @@ import VStack from "../../components/VStack";
 import ClickCard from "../../components/ClickCard";
 import AppScreenWrapper from "../../components/AppScreenWrapper";
 import {useStore} from "../../components/ViewportUpdater";
-import globalStyles from "../../styles/styles";
 
 const OnboardingChoice = () => {
     const isDesktop = useStore((state) => state.isDesktop);
+    const quickCheckUrl = `${process.env.PUBLIC_URL}/assets/images/choice-screen/quick-check-image.jpg`;
+    const allBenefitsUrl = `${process.env.PUBLIC_URL}/assets/images/choice-screen/all-benefits.jpg`;
+
 
     return (
         <Layout isApp={true}>
@@ -26,13 +28,13 @@ const OnboardingChoice = () => {
                     time="5 Min."
                     title="Quick eligibility check"
                     subtitle="Based on up to 10 benefits"
-                    backgroundColor={globalStyles.colorAmberOrange}
+                    backgroundImage={quickCheckUrl}
                 />
                 <ClickCard
                     link="/eligibility-overview"
                     title="Browse all benefits"
                     subtitle="Filter by topic or from A-Z"
-                    backgroundColor={globalStyles.colorTangerineOrange}
+                    backgroundImage={allBenefitsUrl}
                 />
             </AppScreenWrapper>
         </Layout>
