@@ -1,37 +1,34 @@
-import React, {useEffect} from 'react';
-import {FormControlLabel, Typography, Radio, RadioGroup} from '@mui/material';
+import React from 'react';
+import { FormControlLabel, Typography, Radio, RadioGroup, FormControl } from '@mui/material';
 
 const ProfileInputBoolean = ({ value, setValue, error }) => {
-    useEffect(() => {
-        if (value === null) {
-            setValue(false)
-        }
-    }, [value, setValue]);
-
     const handleChange = (event) => {
         setValue(event.target.value === 'true');
     };
 
     return (
-        <>
-            <RadioGroup row value={String(!!value)} onChange={handleChange}>
-                <FormControlLabel
-                    value="false"
-                    control={<Radio color="primary" />}
-                    label="No"
-                />
-                <FormControlLabel
-                    value="true"
-                    control={<Radio color="primary" />}
-                    label="Yes"
-                />
+        <FormControl component="fieldset" fullWidth>
+            <RadioGroup
+                value={value}
+                onChange={handleChange}
+            >
+                {
+                    [[false, 'No'], [true, 'Yes']].map((choice, i) => (
+                        <FormControlLabel
+                            key={i}
+                            value={choice[0]}
+                            control={<Radio />}
+                            label={choice[1]}
+                        />
+                    ))
+                }
             </RadioGroup>
             {error && (
                 <Typography variant="body1" color="error">
                     {error}
                 </Typography>
             )}
-        </>
+        </FormControl>
     );
 };
 

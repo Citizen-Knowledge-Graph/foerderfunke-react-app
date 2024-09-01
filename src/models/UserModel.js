@@ -53,7 +53,6 @@ export class UserModel {
             throw new Error(`User profile not found for userId: ${userId}`);
         }
 
-        console.log("we are here")
         const removed = removeObjectFromField(userProfile, objectId, datafield, entityData);
 
         if (!removed) {
@@ -143,7 +142,7 @@ function updateOrAddField(data, value, datafield, entityData) {
 
 function retrieveField(data, datafield, entityData) {
     if (data['@id'] === entityData.id && data['@type'] === entityData.type) {
-        if (data[datafield]) {
+        if (data.hasOwnProperty(datafield)) {
             return data[datafield];
         }
     }
@@ -152,7 +151,7 @@ function retrieveField(data, datafield, entityData) {
         if (Array.isArray(data[key])) {
             for (let item of data[key]) {
                 const result = retrieveField(item, datafield, entityData);
-                if (result) {
+                if (result !== null && result !== undefined) {
                     return result;
                 }
             }

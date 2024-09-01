@@ -31,7 +31,7 @@ const ProfileSectionField = ({
         setValue(null);
         setLocalError('');
         fetchProfileField().then(fieldData => {
-            if (fieldData) {
+            if (fieldData !== null) {
                 setValue(fieldData);
             }
         }).catch(error => {
