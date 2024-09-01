@@ -3,8 +3,8 @@ import {FormControlLabel, Typography, Radio, RadioGroup} from '@mui/material';
 
 const ProfileInputBoolean = ({ value, setValue, error }) => {
     useEffect(() => {
-        if (value === undefined || value === null || value === '') {
-            setValue(false);
+        if (value === null) {
+            setValue(false)
         }
     }, [value, setValue]);
 

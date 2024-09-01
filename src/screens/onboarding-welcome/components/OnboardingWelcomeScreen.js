@@ -20,8 +20,11 @@ const OnboardingWelcomeScreen = ({children, buttonText, link, isLoading = false}
 
     const calculateNumberOfBenefits = () => {
         let distinctRPs = {};
+        console.log(metadata)
         for (let topic of selectedTopics) {
+            console.log("topic", topic);
             const topicUri = "https://foerderfunke.org/default#" + topic.id.split(":")[1];
+            console.log("topicUri", topicUri);
             const rps = Object.values(metadata.rp).filter(rp => rp.categories.includes(topicUri));
             for (let rp of rps) {
                 distinctRPs[rp.uri] = true;

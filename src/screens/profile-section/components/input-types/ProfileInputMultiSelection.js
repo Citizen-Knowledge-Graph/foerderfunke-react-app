@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, {useMemo} from 'react';
 import {Checkbox, FormControlLabel, FormGroup, FormLabel, Typography} from '@mui/material';
 
 const ProfileInputMultiSelection = ({ value, setValue, currentField, error }) => {
@@ -15,7 +15,9 @@ const ProfileInputMultiSelection = ({ value, setValue, currentField, error }) =>
         const isChecked = event.target.checked;
 
         if (isChecked) {
-            setValue([...value, selectedValue]);
+            setValue((prevValue) => {
+                return prevValue ? [...prevValue, selectedValue] : [selectedValue];
+            });
         } else {
             setValue(value.filter((item) => item !== selectedValue));
         }

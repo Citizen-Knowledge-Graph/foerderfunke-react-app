@@ -17,7 +17,7 @@ const ProfileSectionField = ({
                                  handleConfirm,
                                  isLoading,
                              }) => {
-    const [value, setValue] = useState('');
+    const [value, setValue] = useState(null);
     const retrieveCurrentEntityData = useProfileSectionStore((state) => state.retrieveCurrentEntityData)
     const entityData = useMemo(() => retrieveCurrentEntityData(), [retrieveCurrentEntityData]);
     const fetchProfileField = useFetchProfileField(currentField.datafield, entityData);
@@ -28,7 +28,7 @@ const ProfileSectionField = ({
     } = useHandleAddClick(currentField, entityData, handleConfirm, setValue);
 
     useEffect(() => {
-        setValue('');
+        setValue(null);
         setLocalError('');
         fetchProfileField().then(fieldData => {
             if (fieldData) {

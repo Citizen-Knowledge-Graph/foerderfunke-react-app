@@ -11,7 +11,7 @@ export const useHandleAddClick = (currentField, entityData, handleConfirm, setVa
         try {
             await validateValue(value);
             await addProfileData(value);
-            setValue('')
+            setValue(null)
             handleConfirm(currentIndex);
         } catch (err) {
             console.error('Error handling add click:', err);
