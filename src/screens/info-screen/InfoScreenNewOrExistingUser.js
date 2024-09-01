@@ -7,6 +7,12 @@ import {UserModel} from "../../models/UserModel";
 import {runValidation} from "../../services/validationService";
 import {convertUserProfileToTurtle} from "@foerderfunke/matching-engine/src/utils";
 import dayjs from "dayjs";
+import VStack from "../../components/VStack";
+import {Button, Typography} from "@mui/material";
+import globalStyles from "../../styles/styles";
+import FileDownloadIcon from '@mui/icons-material/FileDownload';
+import DeleteIcon from '@mui/icons-material/Delete';
+import HStack from "../../components/HStack";
 
 const InfoScreenNewOrExistingUser = () => {
     const updateUserId = useUserStore((state) => state.updateUserId);
@@ -47,7 +53,7 @@ const InfoScreenNewOrExistingUser = () => {
     const exportProfile = async () => {
         const userProfile = UserModel.retrieveUserData(defaultUserId);
         const userProfileTurtleString = await convertUserProfileToTurtle(userProfile);
-        const blob = new Blob([userProfileTurtleString], { type: 'text/turtle' });
+        const blob = new Blob([userProfileTurtleString], {type: 'text/turtle'});
         const link = document.createElement('a');
         link.href = window.URL.createObjectURL(blob);
         link.download = "FörderFunke_ProfileExport_" + dayjs().format("YYYY-MM-DD_HH-mm-ss") + ".ttl";
@@ -76,23 +82,115 @@ const InfoScreenNewOrExistingUser = () => {
 
     return (
         userExists ? (
-            <InfoScreen title="Oh, hey there!" hideNextButton={true}>
-                <div>We found a profile in the local storage of your browser. Do you want to continue using it?</div>
-
-                <small style={{color: "gray"}} onClick={exportProfile}>Export profile</small>
-                <small style={{color: "gray"}} onClick={deleteProfile}>Delete profile</small>
-
-                <h3 onClick={continueWithExisting}>Continue with existing profile --></h3>
-                <h3 style={{marginTop: -10}} onClick={startOver}>Delete existing and continue with a new one --></h3>
-            </InfoScreen>
-        ) : (
-            <>
-                <InfoScreen title="New or existing user">
-                    No existing user found, redirecting to first time user screen...
+                <InfoScreen title="Welcome back" hideNextButton={true}>
+                    <VStack gap={7}>
+                        <VStack gap={3} sx={styles.infoBox}>
+                            <Typography sx={styles.infoText}>
+                                We found a profile in the local storage of your browser. Do you want to continue using it?
+                            </Typography>
+                            <VStack>
+                                <Button variant="text"
+                                        sx={{
+                                            width: '100%',
+                                            fontSize: '16px',
+                                            color: 'black',
+                                            fontWeight: 'bold',
+                                            textTransform: 'none',
+                                            padding: '12px',
+                                            borderRadius: '12px',
+                                            backgroundColor: globalStyles.secondaryColorTransparent
+                                        }}
+                                        onClick={continueWithExisting}
+                                >
+                                    <VStack>
+                                        <Typography sx={{fontWeight: 'bold'}}>Yes</Typography>
+                                        <Typography>You can continue exploring with your profile</Typography>
+                                    </VStack>
+                                </Button>
+                                <Button variant="text"
+                                        sx={{
+                                            width: '100%',
+                                            fontSize: '16px',
+                                            color: 'black',
+                                            fontWeight: 'bold',
+                                            textTransform: 'none',
+                                            padding: '12px',
+                                            borderRadius: '12px',
+                                            backgroundColor: globalStyles.primaryColorTransparent
+                                        }}
+                                        onClick={startOver}
+                                >
+                                    <VStack>
+                                        <Typography sx={{fontWeight: 'bold'}}>No</Typography>
+                                        <Typography>You will start the journey with a new profile</Typography>
+                                    </VStack>
+                                </Button>
+                            </VStack>
+                        </VStack>
+                        <HStack justifyContent={'center'}>
+                            <VStack gap={1} sx={styles.optionsBox} alignItems={'center'}>
+                                <Typography sx={styles.optionsText}>
+                                    You have some more options:
+                                </Typography>
+                                <VStack gap={1}>
+                                    <Button variant="text"
+                                            sx={{
+                                                fontSize: '12px',
+                                                padding: '8px',
+                                                color: globalStyles.colorDarkGrey,
+                                                textTransform: 'none',
+                                                borderRadius: '12px',
+                                            }}
+                                            startIcon={<FileDownloadIcon sx={{color: globalStyles.colorDarkGrey}}/>}
+                                            onClick={exportProfile}
+                                    >Export your profile</Button>
+                                    <Button variant="text"
+                                            sx={{
+                                                fontSize: '12px',
+                                                color: globalStyles.colorDarkGrey,
+                                                textTransform: 'none',
+                                                padding: '8px',
+                                                borderRadius: '12px',
+                                            }}
+                                            startIcon={<DeleteIcon sx={{color: globalStyles.colorDarkGrey}}/>}
+                                            onClick={deleteProfile}
+                                    >Delete your profile</Button>
+                                </VStack>
+                            </VStack>
+                        </HStack>
+                    </VStack>
                 </InfoScreen>
-            </>
-        )
-    );
+            ) :
+            (
+                <>
+                    <InfoScreen title="New or existing user">
+                        No existing user found, redirecting to first time user screen...
+                    </InfoScreen>
+                </>
+            )
+    )
+        ;
+}
+
+const styles = {
+    infoText: {
+        fontSize: '20px',
+        textAlign: 'left',
+    },
+    infoBox: {
+        width: '100%',
+    },
+    optionsText: {
+        fontSize: '16px',
+    },
+    optionsBox: {
+        backgroundColor: '#F5F5F5',
+        borderRadius: '12px',
+        padding: '16px',
+    },
+    list: {
+        listStyleType: 'disc',
+    }
 }
 
 export default InfoScreenNewOrExistingUser;

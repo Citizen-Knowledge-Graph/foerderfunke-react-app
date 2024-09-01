@@ -40,7 +40,6 @@ const styles = {
         textAlign: 'left',
     },
     infoBox: {
-        padding: '16px',
         width: '100%',
     },
     optionsBox: {

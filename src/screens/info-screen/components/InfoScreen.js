@@ -24,7 +24,7 @@ const InfoScreen = ({title, children, imageUrl, backLink, forwardLink, hideNextB
 
     return (
         <Layout isApp={true}>
-            <AppScreenWrapper isDesktop={isDesktop}>
+            <AppScreenWrapper isDesktop={isDesktop} back={true}>
                 <VStack alignItems={'center'} gap={5} sx={{width: "100%"}}>
                     <HStack sx={styles.titleWrapper}>
                         <Typography sx={{...styles.title, fontSize: titleFontSize}}>{title}</Typography>
