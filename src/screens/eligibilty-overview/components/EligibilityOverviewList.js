@@ -8,12 +8,11 @@ import globalStyles from "../../../styles/styles";
 const EligibilityOverviewList = ({items, eligible}) => {
     const headerText = (eligible === 'eligible') ? 'Eligible:' : ((eligible === 'non-eligible') ? 'Not eligible:' :
         'Missing data:');
-    const backgroundColor = (eligible === 'eligible') ? globalStyles.secondaryColorTransparent : null
 
     return (
-        <VStack sx={{width: '100%', backgroundColor: backgroundColor, padding: '12px', borderRadius: '12px'}}>
+        <VStack sx={{width: '100%', padding: '12px', borderRadius: '12px'}}>
             <HStack justifyContent={'flex-start'} sx={{width: '100%'}}>
-                <Typography variant="h6" gutterBottom sx={styles.titleText}>
+                <Typography variant="h6" sx={styles.titleText}>
                     {headerText}
                 </Typography>
             </HStack>
