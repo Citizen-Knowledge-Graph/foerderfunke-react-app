@@ -18,8 +18,12 @@ import globalStyles from "../../styles/styles";
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import DeleteIcon from '@mui/icons-material/Delete';
 import HStack from "../../components/HStack";
+import {useStore} from "../../components/ViewportUpdater";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import ReplayIcon from '@mui/icons-material/Replay';
 
 const InfoScreenNewOrExistingUser = () => {
+    const isDesktop = useStore((state) => state.isDesktop);
     const updateUserId = useUserStore((state) => state.updateUserId);
     const defaultUserId = "ff:quick-check-user";
     const initializeSectionStore = useProfileSectionStore((state) => state.initializeSectionStore);
@@ -86,6 +90,21 @@ const InfoScreenNewOrExistingUser = () => {
         window.location.href = '/';
     }
 
+    const DynamicStacker = ({children}) => {
+        if (isDesktop) {
+            return (
+                <HStack justifyContent={'space-between'}>
+                    {children}
+                </HStack>
+            )
+        }
+        return (
+            <VStack>
+                {children}
+            </VStack>
+        )
+    }
+
     return (
         userExists ? (
                 <InfoScreen title="Welcome back" hideNextButton={true}>
@@ -94,46 +113,57 @@ const InfoScreenNewOrExistingUser = () => {
                             <Typography sx={styles.infoText}>
                                 We found a profile in the local storage of your browser. Do you want to continue using it?
                             </Typography>
-                            <VStack>
-                                <Button variant="text"
-                                        sx={{
-                                            width: '100%',
-                                            fontSize: '16px',
-                                            color: 'black',
-                                            fontWeight: 'bold',
-                                            textTransform: 'none',
-                                            padding: '12px',
-                                            borderRadius: '12px',
-                                            backgroundColor: globalStyles.secondaryColorTransparent
-                                        }}
-                                        onClick={continueWithExisting}
-                                >
-                                    <VStack>
-                                        <Typography sx={{fontWeight: 'bold'}}>Yes</Typography>
-                                        <Typography>You can continue exploring with your profile</Typography>
-                                    </VStack>
-                                </Button>
-                                <Button variant="text"
-                                        sx={{
-                                            width: '100%',
-                                            fontSize: '16px',
-                                            color: 'black',
-                                            fontWeight: 'bold',
-                                            textTransform: 'none',
-                                            padding: '12px',
-                                            borderRadius: '12px',
-                                            backgroundColor: globalStyles.primaryColorTransparent
-                                        }}
-                                        onClick={startOver}
-                                >
-                                    <VStack>
-                                        <Typography sx={{fontWeight: 'bold'}}>No</Typography>
-                                        <Typography>You will start the journey with a new profile</Typography>
-                                    </VStack>
-                                </Button>
-                            </VStack>
+                            <DynamicStacker>
+                                <HStack>
+                                    <Button variant="text"
+                                            sx={{
+                                                fontSize: '16px',
+                                                color: 'white',
+                                                fontWeight: 'bold',
+                                                textTransform: 'none',
+                                                padding: '12px',
+                                                borderRadius: '12px',
+                                                backgroundColor: globalStyles.colorPineGreen,
+                                            }}
+                                            onClick={continueWithExisting}
+                                    >
+                                        <HStack alignItems={'center'}>
+                                            <VStack gap={1} alignItems={'flex-start'} sx={{width: '70%'}}>
+                                                <Typography sx={{fontWeight: 'bold'}}>Yes</Typography>
+                                                <Typography sx={{textAlign: 'left'}}>
+                                                    You can continue exploring with your profile
+                                                </Typography>
+                                            </VStack>
+                                            <ArrowForwardIcon sx={{color: 'white', fontSize: 30, flex: 1}}/>
+                                        </HStack>
+                                    </Button>
+                                </HStack>
+                                <HStack>
+                                    <Button variant="text"
+                                            sx={{
+                                                fontSize: '16px',
+                                                color: 'white',
+                                                fontWeight: 'bold',
+                                                textTransform: 'none',
+                                                padding: '16px',
+                                                borderRadius: '12px',
+                                                backgroundColor: globalStyles.colorSteelBlue,
+                                            }}
+                                            onClick={startOver}
+                                    >
+                                        <HStack alignItems={'center'}>
+                                            <VStack gap={1} alignItems={'flex-start'} sx={{width: '70%'}}>
+                                                <Typography sx={{fontWeight: 'bold'}}>No</Typography>
+                                                <Typography sx={{textAlign: 'left'}}>You will start the journey with a new
+                                                    profile</Typography>
+                                            </VStack>
+                                            <ReplayIcon sx={{color: 'white', fontSize: 30, flex: 1}}/>
+                                        </HStack>
+                                    </Button>
+                                </HStack>
+                            </DynamicStacker>
                         </VStack>
-                        <HStack justifyContent={'center'}>
+                        <HStack>
                             <HStack gap={3}>
                                 <Button variant="text"
                                         sx={{
