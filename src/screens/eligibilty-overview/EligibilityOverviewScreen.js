@@ -2,32 +2,29 @@ import React, {useEffect, useState} from 'react';
 import EligibilityOverviewHeader from "./components/EligibilityOverviewHeader";
 import Layout from "../../components/Layout";
 import EligibilityOverviewList from "./components/EligibilityOverviewList";
-import {useValidationReportStore} from '../../storage/zustand';
-import {useFetchEligibilityReports} from "./hooks/useFetchEligibilityReports";
 import {useFetchHydrationData} from "./hooks/useFetchHydrationData";
 import AppScreenWrapper from "../../components/AppScreenWrapper";
 import {useStore} from "../../components/ViewportUpdater";
 import Divider from "@mui/material/Divider";
 import {runValidation} from "../../services/validationService";
+import {buildEligibilityReports} from "../../utilities/buildEligibilityReports";
 
 const EligibilityOverviewScreen = () => {
     const isDesktop = useStore((state) => state.isDesktop);
     const [eligibilityData, setEligibilityData] = useState();
-    const validationReport = useValidationReportStore((state) => state.validationReport);
     const hydrationData = useFetchHydrationData();
-    const fetchEligibilityReports = useFetchEligibilityReports({validationReport, hydrationData});
     const [hasRerunValidation, setHasRerunValidation] = useState(false);
 
     useEffect(() => {
         const rerunValidation = async () => {
-            await runValidation("ff:quick-check-user");
-            setEligibilityData(fetchEligibilityReports());
-            setHasRerunValidation(true);
+            const validationReport = await runValidation("ff:quick-check-user");
+            setEligibilityData(buildEligibilityReports(validationReport, hydrationData));
         }
         if (hydrationData && !hasRerunValidation) {
+            setHasRerunValidation(true);
             rerunValidation();
         }
-    }, [fetchEligibilityReports, hasRerunValidation, hydrationData]);
+    }, [hasRerunValidation, hydrationData]);
 
     return (
         <Layout isApp={true} logo={true}>
