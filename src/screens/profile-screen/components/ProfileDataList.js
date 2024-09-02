@@ -13,30 +13,39 @@ const ProfileDataList = () => {
 
     return (
         <VStack>
-            <VStack sx={{
-                borderWidth: '1px',
-                borderStyle: 'solid',
-                borderColor: 'lightgrey',
-                borderRadius: '12px',
-                gap: 0,
-            }}>
-                {userProfileData.map(({label, value}, index) => (
-                    <>
-                        <VStack gap={0} key={index}
-                                sx={styles.dataBox}
-                                justifyContent={'center'}
-                        >
-                            <Typography sx={styles.labelText}>
-                                {label}
-                            </Typography>
-                            <Typography sx={styles.valueText}>
-                                {value}
-                            </Typography>
-                        </VStack>
-                        {index < userProfileData.length - 1 && <Divider/>}
-                    </>
-                ))}
-            </VStack>
+            {
+                userProfileData.length > 0 ? (
+                    <VStack sx={{
+                        borderWidth: '1px',
+                        borderStyle: 'solid',
+                        borderColor: 'lightgrey',
+                        borderRadius: '12px',
+                        gap: 0,
+                    }}>
+                        {
+                            userProfileData.map(({label, value}, index) => (
+                                <>
+                                    <VStack gap={0} key={index}
+                                            sx={styles.dataBox}
+                                            justifyContent={'center'}
+                                    >
+                                        <Typography sx={styles.labelText}>
+                                            {label}
+                                        </Typography>
+                                        <Typography sx={styles.valueText}>
+                                            {value}
+                                        </Typography>
+                                    </VStack>
+                                    {index < userProfileData.length - 1 && <Divider/>}
+                                </>
+                            ))}
+                    </VStack>) : (
+                    <VStack sx={styles.restartBox}>
+                        <Typography>
+                            You haven't provided any information about yourself yet
+                        </Typography>
+                    </VStack>)
+            }
             <VStack sx={styles.restartBox}>
                 <HStack gap={3} justifyContent={'space-between'} alignItems={'center'}>
                     <Typography>
