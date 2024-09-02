@@ -20,33 +20,33 @@ const EligibilityOverviewScreen = ({isDesktop}) => {
             }}>
                 <VStack alignItems={'flex-start'} gap={3} sx={{width: '100%'}}>
                     <HStack justifyContent={'space-between'} sx={{width: '100%'}}>
-                        <VStack gap={2}>
+                        <VStack gap={2} sx={{width: '100%'}}>
+                            <HStack justifyContent={'space-between'}>
                             <Typography sx={{...styles.titleText, fontSize: titleFontSize}}>
                                 Your potential benefits
                             </Typography>
+                                <IconButton
+                                    component={Link}
+                                    to='/profile-overview'
+                                    sx={{
+                                        width: 40,
+                                        height: 40,
+                                        borderRadius: '50%',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        backgroundColor: 'white',
+                                        '&:hover': {
+                                            backgroundColor: globalStyles.colorLightGrey,
+                                        },
+                                    }}
+                                >
+                                    <PersonIcon sx={{ fontSize: 20, color: 'black' }} />
+                                </IconButton>
+                            </HStack>
                             <Typography sx={styles.subTitleCardText}>
                                 Results are based on the information you provided.
                             </Typography>
-                        </VStack>
-                        <VStack>
-                            <IconButton
-                                component={Link}
-                                to='/profile-overview'
-                                sx={{
-                                    width: 40,
-                                    height: 40,
-                                    borderRadius: '50%',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    backgroundColor: 'white',
-                                    '&:hover': {
-                                        backgroundColor: globalStyles.colorLightGrey,
-                                    },
-                                }}
-                            >
-                                <PersonIcon sx={{ fontSize: 20, color: 'black' }} />
-                            </IconButton>
                         </VStack>
                     </HStack>
                 </VStack>
