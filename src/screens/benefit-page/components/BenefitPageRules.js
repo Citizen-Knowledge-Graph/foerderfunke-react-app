@@ -8,6 +8,7 @@ import {UserModel} from "../../../models/UserModel";
 import {buildRulesOutput} from "../../../utilities/ruleParsing";
 import VStack from "../../../components/VStack";
 import BenefitPageRuleEntry from "./BenefitPageRuleEntry";
+import Divider from "@mui/material/Divider";
 
 const BenefitPageRules = ({benefitId}) => {
     const [loaded, setLoaded] = useState(false);
@@ -43,11 +44,14 @@ const BenefitPageRules = ({benefitId}) => {
                     <Typography sx={styles.sectionTitle}>
                         Eligibility rules
                     </Typography>
-                    <VStack gap={3}>
+                    <VStack gap={1}>
                         {
                             rules &&
                             rules.map((rule, index) => (
-                                <BenefitPageRuleEntry ruleData={rule} key={index}/>
+                                <VStack gap={1}>
+                                    <BenefitPageRuleEntry ruleData={rule} />
+                                    {index < rules.length - 1 && <Divider />}
+                                </VStack>
                             ))
                         }
                     </VStack>

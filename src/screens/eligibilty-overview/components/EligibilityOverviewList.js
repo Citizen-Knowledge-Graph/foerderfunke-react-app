@@ -3,7 +3,6 @@ import {Typography} from '@mui/material';
 import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
 import EligibilityOverviewItem from "./EligibilityOverviewItem";
-import globalStyles from "../../../styles/styles";
 
 const EligibilityOverviewList = ({items, eligible}) => {
     const headerText = (eligible === 'eligible') ? 'Eligible:' : ((eligible === 'non-eligible') ? 'Not eligible:' :

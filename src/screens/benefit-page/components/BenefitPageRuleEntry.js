@@ -1,46 +1,79 @@
+import React from "react";
 import globalStyles from "../../../styles/styles";
 import VStack from "../../../components/VStack";
 import {Typography} from "@mui/material";
 import HStack from "../../../components/HStack";
-import React from "react";
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import HelpIcon from '@mui/icons-material/Help';
+import CancelIcon from '@mui/icons-material/Cancel';
+import {useStore} from "../../../components/ViewportUpdater";
 
-const BenefitPageRuleEntry = ({ ruleData }) => {
-    const backgroundColor = (() => {
+const BenefitPageRuleEntry = ({ruleData}) => {
+    const isDesktop = useStore((state) => state.isDesktop);
+
+    const icon = (() => {
         switch (ruleData.validity) {
             case 'valid':
-                return globalStyles.secondaryColorTransparent;
+                return <CheckCircleIcon sx={{fontSize: 30, color: globalStyles.secondaryColor}}/>;
             case 'missing':
-                return globalStyles.colorLightGreyTransparent;
+                return <HelpIcon sx={{fontSize: 30, color: globalStyles.colorDarkGrey}}/>;
             case 'invalid':
-                return globalStyles.colorRedTransparent;
+                return <CancelIcon sx={{fontSize: 30, color: globalStyles.colorCoralRed}}/>;
             default:
-                return globalStyles.colorLightGreyTransparent;
+                return <HelpIcon sx={{fontSize: 30, color: globalStyles.colorDarkGrey}}/>;
         }
     })();
 
+    const DynamicStacker = ({children}) => {
+        if (isDesktop) {
+            return (
+                <HStack gap={3} alignItems={'center'}
+                        sx={{
+                            padding: '12px',
+                            borderRadius: '12px',
+                            backgroundColor: globalStyles.colorLightGreyTransparent
+                        }}>
+                    {children}
+                </HStack>
+            )
+        }
+        return (
+            <VStack
+                gap={1}
+                sx={{
+                    padding: '12px',
+                    borderRadius: '12px',
+                    backgroundColor: globalStyles.colorLightGreyTransparent
+                }}>
+                {children}
+            </VStack>
+        )
+    }
+
     return (
-        <HStack gap={3} alignItems={'space-between'} sx={{
-            backgroundColor: backgroundColor,
-            padding: '12px',
-            borderRadius: '12px'
-        }}>
-            <VStack gap={0} sx={{width: '50%'}}>
-                <Typography sx={styles.fieldText}>
-                    {ruleData.requirement.label}
-                </Typography>
-                <Typography sx={styles.requirementText}>
-                    {ruleData.requirement.rule}
-                </Typography>
-            </VStack>
-            <VStack gap={0} sx={{width: '50%'}}>
-                <Typography sx={styles.fieldText}>
-                    Your answer
-                </Typography>
-                <Typography sx={styles.requirementText}>
-                    {ruleData.userValue}
-                </Typography>
-            </VStack>
-        </HStack>
+        <DynamicStacker>
+            <HStack sx={{width: '100%'}}>
+                <VStack gap={0} sx={{width: '50%'}}>
+                    <Typography sx={styles.fieldText}>
+                        {ruleData.requirement.label}
+                    </Typography>
+                    <Typography sx={styles.requirementText}>
+                        {ruleData.requirement.rule}
+                    </Typography>
+                </VStack>
+                <VStack gap={0} sx={{width: '50%'}}>
+                    <Typography sx={styles.fieldText}>
+                        Your answer
+                    </Typography>
+                    <Typography sx={styles.requirementText}>
+                        {ruleData.userValue}
+                    </Typography>
+                </VStack>
+            </HStack>
+            <HStack justifyContent={'flex-end'}>
+                {icon}
+            </HStack>
+        </DynamicStacker>
     )
 }
 
