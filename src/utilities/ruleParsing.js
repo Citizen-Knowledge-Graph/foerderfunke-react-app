@@ -96,5 +96,17 @@ export const buildRulesOutput = (rulesData, metadata, benefitReport, userProfile
             validity: validity
         });
     }
+
+    elements.sort((a, b) => {
+        const order = {
+            valid: 1,
+            invalid: 2,
+            missing: 3,
+            unknown: 4
+        };
+
+        return order[a.validity] - order[b.validity];
+    });
+
     return elements;
 }
