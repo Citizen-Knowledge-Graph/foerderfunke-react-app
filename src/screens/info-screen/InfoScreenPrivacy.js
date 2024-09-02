@@ -2,6 +2,10 @@ import React from "react";
 import {Typography} from "@mui/material";
 import InfoScreen from "./components/InfoScreen";
 import VStack from "../../components/VStack";
+import HStack from "../../components/HStack";
+import globalStyles from "../../styles/styles";
+import FileDownloadIcon from "@mui/icons-material/FileDownload";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const InfoScreenPrivacy = () => {
     return (
@@ -15,20 +19,24 @@ const InfoScreenPrivacy = () => {
                     All of your information is only <strong>stored locally in your browser</strong>.
                 </Typography>
             </VStack>
-            <VStack gap={1} sx={styles.optionsBox}>
-                <Typography sx={styles.infoText}>
+            <VStack sx={styles.optionsBox}>
+                <Typography sx={styles.optionsText}>
                     You do have some <strong>options</strong> though:
                 </Typography>
-                <ul style={styles.list}>
-                    <li>
-                        <Typography sx={styles.infoText}>You can <strong>export your data</strong> as an RDF
-                            file.</Typography>
-                    </li>
-                    <li>
-                        <Typography sx={styles.infoText}>You can <strong>erase it</strong> from the
-                            browser with one click.</Typography>
-                    </li>
-                </ul>
+                <VStack gap={1}>
+                    <HStack alignItems={'center'}>
+                        <FileDownloadIcon sx={{color: globalStyles.colorDarkGrey, fontSize: '16px'}}/>
+                        <Typography sx={styles.optionsText}>You can <strong>export your data</strong> as an RDF
+                            file.
+                        </Typography>
+                    </HStack>
+                    <HStack alignItems={'center'}>
+                        <DeleteIcon sx={{color: globalStyles.colorDarkGrey, fontSize: '16px'}}/>
+                        <Typography sx={styles.optionsText}>You can <strong>erase it</strong> from the
+                            browser with one click.
+                        </Typography>
+                    </HStack>
+                </VStack>
             </VStack>
         </InfoScreen>
     );
@@ -48,8 +56,9 @@ const styles = {
         padding: '16px',
         width: '100%',
     },
-    list: {
-        listStyleType: 'disc',
+    optionsText: {
+        fontSize: '20px',
+        textAlign: 'left',
     }
 }
 
