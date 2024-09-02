@@ -12,10 +12,27 @@ const ProfileDataList = () => {
 
     return (
         <VStack>
+            <VStack>
+                {userProfileData.map(({label, value}, index) => (
+                    <VStack gap={0} key={index}
+                            sx={{
+                                ...styles.dataBox,
+                                backgroundColor: index % 2 === 0 ? globalStyles.colorSteelBlueTransparent : null,
+                            }}
+                    >
+                        <Typography sx={styles.labelText}>
+                            {label}
+                        </Typography>
+                        <Typography sx={styles.valueText}>
+                            {value}
+                        </Typography>
+                    </VStack>
+                ))}
+            </VStack>
             <VStack sx={styles.restartBox}>
                 <HStack gap={3} justifyContent={'space-between'} alignItems={'center'}>
                     <Typography>
-                        We currently are not able to allow users to edit their profile data. If you need to make changes, you
+                        You currently cannot edit your profile data. If you need to make changes, you
                         can restart the discovery journey.
                     </Typography>
                     <IconButton
@@ -38,23 +55,6 @@ const ProfileDataList = () => {
                     </IconButton>
                 </HStack>
             </VStack>
-            <VStack>
-                {userProfileData.map(({label, value}, index) => (
-                    <VStack gap={0} key={index}
-                            sx={{
-                                ...styles.dataBox,
-                                backgroundColor: index % 2 === 0 ? globalStyles.colorSteelBlueTransparent : null,
-                            }}
-                    >
-                        <Typography sx={styles.labelText}>
-                            {label}
-                        </Typography>
-                        <Typography sx={styles.valueText}>
-                            {value}
-                        </Typography>
-                    </VStack>
-                ))}
-            </VStack>
         </VStack>
     );
 };
@@ -70,7 +70,6 @@ const styles = {
         borderRadius: '12px',
         borderWidth: '1px',
         borderColor: globalStyles.colorLightGrey,
-        borderStyle: 'solid',
     },
     dataBox: {
         padding: '12px',

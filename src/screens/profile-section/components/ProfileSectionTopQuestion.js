@@ -84,25 +84,28 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
         <VStack sx={{width: '100%'}} gap={3}>
             <ProfileSectionHeader handleBack={handleBack}/>
             {benefitId ?
-                <h2>Eligibility check for: {metadata.rp["https://foerderfunke.org/default#" + benefitId.split(":")[1]].title}</h2>
+                <h2>Eligibility check
+                    for: {metadata.rp["https://foerderfunke.org/default#" + benefitId.split(":")[1]].title}</h2>
                 : ""
             }
             <VStack gap={1}>
                 {currentQuestion ? (
                     <VStack gap={8}>
-
-                        <VStack gap={0}>
-                            <ProfileSectionQuestionsCount stepsBackwardsFromStackFront={stackCounter}
-                                                          stack={questionsStack} profileQuestions={profileQuestions}/>
-                            <ProfileSectionField
-                                currentField={currentQuestion}
-                                currentIndex={0}
-                                handleConfirm={handleConfirm}
-                                isLoading={isLoading}
-                            />
+                        <VStack gap={2}>
+                            <ProfileSectionTopHeader stack={questionsStack} profileQuestions={profileQuestions}
+                                                     validationReport={validationReport}/>
+                            <VStack gap={0}>
+                                <ProfileSectionQuestionsCount stepsBackwardsFromStackFront={stackCounter}
+                                                              stack={questionsStack}
+                                                              profileQuestions={profileQuestions}/>
+                                <ProfileSectionField
+                                    currentField={currentQuestion}
+                                    currentIndex={0}
+                                    handleConfirm={handleConfirm}
+                                    isLoading={isLoading}
+                                />
+                            </VStack>
                         </VStack>
-                        <ProfileSectionTopHeader stack={questionsStack} profileQuestions={profileQuestions}
-                                                 validationReport={validationReport}/>
                     </VStack>
                 ) : null}
             </VStack>
