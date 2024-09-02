@@ -6,7 +6,7 @@ import {fetchTurtleResource} from "../../../services/githubService";
 import {useMetadataStore, useUserStore, useValidationReportStore} from "../../../storage/zustand";
 import {ValidationResult} from "@foerderfunke/matching-engine";
 import {UserModel} from "../../../models/UserModel";
-import dayjs from "dayjs";
+import {convertUserValueRaw, getChoiceLabel} from "../../../utilities/rdfParsing";
 import CancelIcon from '@mui/icons-material/Cancel';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import HelpIcon from '@mui/icons-material/Help';
@@ -19,16 +19,6 @@ const BenefitPageRules = ({benefitId}) => {
     const [benefitReport, setBenefitReport] = useState({});
     const activeUser = useUserStore((state) => state.activeUserId);
     const userProfile = UserModel.retrieveUserData(activeUser);
-
-    const expand = (uri) => {
-        return uri.startsWith("ff:") ? "https://foerderfunke.org/default#" + uri.split(":")[1] : uri;
-    }
-
-    const getChoiceLabel = (value, dfObj) => {
-        if (value === "true") return "yes";
-        if (value === "false") return "no";
-        return dfObj.choices.find(choice => expand(choice.value) === expand(value)).label;
-    }
 
     const trim = (str) => {
         return str.substring(0, str.length - 2);
@@ -89,22 +79,6 @@ const BenefitPageRules = ({benefitId}) => {
         }
         return <HelpIcon style={{ color: "gray" }}/>;
     }
-
-    const convertUserValueRaw = (raw, dfObj) => {
-        if (Array.isArray(raw)) {
-            return raw.map(r => getChoiceLabel(r, dfObj)).join(", ");
-        }
-        if (typeof raw === 'boolean') {
-            return raw ? "yes" : "no";
-        }
-        if (raw.startsWith("ff:")) {
-            return getChoiceLabel(raw, dfObj);
-        }
-        if (dayjs(raw).isValid()) {
-            return dayjs(raw).format("YYYY-MM-DD");
-        }
-        return raw;
-    };
 
     const showUserValue = (dfObj) => {
         if (dfObj.datafield && userProfile[dfObj.datafield]) { // ff:pensionable and ff:age don't have it, they will also not show up in the profile as they are materialized on the fly
