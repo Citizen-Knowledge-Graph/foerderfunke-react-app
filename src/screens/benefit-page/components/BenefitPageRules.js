@@ -34,6 +34,15 @@ const BenefitPageRules = ({benefitId}) => {
         return str.substring(0, str.length - 2);
     }
 
+    function buildMinMaxMathNotation(obj) {
+        const str = [];
+        if ("minExclusive" in obj) str.push(`> ${obj["minExclusive"]}`);
+        if ("minInclusive" in obj) str.push(`≥ ${obj["minInclusive"]}`);
+        if ("maxExclusive" in obj) str.push(`< ${obj["maxExclusive"]}`);
+        if ("maxInclusive" in obj) str.push(`≤ ${obj["maxInclusive"]}`);
+        return str.join(", ");
+    }
+
     const buildSingleRuleOutput = (rulesObj, dfObj) => {
         let msg = "";
         switch(rulesObj.type) {
@@ -51,6 +60,8 @@ const BenefitPageRules = ({benefitId}) => {
                     msg += "\"" + getChoiceLabel(value, dfObj) + "\", ";
                 }
                 return trim(msg);
+            case RuleType.MIN_MAX:
+                return "must be " + buildMinMaxMathNotation(rulesObj);
             case RuleType.OR:
                 msg += "one or both of the following must be true: ";
                 for (let element of rulesObj.elements) {
@@ -139,8 +150,8 @@ const BenefitPageRules = ({benefitId}) => {
             const validationConfig = await readJson('assets/data/requirement-profiles/requirement-profiles.json');
             let query = validationConfig['queries'].find(query => query['rpUri'] === rpUri);
             let rpTurtleStr = await fetchTurtleResource(query.fileUrl);
-            let results = await transformRulesFromRequirementProfile(rpTurtleStr);
-            setRulesData(results.rulesByDf);
+            let rules = await transformRulesFromRequirementProfile(rpTurtleStr);
+            setRulesData(rules);
             setBenefitReport(validationReport.reports.find(report => report.rpUri === rpUri));
             setLoaded(true);
         };
