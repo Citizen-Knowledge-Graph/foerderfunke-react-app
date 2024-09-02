@@ -8,6 +8,7 @@ import {useFetchHydrationData} from "./hooks/useFetchHydrationData";
 import AppScreenWrapper from "../../components/AppScreenWrapper";
 import {useStore} from "../../components/ViewportUpdater";
 import Divider from "@mui/material/Divider";
+import {runValidation} from "../../services/validationService";
 
 const EligibilityOverviewScreen = () => {
     const isDesktop = useStore((state) => state.isDesktop);
@@ -15,10 +16,16 @@ const EligibilityOverviewScreen = () => {
     const validationReport = useValidationReportStore((state) => state.validationReport);
     const hydrationData = useFetchHydrationData();
     const fetchEligibilityReports = useFetchEligibilityReports({validationReport, hydrationData});
+    const [hasRerunValidation, setHasRerunValidation] = useState(false);
 
     useEffect(() => {
-        if (hydrationData) {
+        const rerunValidation = async () => {
+            await runValidation("ff:quick-check-user");
             setEligibilityData(fetchEligibilityReports());
+            setHasRerunValidation(true);
+        }
+        if (hydrationData && !hasRerunValidation) {
+            rerunValidation();
         }
     }, [fetchEligibilityReports, hydrationData]);
 
