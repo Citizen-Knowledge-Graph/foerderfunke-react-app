@@ -8,6 +8,8 @@ import {useStore} from "../../components/ViewportUpdater";
 import Divider from "@mui/material/Divider";
 import {runValidation} from "../../services/validationService";
 import {buildEligibilityReports} from "../../utilities/buildEligibilityReports";
+import {CircularProgress} from "@mui/material";
+import VStack from "../../components/VStack";
 
 const EligibilityOverviewScreen = () => {
     const isDesktop = useStore((state) => state.isDesktop);
@@ -43,7 +45,11 @@ const EligibilityOverviewScreen = () => {
                                 <EligibilityOverviewList items={eligibilityData.nonEligible}
                                                          eligible={'non-eligible'}/>}
                         </>
-                    ) : null
+                    ) :
+                        <>
+                            <br/><br/>
+                            <VStack alignItems={'center'}><CircularProgress/></VStack>
+                        </>
                 }
             </AppScreenWrapper>
         </Layout>
