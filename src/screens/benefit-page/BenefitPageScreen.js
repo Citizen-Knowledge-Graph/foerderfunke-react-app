@@ -1,12 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import Layout from "../../components/Layout";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import BenefitPageHeader from "./components/BenefitPageHeader";
 import AppScreenWrapper from "../../components/AppScreenWrapper";
 import {useStore} from "../../components/ViewportUpdater";
 import {useMetadataStore} from "../../storage/zustand";
 import useFetchData from "../../services/fetchResourceService";
 import BenefitPageRules from "./components/BenefitPageRules";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import {Button} from "@mui/material";
+import HStack from "../../components/HStack";
 
 const BenefitPageScreen = () => {
     const isDesktop = useStore((state) => state.isDesktop);
@@ -34,6 +37,10 @@ const BenefitPageScreen = () => {
     return (
         <Layout isApp={true} logo={false} back={'Back'}>
             <AppScreenWrapper isDesktop={isDesktop}>
+                <HStack justifyContent="space-between" sx={{width: '100%'}}>
+                    <Button variant="text" sx={styles.button} startIcon={<ChevronLeftIcon/>} component={Link}
+                            to={'/eligibility-overview'}>Back</Button>
+                </HStack>
                 {benefitPageData && topicsData.length > 0 ? (
                     <>
                         <BenefitPageHeader benefit={benefitPageData}/>
@@ -49,6 +56,13 @@ const BenefitPageScreen = () => {
         </Layout>
     );
 };
+
+const styles = {
+    button: {
+        color: 'black',
+        fontSize: 16,
+    }
+}
 
 export default BenefitPageScreen;
 
