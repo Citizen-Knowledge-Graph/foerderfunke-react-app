@@ -3,10 +3,11 @@ import {Typography} from '@mui/material';
 import VStack from "../../components/VStack";
 import OnboardingWelcomeScreen from "./components/OnboardingWelcomeScreen";
 import {useMetadataStore, useSelectedTopicsStore, useUserStore} from "../../storage/zustand";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import questionsService from "../../services/questionsService";
 
 const OnboardingWelcomeOverview = () => {
+    const navigate = useNavigate();
     const {benefitId} = useParams();
     const activeUser = useUserStore((state) => state.activeUserId);
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
@@ -21,6 +22,9 @@ const OnboardingWelcomeOverview = () => {
                 console.error('Error fetching prioritized questions:', error);
             } finally {
                 setIsLoading(false);
+                if (benefitId) {
+                    navigate('/profile-section/' + benefitId);
+                }
             }
         }
         console.log("benefitId", benefitId);
@@ -29,7 +33,7 @@ const OnboardingWelcomeOverview = () => {
         } else {
             fetchPrioritizedQuestions(selectedTopics.map((topic) => topic.id), null);
         }
-    }, [benefitId, activeUser, selectedTopics]);
+    }, [benefitId, activeUser, selectedTopics, navigate]);
 
     const listRPsForTopic = (topic) => {
         const topicUri = "https://foerderfunke.org/default#" + topic.id.split(":")[1];

@@ -33,6 +33,7 @@ const App = () => {
                         <Route path="/onboarding-welcome/:benefitId" element={<OnboardingWelcomeOverview/>}/>
                         <Route path="/eligibility-overview" element={<EligibilityOverviewScreen/>}/>
                         <Route path="/profile-section" element={<ProfileSectionScreen/>}/>
+                        <Route path="/profile-section/:benefitId" element={<ProfileSectionScreen/>}/>
                         <Route path="/benefit-page/:id" element={<BenefitPageScreen/>}/>
                     </Routes>
                 </div>
