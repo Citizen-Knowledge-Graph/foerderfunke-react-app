@@ -33,7 +33,6 @@ const OnboardingChoice = () => {
                 <ClickCard
                     link="/eligibility-overview"
                     title="Browse all benefits"
-                    subtitle="Filter by topic or from A-Z"
                     backgroundImage={allBenefitsUrl}
                 />
             </AppScreenWrapper>
