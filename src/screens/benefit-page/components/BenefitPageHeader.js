@@ -29,6 +29,7 @@ const styles = {
         fontWeight: 'bold',
     },
     subtitleText: {
+        fontSize: '12px',
         fontWeight: '400',
     }
 };

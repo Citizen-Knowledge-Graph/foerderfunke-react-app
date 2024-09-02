@@ -35,21 +35,21 @@ const BenefitPageRules = ({benefitId}) => {
         let msg = "";
         switch(rulesObj.type) {
             case RuleType.EXISTENCE:
-                return "Needs to exist";
+                return "needs to exist";
             case RuleType.VALUE_IN:
-                msg += "Must be " + (rulesObj.values.length === 1 ? "exactly: " : "one of: ");
+                msg += "must be " + (rulesObj.values.length === 1 ? " " : "one of: ");
                 for (let value of rulesObj.values) {
                     msg += getChoiceLabel(value, dfObj) + ", ";
                 }
                 return trim(msg);
             case RuleType.VALUE_NOT_IN:
-                msg += "Must not be " + (rulesObj.values.length === 1 ? "exactly: " : "one of: ");
+                msg += "must not be " + (rulesObj.values.length === 1 ? " " : "one of: ");
                 for (let value of rulesObj.values) {
                     msg += getChoiceLabel(value, dfObj) + ", ";
                 }
                 return trim(msg);
             case RuleType.OR:
-                msg += "One or both of the following must be true: ";
+                msg += "one or both of the following must be true: ";
                 for (let element of rulesObj.elements) {
                     // this is pretty hardcoded for the very limited OR-cases we support for now, compare the respective code in matching-engine TODO
                     msg += metadata.df[element.path].label + ": " + getChoiceLabel(element.valueIn[0], null) + ", ";
@@ -102,7 +102,12 @@ const BenefitPageRules = ({benefitId}) => {
         for (let dfUri of Object.keys(rulesData)) {
             let rulesObj = rulesData[dfUri];
             let dfObj = metadata.df[dfUri];
-            let requirementCell = <Typography><strong>{dfObj?.label ?? "Or-Rule"}</strong>: {buildSingleRuleOutput(rulesObj, dfObj)}</Typography>;
+            let requirementCell =
+                <Typography>
+                    <strong>{dfObj?.label ?? "Or-Rule"}</strong>
+                    {dfUri === "https://foerderfunke.org/default#hasAge" || dfUri === "https://foerderfunke.org/default#pensionable" ? " (gets calculated from Date of Birth)" : ""}
+                    : {buildSingleRuleOutput(rulesObj, dfObj)}
+                </Typography>;
             let userValueCell, validityCell;
             if (dfObj) {
                 dfObj.uri = dfUri;

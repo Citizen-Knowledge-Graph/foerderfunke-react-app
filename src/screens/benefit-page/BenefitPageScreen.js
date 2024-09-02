@@ -38,7 +38,8 @@ const BenefitPageScreen = () => {
                     <>
                         <BenefitPageHeader benefit={benefitPageData}/>
                         {/*<BenefitPageList benefit={benefitPageData}/>*/}
-                        <small>Topics: {getCategoryTitles()}</small>
+                        <small style={{color: "gray"}}>Topics: {getCategoryTitles()}</small>
+                        <h3>In a nutshell</h3>
                         <div>{benefitPageData.benefitInfo}</div>
                         <div>More info: <a target="_blank" rel="noreferrer" href={benefitPageData.seeAlso}>{benefitPageData.seeAlso}</a></div>
                         <BenefitPageRules benefitId={id}/>
