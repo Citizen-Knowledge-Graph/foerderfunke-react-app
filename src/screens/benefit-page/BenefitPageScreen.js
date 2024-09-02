@@ -72,7 +72,7 @@ const BenefitPageScreen = () => {
                             <Typography sx={styles.topicsTitle}>
                                 Appears in the following topics
                             </Typography>
-                            <HStack sx={{ flexWrap: 'wrap' }}>
+                            <HStack sx={{flexWrap: 'wrap'}}>
                                 {
                                     getCategoryTitles.map((category, index) => (
                                         <Box
@@ -110,29 +110,7 @@ const BenefitPageScreen = () => {
                             <Typography sx={styles.sectionText}>
                                 {benefitPageData.benefitInfo}
                             </Typography>
-                            <Typography sx={styles.sectionText}>
-                                <HStack gap={1}>
-                                    More Info available here
-                                    <a href={benefitPageData.seeAlso} target="_blank" rel="noopener noreferrer">
-                                        <IconButton
-                                            sx={{
-                                                width: 24,
-                                                height: 24,
-                                                borderRadius: '50%',
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                justifyContent: 'center',
-                                                backgroundColor: 'white',
-                                                '&:hover': {
-                                                    backgroundColor: globalStyles.colorLightGrey,
-                                                },
-                                            }}
-                                        >
-                                            <OpenInNewOutlinedIcon sx={{fontSize: 16, color: 'black'}}/>
-                                        </IconButton>
-                                    </a>
-                                </HStack>
-                            </Typography>
+
                         </VStack>
                         <Divider sx={{width: "100%"}}/>
                         <BenefitPageRules benefitId={id}/>
@@ -162,6 +140,32 @@ const BenefitPageScreen = () => {
                             <Typography sx={styles.sectionText}>
                                 No information available
                             </Typography>
+                        </VStack>
+                        <Divider sx={{width: "100%"}}/>
+                        <VStack sx={{width: '100%'}}>
+                            <HStack gap={1}>
+                                <Typography sx={styles.sectionText}>
+                                    More information available here
+                                </Typography>
+                                <a href={benefitPageData.seeAlso} target="_blank" rel="noopener noreferrer">
+                                    <IconButton
+                                        sx={{
+                                            width: 24,
+                                            height: 24,
+                                            borderRadius: '50%',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            backgroundColor: 'white',
+                                            '&:hover': {
+                                                backgroundColor: globalStyles.colorLightGrey,
+                                            },
+                                        }}
+                                    >
+                                        <OpenInNewOutlinedIcon sx={{fontSize: 16, color: 'black'}}/>
+                                    </IconButton>
+                                </a>
+                            </HStack>
                         </VStack>
                     </>
                 ) : null}
