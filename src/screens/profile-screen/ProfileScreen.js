@@ -4,9 +4,7 @@ import AppScreenWrapper from "../../components/AppScreenWrapper";
 import {useStore} from "../../components/ViewportUpdater";
 import globalStyles from "../../styles/styles";
 import VStack from "../../components/VStack";
-import {Typography} from "@mui/material";
-import HStack from "../../components/HStack";
-import CircleIcon from "@mui/icons-material/Circle";
+import {Typography} from "@mui/material";;
 
 const ProfileScreen = () => {
     const isDesktop = useStore((state) => state.isDesktop);

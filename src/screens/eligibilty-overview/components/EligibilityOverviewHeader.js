@@ -1,7 +1,6 @@
 import React from 'react';
 import {IconButton, Typography} from '@mui/material';
 import {Link} from "react-router-dom";
-import CircleIcon from '@mui/icons-material/Circle';
 import globalStyles from "../../../styles/styles";
 import InfoIcon from "@mui/icons-material/Info";
 import PersonIcon from '@mui/icons-material/Person';
