@@ -27,7 +27,7 @@ const EligibilityOverviewScreen = () => {
         if (hydrationData && !hasRerunValidation) {
             rerunValidation();
         }
-    }, [fetchEligibilityReports, hydrationData]);
+    }, [fetchEligibilityReports, hasRerunValidation, hydrationData]);
 
     return (
         <Layout isApp={true} logo={true}>
