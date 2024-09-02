@@ -7,7 +7,7 @@ import {useStore} from "../../components/ViewportUpdater";
 import {useMetadataStore, useValidationReportStore} from "../../storage/zustand";
 import useFetchData from "../../services/fetchResourceService";
 import BenefitPageRules from "./components/BenefitPageRules";
-import {Button, IconButton, Typography} from "@mui/material";
+import {Box, Button, IconButton, Typography} from "@mui/material";
 import HStack from "../../components/HStack";
 import globalStyles from "../../styles/styles";
 import {ValidationResult} from "@foerderfunke/matching-engine";
@@ -69,17 +69,22 @@ const BenefitPageScreen = () => {
                     <>
                         <BenefitPageHeader benefit={benefitPageData}/>
                         <VStack sx={{width: '100%'}}>
-                            <HStack>
+                            <Typography sx={styles.topicsTitle}>
+                                Appears in the following topics
+                            </Typography>
+                            <HStack sx={{ flexWrap: 'wrap' }}>
                                 {
                                     getCategoryTitles.map((category, index) => (
-                                        <HStack
+                                        <Box
                                             key={index}
-                                            sx={styles.topicTag}>
+                                            sx={styles.topicTag}
+                                        >
                                             {category}
-                                        </HStack>
+                                        </Box>
                                     ))
                                 }
                             </HStack>
+
                         </VStack>
                         {id && isMissingDataBenefit() &&
                             <VStack sx={{width: '100%'}}>
@@ -183,13 +188,19 @@ const styles = {
             borderColor: globalStyles.secondaryColor,
         },
     },
+    topicsTitle: {
+        fontSize: 16,
+        fontWeight: 300,
+    },
     topicTag: {
-        backgroundColor: globalStyles.primaryColor,
         padding: '8px',
         borderRadius: '12px',
         fontSize: '14px',
         color: 'black',
-        fontWeight: '400'
+        fontWeight: '400',
+        borderWidth: '1px',
+        borderStyle: 'solid',
+        borderColor: globalStyles.primaryColor,
     },
     sectionTitle: {
         fontSize: '20px',
