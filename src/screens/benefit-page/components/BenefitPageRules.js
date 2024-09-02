@@ -7,6 +7,9 @@ import {useMetadataStore, useUserStore, useValidationReportStore} from "../../..
 import {ValidationResult} from "@foerderfunke/matching-engine";
 import {UserModel} from "../../../models/UserModel";
 import dayjs from "dayjs";
+import CancelIcon from '@mui/icons-material/Cancel';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import HelpIcon from '@mui/icons-material/Help';
 
 const BenefitPageRules = ({benefitId}) => {
     const [loaded, setLoaded] = useState(false);
@@ -62,15 +65,15 @@ const BenefitPageRules = ({benefitId}) => {
 
     const buildSingleRuleReportOutput = (dfObj, isValid = false) => {
         if (isValid) {
-            return ["green", "Valid"];
+            return <CheckCircleIcon style={{ color: "green" }} />;
         }
         if (benefitReport.missingUserInput.find(missing => missing.dfUri === dfObj.uri)) {
-            return ["gray", "Missing"];
+            return <HelpIcon style={{ color: "gray" }}/>;
         }
         if (benefitReport.violations.find(violation => violation.path === dfObj.uri)) {
-            return ["red", "Invalid"];
+            return <CancelIcon style={{ color: "red" }}/>;
         }
-        return [];
+        return null;
     }
 
     const convertUserValueRaw = (raw, dfObj) => {
@@ -111,9 +114,8 @@ const BenefitPageRules = ({benefitId}) => {
             let userValueCell, validityCell;
             if (dfObj) {
                 dfObj.uri = dfUri;
-                const [color, msg] = buildSingleRuleReportOutput(dfObj, benefitReport.result === ValidationResult.ELIGIBLE);
                 userValueCell = <Typography>{showUserValue(dfObj)}</Typography>;
-                validityCell = <Typography style={{ color: color }}>{msg}</Typography>;
+                validityCell = buildSingleRuleReportOutput(dfObj, benefitReport.result === ValidationResult.ELIGIBLE);
             }
             elements.push(
                 <TableRow key={dfUri}>
