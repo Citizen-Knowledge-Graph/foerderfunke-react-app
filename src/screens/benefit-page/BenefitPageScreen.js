@@ -160,10 +160,6 @@ const BenefitPageScreen = () => {
 };
 
 const styles = {
-    button: {
-        color: 'black',
-        fontSize: 16,
-    },
     checkEligibilityButton: {
         borderWidth: '1px',
         borderStyle: 'solid',
@@ -193,14 +189,6 @@ const styles = {
         fontWeight: 'bold',
     },
     sectionText: {
-        fontSize: '16px',
-        fontWeight: '400',
-    },
-    fieldText: {
-        fontSize: '14px',
-        fontWeight: '300',
-    },
-    requirementText: {
         fontSize: '16px',
         fontWeight: '400',
     }

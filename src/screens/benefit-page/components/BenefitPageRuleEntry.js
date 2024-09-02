@@ -46,42 +46,6 @@ const BenefitPageRuleEntry = ({ ruleData }) => {
 
 
 const styles = {
-    button: {
-        color: 'black',
-        fontSize: 16,
-    },
-    checkEligibilityButton: {
-        borderWidth: '1px',
-        borderStyle: 'solid',
-        borderRadius: '15px',
-        borderColor: globalStyles.secondaryColor,
-        backgroundColor: globalStyles.secondaryColor,
-        color: 'white',
-        fontSize: '14px',
-        fontWeight: 'bold',
-        textTransform: 'none',
-        '&:hover': {
-            backgroundColor: globalStyles.secondaryColor,
-            color: 'white',
-            borderColor: globalStyles.secondaryColor,
-        },
-    },
-    topicTag: {
-        backgroundColor: globalStyles.primaryColor,
-        padding: '8px',
-        borderRadius: '12px',
-        fontSize: '14px',
-        color: 'black',
-        fontWeight: '400'
-    },
-    sectionTitle: {
-        fontSize: '20px',
-        fontWeight: 'bold',
-    },
-    sectionText: {
-        fontSize: '16px',
-        fontWeight: '400',
-    },
     fieldText: {
         fontSize: '14px',
         fontWeight: '300',
