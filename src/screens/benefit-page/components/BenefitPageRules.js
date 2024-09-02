@@ -63,7 +63,7 @@ const BenefitPageRules = ({benefitId}) => {
         }
     }
 
-    const buildSingleRuleReportOutput = (dfObj, isValid = false) => {
+    const buildSingleRuleReportOutput = (dfObj, isValid, userValue) => {
         if (isValid) {
             return <CheckCircleIcon style={{ color: "green" }} />;
         }
@@ -73,7 +73,10 @@ const BenefitPageRules = ({benefitId}) => {
         if (benefitReport.violations.find(violation => violation.path === dfObj.uri)) {
             return <CancelIcon style={{ color: "red" }}/>;
         }
-        return null;
+        if (userValue !== "-") {
+            return <CheckCircleIcon style={{ color: "green" }} />;
+        }
+        return <HelpIcon style={{ color: "gray" }}/>;
     }
 
     const convertUserValueRaw = (raw, dfObj) => {
@@ -114,8 +117,9 @@ const BenefitPageRules = ({benefitId}) => {
             let userValueCell, validityCell;
             if (dfObj) {
                 dfObj.uri = dfUri;
-                userValueCell = <Typography>{showUserValue(dfObj)}</Typography>;
-                validityCell = buildSingleRuleReportOutput(dfObj, benefitReport.result === ValidationResult.ELIGIBLE);
+                let userValue = showUserValue(dfObj);
+                userValueCell = <Typography>{userValue}</Typography>;
+                validityCell = buildSingleRuleReportOutput(dfObj, benefitReport.result === ValidationResult.ELIGIBLE, userValue);
             }
             elements.push(
                 <TableRow key={dfUri}>
