@@ -66,7 +66,7 @@ export const buildRulesOutput = (rulesData, metadata, benefitReport, userProfile
     let materializedOutputs = {};
     if (Object.keys(benefitReport).length > 0 && benefitReport.materializationReport.rounds.length > 0) {
         let matRounds = benefitReport.materializationReport.rounds;
-        for (let [uri, obj] of Object.entries(matRounds[0])) {
+        for (let obj of Object.values(matRounds[0])) {
             materializedOutputs[obj.output] = obj;
         }
     }
