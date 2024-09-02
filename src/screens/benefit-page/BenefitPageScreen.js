@@ -14,6 +14,7 @@ import {ValidationResult} from "@foerderfunke/matching-engine";
 import VStack from "../../components/VStack";
 import Divider from "@mui/material/Divider";
 import OpenInNewOutlinedIcon from '@mui/icons-material/OpenInNewOutlined';
+import SearchIcon from '@mui/icons-material/Search';
 
 const BenefitPageScreen = () => {
     const {id} = useParams();
@@ -80,18 +81,23 @@ const BenefitPageScreen = () => {
                                 }
                             </HStack>
                         </VStack>
+                        {id && isMissingDataBenefit() &&
+                            <VStack sx={{width: '100%'}}>
+                                <HStack>
+                                    <Button
+                                        sx={styles.checkEligibilityButton}
+                                        variant="text"
+                                        component={Link}
+                                        to={`/onboarding-welcome/${id}`}
+                                        startIcon={<SearchIcon/>}
+                                    >
+                                        Check eligibility
+                                    </Button>
+                                </HStack>
+                            </VStack>
+                        }
                         <Divider sx={{width: "100%"}}/>
-                    {id && isMissingDataBenefit() &&
-                        <HStack>
-                            <Button
-                                sx={styles.checkEligibilityButton}
-                                variant="text"
-                                component={Link}
-                                to={`/onboarding-welcome/${id}`}>
-                                Check eligibility
-                            </Button>
-                        </HStack>
-                    }
+
                         <VStack sx={{width: '100%'}}>
                             <Typography sx={styles.sectionTitle}>
                                 What is it
@@ -163,7 +169,8 @@ const styles = {
     checkEligibilityButton: {
         borderWidth: '1px',
         borderStyle: 'solid',
-        borderRadius: '15px',
+        borderRadius: '12px',
+        padding: '8px',
         borderColor: globalStyles.secondaryColor,
         backgroundColor: globalStyles.secondaryColor,
         color: 'white',
