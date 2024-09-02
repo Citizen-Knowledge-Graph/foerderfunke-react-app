@@ -35,24 +35,24 @@ const BenefitPageRules = ({benefitId}) => {
         let msg = "";
         switch(rulesObj.type) {
             case RuleType.EXISTENCE:
-                return "needs to exist";
+                return "must be answered";
             case RuleType.VALUE_IN:
-                msg += "must be " + (rulesObj.values.length === 1 ? " " : "one of: ");
+                msg += "must be " + (rulesObj.values.length === 1 ? "" : "one of: ");
                 for (let value of rulesObj.values) {
-                    msg += getChoiceLabel(value, dfObj) + ", ";
+                    msg += "\"" + getChoiceLabel(value, dfObj) + "\", ";
                 }
                 return trim(msg);
             case RuleType.VALUE_NOT_IN:
-                msg += "must not be " + (rulesObj.values.length === 1 ? " " : "one of: ");
+                msg += "must not be " + (rulesObj.values.length === 1 ? "" : "one of: ");
                 for (let value of rulesObj.values) {
-                    msg += getChoiceLabel(value, dfObj) + ", ";
+                    msg += "\"" + getChoiceLabel(value, dfObj) + "\", ";
                 }
                 return trim(msg);
             case RuleType.OR:
                 msg += "one or both of the following must be true: ";
                 for (let element of rulesObj.elements) {
                     // this is pretty hardcoded for the very limited OR-cases we support for now, compare the respective code in matching-engine TODO
-                    msg += metadata.df[element.path].label + ": " + getChoiceLabel(element.valueIn[0], null) + ", ";
+                    msg += "\"" + metadata.df[element.path].label + "\": \"" + getChoiceLabel(element.valueIn[0], null) + "\", ";
                 }
                 return trim(msg);
             default:
