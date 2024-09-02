@@ -124,6 +124,9 @@ const InfoScreenNewOrExistingUser = () => {
                                                 padding: '12px',
                                                 borderRadius: '12px',
                                                 backgroundColor: globalStyles.colorPineGreen,
+                                                '&:hover': {
+                                                    color: 'black',  // Change text color to black on hover
+                                                },
                                             }}
                                             onClick={continueWithExisting}
                                     >
@@ -148,6 +151,9 @@ const InfoScreenNewOrExistingUser = () => {
                                                 padding: '16px',
                                                 borderRadius: '12px',
                                                 backgroundColor: globalStyles.colorSteelBlue,
+                                                '&:hover': {
+                                                    color: 'black',  // Change text color to black on hover
+                                                },
                                             }}
                                             onClick={startOver}
                                     >
