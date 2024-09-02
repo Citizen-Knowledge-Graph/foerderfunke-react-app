@@ -1,7 +1,12 @@
 import React, {useCallback, useEffect, useState} from "react";
 import InfoScreen from "./components/InfoScreen";
 import {useNavigate} from "react-router-dom";
-import {useSelectedTopicsStore, useUserStore, useValidationReportStore} from "../../storage/zustand";
+import {
+    questionsStackStore,
+    useSelectedTopicsStore,
+    useUserStore,
+    useValidationReportStore
+} from "../../storage/zustand";
 import {useProfileSectionStore} from "../../storage/useProfileSectionStore";
 import {UserModel} from "../../models/UserModel";
 import {runValidation} from "../../services/validationService";
@@ -72,6 +77,7 @@ const InfoScreenNewOrExistingUser = () => {
         localStorage.clear();
         useValidationReportStore.getState().clear();
         useSelectedTopicsStore.getState().clear();
+        questionsStackStore.getState().resetQuestionsStack();
         initNewUser();
     }
 
