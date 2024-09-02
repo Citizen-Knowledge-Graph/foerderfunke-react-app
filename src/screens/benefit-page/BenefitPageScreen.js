@@ -72,6 +72,13 @@ const BenefitPageScreen = () => {
                         </div>
                         <h3>Eligibility rules</h3>
                         <BenefitPageRules benefitId={id}/>
+                        <h3>What documents do you need?</h3>
+                        -
+                        <h3>Contact</h3>
+                        -
+                        <h3>Do you need help with your application?</h3>
+                        These organizations offer you advice for free:<br/>
+                        -
                     </>
                 ) : null}
             </AppScreenWrapper>
