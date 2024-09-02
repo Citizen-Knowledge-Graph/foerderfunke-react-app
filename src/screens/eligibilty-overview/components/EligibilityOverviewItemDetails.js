@@ -48,6 +48,11 @@ const styles = {
         fontSize: '14px',
         fontWeight: 'bold',
         textTransform: 'none',
+        '&:hover': {
+            backgroundColor: globalStyles.secondaryColor,
+            color: 'white',
+            borderColor: globalStyles.secondaryColor,
+        },
     },
     learnMoreButton: {
         borderWidth: '1px',
