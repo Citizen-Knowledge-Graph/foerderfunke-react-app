@@ -84,7 +84,6 @@ const BenefitPageScreen = () => {
                                     ))
                                 }
                             </HStack>
-
                         </VStack>
                         {id && isMissingDataBenefit() &&
                             <VStack sx={{width: '100%'}}>
@@ -101,71 +100,71 @@ const BenefitPageScreen = () => {
                                 </HStack>
                             </VStack>
                         }
-                        <Divider sx={{width: "100%"}}/>
-
-                        <VStack sx={{width: '100%'}}>
-                            <Typography sx={styles.sectionTitle}>
-                                What is it
-                            </Typography>
-                            <Typography sx={styles.sectionText}>
-                                {benefitPageData.benefitInfo}
-                            </Typography>
-
-                        </VStack>
-                        <Divider sx={{width: "100%"}}/>
-                        <BenefitPageRules benefitId={id}/>
-                        <Divider sx={{width: "100%"}}/>
-                        <VStack sx={{width: '100%'}}>
-                            <Typography sx={styles.sectionTitle}>
-                                What documents do you need
-                            </Typography>
-                            <Typography sx={styles.sectionText}>
-                                No information available
-                            </Typography>
-                        </VStack>
-                        <Divider sx={{width: "100%"}}/>
-                        <VStack sx={{width: '100%'}}>
-                            <Typography sx={styles.sectionTitle}>
-                                Contact
-                            </Typography>
-                            <Typography sx={styles.sectionText}>
-                                No information available
-                            </Typography>
-                        </VStack>
-                        <Divider sx={{width: "100%"}}/>
-                        <VStack sx={{width: '100%'}}>
-                            <Typography sx={styles.sectionTitle}>
-                                Do you need help with your application?
-                            </Typography>
-                            <Typography sx={styles.sectionText}>
-                                No information available
-                            </Typography>
-                        </VStack>
-                        <Divider sx={{width: "100%"}}/>
-                        <VStack sx={{width: '100%'}}>
-                            <HStack gap={1}>
-                                <Typography sx={styles.sectionText}>
-                                    More information available here
+                        <VStack sx={{width: '100%'}} gap={3}>
+                            <Divider sx={{width: "100%"}}/>
+                            <VStack sx={{width: "100%"}} gap={1}>
+                                <Typography sx={styles.sectionTitle}>
+                                    What is it
                                 </Typography>
-                                <a href={benefitPageData.seeAlso} target="_blank" rel="noopener noreferrer">
-                                    <IconButton
-                                        sx={{
-                                            width: 24,
-                                            height: 24,
-                                            borderRadius: '50%',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            backgroundColor: 'white',
-                                            '&:hover': {
-                                                backgroundColor: globalStyles.colorLightGrey,
-                                            },
-                                        }}
-                                    >
-                                        <OpenInNewOutlinedIcon sx={{fontSize: 16, color: 'black'}}/>
-                                    </IconButton>
-                                </a>
-                            </HStack>
+                                <Typography sx={styles.sectionText}>
+                                    {benefitPageData.benefitInfo}
+                                </Typography>
+                            </VStack>
+                            <Divider sx={{width: "100%"}}/>
+                            <BenefitPageRules benefitId={id}/>
+                            <Divider sx={{width: "100%"}}/>
+                            <VStack sx={{width: "100%"}} gap={1}>
+                                <Typography sx={styles.sectionTitle}>
+                                    What documents do you need
+                                </Typography>
+                                <Typography sx={styles.sectionText}>
+                                    More information to come here. We are working on this section.
+                                </Typography>
+                            </VStack>
+                            <Divider sx={{width: "100%"}}/>
+                            <VStack sx={{width: "100%"}} gap={1}>
+                                <Typography sx={styles.sectionTitle}>
+                                    Contact
+                                </Typography>
+                                <Typography sx={styles.sectionText}>
+                                    More information to come here. We are working on this section.
+                                </Typography>
+                            </VStack>
+                            <Divider sx={{width: "100%"}}/>
+                            <VStack sx={{width: "100%"}} gap={1}>
+                                <Typography sx={styles.sectionTitle}>
+                                    Do you need help with your application?
+                                </Typography>
+                                <Typography sx={styles.sectionText}>
+                                    More information to come here. We are working on this section.
+                                </Typography>
+                            </VStack>
+                            <Divider sx={{width: "100%"}}/>
+                            <VStack sx={{width: "100%"}} gap={1}>
+                                <HStack gap={1}>
+                                    <Typography sx={styles.sectionText}>
+                                        More information available here
+                                    </Typography>
+                                    <a href={benefitPageData.seeAlso} target="_blank" rel="noopener noreferrer">
+                                        <IconButton
+                                            sx={{
+                                                width: 24,
+                                                height: 24,
+                                                borderRadius: '50%',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                backgroundColor: 'white',
+                                                '&:hover': {
+                                                    backgroundColor: globalStyles.colorLightGrey,
+                                                },
+                                            }}
+                                        >
+                                            <OpenInNewOutlinedIcon sx={{fontSize: 16, color: 'black'}}/>
+                                        </IconButton>
+                                    </a>
+                                </HStack>
+                            </VStack>
                         </VStack>
                     </>
                 ) : null}
