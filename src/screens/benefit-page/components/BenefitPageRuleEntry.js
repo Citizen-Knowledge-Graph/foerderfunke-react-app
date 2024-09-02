@@ -31,7 +31,6 @@ const BenefitPageRuleEntry = ({ruleData}) => {
                         sx={{
                             padding: '12px',
                             borderRadius: '12px',
-                            backgroundColor: globalStyles.colorLightGreyTransparent
                         }}>
                     {children}
                 </HStack>
@@ -42,9 +41,8 @@ const BenefitPageRuleEntry = ({ruleData}) => {
                 gap={1}
                 sx={{
                     padding: '12px',
-                    borderRadius: '12px',
-                    backgroundColor: globalStyles.colorLightGreyTransparent
-                }}>
+                    borderRadius: '12px'
+            }}>
                 {children}
             </VStack>
         )

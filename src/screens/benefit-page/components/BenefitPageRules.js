@@ -44,7 +44,12 @@ const BenefitPageRules = ({benefitId}) => {
                     <Typography sx={styles.sectionTitle}>
                         Eligibility rules
                     </Typography>
-                    <VStack gap={1}>
+                    <VStack gap={1} sx={{
+                        borderWidth: '1px',
+                        borderStyle: 'solid',
+                        borderColor: 'lightgrey',
+                        borderRadius: '12px',
+                    }}>
                         {
                             rules &&
                             rules.map((rule, index) => (
