@@ -6,27 +6,35 @@ import useUserProfileData from "../hooks/useUserProfileData";
 import HStack from "../../../components/HStack";
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import {Link} from "react-router-dom";
+import Divider from "@mui/material/Divider";
 
 const ProfileDataList = () => {
     const userProfileData = useUserProfileData();
 
     return (
         <VStack>
-            <VStack>
+            <VStack sx={{
+                borderWidth: '1px',
+                borderStyle: 'solid',
+                borderColor: 'lightgrey',
+                borderRadius: '12px',
+                gap: 0,
+            }}>
                 {userProfileData.map(({label, value}, index) => (
-                    <VStack gap={0} key={index}
-                            sx={{
-                                ...styles.dataBox,
-                                backgroundColor: index % 2 === 0 ? globalStyles.colorSteelBlueTransparent : null,
-                            }}
-                    >
-                        <Typography sx={styles.labelText}>
-                            {label}
-                        </Typography>
-                        <Typography sx={styles.valueText}>
-                            {value}
-                        </Typography>
-                    </VStack>
+                    <>
+                        <VStack gap={0} key={index}
+                                sx={styles.dataBox}
+                                justifyContent={'center'}
+                        >
+                            <Typography sx={styles.labelText}>
+                                {label}
+                            </Typography>
+                            <Typography sx={styles.valueText}>
+                                {value}
+                            </Typography>
+                        </VStack>
+                        {index < userProfileData.length - 1 && <Divider/>}
+                    </>
                 ))}
             </VStack>
             <VStack sx={styles.restartBox}>
@@ -73,13 +81,11 @@ const styles = {
     },
     dataBox: {
         padding: '12px',
-        width: '100%',
-        backgroundColor: globalStyles.colorSteelBlueTransparent,
-        borderRadius: '12px',
+        borderRadius: '12px'
     },
     labelText: {
         fontWeight: '300',
-        fontSize: '12px',
+        fontSize: '14px',
         color: globalStyles.colorDarkGrey
     },
     valueText: {
