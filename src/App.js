@@ -13,6 +13,7 @@ import ScrollToTop from './ScrollToTop';
 import InfoScreenPrivacy from "./screens/info-screen/InfoScreenPrivacy";
 import OnboardingWelcomeTopics from "./screens/onboarding-welcome/OnboardingWelcomeTopics";
 import InfoScreenNewOrExistingUser from "./screens/info-screen/InfoScreenNewOrExistingUser";
+import ProfileScreen from "./screens/profile-screen/ProfileScreen";
 
 const theme = createTheme({});
 
@@ -35,6 +36,7 @@ const App = () => {
                         <Route path="/profile-section" element={<ProfileSectionScreen/>}/>
                         <Route path="/profile-section/:benefitId" element={<ProfileSectionScreen/>}/>
                         <Route path="/benefit-page/:id" element={<BenefitPageScreen/>}/>
+                        <Route path="/profile-overview" element={<ProfileScreen/>}/>
                     </Routes>
                 </div>
             </Router>

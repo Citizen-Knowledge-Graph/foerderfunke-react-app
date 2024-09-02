@@ -1,10 +1,12 @@
 import React from 'react';
-import {Typography} from '@mui/material';
-import VStack from "../../../components/VStack";
-import HStack from "../../../components/HStack";
+import {IconButton, Typography} from '@mui/material';
+import {Link} from "react-router-dom";
 import CircleIcon from '@mui/icons-material/Circle';
 import globalStyles from "../../../styles/styles";
 import InfoIcon from "@mui/icons-material/Info";
+import PersonIcon from '@mui/icons-material/Person';
+import VStack from "../../../components/VStack";
+import HStack from "../../../components/HStack";
 
 const EligibilityOverviewScreen = ({isDesktop}) => {
     const titleFontSize = isDesktop ? '32px' : '28px';
@@ -17,34 +19,36 @@ const EligibilityOverviewScreen = ({isDesktop}) => {
                 padding: '16px',
                 borderRadius: '12px'
             }}>
-                <VStack alignItems={'flex-start'} gap={3}>
-                    <VStack gap={1}>
-                        <Typography sx={{...styles.titleText, fontSize: titleFontSize}}>
-                            Your potential benefits
-                        </Typography>
-                        <Typography sx={styles.subTitleCardText}>
-                            Results are based on the information you provided.
-                        </Typography>
-                    </VStack>
-                    <HStack justifyContent={'flex-start'}>
-                        <HStack justifyContent={'flex-start'} alignItems={'center'}>
-                            <CircleIcon sx={{color: globalStyles.secondaryColor}}/>
-                            <Typography sx={styles.circleText}>
-                                Eligible
+                <VStack alignItems={'flex-start'} gap={3} sx={{width: '100%'}}>
+                    <HStack justifyContent={'space-between'} sx={{width: '100%'}}>
+                        <VStack gap={2}>
+                            <Typography sx={{...styles.titleText, fontSize: titleFontSize}}>
+                                Your potential benefits
                             </Typography>
-                        </HStack>
-                        <HStack justifyContent={'flex-start'} alignItems={'center'}>
-                            <CircleIcon sx={{color: globalStyles.colorLightGrey}}/>
-                            <Typography sx={styles.circleText}>
-                                Missing data
+                            <Typography sx={styles.subTitleCardText}>
+                                Results are based on the information you provided.
                             </Typography>
-                        </HStack>
-                        <HStack justifyContent={'flex-start'} alignItems={'center'}>
-                            <CircleIcon sx={{color: globalStyles.colorRed}}/>
-                            <Typography sx={styles.circleText}>
-                                Not eligible
-                            </Typography>
-                        </HStack>
+                        </VStack>
+                        <VStack>
+                            <IconButton
+                                component={Link}
+                                to='/profile-overview'
+                                sx={{
+                                    width: 40,
+                                    height: 40,
+                                    borderRadius: '50%',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    backgroundColor: 'white',
+                                    '&:hover': {
+                                        backgroundColor: globalStyles.colorLightGrey,
+                                    },
+                                }}
+                            >
+                                <PersonIcon sx={{ fontSize: 20, color: 'black' }} />
+                            </IconButton>
+                        </VStack>
                     </HStack>
                 </VStack>
             </VStack>
@@ -66,7 +70,9 @@ const styles = {
     },
     subTitleCardText: {
         fontSize: '16px',
-        fontWeight: '400'
+        fontWeight: '400',
+        color: 'black',
+        textTransform: 'none',
     },
     circleText: {
         fontSize: '12px'
@@ -82,9 +88,7 @@ const styles = {
     },
     liableInfoBox: {
         padding: '12px',
-        borderRadius: '12px',
-        backgroundColor:
-        globalStyles.colorSteelBlueTransparent,
+        borderRadius: '12px'
     },
     liableInfoText: {
         fontSize: '14px'
