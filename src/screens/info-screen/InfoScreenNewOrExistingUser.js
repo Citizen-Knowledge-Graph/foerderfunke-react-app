@@ -9,6 +9,7 @@ import {
 } from "../../storage/zustand";
 import {useProfileSectionStore} from "../../storage/useProfileSectionStore";
 import {UserModel} from "../../models/UserModel";
+import {runValidation} from "../../services/validationService";
 import {convertUserProfileToTurtle} from "@foerderfunke/matching-engine/src/utils";
 import dayjs from "dayjs";
 import VStack from "../../components/VStack";
@@ -41,6 +42,7 @@ const InfoScreenNewOrExistingUser = () => {
     const initNewUser = useCallback(() => {
         UserModel.initialiseNewUser(defaultUserId);
         initStores();
+        runValidation(defaultUserId);
         navigate('/info-privacy');
     }, [defaultUserId, navigate, initStores]);
 
@@ -67,6 +69,7 @@ const InfoScreenNewOrExistingUser = () => {
 
     const continueWithExisting = () => {
         initStores();
+        runValidation(defaultUserId);
         navigate('/onboarding-choice');
     }
 
