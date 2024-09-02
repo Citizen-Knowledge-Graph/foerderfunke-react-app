@@ -1,121 +1,24 @@
-import {useEffect, useState} from "react";
-import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Typography} from '@mui/material';
-import {RuleType, transformRulesFromRequirementProfile} from "@foerderfunke/matching-engine/src/prematch";
+import React, {useEffect, useState} from "react";
+import {Typography} from '@mui/material';
+import {transformRulesFromRequirementProfile} from "@foerderfunke/matching-engine/src/prematch";
 import readJson from "../../../utilities/readJson";
 import {fetchTurtleResource} from "../../../services/githubService";
 import {useMetadataStore, useUserStore, useValidationReportStore} from "../../../storage/zustand";
-import {ValidationResult} from "@foerderfunke/matching-engine";
 import {UserModel} from "../../../models/UserModel";
-import {convertUserValueRaw, getChoiceLabel} from "../../../utilities/rdfParsing";
-import CancelIcon from '@mui/icons-material/Cancel';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import HelpIcon from '@mui/icons-material/Help';
+import {buildRulesOutput} from "../../../utilities/ruleParsing";
+import VStack from "../../../components/VStack";
+import globalStyles from "../../../styles/styles";
+import BenefitPageRuleEntry from "./BenefitPageRuleEntry";
 
 const BenefitPageRules = ({benefitId}) => {
     const [loaded, setLoaded] = useState(false);
     const [rulesData, setRulesData] = useState({});
+    const [benefitReport, setBenefitReport] = useState({});
+
     const metadata = useMetadataStore((state) => state.metadata);
     const validationReport = useValidationReportStore((state) => state.validationReport);
-    const [benefitReport, setBenefitReport] = useState({});
     const activeUser = useUserStore((state) => state.activeUserId);
     const userProfile = UserModel.retrieveUserData(activeUser);
-
-    const trim = (str) => {
-        return str.substring(0, str.length - 2);
-    }
-
-    function buildMinMaxMathNotation(obj) {
-        const str = [];
-        if ("minExclusive" in obj) str.push(`> ${obj["minExclusive"]}`);
-        if ("minInclusive" in obj) str.push(`≥ ${obj["minInclusive"]}`);
-        if ("maxExclusive" in obj) str.push(`< ${obj["maxExclusive"]}`);
-        if ("maxInclusive" in obj) str.push(`≤ ${obj["maxInclusive"]}`);
-        return str.join(", ");
-    }
-
-    const buildSingleRuleOutput = (rulesObj, dfObj) => {
-        let msg = "";
-        switch(rulesObj.type) {
-            case RuleType.EXISTENCE:
-                return "must be answered";
-            case RuleType.VALUE_IN:
-                msg += "must be " + (rulesObj.values.length === 1 ? "" : "one of: ");
-                for (let value of rulesObj.values) {
-                    msg += "\"" + getChoiceLabel(value, dfObj) + "\", ";
-                }
-                return trim(msg);
-            case RuleType.VALUE_NOT_IN:
-                msg += "must not be " + (rulesObj.values.length === 1 ? "" : "one of: ");
-                for (let value of rulesObj.values) {
-                    msg += "\"" + getChoiceLabel(value, dfObj) + "\", ";
-                }
-                return trim(msg);
-            case RuleType.MIN_MAX:
-                return "must be " + buildMinMaxMathNotation(rulesObj);
-            case RuleType.OR:
-                msg += "one or both of the following must be true: ";
-                for (let element of rulesObj.elements) {
-                    // this is pretty hardcoded for the very limited OR-cases we support for now, compare the respective code in matching-engine TODO
-                    msg += "\"" + metadata.df[element.path].label + "\": \"" + getChoiceLabel(element.valueIn[0], null) + "\", ";
-                }
-                return trim(msg);
-            default:
-                return "Unknown rule type";
-        }
-    }
-
-    const buildSingleRuleReportOutput = (dfObj, isValid, userValue) => {
-        if (isValid) {
-            return <CheckCircleIcon style={{ color: "green" }} />;
-        }
-        if (benefitReport.missingUserInput.find(missing => missing.dfUri === dfObj.uri)) {
-            return <HelpIcon style={{ color: "gray" }}/>;
-        }
-        if (benefitReport.violations.find(violation => violation.path === dfObj.uri)) {
-            return <CancelIcon style={{ color: "red" }}/>;
-        }
-        if (userValue !== "-") {
-            return <CheckCircleIcon style={{ color: "green" }} />;
-        }
-        return <HelpIcon style={{ color: "gray" }}/>;
-    }
-
-    const showUserValue = (dfObj) => {
-        if (dfObj.datafield && userProfile[dfObj.datafield]) { // ff:pensionable and ff:age don't have it, they will also not show up in the profile as they are materialized on the fly
-            let userValueRaw = userProfile[dfObj.datafield];
-            return convertUserValueRaw(userValueRaw, dfObj);
-        }
-        return "-";
-    }
-
-    const buildRulesOutput = () => {
-        const elements = [];
-        for (let dfUri of Object.keys(rulesData)) {
-            let rulesObj = rulesData[dfUri];
-            let dfObj = metadata.df[dfUri];
-            let requirementCell =
-                <Typography>
-                    <strong>{dfObj?.label ?? "Or-Rule"}</strong>
-                    {dfUri === "https://foerderfunke.org/default#hasAge" || dfUri === "https://foerderfunke.org/default#pensionable" ? " (gets calculated from Date of Birth)" : ""}
-                    : {buildSingleRuleOutput(rulesObj, dfObj)}
-                </Typography>;
-            let userValueCell, validityCell;
-            if (dfObj) {
-                dfObj.uri = dfUri;
-                let userValue = showUserValue(dfObj);
-                userValueCell = <Typography>{userValue}</Typography>;
-                validityCell = buildSingleRuleReportOutput(dfObj, benefitReport.result === ValidationResult.ELIGIBLE, userValue);
-            }
-            elements.push(
-                <TableRow key={dfUri}>
-                    <TableCell>{requirementCell}</TableCell>
-                    <TableCell>{userValueCell ?? "-"}</TableCell>
-                    <TableCell>{validityCell ?? "-"}</TableCell>
-                </TableRow>
-            );
-        }
-        return elements;
-    }
 
     useEffect(() => {
         if (loaded) return;
@@ -132,26 +35,76 @@ const BenefitPageRules = ({benefitId}) => {
         fetchRulesData();
     }, [benefitId, rulesData, metadata, loaded, validationReport]);
 
+    const rules = buildRulesOutput(rulesData, metadata, benefitReport, userProfile)
+
+    console.log("BenefitPageRules loaded:", buildRulesOutput(rulesData, metadata, benefitReport, userProfile));
+
     return (
         <>
             {loaded && (
-                <TableContainer component={Paper}>
-                    <Table>
-                        <TableHead>
-                            <TableRow>
-                                <TableCell>Requirements</TableCell>
-                                <TableCell>Your answer</TableCell>
-                                <TableCell>Validity</TableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {buildRulesOutput()}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
+                <VStack sx={{width: '100%'}}>
+                    <Typography sx={styles.sectionTitle}>
+                        Eligibility rules
+                    </Typography>
+                    <VStack gap={3}>
+                        {
+                            rules &&
+                            rules.map((rule, index) => (
+                                <BenefitPageRuleEntry ruleData={rule} key={index}/>
+                            ))
+                        }
+                    </VStack>
+                </VStack>
             )}
         </>
     );
+}
+
+const styles = {
+    button: {
+        color: 'black',
+        fontSize: 16,
+    },
+    checkEligibilityButton: {
+        borderWidth: '1px',
+        borderStyle: 'solid',
+        borderRadius: '15px',
+        borderColor: globalStyles.secondaryColor,
+        backgroundColor: globalStyles.secondaryColor,
+        color: 'white',
+        fontSize: '14px',
+        fontWeight: 'bold',
+        textTransform: 'none',
+        '&:hover': {
+            backgroundColor: globalStyles.secondaryColor,
+            color: 'white',
+            borderColor: globalStyles.secondaryColor,
+        },
+    },
+    topicTag: {
+        backgroundColor: globalStyles.primaryColor,
+        padding: '8px',
+        borderRadius: '12px',
+        fontSize: '14px',
+        color: 'black',
+        fontWeight: '400'
+    },
+    sectionTitle: {
+        fontSize: '20px',
+        fontWeight: 'bold',
+    },
+    sectionText: {
+        fontSize: '16px',
+        fontWeight: '400',
+    },
+    fieldText: {
+        fontSize: '14px',
+        fontWeight: '300',
+    },
+    requirementText: {
+        fontSize: '16px',
+        fontWeight: '400',
+    }
 }
 
 export default BenefitPageRules;

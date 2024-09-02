@@ -1,37 +1,75 @@
 import VStack from "../../../components/VStack";
-import {Typography} from "@mui/material";
+import {IconButton, Typography} from "@mui/material";
 import HStack from "../../../components/HStack";
-import {blue} from "@mui/material/colors";
+import globalStyles from "../../../styles/styles";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import React, {useState} from "react";
+import {useStore} from "../../../components/ViewportUpdater";
 
 const BenefitPageHeader = ({benefit}) => {
+    const [leiKaInfo, setLeiKaInfo] = useState(false);
+    const isDesktop = useStore((state) => state.isDesktop);
+    const titleFontSize = isDesktop ? '32px' : '28px';
+
     return (
-        <VStack sx={styles.benefitPageCard}>
-            <VStack gap={1} sx={{padding: "16px"}}>
-                <HStack justifyContent={'flex-start'}>
-                    <Typography variant="h6" sx={styles.titleText}>
-                        {benefit.title}
-                    </Typography>
-                </HStack>
-                <Typography variant="body1" sx={styles.subtitleText}>
-                    LeiKa-Id: {benefit.leikaId}
+        <VStack gap={0} alignItems={'flex-start'} sx={{
+            width: '100%',
+            backgroundColor: globalStyles.colorDeepTealTransparent,
+            padding: '16px',
+            borderRadius: '12px'
+        }}>
+            <VStack>
+                <Typography sx={{...styles.titleText, fontSize: titleFontSize}}>
+                    {benefit.title}
                 </Typography>
+                <VStack>
+                    <HStack alignItems={'center'}>
+                        <Typography sx={styles.subTitleText}>
+                            LeiKa-Id: {benefit.leikaId}
+                        </Typography>
+                        <IconButton
+                            sx={{
+                                width: 24,
+                                height: 24,
+                                borderRadius: '50%',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                backgroundColor: 'white',
+                                '&:hover': {
+                                    backgroundColor: globalStyles.colorLightGrey,
+                                },
+                            }}
+                            onClick={() => setLeiKaInfo(!leiKaInfo)}
+                        >
+                            <InfoOutlinedIcon sx={{fontSize: 16, color: 'black'}}/>
+                        </IconButton>
+                    </HStack>
+                    {leiKaInfo && (
+                        <VStack sx={{backgroundColor: 'white', padding: '12px', borderRadius: '12px'}}>
+                            <Typography sx={styles.subTitleText}>
+                                LeiKa is a unique identifier for benefits in Germany. It helps you to
+                                find
+                                the right benefit for you.
+                            </Typography>
+                        </VStack>)}
+                </VStack>
             </VStack>
         </VStack>
     );
 }
 
+
 const styles = {
-    benefitPageCard: {
-        width: '100%',
-        backgroundColor: blue[100],
-    },
     titleText: {
         fontWeight: 'bold',
     },
-    subtitleText: {
-        fontSize: '12px',
+    subTitleText: {
+        fontSize: '14px',
         fontWeight: '400',
-    }
-};
+        color: 'black',
+        textTransform: 'none',
+    },
+}
 
 export default BenefitPageHeader;

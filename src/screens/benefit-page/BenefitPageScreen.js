@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import Layout from "../../components/Layout";
 import {Link, useParams} from "react-router-dom";
 import BenefitPageHeader from "./components/BenefitPageHeader";
@@ -7,18 +7,21 @@ import {useStore} from "../../components/ViewportUpdater";
 import {useMetadataStore, useValidationReportStore} from "../../storage/zustand";
 import useFetchData from "../../services/fetchResourceService";
 import BenefitPageRules from "./components/BenefitPageRules";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import {Button} from "@mui/material";
+import {Button, IconButton, Typography} from "@mui/material";
 import HStack from "../../components/HStack";
 import globalStyles from "../../styles/styles";
 import {ValidationResult} from "@foerderfunke/matching-engine";
+import VStack from "../../components/VStack";
+import Divider from "@mui/material/Divider";
+import OpenInNewOutlinedIcon from '@mui/icons-material/OpenInNewOutlined';
 
 const BenefitPageScreen = () => {
-    const isDesktop = useStore((state) => state.isDesktop);
     const {id} = useParams();
     const [benefitPageData, setBenefitPageData] = useState();
-    const metadata = useMetadataStore((state) => state.metadata);
     const [topicsData, setTopicsData] = useState([]);
+
+    const isDesktop = useStore((state) => state.isDesktop);
+    const metadata = useMetadataStore((state) => state.metadata);
     const validationReport = useValidationReportStore((state) => state.validationReport);
 
     useFetchData('assets/data/topics/topics-list.json', setTopicsData);
@@ -28,57 +31,127 @@ const BenefitPageScreen = () => {
         setBenefitPageData(metadata.rp[rpUri]);
     }, [id, topicsData, metadata]);
 
-    const getTopicTitle = (topicUri) => {
-        let topicId = topicUri.startsWith("https") ? "ff:" + topicUri.split("#")[1] : topicUri;
-        return topicsData.find(topic => topic.id === topicId).title;
-    }
-
-    const getCategoryTitles = () => {
-        return benefitPageData.categories.map(categoryUri => getTopicTitle(categoryUri)).join(', ');
-    }
-
     const isMissingDataBenefit = () => {
         const report = validationReport.reports.find(report => report.rpUri === "https://foerderfunke.org/default#" + id.split(":")[1]);
         return report.result === ValidationResult.UNDETERMINABLE;
     }
 
+    const getTopicTitle = useMemo(
+        () => (topicUri) => {
+            if (!topicsData) {
+                return '';
+            }
+
+            let topicId = topicUri.startsWith("https") ? "ff:" + topicUri.split("#")[1] : topicUri;
+            const topic = topicsData.find(topic => topic.id === topicId);
+
+            return topic ? topic.title : ''; // Return the title if found, otherwise return an empty string
+        },
+        [topicsData]
+    );
+
+    const getCategoryTitles = useMemo(
+        () => {
+            if (!benefitPageData || !benefitPageData.categories) {
+                return '';
+            }
+
+            return benefitPageData.categories.map(categoryUri => getTopicTitle(categoryUri));
+        },
+        [benefitPageData, getTopicTitle]
+    );
+
     return (
         <Layout isApp={true} logo={false} back={'Back'}>
-            <AppScreenWrapper isDesktop={isDesktop}>
-                <HStack justifyContent="space-between" sx={{width: '100%'}}>
-                    <Button variant="text" sx={styles.button} startIcon={<ChevronLeftIcon/>} component={Link}
-                            to={'/eligibility-overview'}>Back</Button>
-                </HStack>
+            <AppScreenWrapper isDesktop={isDesktop} back={true}>
                 {benefitPageData && topicsData.length > 0 ? (
                     <>
                         <BenefitPageHeader benefit={benefitPageData}/>
-                        {/*<BenefitPageList benefit={benefitPageData}/>*/}
-                        <small style={{color: "gray"}}>Topics: {getCategoryTitles()}</small>
-                        {id && isMissingDataBenefit() &&
+                        <VStack sx={{width: '100%'}}>
                             <HStack>
-                                <Button
-                                    sx={styles.checkEligibilityButton}
-                                    variant="text"
-                                    component={Link}
-                                    to={`/onboarding-welcome/${id}`}>
-                                    Check eligibility
-                                </Button>
+                                {
+                                    getCategoryTitles.map((category, index) => (
+                                        <HStack
+                                            key={index}
+                                            sx={styles.topicTag}>
+                                            {category}
+                                        </HStack>
+                                    ))
+                                }
                             </HStack>
-                        }
-                        <h3>In a nutshell</h3>
-                        <div>{benefitPageData.benefitInfo}</div>
-                        <div>More info: <a target="_blank" rel="noreferrer"
-                                           href={benefitPageData.seeAlso}>{benefitPageData.seeAlso.split("//")[1]}</a>
-                        </div>
-                        <h3>Eligibility rules</h3>
+                        </VStack>
+                        <Divider sx={{width: "100%"}}/>
+                    {id && isMissingDataBenefit() &&
+                        <HStack>
+                            <Button
+                                sx={styles.checkEligibilityButton}
+                                variant="text"
+                                component={Link}
+                                to={`/onboarding-welcome/${id}`}>
+                                Check eligibility
+                            </Button>
+                        </HStack>
+                    }
+                        <VStack sx={{width: '100%'}}>
+                            <Typography sx={styles.sectionTitle}>
+                                What is it
+                            </Typography>
+                            <Typography sx={styles.sectionText}>
+                                {benefitPageData.benefitInfo}
+                            </Typography>
+                            <Typography sx={styles.sectionText}>
+                                <HStack gap={1}>
+                                    More Info available here
+                                    <a href={benefitPageData.seeAlso} target="_blank" rel="noopener noreferrer">
+                                        <IconButton
+                                            sx={{
+                                                width: 24,
+                                                height: 24,
+                                                borderRadius: '50%',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                backgroundColor: 'white',
+                                                '&:hover': {
+                                                    backgroundColor: globalStyles.colorLightGrey,
+                                                },
+                                            }}
+                                        >
+                                            <OpenInNewOutlinedIcon sx={{fontSize: 16, color: 'black'}}/>
+                                        </IconButton>
+                                    </a>
+                                </HStack>
+                            </Typography>
+                        </VStack>
+                        <Divider sx={{width: "100%"}}/>
                         <BenefitPageRules benefitId={id}/>
-                        <h3>What documents do you need?</h3>
-                        -
-                        <h3>Contact</h3>
-                        -
-                        <h3>Do you need help with your application?</h3>
-                        These organizations offer you advice for free:<br/>
-                        -
+                        <Divider sx={{width: "100%"}}/>
+                        <VStack sx={{width: '100%'}}>
+                            <Typography sx={styles.sectionTitle}>
+                                What documents do you need
+                            </Typography>
+                            <Typography sx={styles.sectionText}>
+                                No information available
+                            </Typography>
+                        </VStack>
+                        <Divider sx={{width: "100%"}}/>
+                        <VStack sx={{width: '100%'}}>
+                            <Typography sx={styles.sectionTitle}>
+                                Contact
+                            </Typography>
+                            <Typography sx={styles.sectionText}>
+                                No information available
+                            </Typography>
+                        </VStack>
+                        <Divider sx={{width: "100%"}}/>
+                        <VStack sx={{width: '100%'}}>
+                            <Typography sx={styles.sectionTitle}>
+                                Do you need help with your application?
+                            </Typography>
+                            <Typography sx={styles.sectionText}>
+                                No information available
+                            </Typography>
+                        </VStack>
                     </>
                 ) : null}
             </AppScreenWrapper>
@@ -107,6 +180,30 @@ const styles = {
             borderColor: globalStyles.secondaryColor,
         },
     },
+    topicTag: {
+        backgroundColor: globalStyles.primaryColor,
+        padding: '8px',
+        borderRadius: '12px',
+        fontSize: '14px',
+        color: 'black',
+        fontWeight: '400'
+    },
+    sectionTitle: {
+        fontSize: '20px',
+        fontWeight: 'bold',
+    },
+    sectionText: {
+        fontSize: '16px',
+        fontWeight: '400',
+    },
+    fieldText: {
+        fontSize: '14px',
+        fontWeight: '300',
+    },
+    requirementText: {
+        fontSize: '16px',
+        fontWeight: '400',
+    }
 }
 
 export default BenefitPageScreen;
