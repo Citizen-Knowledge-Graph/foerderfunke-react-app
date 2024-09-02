@@ -1,5 +1,5 @@
 import {RuleType} from "@foerderfunke/matching-engine/src/prematch";
-import {convertUserValueRaw, getChoiceLabel} from "./rdfParsing";
+import {convertUserValueRaw, expand, getChoiceLabel} from "./rdfParsing";
 import {ValidationResult} from "@foerderfunke/matching-engine";
 
 const trim = (str) => {
@@ -46,16 +46,31 @@ export const buildSingleRuleOutput = (rulesObj, dfObj, metadata) => {
     }
 }
 
-export const showUserValue = (dfObj, userProfile) => {
+export const showUserValue = (dfObj, userProfile, materializedOutputs, metadata) => {
     if (dfObj.datafield && userProfile[dfObj.datafield]) { // ff:pensionable and ff:age don't have it, they will also not show up in the profile as they are materialized on the fly
         let userValueRaw = userProfile[dfObj.datafield];
         return convertUserValueRaw(userValueRaw, dfObj);
+    }
+    let dfUri = expand(dfObj.uri);
+    if (materializedOutputs[dfUri]) {
+        let str = convertUserValueRaw(materializedOutputs[dfUri].triples[0].o, dfObj);
+        str += " (inferred from your answer to \"" + metadata.df[materializedOutputs[dfUri].input].label + "\")";
+        return str;
     }
     return "-";
 }
 
 export const buildRulesOutput = (rulesData, metadata, benefitReport, userProfile) => {
     const elements = [];
+
+    let materializedOutputs = {};
+    if (Object.keys(benefitReport).length > 0 && benefitReport.materializationReport.rounds.length > 0) {
+        let matRounds = benefitReport.materializationReport.rounds;
+        for (let [uri, obj] of Object.entries(matRounds[0])) {
+            materializedOutputs[obj.output] = obj;
+        }
+    }
+
     for (let dfUri of Object.keys(rulesData)) {
         let rulesObj = rulesData[dfUri];
         let dfObj = metadata.df[dfUri];
@@ -74,7 +89,7 @@ export const buildRulesOutput = (rulesData, metadata, benefitReport, userProfile
 
         if (dfObj) {
             dfObj.uri = dfUri;
-            userValue = showUserValue(dfObj, userProfile);
+            userValue = showUserValue(dfObj, userProfile, materializedOutputs, metadata);
 
             if (benefitReport.result === ValidationResult.ELIGIBLE) {
                 validity = "valid";

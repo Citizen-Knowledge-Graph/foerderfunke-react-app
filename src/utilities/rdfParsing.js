@@ -17,6 +17,11 @@ export const convertUserValueRaw = (raw, dfObj) => {
     if (typeof raw === 'boolean') {
         return raw ? "yes" : "no";
     }
+    if (raw === "true") return "yes";
+    if (raw === "false") return "no";
+    if (!isNaN(raw)) {
+        return Number(raw);
+    }
     if (raw.startsWith("ff:")) {
         return getChoiceLabel(raw, dfObj);
     }
