@@ -3,7 +3,7 @@ import HStack from "./HStack";
 import {Typography} from "@mui/material";
 
 const LogoBar = ({size = 'large', secondary = false}) => {
-    const logoUrl =`${process.env.PUBLIC_URL}/assets/images/logos/FF_logo.svg`;
+    const logoUrl =`${process.env.PUBLIC_URL}/assets/images/logos/FF_logo_round.svg`;
 
     const styles = (() => {
         switch (size) {
