@@ -1,3 +1,5 @@
+import React from "react";
+import {useStore} from "../../components/ViewportUpdater";
 import VStack from "../../components/VStack";
 import Layout from "../../components/Layout";
 import LandingPageHowItWorks from "./sections/how-it-works/LandingPageHowItWorks";
@@ -6,8 +8,8 @@ import LandingPageTeam from "./sections/team/LandingPageTeam";
 import LandingPageFooter from "./sections/footer/LandingPageFooter";
 import LandingPageFact from "./sections/LandingPageFact";
 import LandingPageTopSection from "./sections/top-section/LandingPageTopSection";
-import React from "react";
-import {useStore} from "../../components/ViewportUpdater";
+import LandingPageFeedback from "./sections/feedback/LandingPageFeedback";
+import Divider from "@mui/material/Divider";
 
 const LandingPage = () => {
     const isDesktop = useStore((state) => state.isDesktop);
@@ -24,6 +26,10 @@ const LandingPage = () => {
                 <VStack id="how-it-works">
                     <LandingPageHowItWorks isDesktop={isDesktop}/>
                 </VStack>
+                <VStack id="how-it-works">
+                    <LandingPageFeedback isDesktop={isDesktop}/>
+                </VStack>
+                <Divider sx={{height: 5}}/>
                 <VStack id="principles">
                     <LandingPagePrinciples isDesktop={isDesktop}/>
                 </VStack>
