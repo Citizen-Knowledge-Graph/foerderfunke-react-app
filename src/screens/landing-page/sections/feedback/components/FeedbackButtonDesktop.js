@@ -2,39 +2,18 @@ import React from "react";
 import {Button, Typography} from "@mui/material";
 import globalStyles from "../../../../../styles/styles";
 import VStack from "../../../../../components/VStack";
-import HStack from "../../../../../components/HStack";
 
-const FeedbackButton = ({Icon, selected, handleButtonClick, color, label, isDesktop}) => {
-    const boxSize = isDesktop ? '75px' : '60px';
-    const fontSize = isDesktop ? '60px' : '40px';
-
-
-    const DynamicStacker = ({children}) => {
-        if (isDesktop) {
-            return (
-                <VStack alignItems={'center'} gap={1}>
-                    {children}
-                </VStack>
-            );
-        }
-        return (
-            <HStack gap={3} justifyContent={'center'} alignItems={'center'}>
-                <HStack alignItems={'center'} sx={{width: '125px'}}>
-                    {children}
-                </HStack>
-            </HStack>
-        );
-    };
+const FeedbackButtonDesktop = ({Icon, selected, handleButtonClick, color, label}) => {
 
     return (
-        <DynamicStacker>
+        <VStack alignItems={'center'} gap={1}>
             <Button
                 onClick={handleButtonClick}
                 sx={{
                     borderRadius: '50%',
-                    width: boxSize,
-                    height: boxSize,
-                    minWidth: boxSize,
+                    width: '75px',
+                    height: '75px',
+                    minWidth: '75px',
                     padding: 0,
                     backgroundColor: selected ? color : globalStyles.primaryColorTransparent,
                     border: selected ? `2px solid ${color}` : '2px solid transparent',
@@ -51,16 +30,16 @@ const FeedbackButton = ({Icon, selected, handleButtonClick, color, label, isDesk
                 }}
             >
                 <Icon style={{
-                    fontSize: fontSize,
+                    fontSize: '60px',
                     color: selected ? 'white' : color,
                     transition: 'background-color 0.3s, border 0.3s, color 0.3s',
                 }}/>
             </Button>
-            <Typography sx={{color: color, fontWeight: 'bold'}}>
+            <Typography sx={{color: selected ? 'white' : color, fontWeight: 'bold'}}>
                 {label}
             </Typography>
-        </DynamicStacker>
+        </VStack>
     );
 };
 
-export default FeedbackButton;
+export default FeedbackButtonDesktop;
