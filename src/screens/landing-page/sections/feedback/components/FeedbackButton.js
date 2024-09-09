@@ -18,7 +18,7 @@ const FeedbackButton = ({Icon, selected, handleButtonClick, color, label, isDesk
             );
         }
         return (
-            <HStack gap={3} sx={{width: '100%'}} justifyContent={'center'} alignItems={'center'}>
+            <HStack gap={3} justifyContent={'center'} alignItems={'center'}>
                 <HStack alignItems={'center'} sx={{width: '125px'}}>
                     {children}
                 </HStack>

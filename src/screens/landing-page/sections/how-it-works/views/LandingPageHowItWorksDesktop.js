@@ -3,38 +3,44 @@ import VStack from "../../../../../components/VStack";
 import HStack from "../../../../../components/HStack";
 import LandingPageInfoCard from "../components/LandingPageInfoCard";
 
-const LandingPageHowItWorksDesktop = ({figma_phone_1, figma_phone_2}) => {
+const LandingPageHowItWorksDesktop = ({quick_check, benefits_overview, benefit_page}) => {
 
     return (
-        <VStack gap={5} alignItems={'center'}>
-            <HStack justifyContent={'space-between'} sx={{width: '60%'}}>
+        <VStack gap={9} alignItems={'center'}>
+            <HStack gap={9} justifyContent={'space-between'} alignItems={'center'}>
                 <LandingPageInfoCard
                     title="Answer some basic questions"
                     text="Do a quick check, create your profile, or browse our list of social benefits by topic. Your choice."/>
-                <LandingPageInfoCard
-                    title="See your potential benefits"
-                    text="The more complete your profile is, the more accurate the list of benefits you get."/>
-            </HStack>
-            <HStack justifyContent={'space-between'} alignItems={'center'} sx={{position: 'relative'}}>
                 <img
-                    src={figma_phone_1}
+                    src={quick_check}
                     style={{
-                        width: '500px',
+                        width: '275px',
                         height: 'auto',
-                        zIndex: 1,
-                        position: 'relative',
-                        marginRight: '-100px',
-                        marginTop: '-50px'
                     }}
                     alt={'phone 1'}/>
+            </HStack>
+            <HStack gap={9} justifyContent={'space-between'} alignItems={'center'}>
                 <img
-                    src={figma_phone_2}
+                    src={benefits_overview}
                     style={{
-                        width: '600px',
+                        width: '275px',
                         height: 'auto',
-                        zIndex: 2,
-                        position: 'relative',
-                        marginLeft: '-50px'
+                    }}
+                    alt={'phone 1'}/>
+                <LandingPageInfoCard
+                    title="Get your potential benefits listed"
+                    text="The more complete your profile is, the more accurate the list of benefits you get."/>
+
+            </HStack>
+            <HStack gap={9} justifyContent={'space-between'} alignItems={'center'}>
+                <LandingPageInfoCard
+                    title="Learn about relevant benefits"
+                    text="Learn about requirements and necessary steps to apply for you benefits."/>
+                <img
+                    src={benefit_page}
+                    style={{
+                        width: '275px',
+                        height: 'auto',
                     }}
                     alt={'phone 1'}/>
             </HStack>

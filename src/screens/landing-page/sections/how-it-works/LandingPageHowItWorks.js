@@ -9,27 +9,23 @@ import LandingPageBasics from "./components/LandingPageBasics";
 import LandingPageWAppButton from "../../components/LandingPageWAppButton";
 
 const LandingPageHowItWorks = ({isDesktop}) => {
-    const figma_phone_1 = `${process.env.PUBLIC_URL}/assets/images/figma_phone_v1.svg`;
-    const figma_phone_2 = `${process.env.PUBLIC_URL}/assets/images/figma_phone_v2.svg`;
+    const quick_check = `${process.env.PUBLIC_URL}/assets/images/landing-page/current_quickcheck_page.jpg`;
+    const benefits_overview = `${process.env.PUBLIC_URL}/assets/images/landing-page/current_overview_page.jpg`;
+    const benefit_page = `${process.env.PUBLIC_URL}/assets/images/landing-page/current_benefits_page.jpg`;
 
     return (
         <LandingPageSectionWrapper isDesktop={isDesktop}>
             <VStack gap={5}>
                 <VStack>
                     <HStack justifyContent={'center'} sx={{width: '100%'}}>
-                        <Typography sx={styles.subTitleText}>
-                            THAT'S HOW IT WORKS
-                        </Typography>
-                    </HStack>
-                    <HStack justifyContent={'center'} sx={{width: '100%'}}>
                         <Typography sx={styles.titleText}>
-                            The easy-peasy way to find social benefits for you
+                            That's how it works
                         </Typography>
                     </HStack>
                 </VStack>
                 {isDesktop ?
-                    <LandingPageHowItWorksDesktop figma_phone_1={figma_phone_1} figma_phone_2={figma_phone_2}/>
-                    : <LandingPageHowItWorksMobile figma_phone_1={figma_phone_1} figma_phone_2={figma_phone_2}/>
+                    <LandingPageHowItWorksDesktop quick_check={quick_check} benefits_overview={benefits_overview} benefit_page={benefit_page}/>
+                    : <LandingPageHowItWorksMobile quick_check={quick_check} benefits_overview={benefits_overview} benefit_page={benefit_page}/>
                 }
                 <VStack>
                     <LandingPageBasics/>

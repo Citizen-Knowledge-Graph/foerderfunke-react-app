@@ -1,7 +1,7 @@
 import VStack from "../../../../../components/VStack";
 import HStack from "../../../../../components/HStack";
 import {Typography} from "@mui/material";
-import {green} from "@mui/material/colors";
+import globalStyles from "../../../../../styles/styles";
 
 const LandingPageInfoCard = ({title, text}) => {
     return (
@@ -25,16 +25,12 @@ const LandingPageInfoCard = ({title, text}) => {
 const styles = {
     infoCard: {
         borderRadius: '15px',
-        borderStyle: 'solid',
-        borderWidth: '1px',
-        borderColor: green[500],
+        backgroundColor: globalStyles.primaryColor,
         padding: '16px',
-        boxShadow: '2px 2px 4px 2px rgba(0, 0, 0, 0.2)',
     },
     titleText: {
         fontWeight: 'bold',
-        fontSize: '28px',
-        color: green[500],
+        fontSize: '24px',
     },
     subTitleText: {
         fontSize: '20px',

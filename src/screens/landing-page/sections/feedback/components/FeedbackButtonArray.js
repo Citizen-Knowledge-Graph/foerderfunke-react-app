@@ -39,7 +39,7 @@ const FeedbackButtonArray = ({ isDesktop }) => {
         }
         return (
             <VStack
-                alignItems={'center'}
+                alignItems={'flex-start'}
                 sx={{ width: "100%" }}
             >
                 {children}
