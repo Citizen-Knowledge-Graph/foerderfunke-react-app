@@ -29,8 +29,6 @@ const FeedbackButton = ({Icon, selected, handleButtonClick, color, label, isDesk
     return (
         <DynamicStacker>
             <Button
-                disableRipple
-                disableFocusRipple
                 onClick={handleButtonClick}
                 sx={{
                     borderRadius: '50%',
@@ -42,6 +40,10 @@ const FeedbackButton = ({Icon, selected, handleButtonClick, color, label, isDesk
                     border: selected ? `2px solid ${color}` : '2px solid transparent',
                     color: selected ? 'white' : 'black',
                     transition: 'background-color 0.3s, border 0.3s, color 0.3s',
+                    '&:focusVisible': {
+                        backgroundColor: 'transparent',
+                        outline: 'none',
+                    },
                 }}
             >
                 <Icon style={{
