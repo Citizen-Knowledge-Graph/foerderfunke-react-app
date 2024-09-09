@@ -23,10 +23,15 @@ const FeedbackBox = ({isDesktop}) => {
                 <TextField
                     label="Enter your text"
                     multiline
-                    maxRows={10}
+                    variant="filled"
                     fullWidth
+                    InputProps={{
+                        disableUnderline: true, // This removes the bottom underline
+                    }}
+                    minRows={5}
                     style={{
                         overflow: 'auto',
+                        borderRadius: '12px'
                     }}
                 />
             </VStack>

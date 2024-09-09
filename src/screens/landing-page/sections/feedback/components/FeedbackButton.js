@@ -5,6 +5,9 @@ import VStack from "../../../../../components/VStack";
 import HStack from "../../../../../components/HStack";
 
 const FeedbackButton = ({Icon, selected, handleButtonClick, color, label, isDesktop}) => {
+    const boxSize = isDesktop ? '75px' : '60px';
+    const fontSize = isDesktop ? '60px' : '40px';
+
 
     const DynamicStacker = ({children}) => {
         if (isDesktop) {
@@ -15,8 +18,10 @@ const FeedbackButton = ({Icon, selected, handleButtonClick, color, label, isDesk
             );
         }
         return (
-            <HStack gap={3} alignItems={'center'}>
-                {children}
+            <HStack gap={3} sx={{width: '100%'}} justifyContent={'center'} alignItems={'center'}>
+                <HStack alignItems={'center'} sx={{width: '125px'}}>
+                    {children}
+                </HStack>
             </HStack>
         );
     };
@@ -26,11 +31,10 @@ const FeedbackButton = ({Icon, selected, handleButtonClick, color, label, isDesk
             <Button
                 onClick={handleButtonClick}
                 sx={{
-                    fontSize: '30px',
                     borderRadius: '50%',
-                    width: '60px',
-                    height: '60px',
-                    minWidth: '60px',
+                    width: boxSize,
+                    height: boxSize,
+                    minWidth: boxSize,
                     padding: 0,
                     backgroundColor: selected ? color : globalStyles.primaryColorTransparent,
                     border: selected ? `2px solid ${color}` : '2px solid transparent',
@@ -39,7 +43,7 @@ const FeedbackButton = ({Icon, selected, handleButtonClick, color, label, isDesk
                 }}
             >
                 <Icon style={{
-                    fontSize: '50px',
+                    fontSize: fontSize,
                     color: selected ? 'white' : color,
                     transition: 'background-color 0.3s, border 0.3s, color 0.3s',
                 }}/>
