@@ -9,8 +9,8 @@ const getFeatureFlag = (flag) => {
 };
 
 const featureFlags = {
-    newFeature: getFeatureFlag('newFeature'),
-    betaFeature: getFeatureFlag('betaFeature'),
+    newFeedbackSection: getFeatureFlag('newFeedbackSection'),
+    newCollaborationSection: getFeatureFlag('newCollaborationSection'),
 };
 
 export const setFeatureFlag = (flag, value) => {

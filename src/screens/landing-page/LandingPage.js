@@ -9,7 +9,7 @@ import LandingPageFooter from "./sections/footer/LandingPageFooter";
 import LandingPageFact from "./sections/LandingPageFact";
 import LandingPageTopSection from "./sections/top-section/LandingPageTopSection";
 import LandingPageFeedback from "./sections/feedback/LandingPageFeedback";
-import Divider from "@mui/material/Divider";
+import featureFlags from "../../featureFlags";
 
 const LandingPage = () => {
     const isDesktop = useStore((state) => state.isDesktop);
@@ -26,10 +26,13 @@ const LandingPage = () => {
                 <VStack id="how-it-works">
                     <LandingPageHowItWorks isDesktop={isDesktop}/>
                 </VStack>
-                <VStack id="how-it-works">
-                    <LandingPageFeedback isDesktop={isDesktop}/>
-                </VStack>
-                <Divider sx={{height: 5}}/>
+                {
+                    featureFlags.newFeedbackSection && (
+                        <VStack id="feedback">
+                            <LandingPageFeedback isDesktop={isDesktop}/>
+                        </VStack>
+                    )
+                }
                 <VStack id="principles">
                     <LandingPagePrinciples isDesktop={isDesktop}/>
                 </VStack>
