@@ -8,6 +8,7 @@ import {Typography} from "@mui/material";
 import NarBarLink from "../../../../../components/NavBarLink";
 import LandingPageWAppButton from "../../../components/LandingPageWAppButton";
 import GitHubLink from "../../../../../components/GitHubLink";
+import FeatureToggle from "../components/FeatureToggle";
 
 const LandingPageFooterMobile = () => {
     return (
@@ -34,6 +35,7 @@ const LandingPageFooterMobile = () => {
                     Rollbergstraße 28A,
                     12053 Berlin
                 </Typography>
+                <FeatureToggle/>
             </VStack>
         </VStack>
     );

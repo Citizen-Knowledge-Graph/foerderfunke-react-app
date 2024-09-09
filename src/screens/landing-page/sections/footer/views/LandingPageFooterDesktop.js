@@ -9,6 +9,7 @@ import EmailLink from "../../../../../components/EmailLink";
 import LinkedInLink from "../../../../../components/LinkedInLink";
 import LogoBar from "../../../../../components/LogoBar";
 import GitHubLink from "../../../../../components/GitHubLink";
+import FeatureToggle from "../components/FeatureToggle";
 
 const LandingPageFooterDesktop = () => {
 
@@ -32,7 +33,7 @@ const LandingPageFooterDesktop = () => {
                 </HStack>
                 <HStack>
                     <Typography sx={styles.copyrightText}>
-                        ©  2024 by FörderFunke. All rights reserved.
+                        © 2024 by FörderFunke. All rights reserved.
                         <br/>
                         Degenhart, Espinosa, Gläser - FörderFuchs GbR,
                         c/o Impact Hub Berlin,
@@ -40,6 +41,9 @@ const LandingPageFooterDesktop = () => {
                         12053 Berlin
                     </Typography>
                 </HStack>
+                <VStack>
+                    <FeatureToggle/>
+                </VStack>
             </HStack>
         </VStack>
     );
