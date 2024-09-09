@@ -12,19 +12,18 @@ const FeedbackBox = ({isDesktop}) => {
         <VStack gap={5} sx={styles.feedbackBox}>
             <VStack gap={3} alignItems={'center'} sx={{width: "100%"}}>
                 <Typography sx={styles.text}>
-                    How do you like the overall experience with FörderFunke?
+                    How do you rate your overall experience with FörderFunke?
                 </Typography>
                 <FeedbackButtonArray isDesktop={isDesktop}/>
             </VStack>
             <VStack gap={1}>
                 <Typography sx={styles.text}>
-                    What do you like about FörderFunke?
+                    If you like you can also write us a few lines.
                 </Typography>
                 <TextField
                     label="Enter your text"
                     multiline
                     maxRows={10}
-                    variant="outlined"
                     fullWidth
                     style={{
                         overflow: 'auto',
@@ -48,7 +47,8 @@ const styles = {
         backgroundColor: 'white'
     },
     text: {
-        fontSize: '24px',
+        fontSize: '20px',
+        color: globalStyles.colorDarkGrey,
         textAlign: 'left'
     },
     button: {

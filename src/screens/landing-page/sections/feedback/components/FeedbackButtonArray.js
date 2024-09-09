@@ -10,11 +10,11 @@ import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfi
 
 // Array of icon components with corresponding sentiment colors
 const icons = [
-    { Icon: SentimentVeryDissatisfiedIcon, color: '#f44336' },  // Red
-    { Icon: SentimentDissatisfiedIcon, color: '#ff9800' },      // Orange
-    { Icon: SentimentNeutralIcon, color: '#9e9e9e' },           // Grey
-    { Icon: SentimentSatisfiedIcon, color: '#8bc34a' },         // Light green
-    { Icon: SentimentVerySatisfiedIcon, color: '#4caf50' },     // Green
+    { Icon: SentimentVeryDissatisfiedIcon, color: '#f44336', label: 'Worst'},
+    { Icon: SentimentDissatisfiedIcon, color: '#ff9800', label: 'Not good'},
+    { Icon: SentimentNeutralIcon, color: '#9e9e9e', label: 'Fine'},
+    { Icon: SentimentSatisfiedIcon, color: '#8bc34a', label: 'Good'},
+    { Icon: SentimentVerySatisfiedIcon, color: '#4caf50', label: 'Great'},
 ];
 
 const FeedbackButtonArray = ({ isDesktop }) => {
@@ -54,7 +54,8 @@ const FeedbackButtonArray = ({ isDesktop }) => {
                     <FeedbackButton
                         key={index}
                         Icon={item.Icon}
-                        color={item.color}   // Pass the color prop to FeedbackButton
+                        color={item.color}
+                        label={item.label}
                         selected={selected === index}
                         handleButtonClick={() => handleButtonClick(index)}
                     />
