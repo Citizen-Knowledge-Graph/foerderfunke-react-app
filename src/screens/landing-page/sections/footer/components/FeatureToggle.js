@@ -71,12 +71,4 @@ const FeatureToggle = () => {
     )
 }
 
-const styles = {
-    button: {
-        color: 'black',
-        fontSize: '12px',
-        textTransform: 'none'
-    }
-}
-
 export default FeatureToggle;
