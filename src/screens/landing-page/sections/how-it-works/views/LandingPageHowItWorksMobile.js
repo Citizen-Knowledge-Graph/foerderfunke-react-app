@@ -12,7 +12,7 @@ const LandingPageHowItWorksMobile = ({quick_check, benefits_overview, benefit_pa
                 <img
                     src={quick_check}
                     style={{
-                        maxWidth: '300px',
+                        maxWidth: '250px',
                         height: 'auto',
                     }}
                     alt={'phone 1'}/>
@@ -24,7 +24,7 @@ const LandingPageHowItWorksMobile = ({quick_check, benefits_overview, benefit_pa
                 <img
                     src={benefits_overview}
                     style={{
-                        maxWidth: '300px',
+                        maxWidth: '250px',
                         height: 'auto',
                     }}
                     alt={'phone 1'}/>
@@ -36,7 +36,7 @@ const LandingPageHowItWorksMobile = ({quick_check, benefits_overview, benefit_pa
                 <img
                     src={benefit_page}
                     style={{
-                        maxWidth: '300px',
+                        maxWidth: '250px',
                         height: 'auto',
                     }}
                     alt={'phone 1'}/>
