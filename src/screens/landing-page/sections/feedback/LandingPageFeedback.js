@@ -3,8 +3,8 @@ import {Typography} from "@mui/material";
 import LandingPageSectionWrapper from "../../components/LandingPageSectionWrapper";
 import VStack from "../../../../components/VStack";
 import globalStyles from "../../../../styles/styles";
-import HStack from "../../../../components/HStack";
-import FeedbackBox from "./components/FeedbackBox";
+import LandingPageFeedbackDesktop from "./views/LandingPageFeedbackDesktop";
+import LandingPageFeedbackMobile from "./views/LandingPageFeedbackMobile";
 
 const LandingPageFeedback = ({isDesktop}) => {
 
@@ -14,13 +14,10 @@ const LandingPageFeedback = ({isDesktop}) => {
                 <Typography sx={styles.titleText}>
                     Help us improve FörderFunke
                 </Typography>
-                <HStack sx={{maxWidth: '780px'}}>
-                    <Typography sx={styles.text}>
-                        Your feedback is essential for us to understand how we can improve your experience with the
-                        application. It helps us improve and add features that allow people to find the right benefits.
-                    </Typography>
-                </HStack>
-                <FeedbackBox isDesktop={isDesktop}/>
+                {
+                    isDesktop ? (<LandingPageFeedbackDesktop isDesktop={isDesktop}/>) : (
+                        <LandingPageFeedbackMobile isDesktop={isDesktop}/>)
+                }
             </VStack>
         </LandingPageSectionWrapper>
     );
@@ -31,10 +28,6 @@ const styles = {
         fontWeight: 'bold',
         fontSize: '36px',
         textAlign: 'center',
-    },
-    text: {
-        fontSize: '24px',
-        textAlign: 'left'
     }
 };
 

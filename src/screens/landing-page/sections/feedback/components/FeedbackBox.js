@@ -10,7 +10,7 @@ const FeedbackBox = ({isDesktop}) => {
 
     return (
         <VStack gap={5} sx={styles.feedbackBox}>
-            <VStack gap={3} alignItems={'center'} sx={{width: "100%"}}>
+            <VStack gap={3} alignItems={'flex-start'} sx={{width: "100%"}}>
                 <Typography sx={styles.text}>
                     How do you rate your overall experience with FörderFunke?
                 </Typography>

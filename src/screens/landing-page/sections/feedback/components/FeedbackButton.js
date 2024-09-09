@@ -2,10 +2,27 @@ import React from "react";
 import {Button, Typography} from "@mui/material";
 import globalStyles from "../../../../../styles/styles";
 import VStack from "../../../../../components/VStack";
+import HStack from "../../../../../components/HStack";
 
-const FeedbackButton = ({Icon, selected, handleButtonClick, color, label}) => {
+const FeedbackButton = ({Icon, selected, handleButtonClick, color, label, isDesktop}) => {
+
+    const DynamicStacker = ({children}) => {
+        if (isDesktop) {
+            return (
+                <VStack alignItems={'center'} gap={1}>
+                    {children}
+                </VStack>
+            );
+        }
+        return (
+            <HStack gap={3} alignItems={'center'}>
+                {children}
+            </HStack>
+        );
+    };
+
     return (
-        <VStack alignItems={'center'} gap={1}>
+        <DynamicStacker>
             <Button
                 onClick={handleButtonClick}
                 sx={{
@@ -30,7 +47,7 @@ const FeedbackButton = ({Icon, selected, handleButtonClick, color, label}) => {
             <Typography sx={{color: color, fontWeight: 'bold'}}>
                 {label}
             </Typography>
-        </VStack>
+        </DynamicStacker>
     );
 };
 

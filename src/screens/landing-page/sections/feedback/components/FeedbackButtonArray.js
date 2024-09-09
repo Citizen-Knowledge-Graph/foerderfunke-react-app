@@ -11,7 +11,7 @@ import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfi
 // Array of icon components with corresponding sentiment colors
 const icons = [
     { Icon: SentimentVeryDissatisfiedIcon, color: '#f44336', label: 'Worst'},
-    { Icon: SentimentDissatisfiedIcon, color: '#ff9800', label: 'Not good'},
+    { Icon: SentimentDissatisfiedIcon, color: '#ff9800', label: 'Poor'},
     { Icon: SentimentNeutralIcon, color: '#9e9e9e', label: 'Fine'},
     { Icon: SentimentSatisfiedIcon, color: '#8bc34a', label: 'Good'},
     { Icon: SentimentVerySatisfiedIcon, color: '#4caf50', label: 'Great'},
@@ -31,7 +31,7 @@ const FeedbackButtonArray = ({ isDesktop }) => {
                     gap={3}
                     alignItems={'center'}
                     justifyContent={'space-between'}
-                    sx={{ width: "100%" }}  // Correctly place sx prop here
+                    sx={{ width: "100%" }}
                 >
                     {children}
                 </HStack>
@@ -40,7 +40,7 @@ const FeedbackButtonArray = ({ isDesktop }) => {
         return (
             <VStack
                 alignItems={'center'}
-                sx={{ width: "100%" }}  // Correctly place sx prop here
+                sx={{ width: "100%" }}
             >
                 {children}
             </VStack>
@@ -56,6 +56,7 @@ const FeedbackButtonArray = ({ isDesktop }) => {
                         Icon={item.Icon}
                         color={item.color}
                         label={item.label}
+                        isDesktop={isDesktop}
                         selected={selected === index}
                         handleButtonClick={() => handleButtonClick(index)}
                     />
