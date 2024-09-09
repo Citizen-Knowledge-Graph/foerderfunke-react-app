@@ -40,9 +40,13 @@ const FeedbackButton = ({Icon, selected, handleButtonClick, color, label, isDesk
                     border: selected ? `2px solid ${color}` : '2px solid transparent',
                     color: selected ? 'white' : 'black',
                     transition: 'background-color 0.3s, border 0.3s, color 0.3s',
+                    '&:hover': {
+                        backgroundColor: selected ? color : globalStyles.primaryColorTransparent,
+                    },
                     '&:focusVisible': {
-                        backgroundColor: 'transparent',
+                        backgroundColor: selected ? color : globalStyles.primaryColorTransparent,
                         outline: 'none',
+                        border: selected ? `2px solid ${color}` : '2px solid transparent',
                     },
                 }}
             >

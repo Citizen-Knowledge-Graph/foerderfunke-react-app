@@ -26,7 +26,7 @@ const FeedbackBox = ({isDesktop}) => {
                     variant="filled"
                     fullWidth
                     InputProps={{
-                        disableUnderline: true, // This removes the bottom underline
+                        disableUnderline: true,
                     }}
                     minRows={5}
                     style={{
