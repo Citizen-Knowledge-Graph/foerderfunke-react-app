@@ -35,7 +35,7 @@ const FeedbackButtonDesktop = ({Icon, selected, handleButtonClick, color, label}
                     transition: 'background-color 0.3s, border 0.3s, color 0.3s',
                 }}/>
             </Button>
-            <Typography sx={{color: selected ? 'white' : color, fontWeight: 'bold'}}>
+            <Typography sx={{color: color, fontWeight: 'bold'}}>
                 {label}
             </Typography>
         </VStack>

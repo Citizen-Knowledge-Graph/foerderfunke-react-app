@@ -12,12 +12,15 @@ const LandingPageHowItWorksDesktop = ({quick_check, benefits_overview, benefit_p
                     title="Answer some basic questions"
                     text="Do a quick check, create your profile, or browse our list of social benefits by topic. Your choice."/>
                 <img
-                    src={quick_check}
+                    src={benefit_page}
                     style={{
                         width: '275px',
                         height: 'auto',
+                        boxShadow: '0px 8px 12px rgba(0, 0, 0, 0.15)',
+                        borderRadius: '18px'
                     }}
-                    alt={'phone 1'}/>
+                    alt={'phone 1'}
+                />
             </HStack>
             <HStack gap={9} justifyContent={'space-between'} alignItems={'center'}>
                 <img
@@ -25,6 +28,8 @@ const LandingPageHowItWorksDesktop = ({quick_check, benefits_overview, benefit_p
                     style={{
                         width: '275px',
                         height: 'auto',
+                        boxShadow: '0px 8px 12px rgba(0, 0, 0, 0.15)',
+                        borderRadius: '18px'
                     }}
                     alt={'phone 1'}/>
                 <LandingPageInfoCard
@@ -41,6 +46,8 @@ const LandingPageHowItWorksDesktop = ({quick_check, benefits_overview, benefit_p
                     style={{
                         width: '275px',
                         height: 'auto',
+                        boxShadow: '0px 8px 12px rgba(0, 0, 0, 0.15)',
+                        borderRadius: '18px'
                     }}
                     alt={'phone 1'}/>
             </HStack>

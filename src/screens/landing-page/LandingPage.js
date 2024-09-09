@@ -10,6 +10,7 @@ import LandingPageFact from "./sections/LandingPageFact";
 import LandingPageTopSection from "./sections/top-section/LandingPageTopSection";
 import LandingPageFeedback from "./sections/feedback/LandingPageFeedback";
 import featureFlags from "../../featureFlags";
+import LandingPageCollaboration from "./sections/collaboration/LandingPageCollaboration";
 
 const LandingPage = () => {
     const isDesktop = useStore((state) => state.isDesktop);
@@ -30,6 +31,13 @@ const LandingPage = () => {
                     featureFlags.newFeedbackSection && (
                         <VStack id="feedback">
                             <LandingPageFeedback isDesktop={isDesktop}/>
+                        </VStack>
+                    )
+                }
+                {
+                    featureFlags.newCollaborationSection && (
+                        <VStack id="collaboration">
+                            <LandingPageCollaboration isDesktop={isDesktop}/>
                         </VStack>
                     )
                 }

@@ -14,6 +14,8 @@ const LandingPageHowItWorksMobile = ({quick_check, benefits_overview, benefit_pa
                     style={{
                         maxWidth: '250px',
                         height: 'auto',
+                        boxShadow: '0px 8px 12px rgba(0, 0, 0, 0.15)',
+                        borderRadius: '18px'
                     }}
                     alt={'phone 1'}/>
             </VStack>
@@ -26,6 +28,8 @@ const LandingPageHowItWorksMobile = ({quick_check, benefits_overview, benefit_pa
                     style={{
                         maxWidth: '250px',
                         height: 'auto',
+                        boxShadow: '0px 8px 12px rgba(0, 0, 0, 0.15)',
+                        borderRadius: '18px'
                     }}
                     alt={'phone 1'}/>
             </VStack>
@@ -38,6 +42,8 @@ const LandingPageHowItWorksMobile = ({quick_check, benefits_overview, benefit_pa
                     style={{
                         maxWidth: '250px',
                         height: 'auto',
+                        boxShadow: '0px 8px 12px rgba(0, 0, 0, 0.15)',
+                        borderRadius: '18px'
                     }}
                     alt={'phone 1'}/>
             </VStack>
