@@ -1,7 +1,6 @@
 import VStack from "../../../../../components/VStack";
 import HStack from "../../../../../components/HStack";
 import {Typography} from "@mui/material";
-import globalStyles from "../../../../../styles/styles";
 
 const LandingPageInfoCard = ({title, text}) => {
     return (
