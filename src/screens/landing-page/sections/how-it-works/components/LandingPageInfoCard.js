@@ -25,7 +25,6 @@ const LandingPageInfoCard = ({title, text}) => {
 const styles = {
     infoCard: {
         borderRadius: '15px',
-        backgroundColor: globalStyles.primaryColor,
         padding: '16px',
     },
     titleText: {

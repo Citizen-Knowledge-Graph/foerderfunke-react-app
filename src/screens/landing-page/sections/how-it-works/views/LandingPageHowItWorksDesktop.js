@@ -12,7 +12,7 @@ const LandingPageHowItWorksDesktop = ({quick_check, benefits_overview, benefit_p
                     title="Answer some basic questions"
                     text="Do a quick check, create your profile, or browse our list of social benefits by topic. Your choice."/>
                 <img
-                    src={benefit_page}
+                    src={quick_check}
                     style={{
                         width: '275px',
                         height: 'auto',

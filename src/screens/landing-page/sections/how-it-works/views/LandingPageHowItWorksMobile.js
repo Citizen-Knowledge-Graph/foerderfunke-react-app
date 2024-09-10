@@ -5,7 +5,7 @@ import LandingPageInfoCard from "../components/LandingPageInfoCard";
 const LandingPageHowItWorksMobile = ({quick_check, benefits_overview, benefit_page}) => {
     return (
         <VStack gap={9} alignItems={'center'}>
-            <VStack gap={3} alignItems={'flex-start'}>
+            <VStack gap={3} alignItems={'center'}>
                 <LandingPageInfoCard
                     title="Answer some basic questions"
                     text="Do a quick check, create your profile, or browse our list of social benefits by topic. Your choice."/>
@@ -19,7 +19,7 @@ const LandingPageHowItWorksMobile = ({quick_check, benefits_overview, benefit_pa
                     }}
                     alt={'phone 1'}/>
             </VStack>
-            <VStack gap={3} alignItems={'flex-end'}>
+            <VStack gap={3} alignItems={'center'}>
                 <LandingPageInfoCard
                     title="Get your potential benefits listed"
                     text="The more complete your profile is, the more accurate the list of benefits you get."/>
@@ -33,7 +33,7 @@ const LandingPageHowItWorksMobile = ({quick_check, benefits_overview, benefit_pa
                     }}
                     alt={'phone 1'}/>
             </VStack>
-            <VStack gap={3} alignItems={'flex-start'}>
+            <VStack gap={3} alignItems={'center'}>
                 <LandingPageInfoCard
                     title="Learn about relevant benefits"
                     text="Learn about requirements and necessary steps to apply for you benefits."/>
