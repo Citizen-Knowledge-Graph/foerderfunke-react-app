@@ -6,7 +6,7 @@ import LandingPageSectionWrapper from "../components/LandingPageSectionWrapper";
 import VStack from "../../../components/VStack";
 
 const LandingPageFact = ({isDesktop}) => {
-    const width = isDesktop ? '840px' : '100%';
+    const width = isDesktop ? '780px' : '100%';
 
     return (
         <LandingPageSectionWrapper backgroundColor={globalStyles.primaryColor} isDesktop={isDesktop}>
