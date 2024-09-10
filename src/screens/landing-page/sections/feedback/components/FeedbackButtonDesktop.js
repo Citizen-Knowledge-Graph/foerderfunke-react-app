@@ -15,15 +15,15 @@ const FeedbackButtonDesktop = ({Icon, selected, handleButtonClick, color, label}
                     height: '75px',
                     minWidth: '75px',
                     padding: 0,
-                    backgroundColor: selected ? color : globalStyles.primaryColorTransparent,
+                    backgroundColor: selected && color,
                     border: selected ? `2px solid ${color}` : '2px solid transparent',
                     color: selected ? 'white' : 'black',
                     transition: 'background-color 0.3s, border 0.3s, color 0.3s',
                     '&:hover': {
-                        backgroundColor: selected ? color : globalStyles.primaryColorTransparent,
+                        backgroundColor: selected ? color : globalStyles.colorLightGreyTransparent,
                     },
                     '&:focusVisible': {
-                        backgroundColor: selected ? color : globalStyles.primaryColorTransparent,
+                        backgroundColor: selected ? color : globalStyles.colorLightGreyTransparent,
                         outline: 'none',
                         border: selected ? `2px solid ${color}` : '2px solid transparent',
                     },
