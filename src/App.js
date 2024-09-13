@@ -14,33 +14,44 @@ import InfoScreenPrivacy from "./screens/info-screen/InfoScreenPrivacy";
 import OnboardingWelcomeTopics from "./screens/onboarding-welcome/OnboardingWelcomeTopics";
 import InfoScreenNewOrExistingUser from "./screens/info-screen/InfoScreenNewOrExistingUser";
 import ProfileScreen from "./screens/profile-screen/ProfileScreen";
+import {useState} from "react";
+import LanguageContext from './language/LanguageContext';
 
 const theme = createTheme({});
 
 const App = () => {
+    const [language, setLanguage] = useState(localStorage.getItem('language') || 'en');
+
+    const handleSetLanguage = (lang) => {
+        setLanguage(lang);
+        localStorage.setItem('language', lang);
+    };
+
     return (
-        <ThemeProvider theme={theme}>
-            <ViewportUpdater/>
-            <Router basename={process.env.PUBLIC_URL}>
-                <ScrollToTop />
-                <div>
-                    <Routes>
-                        <Route path="/" element={<LandingPage/>}/>
-                        <Route path="/user-routing" element={<InfoScreenNewOrExistingUser/>}/>
-                        <Route path="/info-privacy" element={<InfoScreenPrivacy/>}/>
-                        <Route path="/onboarding-choice" element={<OnboardingChoice/>}/>
-                        <Route path="/onboarding-welcome-topics" element={<OnboardingWelcomeTopics/>}/>
-                        <Route path="/onboarding-welcome" element={<OnboardingWelcomeOverview/>}/>
-                        <Route path="/onboarding-welcome/:benefitId" element={<OnboardingWelcomeOverview/>}/>
-                        <Route path="/eligibility-overview" element={<EligibilityOverviewScreen/>}/>
-                        <Route path="/profile-section" element={<ProfileSectionScreen/>}/>
-                        <Route path="/profile-section/:benefitId" element={<ProfileSectionScreen/>}/>
-                        <Route path="/benefit-page/:id" element={<BenefitPageScreen/>}/>
-                        <Route path="/profile-overview" element={<ProfileScreen/>}/>
-                    </Routes>
-                </div>
-            </Router>
-        </ThemeProvider>
+        <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage }}>
+            <ThemeProvider theme={theme}>
+                <ViewportUpdater/>
+                <Router basename={process.env.PUBLIC_URL}>
+                    <ScrollToTop />
+                    <div>
+                        <Routes>
+                            <Route path="/" element={<LandingPage/>}/>
+                            <Route path="/user-routing" element={<InfoScreenNewOrExistingUser/>}/>
+                            <Route path="/info-privacy" element={<InfoScreenPrivacy/>}/>
+                            <Route path="/onboarding-choice" element={<OnboardingChoice/>}/>
+                            <Route path="/onboarding-welcome-topics" element={<OnboardingWelcomeTopics/>}/>
+                            <Route path="/onboarding-welcome" element={<OnboardingWelcomeOverview/>}/>
+                            <Route path="/onboarding-welcome/:benefitId" element={<OnboardingWelcomeOverview/>}/>
+                            <Route path="/eligibility-overview" element={<EligibilityOverviewScreen/>}/>
+                            <Route path="/profile-section" element={<ProfileSectionScreen/>}/>
+                            <Route path="/profile-section/:benefitId" element={<ProfileSectionScreen/>}/>
+                            <Route path="/benefit-page/:id" element={<BenefitPageScreen/>}/>
+                            <Route path="/profile-overview" element={<ProfileScreen/>}/>
+                        </Routes>
+                    </div>
+                </Router>
+            </ThemeProvider>
+        </LanguageContext.Provider>
     );
 };
 

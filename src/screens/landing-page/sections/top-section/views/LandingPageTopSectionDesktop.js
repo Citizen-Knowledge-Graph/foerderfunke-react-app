@@ -4,14 +4,16 @@ import VStack from "../../../../../components/VStack";
 import HStack from "../../../../../components/HStack";
 import LandingPageWAppButton from "../../../components/LandingPageWAppButton";
 import LandingPageBenefitsListDesktop from "../components/LandingPageBenefitsListDesktop";
+import useTranslation from "../../../../../language/useTranslation";
 
 const LandingPageTopSectionDesktop = ({benefits}) => {
+    const { t } = useTranslation();
 
     return (
         <HStack justifyContent={'space-between'} alignItems={'center'}>
             <VStack alignItems={'flex-start'} sx={{maxWidth: '40%'}}>
                 <Typography sx={styles.headerSectionTitle}>
-                    Check benefits and financial support you can get
+                    {t('checkBenefitsHeader')}
                 </Typography>
                 <LandingPageWAppButton backgroundColor={'primary'}/>
             </VStack>
