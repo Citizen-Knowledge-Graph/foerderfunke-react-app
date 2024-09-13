@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import HStack from "../../../../../components/HStack";
 import VStack from "../../../../../components/VStack";
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
@@ -19,12 +19,16 @@ const icons = [
     {Icon: SentimentVerySatisfiedIcon, color: '#4caf50', label: 'Great'},
 ];
 
-const FeedbackButtonArray = ({isDesktop}) => {
+const FeedbackButtonArray = ({isDesktop, setFeedbackValue}) => {
     const [selected, setSelected] = useState(null);
 
     const handleButtonClick = (index) => {
         setSelected((prevSelected) => prevSelected === index ? null : index);
     };
+
+    useEffect(() => {
+        setFeedbackValue(selected !== null ? selected + 1 : null);
+    }, [selected, setFeedbackValue]);
 
     const DynamicStacker = ({children}) => {
         if (isDesktop) {

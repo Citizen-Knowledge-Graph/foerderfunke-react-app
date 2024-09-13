@@ -2,19 +2,28 @@ import React from "react";
 import {Button, TextField, Typography} from "@mui/material";
 import VStack from "../../../../../components/VStack";
 import FeedbackButtonArray from "./FeedbackButtonArray";
-import {Link} from "react-router-dom";
 import HStack from "../../../../../components/HStack";
 import globalStyles from "../../../../../styles/styles";
+import useFeedbackHandler from "../hooks/useFeedbackHandler";
 
 const FeedbackBox = ({isDesktop}) => {
 
+    const {
+        feedbackText,
+        setFeedbackText,
+        setFeedbackValue,
+        isSubmitting,
+        error,
+        submitFeedback,
+    } = useFeedbackHandler();
+
     return (
         <VStack gap={5} sx={styles.feedbackBox}>
-            <VStack gap={3} alignItems={'flex-start'} sx={{width: "100%"}}>
+            <VStack gap={3} alignItems={'flex-start'} sx={{ width: "100%" }}>
                 <Typography sx={styles.text}>
                     How do you rate your overall experience with FörderFunke?
                 </Typography>
-                <FeedbackButtonArray isDesktop={isDesktop}/>
+                <FeedbackButtonArray isDesktop={isDesktop} setFeedbackValue={setFeedbackValue} />
             </VStack>
             <VStack gap={1}>
                 <Typography sx={styles.text}>
@@ -25,6 +34,8 @@ const FeedbackBox = ({isDesktop}) => {
                     multiline
                     variant="filled"
                     fullWidth
+                    value={feedbackText}
+                    onChange={(e) => setFeedbackText(e.target.value)}
                     InputProps={{
                         disableUnderline: true,
                     }}
@@ -35,14 +46,29 @@ const FeedbackBox = ({isDesktop}) => {
                     }}
                 />
             </VStack>
+            {error && (
+                <Typography color="error">
+                    {error}
+                </Typography>
+            )}
             <HStack alignItems={'center'}>
-                <Button variant="text" sx={styles.button}
-                        component={Link}
-                        to="/user-routing">Submit</Button>
+                <Button
+                    variant="text"
+                    sx={styles.button}
+                    onClick={submitFeedback}
+                    disabled={isSubmitting}
+                >
+                    {isSubmitting ? "Submitting..." : "Submit"}
+                </Button>
             </HStack>
+            {error && (
+                <Typography color="error">
+                    {error}  {/* Error message displayed here */}
+                </Typography>
+            )}
         </VStack>
     );
-}
+};
 
 const styles = {
     feedbackBox: {
