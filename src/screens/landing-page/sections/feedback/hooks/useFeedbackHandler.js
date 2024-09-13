@@ -34,7 +34,7 @@ const useFeedbackHandler = () => {
             console.log("Response:", result);
         } catch (err) {
             console.error("Error sending feedback:", err);
-            setError(err.message || "Failed to submit feedback. Please try again.");
+            setError("Failed to submit feedback: " + err.message);
         } finally {
             setIsSubmitting(false);
         }

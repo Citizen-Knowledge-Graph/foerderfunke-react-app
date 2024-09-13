@@ -46,11 +46,6 @@ const FeedbackBox = ({isDesktop}) => {
                     }}
                 />
             </VStack>
-            {error && (
-                <Typography color="error">
-                    {error}
-                </Typography>
-            )}
             <HStack alignItems={'center'}>
                 <Button
                     variant="text"
