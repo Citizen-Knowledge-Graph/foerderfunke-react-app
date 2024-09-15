@@ -1,6 +1,6 @@
 const defaultFlags = {
-    newFeedbackSection: false,
-    newCollaborationSection: false,
+    newFeedbackSection: true,
+    newCollaborationSection: true,
     newLanguageToggle: false,
 };
 
