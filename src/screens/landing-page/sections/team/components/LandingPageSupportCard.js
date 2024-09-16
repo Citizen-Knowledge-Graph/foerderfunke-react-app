@@ -33,8 +33,8 @@ const LandingPageSupportCard = ({isDesktop}) => {
                     </HStack>
                     <HStack>
                         <Typography sx={styles.subTitleText}>
-                            We are part of the 15th round of the <strong>Prototype Fund</strong> until the end of
-                            August 2024. Förderkennzeichen: 01IS24S19.
+                            We were part of the 15th round of the <strong>Prototype Fund</strong>
+                            {' '}from March to September 2024. Förderkennzeichen: 01IS24S19.
                         </Typography>
                     </HStack>
                 </VStack>
