@@ -1,12 +1,11 @@
 import React from "react";
+import VStack from "../../../../components/VStack";
 import LandingPageHowItWorksDesktop from "./views/LandingPageHowItWorksDesktop";
 import LandingPageHowItWorksMobile from "./views/LandingPageHowItWorksMobile";
 import LandingPageSectionWrapper from "../../components/LandingPageSectionWrapper";
-import VStack from "../../../../components/VStack";
-import HStack from "../../../../components/HStack";
-import {Typography} from "@mui/material";
 import LandingPageBasics from "./components/LandingPageBasics";
 import LandingPageWAppButton from "../../components/LandingPageWAppButton";
+import LandingPageSectionTitle from "../../components/LandingPageSectionTitle";
 
 const LandingPageHowItWorks = ({isDesktop}) => {
     const quick_check = `${process.env.PUBLIC_URL}/assets/images/landing-page/current_quickcheck_page.jpg`;
@@ -16,13 +15,7 @@ const LandingPageHowItWorks = ({isDesktop}) => {
     return (
         <LandingPageSectionWrapper isDesktop={isDesktop}>
             <VStack gap={5}>
-                <VStack>
-                    <HStack justifyContent={'center'} sx={{width: '100%'}}>
-                        <Typography sx={styles.titleText}>
-                            That's how it works
-                        </Typography>
-                    </HStack>
-                </VStack>
+                <LandingPageSectionTitle title={'That\'s how it works'}/>
                 {isDesktop ?
                     <LandingPageHowItWorksDesktop quick_check={quick_check} benefits_overview={benefits_overview} benefit_page={benefit_page}/>
                     : <LandingPageHowItWorksMobile quick_check={quick_check} benefits_overview={benefits_overview} benefit_page={benefit_page}/>
@@ -37,18 +30,5 @@ const LandingPageHowItWorks = ({isDesktop}) => {
         </LandingPageSectionWrapper>
     );
 }
-
-const styles = {
-    titleText: {
-        fontWeight: 'bold',
-        fontSize: '36px',
-        textAlign: 'center',
-    },
-    subTitleText: {
-        fontSize: '28px',
-        textAlign: 'center',
-        fontWeight: '300'
-    }
-};
 
 export default LandingPageHowItWorks;

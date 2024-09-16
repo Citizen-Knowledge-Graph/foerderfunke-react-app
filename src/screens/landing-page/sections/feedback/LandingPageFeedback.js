@@ -2,17 +2,15 @@ import React from "react";
 import {Typography} from "@mui/material";
 import LandingPageSectionWrapper from "../../components/LandingPageSectionWrapper";
 import VStack from "../../../../components/VStack";
-import globalStyles from "../../../../styles/styles";
 import FeedbackBox from "./components/FeedbackBox";
+import LandingPageSectionTitle from "../../components/LandingPageSectionTitle";
 
 const LandingPageFeedback = ({isDesktop}) => {
 
     return (
-        <LandingPageSectionWrapper backgroundColor={globalStyles.primaryColor} isDesktop={isDesktop}>
+        <LandingPageSectionWrapper isDesktop={isDesktop}>
             <VStack gap={5} alignItems={'center'}>
-                <Typography sx={styles.titleText}>
-                    Help us improve FörderFunke
-                </Typography>
+                <LandingPageSectionTitle title={'Help us improve'}/>
                 <VStack gap={5} sx={{maxWidth: '780px'}}>
                     <Typography sx={styles.text}>
                         Your feedback is essential for us to understand how we can improve your experience with the
