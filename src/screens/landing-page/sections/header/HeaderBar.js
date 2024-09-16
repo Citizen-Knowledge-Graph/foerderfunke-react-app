@@ -11,7 +11,7 @@ const HeaderBar = ({isApp, isDesktop}) => {
 
     return (
         <LandingPageSectionWrapper isDesktop={isDesktop} isTop={true}>
-            <HStack justifyContent={'space-between'} alignItems={'center'} sx={{width: '100%'}}>
+            <HStack gap={5} justifyContent={'space-between'} alignItems={'center'} sx={{width: '100%'}}>
                 <HStack alignItems={'center'}>
                     <Link to={"/"} style={{textDecoration: 'none', color: "black", width: '100%'}}>
                         <LogoBar size={size}/>
