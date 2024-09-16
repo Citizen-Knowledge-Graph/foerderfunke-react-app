@@ -2,8 +2,16 @@ import React, { createContext, useState } from 'react';
 
 export const LanguageContext = createContext();
 
+const getDefaultLanguage = () => {
+    let lang = localStorage.getItem('language');
+    if (lang) return lang;
+    lang = navigator.language || navigator.userLanguage;
+    if (!lang) return 'en';
+    return lang.split('-')[0].toLowerCase() === 'de' ? 'de' : 'en';
+}
+
 export const LanguageProvider = ({ children }) => {
-    const [language, setLanguage] = useState(localStorage.getItem('language') || 'en');
+    const [language, setLanguage] = useState(getDefaultLanguage());
 
     const handleSetLanguage = (lang) => {
         setLanguage(lang);
