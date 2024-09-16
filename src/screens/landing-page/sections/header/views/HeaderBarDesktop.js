@@ -6,19 +6,21 @@ import NarBarLink from "../../../../../components/NavBarLink";
 import LandingPageHollowButton from "../../../components/LandingPageButton";
 import { LanguageContext } from "../../../../../language/LanguageContext";
 import featureFlags from "../../../../../featureFlags";
+import useTranslation from "../../../../../language/useTranslation";
 
 const HeaderBarDesktop = ({isApp}) => {
     const {language, setLanguage} = useContext(LanguageContext);
+    const { t } = useTranslation();
 
     return (
         <HStack gap={5} justifyContent={'flex-end'} alignItems={'center'} sx={{width: '100%'}}>
             <HStack gap={3}>
                 {isApp ? null : <LandingPageWAppButton backgroundColor={'primary'}/>}
-                {isApp ? null : <LandingPageHollowButton text={'Help us improve'} to={'/#feedback'}/>}
-                {isApp ? null : <LandingPageHollowButton text={'Collaborate'} to={'/#collaboration'}/>}
+                {isApp ? null : <LandingPageHollowButton text={t('menu.improve')} to={'/#feedback'}/>}
+                {isApp ? null : <LandingPageHollowButton text={t('menu.collaborate')} to={'/#collaboration'}/>}
             </HStack>
             <HStack>
-                <NarBarLink to={"/#about-us"} title={'About us'}/>
+                <NarBarLink to={"/#about-us"} title={t('menu.aboutUs')}/>
                 {
                     featureFlags.newLanguageToggle && (
                         <Typography>

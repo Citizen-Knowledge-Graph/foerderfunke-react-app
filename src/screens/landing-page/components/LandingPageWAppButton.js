@@ -3,8 +3,11 @@ import {Button} from "@mui/material";
 import {Link} from "react-router-dom";
 import globalStyles from "../../../styles/styles";
 import HStack from "../../../components/HStack";
+import useTranslation from "../../../language/useTranslation";
 
 const LandingPageWAppButton = ({backgroundColor}) => {
+    const { t } = useTranslation();
+
     const buttonColor = (() => {
         switch (backgroundColor) {
             case 'primary':
@@ -31,7 +34,7 @@ const LandingPageWAppButton = ({backgroundColor}) => {
         <HStack>
             <Button variant="text" sx={{...styles.button, backgroundColor: buttonColor, color: textColor}}
                     component={Link}
-                    to="/user-routing">Discover benefits</Button>
+                    to="/user-routing">{t('global.actionButton')}</Button>
         </HStack>
     );
 }

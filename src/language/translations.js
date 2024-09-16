@@ -1,9 +1,43 @@
 const translations = {
     en: {
-        checkBenefitsHeader: 'Check benefits and financial support you can get',
+        global: {
+            actionButton: "Discover benefits"
+        },
+        menu: {
+            howWorks: "How it works",
+            principles: "Principles",
+            aboutUs: "About us",
+            improve: "Help us improve",
+            collaborate: "Collaborate"
+        },
+        hero: {
+            header: "Check benefits and financial support you can get",
+            childAllowance: "Child allowance",
+            housingBenefit: "Housing benefit",
+            citizensBenefit: "Citizen's benefit",
+            vocationalTrainingAllowance: "Vocational training allowance",
+            manyMore: "Many more",
+        }
     },
     de: {
-        checkBenefitsHeader: 'Überprüfen Sie die Leistungen und finanzielle Unterstützung, die Sie erhalten können',
+        global: {
+            actionButton: "Leistungen entdecken"
+        },
+        menu: {
+            howWorks: "Wie es funktioniert",
+            principles: "Prinzipien",
+            aboutUs: "Über uns",
+            improve: "Hilf uns, besser zu werden",
+            collaborate: "Zusammenarbeit"
+        },
+        hero: {
+            header: "Finde heraus, welche Leistungen und finanzielle Unterstützung du bekommen könntest",
+            childAllowance: "Kinderzuschlag",
+            housingBenefit: "Wohngeld",
+            citizensBenefit: "Bürgergeld",
+            vocationalTrainingAllowance: "Berufsausbildungsbeihilfe",
+            manyMore: "Viele Weitere",
+        },
     },
 };
 

@@ -3,13 +3,16 @@ import {Typography} from "@mui/material";
 import VStack from "../../../../../components/VStack";
 import LandingPageWAppButton from "../../../components/LandingPageWAppButton";
 import LandingPageBenefitsListMobile from "../components/LandingPageBenefitsListMobile";
+import useTranslation from "../../../../../language/useTranslation";
 
 const LandingPageTopSectionMobile = ({benefits}) => {
+    const { t } = useTranslation();
+
     return (
         <VStack>
             <VStack alignItems={'center'}>
                 <Typography sx={styles.headerSectionTitle}>
-                    Check benefits and financial support you can get
+                    {t('hero.header')}
                 </Typography>
                 <LandingPageWAppButton backgroundColor={'primary'}/>
             </VStack>

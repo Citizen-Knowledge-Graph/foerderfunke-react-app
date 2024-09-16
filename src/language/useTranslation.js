@@ -6,7 +6,12 @@ function useTranslation() {
     const { language } = useContext(LanguageContext);
 
     const t = (key) => {
-        return translations[language][key] || key;
+        let value = translations[language] || translations['en'];
+        for (let k of key.split('.')) {
+            if (!value) return key;
+            value = value[k];
+        }
+        return value;
     };
 
     return { t, language };

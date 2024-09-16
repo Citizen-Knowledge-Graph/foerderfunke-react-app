@@ -9,8 +9,11 @@ import NarBarLink from "../../../../../components/NavBarLink";
 import LandingPageWAppButton from "../../../components/LandingPageWAppButton";
 import GitHubLink from "../../../../../components/GitHubLink";
 import FeatureToggle from "../components/FeatureToggle";
+import useTranslation from "../../../../../language/useTranslation";
 
 const LandingPageFooterMobile = () => {
+    const { t } = useTranslation();
+
     return (
         <VStack>
             <VStack alignItems={'center'}>
@@ -23,9 +26,9 @@ const LandingPageFooterMobile = () => {
             </VStack>
             <Divider variant="middle" sx={{borderBottomWidth: '2px'}}/>
             <VStack alignItems={'center'}>
-                <NarBarLink to={"/#how-it-works"} title={'How it works'}/>
-                <NarBarLink to={"/#principles"} title={'Principles'}/>
-                <NarBarLink to={"/#about-us"} title={'About us'}/>
+                <NarBarLink to={"/#how-it-works"} title={t('menu.howWorks')}/>
+                <NarBarLink to={"/#principles"} title={t('menu.principles')}/>
+                <NarBarLink to={"/#about-us"} title={t('menu.aboutUs')}/>
                 <LandingPageWAppButton backgroundColor={'secondary'}/>
                 <Typography sx={styles.copyrightText}>
                     ©  2024 by FörderFunke. All rights reserved.

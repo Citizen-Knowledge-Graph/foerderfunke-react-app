@@ -10,17 +10,19 @@ import LinkedInLink from "../../../../../components/LinkedInLink";
 import LogoBar from "../../../../../components/LogoBar";
 import GitHubLink from "../../../../../components/GitHubLink";
 import FeatureToggle from "../components/FeatureToggle";
+import useTranslation from "../../../../../language/useTranslation";
 
 const LandingPageFooterDesktop = () => {
+    const { t } = useTranslation();
 
     return (
         <VStack>
             <HStack justifyContent={'space-between'} alignItems={'center'}>
                 <LogoBar/>
                 <HStack gap={3} justifyContent={'center'} alignItems={'center'}>
-                    <NarBarLink to={"/#how-it-works"} title={'How it works'}/>
-                    <NarBarLink to={"/#principles"} title={'Principles'}/>
-                    <NarBarLink to={"/#about-us"} title={'About us'}/>
+                    <NarBarLink to={"/#how-it-works"} title={t('menu.howWorks')}/>
+                    <NarBarLink to={"/#principles"} title={t('menu.principles')}/>
+                    <NarBarLink to={"/#about-us"} title={t('menu.aboutUs')}/>
                     <LandingPageWAppButton backgroundColor={'secondary'}/>
                 </HStack>
             </HStack>
