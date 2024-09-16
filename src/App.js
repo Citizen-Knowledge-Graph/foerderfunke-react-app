@@ -14,21 +14,13 @@ import InfoScreenPrivacy from "./screens/info-screen/InfoScreenPrivacy";
 import OnboardingWelcomeTopics from "./screens/onboarding-welcome/OnboardingWelcomeTopics";
 import InfoScreenNewOrExistingUser from "./screens/info-screen/InfoScreenNewOrExistingUser";
 import ProfileScreen from "./screens/profile-screen/ProfileScreen";
-import {useState} from "react";
-import LanguageContext from './language/LanguageContext';
+import {LanguageProvider} from "./language/LanguageContext";
 
 const theme = createTheme({});
 
 const App = () => {
-    const [language, setLanguage] = useState(localStorage.getItem('language') || 'en');
-
-    const handleSetLanguage = (lang) => {
-        setLanguage(lang);
-        localStorage.setItem('language', lang);
-    };
-
     return (
-        <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage }}>
+        <LanguageProvider>
             <ThemeProvider theme={theme}>
                 <ViewportUpdater/>
                 <Router basename={process.env.PUBLIC_URL}>
@@ -51,7 +43,7 @@ const App = () => {
                     </div>
                 </Router>
             </ThemeProvider>
-        </LanguageContext.Provider>
+        </LanguageProvider>
     );
 };
 

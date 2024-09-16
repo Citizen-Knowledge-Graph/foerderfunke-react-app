@@ -1,8 +1,18 @@
-import {createContext} from 'react';
+import React, { createContext, useState } from 'react';
 
-const LanguageContext = createContext({
-    language: 'en',
-    setLanguage: (lang) => {},
-});
+export const LanguageContext = createContext();
 
-export default LanguageContext;
+export const LanguageProvider = ({ children }) => {
+    const [language, setLanguage] = useState(localStorage.getItem('language') || 'en');
+
+    const handleSetLanguage = (lang) => {
+        setLanguage(lang);
+        localStorage.setItem('language', lang);
+    };
+
+    return (
+        <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage }}>
+            {children}
+        </LanguageContext.Provider>
+    );
+};

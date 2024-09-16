@@ -4,7 +4,7 @@ import HStack from "../../../../../components/HStack";
 import LandingPageWAppButton from "../../../components/LandingPageWAppButton";
 import NarBarLink from "../../../../../components/NavBarLink";
 import LandingPageHollowButton from "../../../components/LandingPageButton";
-import LanguageContext from "../../../../../language/LanguageContext";
+import { LanguageContext } from "../../../../../language/LanguageContext";
 import featureFlags from "../../../../../featureFlags";
 
 const HeaderBarDesktop = ({isApp}) => {
