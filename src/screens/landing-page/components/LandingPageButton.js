@@ -20,9 +20,9 @@ const styles = {
         borderRadius: '12px',
         borderStyle: 'solid',
         borderWidth: '1px',
-        borderColor: globalStyles.primaryColor,
+        borderColor:"white",
         padding: '4px 12px',
-        color: 'black',
+        color: globalStyles.colorDarkGrey,
         fontSize: '20px',
         fontWeight: 'bold',
         textTransform: 'none'
