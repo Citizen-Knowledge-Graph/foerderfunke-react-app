@@ -28,7 +28,7 @@ const translations = {
             howWorks: "Wie es funktioniert",
             principles: "Prinzipien",
             aboutUs: "Über uns",
-            improve: "Hilf uns, besser zu werden",
+            improve: "Feedback",
             collaborate: "Zusammenarbeit",
             activityLog: "Aktivitätsprotokoll"
         },
