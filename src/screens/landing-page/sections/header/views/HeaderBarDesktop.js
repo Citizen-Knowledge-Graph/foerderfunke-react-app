@@ -18,6 +18,11 @@ const HeaderBarDesktop = ({isApp}) => {
                 {isApp ? null : <LandingPageWAppButton backgroundColor={'primary'}/>}
                 {isApp ? null : <LandingPageHollowButton text={t('menu.improve')} to={'/#feedback'}/>}
                 {isApp ? null : <LandingPageHollowButton text={t('menu.collaborate')} to={'/#collaboration'}/>}
+                {isApp ? null :
+                    featureFlags.newActivityLog ?
+                        <LandingPageHollowButton text={t('menu.activityLog')} to={'/activity-log'}/>
+                        : null
+                }
             </HStack>
             <HStack>
                 <NarBarLink to={"/#about-us"} title={t('menu.aboutUs')}/>

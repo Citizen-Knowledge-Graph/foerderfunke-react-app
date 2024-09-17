@@ -14,6 +14,7 @@ import InfoScreenPrivacy from "./screens/info-screen/InfoScreenPrivacy";
 import OnboardingWelcomeTopics from "./screens/onboarding-welcome/OnboardingWelcomeTopics";
 import InfoScreenNewOrExistingUser from "./screens/info-screen/InfoScreenNewOrExistingUser";
 import ProfileScreen from "./screens/profile-screen/ProfileScreen";
+import ActivityLogScreen from "./screens/activity-log/ActivityLogScreen";
 import {LanguageProvider} from "./language/LanguageContext";
 
 const theme = createTheme({});
@@ -39,6 +40,7 @@ const App = () => {
                             <Route path="/profile-section/:benefitId" element={<ProfileSectionScreen/>}/>
                             <Route path="/benefit-page/:id" element={<BenefitPageScreen/>}/>
                             <Route path="/profile-overview" element={<ProfileScreen/>}/>
+                            <Route path="/activity-log" element={<ActivityLogScreen/>}/>
                         </Routes>
                     </div>
                 </Router>

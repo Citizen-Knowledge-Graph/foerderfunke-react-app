@@ -8,7 +8,8 @@ const translations = {
             principles: "Principles",
             aboutUs: "About us",
             improve: "Help us improve",
-            collaborate: "Collaborate"
+            collaborate: "Collaborate",
+            activityLog: "Activity log"
         },
         hero: {
             header: "Check benefits and financial support you can get",
@@ -28,7 +29,8 @@ const translations = {
             principles: "Prinzipien",
             aboutUs: "Über uns",
             improve: "Hilf uns, besser zu werden",
-            collaborate: "Zusammenarbeit"
+            collaborate: "Zusammenarbeit",
+            activityLog: "Aktivitätsprotokoll"
         },
         hero: {
             header: "Finde heraus, welche Leistungen und finanzielle Unterstützung du bekommen könntest",

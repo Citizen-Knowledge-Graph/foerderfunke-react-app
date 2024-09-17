@@ -2,6 +2,7 @@ const defaultFlags = {
     newFeedbackSection: true,
     newCollaborationSection: true,
     newLanguageToggle: false,
+    newActivityLog: false,
 };
 
 const getFeatureFlag = (flag) => {
@@ -13,6 +14,7 @@ const featureFlags = {
     newFeedbackSection: getFeatureFlag('newFeedbackSection'),
     newCollaborationSection: getFeatureFlag('newCollaborationSection'),
     newLanguageToggle: getFeatureFlag('newLanguageToggle'),
+    newActivityLog: getFeatureFlag('newActivityLog'),
 };
 
 export const setFeatureFlag = (flag, value) => {
