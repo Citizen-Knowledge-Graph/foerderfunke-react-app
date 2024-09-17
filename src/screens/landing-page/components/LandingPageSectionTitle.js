@@ -20,6 +20,8 @@ const styles = {
         fontWeight: 'bold',
         fontSize: '48px',
         textAlign: 'center',
+        paddingBottom: '2px',
+        borderBottom: '2px solid rgba(252, 215, 85)',
     }
 };
 

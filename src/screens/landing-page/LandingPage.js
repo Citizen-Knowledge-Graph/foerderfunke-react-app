@@ -19,7 +19,7 @@ const LandingPage = () => {
         <Layout>
             <VStack gap={0}>
                 <VStack>
-                    <LandingPageTopSection isDesktop={isDesktop} />
+                    <LandingPageTopSection isDesktop={isDesktop}/>
                 </VStack>
                 <VStack>
                     <LandingPageFact isDesktop={isDesktop}/>
