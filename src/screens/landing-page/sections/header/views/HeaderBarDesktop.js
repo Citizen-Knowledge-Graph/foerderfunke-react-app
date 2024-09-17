@@ -16,8 +16,16 @@ const HeaderBarDesktop = ({isApp}) => {
         <HStack gap={5} justifyContent={'flex-end'} alignItems={'center'} sx={{width: '100%'}}>
             <HStack gap={3}>
                 {isApp ? null : <LandingPageWAppButton backgroundColor={'primary'}/>}
-                {isApp ? null : <LandingPageHollowButton text={t('menu.improve')} to={'/#feedback'}/>}
-                {isApp ? null : <LandingPageHollowButton text={t('menu.collaborate')} to={'/#collaboration'}/>}
+                {isApp ? null :
+                    featureFlags.newFeedbackSection ?
+                        <LandingPageHollowButton text={t('menu.improve')} to={'/#feedback'}/>
+                        : null
+                }
+                {isApp ? null :
+                    featureFlags.newCollaborationSection ?
+                        <LandingPageHollowButton text={t('menu.collaborate')} to={'/#collaboration'}/>
+                        : null
+                }
                 {isApp ? null :
                     featureFlags.newActivityLog ?
                         <LandingPageHollowButton text={t('menu.activityLog')} to={'/activity-log'}/>
