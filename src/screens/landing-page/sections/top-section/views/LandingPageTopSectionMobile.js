@@ -24,7 +24,7 @@ const LandingPageTopSectionMobile = ({benefits}) => {
 const styles = {
     headerSectionTitle: {
         fontWeight: 'bold',
-        fontSize: '28px',
+        fontSize: '32px',
         textAlign: 'center',
     }
 }
