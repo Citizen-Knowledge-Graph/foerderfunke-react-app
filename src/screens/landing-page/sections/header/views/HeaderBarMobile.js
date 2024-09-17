@@ -43,10 +43,7 @@ const HeaderBarMobile = ({isApp}) => {
             {
                 showDropdown && (
                     <VStack gap={2} alignItems={'center'}
-                            sx={{
-                                paddingBottom: '16px',
-                                borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
-                            }}
+                            sx={{paddingBottom: '16px'}}
                     >
                         {isApp ? null :
                             featureFlags.newFeedbackSection ? (
