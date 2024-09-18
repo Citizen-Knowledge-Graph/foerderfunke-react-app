@@ -3,7 +3,6 @@ import LandingPageTopSectionDesktop from "./views/LandingPageTopSectionDesktop";
 import LandingPageTopSectionMobile from "./views/LandingPageTopSectionMobile";
 import LandingPageSectionWrapper from "../../components/LandingPageSectionWrapper";
 import useTranslation from "../../../../language/useTranslation";
-import LandingPageSectionGrid from "../../components/LandingPageSectionGrid";
 
 const LandingPageTopSection = ({isDesktop}) => {
     const { t } = useTranslation();
