@@ -10,7 +10,7 @@ const LandingPagePrincipleCardUser = ({isDesktop}) => {
     const gif = 'user-centered';
 
     return (
-        <LandingPagePrincipleCard isDesktop={isDesktop} icon={icon} gif={gif} title={title} text={text}/>
+        <LandingPagePrincipleCard isDesktop={isDesktop} icon={icon} gif={gif} title={title} text={text} gifFirst={false}/>
     )
 }
 

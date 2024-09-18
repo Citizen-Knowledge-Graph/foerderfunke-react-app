@@ -1,18 +1,23 @@
 import React from "react";
 import LandingPageSectionWrapper from "../../components/LandingPageSectionWrapper";
-import LandingPagePrinciplesDesktop from "./views/LandingPagePrinciplesDesktop";
-import LandingPagePrinciplesMobile from "./views/LandingPagePrinciplesMobile";
-import globalStyles from "../../../../styles/styles";
+import LandingPageSectionGrid from "../../components/LandingPageSectionGrid";
 import VStack from "../../../../components/VStack";
-import LandingPageSectionTitle from "../../components/LandingPageSectionTitle";
+import LandingPagePrincipleCardData from "./components/LandingPagePrincipleCardData";
+import LandingPagePrincipleCardPrivacy from "./components/LandingPagePrincipleCardPrivacy";
+import LandingPagePrincipleCardUser from "./components/LandingPagePrincipleCardUser";
 
 const LandingPagePrinciples = ({isDesktop}) => {
     return (
-        <LandingPageSectionWrapper backgroundColor={globalStyles.primaryColor} isDesktop={isDesktop}>
-            <VStack gap={5}>
-                <LandingPageSectionTitle title={'Our principles'}/>
-                {isDesktop ? <LandingPagePrinciplesDesktop/> : <LandingPagePrinciplesMobile/>}
-            </VStack>
+        <LandingPageSectionWrapper isDesktop={isDesktop}>
+            <LandingPageSectionGrid title={'Our principles'}>
+                <VStack gap={5}>
+                    <VStack gap={7} justifyContent={'center'} sx={{width: '100%'}}>
+                        <LandingPagePrincipleCardData isDesktop={isDesktop} gifFirst={false}/>
+                        <LandingPagePrincipleCardPrivacy isDesktop={isDesktop}/>
+                        <LandingPagePrincipleCardUser isDesktop={isDesktop}/>
+                    </VStack>
+                </VStack>
+            </LandingPageSectionGrid>
         </LandingPageSectionWrapper>
     );
 }

@@ -4,18 +4,40 @@ import {Typography} from "@mui/material";
 import React from "react";
 import globalStyles from "../../../../../styles/styles";
 
-const LandingPagePrincipleCard = ({ isDesktop, icon, gif, title, text }) => {
+const LandingPagePrincipleCard = ({isDesktop, icon, gif, title, text, gifFirst=true}) => {
     const padding = isDesktop ? '24px' : '0px';
     const gifUrl = `${process.env.PUBLIC_URL}/assets/images/landing-page/${gif}.gif`; // Construct your GIF URL
 
-    return (
-        <VStack gap={2} sx={{flex: 1}}>
+    const DynamicStacker = ({children}) => {
+        if (isDesktop) {
+            return (
+                <HStack alignItems={'center'}>
+                    {children}
+                </HStack>
+            )
+        }
+
+        return (
+            <VStack gap={2} sx={{flex: 1}}>
+                {children}
+            </VStack>
+        )
+    }
+
+    const GifComponent = () => {
+        return (
             <HStack justifyContent={'center'}>
                 {gif ? (
-                    <img src={gifUrl} alt="gif" style={{ width: '120px', height: '120px', borderRadius: '12px' }} />
+                    <img src={gifUrl} alt="gif" style={{width: '140px', height: '140px'}}/>
                 ) : (
-                    React.createElement(icon, { sx: { fontSize: 120, color: globalStyles.secondaryColor } })
-                )}            </HStack>
+                    React.createElement(icon, {sx: {fontSize: 120, color: globalStyles.secondaryColor}})
+                )}
+            </HStack>
+        )
+    }
+
+    const TextComponent = () => {
+        return (
             <VStack gap={1} sx={{padding: padding}}>
                 <HStack>
                     <Typography sx={styles.itemHeaderText}>
@@ -28,7 +50,25 @@ const LandingPagePrincipleCard = ({ isDesktop, icon, gif, title, text }) => {
                     </Typography>
                 </HStack>
             </VStack>
-        </VStack>
+        )
+    }
+
+    return (
+        <DynamicStacker gap={2} sx={{flex: 1}}>
+            {
+                !isDesktop || gifFirst ? (
+                    <>
+                        <GifComponent/>
+                        <TextComponent/>
+                    </>
+                ) : (
+                    <>
+                        <TextComponent/>
+                        <GifComponent/>
+                    </>
+                )
+            }
+        </DynamicStacker>
     )
 }
 
