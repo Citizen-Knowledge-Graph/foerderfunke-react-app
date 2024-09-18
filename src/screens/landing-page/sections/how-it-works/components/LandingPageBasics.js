@@ -3,16 +3,23 @@ import HStack from "../../../../../components/HStack";
 import {Typography} from "@mui/material";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import {green} from "@mui/material/colors";
+import globalStyles from "../../../../../styles/styles";
 
 const LandingPageBasics = () => {
     return (
         <VStack alignItems={'center'} sx={{width: "100%"}}>
-            <HStack>
-                <Typography sx={styles.titleText}>
-                    The basics
-                </Typography>
-            </HStack>
-            <HStack>
+            <VStack
+                alignItems={'center'}
+                sx={{
+                    backgroundColor: globalStyles.primaryColor,
+                    padding: '32px',
+                    borderRadius: '15px',
+                }}>
+                <HStack>
+                    <Typography sx={styles.titleText}>
+                        The basics
+                    </Typography>
+                </HStack>
                 <VStack>
                     <HStack alignItems={'center'}>
                         <CheckCircleIcon sx={styles.icon}/>
@@ -23,7 +30,8 @@ const LandingPageBasics = () => {
                     <HStack alignItems={'center'}>
                         <CheckCircleIcon sx={styles.icon}/>
                         <Typography sx={styles.itemText}>
-                            <strong>Your data is yours!</strong> All the information you fill in is stored only locally on your device
+                            <strong>Your data is yours!</strong> All the information you fill in is stored only
+                            locally on your device
                         </Typography>
                     </HStack>
                     <HStack alignItems={'center'}>
@@ -39,7 +47,7 @@ const LandingPageBasics = () => {
                         </Typography>
                     </HStack>
                 </VStack>
-            </HStack>
+            </VStack>
         </VStack>
     );
 }

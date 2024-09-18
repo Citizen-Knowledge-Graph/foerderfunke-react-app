@@ -4,14 +4,13 @@ import {Typography} from "@mui/material";
 import globalStyles from "../../../styles/styles";
 import LandingPageSectionWrapper from "../components/LandingPageSectionWrapper";
 import VStack from "../../../components/VStack";
+import LandingPageSectionGrid from "../components/LandingPageSectionGrid";
 
 const LandingPageFact = ({isDesktop}) => {
-    const width = isDesktop ? '780px' : '100%';
-
     return (
         <LandingPageSectionWrapper backgroundColor={globalStyles.primaryColor} isDesktop={isDesktop}>
-            <VStack alignItems={'center'} sx={{width: '100%'}}>
-                <VStack sx={{width: width, padding: '16px'}}>
+            <LandingPageSectionGrid>
+                <VStack alignItems={'center'}>
                     <HStack>
                         <Typography sx={styles.headerSectionTitle}>1 out of 5 households in Germany don’t claim
                             social benefits they are entitled to.</Typography>
@@ -22,7 +21,7 @@ const LandingPageFact = ({isDesktop}) => {
                             eligible for and point you the way to apply for them. </Typography>
                     </HStack>
                 </VStack>
-            </VStack>
+            </LandingPageSectionGrid>
         </LandingPageSectionWrapper>
     )
 }

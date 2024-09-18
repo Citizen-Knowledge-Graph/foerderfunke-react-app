@@ -6,7 +6,7 @@ import LandingPageInfoCard from "../components/LandingPageInfoCard";
 const LandingPageHowItWorksDesktop = ({quick_check, benefits_overview, benefit_page}) => {
 
     return (
-        <VStack gap={9} alignItems={'center'}>
+        <VStack gap={9} alignItems={'center'} sx={{width: '100%'}}>
             <HStack gap={9} justifyContent={'space-between'} alignItems={'center'}>
                 <LandingPageInfoCard
                     title="Answer some basic questions"
@@ -14,7 +14,7 @@ const LandingPageHowItWorksDesktop = ({quick_check, benefits_overview, benefit_p
                 <img
                     src={quick_check}
                     style={{
-                        width: '275px',
+                        width: '300px',
                         height: 'auto',
                         boxShadow: '0px 8px 12px rgba(0, 0, 0, 0.15)',
                         borderRadius: '18px'
@@ -26,7 +26,7 @@ const LandingPageHowItWorksDesktop = ({quick_check, benefits_overview, benefit_p
                 <img
                     src={benefits_overview}
                     style={{
-                        width: '275px',
+                        width: '300px',
                         height: 'auto',
                         boxShadow: '0px 8px 12px rgba(0, 0, 0, 0.15)',
                         borderRadius: '18px'
@@ -44,7 +44,7 @@ const LandingPageHowItWorksDesktop = ({quick_check, benefits_overview, benefit_p
                 <img
                     src={benefit_page}
                     style={{
-                        width: '275px',
+                        width: '300px',
                         height: 'auto',
                         boxShadow: '0px 8px 12px rgba(0, 0, 0, 0.15)',
                         borderRadius: '18px'

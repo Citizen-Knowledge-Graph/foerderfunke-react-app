@@ -67,7 +67,7 @@ const FeedbackBox = ({isDesktop}) => {
 
 const styles = {
     feedbackBox: {
-        maxWidth: '780px',
+        width: '100%',
         padding: '24px',
         borderRadius: '12px',
         borderStyle: 'solid',

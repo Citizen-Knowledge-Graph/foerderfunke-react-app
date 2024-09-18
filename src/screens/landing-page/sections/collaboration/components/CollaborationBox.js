@@ -27,7 +27,7 @@ const CollaborationBox = () => {
 
 const styles = {
     collaborationBox: {
-        maxWidth: '780px',
+        width: '100%',
         padding: '24px',
         borderRadius: '12px',
         backgroundColor: globalStyles.primaryColor

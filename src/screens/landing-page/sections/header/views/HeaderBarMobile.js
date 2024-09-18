@@ -42,8 +42,11 @@ const HeaderBarMobile = ({isApp}) => {
             </HStack>
             {
                 showDropdown && (
-                    <VStack gap={2} alignItems={'center'}
-                            sx={{paddingBottom: '16px'}}
+                    <VStack
+                        gap={2} alignItems={'center'}
+                        sx={{
+                            paddingBottom: '16px'
+                        }}
                     >
                         {isApp ? null :
                             featureFlags.newFeedbackSection ? (
@@ -67,7 +70,8 @@ const HeaderBarMobile = ({isApp}) => {
                             featureFlags.newActivityLog ?
                                 (<>
                                         <LandingPageHollowButton text={t('menu.activityLog')} to={'/activity-log'}/>
-                                        <Divider sx={{width: '100%', backgroundColor: globalStyles.colorLightGreyTransparent}}/>
+                                        <Divider
+                                            sx={{width: '100%', backgroundColor: globalStyles.colorLightGreyTransparent}}/>
                                     </>
                                 )
                                 : null
