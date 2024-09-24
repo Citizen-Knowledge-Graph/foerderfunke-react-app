@@ -113,6 +113,16 @@ const translations = {
                 header: "Your quick check is complete",
                 hint: "You currently cannot edit your profile data. If you need to make changes, you can restart the discovery journey.",
                 discoverBtn: "Discover your benefits"
+            },
+            browseAll: {
+                header: "Your potential benefits",
+                subtitle: "Results are based on the information you provided.",
+                info: "Results are not legally binding and should be considered as informational or advisory",
+                eligible: "Eligible:",
+                notEligible: "Not eligible:",
+                missingData: "Missing data:",
+                checkElBtn: "Check eligibility",
+                learnMoreBtn: "Learn more"
             }
         }
     },
@@ -230,6 +240,16 @@ const translations = {
                 header: "Dein schneller Anspruchscheck ist abgeschlossen",
                 hint: "Du kannst deine Profildaten derzeit nicht bearbeiten. Wenn du Änderungen vornehmen musst, kannst du den Entdeckungsprozess neu starten.",
                 discoverBtn: "Entdecke deine Leistungen",
+            },
+            browseAll: {
+                header: "Deine potenziellen Leistungen",
+                subtitle: "Die Ergebnisse basieren auf den von dir angegebenen Informationen.",
+                info: "Die Ergebnisse sind nicht rechtsverbindlich und sollten als informativ oder beratend betrachtet werden.",
+                eligible: "Anspruch:",
+                notEligible: "Kein Anspruch:",
+                missingData: "Fehlende Daten:",
+                checkElBtn: "Anspruch prüfen",
+                learnMoreBtn: "Mehr erfahren",
             }
         }
     },

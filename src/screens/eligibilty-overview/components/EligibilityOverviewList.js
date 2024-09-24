@@ -3,10 +3,12 @@ import {Typography} from '@mui/material';
 import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
 import EligibilityOverviewItem from "./EligibilityOverviewItem";
+import useTranslation from "../../../language/useTranslation";
 
 const EligibilityOverviewList = ({items, eligible}) => {
-    const headerText = (eligible === 'eligible') ? 'Eligible:' : ((eligible === 'non-eligible') ? 'Not eligible:' :
-        'Missing data:');
+    const { t } = useTranslation();
+    const headerText = (eligible === 'eligible') ? t('app.browseAll.eligible') : ((eligible === 'non-eligible') ? t('app.browseAll.notEligible') :
+        t('app.browseAll.missingData'));
 
     return (
         <VStack sx={{width: '100%', padding: '12px', borderRadius: '12px'}}>

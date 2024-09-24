@@ -4,8 +4,10 @@ import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
 import {Link} from "react-router-dom";
 import globalStyles from "../../../styles/styles";
+import useTranslation from "../../../language/useTranslation";
 
 const EligibilityOverviewItemDetails = ({item, eligible}) => {
+    const { t } = useTranslation();
     return (
         <VStack alignItems={'flex-start'}>
             <Typography sx={styles.itemDescription}>
@@ -18,7 +20,7 @@ const EligibilityOverviewItemDetails = ({item, eligible}) => {
                         variant="text"
                         component={Link}
                         to={`/onboarding-welcome/${item.id}`}>
-                        Check eligibility
+                        {t('app.browseAll.checkElBtn')}
                     </Button>
                 }
                 <Button
@@ -26,7 +28,7 @@ const EligibilityOverviewItemDetails = ({item, eligible}) => {
                     variant="text"
                     component={Link}
                     to={`/benefit-page/${item.id}`}>
-                    Learn More
+                    {t('app.browseAll.learnMoreBtn')}
                 </Button>
             </HStack>
         </VStack>

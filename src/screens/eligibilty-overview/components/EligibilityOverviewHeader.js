@@ -6,8 +6,10 @@ import InfoIcon from "@mui/icons-material/Info";
 import PersonIcon from '@mui/icons-material/Person';
 import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
+import useTranslation from "../../../language/useTranslation";
 
 const EligibilityOverviewScreen = ({isDesktop}) => {
+    const { t } = useTranslation();
     const titleFontSize = isDesktop ? '32px' : '28px';
 
     return (
@@ -23,7 +25,7 @@ const EligibilityOverviewScreen = ({isDesktop}) => {
                         <VStack gap={2} sx={{width: '100%'}}>
                             <HStack justifyContent={'space-between'}>
                             <Typography sx={{...styles.titleText, fontSize: titleFontSize}}>
-                                Your potential benefits
+                                {t('app.browseAll.header')}
                             </Typography>
                                 <IconButton
                                     component={Link}
@@ -45,7 +47,7 @@ const EligibilityOverviewScreen = ({isDesktop}) => {
                                 </IconButton>
                             </HStack>
                             <Typography sx={styles.subTitleCardText}>
-                                Results are based on the information you provided.
+                                {t('app.browseAll.subtitle')}
                             </Typography>
                         </VStack>
                     </HStack>
@@ -55,7 +57,7 @@ const EligibilityOverviewScreen = ({isDesktop}) => {
                 <HStack sx={styles.liableInfoBox} justifyContent={'flex-start'} alignItems={'center'}>
                     <InfoIcon sx={{fontSize: '16px'}}/>
                     <Typography sx={styles.liableInfoText}>
-                        Results are not legally binding and should be considered as informational or advisory
+                        {t('app.browseAll.info')}
                     </Typography>
                 < /HStack>
             </VStack>
