@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {Typography} from '@mui/material';
 import VStack from "../../components/VStack";
 import OnboardingWelcomeScreen from "./components/OnboardingWelcomeScreen";
@@ -6,9 +6,11 @@ import {useMetadataStore, useSelectedTopicsStore, useUserStore} from "../../stor
 import {useNavigate, useParams} from "react-router-dom";
 import questionsService from "../../services/questionsService";
 import useTranslation from "../../language/useTranslation";
+import {LanguageContext} from "../../language/LanguageContext";
 
 const OnboardingWelcomeOverview = () => {
     const { t } = useTranslation();
+    const { language } = useContext(LanguageContext);
     const navigate = useNavigate();
     const {benefitId} = useParams();
     const activeUser = useUserStore((state) => state.activeUserId);
@@ -19,7 +21,7 @@ const OnboardingWelcomeOverview = () => {
     useEffect(() => {
         const fetchPrioritizedQuestions = async (topicIds, benefitId) => {
             try {
-                await questionsService(activeUser, selectedTopics.map((topic) => topic.id), benefitId);
+                await questionsService(activeUser, selectedTopics.map((topic) => topic.id), benefitId, language);
             } catch (error) {
                 console.error('Error fetching prioritized questions:', error);
             } finally {

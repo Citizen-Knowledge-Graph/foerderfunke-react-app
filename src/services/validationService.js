@@ -10,7 +10,7 @@ import readJson from "../utilities/readJson";
 import {fetchTurtleResource} from "./githubService";
 import { useMetadataStore, useValidationReportStore} from "../storage/zustand";
 
-export const runValidation = async (activeUser) => {
+export const runValidation = async (activeUser, language = "en") => {
 
     // Get the active user profile
     const userProfile = UserModel.retrieveUserData(activeUser);
@@ -47,10 +47,9 @@ export const runValidation = async (activeUser) => {
     useValidationReportStore.getState().updateValidationReport(validateAllReport);
 
     // fetch metadata
-    const lang = "en";
     let metadata = {
-        df: await extractDatafieldsMetadata(dataFieldsString, lang),
-        rp: await extractRequirementProfilesMetadata(Object.values(requirementProfiles), lang),
+        df: await extractDatafieldsMetadata(dataFieldsString, language),
+        rp: await extractRequirementProfilesMetadata(Object.values(requirementProfiles), language),
     };
 
     useMetadataStore.getState().updateMetadata(metadata);

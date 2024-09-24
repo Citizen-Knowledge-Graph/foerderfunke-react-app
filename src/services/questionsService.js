@@ -5,7 +5,7 @@ import {fetchTurtleResource} from "./githubService";
 import {getPrioritizedMissingDataFieldsJson} from "@foerderfunke/matching-engine/src/prematch";
 import {useQuestionsStore, useValidationReportStore} from "../storage/zustand";
 
-const questionsService = async (activeUser, topicIds, benefitId) => {
+const questionsService = async (activeUser, topicIds, benefitId, language = "en") => {
 
     // Get the active user profile
     const userProfile = UserModel.retrieveUserData(activeUser);
@@ -40,7 +40,7 @@ const questionsService = async (activeUser, topicIds, benefitId) => {
         dataFieldsString,
         Object.values(requirementProfiles),
         materializationString,
-        "en"
+        language
     );
 
     useValidationReportStore.getState().updateValidationReport(questionsResponse.validationReport);

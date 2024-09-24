@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import VStack from "../../../components/VStack";
 import ProfileSectionField from "./ProfileSectionField";
 import {
@@ -13,9 +13,11 @@ import ProfileSectionHeader from "./ProfileSectionHeader";
 import ProfileSectionTopHeader from "./ProfileSectionTopHeader";
 import {useNavigate, useParams} from "react-router-dom";
 import ProfileSectionQuestionsCount from "./ProfileSectionQuestionsCount";
+import {LanguageContext} from "../../../language/LanguageContext";
 
 
 const ProfileSectionTopQuestion = ({setCompleted}) => {
+    const { language } = useContext(LanguageContext);
     const {benefitId} = useParams();
     const [currentQuestion, setCurrentQuestion] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
@@ -63,7 +65,7 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
         }
         setIsLoading(true);
         try {
-            await questionsService(activeUser, selectedTopics.map((topic) => topic.id), null);
+            await questionsService(activeUser, selectedTopics.map((topic) => topic.id), null, language);
         } catch (error) {
             console.error('Error fetching prioritized questions in ProfileSectionTopQuestions:', error);
         } finally {
