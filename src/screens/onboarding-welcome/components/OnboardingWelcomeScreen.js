@@ -11,9 +11,12 @@ import {useStore} from "../../../components/ViewportUpdater";
 import AppScreenWrapper from "../../../components/AppScreenWrapper";
 import globalStyles from "../../../styles/styles";
 import {useMetadataStore, useSelectedTopicsStore} from "../../../storage/zustand";
+import useTranslation from "../../../language/useTranslation";
 
 
 const OnboardingWelcomeScreen = ({children, buttonText, link, isLoading = false}) => {
+    const { t } = useTranslation();
+
     const isDesktop = useStore((state) => state.isDesktop);
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
     const metadata = useMetadataStore((state) => state.metadata);
@@ -36,7 +39,7 @@ const OnboardingWelcomeScreen = ({children, buttonText, link, isLoading = false}
                 <VStack gap={5}>
                     <VStack gap={2}>
                         <Typography sx={styles.titleText}>
-                            Quick eligibility check
+                            {t('app.topicSelection.header')}
                         </Typography>
                         <HStack>
                             <IconCard icon={AccessTimeIcon} iconColor={globalStyles.secondaryColor} text="5 Min."/>

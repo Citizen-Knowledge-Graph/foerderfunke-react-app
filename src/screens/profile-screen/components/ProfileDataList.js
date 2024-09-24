@@ -7,8 +7,10 @@ import HStack from "../../../components/HStack";
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import {Link} from "react-router-dom";
 import Divider from "@mui/material/Divider";
+import useTranslation from "../../../language/useTranslation";
 
 const ProfileDataList = () => {
+    const { t } = useTranslation();
     const userProfileData = useUserProfileData();
 
     return (
@@ -49,8 +51,7 @@ const ProfileDataList = () => {
             <VStack sx={styles.restartBox}>
                 <HStack gap={3} justifyContent={'space-between'} alignItems={'center'}>
                     <Typography>
-                        You currently cannot edit your profile data. If you need to make changes, you
-                        can restart the discovery journey.
+                        {t('app.qsComplete.hint')}
                     </Typography>
                     <IconButton
                         component={Link}

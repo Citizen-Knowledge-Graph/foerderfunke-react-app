@@ -75,6 +75,45 @@ const translations = {
                 header: "Supported by",
                 text: "We were part of the 15th round of the Prototype Fund from March to September 2024. Förderkennzeichen: 01IS24S19."
             },
+        },
+        app: {
+            privacySite: {
+                header: "Your data is only stored locally",
+                text1: "Only you should have access to your personal data. That is why we do not offer user accounts managed by us.",
+                text2: "All of your information is only stored locally in your browser.",
+                optionHeader: "You do have some options though:",
+                option1: "You can export your data as an RDF file.",
+                option2: "You can erase it from the browser with one click.",
+            },
+            discoverChoice: {
+                header: "Your choice",
+                text: "Two ways of discovering benefits for you",
+                quickCheck: "Quick eligibility check",
+                quickCheckComment: "Based on up to 10 benefits",
+                browseAll: "Browse all benefits",
+            },
+            topicSelection: {
+                header: "Quick eligibility check",
+                text: "Which topics are you interested in exploring benefits for?",
+                selectAll: "Select all",
+                confirmBtn: "Confirm",
+            },
+            topicsChosen: {
+                topicsText: "Based on your chosen topics we will provide you with a list of benefits you may be eligible for.",
+                benefitText: "Based on your chosen benefit we will ask you the questions necessary to determine your eligibility.",
+                discoverBtn: "Discover your benefits",
+            },
+            questions: {
+                progress: "Question",
+                info: "We update the number of questions and potential benefits depending on your answers.",
+                multipleAnswers: "Multiple answers possible",
+                confirmBtn: "Confirm"
+            },
+            qsComplete: {
+                header: "Your quick check is complete",
+                hint: "You currently cannot edit your profile data. If you need to make changes, you can restart the discovery journey.",
+                discoverBtn: "Discover your benefits"
+            }
         }
     },
     de: {
@@ -153,6 +192,45 @@ const translations = {
                 header: "Unterstützt von",
                 text: "Wir waren Teil der 15. Runde des Prototype Fund von März bis September 2024. Förderkennzeichen: 01IS24S19."
             },
+        },
+        app: {
+            privacySite: {
+                header: "Deine Daten werden nur lokal gespeichert",
+                text1: "Nur du solltest Zugriff auf deine persönlichen Daten haben. Deshalb bieten wir keine von uns verwalteten Benutzerkonten an.",
+                text2: "Alle deine Informationen werden nur lokal in deinem Browser gespeichert.",
+                optionHeader: "Du hast aber einige Optionen:",
+                option1: "Du kannst deine Daten als RDF-Datei exportieren.",
+                option2: "Du kannst sie mit einem Klick aus dem Browser löschen."
+            },
+            discoverChoice: {
+                header: "Deine Wahl",
+                text: "Zwei Möglichkeiten, um Leistungen für dich zu entdecken",
+                quickCheck: "Schneller Anspruchscheck",
+                quickCheckComment: "Basierend auf bis zu 10 Leistungen",
+                browseAll: "Alle Leistungen durchsuchen",
+            },
+            topicSelection: {
+                header: "Schneller Anspruchscheck",
+                text: "Für welche Themen möchtest du Leistungen entdecken?",
+                selectAll: "Alle auswählen",
+                confirmBtn: "Bestätigen",
+            },
+            topicsChosen: {
+                topicsText: "Basierend auf deinen ausgewählten Themen stellen wir dir eine Liste von Leistungen zur Verfügung, für die du möglicherweise infrage kommst.",
+                benefitText: "Basierend auf deiner ausgewählten Leistung stellen wir dir die notwendigen Fragen, um deine Anspruchsberechtigung zu ermitteln.",
+                discoverBtn: "Entdecke deine Leistungen",
+            },
+            questions: {
+                progress: "Frage",
+                info: "Wir aktualisieren die Anzahl der Fragen und möglichen Leistungen basierend auf deinen Antworten.",
+                multipleAnswers: "Mehrere Antworten möglich",
+                confirmBtn: "Bestätigen",
+            },
+            qsComplete: {
+                header: "Dein schneller Anspruchscheck ist abgeschlossen",
+                hint: "Du kannst deine Profildaten derzeit nicht bearbeiten. Wenn du Änderungen vornehmen musst, kannst du den Entdeckungsprozess neu starten.",
+                discoverBtn: "Entdecke deine Leistungen",
+            }
         }
     },
 };

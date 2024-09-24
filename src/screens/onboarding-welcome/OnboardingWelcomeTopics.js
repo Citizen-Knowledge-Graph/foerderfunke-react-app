@@ -6,8 +6,10 @@ import OnboardingWelcomeScreen from "./components/OnboardingWelcomeScreen";
 import VStack from "../../components/VStack";
 import globalStyles from "../../styles/styles";
 import useTopicSelectionHandlers from "./hooks/useTopicSelectionHandlers";
+import useTranslation from "../../language/useTranslation";
 
 const OnboardingWelcomeTopics = () => {
+    const { t } = useTranslation();
     const [topicsData, setTopicsData] = useState([]);
     const [selectedTopicsBoolean, setSelectedTopicsBoolean] = useState([]);
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
@@ -33,9 +35,9 @@ const OnboardingWelcomeTopics = () => {
     );
 
     return (
-        <OnboardingWelcomeScreen buttonText={'Confirm'} link={`/onboarding-welcome`}>
+        <OnboardingWelcomeScreen buttonText={t('app.topicSelection.confirmBtn')} link={`/onboarding-welcome`}>
             <Typography variant="body1" gutterBottom sx={styles.titleText}>
-                Which topics are you interested in exploring benefits for?
+                {t('app.topicSelection.text')}
             </Typography>
             {
                 setSelectedTopicsBoolean.length > 0 && (
@@ -61,7 +63,7 @@ const OnboardingWelcomeTopics = () => {
                                     {topic.title}
                                 </Typography>
                             </Button>))}
-                        <FormControlLabel control={<Checkbox onChange={handleToggleSelectAll}/>} label="Select all"/>
+                        <FormControlLabel control={<Checkbox onChange={handleToggleSelectAll}/>} label={t('app.topicSelection.selectAll')}/>
                     </VStack>
                 )
             }

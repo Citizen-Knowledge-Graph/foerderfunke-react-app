@@ -1,7 +1,10 @@
 import React, {useMemo} from 'react';
 import {Checkbox, FormControlLabel, FormGroup, FormLabel, Typography} from '@mui/material';
+import useTranslation from "../../../../language/useTranslation";
 
 const ProfileInputMultiSelection = ({ value, setValue, currentField, error }) => {
+    const { t } = useTranslation();
+
     const choices = useMemo(() => {
         const map = {};
         currentField.choices.forEach((choice) => {
@@ -26,7 +29,7 @@ const ProfileInputMultiSelection = ({ value, setValue, currentField, error }) =>
     return (
         <>
             <FormGroup>
-                <FormLabel component="legend">Multiple answers possible</FormLabel>
+                <FormLabel component="legend">{t('app.questions.multipleAnswers')}</FormLabel>
                 {Object.entries(choices).map(([key, label]) => (
                     <FormControlLabel
                         key={key}

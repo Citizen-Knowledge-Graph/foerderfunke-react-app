@@ -7,8 +7,10 @@ import ButtonCard from "../../../components/ButtonCard";
 import globalStyles from "../../../styles/styles";
 import { UserModel } from "../../../models/UserModel";
 import ProfileDataList from "../../profile-screen/components/ProfileDataList";
+import useTranslation from "../../../language/useTranslation";
 
 const ProfileSectionCompleted = () => {
+    const { t } = useTranslation();
     const userProfile = UserModel.retrieveUserData("ff:quick-check-user");
 
     return (
@@ -23,7 +25,7 @@ const ProfileSectionCompleted = () => {
                 <HStack justifyContent={'center'} sx={{ width: "100%" }}>
                     <VStack gap={1} alignItems={'center'} sx={styles.completeTextBox}>
                         <Typography variant="h4" sx={styles.completeText}>
-                            Your quick check is complete
+                            {t('app.qsComplete.header')}
                         </Typography>
                     </VStack>
                 </HStack>
@@ -32,7 +34,7 @@ const ProfileSectionCompleted = () => {
                 )}
                 <ButtonCard
                     link={`/eligibility-overview`}
-                    text="Discover your benefits"
+                    text={t('app.qsComplete.discoverBtn')}
                     backgroundColor={globalStyles.secondaryColor}
                 />
             </VStack>

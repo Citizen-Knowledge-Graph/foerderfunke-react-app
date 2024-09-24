@@ -5,34 +5,36 @@ import VStack from "../../components/VStack";
 import ClickCard from "../../components/ClickCard";
 import AppScreenWrapper from "../../components/AppScreenWrapper";
 import {useStore} from "../../components/ViewportUpdater";
+import useTranslation from "../../language/useTranslation";
 
 const OnboardingChoice = () => {
+    const { t } = useTranslation();
+
     const isDesktop = useStore((state) => state.isDesktop);
     const quickCheckUrl = `${process.env.PUBLIC_URL}/assets/images/choice-screen/quick-check-image.jpg`;
     const allBenefitsUrl = `${process.env.PUBLIC_URL}/assets/images/choice-screen/all-benefits.jpg`;
-
 
     return (
         <Layout isApp={true}>
             <AppScreenWrapper isDesktop={isDesktop} back={true}>
                 <VStack gap={1} sx={styles.container} justifyContent={'center'}>
                     <Typography variant="h3" gutterBottom sx={styles.titleText}>
-                        Your choice
+                        {t('app.discoverChoice.header')}
                     </Typography>
                     <Typography variant="body1" gutterBottom sx={styles.subTitleText}>
-                        Two ways of discovering benefits for you
+                        {t('app.discoverChoice.text')}
                     </Typography>
                 </VStack>
                 <ClickCard
                     link="/onboarding-welcome-topics"
                     time="5 Min."
-                    title="Quick eligibility check"
-                    subtitle="Based on up to 10 benefits"
+                    title={t('app.discoverChoice.quickCheck')}
+                    subtitle={t('app.discoverChoice.quickCheckComment')}
                     backgroundImage={quickCheckUrl}
                 />
                 <ClickCard
                     link="/eligibility-overview"
-                    title="Browse all benefits"
+                    title={t('app.discoverChoice.browseAll')}
                     backgroundImage={allBenefitsUrl}
                 />
             </AppScreenWrapper>

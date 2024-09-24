@@ -6,34 +6,36 @@ import HStack from "../../components/HStack";
 import globalStyles from "../../styles/styles";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
 import DeleteIcon from "@mui/icons-material/Delete";
+import useTranslation from "../../language/useTranslation";
 
 const InfoScreenPrivacy = () => {
+    const { t } = useTranslation();
+
     return (
-        <InfoScreen title={'Your data is only stored locally'} imageUrl={'privacy_1'} forwardLink="/onboarding-choice">
+        <InfoScreen title={t('app.privacySite.header')} imageUrl={'privacy_1'} forwardLink="/onboarding-choice">
             <VStack sx={styles.infoBox}>
                 <Typography sx={styles.infoText}>
-                    Only you should have access to your personal data. That is why <strong>we do
-                    not offer user accounts</strong> managed by us.
+                    {t('app.privacySite.text1')}
                 </Typography>
                 <Typography sx={styles.infoText}>
-                    All of your information is only <strong>stored locally in your browser</strong>.
+                    {t('app.privacySite.text2')}
                 </Typography>
             </VStack>
             <VStack sx={styles.optionsBox}>
                 <Typography sx={styles.optionsText}>
-                    You do have some <strong>options</strong> though:
+                    {t('app.privacySite.optionHeader')}
                 </Typography>
                 <VStack gap={1}>
                     <HStack alignItems={'center'}>
                         <FileDownloadIcon sx={{color: globalStyles.colorDarkGrey, fontSize: '16px'}}/>
-                        <Typography sx={styles.optionsText}>You can <strong>export your data</strong> as an RDF
-                            file.
+                        <Typography sx={styles.optionsText}>
+                            {t('app.privacySite.option1')}
                         </Typography>
                     </HStack>
                     <HStack alignItems={'center'}>
                         <DeleteIcon sx={{color: globalStyles.colorDarkGrey, fontSize: '16px'}}/>
-                        <Typography sx={styles.optionsText}>You can <strong>erase it</strong> from the
-                            browser with one click.
+                        <Typography sx={styles.optionsText}>
+                            {t('app.privacySite.option2')}
                         </Typography>
                     </HStack>
                 </VStack>

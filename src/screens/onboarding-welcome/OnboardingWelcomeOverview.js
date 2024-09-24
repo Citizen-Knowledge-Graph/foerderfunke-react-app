@@ -5,8 +5,10 @@ import OnboardingWelcomeScreen from "./components/OnboardingWelcomeScreen";
 import {useMetadataStore, useSelectedTopicsStore, useUserStore} from "../../storage/zustand";
 import {useNavigate, useParams} from "react-router-dom";
 import questionsService from "../../services/questionsService";
+import useTranslation from "../../language/useTranslation";
 
 const OnboardingWelcomeOverview = () => {
+    const { t } = useTranslation();
     const navigate = useNavigate();
     const {benefitId} = useParams();
     const activeUser = useUserStore((state) => state.activeUserId);
@@ -53,13 +55,13 @@ const OnboardingWelcomeOverview = () => {
     }
 
     return (
-        <OnboardingWelcomeScreen buttonText={'Discover your benefits'} link={`/profile-section`} isLoading={isLoading}>
+        <OnboardingWelcomeScreen buttonText={t('app.topicsChosen.discoverBtn')} link={`/profile-section`} isLoading={isLoading}>
             <VStack gap={3}>
                 {
                     benefitId ? (
                         <>
                             <Typography variant="body1" gutterBottom sx={styles.subTitleText}>
-                                Based on your chosen benefit we will ask you the questions necessary to determine your eligibility.
+                                {t('app.topicsChosen.benefitText')}
                             </Typography>
                             <VStack alignItems={'flex-start'}>
                                 <VStack gap={2} alignItems={'flex-start'}>
@@ -72,7 +74,7 @@ const OnboardingWelcomeOverview = () => {
                         ) : (
                             <>
                                 <Typography variant="body1" gutterBottom sx={styles.subTitleText}>
-                                    Based on your chosen topics we will provide you with a list of benefits you may be eligible for.
+                                    {t('app.topicsChosen.topicsText')}
                                 </Typography>
                                 <VStack alignItems={'flex-start'}>
                                     {selectedTopics.map((topic, index) => (

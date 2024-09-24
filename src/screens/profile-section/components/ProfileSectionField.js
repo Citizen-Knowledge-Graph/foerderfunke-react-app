@@ -10,6 +10,7 @@ import ProfileSectionInputSwitch from "./input-types/ProfileSectionInputSwitch";
 // import handlers
 import {useHandleAddClick} from "../handlers/addClickHandler";
 import {useProfileSectionStore} from "../../../storage/useProfileSectionStore";
+import useTranslation from "../../../language/useTranslation";
 
 const ProfileSectionField = ({
                                  currentField,
@@ -17,6 +18,7 @@ const ProfileSectionField = ({
                                  handleConfirm,
                                  isLoading,
                              }) => {
+    const { t } = useTranslation();
     const [value, setValue] = useState(null);
     const retrieveCurrentEntityData = useProfileSectionStore((state) => state.retrieveCurrentEntityData)
     const entityData = useMemo(() => retrieveCurrentEntityData(), [retrieveCurrentEntityData]);
@@ -77,7 +79,7 @@ const ProfileSectionField = ({
                                         padding: '12px'
                                     }}
                                     onClick={() => handleAddClick(value, currentIndex)}
-                            >Confirm</Button>
+                            >{t('app.questions.confirmBtn')}</Button>
                         )
                 }
             </VStack>
