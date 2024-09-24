@@ -29,7 +29,7 @@ const EligibilityOverviewScreen = () => {
             setHasRerunValidation(true);
             rerunValidation();
         }
-    }, [hasRerunValidation, hydrationData]);
+    }, [hasRerunValidation, hydrationData, language]);
 
     return (
         <Layout isApp={true} logo={true}>

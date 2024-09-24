@@ -37,7 +37,7 @@ const OnboardingWelcomeOverview = () => {
         } else {
             fetchPrioritizedQuestions(selectedTopics.map((topic) => topic.id), null);
         }
-    }, [benefitId, activeUser, selectedTopics, navigate]);
+    }, [benefitId, activeUser, selectedTopics, navigate, language]);
 
     const listRPsForTopic = (topic) => {
         const topicUri = "https://foerderfunke.org/default#" + topic.id.split(":")[1];
