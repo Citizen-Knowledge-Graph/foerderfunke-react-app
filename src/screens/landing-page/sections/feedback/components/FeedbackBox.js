@@ -5,8 +5,10 @@ import FeedbackButtonArray from "./FeedbackButtonArray";
 import HStack from "../../../../../components/HStack";
 import globalStyles from "../../../../../styles/styles";
 import useFeedbackHandler from "../hooks/useFeedbackHandler";
+import useTranslation from "../../../../../language/useTranslation";
 
 const FeedbackBox = ({isDesktop}) => {
+    const { t } = useTranslation();
 
     const {
         feedbackText,
@@ -21,16 +23,17 @@ const FeedbackBox = ({isDesktop}) => {
         <VStack gap={5} sx={styles.feedbackBox}>
             <VStack gap={5} alignItems={'flex-start'} sx={{ width: "100%" }}>
                 <Typography sx={styles.text}>
-                    How do you rate your overall experience with FörderFunke?
+                    {t('feedback.ratePrompt')}
                 </Typography>
                 <FeedbackButtonArray isDesktop={isDesktop} setFeedbackValue={setFeedbackValue} />
             </VStack>
             <VStack gap={5}>
                 <Typography sx={styles.text}>
+                    {t('feedback.writePrompt')}
                     If you like you can also write us a few lines.
                 </Typography>
                 <TextField
-                    label="Enter your text"
+                    label={t('feedback.placeholder')}
                     multiline
                     variant="filled"
                     fullWidth
@@ -53,7 +56,7 @@ const FeedbackBox = ({isDesktop}) => {
                     onClick={submitFeedback}
                     disabled={isSubmitting}
                 >
-                    {isSubmitting ? "Submitting..." : "Submit"}
+                    {isSubmitting ? "t('feedback.submitting')..." : t('feedback.submitBtn')}
                 </Button>
             </HStack>
             {error && (

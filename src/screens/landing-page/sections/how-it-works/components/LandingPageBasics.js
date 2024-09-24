@@ -4,8 +4,11 @@ import {Typography} from "@mui/material";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import {green} from "@mui/material/colors";
 import globalStyles from "../../../../../styles/styles";
+import useTranslation from "../../../../../language/useTranslation";
 
 const LandingPageBasics = () => {
+    const { t } = useTranslation();
+
     return (
         <VStack alignItems={'center'} sx={{width: "100%"}}>
             <VStack
@@ -17,33 +20,32 @@ const LandingPageBasics = () => {
                 }}>
                 <HStack>
                     <Typography sx={styles.titleText}>
-                        The basics
+                        {t('theBasics.header')}
                     </Typography>
                 </HStack>
                 <VStack>
                     <HStack alignItems={'center'}>
                         <CheckCircleIcon sx={styles.icon}/>
                         <Typography sx={styles.itemText}>
-                            FörderFunke is <strong>free to use</strong>
+                            {t('theBasics.line1')}
                         </Typography>
                     </HStack>
                     <HStack alignItems={'center'}>
                         <CheckCircleIcon sx={styles.icon}/>
                         <Typography sx={styles.itemText}>
-                            <strong>Your data is yours!</strong> All the information you fill in is stored only
-                            locally on your device
+                            {t('theBasics.line2')}
                         </Typography>
                     </HStack>
                     <HStack alignItems={'center'}>
                         <CheckCircleIcon sx={styles.icon}/>
                         <Typography sx={styles.itemText}>
-                            <strong>No registration</strong>, no login needed
+                            {t('theBasics.line3')}
                         </Typography>
                     </HStack>
                     <HStack alignItems={'center'}>
                         <CheckCircleIcon sx={styles.icon}/>
                         <Typography sx={styles.itemText}>
-                            You can use it on the <strong>phone or laptop</strong>
+                            {t('theBasics.line4')}
                         </Typography>
                     </HStack>
                 </VStack>

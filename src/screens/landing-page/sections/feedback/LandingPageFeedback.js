@@ -3,14 +3,16 @@ import {Typography} from "@mui/material";
 import LandingPageSectionWrapper from "../../components/LandingPageSectionWrapper";
 import FeedbackBox from "./components/FeedbackBox";
 import LandingPageSectionGrid from "../../components/LandingPageSectionGrid";
+import useTranslation from "../../../../language/useTranslation";
 
 const LandingPageFeedback = ({isDesktop}) => {
+    const { t } = useTranslation();
+
     return (
         <LandingPageSectionWrapper isDesktop={isDesktop}>
-            <LandingPageSectionGrid title={'Help us improve'}>
+            <LandingPageSectionGrid title={t('feedback.header')}>
                 <Typography sx={styles.text}>
-                    Your feedback is essential for us to understand how we can improve your experience with the
-                    application. It helps us improve and add features that allow people to find the right benefits.
+                    {t('feedback.text')}
                 </Typography>
                 <FeedbackBox isDesktop={isDesktop}/>
             </LandingPageSectionGrid>

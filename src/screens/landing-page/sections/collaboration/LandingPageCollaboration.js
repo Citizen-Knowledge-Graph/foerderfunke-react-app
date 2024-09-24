@@ -3,15 +3,16 @@ import {Typography} from "@mui/material";
 import LandingPageSectionWrapper from "../../components/LandingPageSectionWrapper";
 import CollaborationBox from "./components/CollaborationBox";
 import LandingPageSectionGrid from "../../components/LandingPageSectionGrid";
+import useTranslation from "../../../../language/useTranslation";
 
 const LandingPageCollaboration = ({isDesktop}) => {
+    const { t } = useTranslation();
+
     return (
         <LandingPageSectionWrapper isDesktop={isDesktop}>
-            <LandingPageSectionGrid title={'Let\'s collaborate'}>
+            <LandingPageSectionGrid title={t('collaborate.header')}>
                 <Typography sx={styles.text}>
-                    Do you know about some benefits or funding schemes that we are still missing? We would be really
-                    happy to collaborate and include them in the catalogue. We are also very interested to learn
-                    about user groups that could benefit from FörderFunke.
+                    {t('collaborate.text')}
                 </Typography>
                 <CollaborationBox isDesktop={isDesktop}/>
             </LandingPageSectionGrid>

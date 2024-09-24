@@ -8,19 +8,20 @@ import SentimentSatisfiedIcon from '@mui/icons-material/SentimentSatisfied';
 import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied';
 import FeedbackButtonMobile from "./FeedbackButtonMobile";
 import FeedbackButtonDesktop from "./FeedbackButtonDesktop";
-
-
-// Array of icon components with corresponding sentiment colors
-const icons = [
-    {Icon: SentimentVeryDissatisfiedIcon, color: '#f44336', label: 'Worst'},
-    {Icon: SentimentDissatisfiedIcon, color: '#ff9800', label: 'Poor'},
-    {Icon: SentimentNeutralIcon, color: '#9e9e9e', label: 'Fine'},
-    {Icon: SentimentSatisfiedIcon, color: '#8bc34a', label: 'Good'},
-    {Icon: SentimentVerySatisfiedIcon, color: '#4caf50', label: 'Great'},
-];
+import useTranslation from "../../../../../language/useTranslation";
 
 const FeedbackButtonArray = ({isDesktop, setFeedbackValue}) => {
+    const { t } = useTranslation();
     const [selected, setSelected] = useState(null);
+
+    // Array of icon components with corresponding sentiment colors
+    const icons = [
+        {Icon: SentimentVeryDissatisfiedIcon, color: '#f44336', label: t('feedback.1')},
+        {Icon: SentimentDissatisfiedIcon, color: '#ff9800', label: t('feedback.2')},
+        {Icon: SentimentNeutralIcon, color: '#9e9e9e', label: t('feedback.3')},
+        {Icon: SentimentSatisfiedIcon, color: '#8bc34a', label: t('feedback.4')},
+        {Icon: SentimentVerySatisfiedIcon, color: '#4caf50', label: t('feedback.5')},
+    ];
 
     const handleButtonClick = (index) => {
         setSelected((prevSelected) => prevSelected === index ? null : index);

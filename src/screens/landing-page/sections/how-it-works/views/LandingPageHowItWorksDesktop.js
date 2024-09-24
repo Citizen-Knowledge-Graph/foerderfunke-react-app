@@ -2,15 +2,18 @@ import React from "react";
 import VStack from "../../../../../components/VStack";
 import HStack from "../../../../../components/HStack";
 import LandingPageInfoCard from "../components/LandingPageInfoCard";
+import useTranslation from "../../../../../language/useTranslation";
 
 const LandingPageHowItWorksDesktop = ({quick_check, benefits_overview, benefit_page}) => {
+    const { t } = useTranslation();
 
     return (
         <VStack gap={9} alignItems={'center'} sx={{width: '100%'}}>
             <HStack gap={9} justifyContent={'space-between'} alignItems={'center'}>
                 <LandingPageInfoCard
-                    title="Answer some basic questions"
-                    text="Do a quick check, create your profile, or browse our list of social benefits by topic. Your choice."/>
+                    title={t('howItWorks.part1Header')}
+                    text={t('howItWorks.part1Text')}
+                />
                 <img
                     src={quick_check}
                     style={{
@@ -33,14 +36,15 @@ const LandingPageHowItWorksDesktop = ({quick_check, benefits_overview, benefit_p
                     }}
                     alt={'phone 1'}/>
                 <LandingPageInfoCard
-                    title="Get your potential benefits listed"
-                    text="The more complete your profile is, the more accurate the list of benefits you get."/>
-
+                    title={t('howItWorks.part2Header')}
+                    text={t('howItWorks.part2Text')}
+                />
             </HStack>
             <HStack gap={9} justifyContent={'space-between'} alignItems={'center'}>
                 <LandingPageInfoCard
-                    title="Learn about relevant benefits"
-                    text="Learn about requirements and necessary steps to apply for you benefits."/>
+                    title={t('howItWorks.part3Header')}
+                    text={t('howItWorks.part3Text')}
+                />
                 <img
                     src={benefit_page}
                     style={{

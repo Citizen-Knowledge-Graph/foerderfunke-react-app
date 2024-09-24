@@ -1,11 +1,13 @@
 import React from "react";
 import OpenWithIcon from "@mui/icons-material/OpenWith";
 import LandingPagePrincipleCard from "./LandingPagePrincipleCard";
+import useTranslation from "../../../../../language/useTranslation";
 
 const LandingPagePrincipleCardData = ({isDesktop}) => {
-    const title = 'Privacy By Design';
-    const text = 'It is important to us that you maintain control over your data. That\'s why your data ' +
-        'remains encrypted on your end device.';
+    const { t } = useTranslation();
+
+    const title = t('principles.part1Header');
+    const text = t('principles.part1Text');
     const icon = OpenWithIcon;
     const gif = 'privacy-by-design';
 

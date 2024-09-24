@@ -5,20 +5,20 @@ import globalStyles from "../../../styles/styles";
 import LandingPageSectionWrapper from "../components/LandingPageSectionWrapper";
 import VStack from "../../../components/VStack";
 import LandingPageSectionGrid from "../components/LandingPageSectionGrid";
+import useTranslation from "../../../language/useTranslation";
 
 const LandingPageFact = ({isDesktop}) => {
+    const { t } = useTranslation();
+
     return (
         <LandingPageSectionWrapper backgroundColor={globalStyles.primaryColor} isDesktop={isDesktop}>
             <LandingPageSectionGrid>
                 <VStack alignItems={'center'}>
                     <HStack>
-                        <Typography sx={styles.headerSectionTitle}>1 out of 5 households in Germany don’t claim
-                            social benefits they are entitled to.</Typography>
+                        <Typography sx={styles.headerSectionTitle}>{t('mission.header')}</Typography>
                     </HStack>
                     <HStack>
-                        <Typography sx={styles.headerSectionText}>We are on a mission to make social benefits in Germany
-                            accessible and easy to understand by everyone. We show you what social benefits you might be
-                            eligible for and point you the way to apply for them. </Typography>
+                        <Typography sx={styles.headerSectionText}>{t('mission.text')}</Typography>
                     </HStack>
                 </VStack>
             </LandingPageSectionGrid>

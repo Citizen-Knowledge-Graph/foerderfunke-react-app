@@ -2,6 +2,7 @@ import VStack from "../../../../../components/VStack";
 import HStack from "../../../../../components/HStack";
 import {Typography} from "@mui/material";
 import {green} from "@mui/material/colors";
+import useTranslation from "../../../../../language/useTranslation";
 
 const Stacker = ({isDesktop, children}) => {
     return (
@@ -19,6 +20,8 @@ const Stacker = ({isDesktop, children}) => {
 }
 
 const LandingPageSupportCard = ({isDesktop}) => {
+    const { t } = useTranslation();
+
     const PFLogoUrl = `${process.env.PUBLIC_URL}/assets/images/logos/PF_logo.svg`;
     const BMBFUrl = `${process.env.PUBLIC_URL}/assets/images/logos/BMBF_logo.svg`;
 
@@ -28,13 +31,12 @@ const LandingPageSupportCard = ({isDesktop}) => {
                 <VStack gap={1} sx={{flex: 1}}>
                     <HStack>
                         <Typography sx={styles.titleText}>
-                            Supported by
+                            {t('supportedBy.header')}
                         </Typography>
                     </HStack>
                     <HStack>
                         <Typography sx={styles.subTitleText}>
-                            We were part of the 15th round of the <strong>Prototype Fund</strong>
-                            {' '}from March to September 2024. Förderkennzeichen: 01IS24S19.
+                            {t('supportedBy.text')}
                         </Typography>
                     </HStack>
                 </VStack>

@@ -4,14 +4,16 @@ import VStack from "../../../../../components/VStack";
 import globalStyles from "../../../../../styles/styles";
 import HStack from "../../../../../components/HStack";
 import EmailIcon from "@mui/icons-material/Email";
+import useTranslation from "../../../../../language/useTranslation";
 
 const CollaborationBox = () => {
+    const { t } = useTranslation();
 
     return (
         <VStack gap={5} sx={styles.collaborationBox}>
             <VStack gap={3} alignItems={'center'} sx={{width: "100%"}}>
                 <Typography sx={styles.text}>
-                    Send us a message. We will get back to you as quickly as we can!
+                    {t('collaborate.messagePrompt')}
                 </Typography>
                 <HStack>
                     <HStack alignItems={'center'} sx={styles.email}>
