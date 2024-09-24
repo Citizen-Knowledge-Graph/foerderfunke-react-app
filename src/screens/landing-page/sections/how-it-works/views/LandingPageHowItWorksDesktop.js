@@ -11,8 +11,8 @@ const LandingPageHowItWorksDesktop = ({quick_check, benefits_overview, benefit_p
         <VStack gap={9} alignItems={'center'} sx={{width: '100%'}}>
             <HStack gap={9} justifyContent={'space-between'} alignItems={'center'}>
                 <LandingPageInfoCard
-                    title={t('howItWorks.part1Header')}
-                    text={t('howItWorks.part1Text')}
+                    title={t('home.howItWorks.part1Header')}
+                    text={t('home.howItWorks.part1Text')}
                 />
                 <img
                     src={quick_check}
@@ -36,14 +36,14 @@ const LandingPageHowItWorksDesktop = ({quick_check, benefits_overview, benefit_p
                     }}
                     alt={'phone 1'}/>
                 <LandingPageInfoCard
-                    title={t('howItWorks.part2Header')}
-                    text={t('howItWorks.part2Text')}
+                    title={t('home.howItWorks.part2Header')}
+                    text={t('home.howItWorks.part2Text')}
                 />
             </HStack>
             <HStack gap={9} justifyContent={'space-between'} alignItems={'center'}>
                 <LandingPageInfoCard
-                    title={t('howItWorks.part3Header')}
-                    text={t('howItWorks.part3Text')}
+                    title={t('home.howItWorks.part3Header')}
+                    text={t('home.howItWorks.part3Text')}
                 />
                 <img
                     src={benefit_page}

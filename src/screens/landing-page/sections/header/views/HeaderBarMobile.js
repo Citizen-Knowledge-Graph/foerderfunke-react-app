@@ -51,7 +51,7 @@ const HeaderBarMobile = ({isApp}) => {
                         {isApp ? null :
                             featureFlags.newFeedbackSection ? (
                                     <>
-                                        <LandingPageHollowButton text={t('menu.improve')} to={'/#feedback'}/>
+                                        <LandingPageHollowButton text={t('home.menu.improve')} to={'/#feedback'}/>
                                         <Divider sx={{width: '100%', backgroundColor: globalStyles.colorLightGreyTransparent}}/>
                                     </>
                                 )
@@ -60,7 +60,7 @@ const HeaderBarMobile = ({isApp}) => {
                         {isApp ? null :
                             featureFlags.newCollaborationSection ? (
                                     <>
-                                        <LandingPageHollowButton text={t('menu.collaborate')} to={'/#collaboration'}/>
+                                        <LandingPageHollowButton text={t('home.menu.collaborate')} to={'/#collaboration'}/>
                                         <Divider sx={{width: '100%', backgroundColor: globalStyles.colorLightGreyTransparent}}/>
                                     </>
                                 )
@@ -69,7 +69,7 @@ const HeaderBarMobile = ({isApp}) => {
                         {isApp ? null :
                             featureFlags.newActivityLog ?
                                 (<>
-                                        <LandingPageHollowButton text={t('menu.activityLog')} to={'/activity-log'}/>
+                                        <LandingPageHollowButton text={t('home.menu.activityLog')} to={'/activity-log'}/>
                                         <Divider
                                             sx={{width: '100%', backgroundColor: globalStyles.colorLightGreyTransparent}}/>
                                     </>
@@ -79,7 +79,7 @@ const HeaderBarMobile = ({isApp}) => {
                         {
                             isApp ? null : (
                                 <>
-                                    <LandingPageHollowButton text={t('menu.aboutUs')} to={"/#about-us"}/>
+                                    <LandingPageHollowButton text={t('home.menu.aboutUs')} to={"/#about-us"}/>
                                     <Divider sx={{width: '100%', backgroundColor: globalStyles.colorLightGreyTransparent}}/>
                                 </>
                             )

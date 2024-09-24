@@ -31,12 +31,12 @@ const LandingPageSupportCard = ({isDesktop}) => {
                 <VStack gap={1} sx={{flex: 1}}>
                     <HStack>
                         <Typography sx={styles.titleText}>
-                            {t('supportedBy.header')}
+                            {t('home.supportedBy.header')}
                         </Typography>
                     </HStack>
                     <HStack>
                         <Typography sx={styles.subTitleText}>
-                            {t('supportedBy.text')}
+                            {t('home.supportedBy.text')}
                         </Typography>
                     </HStack>
                 </VStack>

@@ -12,7 +12,7 @@ const LandingPageTopSectionMobile = ({benefits}) => {
         <VStack>
             <VStack alignItems={'center'}>
                 <Typography sx={styles.headerSectionTitle}>
-                    {t('hero.header')}
+                    {t('home.hero.header')}
                 </Typography>
                 <LandingPageWAppButton backgroundColor={'primary'}/>
             </VStack>

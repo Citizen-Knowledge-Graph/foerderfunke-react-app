@@ -10,9 +10,9 @@ const LandingPageCollaboration = ({isDesktop}) => {
 
     return (
         <LandingPageSectionWrapper isDesktop={isDesktop}>
-            <LandingPageSectionGrid title={t('collaborate.header')}>
+            <LandingPageSectionGrid title={t('home.collaborate.header')}>
                 <Typography sx={styles.text}>
-                    {t('collaborate.text')}
+                    {t('home.collaborate.text')}
                 </Typography>
                 <CollaborationBox isDesktop={isDesktop}/>
             </LandingPageSectionGrid>

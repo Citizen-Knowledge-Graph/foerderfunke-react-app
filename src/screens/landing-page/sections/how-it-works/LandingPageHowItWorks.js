@@ -16,7 +16,7 @@ const LandingPageHowItWorks = ({isDesktop}) => {
 
     return (
         <LandingPageSectionWrapper isDesktop={isDesktop}>
-            <LandingPageSectionGrid title={t("howItWorks.header")}>
+            <LandingPageSectionGrid title={t('home.howItWorks.header')}>
                 <VStack gap={9} alignItems={'center'}>
                     {isDesktop ?
                         <LandingPageHowItWorksDesktop quick_check={quick_check} benefits_overview={benefits_overview}

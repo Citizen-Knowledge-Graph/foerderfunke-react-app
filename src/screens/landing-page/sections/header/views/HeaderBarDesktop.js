@@ -31,22 +31,22 @@ const HeaderBarDesktop = ({isApp}) => {
                     {isApp ? null : <LandingPageWAppButton backgroundColor={'primary'}/>}
                     {isApp ? null :
                         featureFlags.newFeedbackSection ?
-                            <LandingPageHollowButton text={t('menu.improve')} to={'/#feedback'}/>
+                            <LandingPageHollowButton text={t('home.menu.improve')} to={'/#feedback'}/>
                             : null
                     }
                     {isApp ? null :
                         featureFlags.newCollaborationSection ?
-                            <LandingPageHollowButton text={t('menu.collaborate')} to={'/#collaboration'}/>
+                            <LandingPageHollowButton text={t('home.menu.collaborate')} to={'/#collaboration'}/>
                             : null
                     }
                     {isApp ? null :
                         featureFlags.newActivityLog ?
-                            <LandingPageHollowButton text={t('menu.activityLog')} to={'/activity-log'}/>
+                            <LandingPageHollowButton text={t('home.menu.activityLog')} to={'/activity-log'}/>
                             : null
                     }
                     {
                         isApp ? null :
-                            <LandingPageHollowButton text={t('menu.aboutUs')} to={"/#about-us"}/>
+                            <LandingPageHollowButton text={t('home.menu.aboutUs')} to={"/#about-us"}/>
                     }
                     {
                         featureFlags.newLanguageToggle && (

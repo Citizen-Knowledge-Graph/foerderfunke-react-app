@@ -10,8 +10,8 @@ const LandingPageHowItWorksMobile = ({quick_check, benefits_overview, benefit_pa
         <VStack gap={9} alignItems={'center'}>
             <VStack gap={3} alignItems={'center'}>
                 <LandingPageInfoCard
-                    title={t('howItWorks.part1Header')}
-                    text={t('howItWorks.part1Text')}
+                    title={t('home.howItWorks.part1Header')}
+                    text={t('home.howItWorks.part1Text')}
                 />
                 <img
                     src={quick_check}
@@ -25,8 +25,8 @@ const LandingPageHowItWorksMobile = ({quick_check, benefits_overview, benefit_pa
             </VStack>
             <VStack gap={3} alignItems={'center'}>
                 <LandingPageInfoCard
-                    title={t('howItWorks.part2Header')}
-                    text={t('howItWorks.part2Text')}
+                    title={t('home.howItWorks.part2Header')}
+                    text={t('home.howItWorks.part2Text')}
                 />
                 <img
                     src={benefits_overview}
@@ -40,8 +40,8 @@ const LandingPageHowItWorksMobile = ({quick_check, benefits_overview, benefit_pa
             </VStack>
             <VStack gap={3} alignItems={'center'}>
                 <LandingPageInfoCard
-                    title={t('howItWorks.part3Header')}
-                    text={t('howItWorks.part3Text')}
+                    title={t('home.howItWorks.part3Header')}
+                    text={t('home.howItWorks.part3Text')}
                 />
                 <img
                     src={benefit_page}

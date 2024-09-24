@@ -13,7 +13,7 @@ const CollaborationBox = () => {
         <VStack gap={5} sx={styles.collaborationBox}>
             <VStack gap={3} alignItems={'center'} sx={{width: "100%"}}>
                 <Typography sx={styles.text}>
-                    {t('collaborate.messagePrompt')}
+                    {t('home.collaborate.messagePrompt')}
                 </Typography>
                 <HStack>
                     <HStack alignItems={'center'} sx={styles.email}>

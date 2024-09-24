@@ -26,9 +26,9 @@ const LandingPageFooterMobile = () => {
             </VStack>
             <Divider variant="middle" sx={{borderBottomWidth: '2px'}}/>
             <VStack alignItems={'center'}>
-                <NarBarLink to={"/#how-it-works"} title={t('menu.howWorks')}/>
-                <NarBarLink to={"/#principles"} title={t('menu.principles')}/>
-                <NarBarLink to={"/#about-us"} title={t('menu.aboutUs')}/>
+                <NarBarLink to={"/#how-it-works"} title={t('home.menu.howWorks')}/>
+                <NarBarLink to={"/#principles"} title={t('home.menu.principles')}/>
+                <NarBarLink to={"/#about-us"} title={t('home.menu.aboutUs')}/>
                 <LandingPageWAppButton backgroundColor={'secondary'}/>
                 <Typography sx={styles.copyrightText}>
                     ©  2024 by FörderFunke. All rights reserved.

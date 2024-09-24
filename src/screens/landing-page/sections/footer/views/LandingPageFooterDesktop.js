@@ -20,9 +20,9 @@ const LandingPageFooterDesktop = () => {
             <HStack justifyContent={'space-between'} alignItems={'center'}>
                 <LogoBar/>
                 <HStack gap={3} justifyContent={'center'} alignItems={'center'}>
-                    <NarBarLink to={"/#how-it-works"} title={t('menu.howWorks')}/>
-                    <NarBarLink to={"/#principles"} title={t('menu.principles')}/>
-                    <NarBarLink to={"/#about-us"} title={t('menu.aboutUs')}/>
+                    <NarBarLink to={"/#how-it-works"} title={t('home.menu.howWorks')}/>
+                    <NarBarLink to={"/#principles"} title={t('home.menu.principles')}/>
+                    <NarBarLink to={"/#about-us"} title={t('home.menu.aboutUs')}/>
                     <LandingPageWAppButton backgroundColor={'secondary'}/>
                 </HStack>
             </HStack>

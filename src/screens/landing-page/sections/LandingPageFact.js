@@ -15,10 +15,10 @@ const LandingPageFact = ({isDesktop}) => {
             <LandingPageSectionGrid>
                 <VStack alignItems={'center'}>
                     <HStack>
-                        <Typography sx={styles.headerSectionTitle}>{t('mission.header')}</Typography>
+                        <Typography sx={styles.headerSectionTitle}>{t('home.mission.header')}</Typography>
                     </HStack>
                     <HStack>
-                        <Typography sx={styles.headerSectionText}>{t('mission.text')}</Typography>
+                        <Typography sx={styles.headerSectionText}>{t('home.mission.text')}</Typography>
                     </HStack>
                 </VStack>
             </LandingPageSectionGrid>

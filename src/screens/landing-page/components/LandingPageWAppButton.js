@@ -34,7 +34,7 @@ const LandingPageWAppButton = ({backgroundColor}) => {
         <HStack>
             <Button variant="text" sx={{...styles.button, backgroundColor: buttonColor, color: textColor}}
                     component={Link}
-                    to="/user-routing">{t('global.actionButton')}</Button>
+                    to="/user-routing">{t('home.global.actionButton')}</Button>
         </HStack>
     );
 }

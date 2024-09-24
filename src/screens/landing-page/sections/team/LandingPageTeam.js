@@ -12,7 +12,7 @@ const LandingPageTeam = ({isDesktop}) => {
     return (
         <LandingPageSectionWrapper isDesktop={isDesktop}>
             <VStack gap={5}>
-                <LandingPageSectionTitle title={t('connect.header')}/>
+                <LandingPageSectionTitle title={t('home.connect.header')}/>
                 {isDesktop ? <LandingPageTeamDesktop/> : <LandingPageTeamMobile/>}
             </VStack>
         </LandingPageSectionWrapper>

@@ -23,17 +23,17 @@ const FeedbackBox = ({isDesktop}) => {
         <VStack gap={5} sx={styles.feedbackBox}>
             <VStack gap={5} alignItems={'flex-start'} sx={{ width: "100%" }}>
                 <Typography sx={styles.text}>
-                    {t('feedback.ratePrompt')}
+                    {t('home.feedback.ratePrompt')}
                 </Typography>
                 <FeedbackButtonArray isDesktop={isDesktop} setFeedbackValue={setFeedbackValue} />
             </VStack>
             <VStack gap={5}>
                 <Typography sx={styles.text}>
-                    {t('feedback.writePrompt')}
+                    {t('home.feedback.writePrompt')}
                     If you like you can also write us a few lines.
                 </Typography>
                 <TextField
-                    label={t('feedback.placeholder')}
+                    label={t('home.feedback.placeholder')}
                     multiline
                     variant="filled"
                     fullWidth
@@ -56,7 +56,7 @@ const FeedbackBox = ({isDesktop}) => {
                     onClick={submitFeedback}
                     disabled={isSubmitting}
                 >
-                    {isSubmitting ? "t('feedback.submitting')..." : t('feedback.submitBtn')}
+                    {isSubmitting ? "t('home.feedback.submitting')..." : t('home.feedback.submitBtn')}
                 </Button>
             </HStack>
             {error && (

@@ -6,8 +6,8 @@ import useTranslation from "../../../../../language/useTranslation";
 const LandingPagePrincipleCardUser = ({isDesktop}) => {
     const { t } = useTranslation();
 
-    const title = t('principles.part3Header');
-    const text = t('principles.part3Text');
+    const title = t('home.principles.part3Header');
+    const text = t('home.principles.part3Text');
     const icon = FaceIcon;
     const gif = 'user-centered';
 

@@ -13,7 +13,7 @@ const LandingPageTopSectionDesktop = ({benefits}) => {
         <HStack justifyContent={'space-between'} alignItems={'center'}>
             <VStack alignItems={'flex-start'} sx={{maxWidth: '40%'}}>
                 <Typography sx={styles.headerSectionTitle}>
-                    {t('hero.header')}
+                    {t('home.hero.header')}
                 </Typography>
                 <LandingPageWAppButton backgroundColor={'primary'}/>
             </VStack>

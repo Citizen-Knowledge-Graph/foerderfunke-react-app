@@ -8,11 +8,11 @@ const LandingPageTopSection = ({isDesktop}) => {
     const { t } = useTranslation();
 
     const benefits = [
-        { id: 1, name: t("hero.childAllowance"), url: "Kinderzuschlag.png" },
-        { id: 2, name: t("hero.housingBenefit"), url: "Wohngeld.png" },
-        { id: 3, name: t("hero.citizensBenefit"), url: "Grundsicherung.png" },
-        { id: 4, name: t("hero.vocationalTrainingAllowance"), url: "Bildungsgutschein.png" },
-        { id: 5, name: t("hero.manyMore"), url: "VieleWeitere.png" },
+        { id: 1, name: t("home.hero.childAllowance"), url: "Kinderzuschlag.png" },
+        { id: 2, name: t("home.hero.housingBenefit"), url: "Wohngeld.png" },
+        { id: 3, name: t("home.hero.citizensBenefit"), url: "Grundsicherung.png" },
+        { id: 4, name: t("home.hero.vocationalTrainingAllowance"), url: "Bildungsgutschein.png" },
+        { id: 5, name: t("home.hero.manyMore"), url: "VieleWeitere.png" },
     ];
 
     return (

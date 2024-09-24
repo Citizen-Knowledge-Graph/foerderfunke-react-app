@@ -16,11 +16,11 @@ const FeedbackButtonArray = ({isDesktop, setFeedbackValue}) => {
 
     // Array of icon components with corresponding sentiment colors
     const icons = [
-        {Icon: SentimentVeryDissatisfiedIcon, color: '#f44336', label: t('feedback.1')},
-        {Icon: SentimentDissatisfiedIcon, color: '#ff9800', label: t('feedback.2')},
-        {Icon: SentimentNeutralIcon, color: '#9e9e9e', label: t('feedback.3')},
-        {Icon: SentimentSatisfiedIcon, color: '#8bc34a', label: t('feedback.4')},
-        {Icon: SentimentVerySatisfiedIcon, color: '#4caf50', label: t('feedback.5')},
+        {Icon: SentimentVeryDissatisfiedIcon, color: '#f44336', label: t('home.feedback.1')},
+        {Icon: SentimentDissatisfiedIcon, color: '#ff9800', label: t('home.feedback.2')},
+        {Icon: SentimentNeutralIcon, color: '#9e9e9e', label: t('home.feedback.3')},
+        {Icon: SentimentSatisfiedIcon, color: '#8bc34a', label: t('home.feedback.4')},
+        {Icon: SentimentVerySatisfiedIcon, color: '#4caf50', label: t('home.feedback.5')},
     ];
 
     const handleButtonClick = (index) => {

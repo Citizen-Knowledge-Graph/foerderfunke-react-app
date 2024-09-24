@@ -12,7 +12,7 @@ const LandingPagePrinciples = ({isDesktop}) => {
 
     return (
         <LandingPageSectionWrapper isDesktop={isDesktop}>
-            <LandingPageSectionGrid title={t('principles.header')}>
+            <LandingPageSectionGrid title={t('home.principles.header')}>
                 <VStack gap={5}>
                     <VStack gap={7} justifyContent={'center'} sx={{width: '100%'}}>
                         <LandingPagePrincipleCardData isDesktop={isDesktop} gifFirst={false}/>

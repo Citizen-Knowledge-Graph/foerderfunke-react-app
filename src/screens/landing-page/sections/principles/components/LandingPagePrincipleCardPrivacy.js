@@ -6,8 +6,8 @@ import useTranslation from "../../../../../language/useTranslation";
 const LandingPagePrincipleCardPrivacy = ({isDesktop}) => {
     const { t } = useTranslation();
 
-    const title = t('principles.part2Header');
-    const text = t('principles.part2Text');
+    const title = t('home.principles.part2Header');
+    const text = t('home.principles.part2Text');
     const icon = SecurityIcon;
     const gif = 'open-data';
 

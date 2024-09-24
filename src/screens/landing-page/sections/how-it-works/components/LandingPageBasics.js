@@ -20,32 +20,32 @@ const LandingPageBasics = () => {
                 }}>
                 <HStack>
                     <Typography sx={styles.titleText}>
-                        {t('theBasics.header')}
+                        {t('home.theBasics.header')}
                     </Typography>
                 </HStack>
                 <VStack>
                     <HStack alignItems={'center'}>
                         <CheckCircleIcon sx={styles.icon}/>
                         <Typography sx={styles.itemText}>
-                            {t('theBasics.line1')}
+                            {t('home.theBasics.line1')}
                         </Typography>
                     </HStack>
                     <HStack alignItems={'center'}>
                         <CheckCircleIcon sx={styles.icon}/>
                         <Typography sx={styles.itemText}>
-                            {t('theBasics.line2')}
+                            {t('home.theBasics.line2')}
                         </Typography>
                     </HStack>
                     <HStack alignItems={'center'}>
                         <CheckCircleIcon sx={styles.icon}/>
                         <Typography sx={styles.itemText}>
-                            {t('theBasics.line3')}
+                            {t('home.theBasics.line3')}
                         </Typography>
                     </HStack>
                     <HStack alignItems={'center'}>
                         <CheckCircleIcon sx={styles.icon}/>
                         <Typography sx={styles.itemText}>
-                            {t('theBasics.line4')}
+                            {t('home.theBasics.line4')}
                         </Typography>
                     </HStack>
                 </VStack>

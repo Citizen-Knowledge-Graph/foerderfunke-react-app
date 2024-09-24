@@ -10,9 +10,9 @@ const LandingPageFeedback = ({isDesktop}) => {
 
     return (
         <LandingPageSectionWrapper isDesktop={isDesktop}>
-            <LandingPageSectionGrid title={t('feedback.header')}>
+            <LandingPageSectionGrid title={t('home.feedback.header')}>
                 <Typography sx={styles.text}>
-                    {t('feedback.text')}
+                    {t('home.feedback.text')}
                 </Typography>
                 <FeedbackBox isDesktop={isDesktop}/>
             </LandingPageSectionGrid>
