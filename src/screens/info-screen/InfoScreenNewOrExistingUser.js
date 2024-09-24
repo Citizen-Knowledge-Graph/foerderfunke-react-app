@@ -86,7 +86,8 @@ const InfoScreenNewOrExistingUser = () => {
     }
 
     const deleteProfile = () => {
-        localStorage.clear();
+        localStorage.removeItem('userIds');
+        localStorage.removeItem('ff:quick-check-user');
         window.location.href = '/';
     }
 
