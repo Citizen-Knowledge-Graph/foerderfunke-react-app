@@ -4,7 +4,7 @@ import {Typography} from "@mui/material";
 import globalStyles from "../../../../../styles/styles";
 
 const MilestoneElement = ({ milestone, showBorderBottom }) => {
-    const borderBottom = showBorderBottom ? '2px solid rgba(252, 215, 85)' : 'none';
+    const borderBottom = showBorderBottom ? '1px solid rgba(252, 215, 85)' : 'none';
 
     return (
         <VStack sx={{...styles.milestoneBox, borderBottom: borderBottom}}>
