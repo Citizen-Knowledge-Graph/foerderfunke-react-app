@@ -3,9 +3,11 @@ import HStack from "../../../../../components/HStack";
 import {Typography} from "@mui/material";
 import globalStyles from "../../../../../styles/styles";
 
-const MilestoneElement = ({ milestone }) => {
+const MilestoneElement = ({ milestone, showBorderBottom }) => {
+    const borderBottom = showBorderBottom ? '2px solid rgba(252, 215, 85)' : 'none';
+
     return (
-        <VStack>
+        <VStack sx={{...styles.milestoneBox, borderBottom: borderBottom}}>
             <HStack justifyContent={'space-between'}>
                 <Typography sx={styles.title}>
                     {milestone.title}
@@ -24,6 +26,10 @@ const MilestoneElement = ({ milestone }) => {
 }
 
 const styles = {
+    milestoneBox: {
+        paddingBottom: '16px',
+        paddingTop: '0px',
+    },
     title: {
         fontSize: '20px',
         fontWeight: 'bold'

@@ -16,7 +16,11 @@ const MilestonesList = ({title, milestones}) => {
                 {
                     milestones.map((milestone, index) => {
                         return (
-                            <MilestoneElement key={index} milestone={milestone}/>
+                            <MilestoneElement
+                                key={index}
+                                milestone={milestone}
+                                showBorderBottom={index < milestones.length - 1}
+                            />
                         )
                     })
                 }
