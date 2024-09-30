@@ -14,8 +14,8 @@ const GithubCommitElement = ({commit, showBorderBottom}) => {
     }
 
     return (
-        <HStack justifyContent={'space-between'} alignItems={'center'}
-                sx={{...styles.milestoneBox, borderBottom: borderBottom}}>
+        <HStack justifyContent={'space-between'} alignItems={'flex-start'}
+                sx={{...styles.commitBox, borderBottom: borderBottom}}>
             <VStack gap={1} alignItems={'flex-start'}>
                 <Typography sx={styles.title}>
                     {commit.commit_message}
@@ -24,7 +24,7 @@ const GithubCommitElement = ({commit, showBorderBottom}) => {
                     {commit.repo_name}
                 </Typography>
             </VStack>
-            <VStack gap={1} alignItems={'flex-end'}>
+            <VStack gap={1} justifyContent={'flex-start'} alignItems={'flex-end'} sx={styles.dateBox}>
                 <Typography sx={styles.date}>
                     {parsedDate(commit.timestamp)}
                 </Typography>
@@ -37,13 +37,16 @@ const GithubCommitElement = ({commit, showBorderBottom}) => {
 }
 
 const styles = {
-    milestoneBox: {
+    commitBox: {
         paddingBottom: '16px',
         paddingTop: '0px',
     },
     title: {
         fontSize: '20px',
         fontWeight: 'bold'
+    },
+    dateBox: {
+      minWidth: '90px',
     },
     date: {
         fontSize: '16px',
