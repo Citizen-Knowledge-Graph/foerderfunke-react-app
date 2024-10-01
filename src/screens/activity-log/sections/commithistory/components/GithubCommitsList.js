@@ -3,14 +3,16 @@ import {Typography} from "@mui/material";
 import VStack from "../../../../../components/VStack";
 import HStack from "../../../../../components/HStack";
 import GithubCommitElement from "./GithubCommitElement";
+import useTranslation from "../../../../../language/useTranslation";
 
 const GithubCommitsList = ({commits}) => {
+    const { t } = useTranslation();
 
     return (
         <VStack sx={{width: '100%'}}>
             <HStack justifyContent={'flex-end'} sx={styles.listHeaderBox}>
                 <Typography sx={styles.listTitle}>
-                    Last 5 commits
+                    {t('activityLog.gitCommits.listTitle')}
                 </Typography>
             </HStack>
             <VStack>

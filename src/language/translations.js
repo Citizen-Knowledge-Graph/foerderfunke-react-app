@@ -128,11 +128,33 @@ const translations = {
         activityLog: {
             milestones: {
                 title: "Milestones",
-                description: "This list provides an overview over the milestones we are working on and milestones we have achieved in the past."
+                description: "This list offers an overview of the milestones we're currently working on, as well as those we've already achieved.",
+                listTitleComingUp: "Coming up",
+                listTitlePast: "Past",
+                comingUpList: [
+                    {
+                        title: "XXX Collaboration",
+                        date: "September 2024",
+                        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut "
+                    }
+                ],
+                pastList: [
+                    {
+                        title: "New feedback and collaboration sections",
+                        date: "September 2024",
+                        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut "
+                    },
+                    {
+                        title: "Demo Day Prototype Fund",
+                        date: "September 2024",
+                        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut "
+                    }
+                ]
             },
             gitCommits: {
                 title: "Github Commits",
-                description: "All of our programming work is open source and tracked in Github. You will be able to see our 5 last commits here. If you want to learn more you can check out our Github organisation page.",
+                description: "Our development work is fully open-source and tracked on GitHub. You can view our latest five commits right here, or explore more by visiting our GitHub organization page.",
+                listTitle: "Last 5 commits",
                 today: "Today",
                 yesterday: "Yesterday",
                 daysAgo: "{{count}} days ago",
@@ -268,11 +290,14 @@ const translations = {
         activityLog: {
             milestones: {
                 title: "Meilensteine",
-                description: "Eine Übersicht der vergangenen und zukünftigen Meilensteine."
+                description: "Die Übersicht zeigt die Meilensteine der vergangenen Monate und gibt einen Ausblick auf die kommenden Ziele.",
+                listTitleComingUp: "Aktuell",
+                listTitlePast: "Vergangen"
             },
             gitCommits: {
                 title: "Github Commits",
-                description: "Eine Übersicht der letzten 5 Commits.",
+                description: "Unsere Entwicklungsarbeit ist vollständig Open Source und wird auf GitHub erfasst. Du kannst unsere letzten fünf Commits hier einsehen oder mehr auf unserer GitHub-Organisationsseite entdecken.",
+                listTitle: "Die letzten 5 Commits",
                 today: "Heute",
                 yesterday: "Gestern",
                 daysAgo: "Vor {{count}} Tagen",

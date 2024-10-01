@@ -1,40 +1,20 @@
-import React from "react";
+import React, {useContext} from "react";
 import {Typography} from "@mui/material";
 import LandingPageSectionWrapper from "../../../landing-page/components/LandingPageSectionWrapper";
 import LandingPageSectionGrid from "../../../landing-page/components/LandingPageSectionGrid";
 import VStack from "../../../../components/VStack";
 import MilestonesList from "./components/MilestonesList";
 import useTranslation from "../../../../language/useTranslation";
+import {LanguageContext} from "../../../../language/LanguageContext";
+import {milestonesList} from "./content/milestonesList";
 
-const upcoming_milestones = [
-    {
-        title: 'XXX Collaboration',
-        date: 'September 2024',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut ' +
-            'labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod ' +
-            'tempor incididunt ut '
-    }
-]
-
-const past_milestones = [
-    {
-        title: 'New feedback and collaboration sections',
-        date: 'September 2024',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut ' +
-            'labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod ' +
-            'tempor incididunt ut '
-    },
-    {
-        title: 'Demo Day Prototype Fund',
-        date: 'September 2024',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut ' +
-            'labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod ' +
-            'tempor incididunt ut '
-    }
-]
 
 const ActivityLogMilestones = ({isDesktop}) => {
     const { t } = useTranslation();
+    const { language } = useContext(LanguageContext);
+
+    const upcoming_milestones = milestonesList[language].comingUp;
+    const past_milestones = milestonesList[language].past;
 
     return (
         <LandingPageSectionWrapper isDesktop={isDesktop}>
@@ -45,8 +25,8 @@ const ActivityLogMilestones = ({isDesktop}) => {
                     </Typography>
                 </VStack>
                 <VStack gap={5} sx={{width: '100%'}}>
-                    <MilestonesList title={'Coming up'} milestones={upcoming_milestones}/>
-                    <MilestonesList title={'Past'} milestones={past_milestones}/>
+                    <MilestonesList title={t('activityLog.milestones.listTitleComingUp')} milestones={upcoming_milestones}/>
+                    <MilestonesList title={t('activityLog.milestones.listTitlePast')} milestones={past_milestones}/>
                 </VStack>
             </LandingPageSectionGrid>
         </LandingPageSectionWrapper>
