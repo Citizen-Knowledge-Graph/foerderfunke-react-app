@@ -5,13 +5,28 @@ import {Typography} from "@mui/material";
 import globalStyles from "../../../../../styles/styles";
 import GitHubIcon from '@mui/icons-material/GitHub';
 
+
 const GithubCommitElement = ({commit, showBorderBottom}) => {
     const borderBottom = showBorderBottom ? '1px solid rgba(252, 215, 85)' : 'none';
 
-    const parsedDate = (date) => {
-        const dateObj = new Date(date)
-        return dateObj.toISOString().split('T')[0]
-    }
+    const mapDate = (date) => {
+        const dateObj = new Date(date);
+        const today = new Date();
+
+        dateObj.setHours(0, 0, 0, 0);
+        today.setHours(0, 0, 0, 0);
+
+        const diffTime = today - dateObj;
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+        if (diffDays === 0) {
+            return 'today';
+        } else if (diffDays === 1) {
+            return 'yesterday';
+        } else {
+            return `${diffDays} days ago`;
+        }
+    };
 
     return (
         <HStack justifyContent={'space-between'} alignItems={'flex-start'}
@@ -26,7 +41,7 @@ const GithubCommitElement = ({commit, showBorderBottom}) => {
             </VStack>
             <VStack gap={1} justifyContent={'flex-start'} alignItems={'flex-end'} sx={styles.dateBox}>
                 <Typography sx={styles.date}>
-                    {parsedDate(commit.timestamp)}
+                    {mapDate(commit.timestamp)}
                 </Typography>
                 <a href={commit.commit_url} target="_blank" rel="noopener noreferrer">
                     <GitHubIcon sx={{fontSize: 24, color: 'black'}}/>
@@ -43,10 +58,9 @@ const styles = {
     },
     title: {
         fontSize: '20px',
-        fontWeight: 'bold'
     },
     dateBox: {
-      minWidth: '90px',
+        minWidth: '90px',
     },
     date: {
         fontSize: '16px',
@@ -56,7 +70,7 @@ const styles = {
     },
     repoName: {
         fontSize: '16px',
-        fontWeight: '400',
+        fontWeight: '300',
         color: globalStyles.colorDarkGrey,
         textAlign: 'right'
     },
