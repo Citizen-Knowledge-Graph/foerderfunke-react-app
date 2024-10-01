@@ -5,17 +5,18 @@ import LandingPageSectionGrid from "../../../landing-page/components/LandingPage
 import VStack from "../../../../components/VStack";
 import useFetchLatestCommitsHandler from "./hooks/useFetchLatestCommitsHandler";
 import GithubCommitsList from "./components/GithubCommitsList";
+import useTranslation from "../../../../language/useTranslation";
 
 const ActivityLogCommits = ({isDesktop}) => {
+    const { t } = useTranslation();
     const { commits, error } = useFetchLatestCommitsHandler()
 
     return (
         <LandingPageSectionWrapper isDesktop={isDesktop}>
-            <LandingPageSectionGrid title={'Github commits'}>
+            <LandingPageSectionGrid title={t('activityLog.gitCommits.title')}>
                 <VStack>
                     <Typography sx={styles.text}>
-                        All of our programming work is open source and tracked in Github. You will be able to see our 5 last
-                        commits here. If you want to learn more you can check out our Github organisation page.
+                        {t('activityLog.gitCommits.description')}
                     </Typography>
                 </VStack>
                 <VStack gap={5} sx={{width: '100%'}}>

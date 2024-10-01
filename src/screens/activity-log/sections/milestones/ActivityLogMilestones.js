@@ -4,6 +4,7 @@ import LandingPageSectionWrapper from "../../../landing-page/components/LandingP
 import LandingPageSectionGrid from "../../../landing-page/components/LandingPageSectionGrid";
 import VStack from "../../../../components/VStack";
 import MilestonesList from "./components/MilestonesList";
+import useTranslation from "../../../../language/useTranslation";
 
 const upcoming_milestones = [
     {
@@ -33,14 +34,14 @@ const past_milestones = [
 ]
 
 const ActivityLogMilestones = ({isDesktop}) => {
+    const { t } = useTranslation();
 
     return (
         <LandingPageSectionWrapper isDesktop={isDesktop}>
-            <LandingPageSectionGrid title={'Milestones'}>
+            <LandingPageSectionGrid title={t('activityLog.milestones.title')}>
                 <VStack>
                     <Typography sx={styles.text}>
-                        This list provides an overview over the milestones we are working on and milestones we have
-                        achieved in the past.
+                        {t('activityLog.milestones.description')}
                     </Typography>
                 </VStack>
                 <VStack gap={5} sx={{width: '100%'}}>

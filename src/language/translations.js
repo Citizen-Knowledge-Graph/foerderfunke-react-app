@@ -124,6 +124,19 @@ const translations = {
                 checkElBtn: "Check eligibility",
                 learnMoreBtn: "Learn more"
             }
+        },
+        activityLog: {
+            milestones: {
+                title: "Milestones",
+                description: "This list provides an overview over the milestones we are working on and milestones we have achieved in the past."
+            },
+            gitCommits: {
+                title: "Github Commits",
+                description: "All of our programming work is open source and tracked in Github. You will be able to see our 5 last commits here. If you want to learn more you can check out our Github organisation page.",
+                today: "Today",
+                yesterday: "Yesterday",
+                daysAgo: "{{count}} days ago",
+            },
         }
     },
     de: {
@@ -250,6 +263,19 @@ const translations = {
                 missingData: "Fehlende Daten:",
                 checkElBtn: "Anspruch prüfen",
                 learnMoreBtn: "Mehr erfahren",
+            }
+        },
+        activityLog: {
+            milestones: {
+                title: "Meilensteine",
+                description: "Eine Übersicht der vergangenen und zukünftigen Meilensteine."
+            },
+            gitCommits: {
+                title: "Github Commits",
+                description: "Eine Übersicht der letzten 5 Commits.",
+                today: "Heute",
+                yesterday: "Gestern",
+                daysAgo: "Vor {{count}} Tagen",
             }
         }
     },

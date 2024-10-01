@@ -4,9 +4,11 @@ import HStack from "../../../../../components/HStack";
 import {Typography} from "@mui/material";
 import globalStyles from "../../../../../styles/styles";
 import GitHubIcon from '@mui/icons-material/GitHub';
+import useTranslation from "../../../../../language/useTranslation";
 
 
 const GithubCommitElement = ({commit, showBorderBottom}) => {
+    const { t } = useTranslation();
     const borderBottom = showBorderBottom ? '1px solid rgba(252, 215, 85)' : 'none';
 
     const mapDate = (date) => {
@@ -20,11 +22,11 @@ const GithubCommitElement = ({commit, showBorderBottom}) => {
         const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
 
         if (diffDays === 0) {
-            return 'today';
+            return t('activityLog.gitCommits.today');
         } else if (diffDays === 1) {
-            return 'yesterday';
+            return t('activityLog.gitCommits.yesterday');
         } else {
-            return `${diffDays} days ago`;
+            return t('activityLog.gitCommits.daysAgo', { count: diffDays });
         }
     };
 
