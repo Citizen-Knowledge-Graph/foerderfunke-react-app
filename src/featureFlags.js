@@ -2,7 +2,7 @@ const defaultFlags = {
     newFeedbackSection: true,
     newCollaborationSection: true,
     newLanguageToggle: false,
-    newActivityLog: false,
+    newActivityLog: true,
 };
 
 const getFeatureFlag = (flag) => {
