@@ -15,9 +15,11 @@ import VStack from "../../components/VStack";
 import Divider from "@mui/material/Divider";
 import OpenInNewOutlinedIcon from '@mui/icons-material/OpenInNewOutlined';
 import SearchIcon from '@mui/icons-material/Search';
+import useTranslation from "../../language/useTranslation";
 
 const BenefitPageScreen = () => {
     const {id} = useParams();
+    const { t } = useTranslation();
     const [benefitPageData, setBenefitPageData] = useState();
     const [topicsData, setTopicsData] = useState([]);
 
@@ -70,7 +72,7 @@ const BenefitPageScreen = () => {
                         <BenefitPageHeader benefit={benefitPageData}/>
                         <VStack sx={{width: '100%'}}>
                             <Typography sx={styles.topicsTitle}>
-                                Appears in the following topics
+                                {t('app.benefitPage.inTopics')}
                             </Typography>
                             <HStack sx={{flexWrap: 'wrap'}}>
                                 {
@@ -95,7 +97,7 @@ const BenefitPageScreen = () => {
                                         to={`/onboarding-welcome/${id}`}
                                         startIcon={<SearchIcon/>}
                                     >
-                                        Check eligibility
+                                        {t('app.benefitPage.eligibilityBtn')}
                                     </Button>
                                 </HStack>
                             </VStack>
@@ -104,6 +106,7 @@ const BenefitPageScreen = () => {
                             <Divider sx={{width: "100%"}}/>
                             <VStack sx={{width: "100%"}} gap={1}>
                                 <Typography sx={styles.sectionTitle}>
+                                    {t('app.benefitPage.whatIsIt')}
                                     What is it
                                 </Typography>
                                 <Typography sx={styles.sectionText}>
@@ -145,7 +148,7 @@ const BenefitPageScreen = () => {
                             <VStack sx={{width: "100%"}} gap={1}>
                                 <HStack gap={1}>
                                     <Typography sx={styles.sectionText}>
-                                        More information available here
+                                        {t('app.benefitPage.moreInfo')}
                                     </Typography>
                                     <a href={benefitPageData.seeAlso} target="_blank" rel="noopener noreferrer">
                                         <IconButton

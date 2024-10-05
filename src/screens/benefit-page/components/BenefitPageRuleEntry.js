@@ -7,8 +7,10 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import HelpIcon from '@mui/icons-material/Help';
 import CancelIcon from '@mui/icons-material/Cancel';
 import {useStore} from "../../../components/ViewportUpdater";
+import useTranslation from "../../../language/useTranslation";
 
 const BenefitPageRuleEntry = ({ruleData}) => {
+    const { t } = useTranslation();
     const isDesktop = useStore((state) => state.isDesktop);
 
     const icon = (() => {
@@ -61,7 +63,7 @@ const BenefitPageRuleEntry = ({ruleData}) => {
                 </VStack>
                 <VStack gap={0} sx={{width: '50%'}}>
                     <Typography sx={styles.fieldText}>
-                        Your answer
+                        {t('app.benefitPage.rulesTable.yourAnswer')}
                     </Typography>
                     <Typography sx={styles.requirementText}>
                         {ruleData.userValue}

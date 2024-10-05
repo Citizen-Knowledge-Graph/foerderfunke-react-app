@@ -9,8 +9,10 @@ import {buildRulesOutput} from "../../../utilities/ruleParsing";
 import VStack from "../../../components/VStack";
 import BenefitPageRuleEntry from "./BenefitPageRuleEntry";
 import Divider from "@mui/material/Divider";
+import useTranslation from "../../../language/useTranslation";
 
 const BenefitPageRules = ({benefitId}) => {
+    const { t } = useTranslation();
     const [loaded, setLoaded] = useState(false);
     const [rulesData, setRulesData] = useState({});
     const [benefitReport, setBenefitReport] = useState({});
@@ -35,14 +37,14 @@ const BenefitPageRules = ({benefitId}) => {
         fetchRulesData();
     }, [benefitId, rulesData, metadata, loaded, validationReport]);
 
-    const rules = buildRulesOutput(rulesData, metadata, benefitReport, userProfile)
+    const rules = buildRulesOutput(rulesData, metadata, benefitReport, userProfile, t)
 
     return (
         <>
             {loaded && (
                 <VStack sx={{width: '100%'}}>
                     <Typography sx={styles.sectionTitle}>
-                        Eligibility rules
+                        {t('app.benefitPage.rulesTable.header')}
                     </Typography>
                     <VStack gap={1} sx={{
                         borderWidth: '1px',

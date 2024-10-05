@@ -15,30 +15,31 @@ export const buildMinMaxMathNotation = (obj) => {
     return str.join(", ");
 }
 
-export const buildSingleRuleOutput = (rulesObj, dfObj, metadata) => {
+export const buildSingleRuleOutput = (rulesObj, dfObj, metadata, t) => {
     let msg = "";
     switch(rulesObj.type) {
         case RuleType.EXISTENCE:
-            return "Must be answered";
+            return t('app.benefitPage.rulesTable.mustBeAnswered');
         case RuleType.VALUE_IN:
-            msg += "Must be " + (rulesObj.values.length === 1 ? "" : "one of: ");
+            msg += t('app.benefitPage.rulesTable.mustBe') + " "
+                + (rulesObj.values.length === 1 ? "" : (t('app.benefitPage.rulesTable.oneOf') + ": "));
             for (let value of rulesObj.values) {
-                msg += "\"" + getChoiceLabel(value, dfObj) + "\", ";
+                msg += "\"" + getChoiceLabel(value, dfObj, t) + "\", ";
             }
             return trim(msg);
         case RuleType.VALUE_NOT_IN:
-            msg += "Must not be " + (rulesObj.values.length === 1 ? "" : "one of: ");
+            msg += t('app.benefitPage.rulesTable.mustNotBe') + " " + (rulesObj.values.length === 1 ? "" : (t('app.benefitPage.rulesTable.oneOf') + ": "));
             for (let value of rulesObj.values) {
-                msg += "\"" + getChoiceLabel(value, dfObj) + "\", ";
+                msg += "\"" + getChoiceLabel(value, dfObj, t) + "\", ";
             }
             return trim(msg);
         case RuleType.MIN_MAX:
-            return "Must be " + buildMinMaxMathNotation(rulesObj);
+            return t('app.benefitPage.rulesTable.mustBe') + " " + buildMinMaxMathNotation(rulesObj);
         case RuleType.OR:
-            msg += "One or both of the following must be true: ";
+            msg += t('app.benefitPage.rulesTable.oneOrBothTrue')  + ": ";
             for (let element of rulesObj.elements) {
                 // this is pretty hardcoded for the very limited OR-cases we support for now, compare the respective code in matching-engine TODO
-                msg += "\"" + metadata.df[element.path].label + "\": \"" + getChoiceLabel(element.valueIn[0], null) + "\", ";
+                msg += "\"" + metadata.df[element.path].label + "\": \"" + getChoiceLabel(element.valueIn[0], null, t) + "\", ";
             }
             return trim(msg);
         default:
@@ -46,21 +47,21 @@ export const buildSingleRuleOutput = (rulesObj, dfObj, metadata) => {
     }
 }
 
-export const showUserValue = (dfObj, userProfile, materializedOutputs, metadata) => {
+export const showUserValue = (dfObj, userProfile, materializedOutputs, metadata, t) => {
     if (dfObj.datafield && userProfile[dfObj.datafield]) { // ff:pensionable and ff:age don't have it, they will also not show up in the profile as they are materialized on the fly
         let userValueRaw = userProfile[dfObj.datafield];
-        return convertUserValueRaw(userValueRaw, dfObj);
+        return convertUserValueRaw(userValueRaw, dfObj, t);
     }
     let dfUri = expand(dfObj.uri);
     if (materializedOutputs[dfUri]) {
-        let str = convertUserValueRaw(materializedOutputs[dfUri].triples[0].o, dfObj);
-        str += " (inferred from your answer to \"" + metadata.df[materializedOutputs[dfUri].input].label + "\")";
+        let str = convertUserValueRaw(materializedOutputs[dfUri].triples[0].o, dfObj, t);
+        str += " (" + t('app.benefitPage.rulesTable.inferredFrom') + " \"" + metadata.df[materializedOutputs[dfUri].input].label + "\")";
         return str;
     }
     return "-";
 }
 
-export const buildRulesOutput = (rulesData, metadata, benefitReport, userProfile) => {
+export const buildRulesOutput = (rulesData, metadata, benefitReport, userProfile, t) => {
     const elements = [];
 
     let materializedOutputs = {};
@@ -81,7 +82,7 @@ export const buildRulesOutput = (rulesData, metadata, benefitReport, userProfile
             additionalInfo: (dfUri === "https://foerderfunke.org/default#hasAge" || dfUri === "https://foerderfunke.org/default#pensionable")
                 ? " (gets calculated from Date of Birth)"
                 : "",
-            rule: buildSingleRuleOutput(rulesObj, dfObj, metadata)
+            rule: buildSingleRuleOutput(rulesObj, dfObj, metadata, t)
         };
 
         let userValue = "-";
@@ -89,7 +90,7 @@ export const buildRulesOutput = (rulesData, metadata, benefitReport, userProfile
 
         if (dfObj) {
             dfObj.uri = dfUri;
-            userValue = showUserValue(dfObj, userProfile, materializedOutputs, metadata);
+            userValue = showUserValue(dfObj, userProfile, materializedOutputs, metadata, t);
 
             if (benefitReport.result === ValidationResult.ELIGIBLE) {
                 validity = "valid";

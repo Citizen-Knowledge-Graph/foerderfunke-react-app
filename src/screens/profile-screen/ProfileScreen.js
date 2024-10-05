@@ -6,8 +6,10 @@ import globalStyles from "../../styles/styles";
 import VStack from "../../components/VStack";
 import {Typography} from "@mui/material";
 import ProfileDataList from "./components/ProfileDataList";
+import useTranslation from "../../language/useTranslation";
 
 const ProfileScreen = () => {
+    const { t } = useTranslation();
     const isDesktop = useStore((state) => state.isDesktop);
     const titleFontSize = isDesktop ? '32px' : '28px';
 
@@ -22,7 +24,7 @@ const ProfileScreen = () => {
                 }}>
                     <VStack gap={1}>
                         <Typography sx={{...styles.titleText, fontSize: titleFontSize}}>
-                            Your profile
+                            {t('app.profile.header')}
                         </Typography>
                     </VStack>
                 </VStack>

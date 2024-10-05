@@ -2,8 +2,10 @@ import React from "react";
 import {Button} from "@mui/material";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import HStack from "./HStack";
+import useTranslation from "../language/useTranslation";
 
 const TemplateViewHeader = ({onClick}) => {
+    const { t } = useTranslation();
     return (
         <HStack justifyContent={'flex-start'} sx={{width: '100%'}}>
             <Button
@@ -11,7 +13,7 @@ const TemplateViewHeader = ({onClick}) => {
                 sx={styles.button}
                 startIcon={<ChevronLeftIcon />}
                 onClick={onClick}
-            >Back</Button>
+            >{t('app.nav.backBtn')}</Button>
         </HStack>
     );
 }

@@ -21,8 +21,10 @@ import HStack from "../../components/HStack";
 import {useStore} from "../../components/ViewportUpdater";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ReplayIcon from '@mui/icons-material/Replay';
+import useTranslation from "../../language/useTranslation";
 
 const InfoScreenNewOrExistingUser = () => {
+    const { t } = useTranslation();
     const isDesktop = useStore((state) => state.isDesktop);
     const updateUserId = useUserStore((state) => state.updateUserId);
     const defaultUserId = "ff:quick-check-user";
@@ -108,11 +110,11 @@ const InfoScreenNewOrExistingUser = () => {
 
     return (
         userExists ? (
-                <InfoScreen title="Welcome back" hideNextButton={true}>
+                <InfoScreen title={t("app.welcomeBack.header")} hideNextButton={true}>
                     <VStack gap={7}>
                         <VStack gap={3} sx={styles.infoBox}>
                             <Typography sx={styles.infoText}>
-                                We found a profile in the local storage of your browser. Do you want to continue using it?
+                                {t("app.welcomeBack.text")}
                             </Typography>
                             <DynamicStacker>
                                 <HStack>
@@ -133,9 +135,11 @@ const InfoScreenNewOrExistingUser = () => {
                                     >
                                         <HStack alignItems={'center'}>
                                             <VStack gap={1} alignItems={'flex-start'} sx={{width: '70%'}}>
-                                                <Typography sx={{fontWeight: 'bold'}}>Yes</Typography>
+                                                <Typography sx={{fontWeight: 'bold'}}>
+                                                    {t("app.welcomeBack.yesBtnTitle")}
+                                                </Typography>
                                                 <Typography sx={{textAlign: 'left'}}>
-                                                    You can continue exploring with your profile
+                                                    {t("app.welcomeBack.yesBtnText")}
                                                 </Typography>
                                             </VStack>
                                             <ArrowForwardIcon sx={{color: 'white', fontSize: 30, flex: 1}}/>
@@ -160,9 +164,12 @@ const InfoScreenNewOrExistingUser = () => {
                                     >
                                         <HStack alignItems={'center'}>
                                             <VStack gap={1} alignItems={'flex-start'} sx={{width: '70%'}}>
-                                                <Typography sx={{fontWeight: 'bold'}}>No</Typography>
-                                                <Typography sx={{textAlign: 'left'}}>You will start the journey with a new
-                                                    profile</Typography>
+                                                <Typography sx={{fontWeight: 'bold'}}>
+                                                    {t("app.welcomeBack.noBtnTitle")}
+                                                </Typography>
+                                                <Typography sx={{textAlign: 'left'}}>
+                                                    {t("app.welcomeBack.noBtnText")}
+                                                </Typography>
                                             </VStack>
                                             <ReplayIcon sx={{color: 'white', fontSize: 30, flex: 1}}/>
                                         </HStack>
@@ -185,7 +192,7 @@ const InfoScreenNewOrExistingUser = () => {
                                         }}
                                         startIcon={<FileDownloadIcon sx={{color: globalStyles.colorDarkGrey}}/>}
                                         onClick={exportProfile}
-                                >Export your profile</Button>
+                                >{t("app.welcomeBack.exportBtn")}</Button>
                                 <Button variant="text"
                                         sx={{
                                             fontSize: '10px',
@@ -199,7 +206,7 @@ const InfoScreenNewOrExistingUser = () => {
                                         }}
                                         startIcon={<DeleteIcon sx={{color: globalStyles.colorDarkGrey}}/>}
                                         onClick={deleteProfile}
-                                >Delete your profile</Button>
+                                >{t("app.welcomeBack.deleteBtn")}</Button>
                             </HStack>
                         </HStack>
                     </VStack>

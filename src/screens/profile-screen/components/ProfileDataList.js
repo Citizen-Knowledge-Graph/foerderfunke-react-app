@@ -44,7 +44,7 @@ const ProfileDataList = () => {
                     </VStack>) : (
                     <VStack sx={styles.restartBox}>
                         <Typography>
-                            You haven't provided any information about yourself yet
+                            {t('app.profile.noInfoYet')}
                         </Typography>
                     </VStack>)
             }

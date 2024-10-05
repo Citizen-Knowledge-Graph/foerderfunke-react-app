@@ -77,6 +77,9 @@ const translations = {
             },
         },
         app: {
+            nav: {
+                backBtn: "Back"
+            },
             privacySite: {
                 header: "Your data is only stored locally",
                 text1: "Only you should have access to your personal data. That is why we do not offer user accounts managed by us.",
@@ -84,6 +87,16 @@ const translations = {
                 optionHeader: "You do have some options though:",
                 option1: "You can export your data as an RDF file.",
                 option2: "You can erase it from the browser with one click.",
+            },
+            welcomeBack: {
+                header: "Welcome back",
+                text: "We found a profile in the local storage of your browser. Do you want to continue using it?",
+                yesBtnTitle: "Yes",
+                yesBtnText: "You can continue exploring with your profile",
+                noBtnTitle: "No",
+                noBtnText: "You will start the journey with a new profile",
+                exportBtn: "Export your profile",
+                deleteBtn: "Delete your profile",
             },
             discoverChoice: {
                 header: "Your choice",
@@ -123,6 +136,29 @@ const translations = {
                 missingData: "Missing data:",
                 checkElBtn: "Check eligibility",
                 learnMoreBtn: "Learn more"
+            },
+            profile: {
+                header: "Your profile",
+                noInfoYet: "You haven't provided any information about yourself yet"
+            },
+            benefitPage: {
+                LeiKaInfo: "LeiKa is a unique identifier for benefits in Germany. It helps you to find the right benefit for you.",
+                inTopics: "Appears in the following topics",
+                eligibilityBtn: "Check eligibility",
+                whatIsIt: "What is it",
+                rulesTable: {
+                    header: "Eligibility rules",
+                    yourAnswer: "Your answer",
+                    mustBeAnswered: "Must be answered",
+                    mustBe: "Must be",
+                    mustNotBe: "Must not be",
+                    oneOf: "one of",
+                    oneOrBothTrue: "One or both of the following must be true",
+                    inferredFrom: "inferred from your answer to",
+                    yes: "yes",
+                    no: "no"
+                },
+                moreInfo: "More information available here"
             }
         },
         activityLog: {
@@ -239,6 +275,9 @@ const translations = {
             },
         },
         app: {
+            nav: {
+                backBtn: "Zurück"
+            },
             privacySite: {
                 header: "Deine Daten werden nur lokal gespeichert",
                 text1: "Nur du solltest Zugriff auf deine persönlichen Daten haben. Deshalb bieten wir keine von uns verwalteten Benutzerkonten an.",
@@ -246,6 +285,16 @@ const translations = {
                 optionHeader: "Du hast aber einige Optionen:",
                 option1: "Du kannst deine Daten als RDF-Datei exportieren.",
                 option2: "Du kannst sie mit einem Klick aus dem Browser löschen."
+            },
+            welcomeBack: {
+                header: "Willkommen zurück",
+                text: "Wir haben ein Profil im lokalen Speicher deines Browsers gefunden. Möchtest du es weiter nutzen?",
+                yesBtnTitle: "Ja",
+                yesBtnText: "Du kannst mit deinem Profil weiter erkunden",
+                noBtnTitle: "Nein",
+                noBtnText: "Du wirst die Reise mit einem neuen Profil beginnen",
+                exportBtn: "Profil exportieren",
+                deleteBtn: "Profil löschen",
             },
             discoverChoice: {
                 header: "Deine Wahl",
@@ -285,6 +334,29 @@ const translations = {
                 missingData: "Fehlende Daten:",
                 checkElBtn: "Anspruch prüfen",
                 learnMoreBtn: "Mehr erfahren",
+            },
+            profile: {
+                header: "Dein Profil",
+                noInfoYet: "Du hast noch keine Informationen über dich angegeben",
+            },
+            benefitPage: {
+                LeiKaInfo: "LeiKa ist ein eindeutiger Identifikator für Leistungen in Deutschland. Er hilft dir, die richtige Leistung für dich zu finden.",
+                inTopics: "Erscheint in den folgenden Themen",
+                eligibilityBtn: "Anspruch prüfen",
+                whatIsIt: "Was ist das?",
+                rulesTable: {
+                    header: "Anspruchsregeln",
+                    yourAnswer: "Deine Antwort",
+                    mustBeAnswered: "Muss beantwortet werden",
+                    mustBe: "Muss sein",
+                    mustNotBe: "Darf nicht sein",
+                    oneOf: "eines von",
+                    oneOrBothTrue: "Eines oder beide der folgenden müssen zutreffen",
+                    inferredFrom: "abgeleitet von deiner Antwort auf",
+                    yes: "ja",
+                    no: "nein"
+                },
+                moreInfo: "Weitere Informationen hier verfügbar"
             }
         },
         activityLog: {
