@@ -112,6 +112,7 @@ const BenefitPageScreen = () => {
                             </VStack>
                             <Divider sx={{width: "100%"}}/>
                             <BenefitPageRules benefitId={id}/>
+                            {/*
                             <Divider sx={{width: "100%"}}/>
                             <VStack sx={{width: "100%"}} gap={1}>
                                 <Typography sx={styles.sectionTitle}>
@@ -139,6 +140,7 @@ const BenefitPageScreen = () => {
                                     More information to come here. We are working on this section.
                                 </Typography>
                             </VStack>
+                            */}
                             <Divider sx={{width: "100%"}}/>
                             <VStack sx={{width: "100%"}} gap={1}>
                                 <HStack gap={1}>
