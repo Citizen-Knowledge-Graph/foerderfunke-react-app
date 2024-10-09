@@ -156,7 +156,8 @@ const translations = {
                     oneOrBothTrue: "One or both of the following must be true",
                     inferredFrom: "inferred from your answer to",
                     yes: "yes",
-                    no: "no"
+                    no: "no",
+                    unknown: "unknown"
                 },
                 moreInfo: "More information available here"
             }
@@ -354,7 +355,8 @@ const translations = {
                     oneOrBothTrue: "Eines oder beide der folgenden müssen zutreffen",
                     inferredFrom: "abgeleitet von deiner Antwort auf",
                     yes: "ja",
-                    no: "nein"
+                    no: "nein",
+                    unknown: "unbekannt"
                 },
                 moreInfo: "Weitere Informationen hier verfügbar"
             }

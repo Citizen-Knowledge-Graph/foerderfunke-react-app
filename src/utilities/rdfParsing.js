@@ -5,9 +5,14 @@ export const expand = (uri) => {
 };
 
 export const getChoiceLabel = (value, dfObj, t) => {
+    if (!value) {
+        return t('app.benefitPage.rulesTable.unknown');
+    }
     if (value === "true") return t('app.benefitPage.rulesTable.yes');
     if (value === "false") return t('app.benefitPage.rulesTable.no');
-    return dfObj.choices.find(choice => expand(choice.value) === expand(value)).label;
+    const expandedValue = expand(value);
+    const choice = dfObj.choices.find(choice => expand(choice.value) === expandedValue);
+    return choice ? choice.label : t('app.benefitPage.rulesTable.unknown');
 };
 
 export const convertUserValueRaw = (raw, dfObj, t) => {
