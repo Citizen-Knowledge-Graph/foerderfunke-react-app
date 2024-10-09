@@ -4,12 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import GlobalStyles from './GlobalStyles';
+import ErrorBoundary from "./ErrorBoundary";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <>
-        <GlobalStyles/>
-        <App/>
+        <ErrorBoundary>
+            <GlobalStyles/>
+            <App/>
+        </ErrorBoundary>
     </>
 )
 ;

@@ -11,7 +11,7 @@ const TemplateViewHeader = ({onClick}) => {
             <Button
                 variant="text"
                 sx={styles.button}
-                startIcon={<ChevronLeftIcon />}
+                startIcon={<ChevronLeftIcon data-testid="chevron-left-icon"/>}
                 onClick={onClick}
             >{t('app.nav.backBtn')}</Button>
         </HStack>
