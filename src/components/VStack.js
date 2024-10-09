@@ -5,7 +5,7 @@ const VStack = ({
                     children,
                     gap = 2,
                     justifyContent = 'flex-start',
-                    alignItems = 'center',
+                    alignItems = null,
                     sx = {},
                     ...props
                 }) => {

@@ -40,7 +40,6 @@ describe('VStack Component', () => {
         expect(vStackBox).toHaveStyle('box-sizing: border-box');
         expect(vStackBox).toHaveStyle(`gap: ${expectedGap}`);
         expect(vStackBox).toHaveStyle('justify-content: flex-start');
-        expect(vStackBox).toHaveStyle('align-items: center');
     });
 
     it('overrides props correctly', () => {
