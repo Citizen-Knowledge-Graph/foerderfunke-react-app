@@ -109,25 +109,7 @@ const styles = {
         "&:last-child": {
             paddingBottom: '16px',
         }
-    },
-    buttonCardComplete: {
-        display: 'flex',
-        flexDirection: 'column',
-        backgroundColor: globalStyles.primaryColor,
-        borderRadius: '15px',
-        boxShadow: 'none',
-    },
-    buttonCardContent: {
-        padding: '16px',
-        "&:last-child": {
-            paddingBottom: '16px',
-        }
-    },
-    buttonCardText: {
-        fontWeight: 'bold',
-        textAlign: 'center',
-        margin: '0',
-    },
+    }
 };
 
 export default ProfileSectionField;

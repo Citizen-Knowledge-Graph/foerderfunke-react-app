@@ -21,11 +21,6 @@ const LandingPageFeedback = ({isDesktop}) => {
 }
 
 const styles = {
-    titleText: {
-        fontWeight: 'bold',
-        fontSize: '36px',
-        textAlign: 'center',
-    },
     text: {
         fontSize: '20px',
         textAlign: 'left',

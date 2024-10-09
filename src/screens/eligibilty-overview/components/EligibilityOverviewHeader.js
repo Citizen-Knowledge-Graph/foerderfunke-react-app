@@ -75,18 +75,6 @@ const styles = {
         color: 'black',
         textTransform: 'none',
     },
-    circleText: {
-        fontSize: '12px'
-    },
-    enterInfoBox: {
-        padding: '12px',
-        borderRadius: '12px',
-        backgroundColor:
-        globalStyles.primaryColorTransparent,
-    },
-    enterInfoText: {
-        fontSize: '12px'
-    },
     liableInfoBox: {
         padding: '12px',
         borderRadius: '12px'

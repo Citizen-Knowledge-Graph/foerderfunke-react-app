@@ -17,7 +17,11 @@ const ButtonCard = ({
     return (
         <VStack sx={styles.buttonContainer}>
             <Link to={link} style={{textDecoration: 'none', width: '100%'}}>
-                <Card sx={{...styles.buttonCard, backgroundColor: isLoading ? globalStyles.primaryColorDisabled : backgroundColor, color: color}}
+                <Card sx={{
+                    ...styles.buttonCard,
+                    backgroundColor: isLoading ? globalStyles.primaryColorDisabled : backgroundColor,
+                    color: color
+                }}
                       data-testid="card">
                     <CardContent sx={styles.buttonCardContent} data-testid="card-content">
                         <HStack justifyContent={'center'}>

@@ -30,9 +30,6 @@ const EligibilityOverviewList = ({items, eligible}) => {
 const styles = {
     titleText: {
         fontWeight: 'bold',
-    },
-    itemTitle: {
-        fontWeight: 'bold',
     }
 };
 

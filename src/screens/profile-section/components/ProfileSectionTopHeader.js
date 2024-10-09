@@ -73,21 +73,6 @@ const ProfileSectionTopHeader = ({validationReport}) => {
 };
 
 const styles = {
-    updateInfoBox: {
-        padding: '12px',
-        borderRadius: '12px',
-        backgroundColor: globalStyles.tertiaryColorTransparent,
-    },
-    updateInfoText: {
-        fontSize: '12px'
-    },
-    questionBox: {
-        padding: '12px',
-        borderRadius: '12px',
-    },
-    questionText: {
-        fontSize: '12px'
-    },
     benefitsUnlockedBox: {
         width: "100%",
         padding: '12px',

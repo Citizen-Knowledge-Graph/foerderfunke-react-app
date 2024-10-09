@@ -39,38 +39,7 @@ const styles = {
         fontSize: '28px',
         color: 'white',
         textAlign: 'center',
-    },
-    subTitleText: {
-        fontSize: '24px',
-        color: 'white',
-        textAlign: 'center',
-    },
-    imageContainer: {
-        borderRadius: '15px',
-        padding: '16px',
-    },
-    headerSectionButtonCard: {
-        backgroundColor: 'white',
-        boxShadow:
-            'none',
-        borderRadius:
-            '12px',
-    },
-    headerSectionButtonCardContent: {
-        padding: "3px 6px 4px 8px",
-        "&:last-child":
-            {
-                paddingBottom: '3px',
-            }
-        ,
-    },
-    headerSectionButtonCardText: {
-        color: "black",
-        fontSize:
-            '20px',
-        fontWeight:
-            'bold',
-    },
+    }
 };
 
 export default LandingPageClaimCard;

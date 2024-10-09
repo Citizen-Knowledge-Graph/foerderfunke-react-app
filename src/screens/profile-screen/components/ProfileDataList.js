@@ -78,9 +78,6 @@ const ProfileDataList = () => {
 };
 
 const styles = {
-    titleText: {
-        fontWeight: 'bold',
-    },
     restartBox: {
         padding: '16px',
         width: '100%',
