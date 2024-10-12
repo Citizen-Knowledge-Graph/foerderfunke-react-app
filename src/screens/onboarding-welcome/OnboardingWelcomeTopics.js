@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {Button, Checkbox, FormControlLabel, Typography} from '@mui/material';
 import {useSelectedTopicsStore} from "../../storage/zustand";
 import useFetchData from "../../services/fetchResourceService";
@@ -7,9 +7,11 @@ import VStack from "../../components/VStack";
 import globalStyles from "../../styles/styles";
 import useTopicSelectionHandlers from "./hooks/useTopicSelectionHandlers";
 import useTranslation from "../../language/useTranslation";
+import {LanguageContext} from "../../language/LanguageContext";
 
 const OnboardingWelcomeTopics = () => {
     const { t } = useTranslation();
+    const { language } = useContext(LanguageContext);
     const [topicsData, setTopicsData] = useState([]);
     const [selectedTopicsBoolean, setSelectedTopicsBoolean] = useState([]);
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
@@ -60,7 +62,7 @@ const OnboardingWelcomeTopics = () => {
                                     },
                                 }}>
                                 <Typography sx={styles.topicText}>
-                                    {topic.title}
+                                    {language === "de" ? topic.title.de : topic.title.en}
                                 </Typography>
                             </Button>))}
                         <FormControlLabel control={<Checkbox onChange={handleToggleSelectAll}/>} label={t('app.topicSelection.selectAll')}/>

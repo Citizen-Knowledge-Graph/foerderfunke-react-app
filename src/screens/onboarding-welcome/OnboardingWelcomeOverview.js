@@ -82,7 +82,7 @@ const OnboardingWelcomeOverview = () => {
                                     {selectedTopics.map((topic, index) => (
                                         <VStack key={index} gap={2} alignItems={'flex-start'}>
                                             <Typography variant="h6" sx={styles.listHeader}>
-                                                {topic.title}
+                                                {language === "de" ? topic.title.de : topic.title.en}
                                             </Typography>
                                             {listRPsForTopic(topic)}
                                         </VStack>

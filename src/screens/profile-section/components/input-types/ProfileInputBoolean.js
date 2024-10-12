@@ -1,7 +1,10 @@
 import React from 'react';
 import { FormControlLabel, Typography, Radio, RadioGroup, FormControl } from '@mui/material';
+import useTranslation from "../../../../language/useTranslation";
 
 const ProfileInputBoolean = ({ value, setValue, error }) => {
+    const { t } = useTranslation();
+
     const handleChange = (event) => {
         setValue(event.target.value === 'true');
     };
@@ -13,7 +16,7 @@ const ProfileInputBoolean = ({ value, setValue, error }) => {
                 onChange={handleChange}
             >
                 {
-                    [[false, 'No'], [true, 'Yes']].map((choice, i) => (
+                    [[false, t('app.datafields.boolNo')], [true, t('app.datafields.boolYes')]].map((choice, i) => (
                         <FormControlLabel
                             key={i}
                             value={choice[0]}

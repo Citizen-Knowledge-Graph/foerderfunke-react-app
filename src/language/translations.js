@@ -122,6 +122,11 @@ const translations = {
                 multipleAnswers: "Multiple answers possible",
                 confirmBtn: "Confirm"
             },
+            datafields: {
+                pickBday: "Pick your birthdate",
+                boolYes: "Yes",
+                boolNo: "No",
+            },
             qsComplete: {
                 header: "Your quick check is complete",
                 hint: "You currently cannot edit your profile data. If you need to make changes, you can restart the discovery journey.",
@@ -320,6 +325,11 @@ const translations = {
                 info: "Wir aktualisieren die Anzahl der Fragen und möglichen Leistungen basierend auf deinen Antworten.",
                 multipleAnswers: "Mehrere Antworten möglich",
                 confirmBtn: "Bestätigen",
+            },
+            datafields: {
+                pickBday: "Wähle dein Geburtsdatum",
+                boolYes: "Ja",
+                boolNo: "Nein",
             },
             qsComplete: {
                 header: "Dein schneller Anspruchscheck ist abgeschlossen",

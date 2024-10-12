@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from "react";
+import React, {useCallback, useContext, useEffect, useState} from "react";
 import InfoScreen from "./components/InfoScreen";
 import {useNavigate} from "react-router-dom";
 import {
@@ -22,9 +22,11 @@ import {useStore} from "../../components/ViewportUpdater";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ReplayIcon from '@mui/icons-material/Replay';
 import useTranslation from "../../language/useTranslation";
+import {LanguageContext} from "../../language/LanguageContext";
 
 const InfoScreenNewOrExistingUser = () => {
     const { t } = useTranslation();
+    const { language } = useContext(LanguageContext);
     const isDesktop = useStore((state) => state.isDesktop);
     const updateUserId = useUserStore((state) => state.updateUserId);
     const defaultUserId = "ff:quick-check-user";
@@ -48,7 +50,7 @@ const InfoScreenNewOrExistingUser = () => {
     const initNewUser = useCallback(() => {
         UserModel.initialiseNewUser(defaultUserId);
         initStores();
-        runValidation(defaultUserId);
+        runValidation(defaultUserId, language);
         navigate('/info-privacy');
     }, [defaultUserId, navigate, initStores]);
 
@@ -75,7 +77,7 @@ const InfoScreenNewOrExistingUser = () => {
 
     const continueWithExisting = () => {
         initStores();
-        runValidation(defaultUserId);
+        runValidation(defaultUserId, language);
         navigate('/onboarding-choice');
     }
 
