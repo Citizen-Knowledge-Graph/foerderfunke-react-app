@@ -52,7 +52,7 @@ const InfoScreenNewOrExistingUser = () => {
         initStores();
         runValidation(defaultUserId, language);
         navigate('/info-privacy');
-    }, [defaultUserId, navigate, initStores]);
+    }, [defaultUserId, navigate, initStores, language]);
 
     useEffect(() => {
         const userIds = JSON.parse(localStorage.getItem('userIds') || '[]');
