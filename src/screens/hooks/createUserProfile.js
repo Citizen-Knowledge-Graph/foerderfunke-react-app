@@ -1,5 +1,7 @@
 import { UserModel } from '../../models/UserModel';
 
+// UNUSED
+
 const useCreateUserprofile = (username) => {
     return () => {
         return new Promise((resolve, reject) => {

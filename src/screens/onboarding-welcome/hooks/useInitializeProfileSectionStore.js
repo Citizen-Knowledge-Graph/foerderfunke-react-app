@@ -1,6 +1,8 @@
 import {useProfileSectionStore} from "../../../storage/useProfileSectionStore";
 import {useEffect} from "react";
 
+// UNUSED
+
 const useInitializeProfileSectionStore = (entityData) => {
     const initializeSectionStore = useProfileSectionStore((state) => state.initializeSectionStore);
 

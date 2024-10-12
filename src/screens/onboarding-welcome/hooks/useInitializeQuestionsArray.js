@@ -2,6 +2,8 @@ import {useState, useEffect} from 'react';
 import questionsService from "../../../services/questionsService";
 import {useSelectedTopicsStore, useUserStore} from "../../../storage/zustand";
 
+// UNUSED
+
 function useInitializeQuestionsArray() {
     const activeUser = useUserStore((state) => state.activeUserId);
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
