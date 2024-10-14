@@ -1,30 +1,51 @@
 [
   {
     "id": "ff:leistungen-fuer-familien-bc-kategorie",
-    "title": "Services for Families"
+    "title": {
+      "en": "Services for Families",
+      "de": "Leistungen für Familien"
+    }
   },
   {
     "id": "ff:arbeitslosigkeit-bc-kategorie",
-    "title": "Unemployment & Job Search"
+    "title": {
+      "en": "Unemployment & Job Search",
+      "de": "Arbeitslosigkeit & Jobsuche"
+    }
   },
   {
     "id": "ff:alter-ruhestand-bc-kategorie",
-    "title": "Aging & Retirement"
+    "title": {
+      "en": "Aging & Retirement",
+      "de": "Alter & Ruhestand"
+    }
   },
   {
     "id": "ff:gesundheit-pflege-bc-kategorie",
-    "title": "Health & Care"
+    "title": {
+      "en": "Health & Care",
+      "de": "Gesundheit & Pflege"
+    }
   },
   {
     "id": "ff:wohnen-bc-kategorie",
-    "title": "Housing"
+    "title": {
+      "en": "Housing",
+      "de": "Wohnen"
+    }
   },
   {
     "id": "ff:schule-studium-ausbildung-bc-kategorie",
-    "title": "School, Studies, Vocational Training"
+    "title": {
+      "en": "School, Studies, Vocational Training",
+      "de": "Schule, Studium, Ausbildung"
+    }
   },
   {
     "id": "ff:sozialhilfe-grundsicherung-bc-kategorie",
-    "title": "Social & Basic Welfare"
+    "title": {
+      "en": "Social & Basic Welfare",
+      "de": "Sozialhilfe & Grundsicherung"
+    }
   }
 ]
