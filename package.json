@@ -54,6 +54,7 @@
   },
   "devDependencies": {
     "@emotion/jest": "^11.13.0",
+    "babel-jest": "^29.7.0",
     "gh-pages": "^6.1.1",
     "react-app-rewired": "^2.2.1"
   }
