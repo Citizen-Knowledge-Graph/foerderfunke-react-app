@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import { useUserStore } from "./storage/zustand";
-import { runValidation } from "./services/validationService";
+import { useUserStore } from "./core/storage/zustand";
+import { runValidation } from "./core/services/validationService";
 
 // UNUSED
 

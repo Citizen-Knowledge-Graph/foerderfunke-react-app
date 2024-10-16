@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { loadUserData } from './services/userService';
+import { loadUserData } from './core/services/userService';
 
 const AppStartup = () => {
     //const userId = useUserStore((state) => state.userId);

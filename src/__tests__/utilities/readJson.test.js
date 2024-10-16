@@ -1,7 +1,7 @@
-import readJson from '../../utilities/readJson';
-import api from '../../services/api';
+import readJson from '../../core/utilities/readJson';
+import api from '../../core/services/api';
 
-jest.mock('../../services/api');
+jest.mock('../../core/services/api');
 
 describe('readJson', () => {
 

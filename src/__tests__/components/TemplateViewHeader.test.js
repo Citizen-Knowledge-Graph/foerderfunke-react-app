@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import TemplateViewHeader from '../../components/TemplateViewHeader';
+import TemplateViewHeader from '../../ui/components/TemplateViewHeader';
 
-jest.mock('../../language/useTranslation', () => () => ({
+jest.mock('../../ui/language/useTranslation', () => () => ({
     t: (key) => key === 'app.nav.backBtn' ? 'Back' : key,
 }));
 
