@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo, useState} from 'react';
+import React, {useContext, useEffect, useMemo, useState} from 'react';
 import Layout from "../../components/Layout";
 import {Link, useParams} from "react-router-dom";
 import BenefitPageHeader from "./components/BenefitPageHeader";
@@ -16,10 +16,12 @@ import Divider from "@mui/material/Divider";
 import OpenInNewOutlinedIcon from '@mui/icons-material/OpenInNewOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import useTranslation from "../../language/useTranslation";
+import {LanguageContext} from "../../language/LanguageContext";
 
 const BenefitPageScreen = () => {
     const {id} = useParams();
-    const { t } = useTranslation();
+    const { t } = useTranslation()
+    const {language} = useContext(LanguageContext);
     const [benefitPageData, setBenefitPageData] = useState();
     const [topicsData, setTopicsData] = useState([]);
 
@@ -48,9 +50,9 @@ const BenefitPageScreen = () => {
             let topicId = topicUri.startsWith("https") ? "ff:" + topicUri.split("#")[1] : topicUri;
             const topic = topicsData.find(topic => topic.id === topicId);
 
-            return topic ? topic.title : ''; // Return the title if found, otherwise return an empty string
+            return topic ? topic.title[language] : '';
         },
-        [topicsData]
+        [language, topicsData]
     );
 
     const getCategoryTitles = useMemo(
@@ -58,8 +60,7 @@ const BenefitPageScreen = () => {
             if (!benefitPageData || !benefitPageData.categories) {
                 return '';
             }
-
-            return benefitPageData.categories.map(categoryUri => getTopicTitle(categoryUri));
+            return benefitPageData.categories.map(categoryUri => getTopicTitle(categoryUri))
         },
         [benefitPageData, getTopicTitle]
     );
