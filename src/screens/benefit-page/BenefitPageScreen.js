@@ -108,7 +108,6 @@ const BenefitPageScreen = () => {
                             <VStack sx={{width: "100%"}} gap={1}>
                                 <Typography sx={styles.sectionTitle}>
                                     {t('app.benefitPage.whatIsIt')}
-                                    What is it
                                 </Typography>
                                 <Typography sx={styles.sectionText}>
                                     {benefitPageData.benefitInfo}
