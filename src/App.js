@@ -16,6 +16,7 @@ import InfoScreenNewOrExistingUser from "./screens/info-screen/InfoScreenNewOrEx
 import ProfileScreen from "./screens/profile-screen/ProfileScreen";
 import ActivityLogScreen from "./screens/activity-log/ActivityLogScreen";
 import {LanguageProvider} from "./language/LanguageContext";
+import ResolveUriScreen from "./screens/resolve-uri/ResolveUriScreen";
 
 const theme = createTheme({});
 
@@ -41,6 +42,7 @@ const App = () => {
                             <Route path="/benefit-page/:id" element={<BenefitPageScreen/>}/>
                             <Route path="/profile-overview" element={<ProfileScreen/>}/>
                             <Route path="/activity-log" element={<ActivityLogScreen/>}/>
+                            <Route path="/default" element={<ResolveUriScreen/>}/>
                         </Routes>
                     </div>
                 </Router>
