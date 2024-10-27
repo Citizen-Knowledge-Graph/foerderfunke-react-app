@@ -66,14 +66,14 @@ const ResolveUriScreen = () => {
             <AppScreenWrapper isDesktop={isDesktop} back={false}>
                 {localName ?
                     <>
-                        <h2>{uri}</h2>
-                        <small style={{color: "gray"}}>Prefixes:
-                        <ul>
-                            {Object.keys(prefixMap).map((key, idx) => (
-                                <li key={idx}><strong>{prefixMap[key]}</strong>: {key}</li>
+                        <div style={{fontSize: "x-large"}}>https://foerderfunke.org/default#<strong>{localName}</strong></div>
+                        <div style={{fontSize: "small", color: "gray"}}>Prefixes:{" "}
+                            {Object.keys(prefixMap).map((key, idx, arr) => (
+                                <span key={idx}><strong>{prefixMap[key]}</strong>: {key}
+                                    {idx < arr.length - 1 && ", "}
+                                </span>
                             ))}
-                        </ul>
-                        </small>
+                        </div>
                         <table>
                             <tbody>
                                 <tr>
