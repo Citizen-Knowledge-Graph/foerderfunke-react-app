@@ -18,6 +18,15 @@ const ResolveUriScreen = () => {
         asObject: [],
     });
 
+    const prefixMap = {
+        'https://foerderfunke.org/default#': 'ff',
+        'http://www.w3.org/1999/02/22-rdf-syntax-ns#': 'rdf',
+        'http://www.w3.org/2000/01/rdf-schema#': 'rdfs',
+        'http://www.w3.org/2001/XMLSchema#': 'xsd',
+        'http://www.w3.org/ns/shacl#': 'sh',
+        'http://schema.org/': 'schema'
+    };
+
     useEffect(() => {
         const fetchTriples = async () => {
             if (!localName) return;
@@ -36,12 +45,20 @@ const ResolveUriScreen = () => {
     }, [localName, uri]);
 
     const format = (str) => {
-        if (str.startsWith('https://foerderfunke.org/default#')) {
-            const thisLocalName = str.split('#')[1];
-            return <a href={`#${thisLocalName}`}>{"ff:" + thisLocalName}</a>;
+        for (let key of Object.keys(prefixMap)) {
+            if (!str.startsWith(key)) continue
+            let prefix = prefixMap[key];
+            let thisLocalName = str.includes('#') ? str.split('#')[1] : str.split('/').pop();
+            if (prefix === 'ff') {
+                return <a href={`#${thisLocalName}`}>{prefix + ":" + thisLocalName}</a>;
+            } else {
+                return prefix + ":" + thisLocalName;
+            }
         }
-        // TODO
-        return str;
+        if (str.startsWith('bc_')) {
+            return <span style={{color: "gray"}}>{str}</span>
+        }
+        return <span style={{color: "green"}}>{str}</span>
     };
 
     return (
@@ -49,11 +66,18 @@ const ResolveUriScreen = () => {
             <AppScreenWrapper isDesktop={isDesktop} back={false}>
                 {localName ?
                     <>
-                        <h3>{uri}</h3>
+                        <h2>{uri}</h2>
+                        <small style={{color: "gray"}}>Prefixes:
+                        <ul>
+                            {Object.keys(prefixMap).map((key, idx) => (
+                                <li key={idx}><strong>{prefixMap[key]}</strong>: {key}</li>
+                            ))}
+                        </ul>
+                        </small>
                         <table>
                             <tbody>
                                 <tr>
-                                    <td colSpan="3"><strong>Appears as subject in these triples:</strong></td>
+                                    <td style={{padding: "10px 0 10px 0"}} colSpan="3">Used as <strong>subject</strong> in these triples:</td>
                                 </tr>
                                 {triples.asSubject.map((triple, idx) => (
                                     <tr key={idx}>
@@ -63,7 +87,7 @@ const ResolveUriScreen = () => {
                                     </tr>
                                 ))}
                                 <tr>
-                                    <td colSpan="3"><strong>Appears as predicate in these triples:</strong></td>
+                                    <td style={{padding: "10px 0 10px 0"}} colSpan="3">Used as <strong>predicate</strong> in these triples:</td>
                                 </tr>
                                 {triples.asPredicate.map((triple, idx) => (
                                     <tr key={idx}>
@@ -73,7 +97,7 @@ const ResolveUriScreen = () => {
                                     </tr>
                                 ))}
                                 <tr>
-                                    <td colSpan="3"><strong>Appears as object in these triples:</strong></td>
+                                    <td style={{padding: "10px 0 10px 0"}} colSpan="3">Used as <strong>object</strong> in these triples:</td>
                                 </tr>
                                 {triples.asObject.map((triple, idx) => (
                                     <tr key={idx}>
