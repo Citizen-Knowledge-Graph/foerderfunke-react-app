@@ -2,7 +2,7 @@
   "name": "foerderfunke-react-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://foerderfunke.org/",
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/plugin-transform-private-property-in-object": "^7.24.7",
@@ -28,7 +28,7 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "react-app-rewired build && cp build/index.html build/default.html && echo 'foerderfunke.org' > build/CNAME",
+    "build": "react-app-rewired build && echo 'foerderfunke.org' > build/CNAME",
     "test": "react-app-rewired test --collect-coverage --watchAll=false",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
