@@ -11,15 +11,12 @@ const ResolveUriScreen = () => {
     const isDesktop = useStore((state) => state.isDesktop);
     const location = useLocation();
     const localName = location.hash.substring(1)
+    const uri = `https://foerderfunke.org/default#${localName}`;
     const [triples, setTriples] = useState({
         asSubject: [],
         asPredicate: [],
         asObject: [],
     });
-
-    const buildUri = () => {
-        return `https://foerderfunke.org/default#${localName}`;
-    }
 
     useEffect(() => {
         const fetchTriples = async () => {
@@ -29,29 +26,30 @@ const ResolveUriScreen = () => {
             const materializationString = await fetchTurtleResource(validationConfig['materialization']);
             let rdfStrings = [datafieldsString, materializationString];
             for (const requirementProfile of validationConfig['queries']) {
-                const {fileUrl, rpUri} = requirementProfile;
+                const {fileUrl} = requirementProfile;
                 rdfStrings.push(await fetchTurtleResource(fileUrl));
             }
-            let triples = await getAllTriplesContainingUri(buildUri(), rdfStrings);
+            let triples = await getAllTriplesContainingUri(uri, rdfStrings);
             setTriples(triples);
         };
         fetchTriples();
-    }, [localName]);
+    }, [localName, uri]);
 
     const format = (str) => {
         if (str.startsWith('https://foerderfunke.org/default#')) {
-            return "ff:" + str.split('#')[1];
+            const thisLocalName = str.split('#')[1];
+            return <a href={`#${thisLocalName}`}>{"ff:" + thisLocalName}</a>;
         }
         // TODO
         return str;
-    }
+    };
 
     return (
         <Layout isApp={true} logo={false} back={'Back'}>
             <AppScreenWrapper isDesktop={isDesktop} back={false}>
                 {localName ?
                     <>
-                        <h3>{buildUri()}</h3>
+                        <h3>{uri}</h3>
                         <table>
                             <tbody>
                                 <tr>
@@ -59,7 +57,7 @@ const ResolveUriScreen = () => {
                                 </tr>
                                 {triples.asSubject.map((triple, idx) => (
                                     <tr key={idx}>
-                                        <td>{format(buildUri())}</td>
+                                        <td>{format(uri)}</td>
                                         <td>{format(triple.p)}</td>
                                         <td>{format(triple.o)}</td>
                                     </tr>
@@ -70,7 +68,7 @@ const ResolveUriScreen = () => {
                                 {triples.asPredicate.map((triple, idx) => (
                                     <tr key={idx}>
                                         <td>{format(triple.s)}</td>
-                                        <td>{format(buildUri())}</td>
+                                        <td>{format(uri)}</td>
                                         <td>{format(triple.o)}</td>
                                     </tr>
                                 ))}
@@ -81,7 +79,7 @@ const ResolveUriScreen = () => {
                                     <tr key={idx}>
                                         <td>{format(triple.s)}</td>
                                         <td>{format(triple.p)}</td>
-                                        <td>{format(buildUri())}</td>
+                                        <td>{format(uri)}</td>
                                     </tr>
                                 ))}
                             </tbody>
