@@ -37,10 +37,14 @@ const LandingPageFooterDesktop = () => {
                     <Typography sx={styles.copyrightText}>
                         © 2024 by FörderFunke. All rights reserved.
                         <br/>
-                        Degenhart, Espinosa, Gläser - FörderFuchs GbR,
+                        FörderFunke UG (haftungsbeschränkt),
                         c/o Impact Hub Berlin,
                         Rollbergstraße 28A,
-                        12053 Berlin
+                        12053 Berlin,
+                        USt-IdNr.: DE369936723,
+                        Geschäftsführung: Benjamin Degenhart & Ben Gläser,
+                        Handelsregisternummer: HRB 267043 B,
+                        Amtsgericht Charlottenburg
                     </Typography>
                 </HStack>
                 <VStack>
@@ -60,7 +64,7 @@ const styles = {
         color: 'inherit'
     },
     copyrightText: {
-        fontSize: '16px',
+        fontSize: '14px'
     }
 }
 
