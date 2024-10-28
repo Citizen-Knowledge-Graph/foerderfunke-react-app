@@ -10,10 +10,11 @@ const Handle404Redirect = () => {
         const pathname = params.get("pathname");
         if (!pathname) return;
         const hash = params.get("hash");
-        const decodedRoute = decodeURIComponent(pathname);
+        const decodedPathname = decodeURIComponent(pathname);
+        if (!(decodedPathname === "/default" && hash)) return; // support other redirects also TODO
         const decodedHash = decodeURIComponent(hash || '');
-        console.log("-->", decodedRoute, decodedHash);
-        // navigate(decodedRoute + decodedHash, { replace: true });
+        console.log("navigating to: ", decodedPathname, decodedHash);
+        navigate(decodedPathname + decodedHash, { replace: true });
     }, [location, navigate]);
 
     return null;
