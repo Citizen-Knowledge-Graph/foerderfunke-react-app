@@ -5,8 +5,9 @@ import {useStore} from "../../components/ViewportUpdater";
 import {useLocation} from "react-router-dom";
 import {fetchTurtleResource} from "../../services/githubService";
 import readJson from "../../utilities/readJson";
-import {getAllTriplesContainingUri} from "@foerderfunke/matching-engine/src/utils";
-import {CircularProgress} from "@mui/material";
+import {convertUserProfileToTurtle, getAllTriplesContainingUri} from "@foerderfunke/matching-engine/src/utils";
+import {Checkbox, CircularProgress, FormControlLabel} from "@mui/material";
+import {UserModel} from "../../models/UserModel";
 
 const ResolveUriScreen = () => {
     const isDesktop = useStore((state) => state.isDesktop);
@@ -14,6 +15,10 @@ const ResolveUriScreen = () => {
     const localName = location.hash.substring(1)
     const uri = `https://foerderfunke.org/default#${localName}`;
     const [triples, setTriples] = useState({});
+
+    const [includeProfile, setIncludeProfile] = useState(() => {
+        return localStorage.getItem('uriResolver_includeProfile') === 'true';
+    });
 
     const prefixMap = {
         'https://foerderfunke.org/default#': 'ff',
@@ -35,11 +40,16 @@ const ResolveUriScreen = () => {
                 const {fileUrl} = requirementProfile;
                 rdfStrings.push(await fetchTurtleResource(fileUrl));
             }
+            if (includeProfile) {
+                const userProfile = UserModel.retrieveUserData("ff:quick-check-user");
+                const userProfileTurtleString = await convertUserProfileToTurtle(userProfile);
+                rdfStrings.push(userProfileTurtleString);
+            }
             let triples = await getAllTriplesContainingUri(uri, rdfStrings);
             setTriples(triples);
         };
         fetchTriples();
-    }, [localName, uri]);
+    }, [localName, uri, includeProfile]);
 
     const format = (str) => {
         for (let key of Object.keys(prefixMap)) {
@@ -58,12 +68,30 @@ const ResolveUriScreen = () => {
         return <span style={{color: "green"}}>{str}</span>
     };
 
+    const handleIncludeProfileChange = () => {
+        const newValue = !includeProfile;
+        setIncludeProfile(newValue);
+        localStorage.setItem('uriResolver_includeProfile', newValue + '');
+    };
+
     return (
         <Layout isApp={true} logo={false} back={'Back'}>
             <AppScreenWrapper isDesktop={isDesktop} back={false}>
                 {localName ?
                     <>
                         <div style={{fontSize: "x-large"}}>https://foerderfunke.org/default#<strong>{localName}</strong></div>
+                        <FormControlLabel
+                            control={
+                                <Checkbox
+                                    checked={includeProfile}
+                                    onChange={handleIncludeProfileChange}
+                                    size="x-small"
+                                />
+                            }
+                            label={
+                                <span style={{fontSize: "small"}}>Include your profile data</span>
+                            }
+                        />
                         <div style={{fontSize: "small", color: "gray"}}>Prefixes:{" "}
                             {Object.keys(prefixMap).map((key, idx, arr) => (
                                 <span key={idx}><strong>{prefixMap[key]}</strong>: {key}
