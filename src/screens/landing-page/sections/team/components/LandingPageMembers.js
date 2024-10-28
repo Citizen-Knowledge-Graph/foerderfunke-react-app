@@ -15,20 +15,6 @@ export const MemberCardBenjamin = () => {
     );
 }
 
-export const MemberCardVanessa = () => {
-    const portraitUrl = `${process.env.PUBLIC_URL}/assets/images/portraits/Portrait_Vanessa_Cropped.jpg`;
-
-    return (
-        <LandingPageMemberCard
-            imageUrl={portraitUrl}
-            name={"Vanessa Espinosa"}
-            position={"UI/UX Designer"}
-            email={"vanessa.espinosa@foerderfunke.org"}
-            linkedin={"https://www.linkedin.com/in/espinosaureta"}
-        />
-    );
-}
-
 export const MemberCardBen = () => {
     const portraitUrl = `${process.env.PUBLIC_URL}/assets/images/portraits/Portrait_Ben_Cropped.jpg`;
 

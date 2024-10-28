@@ -1,7 +1,7 @@
 import React from "react";
 import VStack from "../../../../../components/VStack";
 import HStack from "../../../../../components/HStack";
-import {MemberCardBen, MemberCardBenjamin, MemberCardVanessa} from "../components/LandingPageMembers";
+import {MemberCardBen, MemberCardBenjamin} from "../components/LandingPageMembers";
 import LandingPageSupportCard from "../components/LandingPageSupportCard";
 
 const LandingPageTeamDesktop = () => {
@@ -9,7 +9,6 @@ const LandingPageTeamDesktop = () => {
         <VStack gap={7} alignItems={'center'}>
             <HStack justifyContent={'center'} sx={{width: '100%'}}>
                 <MemberCardBenjamin/>
-                <MemberCardVanessa/>
                 <MemberCardBen/>
             </HStack>
             <HStack justifyContent={'center'} sx={{width: '100%'}}>
