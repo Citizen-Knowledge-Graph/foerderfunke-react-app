@@ -6,17 +6,14 @@ import {useLocation} from "react-router-dom";
 import {fetchTurtleResource} from "../../services/githubService";
 import readJson from "../../utilities/readJson";
 import {getAllTriplesContainingUri} from "@foerderfunke/matching-engine/src/utils";
+import {CircularProgress} from "@mui/material";
 
 const ResolveUriScreen = () => {
     const isDesktop = useStore((state) => state.isDesktop);
     const location = useLocation();
     const localName = location.hash.substring(1)
     const uri = `https://foerderfunke.org/default#${localName}`;
-    const [triples, setTriples] = useState({
-        asSubject: [],
-        asPredicate: [],
-        asObject: [],
-    });
+    const [triples, setTriples] = useState({});
 
     const prefixMap = {
         'https://foerderfunke.org/default#': 'ff',
@@ -74,41 +71,45 @@ const ResolveUriScreen = () => {
                                 </span>
                             ))}
                         </div>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td style={{padding: "10px 0 10px 0"}} colSpan="3">Used as <strong>subject</strong> in these triples:</td>
-                                </tr>
-                                {triples.asSubject.map((triple, idx) => (
-                                    <tr key={idx}>
-                                        <td>{format(uri)}</td>
-                                        <td>{format(triple.p)}</td>
-                                        <td>{format(triple.o)}</td>
-                                    </tr>
-                                ))}
-                                <tr>
-                                    <td style={{padding: "10px 0 10px 0"}} colSpan="3">Used as <strong>predicate</strong> in these triples:</td>
-                                </tr>
-                                {triples.asPredicate.map((triple, idx) => (
-                                    <tr key={idx}>
-                                        <td>{format(triple.s)}</td>
-                                        <td>{format(uri)}</td>
-                                        <td>{format(triple.o)}</td>
-                                    </tr>
-                                ))}
-                                <tr>
-                                    <td style={{padding: "10px 0 10px 0"}} colSpan="3">Used as <strong>object</strong> in these triples:</td>
-                                </tr>
-                                {triples.asObject.map((triple, idx) => (
-                                    <tr key={idx}>
-                                        <td>{format(triple.s)}</td>
-                                        <td>{format(triple.p)}</td>
-                                        <td>{format(uri)}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-
+                        {
+                            Object.keys(triples).length === 0 ?
+                                <CircularProgress/>
+                                :
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style={{padding: "10px 0 10px 0", fontSize: "large"}} colSpan="3">--> Used as <strong>subject</strong> in these triples:</td>
+                                        </tr>
+                                        {triples.asSubject.map((triple, idx) => (
+                                            <tr key={idx}>
+                                                <td>{format(uri)}</td>
+                                                <td>{format(triple.p)}</td>
+                                                <td>{format(triple.o)}</td>
+                                            </tr>
+                                        ))}
+                                        <tr>
+                                            <td style={{padding: "10px 0 10px 0", fontSize: "large"}} colSpan="3">--> Used as <strong>predicate</strong> in these triples:</td>
+                                        </tr>
+                                        {triples.asPredicate.map((triple, idx) => (
+                                            <tr key={idx}>
+                                                <td>{format(triple.s)}</td>
+                                                <td>{format(uri)}</td>
+                                                <td>{format(triple.o)}</td>
+                                            </tr>
+                                        ))}
+                                        <tr>
+                                            <td style={{padding: "10px 0 10px 0", fontSize: "large"}} colSpan="3">--> Used as <strong>object</strong> in these triples:</td>
+                                        </tr>
+                                        {triples.asObject.map((triple, idx) => (
+                                            <tr key={idx}>
+                                                <td>{format(triple.s)}</td>
+                                                <td>{format(triple.p)}</td>
+                                                <td>{format(uri)}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                        }
                     </>
                     :
                         'No local name in URI'
