@@ -24,6 +24,8 @@ const LandingPageSupportCard = ({isDesktop}) => {
 
     const PFLogoUrl = `${process.env.PUBLIC_URL}/assets/images/logos/PF_logo.svg`;
     const BMBFUrl = `${process.env.PUBLIC_URL}/assets/images/logos/BMBF_logo.svg`;
+    const NGISearchLogoUrl = `${process.env.PUBLIC_URL}/assets/images/logos/NGI-Sticker-FoerderFunke.png`;
+    const EuNGILogosUrl = `${process.env.PUBLIC_URL}/assets/images/logos/EU-NGI-Logos.png`;
 
     return (
         <VStack sx={styles.infoCard}>
@@ -36,7 +38,7 @@ const LandingPageSupportCard = ({isDesktop}) => {
                     </HStack>
                     <HStack>
                         <Typography sx={styles.subTitleText}>
-                            {t('home.supportedBy.text')}
+                            {t('home.supportedBy.textPF')}
                         </Typography>
                     </HStack>
                 </VStack>
@@ -44,7 +46,22 @@ const LandingPageSupportCard = ({isDesktop}) => {
                     <img src={PFLogoUrl} alt={'Prototype Fund Logo'} style={{height: '175px'}}/>
                 </VStack>
                 <VStack>
-                    <img src={BMBFUrl} alt={'Prototype Fund Logo'} style={{height: '175px'}}/>
+                    <img src={BMBFUrl} alt={'BMBF Logo'} style={{ height: '175px' }} />
+                </VStack>
+            </Stacker>
+            <Stacker isDesktop={isDesktop}>
+                <VStack gap={1} sx={{ flex: 1 }}>
+                    <HStack>
+                        <Typography sx={styles.subTitleText}>
+                            {t('home.supportedBy.textNGI')}
+                        </Typography>
+                    </HStack>
+                </VStack>
+                <VStack>
+                    <img src={NGISearchLogoUrl} alt={'NGI Search Logo'} style={{ height: '175px' }} />
+                </VStack>
+                <VStack>
+                    <img src={EuNGILogosUrl} alt={'EU and NGI Logos'} style={{ height: '100px' }} />
                 </VStack>
             </Stacker>
         </VStack>

@@ -73,7 +73,8 @@ const translations = {
             },
             supportedBy: {
                 header: "Supported by",
-                text: "We were part of the 15th round of the Prototype Fund from March to September 2024. Förderkennzeichen: 01IS24S19."
+                textPF: "We were part of the 15th round of the Prototype Fund from March to September 2024. Förderkennzeichen: 01IS24S19.",
+                textNGI: "We are currently supported by the NGI Search program, which is funded by the European Commission, as part of the Horizon Europe Research and Innovation Programme, under Grant Agreement Nº101069364."
             },
         },
         app: {
@@ -277,8 +278,9 @@ const translations = {
             },
             supportedBy: {
                 header: "Unterstützt von",
-                text: "Wir waren Teil der 15. Runde des Prototype Fund von März bis September 2024. Förderkennzeichen: 01IS24S19."
-            },
+                textPF: "Wir waren Teil der 15. Runde des Prototype Fund von März bis September 2024. Förderkennzeichen: 01IS24S19.",
+                textNGI: "Wir werden derzeit vom NGI Search Programm unterstützt, das von der Europäischen Kommission im Rahmen des Horizon Europe Forschungs- und Innovationsprogramms finanziert wird, unter der Fördernummer Nº101069364."
+            }
         },
         app: {
             nav: {
