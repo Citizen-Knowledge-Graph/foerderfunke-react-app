@@ -17,11 +17,61 @@ export const milestonesList = {
         ],
         past: [
             {
+                title: 'NGI Search Program',
+                description: 'We successfully applied to the NGI Search Program of the European Commission.',
+                date: 'November 2024'
+            },
+            {
+                title: 'Public Makers',
+                description: '',
+                date: 'October 2024'
+            },
+            {
+                title: 'Presentation at "The Tech We Want Online Summit" by the Open Knowledge Foundation',
+                description: 'We presented our project at "The Tech We Want Online Summit" organized by the Open Knowledge Foundation.',
+                date: 'October 2024'
+            },
+            {
+                title: 'Workshop at the NEGZ Autumn Conference on Digital Administration',
+                description: 'We held a workshop at the NEGZ Autumn Conference focused on digital administration.',
+                date: 'September 2024'
+            },
+            {
                 title: 'Launch of application and Demo Day Prototype Fund',
                 description: 'As part of our participation in the Demo Day of the Prototype Fund, we have launched the ' +
                     'web application. The application currently includes 10 benefits and is available for use by anyone ' +
                     'living in Germany.',
                 date: 'September 2024',
+            },
+            {
+                title: 'Presentation in a Federal-State Working Group Meeting',
+                description: 'Our project was presented as a "good practice example" in the meeting of the Federal-State Working Group "Citizen-Friendly Welfare State" (BMAS).',
+                date: 'September 2024'
+            },
+            {
+                title: 'Civic Coding Project Consultation',
+                description: 'We received project consultation from Civic Coding.',
+                date: 'May - September 2024'
+            },
+            {
+                title: 'Finalists in the Innovation Competition of the City of Munich',
+                description: 'We were selected as finalists in the Innovation Competition held by the City of Munich.',
+                date: 'July 2024'
+            },
+            {
+                title: 'Participation in the Datendialog',
+                description: 'We participated in the Datendialog event hosted by the Bertelsmann Foundation and CorrelAid.',
+                date: 'June 2024'
+            },
+            {
+                title: 'Presentation at Kiel Digital Week',
+                description: 'We presented our project during the Kiel Digital Week, focused on Solid as a data storage solution we would like to adopt.',
+                date: 'May 2024'
+            },
+            {
+                title: 'Presentation to the Working Group "Semantic Interoperability" of the IT Planungsrat',
+                description: 'We were invited to present as a use case for Linked Open Data to the Working Group "Semantic Interoperability" of the IT Planning Council.',
+                date: 'April 2024'
             },
             {
                 title: 'Beginning of Prototype Fund funding period',
@@ -30,6 +80,16 @@ export const milestonesList = {
                     'schemes provided us with an invaluable opportunity to get the application from an idea to a working ' +
                     'prototype.',
                 date: 'March 2024',
+            },
+            {
+                title: 'Video for the Creative Bureaucracy Festival',
+                description: 'For the Digital Kick-Off Day of the Creative Bureaucracy Festival we produced a [7 min video](https://youtu.be/fDWfGEXvqjk).',
+                date: 'March 2024',
+            },
+            {
+                title: 'Best Poster Award',
+                description: 'Benjamin received the Best Poster Award in the "Linked Data & Solid" online course at the University of Ghent.',
+                date: 'January 2024',
             },
             {
                 title: 'Article in Tagesspiegel Background',
