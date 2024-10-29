@@ -29,8 +29,13 @@ export const milestonesList = {
                     'funding period began in March 2024 and lasted for 6 months. The funding and additional support ' +
                     'schemes provided us with an invaluable opportunity to get the application from an idea to a working ' +
                     'prototype.',
-                date: 'Early 2025',
-            }
+                date: 'March 2024',
+            },
+            {
+                title: 'Article in Tagesspiegel Background',
+                description: 'In July 2023, Helen Bielawa wrote an article about the concept in the Tagesspiegel Background, titled "[Proaktive Verwaltung als Selfmade-Lösung](https://background.tagesspiegel.de/smart-city-und-stadtentwicklung/briefing/proaktive-verwaltung-als-selfmade-loesung)".',
+                date: 'July 2023',
+            },
         ]
     },
     de: {

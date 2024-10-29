@@ -2,6 +2,7 @@ import VStack from "../../../../../components/VStack";
 import HStack from "../../../../../components/HStack";
 import {Typography} from "@mui/material";
 import globalStyles from "../../../../../styles/styles";
+import ReactMarkdown from "react-markdown";
 
 const MilestoneElement = ({ milestone, showBorderBottom }) => {
     const borderBottom = showBorderBottom ? '1px solid rgba(252, 215, 85)' : 'none';
@@ -17,9 +18,9 @@ const MilestoneElement = ({ milestone, showBorderBottom }) => {
                 </Typography>
             </HStack>
             <HStack>
-                <Typography>
+                <ReactMarkdown>
                     {milestone.description}
-                </Typography>
+                </ReactMarkdown>
             </HStack>
         </VStack>
     )
