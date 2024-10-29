@@ -74,7 +74,7 @@ const translations = {
             supportedBy: {
                 header: "Supported by",
                 textPF: "We were part of the 15th round of the Prototype Fund from March to September 2024. Förderkennzeichen: 01IS24S19.",
-                textNGI: "We are currently supported by the NGI Search program, which is funded by the European Commission, as part of the Horizon Europe Research and Innovation Programme, under Grant Agreement Nº101069364."
+                textNGI: "Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or European Commission. Neither the European Union nor the granting authority can be held responsible for them. Funded within the framework of the NGI Search project under grant agreement No 101069364."
             },
         },
         app: {
@@ -279,7 +279,7 @@ const translations = {
             supportedBy: {
                 header: "Unterstützt von",
                 textPF: "Wir waren Teil der 15. Runde des Prototype Fund von März bis September 2024. Förderkennzeichen: 01IS24S19.",
-                textNGI: "Wir werden derzeit vom NGI Search Programm unterstützt, das von der Europäischen Kommission im Rahmen des Horizon Europe Forschungs- und Innovationsprogramms finanziert wird, unter der Fördernummer Nº101069364."
+                textNGI: "Finanziert durch die Europäische Union. Die geäußerten Ansichten und Meinungen stammen jedoch ausschließlich von den Autor:innen und spiegeln nicht unbedingt die Ansichten der Europäischen Union oder der Europäischen Kommission wider. Weder die Europäische Union noch die Bewilligungsbehörde können dafür verantwortlich gemacht werden. Finanziert im Rahmen des NGI Search Projekts unter der Fördernummer Nr. 101069364."
             }
         },
         app: {

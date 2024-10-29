@@ -24,8 +24,8 @@ const LandingPageSupportCard = ({isDesktop}) => {
 
     const PFLogoUrl = `${process.env.PUBLIC_URL}/assets/images/logos/PF_logo.svg`;
     const BMBFUrl = `${process.env.PUBLIC_URL}/assets/images/logos/BMBF_logo.svg`;
-    const NGISearchLogoUrl = `${process.env.PUBLIC_URL}/assets/images/logos/NGI-Sticker-FoerderFunke.png`;
-    const EuNGILogosUrl = `${process.env.PUBLIC_URL}/assets/images/logos/EU-NGI-Logos.png`;
+    const NGISearchLogoUrl = `${process.env.PUBLIC_URL}/assets/images/logos/NGI-Search-Logo.png`;
+    const EuLogoUrl = `${process.env.PUBLIC_URL}/assets/images/logos/EU-Logo.png`;
 
     return (
         <VStack sx={styles.infoCard}>
@@ -58,10 +58,10 @@ const LandingPageSupportCard = ({isDesktop}) => {
                     </HStack>
                 </VStack>
                 <VStack>
-                    <img src={NGISearchLogoUrl} alt={'NGI Search Logo'} style={{ height: '175px' }} />
+                    <img src={NGISearchLogoUrl} alt={'NGI Search Logo'} style={{ height: '90px' }} />
                 </VStack>
                 <VStack>
-                    <img src={EuNGILogosUrl} alt={'EU and NGI Logos'} style={{ height: '100px' }} />
+                    <img src={EuLogoUrl} alt={'EU Logo'} style={{ height: '120px' }} />
                 </VStack>
             </Stacker>
         </VStack>
