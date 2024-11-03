@@ -69,7 +69,7 @@ const ResolveUriScreen = () => {
     // fetch triples from existing store whenever uri changes
     useEffect(() => {
         const fetchTriples = async () => {
-            if (!localName || !store) return;
+            if (!uri || !store) return;
             let fetchedTriples = await getAllTriplesContainingUri(uri, store);
             setTriples(fetchedTriples);
         };
@@ -83,8 +83,10 @@ const ResolveUriScreen = () => {
             let thisLocalName = str.includes('#') ? str.split('#')[1] : str.split('/').pop();
             if (prefix === 'ff') {
                 return <a href={`#${thisLocalName}`}>{prefix + ":" + thisLocalName}</a>;
+            } if (prefix === 'tmp') {
+                return <a href={`#${str}`}>{thisLocalName}</a>;
             } else {
-                return prefix + ":" + thisLocalName;
+                return <a href={`#${str}`}>{prefix + ":" + thisLocalName}</a>;
             }
         }
         if (str.startsWith('bc_')) {
@@ -99,12 +101,20 @@ const ResolveUriScreen = () => {
         localStorage.setItem('uriResolver_includeProfile', newValue + '');
     };
 
+    const buildUriDisplay = () => {
+        if (uri.includes("temp#bc_")) {
+            return <span><strong>blank node</strong> <small>{uri.split("temp#bc_")[1]}</small></span>;
+        }
+        let thisLocalName = uri.includes('#') ? uri.split('#')[1] : uri.split('/').pop();
+        return <span>{uri.substring(0, uri.length - thisLocalName.length)}<strong>{thisLocalName}</strong></span>;
+    }
+
     return (
         <Layout isApp={true} logo={false} back={'Back'}>
             <AppScreenWrapper isDesktop={isDesktop} back={false}>
                 {uri ?
                     <>
-                        <div style={{fontSize: "x-large"}}>{uri}</div>
+                        <div style={{fontSize: "x-large"}}>{buildUriDisplay()}</div>
                         <FormControlLabel
                             control={
                                 <Checkbox
@@ -143,7 +153,7 @@ const ResolveUriScreen = () => {
                                         <tr>
                                             <td style={{padding: "10px 0 10px 0", fontSize: "large"}} colSpan="3">--> Used as <strong>predicate</strong> in these triples:</td>
                                         </tr>
-                                        {triples.asPredicate.map((triple, idx) => (
+                                        {triples.asPredicate.filter(triple => !(triple.s.startsWith('bc_') || triple.o.startsWith('bc_'))).map((triple, idx) => (
                                             <tr key={idx}>
                                                 <td>{format(triple.s)}</td>
                                                 <td>{format(uri)}</td>
