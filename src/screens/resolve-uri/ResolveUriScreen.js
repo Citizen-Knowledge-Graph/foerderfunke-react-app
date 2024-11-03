@@ -123,7 +123,7 @@ const ResolveUriScreen = () => {
                                         <tr>
                                             <td style={{padding: "10px 0 10px 0", fontSize: "large"}} colSpan="3">--> Used as <strong>subject</strong> in these triples:</td>
                                         </tr>
-                                        {triples.asSubject.map((triple, idx) => (
+                                        {triples.asSubject.filter(triple => !triple.o.startsWith('bc_')).map((triple, idx) => (
                                             <tr key={idx}>
                                                 <td>{format(uri)}</td>
                                                 <td>{format(triple.p)}</td>
@@ -143,7 +143,7 @@ const ResolveUriScreen = () => {
                                         <tr>
                                             <td style={{padding: "10px 0 10px 0", fontSize: "large"}} colSpan="3">--> Used as <strong>object</strong> in these triples:</td>
                                         </tr>
-                                        {triples.asObject.map((triple, idx) => (
+                                        {triples.asObject.filter(triple => !triple.s.startsWith('bc_')).map((triple, idx) => (
                                             <tr key={idx}>
                                                 <td>{format(triple.s)}</td>
                                                 <td>{format(triple.p)}</td>
