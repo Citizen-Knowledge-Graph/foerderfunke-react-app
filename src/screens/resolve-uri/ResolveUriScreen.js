@@ -5,7 +5,11 @@ import {useStore} from "../../components/ViewportUpdater";
 import {useLocation} from "react-router-dom";
 import {fetchTurtleResource} from "../../services/githubService";
 import readJson from "../../utilities/readJson";
-import {convertUserProfileToTurtle, getAllTriplesContainingUri} from "@foerderfunke/matching-engine/src/utils";
+import {
+    convertUserProfileToTurtle,
+    createStoreWithTempUrisForBlankNodes,
+    getAllTriplesContainingUri
+} from "@foerderfunke/matching-engine/src/utils";
 import {Checkbox, CircularProgress, FormControlLabel} from "@mui/material";
 import {UserModel} from "../../models/UserModel";
 
@@ -14,6 +18,7 @@ const ResolveUriScreen = () => {
     const location = useLocation();
     const localName = location.hash.substring(1)
     const uri = `https://foerderfunke.org/default#${localName}`;
+    const [store, setStore] = useState(null);
     const [triples, setTriples] = useState({});
 
     const [includeProfile, setIncludeProfile] = useState(() => {
@@ -29,9 +34,9 @@ const ResolveUriScreen = () => {
         'http://schema.org/': 'schema'
     };
 
+    // runs once initially and when includeProfile changes
     useEffect(() => {
-        const fetchTriples = async () => {
-            if (!localName) return;
+        const buildStore = async () => {
             const validationConfig = await readJson('assets/data/requirement-profiles/requirement-profiles.json');
             const datafieldsString = await fetchTurtleResource(validationConfig['datafields']);
             const materializationString = await fetchTurtleResource(validationConfig['materialization']);
@@ -45,11 +50,21 @@ const ResolveUriScreen = () => {
                 const userProfileTurtleString = await convertUserProfileToTurtle(userProfile);
                 rdfStrings.push(userProfileTurtleString);
             }
-            let triples = await getAllTriplesContainingUri(uri, rdfStrings);
-            setTriples(triples);
+            let newStore = await createStoreWithTempUrisForBlankNodes(rdfStrings);
+            setStore(newStore);
+        };
+        buildStore();
+    }, [includeProfile]);
+
+    // fetch triples from existing store whenever localName/uri changes
+    useEffect(() => {
+        const fetchTriples = async () => {
+            if (!localName || !store) return;
+            let fetchedTriples = await getAllTriplesContainingUri(uri, store);
+            setTriples(fetchedTriples);
         };
         fetchTriples();
-    }, [localName, uri, includeProfile]);
+    }, [localName, uri, store]);
 
     const format = (str) => {
         for (let key of Object.keys(prefixMap)) {
