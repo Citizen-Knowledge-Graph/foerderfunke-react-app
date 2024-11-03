@@ -17,7 +17,7 @@ const ResolveUriScreen = () => {
     const isDesktop = useStore((state) => state.isDesktop);
     const location = useLocation();
     const localName = location.hash.substring(1)
-    const uri = `https://foerderfunke.org/default#${localName}`;
+    const [uri, setUri] = useState(null);
     const [store, setStore] = useState(null);
     const [triples, setTriples] = useState({});
 
@@ -27,12 +27,22 @@ const ResolveUriScreen = () => {
 
     const prefixMap = {
         'https://foerderfunke.org/default#': 'ff',
+        'https://foerderfunke.org/temp#': 'tmp',
         'http://www.w3.org/1999/02/22-rdf-syntax-ns#': 'rdf',
         'http://www.w3.org/2000/01/rdf-schema#': 'rdfs',
         'http://www.w3.org/2001/XMLSchema#': 'xsd',
         'http://www.w3.org/ns/shacl#': 'sh',
         'http://schema.org/': 'schema'
     };
+
+    // update uri when localName changes
+    useEffect(() => {
+        if (localName.startsWith("http")) {
+            setUri(localName);
+        } else {
+            setUri(`https://foerderfunke.org/default#${localName}`);
+        }
+    }, [localName]);
 
     // runs once initially and when includeProfile changes
     useEffect(() => {
@@ -56,7 +66,7 @@ const ResolveUriScreen = () => {
         buildStore();
     }, [includeProfile]);
 
-    // fetch triples from existing store whenever localName/uri changes
+    // fetch triples from existing store whenever uri changes
     useEffect(() => {
         const fetchTriples = async () => {
             if (!localName || !store) return;
@@ -64,7 +74,7 @@ const ResolveUriScreen = () => {
             setTriples(fetchedTriples);
         };
         fetchTriples();
-    }, [localName, uri, store]);
+    }, [uri, store]);
 
     const format = (str) => {
         for (let key of Object.keys(prefixMap)) {
@@ -92,9 +102,9 @@ const ResolveUriScreen = () => {
     return (
         <Layout isApp={true} logo={false} back={'Back'}>
             <AppScreenWrapper isDesktop={isDesktop} back={false}>
-                {localName ?
+                {uri ?
                     <>
-                        <div style={{fontSize: "x-large"}}>https://foerderfunke.org/default#<strong>{localName}</strong></div>
+                        <div style={{fontSize: "x-large"}}>{uri}</div>
                         <FormControlLabel
                             control={
                                 <Checkbox
