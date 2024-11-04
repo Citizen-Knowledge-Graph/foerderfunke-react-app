@@ -18,7 +18,6 @@ const ResolveUriScreen = () => {
     const location = useLocation();
     const localName = location.hash.substring(1)
     const [uri, setUri] = useState(null);
-    const [showAllTriples, setShowAllTriples] = useState(false);
     const [store, setStore] = useState(null);
     const [triples, setTriples] = useState({});
 
@@ -75,7 +74,7 @@ const ResolveUriScreen = () => {
     useEffect(() => {
         const fetchTriples = async () => {
             if (!uri || !store) return;
-            let fetchedTriples = await getAllTriplesContainingUri(allTriplesMode() ? null : uri, store);
+            let fetchedTriples = await getAllTriplesContainingUri(uri === "https://foerderfunke.org/default#" ? null : uri, store);
             setTriples(fetchedTriples);
         };
         fetchTriples();
