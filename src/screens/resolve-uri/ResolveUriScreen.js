@@ -149,7 +149,7 @@ const ResolveUriScreen = () => {
                                     <tbody>
                                         {allTriplesMode() ?
                                             <>
-                                                {triples.allTriples.filter(triple => !(triple.s.startsWith('bc_') || triple.o.startsWith('bc_'))).map((triple, idx) => (
+                                                {triples.allTriples && triples.allTriples.filter(triple => !(triple.s.startsWith('bc_') || triple.o.startsWith('bc_'))).map((triple, idx) => (
                                                     <tr key={idx}>
                                                         <td><small style={{ color: "gray" }}>{idx}</small></td>
                                                         <td>{format(triple.s)}</td>
@@ -163,7 +163,7 @@ const ResolveUriScreen = () => {
                                                 <tr>
                                                     <td style={{padding: "10px 0 10px 0", fontSize: "large"}} colSpan="3">--> Used as <strong>subject</strong> in these triples:</td>
                                                 </tr>
-                                                {triples.asSubject.filter(triple => !triple.o.startsWith('bc_')).map((triple, idx) => (
+                                                {triples.asSubject && triples.asSubject.filter(triple => !triple.o.startsWith('bc_')).map((triple, idx) => (
                                                     <tr key={idx}>
                                                         <td>{format(uri)}</td>
                                                         <td>{format(triple.p)}</td>
@@ -173,7 +173,7 @@ const ResolveUriScreen = () => {
                                                 <tr>
                                                     <td style={{padding: "10px 0 10px 0", fontSize: "large"}} colSpan="3">--> Used as <strong>predicate</strong> in these triples:</td>
                                                 </tr>
-                                                {triples.asPredicate.filter(triple => !(triple.s.startsWith('bc_') || triple.o.startsWith('bc_'))).map((triple, idx) => (
+                                                {triples.asPredicate && triples.asPredicate.filter(triple => !(triple.s.startsWith('bc_') || triple.o.startsWith('bc_'))).map((triple, idx) => (
                                                     <tr key={idx}>
                                                         <td>{format(triple.s)}</td>
                                                         <td>{format(uri)}</td>
@@ -183,7 +183,7 @@ const ResolveUriScreen = () => {
                                                 <tr>
                                                     <td style={{padding: "10px 0 10px 0", fontSize: "large"}} colSpan="3">--> Used as <strong>object</strong> in these triples:</td>
                                                 </tr>
-                                                {triples.asObject.filter(triple => !triple.s.startsWith('bc_')).map((triple, idx) => (
+                                                {triples.asObject && triples.asObject.filter(triple => !triple.s.startsWith('bc_')).map((triple, idx) => (
                                                     <tr key={idx}>
                                                         <td>{format(triple.s)}</td>
                                                         <td>{format(triple.p)}</td>
