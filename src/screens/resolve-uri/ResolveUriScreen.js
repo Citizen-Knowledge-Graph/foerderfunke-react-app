@@ -128,6 +128,7 @@ const ResolveUriScreen = () => {
                                     checked={includeProfile}
                                     onChange={handleIncludeProfileChange}
                                     size="x-small"
+                                    disabled={uri.includes("temp#bc_")}
                                 />
                             }
                             label={
