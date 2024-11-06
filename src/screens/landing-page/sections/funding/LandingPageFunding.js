@@ -1,20 +1,21 @@
 import React from "react";
 import LandingPageSectionWrapper from "../../components/LandingPageSectionWrapper";
-import LandingPageTeamDesktop from "./views/LandingPageTeamDesktop";
-import LandingPageTeamMobile from "./views/LandingPageTeamMobile";
 import useTranslation from "../../../../language/useTranslation";
 import LandingPageSectionGrid from "../../components/LandingPageSectionGrid";
+import LandingPageSupportCard from "./components/LandingPageSupportCard";
+import LandingPageSupportCardNGI from "./components/LandingPageSupportCardNGI";
 
-const LandingPageTeam = ({isDesktop}) => {
+const LandingPageFunding = ({isDesktop}) => {
     const {t} = useTranslation();
 
     return (
         <LandingPageSectionWrapper isDesktop={isDesktop}>
-            <LandingPageSectionGrid title={t('home.connect.header')}>
-                {isDesktop ? <LandingPageTeamDesktop/> : <LandingPageTeamMobile/>}
+            <LandingPageSectionGrid title={t('home.funding.header')}>
+                <LandingPageSupportCardNGI isDesktop={isDesktop}/>
+                <LandingPageSupportCard isDesktop={isDesktop}/>
             </LandingPageSectionGrid>
         </LandingPageSectionWrapper>
     );
 }
 
-export default LandingPageTeam;
+export default LandingPageFunding;

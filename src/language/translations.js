@@ -71,10 +71,15 @@ const translations = {
             connect: {
                 header: "Let's connect",
             },
+            funding: {
+                header: "Our support",
+            },
             supportedBy: {
-                header: "Supported by",
+                headerPF: "Prototype Fund",
+                headerNGI: "NGI Search",
                 textPF: "We were part of the 15th round of the Prototype Fund from March to September 2024. Förderkennzeichen: 01IS24S19.",
-                textNGI: "Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or European Commission. Neither the European Union nor the granting authority can be held responsible for them. Funded within the framework of the NGI Search project under grant agreement No 101069364."
+                textNGI: "We art part of the current open call of the NGI Search incubator. We receive funding and additional support to further develop FörderFunke.",
+                disclaimerNGI: "Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or European Commission. Neither the European Union nor the granting authority can be held responsible for them. Funded within the framework of the NGI Search project under grant agreement No 101069364.",
             },
         },
         app: {
@@ -275,6 +280,9 @@ const translations = {
             },
             connect: {
                 header: "Lass uns vernetzen",
+            },
+            funding: {
+                header: "Unsere Unterstützung",
             },
             supportedBy: {
                 header: "Unterstützt von",

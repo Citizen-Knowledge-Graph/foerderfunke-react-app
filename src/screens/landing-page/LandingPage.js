@@ -11,6 +11,7 @@ import LandingPageTopSection from "./sections/top-section/LandingPageTopSection"
 import LandingPageFeedback from "./sections/feedback/LandingPageFeedback";
 import featureFlags from "../../featureFlags";
 import LandingPageCollaboration from "./sections/collaboration/LandingPageCollaboration";
+import LandingPageFunding from "./sections/funding/LandingPageFunding";
 
 const LandingPage = () => {
     const isDesktop = useStore((state) => state.isDesktop);
@@ -43,6 +44,9 @@ const LandingPage = () => {
                 }
                 <VStack id="principles">
                     <LandingPagePrinciples isDesktop={isDesktop}/>
+                </VStack>
+                <VStack id="funding">
+                    <LandingPageFunding isDesktop={isDesktop}/>
                 </VStack>
                 <VStack id="about-us">
                     <LandingPageTeam isDesktop={isDesktop}/>
