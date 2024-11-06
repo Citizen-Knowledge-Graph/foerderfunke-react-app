@@ -17,23 +17,23 @@ export const milestonesList = {
         ],
         past: [
             {
-                title: 'NGI Search Program',
-                description: 'We successfully applied to the NGI Search Program of the European Commission.',
+                title: 'Successful application: NGI Search',
+                description: 'We successfully applied to the [NGI Search](https://www.ngisearch.eu/) Program of the European Commission and will receive funding, mentorship and various support modules until mid 2025.',
                 date: 'November 2024'
             },
             {
-                title: 'Public Makers',
-                description: '',
+                title: 'Presentation at Public Makers Bootcamp',
+                description: 'Ben presented FörderFunke and his personal journey of working in the public sector at the first [Public Makers Bootcamp](https://www.linkedin.com/feed/update/urn:li:activity:7253815779312238595/) in Munich. ',
                 date: 'October 2024'
             },
             {
-                title: 'Presentation at "The Tech We Want Online Summit" by the Open Knowledge Foundation',
-                description: 'We presented our project at "The Tech We Want Online Summit" organized by the Open Knowledge Foundation.',
+                title: 'Presentation at "The Tech We Want Online Summit"',
+                description: 'Benjamin presented FörderFunke at "[The Tech We Want Online Summit](https://www.youtube.com/live/V7Sxo0IXe8g?t=20005s)", organized by the Open Knowledge Foundation.',
                 date: 'October 2024'
             },
             {
-                title: 'Workshop at the NEGZ Autumn Conference on Digital Administration',
-                description: 'We held a workshop at the NEGZ Autumn Conference focused on digital administration.',
+                title: 'Workshop at NEGZ Autumn Conference',
+                description: 'We held a [workshop](https://negz.org/termin/negz-herbsttagung-zur-digitalen-verwaltung-2024/#WS5) around the ideas of FörderFunke at the NEGZ Autumn Conference.',
                 date: 'September 2024'
             },
             {
