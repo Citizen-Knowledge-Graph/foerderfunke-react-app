@@ -18,7 +18,13 @@ const MilestoneElement = ({ milestone, showBorderBottom }) => {
                 </Typography>
             </HStack>
             <HStack>
-                <ReactMarkdown>
+                <ReactMarkdown
+                    components={{
+                        p: ({ node, ...props }) => (
+                            <p {...props} style={{ margin: 0 }} />
+                        ),
+                    }}
+                >
                     {milestone.description}
                 </ReactMarkdown>
             </HStack>
@@ -32,15 +38,17 @@ const styles = {
         paddingTop: '0px',
     },
     title: {
+        flex: 4,
         fontSize: '20px',
         fontWeight: 'bold'
     },
     date: {
+        flex: 1,
         fontSize: '16px',
         fontWeight: '300',
         color: globalStyles.colorDarkGrey,
         textAlign: 'right'
-    },
+    }
 }
 
 export default MilestoneElement;
