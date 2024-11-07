@@ -2,6 +2,7 @@ import VStack from "../../../../../components/VStack";
 import {Typography} from "@mui/material";
 import useTranslation from "../../../../../language/useTranslation";
 import LandingPageSupportCardStacker from "./LandingPageSupportCardStacker";
+import HStack from "../../../../../components/HStack";
 
 const LandingPageSupportCard = ({isDesktop}) => {
     const {t} = useTranslation();
@@ -21,12 +22,15 @@ const LandingPageSupportCard = ({isDesktop}) => {
                         {t('home.supportedBy.textPF')}
                     </Typography>
                 </VStack>
-                <VStack justifyContent={'flex-end'} alignItems={'center'} sx={{width: "125px", height: "125px"}}>
-                    <img src={PFLogoUrl} alt={'Prototype Fund Logo'} style={{maxWidth: "125px", maxHeight: "125px"}}/>
-                </VStack>
-                <VStack justifyContent={'flex-end'} alignItems={'center'} sx={{width: "125px", height: "125px"}}>
-                    <img src={BMBFUrl} alt={'BMBF Logo'} style={{maxWidth: "125px", maxHeight: "125px"}}/>
-                </VStack>
+                <HStack>
+                    <VStack justifyContent={'flex-end'} alignItems={'center'} sx={{width: "125px", height: "125px"}}>
+                        <img src={PFLogoUrl} alt={'Prototype Fund Logo'}
+                             style={{maxWidth: "125px", maxHeight: "125px"}}/>
+                    </VStack>
+                    <VStack justifyContent={'flex-end'} alignItems={'center'} sx={{width: "125px", height: "125px"}}>
+                        <img src={BMBFUrl} alt={'BMBF Logo'} style={{maxWidth: "125px", maxHeight: "125px"}}/>
+                    </VStack>
+                </HStack>
             </LandingPageSupportCardStacker>
         </VStack>
     )

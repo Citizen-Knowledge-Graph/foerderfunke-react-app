@@ -27,13 +27,15 @@ const LandingPageSupportCard = ({isDesktop}) => {
                         {t('home.supportedBy.textNGI')}
                     </Typography>
                 </VStack>
-                <VStack justifyContent={'flex-end'} alignItems={'center'} sx={{width: "125px", height: "125px"}}>
-                    <img src={NGISearchLogoUrl} alt={'Prototype Fund Logo'}
-                         style={{maxWidth: "125px", maxHeight: "125px"}}/>
-                </VStack>
-                <VStack justifyContent={'flex-end'} alignItems={'center'} sx={{width: "125px", height: "125px"}}>
-                    <img src={EuLogoUrl} alt={'BMBF Logo'} style={{maxWidth: "125px", maxHeight: "125px"}}/>
-                </VStack>
+                <HStack>
+                    <VStack justifyContent={'flex-end'} alignItems={'center'} sx={{width: "125px", height: "125px"}}>
+                        <img src={NGISearchLogoUrl} alt={'Prototype Fund Logo'}
+                             style={{maxWidth: "125px", maxHeight: "125px"}}/>
+                    </VStack>
+                    <VStack justifyContent={'flex-end'} alignItems={'center'} sx={{width: "125px", height: "125px"}}>
+                        <img src={EuLogoUrl} alt={'BMBF Logo'} style={{maxWidth: "125px", maxHeight: "125px"}}/>
+                    </VStack>
+                </HStack>
             </LandingPageSupportCardStacker>
             <VStack gap={1}>
                 <HStack gap={1} alignItems={'center'}>
