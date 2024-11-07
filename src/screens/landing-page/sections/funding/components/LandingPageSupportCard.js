@@ -22,7 +22,7 @@ const LandingPageSupportCard = ({isDesktop}) => {
                         {t('home.supportedBy.textPF')}
                     </Typography>
                 </VStack>
-                <HStack>
+                <HStack justifyContent={'center'}>
                     <VStack justifyContent={'flex-end'} alignItems={'center'} sx={{width: "125px", height: "125px"}}>
                         <img src={PFLogoUrl} alt={'Prototype Fund Logo'}
                              style={{maxWidth: "125px", maxHeight: "125px"}}/>
