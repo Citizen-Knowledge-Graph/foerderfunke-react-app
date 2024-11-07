@@ -71,14 +71,13 @@ const translations = {
             connect: {
                 header: "Let's connect",
             },
-            funding: {
-                header: "Our support",
-            },
             supportedBy: {
+                header: "Our support",
                 headerPF: "Prototype Fund",
                 headerNGI: "NGI Search",
                 textPF: "We were part of the 15th round of the Prototype Fund from March to September 2024. Förderkennzeichen: 01IS24S19.",
                 textNGI: "We art part of the current open call of the NGI Search incubator. We receive funding and additional support to further develop FörderFunke.",
+                disclaimerTitleNGI: "Disclaimer",
                 disclaimerNGI: "Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or European Commission. Neither the European Union nor the granting authority can be held responsible for them. Funded within the framework of the NGI Search project under grant agreement No 101069364.",
             },
         },
@@ -281,13 +280,23 @@ const translations = {
             connect: {
                 header: "Lass uns vernetzen",
             },
-            funding: {
-                header: "Unsere Unterstützung",
+            supportedBy2: {
+                header: "Our support",
+                headerPF: "Prototype Fund",
+                headerNGI: "NGI Search",
+                textPF: "We were part of the 15th round of the Prototype Fund from March to September 2024. Förderkennzeichen: 01IS24S19.",
+                textNGI: "We art part of the current open call of the NGI Search incubator. We receive funding and additional support to further develop FörderFunke.",
+                disclaimerTitleNGI: "Disclaimer",
+                disclaimerNGI: "Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or European Commission. Neither the European Union nor the granting authority can be held responsible for them. Funded within the framework of the NGI Search project under grant agreement No 101069364.",
             },
             supportedBy: {
-                header: "Unterstützt von",
+                header: "Unsere Unterstützung",
+                headerPF: "Prototype Fund",
+                headerNGI: "NGI Search",
                 textPF: "Wir waren Teil der 15. Runde des Prototype Fund von März bis September 2024. Förderkennzeichen: 01IS24S19.",
-                textNGI: "Finanziert durch die Europäische Union. Die geäußerten Ansichten und Meinungen stammen jedoch ausschließlich von den Autor:innen und spiegeln nicht unbedingt die Ansichten der Europäischen Union oder der Europäischen Kommission wider. Weder die Europäische Union noch die Bewilligungsbehörde können dafür verantwortlich gemacht werden. Finanziert im Rahmen des NGI Search Projekts unter der Fördernummer Nr. 101069364."
+                textNGI: "Wir sind Teil des laufenden Open Calls des NGI Search Incubators. Wir erhalten Fördermittel und zusätzliche Unterstützung, um FörderFunke weiterzuentwickeln.",
+                disclaimerTitleNGI: "Hinweis",
+                disclaimerNGI: "Finanziert durch die Europäische Union. Die geäußerten Ansichten und Meinungen stammen jedoch ausschließlich von den Autor:innen und spiegeln nicht unbedingt die Ansichten der Europäischen Union oder der Europäischen Kommission wider. Weder die Europäische Union noch die Bewilligungsbehörde können dafür verantwortlich gemacht werden. Finanziert im Rahmen des NGI Search Projekts unter der Fördernummer Nr. 101069364."
             }
         },
         app: {

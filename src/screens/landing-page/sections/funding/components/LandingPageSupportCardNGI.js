@@ -6,21 +6,7 @@ import useTranslation from "../../../../../language/useTranslation";
 import globalStyles from "../../../../../styles/styles";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-
-const Stacker = ({isDesktop, children}) => {
-    return (
-        isDesktop ? (
-                <HStack sx={{width: '100%'}} gap={5} justifyContent={'flex-end'} alignItems={'flex-end'}>
-                    {children}
-                </HStack>
-            )
-            : (
-                <VStack gap={3} sx={{flex: 1}}>
-                    {children}
-                </VStack>
-            )
-    );
-}
+import LandingPageSupportCardStacker from "./LandingPageSupportCardStacker";
 
 const LandingPageSupportCard = ({isDesktop}) => {
     const [showDisclaimer, setShowDisclaimer] = React.useState(false);
@@ -32,7 +18,7 @@ const LandingPageSupportCard = ({isDesktop}) => {
 
     return (
         <VStack sx={styles.infoCard}>
-            <Stacker isDesktop={isDesktop}>
+            <LandingPageSupportCardStacker isDesktop={isDesktop}>
                 <VStack gap={1} sx={{flex: 1}}>
                     <Typography sx={styles.titleText}>
                         {t('home.supportedBy.headerNGI')}
@@ -48,11 +34,11 @@ const LandingPageSupportCard = ({isDesktop}) => {
                 <VStack justifyContent={'flex-end'} alignItems={'center'} sx={{width: "125px", height: "125px"}}>
                     <img src={EuLogoUrl} alt={'BMBF Logo'} style={{maxWidth: "125px", maxHeight: "125px"}}/>
                 </VStack>
-            </Stacker>
+            </LandingPageSupportCardStacker>
             <VStack gap={1}>
                 <HStack gap={1} alignItems={'center'}>
                     <Typography sx={styles.disclaimerText}>
-                        Disclaimer
+                        {t('home.supportedBy.disclaimerTitleNGI')}
                     </Typography>
                     <IconButton
                         onClick={() => setShowDisclaimer(!showDisclaimer)}

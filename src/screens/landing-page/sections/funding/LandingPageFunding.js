@@ -10,7 +10,7 @@ const LandingPageFunding = ({isDesktop}) => {
 
     return (
         <LandingPageSectionWrapper isDesktop={isDesktop}>
-            <LandingPageSectionGrid title={t('home.funding.header')}>
+            <LandingPageSectionGrid title={t('home.supportedBy.header')}>
                 <LandingPageSupportCardNGI isDesktop={isDesktop}/>
                 <LandingPageSupportCard isDesktop={isDesktop}/>
             </LandingPageSectionGrid>

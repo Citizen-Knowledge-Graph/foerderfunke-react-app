@@ -1,24 +1,7 @@
 import VStack from "../../../../../components/VStack";
-import HStack from "../../../../../components/HStack";
 import {Typography} from "@mui/material";
-import {green} from "@mui/material/colors";
 import useTranslation from "../../../../../language/useTranslation";
-import globalStyles from "../../../../../styles/styles";
-
-const Stacker = ({isDesktop, children}) => {
-    return (
-        isDesktop ? (
-                <HStack sx={{width: '100%'}} gap={5} justifyContent={'flex-end'} alignItems={'flex-end'}>
-                    {children}
-                </HStack>
-            )
-            : (
-                <VStack gap={3} sx={{flex: 1}}>
-                    {children}
-                </VStack>
-            )
-    );
-}
+import LandingPageSupportCardStacker from "./LandingPageSupportCardStacker";
 
 const LandingPageSupportCard = ({isDesktop}) => {
     const {t} = useTranslation();
@@ -29,7 +12,7 @@ const LandingPageSupportCard = ({isDesktop}) => {
 
     return (
         <VStack sx={styles.infoCard}>
-            <Stacker isDesktop={isDesktop}>
+            <LandingPageSupportCardStacker isDesktop={isDesktop}>
                 <VStack gap={1} sx={{flex: 1}}>
                     <Typography sx={styles.titleText}>
                         {t('home.supportedBy.headerPF')}
@@ -44,7 +27,7 @@ const LandingPageSupportCard = ({isDesktop}) => {
                 <VStack justifyContent={'flex-end'} alignItems={'center'} sx={{width: "125px", height: "125px"}}>
                     <img src={BMBFUrl} alt={'BMBF Logo'} style={{maxWidth: "125px", maxHeight: "125px"}}/>
                 </VStack>
-            </Stacker>
+            </LandingPageSupportCardStacker>
         </VStack>
     )
         ;
