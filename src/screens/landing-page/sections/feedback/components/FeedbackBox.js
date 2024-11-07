@@ -75,8 +75,7 @@ const styles = {
         borderRadius: '12px',
         borderStyle: 'solid',
         borderWidth: '1px',
-        borderColor: globalStyles.primaryColor,
-        boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.15)',
+        borderColor: globalStyles.primaryColor
     },
     text: {
         fontSize: '20px',

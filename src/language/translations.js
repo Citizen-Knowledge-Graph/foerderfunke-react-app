@@ -230,20 +230,19 @@ const translations = {
                 manyMore: "Viele Weitere",
             },
             mission: {
-                header: "1 von 5 Haushalten in Deutschland beanspruchen keine Sozialleistungen, auf die sie Anspruch haben.",
-                text: "Wir haben es uns zur Aufgabe gemacht, Sozialleistungen in Deutschland für alle zugänglich und leicht verständlich zu machen. Wir zeigen dir, auf welche Sozialleistungen du Anspruch haben könntest und weisen dir den Weg zur Antragstellung."
+                header: "1 von 5 Haushalten in Deutschland beanspruchen nicht die Sozialleistungen, auf die sie Anspruch haben.",
+                text: "Mit Förderfunke möchten wir erreichen, dass Sozialleistungen in Deutschland für alle zugänglich und leicht verständlich sind. Wir zeigen dir, auf welche Sozialleistungen du Anspruch haben könntest und wie du sie beantragen kannst."
             },
             howItWorks: {
                 header: "So geht's",
-                part1Header: "Beantworte ein paar grundlegende Fragen",
-                part1Text: "Mach einen schnellen Check, erstelle dein Profil oder durchsuche unsere Liste der Sozialleistungen nach Themen. Deine Wahl.",
+                part1Header: "Beantworte ein paar Fragen zu deiner Lebenssituation",
+                part1Text: "Damit erstellst du ein Profil, das mit den Anforderungsbedingungen der unterschiedlichen Leistungen verglichen wird.",
                 part2Header: "Erhalte eine Liste deiner potenziellen Leistungen",
-                part2Text: "Je vollständiger dein Profil ist, desto genauer wird die Liste der Leistungen sein, die du erhältst.",
-                part3Header: "Erfahre mehr über relevante Leistungen",
-                part3Text: "Erfahre mehr über die Voraussetzungen und notwendigen Schritte, um deine Leistungen zu beantragen."
+                part2Text: "Je vollständiger dein Profil ist, desto mehr Leistungen können auf Anspruch überprüft werden.",
+                part3Header: "Finde Informationen zu Leistungen und Antragsverfahren",
+                part3Text: "In der Detailansicht kannst du dich genauer über eine Leistung informieren. Du erfährst, zum Bespiel, warum du möglichweise Anspruch hast oder nicht."
             },
             theBasics: {
-                header: "Die Grundlagen",
                 line1: "FörderFunke ist kostenlos nutzbar",
                 line2: "Deine Daten gehören dir! Alle Informationen, die du eingibst, werden nur lokal auf deinem Gerät gespeichert",
                 line3: "Keine Registrierung, kein Login erforderlich",

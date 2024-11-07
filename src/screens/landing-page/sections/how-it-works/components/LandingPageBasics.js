@@ -7,54 +7,48 @@ import globalStyles from "../../../../../styles/styles";
 import useTranslation from "../../../../../language/useTranslation";
 
 const LandingPageBasics = () => {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
 
     return (
         <VStack alignItems={'center'} sx={{width: "100%"}}>
-            <VStack
-                alignItems={'center'}
-                sx={{
-                    backgroundColor: globalStyles.primaryColor,
-                    padding: '32px',
-                    borderRadius: '15px',
-                }}>
-                <HStack>
-                    <Typography sx={styles.titleText}>
-                        {t('home.theBasics.header')}
+            <VStack gap={4} alignItems={'flex-start'} sx={styles.basicsBox}>
+                <HStack alignItems={'center'}>
+                    <CheckCircleIcon sx={styles.icon}/>
+                    <Typography sx={styles.itemText}>
+                        {t('home.theBasics.line1')}
                     </Typography>
                 </HStack>
-                <VStack>
-                    <HStack alignItems={'center'}>
-                        <CheckCircleIcon sx={styles.icon}/>
-                        <Typography sx={styles.itemText}>
-                            {t('home.theBasics.line1')}
-                        </Typography>
-                    </HStack>
-                    <HStack alignItems={'center'}>
-                        <CheckCircleIcon sx={styles.icon}/>
-                        <Typography sx={styles.itemText}>
-                            {t('home.theBasics.line2')}
-                        </Typography>
-                    </HStack>
-                    <HStack alignItems={'center'}>
-                        <CheckCircleIcon sx={styles.icon}/>
-                        <Typography sx={styles.itemText}>
-                            {t('home.theBasics.line3')}
-                        </Typography>
-                    </HStack>
-                    <HStack alignItems={'center'}>
-                        <CheckCircleIcon sx={styles.icon}/>
-                        <Typography sx={styles.itemText}>
-                            {t('home.theBasics.line4')}
-                        </Typography>
-                    </HStack>
-                </VStack>
+                <HStack alignItems={'center'}>
+                    <CheckCircleIcon sx={styles.icon}/>
+                    <Typography sx={styles.itemText}>
+                        {t('home.theBasics.line2')}
+                    </Typography>
+                </HStack>
+                <HStack alignItems={'center'}>
+                    <CheckCircleIcon sx={styles.icon}/>
+                    <Typography sx={styles.itemText}>
+                        {t('home.theBasics.line3')}
+                    </Typography>
+                </HStack>
+                <HStack alignItems={'center'}>
+                    <CheckCircleIcon sx={styles.icon}/>
+                    <Typography sx={styles.itemText}>
+                        {t('home.theBasics.line4')}
+                    </Typography>
+                </HStack>
             </VStack>
         </VStack>
     );
 }
 
 const styles = {
+    basicsBox: {
+        borderRadius: '12px',
+        borderStyle: 'solid',
+        borderWidth: '1px',
+        borderColor: globalStyles.primaryColor,
+        padding: '32px',
+    },
     titleText: {
         fontWeight: 'bold',
         fontSize: '28px'
@@ -64,7 +58,8 @@ const styles = {
         fontSize: '34px',
     },
     itemText: {
-        fontSize: '20px'
+        fontSize: '20px',
+        maxWidth: '400px'
     }
 }
 
