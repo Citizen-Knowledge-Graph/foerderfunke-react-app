@@ -214,7 +214,7 @@ const translations = {
                 actionButton: "Leistungen entdecken"
             },
             menu: {
-                howWorks: "Wie es funktioniert",
+                howWorks: "So geht's",
                 principles: "Prinzipien",
                 aboutUs: "Über uns",
                 improve: "Feedback",
@@ -222,7 +222,7 @@ const translations = {
                 activityLog: "Aktivitätsprotokoll"
             },
             hero: {
-                header: "Finde heraus, welche Leistungen und finanzielle Unterstützung du bekommen könntest",
+                header: "Entdecke Leistungen für dich",
                 childAllowance: "Kinderzuschlag",
                 housingBenefit: "Wohngeld",
                 citizensBenefit: "Bürgergeld",
@@ -234,7 +234,7 @@ const translations = {
                 text: "Wir haben es uns zur Aufgabe gemacht, Sozialleistungen in Deutschland für alle zugänglich und leicht verständlich zu machen. Wir zeigen dir, auf welche Sozialleistungen du Anspruch haben könntest und weisen dir den Weg zur Antragstellung."
             },
             howItWorks: {
-                header: "Wie es funktioniert",
+                header: "So geht's",
                 part1Header: "Beantworte ein paar grundlegende Fragen",
                 part1Text: "Mach einen schnellen Check, erstelle dein Profil oder durchsuche unsere Liste der Sozialleistungen nach Themen. Deine Wahl.",
                 part2Header: "Erhalte eine Liste deiner potenziellen Leistungen",
@@ -250,7 +250,7 @@ const translations = {
                 line4: "Du kannst es auf dem Handy oder Laptop nutzen"
             },
             feedback: {
-                header: "Hilf uns, besser zu werden",
+                header: "Feedback",
                 text: "Dein Feedback ist entscheidend für uns, um zu verstehen, wie wir deine Erfahrung mit der Anwendung verbessern können. Es hilft uns, Funktionen hinzuzufügen und zu optimieren, damit Menschen die richtigen Leistungen finden können.",
                 ratePrompt: "Wie bewertest du deine allgemeine Erfahrung mit FörderFunke?",
                 1: "Schlecht",
@@ -264,7 +264,7 @@ const translations = {
                 submitBtn: "Absenden"
             },
             collaborate: {
-                header: "Lass uns zusammenarbeiten",
+                header: "Zusammenarbeit",
                 text: "Kennst du Sozialleistungen oder Förderprogramme, die wir noch nicht erfasst haben? Wir würden uns sehr freuen, mit dir zusammenzuarbeiten und sie in unseren Katalog aufzunehmen. Wir sind auch sehr daran interessiert, mehr über Nutzergruppen zu erfahren, die von FörderFunke profitieren könnten.",
                 messagePrompt: "Schick uns eine Nachricht. Wir melden uns so schnell wie möglich zurück!"
             },
@@ -278,7 +278,7 @@ const translations = {
                 part3Text: "Wir arbeiten nutzerzentriert und iterativ. Wir sprechen mit Nutzern und verbessern unser Produkt ständig, damit es einfach zu bedienen, verständlich und zugänglich ist."
             },
             connect: {
-                header: "Lass uns vernetzen",
+                header: "Das Team",
             },
             supportedBy: {
                 header: "Unsere Unterstützung",
