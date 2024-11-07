@@ -9,10 +9,8 @@ import LinkedInLink from "../../../../../components/LinkedInLink";
 import LogoBar from "../../../../../components/LogoBar";
 import GitHubLink from "../../../../../components/GitHubLink";
 import FeatureToggle from "../components/FeatureToggle";
-import useTranslation from "../../../../../language/useTranslation";
 
 const LandingPageFooterDesktop = () => {
-    const {t} = useTranslation();
 
     return (
         <VStack>

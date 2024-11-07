@@ -5,14 +5,11 @@ import EmailLink from "../../../../../components/EmailLink";
 import LinkedInLink from "../../../../../components/LinkedInLink";
 import Divider from "@mui/material/Divider";
 import {Typography} from "@mui/material";
-import NarBarLink from "../../../../../components/NavBarLink";
 import LandingPageWAppButton from "../../../components/LandingPageWAppButton";
 import GitHubLink from "../../../../../components/GitHubLink";
 import FeatureToggle from "../components/FeatureToggle";
-import useTranslation from "../../../../../language/useTranslation";
 
 const LandingPageFooterMobile = () => {
-    const { t } = useTranslation();
 
     return (
         <VStack>
