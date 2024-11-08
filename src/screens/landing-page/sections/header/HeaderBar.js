@@ -1,13 +1,20 @@
 import React from "react";
 import HeaderBarMobile from "./views/HeaderBarMobile";
 import HeaderBarDesktop from "./views/HeaderBarDesktop";
-import LandingPageSectionWrapper from "../../components/LandingPageSectionWrapper";
+import VStack from "../../../../components/VStack";
 
 const HeaderBar = ({isApp, isDesktop}) => {
+    const horizontalPadding = isDesktop ? '60px' : '16px';
+
     return (
-        <LandingPageSectionWrapper isDesktop={isDesktop} isTop={true}>
+        <VStack sx={{
+            paddingLeft: horizontalPadding,
+            paddingRight: horizontalPadding,
+            paddingTop: '16px',
+            paddingBottom: '16px'
+        }}>
             {isDesktop ? <HeaderBarDesktop isApp={isApp}/> : <HeaderBarMobile isApp={isApp}/>}
-        </LandingPageSectionWrapper>
+        </VStack>
     )
 }
 

@@ -15,7 +15,7 @@ const LandingPageTopSectionDesktop = ({benefits}) => {
                 <Typography sx={styles.headerSectionTitle}>
                     {t('home.hero.header')}
                 </Typography>
-                <LandingPageWAppButton backgroundColor={'primary'}/>
+                <LandingPageWAppButton />
             </VStack>
             <VStack sx={{maxWidth: '60%'}}>
                 <HStack>

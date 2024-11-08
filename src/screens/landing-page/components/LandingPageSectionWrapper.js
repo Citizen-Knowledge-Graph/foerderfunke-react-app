@@ -1,11 +1,11 @@
 import React from "react";
 import VStack from "../../../components/VStack";
 
-const LandingPageSectionWrapper = ({backgroundColor = 'white', isDesktop, isTop = false, children}) => {
+const LandingPageSectionWrapper = ({backgroundColor= null, isDesktop, isTop = false, children}) => {
     const horizontalPadding = isDesktop ? '60px' : '16px';
     const verticalPadding = isDesktop
         ? isTop
-            ? '32px'
+            ? '16px'
             : '60px'
         : isTop
             ? '28px'

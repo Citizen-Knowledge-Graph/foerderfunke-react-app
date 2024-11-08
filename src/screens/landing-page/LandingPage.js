@@ -12,16 +12,27 @@ import LandingPageFeedback from "./sections/feedback/LandingPageFeedback";
 import featureFlags from "../../featureFlags";
 import LandingPageCollaboration from "./sections/collaboration/LandingPageCollaboration";
 import LandingPageFunding from "./sections/funding/LandingPageFunding";
+import globalStyles from "../../styles/styles";
 
 const LandingPage = () => {
     const isDesktop = useStore((state) => state.isDesktop);
 
     return (
         <Layout>
-            <VStack gap={0}>
-                <VStack>
-                    <LandingPageTopSection isDesktop={isDesktop}/>
-                </VStack>
+            <VStack
+                gap={0}
+                sx={{
+                    background: `linear-gradient(
+                        to bottom,
+                            ${globalStyles.primaryColor} 0%,
+                            ${globalStyles.primaryColor}66 25%,
+                            ${globalStyles.primaryColor} 50%,
+                            ${globalStyles.primaryColor}66 75%,
+                            ${globalStyles.primaryColor} 100%)`,
+                }}
+            > <VStack>
+                <LandingPageTopSection isDesktop={isDesktop}/>
+            </VStack>
                 <VStack>
                     <LandingPageFact isDesktop={isDesktop}/>
                 </VStack>

@@ -1,7 +1,6 @@
 import React from "react";
 import HStack from "../../../components/HStack";
 import {Typography} from "@mui/material";
-import globalStyles from "../../../styles/styles";
 import LandingPageSectionWrapper from "../components/LandingPageSectionWrapper";
 import VStack from "../../../components/VStack";
 import LandingPageSectionGrid from "../components/LandingPageSectionGrid";
@@ -11,9 +10,9 @@ const LandingPageFact = ({isDesktop}) => {
     const { t } = useTranslation();
 
     return (
-        <LandingPageSectionWrapper backgroundColor={globalStyles.primaryColor} isDesktop={isDesktop}>
+        <LandingPageSectionWrapper isDesktop={isDesktop}>
             <LandingPageSectionGrid>
-                <VStack alignItems={'center'}>
+                <VStack justifyContent={'center'} alignItems={'center'} sx={{minHeight: 350}}>
                     <HStack>
                         <Typography sx={styles.headerSectionTitle}>{t('home.mission.header')}</Typography>
                     </HStack>
@@ -29,7 +28,7 @@ const LandingPageFact = ({isDesktop}) => {
 const styles = {
     headerSectionTitle: {
         fontWeight: 'bold',
-        fontSize: '28px',
+        fontSize: '40px',
         textAlign: 'center',
     },
     headerSectionText: {
