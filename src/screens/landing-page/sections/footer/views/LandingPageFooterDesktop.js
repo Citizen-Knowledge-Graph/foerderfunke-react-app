@@ -17,7 +17,7 @@ const LandingPageFooterDesktop = () => {
             <HStack justifyContent={'space-between'} alignItems={'center'}>
                 <LogoBar/>
                 <HStack gap={3} justifyContent={'center'} alignItems={'center'}>
-                    <LandingPageWAppButton backgroundColor={'secondary'}/>
+                    <LandingPageWAppButton />
                 </HStack>
             </HStack>
             <Divider variant="middle" sx={{borderBottomWidth: '2px'}}/>

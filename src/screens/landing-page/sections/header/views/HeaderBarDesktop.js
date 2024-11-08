@@ -35,11 +35,6 @@ const HeaderBarDesktop = ({isApp}) => {
                             : null
                     }
                     {isApp ? null :
-                        featureFlags.newCollaborationSection ?
-                            <LandingPageHollowButton text={t('home.menu.collaborate')} to={'/#collaboration'}/>
-                            : null
-                    }
-                    {isApp ? null :
                         featureFlags.newActivityLog ?
                             <LandingPageHollowButton text={t('home.menu.activityLog')} to={'/activity-log'}/>
                             : null

@@ -12,8 +12,6 @@ const LandingPageWAppButton = ({backgroundColor}) => {
         switch (backgroundColor) {
             case 'primary':
                 return globalStyles.primaryColor;
-            case 'secondary':
-                return globalStyles.secondaryColor;
             default:
                 return 'white'
         }
@@ -23,8 +21,6 @@ const LandingPageWAppButton = ({backgroundColor}) => {
         switch (backgroundColor) {
             case 'primary':
                 return 'black';
-            case 'secondary':
-                return 'white';
             default:
                 return 'black'
         }
@@ -32,7 +28,14 @@ const LandingPageWAppButton = ({backgroundColor}) => {
 
     return (
         <HStack>
-            <Button variant="text" sx={{...styles.button, backgroundColor: buttonColor, color: textColor}}
+            <Button variant="text" sx={{
+                ...styles.button,
+                backgroundColor: buttonColor,
+                color: textColor,
+                '&:hover': {
+                    backgroundColor: backgroundColor === 'primary' ? 'white' : globalStyles.primaryColor,
+                },
+            }}
                     component={Link}
                     to="/user-routing">{t('home.global.actionButton')}</Button>
         </HStack>
@@ -41,7 +44,7 @@ const LandingPageWAppButton = ({backgroundColor}) => {
 
 const styles = {
     button: {
-        borderRadius: '12px',
+        borderRadius: '4px',
         padding: '4px 12px',
         color: 'black',
         fontSize: '20px',
@@ -50,9 +53,6 @@ const styles = {
         borderStyle: 'solid',
         borderWidth: '1px',
         borderColor: globalStyles.primaryColor,
-        '&:hover': {
-            backgroundColor: globalStyles.primaryColor,
-        },
     }
 }
 

@@ -3,6 +3,7 @@ import {Typography} from "@mui/material";
 import useTranslation from "../../../../../language/useTranslation";
 import LandingPageSupportCardStacker from "./LandingPageSupportCardStacker";
 import HStack from "../../../../../components/HStack";
+import globalStyles from "../../../../../styles/styles";
 
 const LandingPageSupportCard = ({isDesktop}) => {
     const {t} = useTranslation();
@@ -40,8 +41,12 @@ const LandingPageSupportCard = ({isDesktop}) => {
 const styles = {
     infoCard: {
         width: '100%',
-        paddingBottom: '24px',
-        borderBottom: '1px solid rgba(189, 189, 189)',
+        padding: '24px',
+        backgroundColor: 'white',
+        borderRadius: '4px',
+        borderStyle: 'solid',
+        borderWidth: '1px',
+        borderColor: globalStyles.primaryColor
     },
     titleText: {
         fontWeight: 'bold',

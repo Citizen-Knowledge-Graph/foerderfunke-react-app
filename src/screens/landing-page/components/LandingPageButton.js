@@ -17,7 +17,7 @@ const LandingPageHollowButton = ({text='Help us improve', to}) => {
 
 const styles = {
     button: {
-        borderRadius: '12px',
+        borderRadius: '4px',
         borderStyle: 'solid',
         borderWidth: '1px',
         borderColor:"white",
@@ -25,7 +25,10 @@ const styles = {
         color: globalStyles.colorDarkGrey,
         fontSize: '20px',
         fontWeight: 'bold',
-        textTransform: 'none'
+        textTransform: 'none',
+        '&:hover': {
+            backgroundColor: globalStyles.primaryColor,
+        }
     }
 }
 

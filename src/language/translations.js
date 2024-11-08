@@ -35,10 +35,10 @@ const translations = {
             },
             theBasics: {
                 header: "The basics",
-                line1: "FörderFunke is free to use",
-                line2: "Your data is yours! All the information you fill in is stored only locally on your device",
-                line3: "No registration, no login needed",
-                line4: "You can use it on the phone or laptop"
+                line1: "Free to use",
+                line2: "Your data is yours",
+                line3: "No registration",
+                line4: "On your phone or laptop"
             },
             feedback: {
                 header: "Help us improve",
@@ -49,7 +49,7 @@ const translations = {
                 3: "Fine",
                 4: "Good",
                 5: "Great",
-                writePrompt: "If you like you can also write us a few lines.",
+                writePrompt: "If you like you can write us a few lines here.",
                 placeholder: "Enter your text",
                 submitting: "Submitting...",
                 submitBtn: "Submit"
@@ -57,7 +57,7 @@ const translations = {
             collaborate: {
                 header: "Let's collaborate",
                 text: "Do you know about some benefits or funding schemes that we are still missing? We would be really happy to collaborate and include them in the catalogue. We are also very interested to learn about user groups that could benefit from FörderFunke.",
-                messagePrompt: "Send us a message. We will get back to you as quickly as we can!"
+                messagePrompt: "Or send us an email. We will get back to you as quickly as we can!"
             },
             principles: {
                 header: "Our principles",

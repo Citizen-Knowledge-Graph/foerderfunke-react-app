@@ -11,8 +11,11 @@ const LandingPageInfoCard = ({title, text, onMouseLeave, onMouseEnter, hovered})
                 sx={{
                     maxWidth: '425px',
                     backgroundColor: hovered ? globalStyles.primaryColor : 'white',
-                    borderRadius: '12px',
+                    borderRadius: '4px',
                     transition: 'background-color 0.2s',
+                    borderStyle: 'solid',
+                    borderWidth: '1px',
+                    borderColor: globalStyles.primaryColor,
                 }}
         >
             <VStack gap={1} sx={styles.infoCard}>
@@ -33,7 +36,7 @@ const LandingPageInfoCard = ({title, text, onMouseLeave, onMouseEnter, hovered})
 
 const styles = {
     infoCard: {
-        borderRadius: '15px',
+        borderRadius: '4px',
         padding: '16px',
     },
     titleText: {

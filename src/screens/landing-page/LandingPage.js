@@ -10,7 +10,6 @@ import LandingPageFact from "./sections/LandingPageFact";
 import LandingPageTopSection from "./sections/top-section/LandingPageTopSection";
 import LandingPageFeedback from "./sections/feedback/LandingPageFeedback";
 import featureFlags from "../../featureFlags";
-import LandingPageCollaboration from "./sections/collaboration/LandingPageCollaboration";
 import LandingPageFunding from "./sections/funding/LandingPageFunding";
 import globalStyles from "../../styles/styles";
 
@@ -24,11 +23,11 @@ const LandingPage = () => {
                 sx={{
                     background: `linear-gradient(
                         to bottom,
-                            ${globalStyles.primaryColor}66 0%,
-                            ${globalStyles.primaryColor}33 25%,
-                            ${globalStyles.primaryColor}66 50%,
-                            ${globalStyles.primaryColor}33 75%,
-                            ${globalStyles.primaryColor}66 100%)`,
+                            ${globalStyles.primaryColor}33 0%,
+                            ${globalStyles.primaryColor}66 25%,
+                            ${globalStyles.primaryColor}33 50%,
+                            ${globalStyles.primaryColor}66 75%,
+                            ${globalStyles.primaryColor}33 100%)`,
                 }}
             > <VStack>
                 <LandingPageTopSection isDesktop={isDesktop}/>
@@ -43,13 +42,6 @@ const LandingPage = () => {
                     featureFlags.newFeedbackSection && (
                         <VStack id="feedback">
                             <LandingPageFeedback isDesktop={isDesktop}/>
-                        </VStack>
-                    )
-                }
-                {
-                    featureFlags.newCollaborationSection && (
-                        <VStack id="collaboration">
-                            <LandingPageCollaboration isDesktop={isDesktop}/>
                         </VStack>
                     )
                 }

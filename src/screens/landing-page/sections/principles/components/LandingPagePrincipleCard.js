@@ -28,7 +28,7 @@ const LandingPagePrincipleCard = ({isDesktop, icon, gif, title, text, gifFirst=t
         return (
             <HStack justifyContent={'center'}>
                 {gif ? (
-                    <img src={gifUrl} alt="gif" style={{width: '140px', height: '140px'}}/>
+                    <img src={gifUrl} alt="gif" style={{width: '140px', height: '140px', borderRadius: '4px'}}/>
                 ) : (
                     React.createElement(icon, {sx: {fontSize: 120, color: globalStyles.secondaryColor}})
                 )}

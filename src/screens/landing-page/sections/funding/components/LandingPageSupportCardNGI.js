@@ -79,8 +79,12 @@ const LandingPageSupportCard = ({isDesktop}) => {
 const styles = {
     infoCard: {
         width: '100%',
-        paddingBottom: '24px',
-        borderBottom: '1px solid rgba(189, 189, 189)',
+        padding: '24px',
+        backgroundColor: 'white',
+        borderRadius: '4px',
+        borderStyle: 'solid',
+        borderWidth: '1px',
+        borderColor: globalStyles.primaryColor
     },
     titleText: {
         fontWeight: 'bold',

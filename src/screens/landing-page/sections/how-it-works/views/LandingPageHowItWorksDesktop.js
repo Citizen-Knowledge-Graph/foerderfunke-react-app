@@ -20,7 +20,7 @@ const LandingPageHowItWorksDesktop = ({quick_check, benefits_overview, benefit_p
 
     return (
         <VStack gap={9} alignItems={'center'} sx={{width: '100%'}}>
-            <HStack gap={9} justifyContent={'space-between'} alignItems={'center'}>
+            <HStack gap={9} sx={{width: '100%'}} justifyContent={'space-between'} alignItems={'center'}>
                 <VStack>
                     <LandingPageInfoCard
                         title={t('home.howItWorks.part1Header')}
@@ -48,10 +48,45 @@ const LandingPageHowItWorksDesktop = ({quick_check, benefits_overview, benefit_p
                     alignItems={'flex-start'}
                     sx={{
                         position: "relative",
-                        width: "calc(275px + 2 * 32px);",
+                        width: "calc(275px + 2 * 36px);",
                         height: imageHeight ? `${imageHeight}px` : 'auto'
                     }}
                 >
+                    <img
+                        src={benefit_page}
+                        onMouseEnter={() => handleMouseEnter(2)}
+                        onMouseLeave={handleMouseLeave}
+                        style={{
+                            width: '275px',
+                            height: 'auto',
+                            boxShadow: '0px 8px 12px rgba(0, 0, 0, 0.15)',
+                            borderRadius: '18px',
+                            position: "absolute",
+                            top: 0,
+                            left: 72,
+                            zIndex: hoveredIndex === 2 ? 2 : 1,
+                            transition: 'transform 0.5s ease',
+                            transform: hoveredIndex === 2 ? 'scale(1.025)' : 'scale(1)',
+                        }}
+                        alt={'phone 1'}/>
+                    <img
+                        src={benefits_overview}
+                        onMouseEnter={() => handleMouseEnter(1)}
+                        onMouseLeave={handleMouseLeave}
+                        style={{
+                            width: '275px',
+                            height: 'auto',
+                            boxShadow: '0px 8px 12px rgba(0, 0, 0, 0.15)',
+                            borderRadius: '18px',
+                            position: "absolute",
+                            top: 0,
+                            left: 36,
+                            zIndex: hoveredIndex === 1 ? 2 : 1,
+                            transition: 'transform 0.5s ease',
+                            transform: hoveredIndex === 1 ? 'scale(1.025)' : 'scale(1)',
+                        }}
+                        alt={'phone 1'}/>
+
                     <img
                         src={quick_check}
                         onLoad={handleImageLoad}
@@ -65,46 +100,12 @@ const LandingPageHowItWorksDesktop = ({quick_check, benefits_overview, benefit_p
                             position: "absolute",
                             top: 0,
                             left: 0,
-                            zIndex: hoveredIndex === 0 ? 2 : 1, // Bring to foreground on hover
+                            zIndex: hoveredIndex === 0 ? 2 : 1,
                             transition: 'transform 0.5s ease',
                             transform: hoveredIndex === 0 ? 'scale(1.025)' : 'scale(1)',
                         }}
                         alt={'phone 1'}
                     />
-                    <img
-                        src={benefits_overview}
-                        onMouseEnter={() => handleMouseEnter(1)}
-                        onMouseLeave={handleMouseLeave}
-                        style={{
-                            width: '275px',
-                            height: 'auto',
-                            boxShadow: '0px 8px 12px rgba(0, 0, 0, 0.15)',
-                            borderRadius: '18px',
-                            position: "absolute",
-                            top: 0,
-                            left: 32,
-                            zIndex: hoveredIndex === 1 ? 2 : 1,
-                            transition: 'transform 0.5s ease',
-                            transform: hoveredIndex === 1 ? 'scale(1.025)' : 'scale(1)',
-                        }}
-                        alt={'phone 1'}/>
-                    <img
-                        src={benefit_page}
-                        onMouseEnter={() => handleMouseEnter(2)}
-                        onMouseLeave={handleMouseLeave}
-                        style={{
-                            width: '275px',
-                            height: 'auto',
-                            boxShadow: '0px 8px 12px rgba(0, 0, 0, 0.15)',
-                            borderRadius: '18px',
-                            position: "absolute",
-                            top: 0,
-                            left: 64,
-                            zIndex: hoveredIndex === 2 ? 2 : 1,
-                            transition: 'transform 0.5s ease',
-                            transform: hoveredIndex === 2 ? 'scale(1.025)' : 'scale(1)',
-                        }}
-                        alt={'phone 1'}/>
                 </HStack>
             </HStack>
         </VStack>

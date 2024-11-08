@@ -1,19 +1,19 @@
 import React from "react";
-import {Button, TextField, Typography} from "@mui/material";
+import {Button, Link, TextField, Typography} from "@mui/material";
 import VStack from "../../../../../components/VStack";
-import FeedbackButtonArray from "./FeedbackButtonArray";
 import HStack from "../../../../../components/HStack";
 import globalStyles from "../../../../../styles/styles";
 import useFeedbackHandler from "../hooks/useFeedbackHandler";
 import useTranslation from "../../../../../language/useTranslation";
+import EmailIcon from "@mui/icons-material/Email";
+import Divider from "@mui/material/Divider";
 
-const FeedbackBox = ({isDesktop}) => {
+const FeedbackBox = () => {
     const { t } = useTranslation();
 
     const {
         feedbackText,
         setFeedbackText,
-        setFeedbackValue,
         isSubmitting,
         error,
         submitFeedback,
@@ -21,16 +21,9 @@ const FeedbackBox = ({isDesktop}) => {
 
     return (
         <VStack gap={5} sx={styles.feedbackBox}>
-            <VStack gap={5} alignItems={'flex-start'} sx={{ width: "100%" }}>
-                <Typography sx={styles.text}>
-                    {t('home.feedback.ratePrompt')}
-                </Typography>
-                <FeedbackButtonArray isDesktop={isDesktop} setFeedbackValue={setFeedbackValue} />
-            </VStack>
             <VStack gap={5}>
                 <Typography sx={styles.text}>
                     {t('home.feedback.writePrompt')}
-                    If you like you can also write us a few lines.
                 </Typography>
                 <TextField
                     label={t('home.feedback.placeholder')}
@@ -42,7 +35,7 @@ const FeedbackBox = ({isDesktop}) => {
                     InputProps={{
                         disableUnderline: true,
                     }}
-                    minRows={5}
+                    minRows={3}
                     style={{
                         overflow: 'auto',
                         borderRadius: '12px'
@@ -56,7 +49,7 @@ const FeedbackBox = ({isDesktop}) => {
                     onClick={submitFeedback}
                     disabled={isSubmitting}
                 >
-                    {isSubmitting ? "t('home.feedback.submitting')..." : t('home.feedback.submitBtn')}
+                    {isSubmitting ? t('home.feedback.submitting') : t('home.feedback.submitBtn')}
                 </Button>
             </HStack>
             {error && (
@@ -64,6 +57,21 @@ const FeedbackBox = ({isDesktop}) => {
                     {error}  {/* Error message displayed here */}
                 </Typography>
             )}
+            <Divider />
+            <VStack gap={3} alignItems={'center'} sx={{width: "100%"}}>
+                <HStack sx={{flex: 2}}>
+                    <Typography sx={styles.text}>
+                        {t('home.collaborate.messagePrompt')}
+                    </Typography>
+                </HStack>
+                <HStack justifyContent={'center'} sx={{flex: 2}}>
+                    <HStack alignItems={'center'} sx={styles.email}>
+                        <EmailIcon/>
+                        <Link href={`mailto:info@foerderfunke.org`}
+                              sx={{textDecoration: 'underline'}}> info@foerderfunke.org</Link>
+                    </HStack>
+                </HStack>
+            </VStack>
         </VStack>
     );
 };
@@ -72,10 +80,11 @@ const styles = {
     feedbackBox: {
         width: '100%',
         padding: '24px',
-        borderRadius: '12px',
+        borderRadius: '4px',
         borderStyle: 'solid',
         borderWidth: '1px',
-        borderColor: globalStyles.primaryColor
+        borderColor: globalStyles.primaryColor,
+        backgroundColor: 'white',
     },
     text: {
         fontSize: '20px',
@@ -84,11 +93,18 @@ const styles = {
     },
     button: {
         backgroundColor: globalStyles.primaryColor,
-        borderRadius: '12px',
+        borderRadius: '4px',
         padding: '4px 12px',
         color: 'black',
         fontSize: '20px',
         fontWeight: 'bold',
+        textTransform: 'none'
+    },
+    email: {
+        backgroundColor: 'white',
+        borderRadius: '12px',
+        color: 'black',
+        fontSize: '20px',
         textTransform: 'none'
     }
 }

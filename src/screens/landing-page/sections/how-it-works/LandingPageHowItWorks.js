@@ -3,7 +3,6 @@ import VStack from "../../../../components/VStack";
 import LandingPageHowItWorksDesktop from "./views/LandingPageHowItWorksDesktop";
 import LandingPageHowItWorksMobile from "./views/LandingPageHowItWorksMobile";
 import LandingPageSectionWrapper from "../../components/LandingPageSectionWrapper";
-import LandingPageBasics from "./components/LandingPageBasics";
 import LandingPageSectionGrid from "../../components/LandingPageSectionGrid";
 import useTranslation from "../../../../language/useTranslation";
 
@@ -24,7 +23,6 @@ const LandingPageHowItWorks = ({isDesktop}) => {
                         : <LandingPageHowItWorksMobile quick_check={quick_check} benefits_overview={benefits_overview}
                                                        benefit_page={benefit_page}/>
                     }
-                    <LandingPageBasics/>
                 </VStack>
             </LandingPageSectionGrid>
         </LandingPageSectionWrapper>
