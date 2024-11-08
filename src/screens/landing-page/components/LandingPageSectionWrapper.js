@@ -6,7 +6,7 @@ const LandingPageSectionWrapper = ({backgroundColor= null, isDesktop, isTop = fa
     const verticalPadding = isDesktop
         ? isTop
             ? '16px'
-            : '60px'
+            : '80px'
         : isTop
             ? '28px'
             : '60px';

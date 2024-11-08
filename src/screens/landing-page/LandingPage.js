@@ -29,9 +29,10 @@ const LandingPage = () => {
                             ${globalStyles.primaryColor}66 75%,
                             ${globalStyles.primaryColor}33 100%)`,
                 }}
-            > <VStack>
-                <LandingPageTopSection isDesktop={isDesktop}/>
-            </VStack>
+            >
+                <VStack>
+                    <LandingPageTopSection isDesktop={isDesktop}/>
+                </VStack>
                 <VStack>
                     <LandingPageFact isDesktop={isDesktop}/>
                 </VStack>
@@ -48,11 +49,11 @@ const LandingPage = () => {
                         </VStack>
                     )
                 }
-                <VStack id="funding">
-                    <LandingPageFunding isDesktop={isDesktop}/>
-                </VStack>
                 <VStack id="about-us">
                     <LandingPageTeam isDesktop={isDesktop}/>
+                </VStack>
+                <VStack id="funding">
+                    <LandingPageFunding isDesktop={isDesktop}/>
                 </VStack>
                 <VStack id="find-your-benefits">
                     <LandingPageFooter isDesktop={isDesktop}/>
