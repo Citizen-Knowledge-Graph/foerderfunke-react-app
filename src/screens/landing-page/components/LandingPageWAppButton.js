@@ -50,6 +50,9 @@ const styles = {
         borderStyle: 'solid',
         borderWidth: '1px',
         borderColor: globalStyles.primaryColor,
+        '&:hover': {
+            backgroundColor: globalStyles.primaryColor,
+        },
     }
 }
 

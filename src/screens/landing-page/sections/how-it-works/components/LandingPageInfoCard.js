@@ -10,7 +10,7 @@ const LandingPageInfoCard = ({title, text, onMouseLeave, onMouseEnter, hovered})
                 onMouseLeave={onMouseLeave}
                 sx={{
                     maxWidth: '425px',
-                    backgroundColor: hovered ? globalStyles.primaryColorTransparent : 'white',
+                    backgroundColor: hovered ? globalStyles.primaryColor : 'white',
                     borderRadius: '12px',
                     transition: 'background-color 0.2s',
                 }}
