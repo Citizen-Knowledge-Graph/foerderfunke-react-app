@@ -46,7 +46,10 @@ const styles = {
         color: 'black',
         fontSize: '20px',
         fontWeight: 'bold',
-        textTransform: 'none'
+        textTransform: 'none',
+        borderStyle: 'solid',
+        borderWidth: '1px',
+        borderColor: globalStyles.primaryColor,
     }
 }
 

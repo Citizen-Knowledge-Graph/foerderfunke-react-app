@@ -24,11 +24,11 @@ const LandingPage = () => {
                 sx={{
                     background: `linear-gradient(
                         to bottom,
-                            ${globalStyles.primaryColor} 0%,
-                            ${globalStyles.primaryColor}66 25%,
-                            ${globalStyles.primaryColor} 50%,
-                            ${globalStyles.primaryColor}66 75%,
-                            ${globalStyles.primaryColor} 100%)`,
+                            ${globalStyles.primaryColor}66 0%,
+                            ${globalStyles.primaryColor}33 25%,
+                            ${globalStyles.primaryColor}66 50%,
+                            ${globalStyles.primaryColor}33 75%,
+                            ${globalStyles.primaryColor}66 100%)`,
                 }}
             > <VStack>
                 <LandingPageTopSection isDesktop={isDesktop}/>

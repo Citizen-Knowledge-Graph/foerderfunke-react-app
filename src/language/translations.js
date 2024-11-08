@@ -27,7 +27,7 @@ const translations = {
             howItWorks: {
                 header: "How it works",
                 part1Header: "Answer some basic questions",
-                part1Text: "Do a quick check, create your profile, or browse our list of social benefits by topic. Your choice.",
+                part1Text: "Do a quick check, create your profile, or browse our list of social benefits by topic.",
                 part2Header: "Get your potential benefits listed",
                 part2Text: "The more complete your profile is, the more accurate the list of benefits you get.",
                 part3Header: "Learn about relevant benefits",

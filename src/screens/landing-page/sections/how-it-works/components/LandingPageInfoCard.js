@@ -1,10 +1,20 @@
 import VStack from "../../../../../components/VStack";
 import HStack from "../../../../../components/HStack";
 import {Typography} from "@mui/material";
+import globalStyles from "../../../../../styles/styles";
 
-const LandingPageInfoCard = ({title, text}) => {
+const LandingPageInfoCard = ({title, text, onMouseLeave, onMouseEnter, hovered}) => {
     return (
-        <VStack gap={0} sx={{maxWidth: '450px'}}>
+        <VStack gap={0}
+                onMouseEnter={onMouseEnter}
+                onMouseLeave={onMouseLeave}
+                sx={{
+                    maxWidth: '425px',
+                    backgroundColor: hovered ? globalStyles.primaryColorTransparent : 'white',
+                    borderRadius: '12px',
+                    transition: 'background-color 0.2s',
+                }}
+        >
             <VStack gap={1} sx={styles.infoCard}>
                 <HStack>
                     <Typography sx={styles.titleText}>
