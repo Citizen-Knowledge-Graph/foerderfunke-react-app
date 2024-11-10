@@ -10,7 +10,7 @@ const LandingPageFact = ({isDesktop}) => {
     const { t } = useTranslation();
 
     return (
-        <LandingPageSectionWrapper isDesktop={isDesktop}>
+        <LandingPageSectionWrapper backgroundColor={'white'} isDesktop={isDesktop}>
             <LandingPageSectionGrid>
                 <VStack justifyContent={'center'} alignItems={'center'} sx={{minHeight: 350}}>
                     <HStack>

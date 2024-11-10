@@ -5,7 +5,7 @@ import LandingPageFooterMobile from "./views/LandingPageFooterMobile";
 
 const LandingPageFooter = ({isDesktop}) => {
     return (
-        <LandingPageSectionWrapper isDesktop={isDesktop}>
+        <LandingPageSectionWrapper backgroundColor={'white'} isDesktop={isDesktop}>
             {isDesktop ? <LandingPageFooterDesktop/> : <LandingPageFooterMobile/>}
         </LandingPageSectionWrapper>
     )

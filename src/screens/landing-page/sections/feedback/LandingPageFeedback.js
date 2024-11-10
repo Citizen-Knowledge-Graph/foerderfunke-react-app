@@ -9,7 +9,7 @@ const LandingPageFeedback = ({isDesktop}) => {
     const { t } = useTranslation();
 
     return (
-        <LandingPageSectionWrapper isDesktop={isDesktop}>
+        <LandingPageSectionWrapper backgroundColor={'white'} isDesktop={isDesktop}>
             <LandingPageSectionGrid title={t('home.feedback.header')}>
                 <Typography sx={styles.text}>
                     {t('home.feedback.text')}

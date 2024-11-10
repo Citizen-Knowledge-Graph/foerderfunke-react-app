@@ -9,7 +9,7 @@ const LandingPageFunding = ({isDesktop}) => {
     const {t} = useTranslation();
 
     return (
-        <LandingPageSectionWrapper isDesktop={isDesktop}>
+        <LandingPageSectionWrapper backgroundColor={'white'} isDesktop={isDesktop}>
             <LandingPageSectionGrid title={t('home.supportedBy.header')}>
                 <LandingPageSupportCardNGI isDesktop={isDesktop}/>
                 <LandingPageSupportCard isDesktop={isDesktop}/>
