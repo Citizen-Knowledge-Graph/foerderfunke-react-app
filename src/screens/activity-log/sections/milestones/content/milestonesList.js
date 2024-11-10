@@ -14,28 +14,33 @@ export const milestonesList = {
         past: [
             {
                 title: 'Successful application: NGI Search',
-                description: 'We successfully applied to the [NGI Search](https://www.ngisearch.eu/) Program of the European Commission and will receive funding, mentorship and various support modules until mid 2025.',
+                description: 'We successfully applied to the NGI Search Program of the European Commission and will receive funding, mentorship and various support modules until mid 2025.',
+                links: [{title: 'NGI Search', url: 'https://www.ngisearch.eu/'}],
                 date: 'November 2024'
             },
             {
                 title: 'Presentation at Public Makers Bootcamp',
-                description: 'Ben presented FörderFunke and his personal journey of working in the public sector at the first [Public Makers Bootcamp](https://www.linkedin.com/feed/update/urn:li:activity:7253815779312238595/) in Munich. ',
+                description: 'Ben presented FörderFunke and his personal journey of working in the public sector at the first Public Makers Bootcamp in Munich. ',
+                links: [{title: 'Public Makers Bootcamp', url: 'https://www.linkedin.com/feed/update/urn:li:activity:7253815779312238595/'}],
                 date: 'October 2024'
             },
             {
                 title: 'Presentation at "The Tech We Want Online Summit"',
-                description: 'Benjamin presented FörderFunke at "[The Tech We Want Online Summit](https://www.youtube.com/live/V7Sxo0IXe8g?t=20005s)", organized by the Open Knowledge Foundation.',
+                description: 'Benjamin presented FörderFunke at "The Tech We Want Online Summit", organized by the Open Knowledge Foundation.',
+                links: [{title: 'The Tech We Want Online Summit', url: 'https://www.youtube.com/live/V7Sxo0IXe8g?t=20005s'}],
                 date: 'October 2024'
             },
             {
                 title: 'Workshop at NEGZ Autumn Conference',
-                description: 'We held a [workshop](https://negz.org/termin/negz-herbsttagung-zur-digitalen-verwaltung-2024/#WS5) around the ideas of FörderFunke at the NEGZ Autumn Conference.',
+                description: 'We held a workshop around the ideas of FörderFunke at the NEGZ Autumn Conference.',
+                links: [{title: 'Workshop NEGZ Autumn Conference', url: 'https://negz.org/termin/negz-herbsttagung-zur-digitalen-verwaltung-2024/#WS5'}],
                 date: 'September 2024'
             },
             {
                 title: 'Launch of application at Prototype Fund Demo Day',
-                description: 'As part of our participation in the [Demo Day](https://prototypefund.de/demo-day/) of the Prototype Fund, we have launched the ' +
+                description: 'As part of our participation in the Demo Day of the Prototype Fund, we have launched the ' +
                     'web application. The application currently includes 10 social benefits in Germany.',
+                links: [{title: 'Prototype Fund Demo Day', url: 'https://prototypefund.de/demo-day/'}],
                 date: 'September 2024',
             },
             {
@@ -45,47 +50,56 @@ export const milestonesList = {
             },
             {
                 title: 'Civic Coding',
-                description: 'We received [project consultation from Civic Coding](https://www.civic-coding.de/angebote/projektberatung) on both technical and organization aspects.',
+                description: 'We received project consultation from Civic Coding on both technical and organization aspects.',
+                links: [{title: 'Civic Coding', url: 'https://www.civic-coding.de/'}],
                 date: 'May - September 2024'
             },
             {
                 title: 'Finalists in Innovation Competition',
-                description: 'We were selected as finalists in the [Innovation Competition](https://stadt.muenchen.de/infos/innovationswettbewerb.html) held by the City of Munich.',
+                description: 'We were selected as finalists in the Innovation Competition held by the City of Munich.',
+                links: [{title: 'Munich Innovation Competition', url: 'https://stadt.muenchen.de/infos/innovationswettbewerb.html'}],
                 date: 'July 2024'
             },
             {
                 title: 'Participation in Datendialog',
-                description: 'We participated in the [Datendialog event](https://www.bertelsmann-stiftung.de/de/unsere-projekte/data-science/projektnachrichten/datendialog-hamburg-juni-2024) hosted by the Bertelsmann Foundation and CorrelAid.',
+                description: 'We participated in the Datendialog event hosted by the Bertelsmann Foundation and CorrelAid.',
+                links: [{title: 'Datendialog', url: 'https://www.bertelsmann-stiftung.de/de/unsere-projekte/data-science/projektnachrichten/datendialog-hamburg-juni-2024'}],
                 date: 'June 2024'
             },
             {
                 title: 'Presentation at Digitale Woche Kiel',
-                description: 'We [presented](https://vimeo.com/949881609#t=1h15m30s) our project during the Digital Week Kiel, focused on Solid as a data storage solution we would like to adopt.',
+                description: 'We presented our project during the Digital Week Kiel, focusing on Solid as a data storage solution we would like to adopt.',
+                links: [{title: 'Presentation Digitale Woche Kiel', url: 'https://digitalewochekiel.de/'}],
                 date: 'May 2024'
             },
             {
                 title: 'Presentation to Working Group on Semantic Interoperability',
-                description: 'We were invited to present FörderFunke as a use case for Linked Open Data to the Working Group "[Semantic Interoperability](https://www.it-planungsrat.de/beschluss/beschluss-2024-05-al)" of the IT-Planungsrat.',
+                description: 'We were invited to present FörderFunke as a use case for Linked Open Data to the Working Group "Semantic Interoperability" of the IT-Planungsrat.',
+                links: [{title: 'IT-Planungsrat', url: 'https://www.it-planungsrat.de/'}],
                 date: 'April 2024'
             },
             {
                 title: 'Beginning of Prototype Fund period',
-                description: 'Late in 2023 [we were selected](https://prototypefund.de/project/foerderfunke/) to participate in the 15th round of the Prototype Fund. The funding period began in March 2024 and lasted for 6 months. The funding and additional support schemes provided us with an invaluable opportunity to get the application from an idea to a working prototype.',
+                description: 'Late in 2023 we were selected to participate in the 15th round of the Prototype Fund. The funding period began in March 2024 and lasted for 6 months. The funding and additional support schemes provided us with an invaluable opportunity to get the application from an idea to a working prototype.',
+                links: [{title: 'Prototype Fund', url: 'https://prototypefund.de/project/foerderfunke/'}],
                 date: 'March 2024',
             },
             {
                 title: 'Video for Creative Bureaucracy Festival',
-                description: 'For the Digital Kick-Off Day of the Creative Bureaucracy Festival we produced a [7 min video](https://youtu.be/fDWfGEXvqjk).',
+                description: 'For the Digital Kick-Off Day of the Creative Bureaucracy Festival we produced a 7 min video.',
+                links: [{title: 'Video submission', url: 'https://youtu.be/fDWfGEXvqjk'}],
                 date: 'March 2024',
             },
             {
                 title: 'Best Poster Award',
-                description: 'Benjamin received the [Best Poster Award](https://www.linkedin.com/posts/bdegenhart_linkeddata-semanticweb-solid-activity-7168706749070262275-S5Qu/) in the "Linked Data & Solid" online course at the University of Ghent.',
+                description: 'Benjamin received the Best Poster Award in the "Linked Data & Solid" online course at the University of Ghent.',
+                links: [{title: 'Poster Award', url: 'https://www.linkedin.com/posts/bdegenhart_linkeddata-semanticweb-solid-activity-7168706749070262275-S5Qu/'}],
                 date: 'January 2024',
             },
             {
                 title: 'Article in Tagesspiegel Background',
-                description: 'In July 2023, Helen Bielawa wrote an article about the concept in the Tagesspiegel Background, titled "[Proaktive Verwaltung als Selfmade-Lösung](https://background.tagesspiegel.de/smart-city-und-stadtentwicklung/briefing/proaktive-verwaltung-als-selfmade-loesung)".',
+                description: 'In July 2023, Helen Bielawa wrote an article about the concept in the Tagesspiegel Background, titled "Proaktive Verwaltung als Selfmade-Lösung".',
+                links: [{title: 'Article', url: 'https://background.tagesspiegel.de/smart-city-und-stadtentwicklung/briefing/proaktive-verwaltung-als-selfmade-loesung'}],
                 date: 'July 2023',
             },
         ]
