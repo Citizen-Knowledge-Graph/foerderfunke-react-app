@@ -123,14 +123,17 @@ const InfoScreenNewOrExistingUser = () => {
                                     <Button variant="text"
                                             sx={{
                                                 fontSize: '16px',
-                                                color: 'white',
+                                                color: 'black',
                                                 fontWeight: 'bold',
                                                 textTransform: 'none',
                                                 padding: '12px',
                                                 borderRadius: '12px',
-                                                backgroundColor: globalStyles.colorPineGreen,
+                                                backgroundColor: 'white',
+                                                borderStyle: 'solid',
+                                                borderWidth: '1px',
+                                                borderColor: globalStyles.primaryColor,
                                                 '&:hover': {
-                                                    color: 'black',  // Change text color to black on hover
+                                                    backgroundColor: globalStyles.primaryColor,
                                                 },
                                             }}
                                             onClick={continueWithExisting}
@@ -144,7 +147,7 @@ const InfoScreenNewOrExistingUser = () => {
                                                     {t("app.welcomeBack.yesBtnText")}
                                                 </Typography>
                                             </VStack>
-                                            <ArrowForwardIcon sx={{color: 'white', fontSize: 30, flex: 1}}/>
+                                            <ArrowForwardIcon sx={{color: 'black', fontSize: 30, flex: 1}}/>
                                         </HStack>
                                     </Button>
                                 </HStack>
@@ -152,14 +155,17 @@ const InfoScreenNewOrExistingUser = () => {
                                     <Button variant="text"
                                             sx={{
                                                 fontSize: '16px',
-                                                color: 'white',
+                                                color: 'black',
                                                 fontWeight: 'bold',
                                                 textTransform: 'none',
-                                                padding: '16px',
+                                                padding: '12px',
                                                 borderRadius: '12px',
-                                                backgroundColor: globalStyles.colorSteelBlue,
+                                                backgroundColor: 'white',
+                                                borderStyle: 'solid',
+                                                borderWidth: '1px',
+                                                borderColor: globalStyles.primaryColor,
                                                 '&:hover': {
-                                                    color: 'black',  // Change text color to black on hover
+                                                    backgroundColor: globalStyles.primaryColor,
                                                 },
                                             }}
                                             onClick={startOver}
@@ -173,7 +179,7 @@ const InfoScreenNewOrExistingUser = () => {
                                                     {t("app.welcomeBack.noBtnText")}
                                                 </Typography>
                                             </VStack>
-                                            <ReplayIcon sx={{color: 'white', fontSize: 30, flex: 1}}/>
+                                            <ReplayIcon sx={{color: 'black', fontSize: 30, flex: 1}}/>
                                         </HStack>
                                     </Button>
                                 </HStack>
