@@ -38,7 +38,7 @@ const styles = {
         paddingTop: '0px',
     },
     title: {
-        flex: 4,
+        flex: 3,
         fontSize: '20px',
         fontWeight: 'bold'
     },
@@ -50,7 +50,8 @@ const styles = {
         textAlign: 'right'
     },
     description: {
-        lineHeight: '1.5'
+        lineHeight: '1.5',
+        margin: '0px',
     }
 }
 
