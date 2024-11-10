@@ -58,7 +58,7 @@ const translations = {
             principles: {
                 header: "Our principles",
                 part1Header: "Privacy By Design",
-                part1Text: "It is important to us that you maintain control over your data. That's why your data remains on your end device.",
+                part1Text: "It is important to us that you maintain control over your data. That's why your data remains on your device.",
                 part2Header: "Open Data",
                 part2Text: "Important information for citizens about their benefits is all too often difficult to find. We make our catalogue of conditions for social benefits publicly available.",
                 part3Header: "User Centric Design",
@@ -375,7 +375,7 @@ const translations = {
             },
             gitCommits: {
                 title: "Github Commits",
-                description: "Unsere Entwicklungsarbeit ist vollständig Open Source und wird auf GitHub erfasst. Du kannst unsere letzten fünf Commits hier einsehen oder mehr auf unserer GitHub-Organisationsseite entdecken.",
+                description: "Unsere Entwicklungsarbeit ist Open Source und wird auf GitHub erfasst. Du kannst unsere letzten fünf Commits hier einsehen oder mehr auf unserer GitHub-Organisationsseite entdecken.",
                 listTitle: "Die letzten 5 Commits",
                 today: "Heute",
                 yesterday: "Gestern",

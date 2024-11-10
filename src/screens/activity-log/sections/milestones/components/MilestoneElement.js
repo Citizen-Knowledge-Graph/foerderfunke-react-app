@@ -21,7 +21,7 @@ const MilestoneElement = ({ milestone, showBorderBottom }) => {
                 <ReactMarkdown
                     components={{
                         p: ({ node, ...props }) => (
-                            <p {...props} style={{ margin: 0 }} />
+                            <p {...props} style={styles.description} />
                         ),
                     }}
                 >
@@ -48,6 +48,9 @@ const styles = {
         fontWeight: '300',
         color: globalStyles.colorDarkGrey,
         textAlign: 'right'
+    },
+    description: {
+        lineHeight: '1.5'
     }
 }
 
