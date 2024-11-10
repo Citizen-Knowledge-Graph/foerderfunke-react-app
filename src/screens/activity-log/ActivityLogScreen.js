@@ -11,8 +11,8 @@ const ActivityLogScreen = () => {
     return (
         <Layout>
             <VStack gap={3}>
-            <ActivityLogMilestones isDesktop={isDesktop}/>
-            <ActivityLogCommits isDesktop={isDesktop}/>
+                <ActivityLogMilestones isDesktop={isDesktop}/>
+                <ActivityLogCommits isDesktop={isDesktop}/>
             </VStack>
         </Layout>
     );

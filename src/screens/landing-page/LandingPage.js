@@ -56,7 +56,7 @@ const LandingPage = () => {
                 <VStack id="funding">
                     <LandingPageFunding isDesktop={isDesktop}/>
                 </VStack>
-                <VStack id="find-your-benefits">
+                <VStack id="footer">
                     <LandingPageFooter isDesktop={isDesktop}/>
                 </VStack>
             </VStack>
