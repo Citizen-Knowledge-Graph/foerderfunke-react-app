@@ -11,10 +11,8 @@ const ClickCard = ({
                        link,
                        title,
                        subtitle,
-                       backgroundImage,
-                       backgroundColor,
                        time = null,
-                       cardHeight = '175px',
+                       cardHeight = '150px',
                        icon = AccessTimeIcon,
                        iconColor = "green"
                    }) => {
@@ -24,25 +22,14 @@ const ClickCard = ({
                 sx={{
                     ...styles.card,
                     minHeight: cardHeight,
-                    backgroundColor: backgroundColor,
-                    backgroundImage: `url(${backgroundImage})`,
-                    backgroundSize: 'cover',
+                    backgroundColor: 'white',
                     backgroundPosition: 'center',
                     position: 'relative',
-                    overflow: 'hidden',
-                    '&::before': {
-                        content: '""',
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                        zIndex: 1,
-                    },
-                    '& > *': {
-                        position: 'relative',
-                        zIndex: 2,
+                    borderStyle: 'solid',
+                    borderWidth: '1px',
+                    borderColor: globalStyles.primaryColor,
+                    ':hover': {
+                        backgroundColor: globalStyles.primaryColor
                     }
                 }}>
             <Link to={link} style={{textDecoration: 'none', color: "black", width: '100%'}}>
@@ -81,13 +68,13 @@ const styles = {
         padding: "16px",
     },
     cardContentTitle: {
-        fontSize: '36px',
+        fontSize: '28px',
         fontWeight: 'bold',
-        color: 'white',
+        color: 'black',
     },
     cardContentSubTitle: {
         fontSize: '16px',
         fontWeight: '400',
-        color: 'white',
+        color: 'black',
     }
 };

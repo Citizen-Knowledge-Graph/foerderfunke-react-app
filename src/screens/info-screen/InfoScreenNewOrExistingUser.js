@@ -140,7 +140,7 @@ const InfoScreenNewOrExistingUser = () => {
                                     >
                                         <HStack alignItems={'center'}>
                                             <VStack gap={1} alignItems={'flex-start'} sx={{width: '70%'}}>
-                                                <Typography sx={{fontWeight: 'bold'}}>
+                                                <Typography sx={{fontWeight: 'bold', fontSize: '24px'}}>
                                                     {t("app.welcomeBack.yesBtnTitle")}
                                                 </Typography>
                                                 <Typography sx={{textAlign: 'left'}}>
@@ -172,7 +172,7 @@ const InfoScreenNewOrExistingUser = () => {
                                     >
                                         <HStack alignItems={'center'}>
                                             <VStack gap={1} alignItems={'flex-start'} sx={{width: '70%'}}>
-                                                <Typography sx={{fontWeight: 'bold'}}>
+                                                <Typography sx={{fontWeight: 'bold', fontSize: '24px'}}>
                                                     {t("app.welcomeBack.noBtnTitle")}
                                                 </Typography>
                                                 <Typography sx={{textAlign: 'left'}}>
@@ -196,7 +196,11 @@ const InfoScreenNewOrExistingUser = () => {
                                             borderRadius: '12px',
                                             borderWidth: '1px',
                                             borderStyle: 'solid',
-                                            borderColor: globalStyles.colorDarkGrey
+                                            borderColor: globalStyles.colorDarkGrey,
+                                            backgroundColor: 'white',
+                                            '&:hover': {
+                                                backgroundColor: globalStyles.primaryColor,
+                                            },
                                         }}
                                         startIcon={<FileDownloadIcon sx={{color: globalStyles.colorDarkGrey}}/>}
                                         onClick={exportProfile}
@@ -210,7 +214,11 @@ const InfoScreenNewOrExistingUser = () => {
                                             borderRadius: '12px',
                                             borderWidth: '1px',
                                             borderStyle: 'solid',
-                                            borderColor: globalStyles.colorDarkGrey
+                                            borderColor: globalStyles.colorDarkGrey,
+                                            backgroundColor: 'white',
+                                            '&:hover': {
+                                                backgroundColor: globalStyles.primaryColor,
+                                            },
                                         }}
                                         startIcon={<DeleteIcon sx={{color: globalStyles.colorDarkGrey}}/>}
                                         onClick={deleteProfile}

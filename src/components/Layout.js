@@ -10,7 +10,7 @@ const Layout = ({children, isApp = false, logo = true, back = null}) => {
         <VStack gap={0}>
             <HeaderBar isDesktop={isDesktop} isApp={isApp} logo={logo} back={back}/>
             <VStack data-testid={'layout-container'}>
-                <VStack sx={styles.contentContainerStyle} data-testid="main-parent container">
+                <VStack sx={styles.contentContainerStyle} data-testid="main-parent container" alignItems={'center'}>
                     {children}
                 </VStack>
             </VStack>

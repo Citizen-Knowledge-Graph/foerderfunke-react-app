@@ -299,7 +299,8 @@ const translations = {
             },
             discoverChoice: {
                 header: "Deine Wahl",
-                text: "Zwei Möglichkeiten, um Leistungen für dich zu entdecken",
+                text: "Du hast zwei Möglichkeiten, um Leistungen für dich zu entdecken. Du kannst ein paar Fragen beantworten " +
+                    "und so einen Schnellcheck machen oder dir den gesamten Katalog ansehen.",
                 quickCheck: "Schneller Anspruchscheck",
                 quickCheckComment: "Basierend auf bis zu 10 Leistungen",
                 browseAll: "Alle Leistungen durchsuchen",

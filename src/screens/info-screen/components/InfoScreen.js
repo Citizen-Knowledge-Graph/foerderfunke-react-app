@@ -8,6 +8,7 @@ import VStack from "../../../components/VStack";
 import HStack from "../../../components/HStack";
 import {useStore} from "../../../components/ViewportUpdater";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import globalStyles from "../../../styles/styles";
 
 const InfoScreen = ({title, children, imageUrl, backLink, forwardLink, hideNextButton = false}) => {
     const isDesktop = useStore((state) => state.isDesktop);
@@ -25,7 +26,7 @@ const InfoScreen = ({title, children, imageUrl, backLink, forwardLink, hideNextB
     return (
         <Layout isApp={true}>
             <AppScreenWrapper isDesktop={isDesktop} back={true}>
-                <VStack alignItems={'center'} gap={5} sx={{width: "100%"}}>
+                <VStack alignItems={'center'} gap={3} sx={{width: "100%"}}>
                     <HStack sx={styles.titleWrapper}>
                         <Typography sx={{...styles.title, fontSize: titleFontSize}}>{title}</Typography>
                     </HStack>
@@ -35,7 +36,8 @@ const InfoScreen = ({title, children, imageUrl, backLink, forwardLink, hideNextB
                     </VStack>
                     <HStack justifyContent={stackType} sx={{width: '100%'}}>
                         {backLink !== undefined &&
-                            <Button variant="text" sx={styles.button} startIcon={<ChevronLeftIcon/>} component={Link}
+                            <Button variant="text" sx={styles.button} startIcon={<ChevronLeftIcon/>}
+                                    component={Link}
                                     to={backLink}>Previous</Button>}
                         {!hideNextButton &&
                             <Button variant="text" sx={styles.button} endIcon={<ChevronRightIcon/>} component={Link}
@@ -50,7 +52,6 @@ const InfoScreen = ({title, children, imageUrl, backLink, forwardLink, hideNextB
 const styles = {
     titleWrapper: {
         boxSizing: 'border-box',
-        padding: '16px',
         borderRadius: '12px',
     },
     title: {
@@ -59,7 +60,6 @@ const styles = {
     },
     infoWrapper: {
         width: '100%',
-        padding: '16px',
         borderRadius: '12px'
     },
     button: {
