@@ -52,11 +52,7 @@ const translations = {
                 writePrompt: "If you like you can write us a few lines here.",
                 placeholder: "Enter your text",
                 submitting: "Submitting...",
-                submitBtn: "Submit"
-            },
-            collaborate: {
-                header: "Let's collaborate",
-                text: "Do you know about some benefits or funding schemes that we are still missing? We would be really happy to collaborate and include them in the catalogue. We are also very interested to learn about user groups that could benefit from FörderFunke.",
+                submitBtn: "Submit",
                 messagePrompt: "Or send us an email. We will get back to you as quickly as we can!"
             },
             principles: {
@@ -211,7 +207,7 @@ const translations = {
     de: {
         home: {
             global: {
-                actionButton: "Leistungen entdecken"
+                actionButton: "Anspruch prüfen"
             },
             menu: {
                 howWorks: "So geht's",
@@ -219,10 +215,10 @@ const translations = {
                 aboutUs: "Über uns",
                 improve: "Feedback",
                 collaborate: "Zusammenarbeit",
-                activityLog: "Aktivitätsprotokoll"
+                activityLog: "Aktivitäten"
             },
             hero: {
-                header: "Entdecke Leistungen für dich",
+                header: "Entdecke Leistungen und Angebote für dich",
                 childAllowance: "Kinderzuschlag",
                 housingBenefit: "Wohngeld",
                 citizensBenefit: "Bürgergeld",
@@ -230,17 +226,17 @@ const translations = {
                 manyMore: "Viele Weitere",
             },
             mission: {
-                header: "1 von 5 Haushalten in Deutschland beanspruchen nicht die Sozialleistungen, auf die sie Anspruch haben.",
+                header: "1 von 5 Haushalten in Deutschland verpasst zustehende Sozialleistungen",
                 text: "Mit Förderfunke möchten wir erreichen, dass Sozialleistungen in Deutschland für alle zugänglich und leicht verständlich sind. Wir zeigen dir, auf welche Sozialleistungen du Anspruch haben könntest und wie du sie beantragen kannst."
             },
             howItWorks: {
                 header: "So geht's",
-                part1Header: "Beantworte ein paar Fragen zu deiner Lebenssituation",
-                part1Text: "Damit erstellst du ein Profil, das mit den Anforderungsbedingungen der unterschiedlichen Leistungen verglichen wird.",
-                part2Header: "Erhalte eine Liste deiner potenziellen Leistungen",
-                part2Text: "Je vollständiger dein Profil ist, desto mehr Leistungen können auf Anspruch überprüft werden.",
-                part3Header: "Finde Informationen zu Leistungen und Antragsverfahren",
-                part3Text: "In der Detailansicht kannst du dich genauer über eine Leistung informieren. Du erfährst, zum Bespiel, warum du möglichweise Anspruch hast oder nicht."
+                part1Header: "Beantworte ein paar Fragen",
+                part1Text: "Dein Profil wird mit den Voraussetzungen für unterschiedliche Leistungen verglichen.",
+                part2Header: "Entdecke potenzielle Angebote",
+                part2Text: "In der Übersicht erfährst, auf welche Leistungen du Anspruch haben könntest.",
+                part3Header: "Informiere dich zu Leistungen",
+                part3Text: "In der Detailansicht kannst du dich genauer über eine Leistung informieren."
             },
             theBasics: {
                 line1: "FörderFunke ist kostenlos nutzbar",
@@ -250,31 +246,21 @@ const translations = {
             },
             feedback: {
                 header: "Feedback",
-                text: "Dein Feedback ist entscheidend für uns, um zu verstehen, wie wir deine Erfahrung mit der Anwendung verbessern können. Es hilft uns, Funktionen hinzuzufügen und zu optimieren, damit Menschen die richtigen Leistungen finden können.",
-                ratePrompt: "Wie bewertest du deine allgemeine Erfahrung mit FörderFunke?",
-                1: "Schlecht",
-                2: "Mangelhaft",
-                3: "In Ordnung",
-                4: "Gut",
-                5: "Großartig",
-                writePrompt: "Wenn du möchtest, kannst du uns auch ein paar Zeilen schreiben.",
+                text: "Wir freuen uns über dein Feedback! Mit deiner Hilfe können wir FörderFunke noch besser machen, damit jeder die passenden Leistungen schnell und einfach finden kann.",
+                writePrompt: "Wenn du möchtest, kannst du uns hier ein paar Zeilen schreiben.",
                 placeholder: "Gib deinen Text ein",
                 submitting: "Wird gesendet...",
-                submitBtn: "Absenden"
-            },
-            collaborate: {
-                header: "Zusammenarbeit",
-                text: "Kennst du Sozialleistungen oder Förderprogramme, die wir noch nicht erfasst haben? Wir würden uns sehr freuen, mit dir zusammenzuarbeiten und sie in unseren Katalog aufzunehmen. Wir sind auch sehr daran interessiert, mehr über Nutzergruppen zu erfahren, die von FörderFunke profitieren könnten.",
-                messagePrompt: "Schick uns eine Nachricht. Wir melden uns so schnell wie möglich zurück!"
+                submitBtn: "Absenden",
+                messagePrompt: "Oder schick uns eine Nachricht. Wir melden uns so schnell wie möglich zurück!"
             },
             principles: {
                 header: "Unsere Prinzipien",
-                part1Header: "Datenschutz durch Design",
-                part1Text: "Es ist uns wichtig, dass du die Kontrolle über deine Daten behältst. Deshalb bleiben deine Daten auf deinem Endgerät.",
+                part1Header: "Privay by Design",
+                part1Text: "Uns ist wichtig, dass du die Kontrolle über deine Daten behältst. Deshalb bleiben deine Daten ausschließlich auf deinem Endgerät. Sie sind zu keinem Zeitpunkt für uns oder andere einsehbar.",
                 part2Header: "Offene Daten",
-                part2Text: "Wichtige Informationen für Bürger über ihre Leistungen sind allzu oft schwer zu finden. Wir machen unseren Katalog der Bedingungen für Sozialleistungen öffentlich zugänglich.",
+                part2Text: "Wichtige Informationen zu Leistungen sind oft schwer zu finden. Wir machen unseren Katalog der Bedingungen für Sozialleistungen öffentlich zugänglich. Dabei setzen wir auf etablierte Standards und Formate.",
                 part3Header: "Nutzerzentriertes Design",
-                part3Text: "Wir arbeiten nutzerzentriert und iterativ. Wir sprechen mit Nutzern und verbessern unser Produkt ständig, damit es einfach zu bedienen, verständlich und zugänglich ist."
+                part3Text: "Wir arbeiten nutzerzentriert und iterativ. Deswegen sprechen wir regelmäßig mit Nutzer*innen und versuchen ständig, das Produkt zu verbessern."
             },
             connect: {
                 header: "Das Team",

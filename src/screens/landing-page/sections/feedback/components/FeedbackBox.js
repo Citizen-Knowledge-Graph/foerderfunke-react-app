@@ -61,7 +61,7 @@ const FeedbackBox = () => {
             <VStack gap={3} alignItems={'center'} sx={{width: "100%"}}>
                 <HStack sx={{flex: 2}}>
                     <Typography sx={styles.text}>
-                        {t('home.collaborate.messagePrompt')}
+                        {t('home.feedback.messagePrompt')}
                     </Typography>
                 </HStack>
                 <HStack justifyContent={'center'} sx={{flex: 2}}>

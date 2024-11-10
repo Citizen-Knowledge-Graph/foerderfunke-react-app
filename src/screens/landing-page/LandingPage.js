@@ -24,10 +24,11 @@ const LandingPage = () => {
                     background: `linear-gradient(
                         to bottom,
                             ${globalStyles.primaryColor}33 0%,
-                            ${globalStyles.primaryColor}66 25%,
-                            ${globalStyles.primaryColor}33 50%,
-                            ${globalStyles.primaryColor}66 75%,
-                            ${globalStyles.primaryColor}33 100%)`,
+                            ${globalStyles.primaryColor}80 20%,
+                            ${globalStyles.primaryColor}33 40%,
+                            ${globalStyles.primaryColor}80 60%,
+                            ${globalStyles.primaryColor}33 80%,
+                            ${globalStyles.primaryColor}80 100%)`,
                 }}
             >
                 <VStack>

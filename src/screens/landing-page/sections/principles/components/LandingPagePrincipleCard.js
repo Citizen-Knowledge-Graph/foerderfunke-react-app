@@ -5,7 +5,6 @@ import React from "react";
 import globalStyles from "../../../../../styles/styles";
 
 const LandingPagePrincipleCard = ({isDesktop, icon, gif, title, text, gifFirst=true}) => {
-    const padding = isDesktop ? '24px' : '0px';
     const gifUrl = `${process.env.PUBLIC_URL}/assets/images/landing-page/${gif}.gif`; // Construct your GIF URL
 
     const DynamicStacker = ({children}) => {
@@ -45,7 +44,7 @@ const LandingPagePrincipleCard = ({isDesktop, icon, gif, title, text, gifFirst=t
 
     const TextComponent = () => {
         return (
-            <VStack gap={1} sx={{padding: padding}}>
+            <VStack gap={1}>
                 <HStack>
                     <Typography sx={styles.itemHeaderText}>
                         {title}
