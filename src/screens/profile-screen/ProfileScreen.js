@@ -18,7 +18,7 @@ const ProfileScreen = () => {
             <AppScreenWrapper isDesktop={isDesktop} back={true}>
                 <VStack gap={0} alignItems={'flex-start'} sx={{
                     width: '100%',
-                    backgroundColor: globalStyles.primaryColorTransparent,
+                    backgroundColor: globalStyles.primaryColor,
                     padding: '16px',
                     borderRadius: '12px'
                 }}>
