@@ -8,9 +8,11 @@ import globalStyles from "../../styles/styles";
 import useTopicSelectionHandlers from "./hooks/useTopicSelectionHandlers";
 import useTranslation from "../../language/useTranslation";
 import {LanguageContext} from "../../language/LanguageContext";
+import {useStore} from "../../components/ViewportUpdater";
 
 const OnboardingWelcomeTopics = () => {
     const { t } = useTranslation();
+    const isDesktop = useStore((state) => state.isDesktop);
     const { language } = useContext(LanguageContext);
     const [topicsData, setTopicsData] = useState([]);
     const [selectedTopicsBoolean, setSelectedTopicsBoolean] = useState([]);
@@ -43,22 +45,19 @@ const OnboardingWelcomeTopics = () => {
             </Typography>
             {
                 setSelectedTopicsBoolean.length > 0 && (
-                    <VStack alignItems={'center'}>
+                    <VStack alignItems={'center'} sx={isDesktop ? styles.gridContainer : styles.singleColumnContainer}>
                         {topicsData.map((topic, index) => (
                             <Button
                                 key={index}
                                 onClick={() => handleButtonClick(topic, index)}
                                 sx={{
                                     ...styles.topicItemButton,
-                                    backgroundColor: selectedTopicsBoolean[index] ? globalStyles.primaryColor : globalStyles.colorDarkGreyTransparent,
-                                    '&:hover': {
-                                        backgroundColor: selectedTopicsBoolean[index] ? globalStyles.primaryColor : globalStyles.colorDarkGreyTransparent,
-                                    },
+                                    backgroundColor: selectedTopicsBoolean[index] && globalStyles.primaryColor,
                                     '&:active': {
-                                        backgroundColor: selectedTopicsBoolean[index] ? globalStyles.primaryColor : globalStyles.colorDarkGreyTransparent,
+                                        backgroundColor: selectedTopicsBoolean[index] && globalStyles.primaryColor,
                                     },
                                     '&:focus': {
-                                        backgroundColor: selectedTopicsBoolean[index] ? globalStyles.primaryColor : globalStyles.colorDarkGreyTransparent,
+                                        backgroundColor: selectedTopicsBoolean[index] && globalStyles.primaryColor,
                                     },
                                 }}>
                                 <Typography sx={styles.topicText}>
@@ -80,16 +79,13 @@ const styles = {
     },
     topicItemButton: {
         width: '100%',
-        borderRadius: '12px',
-        padding: '8px',
+        borderRadius: '4px',
+        borderStyle: 'solid',
+        borderWidth: '1px',
+        borderColor: globalStyles.primaryColor,
+        padding: '16px',
         '&:hover': {
-            backgroundColor: 'inherit',
-        },
-        '&:active': {
-            backgroundColor: 'inherit',
-        },
-        '&:focus': {
-            backgroundColor: 'inherit',
+            backgroundColor: globalStyles.primaryColor,
         },
     },
     topicText: {
@@ -98,6 +94,14 @@ const styles = {
         textAlign: 'left',
         textTransform: 'none',
         color: 'black',
+    },
+    gridContainer: {
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
+        width: '100%',
+    },
+    singleColumnContainer: {
+        width: '100%',
     }
 };
 

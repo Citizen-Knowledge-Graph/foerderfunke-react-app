@@ -4,12 +4,12 @@ import AppScreenHeader from "./AppScreenHeader";
 import globalStyles from "../styles/styles";
 
 const AppScreenWrapper = ({isDesktop, children, back = false}) => {
-    const horizontalPadding = isDesktop ? '15px' : '16px';
-    const verticalPadding = isDesktop ? '15px' : '16px';
+    const horizontalPadding = isDesktop ? '20px' : '16px';
+    const verticalPadding = isDesktop ? '20px' : '16px';
     const desktopGradient = isDesktop ? `linear-gradient(
                         to bottom,
                             ${globalStyles.primaryColor}33 0%,
-                            ${globalStyles.primaryColor}80 100%)` : 'none';
+                            ${globalStyles.primaryColor}99 100%)` : 'none';
     return (
         <VStack alignItems={'center'} sx={{
             paddingLeft: horizontalPadding,
