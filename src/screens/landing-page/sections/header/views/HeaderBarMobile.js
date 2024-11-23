@@ -66,6 +66,14 @@ const HeaderBarMobile = ({isApp}) => {
                                 )
                                 : null
                         }
+                        {
+                            isApp ? null : (
+                                <>
+                                    <LandingPageHollowButton text={t('home.menu.aboutUs')} to={"/#about-us"}/>
+                                    <Divider sx={{width: '100%', backgroundColor: globalStyles.colorLightGreyTransparent}}/>
+                                </>
+                            )
+                        }
                         {isApp ? null :
                             featureFlags.newActivityLog ?
                                 (<>
@@ -75,14 +83,6 @@ const HeaderBarMobile = ({isApp}) => {
                                     </>
                                 )
                                 : null
-                        }
-                        {
-                            isApp ? null : (
-                                <>
-                                    <LandingPageHollowButton text={t('home.menu.aboutUs')} to={"/#about-us"}/>
-                                    <Divider sx={{width: '100%', backgroundColor: globalStyles.colorLightGreyTransparent}}/>
-                                </>
-                            )
                         }
                         {
                             featureFlags.newLanguageToggle && (

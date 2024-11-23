@@ -34,14 +34,14 @@ const HeaderBarDesktop = ({isApp}) => {
                             <LandingPageHollowButton text={t('home.menu.improve')} to={'/#feedback'}/>
                             : null
                     }
+                    {
+                        isApp ? null :
+                            <LandingPageHollowButton text={t('home.menu.aboutUs')} to={"/#about-us"}/>
+                    }
                     {isApp ? null :
                         featureFlags.newActivityLog ?
                             <LandingPageHollowButton text={t('home.menu.activityLog')} to={'/activity-log'}/>
                             : null
-                    }
-                    {
-                        isApp ? null :
-                            <LandingPageHollowButton text={t('home.menu.aboutUs')} to={"/#about-us"}/>
                     }
                     {
                         featureFlags.newLanguageToggle && (
