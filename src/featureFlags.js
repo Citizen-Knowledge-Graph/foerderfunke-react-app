@@ -1,7 +1,7 @@
 const defaultFlags = {
     newFeedbackSection: true,
     newCollaborationSection: true,
-    newLanguageToggle: false,
+    newLanguageToggle: true,
     newActivityLog: true,
 };
 
