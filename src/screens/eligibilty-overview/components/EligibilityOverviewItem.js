@@ -24,7 +24,7 @@ const EligibilityOverviewItem = ({item, eligible}) => {
             <Circle sx={{color: color}}/>
             <HStack justifyContent={'space-between'} sx={{width: '100%'}}>
                 <VStack gap={1} alignItems={'flex-start'}>
-                    <Typography sx={{...styles.itemTitle, fontWeight: fontWeight}}>
+                    <Typography onClick={toggleDescription} sx={{...styles.itemTitle, fontWeight: fontWeight}}>
                         {item.title}
                     </Typography>
                     {showDescription && (
