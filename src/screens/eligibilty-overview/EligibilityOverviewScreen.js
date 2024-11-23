@@ -23,7 +23,7 @@ const EligibilityOverviewScreen = () => {
     useEffect(() => {
         const rerunValidation = async () => {
             const validationReport = await runValidation("ff:quick-check-user", language);
-            setEligibilityData(buildEligibilityReports(validationReport, hydrationData));
+            setEligibilityData(buildEligibilityReports(validationReport, hydrationData, language));
         }
         if (hydrationData && !hasRerunValidation) {
             setHasRerunValidation(true);

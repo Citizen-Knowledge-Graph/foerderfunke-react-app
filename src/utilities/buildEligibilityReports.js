@@ -1,6 +1,6 @@
 import { ValidationResult } from '@foerderfunke/matching-engine';
 
-export const buildEligibilityReports = (validationReport, hydrationData) => {
+export const buildEligibilityReports = (validationReport, hydrationData, language) => {
     if (!validationReport || !('reports' in validationReport)) {
         return {
             eligible: [],
@@ -16,13 +16,11 @@ export const buildEligibilityReports = (validationReport, hydrationData) => {
         missingData: []
     };
 
-    const lang = 'en'; // TODO pass as param
-
     for (let report of reports) {
         let { rpUri, result } = report;
         const id = hydrationData[rpUri]?.id || 'Unknown Id';
-        const title = hydrationData[rpUri]?.title?.[lang] || 'Unknown Title';
-        const description = hydrationData[rpUri]?.description?.[lang] || 'Unknown Description';
+        const title = hydrationData[rpUri]?.title?.[language] || 'Unknown Title';
+        const description = hydrationData[rpUri]?.description?.[language] || 'Unknown Description';
         const data = { uri: rpUri, id, title, description };
         if (result === ValidationResult.ELIGIBLE) {
             eligibilityData.eligible.push(data);
