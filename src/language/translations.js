@@ -329,7 +329,7 @@ const translations = {
             },
             qsComplete: {
                 header: "Dein schneller Anspruchscheck ist abgeschlossen",
-                hint: "Du kannst deine Profildaten derzeit nicht bearbeiten. Wenn du Änderungen vornehmen musst, kannst du den Entdeckungsprozess neu starten.",
+                hint: "Du kannst deine Profildaten derzeit nicht bearbeiten. Wenn du Änderungen vornehmen möchtest, kannst du den Entdeckungsprozess neu starten.",
                 discoverBtn: "Entdecke deine Leistungen",
             },
             browseAll: {
@@ -364,7 +364,7 @@ const translations = {
                     no: "nein",
                     unknown: "unbekannt"
                 },
-                moreInfo: "Weitere Informationen hier verfügbar"
+                moreInfo: "Weitere Informationen sind hier verfügbar"
             }
         },
         activityLog: {

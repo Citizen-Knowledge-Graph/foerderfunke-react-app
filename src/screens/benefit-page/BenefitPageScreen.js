@@ -73,7 +73,7 @@ const BenefitPageScreen = () => {
                         <BenefitPageHeader benefit={benefitPageData}/>
                         <VStack sx={{width: '100%'}}>
                             <Typography sx={styles.topicsTitle}>
-                                {t('app.benefitPage.inTopics')}
+                                {t('app.benefitPage.inTopics')}:
                             </Typography>
                             <HStack sx={{flexWrap: 'wrap'}}>
                                 {
