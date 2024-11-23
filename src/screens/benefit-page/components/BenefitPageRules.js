@@ -55,7 +55,7 @@ const BenefitPageRules = ({benefitId}) => {
                         {
                             rules &&
                             rules.map((rule, index) => (
-                                <VStack gap={1}>
+                                <VStack gap={1} key={index}>
                                     <BenefitPageRuleEntry ruleData={rule} />
                                     {index < rules.length - 1 && <Divider />}
                                 </VStack>
