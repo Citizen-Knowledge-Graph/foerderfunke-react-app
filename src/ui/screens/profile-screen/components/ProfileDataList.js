@@ -10,7 +10,7 @@ import Divider from "@mui/material/Divider";
 import useTranslation from "../../../language/useTranslation";
 
 const ProfileDataList = () => {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
     const userProfileData = useUserProfileData();
 
     return (
@@ -27,9 +27,10 @@ const ProfileDataList = () => {
                         {
                             userProfileData.map(({label, value}, index) => (
                                 <>
-                                    <VStack gap={0} key={index}
-                                            sx={styles.dataBox}
-                                            justifyContent={'center'}
+                                    <VStack
+                                        gap={0}
+                                        sx={styles.dataBox}
+                                        justifyContent={'center'}
                                     >
                                         <Typography sx={styles.labelText}>
                                             {label}

@@ -5,13 +5,13 @@ import VStack from "../../../shared-components/VStack";
 import HStack from "../../../shared-components/HStack";
 import ButtonCard from "../../../shared-components/ButtonCard";
 import globalStyles from "../../../styles/styles";
-import { UserManager } from "../../../../core/managers/userManager";
+import userManager from "../../../../core/managers/userManager";
 import ProfileDataList from "../../profile-screen/components/ProfileDataList";
 import useTranslation from "../../../language/useTranslation";
 
 const ProfileSectionCompleted = () => {
     const { t } = useTranslation();
-    const userProfile = UserModel.retrieveUserData("ff:quick-check-user");
+    const userProfile = userManager.retrieveUserData("ff:quick-check-user");
 
     return (
         <VStack>

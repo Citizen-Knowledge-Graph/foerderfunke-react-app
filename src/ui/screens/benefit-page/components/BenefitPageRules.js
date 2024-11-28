@@ -4,7 +4,7 @@ import {transformRulesFromRequirementProfile} from "@foerderfunke/matching-engin
 import readJson from "../../../../core/utilities/readJson";
 import {fetchTurtleResource} from "../../../../core/services/githubService";
 import {useMetadataStore, useUserStore, useValidationReportStore} from "../../../storage/zustand";
-import {UserManager} from "../../../../core/managers/userManager";
+import userManager from "../../../../core/managers/userManager";
 import {buildRulesOutput} from "../../../../core/utilities/ruleParsing";
 import VStack from "../../../shared-components/VStack";
 import BenefitPageRuleEntry from "./BenefitPageRuleEntry";
@@ -20,7 +20,7 @@ const BenefitPageRules = ({benefitId}) => {
     const metadata = useMetadataStore((state) => state.metadata);
     const validationReport = useValidationReportStore((state) => state.validationReport);
     const activeUser = useUserStore((state) => state.activeUserId);
-    const userProfile = UserModel.retrieveUserData(activeUser);
+    const userProfile = userManager.retrieveUserData(activeUser);
 
     useEffect(() => {
         if (loaded) return;
