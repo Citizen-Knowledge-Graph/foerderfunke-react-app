@@ -77,12 +77,10 @@ const userManager = {
     },
 
     retrieveUserData(entityId) {
-        let userProfile = localStorageService.getItem(entityId);
+        const userProfile = localStorageService.getItem(entityId);
         if (!userProfile) {
-            userProfile = { "@id": entityId, "@type": "ff:Citizen" };
-            localStorageService.setItem(entityId, userProfile);
+            throw new Error(`No user found with ID: ${entityId}`);
         }
-
         return userProfile;
     }
 };

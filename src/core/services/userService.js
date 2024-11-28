@@ -1,14 +1,14 @@
 const userService  = {
-    updateOrAddField(data, value, datafield, entityData) {
+    updateOrAddField(data, value, dataField, entityData) {
         if (data['@id'] === entityData.id && data['@type'] === entityData.type) {
-            data[datafield] = value;
+            data[dataField] = value;
             return true;
         }
 
         if (data['@id'] === entityData.parentId && data['@type'] === entityData.parentType) {
             if (Array.isArray(data[entityData.parentDatafield])) {
                 for (let item of data[entityData.parentDatafield]) {
-                    if (userService.updateOrAddField(item, value, datafield, entityData)) {
+                    if (userService.updateOrAddField(item, value, dataField, entityData)) {
                         return true;
                     }
                 }
@@ -18,7 +18,7 @@ const userService  = {
             const newChild = {
                 '@id': entityData.id,
                 '@type': entityData.type,
-                [datafield]: value,
+                [dataField]: value,
             };
             data[entityData.parentDatafield].push(newChild);
             return true;
@@ -27,7 +27,7 @@ const userService  = {
         for (const key in data) {
             if (Array.isArray(data[key])) {
                 for (let item of data[key]) {
-                    if (userService.updateOrAddField(item, value, datafield, entityData)) {
+                    if (userService.updateOrAddField(item, value, dataField, entityData)) {
                         return true;
                     }
                 }
@@ -70,17 +70,17 @@ const userService  = {
         return false;
     },
 
-    retrieveField(data, datafield, entityData) {
+    retrieveField(data, dataField, entityData) {
         if (data['@id'] === entityData.id && data['@type'] === entityData.type) {
-            if (data.hasOwnProperty(datafield)) {
-                return data[datafield];
+            if (data.hasOwnProperty(dataField)) {
+                return data[dataField];
             }
         }
 
         for (const key in data) {
             if (Array.isArray(data[key])) {
                 for (let item of data[key]) {
-                    const result = userService.retrieveField(item, datafield, entityData);
+                    const result = userService.retrieveField(item, dataField, entityData);
                     if (result !== null && result !== undefined) {
                         return result;
                     }
@@ -91,3 +91,5 @@ const userService  = {
         return null;
     },
 }
+
+export default userService;
