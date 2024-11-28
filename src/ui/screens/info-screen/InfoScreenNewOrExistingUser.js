@@ -8,8 +8,8 @@ import {
     useValidationReportStore
 } from "../../storage/zustand";
 import {useProfileSectionStore} from "../../storage/useProfileSectionStore";
-import {UserManager} from "../../../core/managers/userManager";
-import {runValidation} from "../../../core/services/validationService";
+import userManager from "../../../core/managers/userManager";
+import validationManager from "../../../core/managers/validationManager";
 import {convertUserProfileToTurtle} from "@foerderfunke/matching-engine/src/utils";
 import dayjs from "dayjs";
 import VStack from "../../shared-components/VStack";
@@ -48,9 +48,9 @@ const InfoScreenNewOrExistingUser = () => {
     }, [updateUserId, defaultUserId, initializeSectionStore]);
 
     const initNewUser = useCallback(() => {
-        UserModel.initialiseNewUser(defaultUserId);
+        userManager.initialiseNewUser(defaultUserId);
         initStores();
-        runValidation(defaultUserId, language);
+        validationManager.runValidation(defaultUserId, language);
         navigate('/info-privacy');
     }, [defaultUserId, navigate, initStores, language]);
 
@@ -64,7 +64,7 @@ const InfoScreenNewOrExistingUser = () => {
     }, [navigate, userExists, initNewUser]);
 
     const exportProfile = async () => {
-        const userProfile = UserModel.retrieveUserData(defaultUserId);
+        const userProfile = userManager.retrieveUserData(defaultUserId);
         const userProfileTurtleString = await convertUserProfileToTurtle(userProfile);
         const blob = new Blob([userProfileTurtleString], {type: 'text/turtle'});
         const link = document.createElement('a');
@@ -77,7 +77,7 @@ const InfoScreenNewOrExistingUser = () => {
 
     const continueWithExisting = () => {
         initStores();
-        runValidation(defaultUserId, language);
+        validationManager.runValidation(defaultUserId, language);
         navigate('/onboarding-choice');
     }
 

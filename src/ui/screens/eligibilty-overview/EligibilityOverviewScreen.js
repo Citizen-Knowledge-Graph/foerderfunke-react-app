@@ -6,7 +6,7 @@ import {useFetchHydrationData} from "./hooks/useFetchHydrationData";
 import AppScreenWrapper from "../../shared-components/AppScreenWrapper";
 import {useStore} from "../../shared-components/ViewportUpdater";
 import Divider from "@mui/material/Divider";
-import {runValidation} from "../../../core/services/validationService";
+import validationManager from "../../../core/managers/validationManager";
 import {buildEligibilityReports} from "../../../core/utilities/buildEligibilityReports";
 import {CircularProgress} from "@mui/material";
 import VStack from "../../shared-components/VStack";
@@ -22,7 +22,7 @@ const EligibilityOverviewScreen = () => {
 
     useEffect(() => {
         const rerunValidation = async () => {
-            const validationReport = await runValidation("ff:quick-check-user", language);
+            const validationReport = await validationManager.runValidation("ff:quick-check-user", language);
             setEligibilityData(buildEligibilityReports(validationReport, hydrationData, language));
         }
         if (hydrationData && !hasRerunValidation) {
