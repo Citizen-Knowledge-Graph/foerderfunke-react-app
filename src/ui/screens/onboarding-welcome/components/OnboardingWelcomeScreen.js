@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {Typography} from '@mui/material';
 import Layout from '../../../shared-components/Layout';
 import VStack from "../../../shared-components/VStack";
@@ -21,17 +21,21 @@ const OnboardingWelcomeScreen = ({children, buttonText, link, isLoading = false}
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
     const metadata = useMetadataStore((state) => state.metadata);
 
-    const calculateNumberOfBenefits = () => {
-        let distinctRPs = {};
-        for (let topic of selectedTopics) {
-            const topicUri = "https://foerderfunke.org/default#" + topic.id.split(":")[1];
-            const rps = Object.values(metadata.rp).filter(rp => rp.categories.includes(topicUri));
-            for (let rp of rps) {
-                distinctRPs[rp.uri] = true;
+    const [numberOfBenefits, setNumberOfBenefits] = useState(0);
+
+    useEffect(() => {
+        if (selectedTopics.length > 0 && metadata?.rp) {
+            let distinctRPs = {};
+            for (let topic of selectedTopics) {
+                const topicUri = "https://foerderfunke.org/default#" + topic.id.split(":")[1];
+                const rps = Object.values(metadata.rp).filter(rp => rp.categories.includes(topicUri));
+                for (let rp of rps) {
+                    distinctRPs[rp.uri] = true;
+                }
             }
+            setNumberOfBenefits(Object.keys(distinctRPs).length);
         }
-        return Object.keys(distinctRPs).length;
-    }
+    }, [selectedTopics, metadata]);
 
     return (
         <Layout isApp={true} logo={false}>
@@ -43,8 +47,8 @@ const OnboardingWelcomeScreen = ({children, buttonText, link, isLoading = false}
                         </Typography>
                         <HStack>
                             <IconCard icon={AccessTimeIcon} iconColor={globalStyles.secondaryColor} text="5 Min."/>
-                            {metadata && calculateNumberOfBenefits() > 0 && <IconCard icon={StarBorderIcon} iconColor={globalStyles.primaryColor}
-                                      text={`Based on ${calculateNumberOfBenefits()} benefits`}/>}
+                            {metadata && numberOfBenefits > 0 && <IconCard icon={StarBorderIcon} iconColor={globalStyles.primaryColor}
+                                      text={`Based on ${numberOfBenefits} benefits`}/>}
                         </HStack>
                     </VStack>
                     {children}
