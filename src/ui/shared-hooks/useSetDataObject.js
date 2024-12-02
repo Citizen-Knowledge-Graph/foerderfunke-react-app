@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import readJson from '../utilities/readJson';
+import readJson from '../../core/utilities/readJson';
 
-const useFetchData = (filePath, setData) => {
+const useSetDataObject = (filePath, setData) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -16,4 +16,4 @@ const useFetchData = (filePath, setData) => {
     }, [filePath, setData]);
 };
 
-export default useFetchData;
+export default useSetDataObject;

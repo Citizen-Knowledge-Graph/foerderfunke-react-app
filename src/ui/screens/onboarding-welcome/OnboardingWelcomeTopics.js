@@ -1,7 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {Button, Checkbox, FormControlLabel, Typography} from '@mui/material';
 import {useSelectedTopicsStore} from "../../storage/zustand";
-import useFetchData from "../../../core/services/fetchResourceService";
 import OnboardingWelcomeScreen from "./components/OnboardingWelcomeScreen";
 import VStack from "../../shared-components/VStack";
 import globalStyles from "../../styles/styles";
@@ -9,6 +8,7 @@ import useTopicSelectionHandlers from "./hooks/useTopicSelectionHandlers";
 import useTranslation from "../../language/useTranslation";
 import {LanguageContext} from "../../language/LanguageContext";
 import {useStore} from "../../shared-components/ViewportUpdater";
+import useSetDataObject from "../../shared-hooks/useSetDataObject";
 
 const OnboardingWelcomeTopics = () => {
     const { t } = useTranslation();
@@ -19,7 +19,7 @@ const OnboardingWelcomeTopics = () => {
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
 
     // runs on mount
-    useFetchData('assets/data/topics/topics-list.json', setTopicsData);
+    useSetDataObject('assets/data/topics/topics-list.json', setTopicsData);
 
     // runs on mount and when selectedTopics changes
     useEffect(() => {

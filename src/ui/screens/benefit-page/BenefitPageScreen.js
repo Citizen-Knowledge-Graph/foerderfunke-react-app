@@ -5,7 +5,6 @@ import BenefitPageHeader from "./components/BenefitPageHeader";
 import AppScreenWrapper from "../../shared-components/AppScreenWrapper";
 import {useStore} from "../../shared-components/ViewportUpdater";
 import {useMetadataStore, useValidationReportStore} from "../../storage/zustand";
-import useFetchData from "../../../core/services/fetchResourceService";
 import BenefitPageRules from "./components/BenefitPageRules";
 import {Box, Button, IconButton, Typography} from "@mui/material";
 import HStack from "../../shared-components/HStack";
@@ -17,6 +16,7 @@ import OpenInNewOutlinedIcon from '@mui/icons-material/OpenInNewOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import useTranslation from "../../language/useTranslation";
 import {LanguageContext} from "../../language/LanguageContext";
+import useSetDataObject from "../../shared-hooks/useSetDataObject";
 
 const BenefitPageScreen = () => {
     const {id} = useParams();
@@ -29,7 +29,7 @@ const BenefitPageScreen = () => {
     const metadata = useMetadataStore((state) => state.metadata);
     const validationReport = useValidationReportStore((state) => state.validationReport);
 
-    useFetchData('assets/data/topics/topics-list.json', setTopicsData);
+    useSetDataObject('assets/data/topics/topics-list.json', setTopicsData);
 
     useEffect(() => {
         let rpUri = id.startsWith("ff:") ? "https://foerderfunke.org/default#" + id.split(":")[1] : id;
