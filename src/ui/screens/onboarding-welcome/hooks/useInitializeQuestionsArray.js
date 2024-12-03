@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import questionsService from "../../../../core/services/questionsService";
+import questionsManager from "../../../../core/managers/questionsManager";
 import {useSelectedTopicsStore, useUserStore} from "../../../storage/zustand";
 
 // UNUSED
@@ -13,7 +13,7 @@ function useInitializeQuestionsArray() {
         const fetchPrioritizedQuestions = async () => {
             setIsLoading(true);
             try {
-                await questionsService(activeUser, selectedTopics.map((topic) => topic.id), null);
+                await questionsManager(activeUser, selectedTopics.map((topic) => topic.id), null);
             } catch (error) {
                 console.error('Error fetching prioritized questions:', error);
             } finally {

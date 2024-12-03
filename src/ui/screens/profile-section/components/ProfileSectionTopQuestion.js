@@ -8,7 +8,7 @@ import {
     useUserStore,
     useValidationReportStore
 } from "../../../storage/zustand";
-import questionsService from "../../../../core/services/questionsService";
+import questionsManager from "../../../../core/managers/questionsManager";
 import ProfileSectionHeader from "./ProfileSectionHeader";
 import ProfileSectionTopHeader from "./ProfileSectionTopHeader";
 import {useNavigate, useParams} from "react-router-dom";
@@ -65,7 +65,7 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
         }
         setIsLoading(true);
         try {
-            await questionsService(activeUser, selectedTopics.map((topic) => topic.id), null, language);
+            await questionsManager(activeUser, selectedTopics.map((topic) => topic.id), null, language);
         } catch (error) {
             console.error('Error fetching prioritized questions in ProfileSectionTopQuestions:', error);
         } finally {

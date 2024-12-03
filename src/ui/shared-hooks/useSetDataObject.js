@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
-import readJson from '../../core/utilities/readJson';
+import resourceService from '../../core/services/resourceService';
 
 const useSetDataObject = (filePath, setData) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const data = await readJson(filePath);
+                const data = await resourceService(filePath);
                 setData(data);
             } catch (err) {
                 console.error('Failed to fetch data:', err);

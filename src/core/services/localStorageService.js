@@ -1,11 +1,11 @@
-class localStorageService {
-    static getItem(key) {
+const localStorageService = {
+    getItem(key) {
         return JSON.parse(localStorage.getItem(key));
-    }
-    static setItem(key, value) {
+    },
+    setItem(key, value) {
         localStorage.setItem(key, JSON.stringify(value));
-    }
-    static removeItem(key) {
+    },
+    removeItem(key) {
         localStorage.removeItem(key);
     }
 }

@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import readJson from '../../../../core/utilities/readJson';
+import resourceService from '../../../../core/services/resourceService';
 
 export const useFetchHydrationData = () => {
     const [hydrationData, setHydrationData] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
-            const data = await readJson('assets/data/requirement-profiles/requirement-profiles-hydration.json');
+            const data = await resourceService('assets/data/requirement-profiles/requirement-profiles-hydration.json');
             setHydrationData(data);
         };
 

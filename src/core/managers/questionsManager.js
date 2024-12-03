@@ -1,11 +1,10 @@
-import userManager from "../managers/userManager";
+import userManager from "./userManager";
 import {convertUserProfileToTurtle} from "@foerderfunke/matching-engine/src/utils";
-import readJson from "../utilities/readJson";
-import {fetchTurtleResource} from "./githubService";
+import resourceService from "../services/resourceService";
 import {getPrioritizedMissingDataFieldsJson} from "@foerderfunke/matching-engine/src/prematch";
 import {useQuestionsStore, useValidationReportStore} from "../../ui/storage/zustand";
 
-const questionsService = async (activeUser, topicIds, benefitId, language = "en") => {
+const questionsManager = async (activeUser, topicIds, benefitId, language = "en") => {
 
     // Get the active user profile
     const userProfile = userManager.retrieveUserData(activeUser);
@@ -16,17 +15,17 @@ const questionsService = async (activeUser, topicIds, benefitId, language = "en"
     `*/
 
     // load validation config
-    const validationConfig = await readJson('assets/data/requirement-profiles/requirement-profiles.json');
+    const validationConfig = await resourceService.fetchResource('assets/data/requirement-profiles/requirement-profiles.json');
 
     // validate user profile against data fields
-    const dataFieldsString = await fetchTurtleResource(validationConfig['datafields']);
-    const materializationString = await fetchTurtleResource(validationConfig['materialization']);
+    const dataFieldsString = await resourceService.fetchResource(validationConfig['datafields']);
+    const materializationString = await resourceService.fetchResource(validationConfig['materialization']);
 
     // collect requirement profiles
     let requirementProfiles = {};
     for (const requirementProfile of validationConfig['queries']) {
         const {fileUrl, rpUri} = requirementProfile;
-        requirementProfiles[rpUri] = await fetchTurtleResource(fileUrl);
+        requirementProfiles[rpUri] = await resourceService.fetchResource(fileUrl);
     }
 
     const expand = (id) => {
@@ -49,4 +48,4 @@ const questionsService = async (activeUser, topicIds, benefitId, language = "en"
     return null;
 }
 
-export default questionsService;
+export default questionsManager;

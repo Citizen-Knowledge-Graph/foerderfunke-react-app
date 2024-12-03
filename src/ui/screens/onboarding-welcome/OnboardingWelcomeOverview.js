@@ -4,7 +4,7 @@ import VStack from "../../shared-components/VStack";
 import OnboardingWelcomeScreen from "./components/OnboardingWelcomeScreen";
 import {useMetadataStore, useSelectedTopicsStore, useUserStore} from "../../storage/zustand";
 import {useNavigate, useParams} from "react-router-dom";
-import questionsService from "../../../core/services/questionsService";
+import questionsManager from "../../../core/managers/questionsManager";
 import useTranslation from "../../language/useTranslation";
 import {LanguageContext} from "../../language/LanguageContext";
 
@@ -21,7 +21,7 @@ const OnboardingWelcomeOverview = () => {
     useEffect(() => {
         const fetchPrioritizedQuestions = async (topicIds, benefitId) => {
             try {
-                await questionsService(activeUser, selectedTopics.map((topic) => topic.id), benefitId, language);
+                await questionsManager(activeUser, selectedTopics.map((topic) => topic.id), benefitId, language);
             } catch (error) {
                 console.error('Error fetching prioritized questions:', error);
             } finally {

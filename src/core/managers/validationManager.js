@@ -6,8 +6,7 @@ import {
 import {
     convertUserProfileToTurtle, extractDatafieldsMetadata, extractRequirementProfilesMetadata,
 } from '@foerderfunke/matching-engine/src/utils';
-import readJson from "../utilities/readJson";
-import {fetchTurtleResource} from "../services/githubService";
+import resourceService from "../services/resourceService";
 import { useMetadataStore, useValidationReportStore} from "../../ui/storage/zustand";
 
 const validationManager = {
@@ -18,22 +17,22 @@ const validationManager = {
         const userProfileString = await convertUserProfileToTurtle(userProfile);
 
         // load validation config
-        const validationConfig = await readJson('assets/data/requirement-profiles/requirement-profiles.json');
+        const validationConfig = await resourceService.fetchResource('assets/data/requirement-profiles/requirement-profiles.json');
 
         // validate user profile against datafields
-        const dataFieldsString = await fetchTurtleResource(validationConfig['datafields']);
+        const dataFieldsString = await resourceService.fetchResource(validationConfig['datafields']);
         if (!(await validateUserProfile(userProfileString, dataFieldsString))) {
             console.error('Invalid user profile');
         }
 
         // load materialization scripts
-        const materializationString = await fetchTurtleResource(validationConfig['materialization']);
+        const materializationString = await resourceService.fetchResource(validationConfig['materialization']);
 
         // collect requirement profiles
         let requirementProfiles = {};
         for (const requirementProfile of validationConfig['queries']) {
             const {fileUrl, rpUri} = requirementProfile;
-            requirementProfiles[rpUri] = await fetchTurtleResource(fileUrl);
+            requirementProfiles[rpUri] = await resourceService.fetchResource(fileUrl);
         }
         console.log('Running validations for:', Object.keys(requirementProfiles));
 

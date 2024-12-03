@@ -3,15 +3,14 @@ import Layout from "../../shared-components/Layout";
 import AppScreenWrapper from "../../shared-components/AppScreenWrapper";
 import {useStore} from "../../shared-components/ViewportUpdater";
 import {useLocation} from "react-router-dom";
-import {fetchTurtleResource} from "../../../core/services/githubService";
-import readJson from "../../../core/utilities/readJson";
+import resourceService from "../../../core/services/resourceService";
 import {
     convertUserProfileToTurtle,
     createStoreWithTempUrisForBlankNodes,
     getAllTriplesContainingUri
 } from "@foerderfunke/matching-engine/src/utils";
 import {Checkbox, CircularProgress, FormControlLabel} from "@mui/material";
-import {UserManager} from "../../../core/managers/userManager";
+import userManager from "../../../core/managers/userManager";
 
 const ResolveUriScreen = () => {
     const isDesktop = useStore((state) => state.isDesktop);
@@ -51,16 +50,16 @@ const ResolveUriScreen = () => {
     // runs once initially and when includeProfile changes
     useEffect(() => {
         const buildStore = async () => {
-            const validationConfig = await readJson('assets/data/requirement-profiles/requirement-profiles.json');
-            const datafieldsString = await fetchTurtleResource(validationConfig['datafields']);
-            const materializationString = await fetchTurtleResource(validationConfig['materialization']);
+            const validationConfig = await resourceService.fetchResource('assets/data/requirement-profiles/requirement-profiles.json');
+            const datafieldsString = await resourceService.fetchResource(validationConfig['datafields']);
+            const materializationString = await resourceService.fetchResource(validationConfig['materialization']);
             let rdfStrings = [datafieldsString, materializationString];
             for (const requirementProfile of validationConfig['queries']) {
                 const {fileUrl} = requirementProfile;
-                rdfStrings.push(await fetchTurtleResource(fileUrl));
+                rdfStrings.push(await resourceService.fetchResource(fileUrl));
             }
             if (includeProfile) {
-                const userProfile = UserModel.retrieveUserData("ff:quick-check-user");
+                const userProfile = userManager.retrieveUserData("ff:quick-check-user");
                 const userProfileTurtleString = await convertUserProfileToTurtle(userProfile);
                 rdfStrings.push(userProfileTurtleString);
             }

@@ -18,10 +18,8 @@ const OnboardingWelcomeTopics = () => {
     const [selectedTopicsBoolean, setSelectedTopicsBoolean] = useState([]);
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
 
-    // runs on mount
     useSetDataObject('assets/data/topics/topics-list.json', setTopicsData);
 
-    // runs on mount and when selectedTopics changes
     useEffect(() => {
         if (topicsData.length > 0) {
             const newSelectedTopicsBoolean = topicsData.map(topic =>
