@@ -54,6 +54,18 @@ export const useSelectedTopicsStore = create((set) => ({
     }
 }));
 
+export const useSelectedBenefitStore = create((set) => ({
+    selectedBenefit: null,
+    setSelectedBenefit(newSelectedBenefit) {
+        console.log('STATE UPDATE: We are setting the selected benefit');
+        set({selectedBenefit: newSelectedBenefit});
+    },
+    clear: () => {
+        console.log('STATE UPDATE: We are clearing the selected benefit');
+        set({selectedBenefit: null});
+    }
+}));
+
 export const useQuestionsStore = create((set) => ({
     questions: {},
     updateQuestions: (newQuestions) => {

@@ -82,6 +82,10 @@ const userManager = {
             throw new Error(`No user found with ID: ${entityId}`);
         }
         return userProfile;
+    },
+
+    retrieveUserIds() {
+        return localStorageService.getItem('userIds') || [];
     }
 };
 

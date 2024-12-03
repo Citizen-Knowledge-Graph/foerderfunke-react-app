@@ -13,7 +13,7 @@ const ProfileSectionScreen = () => {
     const isDesktop = useStore((state) => state.isDesktop);
     const profileQuestions = useQuestionsStore((state) => state.questions);
     const [completed, setCompleted] = useState(false);
-    const fixedSetOfQuestionsMode = false; // true means, the next top question is computed after each step
+    const fixedSetOfQuestionsMode = false;
 
     return (
         <Layout isApp={true} logo={false}>

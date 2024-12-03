@@ -9,7 +9,6 @@ import {
 } from "../../storage/zustand";
 import {useProfileSectionStore} from "../../storage/useProfileSectionStore";
 import userManager from "../../../core/managers/userManager";
-import validationManager from "../../../core/managers/validationManager";
 import {convertUserProfileToTurtle} from "@foerderfunke/matching-engine/src/utils";
 import dayjs from "dayjs";
 import VStack from "../../shared-components/VStack";
@@ -22,26 +21,26 @@ import {useStore} from "../../shared-components/ViewportUpdater";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ReplayIcon from '@mui/icons-material/Replay';
 import useTranslation from "../../language/useTranslation";
-import {LanguageContext} from "../../language/LanguageContext";
+import {useValidationUpdate} from "../../storage/updates";
 
 const InfoScreenNewOrExistingUser = () => {
     const { t } = useTranslation();
-    const { language } = useContext(LanguageContext);
     const isDesktop = useStore((state) => state.isDesktop);
+
     const updateUserId = useUserStore((state) => state.updateUserId);
     const defaultUserId = "ff:quick-check-user";
     const initializeSectionStore = useProfileSectionStore((state) => state.initializeSectionStore);
+    const triggerValidationUpdate = useValidationUpdate.getState().triggerValidationUpdate;
     const navigate = useNavigate();
     const [userExists, setUserExists] = useState(false);
 
     const initStores = useCallback(() => {
         updateUserId(defaultUserId);
-        let entityData = {
-            id: defaultUserId,
-            type: "ff:Citizen"
-        };
         const newSectionStore = {
-            entityData: entityData,
+            entityData: {
+                id: defaultUserId,
+                type: "ff:Citizen"
+            },
             nestedSection: null,
         };
         initializeSectionStore(newSectionStore);
@@ -50,12 +49,11 @@ const InfoScreenNewOrExistingUser = () => {
     const initNewUser = useCallback(() => {
         userManager.initialiseNewUser(defaultUserId);
         initStores();
-        validationManager.runValidation(defaultUserId, language);
         navigate('/info-privacy');
-    }, [defaultUserId, navigate, initStores, language]);
+    }, [defaultUserId, navigate, initStores]);
 
     useEffect(() => {
-        const userIds = JSON.parse(localStorage.getItem('userIds') || '[]');
+        const userIds = userManager.retrieveUserIds();
         if (userIds.length === 0) {
             initNewUser();
         } else {
@@ -77,7 +75,7 @@ const InfoScreenNewOrExistingUser = () => {
 
     const continueWithExisting = () => {
         initStores();
-        validationManager.runValidation(defaultUserId, language);
+        triggerValidationUpdate()
         navigate('/onboarding-choice');
     }
 

@@ -18,6 +18,7 @@ import ActivityLogScreen from "./ui/screens/activity-log/ActivityLogScreen";
 import {LanguageProvider} from "./ui/language/LanguageContext";
 import ResolveUriScreen from "./ui/screens/resolve-uri/ResolveUriScreen";
 import Handle404Redirect from "./Handle404Redirect";
+import AppGlobalState from "./AppGlobalState";
 
 const theme = createTheme({});
 
@@ -26,6 +27,7 @@ const App = () => {
         <LanguageProvider>
             <ThemeProvider theme={theme}>
                 <ViewportUpdater/>
+                <AppGlobalState />
                 <Router basename={process.env.PUBLIC_URL}>
                     <Handle404Redirect />
                     <ScrollToTop />

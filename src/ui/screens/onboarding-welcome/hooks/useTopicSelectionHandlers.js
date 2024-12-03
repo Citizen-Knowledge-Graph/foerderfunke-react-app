@@ -10,7 +10,7 @@ const useTopicSelectionHandlers = (topicsData, selectedTopicsBoolean, setSelecte
 
     const handleButtonClick = useCallback((topic, index) => {
         // Update the selected topics boolean array
-        const newSelectedTopics = [...selectedTopicsBoolean];
+        let newSelectedTopics = [...selectedTopicsBoolean];
         newSelectedTopics[index] = !newSelectedTopics[index];
         setSelectedTopicsBoolean(newSelectedTopics);
 

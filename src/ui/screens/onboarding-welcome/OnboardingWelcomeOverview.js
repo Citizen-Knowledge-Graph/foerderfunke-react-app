@@ -1,43 +1,19 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext} from 'react';
 import {Typography} from '@mui/material';
 import VStack from "../../shared-components/VStack";
 import OnboardingWelcomeScreen from "./components/OnboardingWelcomeScreen";
-import {useMetadataStore, useSelectedTopicsStore, useUserStore} from "../../storage/zustand";
-import {useNavigate, useParams} from "react-router-dom";
-import questionsManager from "../../../core/managers/questionsManager";
+import {useMetadataStore, useSelectedBenefitStore, useSelectedTopicsStore} from "../../storage/zustand";
+import {useParams} from "react-router-dom";
 import useTranslation from "../../language/useTranslation";
 import {LanguageContext} from "../../language/LanguageContext";
 
 const OnboardingWelcomeOverview = () => {
+    const {benefitMode} = useParams();
     const { t } = useTranslation();
     const { language } = useContext(LanguageContext);
-    const navigate = useNavigate();
-    const {benefitId} = useParams();
-    const activeUser = useUserStore((state) => state.activeUserId);
+    const selectedBenefit = useSelectedBenefitStore((state) => state.selectedBenefit);
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
     const metadata = useMetadataStore((state) => state.metadata);
-    const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-        const fetchPrioritizedQuestions = async (topicIds, benefitId) => {
-            try {
-                await questionsManager(activeUser, selectedTopics.map((topic) => topic.id), benefitId, language);
-            } catch (error) {
-                console.error('Error fetching prioritized questions:', error);
-            } finally {
-                setIsLoading(false);
-                if (benefitId) {
-                    navigate('/profile-section/' + benefitId);
-                }
-            }
-        }
-        console.log("benefitId", benefitId);
-        if (benefitId) {
-            fetchPrioritizedQuestions([], benefitId);
-        } else {
-            fetchPrioritizedQuestions(selectedTopics.map((topic) => topic.id), null);
-        }
-    }, [benefitId, activeUser, selectedTopics, navigate, language]);
 
     const listRPsForTopic = (topic) => {
         const topicUri = "https://foerderfunke.org/default#" + topic.id.split(":")[1];
@@ -52,15 +28,15 @@ const OnboardingWelcomeOverview = () => {
     };
 
     const getRpTitle = () => {
-        const rpUri = "https://foerderfunke.org/default#" + benefitId.split(":")[1];
+        const rpUri = "https://foerderfunke.org/default#" + selectedBenefit.split(":")[1];
         return metadata.rp[rpUri].title;
     }
 
     return (
-        <OnboardingWelcomeScreen buttonText={t('app.topicsChosen.discoverBtn')} link={`/profile-section`} isLoading={isLoading}>
+        <OnboardingWelcomeScreen buttonText={t('app.topicsChosen.discoverBtn')} link={`/profile-section`}>
             <VStack gap={3}>
                 {
-                    benefitId ? (
+                    benefitMode ? (
                         <>
                             <Typography variant="body1" gutterBottom sx={styles.subTitleText}>
                                 {t('app.topicsChosen.benefitText')}

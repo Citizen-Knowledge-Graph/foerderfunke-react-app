@@ -1,26 +1,21 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import VStack from "../../../shared-components/VStack";
 import ProfileSectionField from "./ProfileSectionField";
 import {
     questionsStackStore, useMetadataStore,
     useQuestionsStore,
     useSelectedTopicsStore,
-    useUserStore,
     useValidationReportStore
 } from "../../../storage/zustand";
-import questionsManager from "../../../../core/managers/questionsManager";
 import ProfileSectionHeader from "./ProfileSectionHeader";
 import ProfileSectionTopHeader from "./ProfileSectionTopHeader";
 import {useNavigate, useParams} from "react-router-dom";
 import ProfileSectionQuestionsCount from "./ProfileSectionQuestionsCount";
-import {LanguageContext} from "../../../language/LanguageContext";
-
+import {useQuestionsUpdate} from "../../../storage/updates";
 
 const ProfileSectionTopQuestion = ({setCompleted}) => {
-    const { language } = useContext(LanguageContext);
-    const {benefitId} = useParams();
+    const {benefitMode} = useParams();
     const [currentQuestion, setCurrentQuestion] = useState(null);
-    const [isLoading, setIsLoading] = useState(false);
 
     const metadata = useMetadataStore((state) => state.metadata);
     const questionsStack = questionsStackStore((state) => state.questionsStack);
@@ -29,8 +24,8 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
     const addQuestionToStack = questionsStackStore((state) => state.addQuestionToStack);
     const setStackCounter = questionsStackStore((state) => state.setStackCounter);
     const setStackMode = questionsStackStore((state) => state.setStackMode);
-    const activeUser = useUserStore((state) => state.activeUserId);
-    const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
+    const triggerQuestionsUpdate = useQuestionsUpdate((state) => state.triggerQuestionsUpdate);
+    const selectedBenefit = useSelectedTopicsStore((state) => state.selectedBenefit);
     const profileQuestions = useQuestionsStore((state) => state.questions);
     const validationReport = useValidationReportStore((state) => state.validationReport);
     const navigate = useNavigate();
@@ -63,14 +58,7 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
             if (steps === 0) setStackMode(false);
             return;
         }
-        setIsLoading(true);
-        try {
-            await questionsManager(activeUser, selectedTopics.map((topic) => topic.id), null, language);
-        } catch (error) {
-            console.error('Error fetching prioritized questions in ProfileSectionTopQuestions:', error);
-        } finally {
-            setIsLoading(false);
-        }
+        triggerQuestionsUpdate()
     };
 
     const handleBack = () => {
@@ -85,9 +73,9 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
     return (
         <VStack sx={{width: '100%'}} gap={3}>
             <ProfileSectionHeader handleBack={handleBack}/>
-            {benefitId ?
+            {benefitMode ?
                 <h2>Eligibility check
-                    for: {metadata.rp["https://foerderfunke.org/default#" + benefitId.split(":")[1]].title}</h2>
+                    for: {metadata.rp["https://foerderfunke.org/default#" + selectedBenefit.split(":")[1]].title}</h2>
                 : ""
             }
             <VStack gap={1}>
@@ -104,7 +92,7 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
                                     currentField={currentQuestion}
                                     currentIndex={0}
                                     handleConfirm={handleConfirm}
-                                    isLoading={isLoading}
+                                    isLoading={false}
                                 />
                             </VStack>
                         </VStack>

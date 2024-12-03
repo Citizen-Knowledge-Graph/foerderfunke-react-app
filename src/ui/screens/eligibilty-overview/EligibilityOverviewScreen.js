@@ -10,7 +10,6 @@ import {CircularProgress} from "@mui/material";
 import VStack from "../../shared-components/VStack";
 import {LanguageContext} from "../../language/LanguageContext";
 import {useValidationReportStore} from "../../storage/zustand";
-import useRunValidation from "../../shared-hooks/useRunValidation";
 import useSetDataObject from "../../shared-hooks/useSetDataObject";
 
 const EligibilityOverviewScreen = () => {
@@ -22,7 +21,6 @@ const EligibilityOverviewScreen = () => {
     const validationReport = useValidationReportStore((state) => state.validationReport);
 
     useSetDataObject('assets/data/requirement-profiles/requirement-profiles-hydration.json', setHydrationData);
-    useRunValidation("ff:quick-check-user")
 
     useEffect(() => {
         if (validationReport && hydrationData) {
