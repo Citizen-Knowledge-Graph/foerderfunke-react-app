@@ -2,34 +2,33 @@ import React, {useContext, useEffect, useState} from 'react';
 import EligibilityOverviewHeader from "./components/EligibilityOverviewHeader";
 import Layout from "../../shared-components/Layout";
 import EligibilityOverviewList from "./components/EligibilityOverviewList";
-import {useFetchHydrationData} from "./hooks/useFetchHydrationData";
 import AppScreenWrapper from "../../shared-components/AppScreenWrapper";
 import {useStore} from "../../shared-components/ViewportUpdater";
 import Divider from "@mui/material/Divider";
-import validationManager from "../../../core/managers/validationManager";
 import {buildEligibilityReports} from "../../../core/utilities/buildEligibilityReports";
 import {CircularProgress} from "@mui/material";
 import VStack from "../../shared-components/VStack";
 import {LanguageContext} from "../../language/LanguageContext";
+import {useValidationReportStore} from "../../storage/zustand";
+import useRunValidation from "../../shared-hooks/useRunValidation";
+import useSetDataObject from "../../shared-hooks/useSetDataObject";
 
 const EligibilityOverviewScreen = () => {
     const { language } = useContext(LanguageContext);
-
     const isDesktop = useStore((state) => state.isDesktop);
+
     const [eligibilityData, setEligibilityData] = useState();
-    const hydrationData = useFetchHydrationData();
-    const [hasRerunValidation, setHasRerunValidation] = useState(false);
+    const [hydrationData, setHydrationData] = useState();
+    const validationReport = useValidationReportStore((state) => state.validationReport);
+
+    useSetDataObject('assets/data/requirement-profiles/requirement-profiles-hydration.json', setHydrationData);
+    useRunValidation("ff:quick-check-user")
 
     useEffect(() => {
-        const rerunValidation = async () => {
-            const validationReport = await validationManager.runValidation("ff:quick-check-user", language);
+        if (validationReport && hydrationData) {
             setEligibilityData(buildEligibilityReports(validationReport, hydrationData, language));
         }
-        if (hydrationData && !hasRerunValidation) {
-            setHasRerunValidation(true);
-            rerunValidation();
-        }
-    }, [hasRerunValidation, hydrationData, language]);
+    }, [validationReport, hydrationData, language]);
 
     return (
         <Layout isApp={true} logo={true}>

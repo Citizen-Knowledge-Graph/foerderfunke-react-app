@@ -5,7 +5,7 @@ const useSetDataObject = (filePath, setData) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const data = await resourceService(filePath);
+                const data = await resourceService.fetchResource(filePath);
                 setData(data);
             } catch (err) {
                 console.error('Failed to fetch data:', err);

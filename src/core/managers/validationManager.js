@@ -1,19 +1,15 @@
 import userManager from "./userManager";
-import {
-    validateAll,
-    validateUserProfile,
-} from '@foerderfunke/matching-engine';
+import {validateAll, validateUserProfile} from '@foerderfunke/matching-engine';
 import {
     convertUserProfileToTurtle, extractDatafieldsMetadata, extractRequirementProfilesMetadata,
 } from '@foerderfunke/matching-engine/src/utils';
 import resourceService from "../services/resourceService";
-import { useMetadataStore, useValidationReportStore} from "../../ui/storage/zustand";
 
 const validationManager = {
-    async runValidation(activeUser, language = "en") {
+    async runValidation(userId, language = "en") {
 
         // Get the active user profile
-        const userProfile = userManager.retrieveUserData(activeUser);
+        const userProfile = userManager.retrieveUserData(userId);
         const userProfileString = await convertUserProfileToTurtle(userProfile);
 
         // load validation config
@@ -44,17 +40,14 @@ const validationManager = {
             false
         );
 
-        useValidationReportStore.getState().updateValidationReport(validateAllReport);
-
         // fetch metadata
         let metadata = {
             df: await extractDatafieldsMetadata(dataFieldsString, language),
             rp: await extractRequirementProfilesMetadata(Object.values(requirementProfiles), language),
         };
 
-        useMetadataStore.getState().updateMetadata(metadata);
-
-        return validateAllReport;
+        console.log('Validations ran successfully.');
+        return [validateAllReport, metadata];
     }
 }
 
