@@ -42,7 +42,7 @@ const App = () => {
                             <Route path="/onboarding-welcome/:benefitMode" element={<OnboardingWelcomeOverview/>}/>
                             <Route path="/eligibility-overview" element={<EligibilityOverviewScreen/>}/>
                             <Route path="/profile-section" element={<ProfileSectionScreen/>}/>
-                            <Route path="/profile-section/:benefitId" element={<ProfileSectionScreen/>}/>
+                            <Route path="/profile-section/:benefitMode" element={<ProfileSectionScreen/>}/>
                             <Route path="/benefit-page/:id" element={<BenefitPageScreen/>}/>
                             <Route path="/profile-overview" element={<ProfileScreen/>}/>
                             <Route path="/activity-log" element={<ActivityLogScreen/>}/>

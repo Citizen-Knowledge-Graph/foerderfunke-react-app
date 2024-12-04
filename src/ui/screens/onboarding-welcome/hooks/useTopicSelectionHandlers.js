@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { useSelectedTopicsStore } from "../../../storage/zustand";
+import {useSelectedTopicsStore} from "../../../storage/zustand";
 import { questionsStackStore } from "../../../storage/zustand";
 
 const useTopicSelectionHandlers = (topicsData, selectedTopicsBoolean, setSelectedTopicsBoolean) => {

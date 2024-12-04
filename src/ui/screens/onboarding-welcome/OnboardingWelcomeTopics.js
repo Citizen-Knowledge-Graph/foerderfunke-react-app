@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {Button, Checkbox, FormControlLabel, Typography} from '@mui/material';
-import {useSelectedTopicsStore} from "../../storage/zustand";
+import {useSelectedBenefitStore, useSelectedTopicsStore} from "../../storage/zustand";
 import OnboardingWelcomeScreen from "./components/OnboardingWelcomeScreen";
 import VStack from "../../shared-components/VStack";
 import globalStyles from "../../styles/styles";
@@ -17,8 +17,10 @@ const OnboardingWelcomeTopics = () => {
     const [topicsData, setTopicsData] = useState([]);
     const [selectedTopicsBoolean, setSelectedTopicsBoolean] = useState([]);
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
+    const clearSelectedBenefit = useSelectedBenefitStore((state) => state.clear);
 
     useSetDataObject('assets/data/topics/topics-list.json', setTopicsData);
+    clearSelectedBenefit()
 
     useEffect(() => {
         if (topicsData.length > 0) {
