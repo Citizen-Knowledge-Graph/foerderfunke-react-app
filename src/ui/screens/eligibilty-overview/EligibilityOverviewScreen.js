@@ -11,6 +11,7 @@ import VStack from "../../shared-components/VStack";
 import {LanguageContext} from "../../language/LanguageContext";
 import {useValidationReportStore} from "../../storage/zustand";
 import useSetDataObject from "../../shared-hooks/useSetDataObject";
+import {useValidationUpdate} from "../../storage/updates";
 
 const EligibilityOverviewScreen = () => {
     const { language } = useContext(LanguageContext);
@@ -19,6 +20,7 @@ const EligibilityOverviewScreen = () => {
     const [eligibilityData, setEligibilityData] = useState();
     const [hydrationData, setHydrationData] = useState();
     const validationReport = useValidationReportStore((state) => state.validationReport);
+    const validationIsLoading = useValidationUpdate((state) => state.validationIsLoading);
 
     useSetDataObject('assets/data/requirement-profiles/requirement-profiles-hydration.json', setHydrationData);
 
@@ -34,7 +36,7 @@ const EligibilityOverviewScreen = () => {
                 <EligibilityOverviewHeader isDesktop={isDesktop}/>
                 <Divider sx={{width: "100%"}}/>
                 {
-                    eligibilityData ? (
+                    eligibilityData && !validationIsLoading ? (
                         <>
                             {eligibilityData.eligible.length > 0 &&
                                 <EligibilityOverviewList items={eligibilityData.eligible} eligible={'eligible'}/>}

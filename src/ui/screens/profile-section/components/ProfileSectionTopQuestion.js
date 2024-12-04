@@ -10,7 +10,8 @@ import ProfileSectionHeader from "./ProfileSectionHeader";
 import ProfileSectionTopHeader from "./ProfileSectionTopHeader";
 import {useNavigate} from "react-router-dom";
 import ProfileSectionQuestionsCount from "./ProfileSectionQuestionsCount";
-import {useQuestionsUpdate} from "../../../storage/updates";
+import {useQuestionsUpdate, useValidationUpdate} from "../../../storage/updates";
+import {CircularProgress} from "@mui/material";
 
 const ProfileSectionTopQuestion = ({setCompleted}) => {
     const [currentQuestion, setCurrentQuestion] = useState(null);
@@ -24,6 +25,7 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
     const triggerQuestionsUpdate = useQuestionsUpdate((state) => state.triggerQuestionsUpdate);
     const profileQuestions = useQuestionsStore((state) => state.questions);
     const validationReport = useValidationReportStore((state) => state.validationReport);
+    const validationIsLoading = useValidationUpdate((state) => state.validationIsLoading);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -75,17 +77,20 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
                         <VStack gap={2}>
                             <ProfileSectionTopHeader stack={questionsStack} profileQuestions={profileQuestions}
                                                      validationReport={validationReport}/>
-                            <VStack gap={0}>
-                                <ProfileSectionQuestionsCount stepsBackwardsFromStackFront={stackCounter}
-                                                              stack={questionsStack}
-                                                              profileQuestions={profileQuestions}/>
-                                <ProfileSectionField
-                                    currentField={currentQuestion}
-                                    currentIndex={0}
-                                    handleConfirm={handleConfirm}
-                                    isLoading={false}
-                                />
-                            </VStack>
+                            {
+                                validationIsLoading ? <CircularProgress/> : (
+
+                                    <VStack gap={0}>
+                                        <ProfileSectionQuestionsCount stepsBackwardsFromStackFront={stackCounter}
+                                                                      stack={questionsStack}
+                                                                      profileQuestions={profileQuestions}/>
+                                        <ProfileSectionField
+                                            currentField={currentQuestion}
+                                            currentIndex={0}
+                                            handleConfirm={handleConfirm}
+                                            isLoading={false}
+                                        />
+                                    </VStack>)}
                         </VStack>
                     </VStack>
                 ) : null}

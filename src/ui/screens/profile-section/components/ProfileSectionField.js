@@ -7,7 +7,6 @@ import useFetchProfileField from "../hooks/useFetchProfileField";
 import globalStyles from "../../../styles/styles";
 import ProfileSectionInputSwitch from "./input-types/ProfileSectionInputSwitch";
 
-// import handlers
 import {useHandleAddClick} from "../handlers/addClickHandler";
 import {useProfileSectionStore} from "../../../storage/useProfileSectionStore";
 import useTranslation from "../../../language/useTranslation";
@@ -18,7 +17,7 @@ const ProfileSectionField = ({
                                  handleConfirm,
                                  isLoading,
                              }) => {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
     const [value, setValue] = useState(null);
     const retrieveCurrentEntityData = useProfileSectionStore((state) => state.retrieveCurrentEntityData)
     const entityData = useMemo(() => retrieveCurrentEntityData(), [retrieveCurrentEntityData]);
@@ -64,24 +63,17 @@ const ProfileSectionField = ({
                 backgroundColor: isLoading ? null : globalStyles.primaryColor,
                 borderRadius: '12px'
             }}>
-                {
-                    isLoading ?
-                        (
-                            <CircularProgress size={24}/>
-                        ) : (
-                            <Button variant="text"
-                                    sx={{
-                                        width: '100%',
-                                        fontSize: '16px',
-                                        color: 'black',
-                                        fontWeight: 'bold',
-                                        textTransform: 'none',
-                                        padding: '12px'
-                                    }}
-                                    onClick={() => handleAddClick(value, currentIndex)}
-                            >{t('app.questions.confirmBtn')}</Button>
-                        )
-                }
+                <Button variant="text"
+                        sx={{
+                            width: '100%',
+                            fontSize: '16px',
+                            color: 'black',
+                            fontWeight: 'bold',
+                            textTransform: 'none',
+                            padding: '12px'
+                        }}
+                        onClick={() => handleAddClick(value, currentIndex)}
+                >{t('app.questions.confirmBtn')}</Button>
             </VStack>
         </VStack>
     );

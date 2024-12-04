@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {Typography} from '@mui/material';
+import {CircularProgress, Typography} from '@mui/material';
 import VStack from "../../shared-components/VStack";
 import OnboardingWelcomeScreen from "./components/OnboardingWelcomeScreen";
 import {useMetadataStore, useSelectedBenefitStore, useSelectedTopicsStore} from "../../storage/zustand";
@@ -9,8 +9,9 @@ import {LanguageContext} from "../../language/LanguageContext";
 
 const OnboardingWelcomeOverview = () => {
     const {benefitMode} = useParams();
-    const { t } = useTranslation();
-    const { language } = useContext(LanguageContext);
+    const {t} = useTranslation();
+    const {language} = useContext(LanguageContext);
+
     const selectedBenefit = useSelectedBenefitStore((state) => state.selectedBenefit);
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
     const metadata = useMetadataStore((state) => state.metadata);
@@ -49,23 +50,23 @@ const OnboardingWelcomeOverview = () => {
                                 </VStack>
                             </VStack>
                         </>
-                        ) : (
-                            <>
-                                <Typography variant="body1" gutterBottom sx={styles.subTitleText}>
-                                    {t('app.topicsChosen.topicsText')}
-                                </Typography>
-                                <VStack alignItems={'flex-start'}>
-                                    {selectedTopics.map((topic, index) => (
-                                        <VStack key={index} gap={2} alignItems={'flex-start'}>
-                                            <Typography variant="h6" sx={styles.listHeader}>
-                                                {language === "de" ? topic.title.de : topic.title.en}
-                                            </Typography>
-                                            {listRPsForTopic(topic)}
-                                        </VStack>
-                                    ))}
-                                </VStack>
-                            </>
-                        )
+                    ) : (
+                        <>
+                            <Typography variant="body1" gutterBottom sx={styles.subTitleText}>
+                                {t('app.topicsChosen.topicsText')}
+                            </Typography>
+                            <VStack alignItems={'flex-start'}>
+                                {metadata.rp ? selectedTopics.map((topic, index) => (
+                                    <VStack key={index} gap={2} alignItems={'flex-start'}>
+                                        <Typography variant="h6" sx={styles.listHeader}>
+                                            {language === "de" ? topic.title.de : topic.title.en}
+                                        </Typography>
+                                        {listRPsForTopic(topic)}
+                                    </VStack>
+                                )) : <CircularProgress size={24}/>}
+                            </VStack>
+                        </>
+                    )
                 }
             </VStack>
         </OnboardingWelcomeScreen>
