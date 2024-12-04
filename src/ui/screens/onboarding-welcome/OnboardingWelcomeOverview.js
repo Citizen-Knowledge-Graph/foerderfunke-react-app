@@ -32,7 +32,6 @@ const OnboardingWelcomeOverview = () => {
         return metadata.rp[rpUri].title;
     }
 
-    console.log("benefit: ", benefitMode)
     return (
         <OnboardingWelcomeScreen buttonText={t('app.topicsChosen.discoverBtn')} link={`/profile-section`}>
             <VStack gap={3}>

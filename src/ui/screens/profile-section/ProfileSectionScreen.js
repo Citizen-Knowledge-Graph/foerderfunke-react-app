@@ -9,7 +9,6 @@ import ProfileSectionTopQuestion from "./components/ProfileSectionTopQuestion";
 import {useParams} from "react-router-dom";
 
 const ProfileSectionScreen = () => {
-    const {benefitId} = useParams();
     const isDesktop = useStore((state) => state.isDesktop);
     const profileQuestions = useQuestionsStore((state) => state.questions);
     const [completed, setCompleted] = useState(false);
@@ -28,7 +27,6 @@ const ProfileSectionScreen = () => {
                             ) : (
                                 <ProfileSectionTopQuestion
                                     setCompleted={setCompleted}
-                                    benefitId={benefitId}
                                  />
                             )
                     ) : (

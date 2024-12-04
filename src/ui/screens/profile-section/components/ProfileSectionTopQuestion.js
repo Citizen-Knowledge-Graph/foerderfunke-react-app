@@ -2,22 +2,19 @@ import React, {useEffect, useState} from 'react';
 import VStack from "../../../shared-components/VStack";
 import ProfileSectionField from "./ProfileSectionField";
 import {
-    questionsStackStore, useMetadataStore,
+    questionsStackStore,
     useQuestionsStore,
-    useSelectedTopicsStore,
     useValidationReportStore
 } from "../../../storage/zustand";
 import ProfileSectionHeader from "./ProfileSectionHeader";
 import ProfileSectionTopHeader from "./ProfileSectionTopHeader";
-import {useNavigate, useParams} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import ProfileSectionQuestionsCount from "./ProfileSectionQuestionsCount";
 import {useQuestionsUpdate} from "../../../storage/updates";
 
 const ProfileSectionTopQuestion = ({setCompleted}) => {
-    const {benefitMode} = useParams();
     const [currentQuestion, setCurrentQuestion] = useState(null);
 
-    const metadata = useMetadataStore((state) => state.metadata);
     const questionsStack = questionsStackStore((state) => state.questionsStack);
     const stackCounter = questionsStackStore((state) => state.stackCounter);
     const stackMode = questionsStackStore((state) => state.stackMode);
@@ -25,7 +22,6 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
     const setStackCounter = questionsStackStore((state) => state.setStackCounter);
     const setStackMode = questionsStackStore((state) => state.setStackMode);
     const triggerQuestionsUpdate = useQuestionsUpdate((state) => state.triggerQuestionsUpdate);
-    const selectedBenefit = useSelectedTopicsStore((state) => state.selectedBenefit);
     const profileQuestions = useQuestionsStore((state) => state.questions);
     const validationReport = useValidationReportStore((state) => state.validationReport);
     const navigate = useNavigate();
@@ -73,11 +69,6 @@ const ProfileSectionTopQuestion = ({setCompleted}) => {
     return (
         <VStack sx={{width: '100%'}} gap={3}>
             <ProfileSectionHeader handleBack={handleBack}/>
-            {benefitMode ?
-                <h2>Eligibility check
-                    for: {metadata.rp["https://foerderfunke.org/default#" + selectedBenefit.split(":")[1]].title}</h2>
-                : ""
-            }
             <VStack gap={1}>
                 {currentQuestion ? (
                     <VStack gap={8}>
