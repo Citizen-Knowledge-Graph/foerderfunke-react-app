@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import VStack from '../../components/VStack';
+import VStack from '../../ui/shared-components/VStack';
 import {createTheme} from "@mui/material/styles";
 
 const theme = createTheme();
