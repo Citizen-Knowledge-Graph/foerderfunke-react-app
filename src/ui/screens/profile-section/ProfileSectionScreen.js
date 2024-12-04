@@ -6,7 +6,6 @@ import AppScreenWrapper from "../../shared-components/AppScreenWrapper";
 import {useStore} from "../../shared-components/ViewportUpdater";
 import {useQuestionsStore} from "../../storage/zustand";
 import ProfileSectionTopQuestion from "./components/ProfileSectionTopQuestion";
-import {useParams} from "react-router-dom";
 
 const ProfileSectionScreen = () => {
     const isDesktop = useStore((state) => state.isDesktop);

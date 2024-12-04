@@ -1,5 +1,5 @@
 import React, {useEffect, useMemo, useState} from 'react';
-import {Card, CardContent, Typography, CircularProgress, Button} from '@mui/material';
+import {Card, CardContent, Typography, Button} from '@mui/material';
 import VStack from "../../../shared-components/VStack";
 import HStack from "../../../shared-components/HStack";
 
