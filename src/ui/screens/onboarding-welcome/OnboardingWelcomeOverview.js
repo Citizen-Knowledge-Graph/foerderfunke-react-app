@@ -28,10 +28,11 @@ const OnboardingWelcomeOverview = () => {
     };
 
     const getRpTitle = () => {
-        const rpUri = "https://foerderfunke.org/default#" + selectedBenefit.split(":")[1];
+        const rpUri = "https://foerderfunke.org/default#" + selectedBenefit?.split(":")[1];
         return metadata.rp[rpUri].title;
     }
 
+    console.log("benefit: ", benefitMode)
     return (
         <OnboardingWelcomeScreen buttonText={t('app.topicsChosen.discoverBtn')} link={`/profile-section`}>
             <VStack gap={3}>

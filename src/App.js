@@ -39,7 +39,7 @@ const App = () => {
                             <Route path="/onboarding-choice" element={<OnboardingChoice/>}/>
                             <Route path="/onboarding-welcome-topics" element={<OnboardingWelcomeTopics/>}/>
                             <Route path="/onboarding-welcome" element={<OnboardingWelcomeOverview/>}/>
-                            <Route path="/onboarding-welcome/:benefitId" element={<OnboardingWelcomeOverview/>}/>
+                            <Route path="/onboarding-welcome/:benefitMode" element={<OnboardingWelcomeOverview/>}/>
                             <Route path="/eligibility-overview" element={<EligibilityOverviewScreen/>}/>
                             <Route path="/profile-section" element={<ProfileSectionScreen/>}/>
                             <Route path="/profile-section/:benefitId" element={<ProfileSectionScreen/>}/>

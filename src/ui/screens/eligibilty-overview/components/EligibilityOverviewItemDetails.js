@@ -5,9 +5,12 @@ import HStack from "../../../shared-components/HStack";
 import {Link} from "react-router-dom";
 import globalStyles from "../../../styles/styles";
 import useTranslation from "../../../language/useTranslation";
+import {useSelectedBenefitStore} from "../../../storage/zustand";
 
 const EligibilityOverviewItemDetails = ({item, eligible}) => {
     const { t } = useTranslation();
+    const setSelectedBenefit = useSelectedBenefitStore((state) => state.setSelectedBenefit);
+
     return (
         <VStack alignItems={'flex-start'}>
             <Typography sx={styles.itemDescription}>
@@ -19,7 +22,8 @@ const EligibilityOverviewItemDetails = ({item, eligible}) => {
                         sx={styles.checkEligibilityButton}
                         variant="text"
                         component={Link}
-                        to={`/onboarding-welcome/${item.id}`}>
+                        onClick={setSelectedBenefit(item.id)}
+                        to={`/onboarding-welcome/${true}`}>
                         {t('app.browseAll.checkElBtn')}
                     </Button>
                 }
