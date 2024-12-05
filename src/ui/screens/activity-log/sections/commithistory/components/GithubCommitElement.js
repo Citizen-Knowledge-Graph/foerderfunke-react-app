@@ -1,29 +1,11 @@
 import React from "react";
 import { Box, Typography, Link } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import {mapDate} from "../../../../../utils/dateUtils";
 import useTranslation from "../../../../../language/useTranslation";
 
 const GithubCommitElement = ({ commit }) => {
     const { t } = useTranslation();
-
-    const mapDate = (date) => {
-        const dateObj = new Date(date);
-        const today = new Date();
-
-        dateObj.setHours(0, 0, 0, 0);
-        today.setHours(0, 0, 0, 0);
-
-        const diffTime = today - dateObj;
-        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-
-        if (diffDays === 0) {
-            return t("activityLog.gitCommits.today");
-        } else if (diffDays === 1) {
-            return t("activityLog.gitCommits.yesterday");
-        } else {
-            return t("activityLog.gitCommits.daysAgo", { count: diffDays });
-        }
-    };
 
     return (
         <Box
@@ -75,7 +57,7 @@ const GithubCommitElement = ({ commit }) => {
                         textAlign: "right",
                     }}
                 >
-                    {mapDate(commit.timestamp)}
+                    {mapDate(commit.timestamp, t)}
                 </Typography>
                 <Link href={commit.commit_url} target="_blank" rel="noopener noreferrer">
                     <GitHubIcon sx={{ fontSize: 24, color: "text.primary" }} />
