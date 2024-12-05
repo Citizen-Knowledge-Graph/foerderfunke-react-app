@@ -1,7 +1,9 @@
 import React from "react";
 import VStack from "../../../shared-components/VStack";
+import {useStore} from "../../../shared-components/ViewportUpdater";
 
-const LandingPageSectionWrapper = ({backgroundColor= null, isDesktop, isTop = false, children}) => {
+const LandingPageSectionWrapper = ({backgroundColor= null, isTop = false, children}) => {
+    const isDesktop = useStore((state) => state.isDesktop);
     const horizontalPadding = isDesktop ? '60px' : '16px';
     const verticalPadding = isDesktop
         ? isTop

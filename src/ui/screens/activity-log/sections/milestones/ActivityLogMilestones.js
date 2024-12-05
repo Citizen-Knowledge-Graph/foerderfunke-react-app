@@ -1,43 +1,32 @@
-import React, {useContext} from "react";
-import {Typography} from "@mui/material";
-import LandingPageSectionWrapper from "../../../landing-page/components/LandingPageSectionWrapper";
-import LandingPageSectionGrid from "../../../landing-page/components/LandingPageSectionGrid";
-import VStack from "../../../../shared-components/VStack";
+import React from "react";
+import ActivityLogSection from "../../components/ActivityLogSection";
 import MilestonesList from "./components/MilestonesList";
 import useTranslation from "../../../../language/useTranslation";
-import {LanguageContext} from "../../../../language/LanguageContext";
-import {milestonesList} from "./content/milestonesList";
+import useFetchMilestones from "./hooks/useFetchMilestones";
+import {Box} from "@mui/material";
 
-
-const ActivityLogMilestones = ({isDesktop}) => {
+const ActivityLogMilestones = () => {
     const { t } = useTranslation();
-    const { language } = useContext(LanguageContext);
-
-    const upcoming_milestones = milestonesList[language].comingUp;
-    const past_milestones = milestonesList[language].past;
+    const { upcoming, past } = useFetchMilestones();
 
     return (
-        <LandingPageSectionWrapper isDesktop={isDesktop}>
-            <LandingPageSectionGrid title={t('activityLog.milestones.title')}>
-                <VStack>
-                    <Typography sx={styles.text}>
-                        {t('activityLog.milestones.description')}
-                    </Typography>
-                </VStack>
-                <VStack gap={5} sx={{width: '100%'}}>
-                    <MilestonesList title={t('activityLog.milestones.listTitleComingUp')} milestones={upcoming_milestones}/>
-                    <MilestonesList title={t('activityLog.milestones.listTitlePast')} milestones={past_milestones}/>
-                </VStack>
-            </LandingPageSectionGrid>
-        </LandingPageSectionWrapper>
-    )
-}
-
-const styles = {
-    text: {
-        fontSize: '20px',
-        textAlign: 'left',
-    },
-}
+        <ActivityLogSection
+            title={t("activityLog.milestones.title")}
+            description={t("activityLog.milestones.description")}
+            content={
+                <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+                    <MilestonesList
+                        title={t("activityLog.milestones.listTitleComingUp")}
+                        milestones={upcoming}
+                    />
+                    <MilestonesList
+                        title={t("activityLog.milestones.listTitlePast")}
+                        milestones={past}
+                    />
+                </Box>
+            }
+        />
+    );
+};
 
 export default ActivityLogMilestones;

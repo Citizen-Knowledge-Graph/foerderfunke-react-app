@@ -1,15 +1,10 @@
 import React from "react";
-import VStack from "../../../../../shared-components/VStack";
-import HStack from "../../../../../shared-components/HStack";
-import {Typography} from "@mui/material";
-import globalStyles from "../../../../../styles/styles";
-import GitHubIcon from '@mui/icons-material/GitHub';
+import { Box, Typography, Link } from "@mui/material";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import useTranslation from "../../../../../language/useTranslation";
 
-
-const GithubCommitElement = ({commit, showBorderBottom}) => {
+const GithubCommitElement = ({ commit }) => {
     const { t } = useTranslation();
-    const borderBottom = showBorderBottom ? '1px solid rgba(252, 215, 85)' : 'none';
 
     const mapDate = (date) => {
         const dateObj = new Date(date);
@@ -22,60 +17,72 @@ const GithubCommitElement = ({commit, showBorderBottom}) => {
         const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
 
         if (diffDays === 0) {
-            return t('activityLog.gitCommits.today');
+            return t("activityLog.gitCommits.today");
         } else if (diffDays === 1) {
-            return t('activityLog.gitCommits.yesterday');
+            return t("activityLog.gitCommits.yesterday");
         } else {
-            return t('activityLog.gitCommits.daysAgo', { count: diffDays });
+            return t("activityLog.gitCommits.daysAgo", { count: diffDays });
         }
     };
 
     return (
-        <HStack justifyContent={'space-between'} alignItems={'flex-start'}
-                sx={{...styles.commitBox, borderBottom: borderBottom}}>
-            <VStack gap={1} alignItems={'flex-start'}>
-                <Typography sx={styles.title}>
-                    {commit.commit_message}
-                </Typography>
-                <Typography sx={styles.repoName}>
+        <Box
+            sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "flex-start",
+                paddingBottom: 1,
+                paddingTop: 1,
+                borderBottom: "1px solid",
+                borderColor: "divider",
+                "&:last-child": {
+                    borderBottom: "none",
+                },
+            }}
+        >
+            <Box
+                sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 1,
+                    alignItems: "flex-start",
+                }}
+            >
+                <Typography variant="body1">{commit.commit_message}</Typography>
+                <Typography
+                    variant="body2"
+                    sx={{
+                        fontWeight: 300,
+                        color: "text.secondary",
+                    }}
+                >
                     {commit.repo_name}
                 </Typography>
-            </VStack>
-            <VStack gap={1} justifyContent={'flex-start'} alignItems={'flex-end'} sx={styles.dateBox}>
-                <Typography sx={styles.date}>
+            </Box>
+            <Box
+                sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 1,
+                    alignItems: "flex-end",
+                    minWidth: "90px",
+                }}
+            >
+                <Typography
+                    variant="caption"
+                    sx={{
+                        color: "text.secondary",
+                        textAlign: "right",
+                    }}
+                >
                     {mapDate(commit.timestamp)}
                 </Typography>
-                <a href={commit.commit_url} target="_blank" rel="noopener noreferrer">
-                    <GitHubIcon sx={{fontSize: 24, color: 'black'}}/>
-                </a>
-            </VStack>
-        </HStack>
-    )
-}
-
-const styles = {
-    commitBox: {
-        paddingBottom: '16px',
-        paddingTop: '0px',
-    },
-    title: {
-        fontSize: '20px',
-    },
-    dateBox: {
-        minWidth: '90px',
-    },
-    date: {
-        fontSize: '16px',
-        fontWeight: '300',
-        color: globalStyles.colorDarkGrey,
-        textAlign: 'right'
-    },
-    repoName: {
-        fontSize: '16px',
-        fontWeight: '300',
-        color: globalStyles.colorDarkGrey,
-        textAlign: 'right'
-    },
-}
+                <Link href={commit.commit_url} target="_blank" rel="noopener noreferrer">
+                    <GitHubIcon sx={{ fontSize: 24, color: "text.primary" }} />
+                </Link>
+            </Box>
+        </Box>
+    );
+};
 
 export default GithubCommitElement;

@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material/styles';
+import {createTheme} from '@mui/material/styles';
 
 const theme = createTheme({
     palette: {
@@ -32,10 +32,32 @@ const theme = createTheme({
         fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
         body1: {
             fontSize: '16px',
+            lineHeight: '1.5',
+            fontWeight: 400,
             color: '#333333',
         },
         body2: {
             fontSize: '14px',
+            lineHeight: '1.5',
+            fontWeight: 400,
+            color: '#333333',
+        },
+        h6: {
+            fontSize: '20px',
+            fontWeight: 'bold',
+            lineHeight: '1.5',
+            color: '#333333',
+        },
+        h4: {
+            fontSize: '28px',
+            fontWeight: 'bold',
+            lineHeight: '1.3',
+            color: '#333333',
+        },
+        caption: {
+            fontSize: '12px',
+            fontWeight: 400,
+            lineHeight: '1.5',
             color: '#333333',
         },
     },
