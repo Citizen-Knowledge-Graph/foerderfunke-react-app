@@ -36,7 +36,6 @@ const LandingPageBenefitsCardDesktop = ({benefit, isHovered, onMouseEnter, onMou
                             bottom: 25,
                             width: '100%',
                             backgroundColor: 'rgba(0, 0, 0, 0.0)',
-                            color: 'white',
                             textAlign: 'center',
                             padding: '10px',
                             transition: 'all 0.3s ease-in-out',
@@ -73,6 +72,7 @@ const styles = {
         fontSize: '28px',
         fontWeight: 'bold',
         textAlign: 'center',
+        color: 'white'
     }
 }
 
