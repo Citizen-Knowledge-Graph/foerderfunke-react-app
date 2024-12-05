@@ -6,7 +6,7 @@ import ActivityLogCommits from "./sections/commithistory/ActivityLogCommits";
 const ActivityLogScreen = () => {
 
     return (
-        <Layout gap={3}>
+        <Layout>
             <ActivityLogMilestones/>
             <ActivityLogCommits/>
         </Layout>

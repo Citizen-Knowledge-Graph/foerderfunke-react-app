@@ -7,7 +7,7 @@ const ActivityLogSection = ({ title, description, content, error }) => {
     return (
         <LandingPageSectionWrapper>
             <LandingPageSectionGrid title={title}>
-                <Box sx={{ marginBottom: 3 }}>
+                <Box>
                     <Typography variant="body1">{description}</Typography>
                 </Box>
                 <Box sx={{ width: "100%" }}>
