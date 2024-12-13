@@ -10,19 +10,18 @@ import {CircularProgress} from "@mui/material";
 import VStack from "../../shared-components/VStack";
 import {LanguageContext} from "../../language/LanguageContext";
 import {useValidationReportStore} from "../../storage/zustand";
-import useSetDataObject from "../../shared-hooks/useSetDataObject";
 import {useValidationUpdate} from "../../storage/updates";
+import useFetchData from "../../shared-hooks/useFetchData";
 
 const EligibilityOverviewScreen = () => {
     const { language } = useContext(LanguageContext);
     const isDesktop = useStore((state) => state.isDesktop);
 
     const [eligibilityData, setEligibilityData] = useState();
-    const [hydrationData, setHydrationData] = useState();
     const validationReport = useValidationReportStore((state) => state.validationReport);
     const validationIsLoading = useValidationUpdate((state) => state.validationIsLoading);
 
-    useSetDataObject('assets/data/requirement-profiles/requirement-profiles-hydration.json', setHydrationData);
+    const hydrationData = useFetchData('assets/data/requirement-profiles/requirement-profiles-hydration.json')
 
     useEffect(() => {
         if (validationReport && hydrationData) {

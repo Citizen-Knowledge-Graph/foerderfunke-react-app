@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useMemo, useState} from 'react';
+import React, {useContext} from 'react';
 import Layout from "../../shared-components/Layout";
 import {Link, useParams} from "react-router-dom";
 import BenefitPageHeader from "./components/BenefitPageHeader";
@@ -6,219 +6,116 @@ import AppScreenWrapper from "../../shared-components/AppScreenWrapper";
 import {useStore} from "../../shared-components/ViewportUpdater";
 import {useMetadataStore, useValidationReportStore} from "../../storage/zustand";
 import BenefitPageRules from "./components/BenefitPageRules";
-import {Box, Button, IconButton, Typography} from "@mui/material";
-import HStack from "../../shared-components/HStack";
-import globalStyles from "../../styles/styles";
-import {ValidationResult} from "@foerderfunke/matching-engine";
-import VStack from "../../shared-components/VStack";
-import Divider from "@mui/material/Divider";
+import {Box, Button, Typography, Divider, IconButton} from "@mui/material";
 import OpenInNewOutlinedIcon from '@mui/icons-material/OpenInNewOutlined';
-import SearchIcon from '@mui/icons-material/Search';
 import useTranslation from "../../language/useTranslation";
 import {LanguageContext} from "../../language/LanguageContext";
-import useSetDataObject from "../../shared-hooks/useSetDataObject";
+import useIsMissingDataBenefit from './hooks/useIsMissingDataBenefit';
+import useBenefitPageData from "./hooks/useBenefitPageData";
+import useCategoryTitles from "./hooks/useCategoryTitles";
+import useFetchData from "../../shared-hooks/useFetchData";
 
 const BenefitPageScreen = () => {
     const {id} = useParams();
-    const { t } = useTranslation()
+    const {t} = useTranslation();
     const {language} = useContext(LanguageContext);
-    const [benefitPageData, setBenefitPageData] = useState();
-    const [topicsData, setTopicsData] = useState([]);
 
     const isDesktop = useStore((state) => state.isDesktop);
     const metadata = useMetadataStore((state) => state.metadata);
     const validationReport = useValidationReportStore((state) => state.validationReport);
 
-    useSetDataObject('assets/data/topics/topics-list.json', setTopicsData);
+    const topicsData = useFetchData('assets/data/topics/topics-list.json');
+    const isMissingDataBenefit = useIsMissingDataBenefit(id, validationReport);
+    const benefitPageData = useBenefitPageData(id, metadata);
+    const categoryTitles = useCategoryTitles(topicsData, benefitPageData, language);
 
-    useEffect(() => {
-        let rpUri = id.startsWith("ff:") ? "https://foerderfunke.org/default#" + id.split(":")[1] : id;
-        setBenefitPageData(metadata.rp[rpUri]);
-    }, [id, topicsData, metadata]);
-
-    const isMissingDataBenefit = () => {
-        const report = validationReport.reports.find(report => report.rpUri === "https://foerderfunke.org/default#" + id.split(":")[1]);
-        return report.result === ValidationResult.UNDETERMINABLE;
+    if (!benefitPageData || topicsData?.length === 0) {
+        return <Typography>Loading...</Typography>;
     }
 
-    const getTopicTitle = useMemo(
-        () => (topicUri) => {
-            if (!topicsData) {
-                return '';
-            }
-
-            let topicId = topicUri.startsWith("https") ? "ff:" + topicUri.split("#")[1] : topicUri;
-            const topic = topicsData.find(topic => topic.id === topicId);
-
-            return topic ? topic.title[language] : '';
-        },
-        [language, topicsData]
-    );
-
-    const getCategoryTitles = useMemo(
-        () => {
-            if (!benefitPageData || !benefitPageData.categories) {
-                return '';
-            }
-            return benefitPageData.categories.map(categoryUri => getTopicTitle(categoryUri))
-        },
-        [benefitPageData, getTopicTitle]
-    );
-
     return (
-        <Layout isApp={true} logo={false} back={'Back'}>
+        <Layout isApp={true} logo={false} back="Back">
             <AppScreenWrapper isDesktop={isDesktop} back={true}>
-                {benefitPageData && topicsData.length > 0 ? (
-                    <>
-                        <BenefitPageHeader benefit={benefitPageData}/>
-                        <VStack sx={{width: '100%'}}>
-                            <Typography sx={styles.topicsTitle}>
-                                {t('app.benefitPage.inTopics')}:
-                            </Typography>
-                            <HStack sx={{flexWrap: 'wrap'}}>
-                                {
-                                    getCategoryTitles.map((category, index) => (
-                                        <Box
-                                            key={index}
-                                            sx={styles.topicTag}
-                                        >
-                                            {category}
-                                        </Box>
-                                    ))
-                                }
-                            </HStack>
-                        </VStack>
-                        {id && isMissingDataBenefit() &&
-                            <VStack sx={{width: '100%'}}>
-                                <HStack>
-                                    <Button
-                                        sx={styles.checkEligibilityButton}
-                                        variant="text"
-                                        component={Link}
-                                        to={`/onboarding-welcome/${id}`}
-                                        startIcon={<SearchIcon/>}
-                                    >
-                                        {t('app.benefitPage.eligibilityBtn')}
-                                    </Button>
-                                </HStack>
-                            </VStack>
-                        }
-                        <VStack sx={{width: '100%'}} gap={3}>
-                            <Divider sx={{width: "100%"}}/>
-                            <VStack sx={{width: "100%"}} gap={1}>
-                                <Typography sx={styles.sectionTitle}>
-                                    {t('app.benefitPage.whatIsIt')}
+                <BenefitPageHeader benefit={benefitPageData}/>
+                <Box sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    width: '100%'
+                }} gap={2}>
+                    <Typography variant="body1" sx={{fontWeight: 300}}>{t('app.benefitPage.inTopics')}:</Typography>
+                    <Box sx={{display: 'flex', flexWrap: 'wrap'}} gap={2}>
+                        {categoryTitles.map((category, index) => (
+                            <Box
+                                key={index}
+                                sx={(theme) => ({
+                                    padding: 0.75,
+                                    borderRadius: theme.shape.borderRadius,
+                                    borderWidth: 1,
+                                    borderStyle: 'solid',
+                                    borderColor: theme.palette.primary.main,
+                                })}
+                            >
+                                <Typography variant="body2">
+                                    {category}
                                 </Typography>
-                                <Typography sx={styles.sectionText}>
-                                    {benefitPageData.benefitInfo}
-                                </Typography>
-                            </VStack>
-                            <Divider sx={{width: "100%"}}/>
-                            <BenefitPageRules benefitId={id}/>
-                            {/*
-                            <Divider sx={{width: "100%"}}/>
-                            <VStack sx={{width: "100%"}} gap={1}>
-                                <Typography sx={styles.sectionTitle}>
-                                    What documents do you need
-                                </Typography>
-                                <Typography sx={styles.sectionText}>
-                                    More information to come here. We are working on this section.
-                                </Typography>
-                            </VStack>
-                            <Divider sx={{width: "100%"}}/>
-                            <VStack sx={{width: "100%"}} gap={1}>
-                                <Typography sx={styles.sectionTitle}>
-                                    Contact
-                                </Typography>
-                                <Typography sx={styles.sectionText}>
-                                    More information to come here. We are working on this section.
-                                </Typography>
-                            </VStack>
-                            <Divider sx={{width: "100%"}}/>
-                            <VStack sx={{width: "100%"}} gap={1}>
-                                <Typography sx={styles.sectionTitle}>
-                                    Do you need help with your application?
-                                </Typography>
-                                <Typography sx={styles.sectionText}>
-                                    More information to come here. We are working on this section.
-                                </Typography>
-                            </VStack>
-                            */}
-                            <Divider sx={{width: "100%"}}/>
-                            <VStack sx={{width: "100%"}} gap={1}>
-                                <HStack gap={1}>
-                                    <Typography sx={styles.sectionText}>
-                                        {t('app.benefitPage.moreInfo')}
-                                    </Typography>
-                                    <a href={benefitPageData.seeAlso} target="_blank" rel="noopener noreferrer">
-                                        <IconButton
-                                            sx={{
-                                                width: 24,
-                                                height: 24,
-                                                borderRadius: '50%',
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                justifyContent: 'center',
-                                                backgroundColor: 'white',
-                                                '&:hover': {
-                                                    backgroundColor: globalStyles.colorLightGrey,
-                                                },
-                                            }}
-                                        >
-                                            <OpenInNewOutlinedIcon sx={{fontSize: 16, color: 'black'}}/>
-                                        </IconButton>
-                                    </a>
-                                </HStack>
-                            </VStack>
-                        </VStack>
-                    </>
-                ) : null}
+                            </Box>
+                        ))}
+                    </Box>
+                </Box>
+                {id && isMissingDataBenefit && (
+                    <Box sx={{width: '100%', mb: 2}}>
+                        <Button
+                            variant="contained"
+                            sx={{backgroundColor: 'secondary.main', borderColor: 'secondary.main'}}
+                            component={Link}
+                            to={`/onboarding-welcome/${id}`}
+                        >
+                            {t('app.benefitPage.eligibilityBtn')}
+                        </Button>
+                    </Box>
+                )}
+                <Box gap={3} sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    width: '100%'
+                }}>
+                    <Divider/>
+                    <Box sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        width: '100%'
+                    }} gap={1}>
+                        <Typography variant="h6">{t('app.benefitPage.whatIsIt')}</Typography>
+                        <Typography variant="body1">{benefitPageData.benefitInfo || t('app.noData')}</Typography>
+                    </Box>
+                    <Divider/>
+                    <BenefitPageRules benefitId={id}/>
+                    <Divider/>
+                    <Box sx={{display: "flex", alignItems: 'center'}} gap={1}>
+                        <Typography variant="body1">{t('app.benefitPage.moreInfo')}</Typography>
+                        <a href={benefitPageData.seeAlso} target="_blank" rel="noopener noreferrer">
+                            <IconButton
+                                sx={{
+                                    width: 24,
+                                    height: 24,
+                                    borderRadius: '50%',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    backgroundColor: 'white',
+                                    '&:hover': {
+                                        backgroundColor: 'palette.custom.lightGrey',
+                                    },
+                                }}
+                            >
+                                <OpenInNewOutlinedIcon sx={{fontSize: 16, color: 'black'}}/>
+                            </IconButton>
+                        </a>
+                    </Box>
+                </Box>
             </AppScreenWrapper>
         </Layout>
     );
 };
 
-const styles = {
-    checkEligibilityButton: {
-        borderWidth: '1px',
-        borderStyle: 'solid',
-        borderRadius: '12px',
-        padding: '8px',
-        borderColor: globalStyles.secondaryColor,
-        backgroundColor: globalStyles.secondaryColor,
-        color: 'white',
-        fontSize: '14px',
-        fontWeight: 'bold',
-        textTransform: 'none',
-        '&:hover': {
-            backgroundColor: globalStyles.secondaryColor,
-            color: 'white',
-            borderColor: globalStyles.secondaryColor,
-        },
-    },
-    topicsTitle: {
-        fontSize: 16,
-        fontWeight: 300,
-    },
-    topicTag: {
-        padding: '8px',
-        borderRadius: '12px',
-        fontSize: '14px',
-        color: 'black',
-        fontWeight: '400',
-        borderWidth: '1px',
-        borderStyle: 'solid',
-        borderColor: globalStyles.primaryColor,
-    },
-    sectionTitle: {
-        fontSize: '20px',
-        fontWeight: 'bold',
-    },
-    sectionText: {
-        fontSize: '16px',
-        fontWeight: '400',
-    }
-}
-
 export default BenefitPageScreen;
-

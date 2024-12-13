@@ -8,22 +8,21 @@ import useTopicSelectionHandlers from "./hooks/useTopicSelectionHandlers";
 import useTranslation from "../../language/useTranslation";
 import {LanguageContext} from "../../language/LanguageContext";
 import {useStore} from "../../shared-components/ViewportUpdater";
-import useSetDataObject from "../../shared-hooks/useSetDataObject";
+import useFetchData from "../../shared-hooks/useFetchData";
 
 const OnboardingWelcomeTopics = () => {
     const { t } = useTranslation();
     const isDesktop = useStore((state) => state.isDesktop);
     const { language } = useContext(LanguageContext);
-    const [topicsData, setTopicsData] = useState([]);
     const [selectedTopicsBoolean, setSelectedTopicsBoolean] = useState([]);
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
     const clearSelectedBenefit = useSelectedBenefitStore((state) => state.clear);
 
-    useSetDataObject('assets/data/topics/topics-list.json', setTopicsData);
+    const topicsData = useFetchData('assets/data/topics/topics-list.json')
     clearSelectedBenefit()
 
     useEffect(() => {
-        if (topicsData.length > 0) {
+        if (topicsData?.length > 0) {
             const newSelectedTopicsBoolean = topicsData.map(topic =>
                 selectedTopics.some(selectedTopic => selectedTopic.id === topic.id)
             );

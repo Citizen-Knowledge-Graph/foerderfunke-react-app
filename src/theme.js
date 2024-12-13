@@ -61,12 +61,38 @@ const theme = createTheme({
             color: '#333333',
         },
     },
+    shape: {
+        borderRadius: 2,
+        roundedBox: 12,
+    },
     components: {
         MuiButton: {
             styleOverrides: {
                 root: {
                     textTransform: 'none',
-                    borderRadius: 8,
+                    borderRadius: 2,
+                },
+                contained: {
+                    backgroundColor: 'primary.main',
+                    borderColor: '#FCD755',
+                    borderWidth: 1,
+                    borderStyle: 'solid',
+                    boxShadow: 'none',
+                    color: 'black',
+                    fontWeight: 'bold',
+                    '&:hover': {
+                        backgroundColor: 'white',
+                        borderColor: 'primary.main',
+                        boxShadow: 'none',
+                    },
+                },
+                outlined: {
+                    color: 'primary.main',
+                    borderColor: 'primary.main',
+                    borderWidth: 1,
+                    '&:hover': {
+                        backgroundColor: 'primary.light',
+                    },
                 },
             },
         },
