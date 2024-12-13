@@ -6,7 +6,7 @@ import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import React, {useState} from "react";
 import {useStore} from "../../../shared-components/ViewportUpdater";
 import {Link} from "react-router-dom";
-import {useValidationReportStore} from "../../../storage/zustand";
+import {useSelectedBenefitStore, useSelectedTopicsStore, useValidationReportStore} from "../../../storage/zustand";
 import useIsMissingDataBenefit from "../hooks/useIsMissingDataBenefit";
 import useTranslation from "../../../language/useTranslation";
 
@@ -17,9 +17,11 @@ const BenefitPageHeader = ({id, benefit}) => {
     const isDesktop = useStore((state) => state.isDesktop);
     const titleFontSize = isDesktop ? '32px' : '28px';
 
+    const setSelectedBenefit = useSelectedBenefitStore((state) => state.setSelectedBenefit);
+    const clearSelectedTopics = useSelectedTopicsStore((state) => state.clear);
     const validationReport = useValidationReportStore((state) => state.validationReport);
-    const isMissingDataBenefit = useIsMissingDataBenefit(id, validationReport);
 
+    const isMissingDataBenefit = useIsMissingDataBenefit(id, validationReport);
 
     return (
         <VStack gap={0} alignItems={'flex-start'} sx={{
@@ -67,6 +69,10 @@ const BenefitPageHeader = ({id, benefit}) => {
                         <Box sx={{width: '100%', mb: 2}}>
                             <Button
                                 variant="contained"
+                                onClick={() => {
+                                    setSelectedBenefit(id);
+                                    clearSelectedTopics()
+                                }}
                                 sx={{
                                     backgroundColor: 'secondary.main',
                                     borderColor: 'secondary.main',

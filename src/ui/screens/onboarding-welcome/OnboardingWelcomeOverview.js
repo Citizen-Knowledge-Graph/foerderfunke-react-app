@@ -45,7 +45,7 @@ const OnboardingWelcomeOverview = () => {
                             <VStack alignItems={'flex-start'}>
                                 <VStack gap={2} alignItems={'flex-start'}>
                                     <Typography variant="h6" sx={styles.listHeader}>
-                                        {getRpTitle()}
+                                        {metadata.rp && getRpTitle()}
                                     </Typography>
                                 </VStack>
                             </VStack>
