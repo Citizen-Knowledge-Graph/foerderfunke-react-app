@@ -45,7 +45,7 @@ const OnboardingWelcomeTopics = () => {
             {
                 setSelectedTopicsBoolean.length > 0 && (
                     <VStack alignItems={'center'} sx={isDesktop ? styles.gridContainer : styles.singleColumnContainer}>
-                        {topicsData.map((topic, index) => (
+                        {topicsData?.map((topic, index) => (
                             <Button
                                 key={index}
                                 onClick={() => handleButtonClick(topic, index)}

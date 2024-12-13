@@ -29,11 +29,11 @@ const useTopicSelectionHandlers = (topicsData, selectedTopicsBoolean, setSelecte
         const isChecked = event.target.checked;
 
         if (isChecked) {
-            const newSelectedTopics = new Array(topicsData.length).fill(true);
+            const newSelectedTopics = new Array(topicsData?.length).fill(true);
             setSelectedTopicsBoolean(newSelectedTopics);
             setSelectedTopics(topicsData);
         } else {
-            setSelectedTopicsBoolean(Array(topicsData.length).fill(false));
+            setSelectedTopicsBoolean(Array(topicsData?.length).fill(false));
             setSelectedTopics([]);
         }
     }, [topicsData, setSelectedTopicsBoolean, setSelectedTopics]);
