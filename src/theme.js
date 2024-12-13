@@ -70,7 +70,7 @@ const theme = createTheme({
             styleOverrides: {
                 root: {
                     textTransform: 'none',
-                    borderRadius: 2,
+                    borderRadius: "4px",
                 },
                 contained: {
                     backgroundColor: 'primary.main',

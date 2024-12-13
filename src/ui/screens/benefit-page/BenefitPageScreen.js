@@ -1,16 +1,15 @@
 import React, {useContext} from 'react';
 import Layout from "../../shared-components/Layout";
-import {Link, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import BenefitPageHeader from "./components/BenefitPageHeader";
 import AppScreenWrapper from "../../shared-components/AppScreenWrapper";
 import {useStore} from "../../shared-components/ViewportUpdater";
-import {useMetadataStore, useValidationReportStore} from "../../storage/zustand";
+import {useMetadataStore} from "../../storage/zustand";
 import BenefitPageRules from "./components/BenefitPageRules";
-import {Box, Button, Typography, Divider, IconButton} from "@mui/material";
+import {Box, Typography, Divider, IconButton} from "@mui/material";
 import OpenInNewOutlinedIcon from '@mui/icons-material/OpenInNewOutlined';
 import useTranslation from "../../language/useTranslation";
 import {LanguageContext} from "../../language/LanguageContext";
-import useIsMissingDataBenefit from './hooks/useIsMissingDataBenefit';
 import useBenefitPageData from "./hooks/useBenefitPageData";
 import useCategoryTitles from "./hooks/useCategoryTitles";
 import useFetchData from "../../shared-hooks/useFetchData";
@@ -22,10 +21,8 @@ const BenefitPageScreen = () => {
 
     const isDesktop = useStore((state) => state.isDesktop);
     const metadata = useMetadataStore((state) => state.metadata);
-    const validationReport = useValidationReportStore((state) => state.validationReport);
 
     const topicsData = useFetchData('assets/data/topics/topics-list.json');
-    const isMissingDataBenefit = useIsMissingDataBenefit(id, validationReport);
     const benefitPageData = useBenefitPageData(id, metadata);
     const categoryTitles = useCategoryTitles(topicsData, benefitPageData, language);
 
@@ -36,7 +33,7 @@ const BenefitPageScreen = () => {
     return (
         <Layout isApp={true} logo={false} back="Back">
             <AppScreenWrapper isDesktop={isDesktop} back={true}>
-                <BenefitPageHeader benefit={benefitPageData}/>
+                <BenefitPageHeader id={id} benefit={benefitPageData}/>
                 <Box sx={{
                     display: "flex",
                     flexDirection: "column",
@@ -62,18 +59,6 @@ const BenefitPageScreen = () => {
                         ))}
                     </Box>
                 </Box>
-                {id && isMissingDataBenefit && (
-                    <Box sx={{width: '100%', mb: 2}}>
-                        <Button
-                            variant="contained"
-                            sx={{backgroundColor: 'secondary.main', borderColor: 'secondary.main'}}
-                            component={Link}
-                            to={`/onboarding-welcome/${id}`}
-                        >
-                            {t('app.benefitPage.eligibilityBtn')}
-                        </Button>
-                    </Box>
-                )}
                 <Box gap={3} sx={{
                     display: "flex",
                     flexDirection: "column",

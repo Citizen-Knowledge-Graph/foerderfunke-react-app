@@ -1,15 +1,25 @@
 import VStack from "../../../shared-components/VStack";
-import {IconButton, Typography} from "@mui/material";
+import {Box, Button, IconButton, Typography} from "@mui/material";
 import HStack from "../../../shared-components/HStack";
 import globalStyles from "../../../styles/styles";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import React, {useState} from "react";
 import {useStore} from "../../../shared-components/ViewportUpdater";
+import {Link} from "react-router-dom";
+import {useValidationReportStore} from "../../../storage/zustand";
+import useIsMissingDataBenefit from "../hooks/useIsMissingDataBenefit";
+import useTranslation from "../../../language/useTranslation";
 
-const BenefitPageHeader = ({benefit}) => {
+const BenefitPageHeader = ({id, benefit}) => {
+    const {t} = useTranslation();
+
     const [leiKaInfo, setLeiKaInfo] = useState(false);
     const isDesktop = useStore((state) => state.isDesktop);
     const titleFontSize = isDesktop ? '32px' : '28px';
+
+    const validationReport = useValidationReportStore((state) => state.validationReport);
+    const isMissingDataBenefit = useIsMissingDataBenefit(id, validationReport);
+
 
     return (
         <VStack gap={0} alignItems={'flex-start'} sx={{
@@ -53,6 +63,25 @@ const BenefitPageHeader = ({benefit}) => {
                                 the right benefit for you.
                             </Typography>
                         </VStack>)}
+                    {id && isMissingDataBenefit && (
+                        <Box sx={{width: '100%', mb: 2}}>
+                            <Button
+                                variant="contained"
+                                sx={{
+                                    backgroundColor: 'secondary.main',
+                                    borderColor: 'secondary.main',
+                                    color: 'white',
+                                    '&:hover': {
+                                        color: 'black',
+                                    }
+                            }}
+                                component={Link}
+                                to={`/onboarding-welcome/${id}`}
+                            >
+                                {t('app.benefitPage.eligibilityBtn')}
+                            </Button>
+                        </Box>
+                    )}
                 </VStack>
             </VStack>
         </VStack>
