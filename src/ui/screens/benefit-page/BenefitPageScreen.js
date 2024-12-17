@@ -27,7 +27,7 @@ const BenefitPageScreen = () => {
     const categoryTitles = useCategoryTitles(topicsData, benefitPageData, language);
 
     if (!benefitPageData || topicsData?.length === 0) {
-        return <Typography>Loading...</Typography>;
+    return <Typography>Loading...</Typography>;
     }
 
     return (
