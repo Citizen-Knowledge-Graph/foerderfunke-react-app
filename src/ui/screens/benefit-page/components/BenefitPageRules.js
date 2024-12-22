@@ -12,7 +12,7 @@ import useBenefitPageRules from "../hooks/useBenefitPageRules";
 
 
 const BenefitPageRules = ({ benefitId }) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation();    
     const metadata = useMetadataStore((state) => state.metadata);
     const validationReport = useValidationReportStore((state) => state.validationReport);
     const activeUser = useUserStore((state) => state.activeUserId);

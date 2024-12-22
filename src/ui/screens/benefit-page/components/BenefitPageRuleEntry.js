@@ -54,18 +54,18 @@ const BenefitPageRuleEntry = ({ruleData}) => {
         <DynamicStacker>
             <HStack sx={{width: '100%'}}>
                 <VStack gap={0} sx={{width: '50%'}}>
-                    <Typography sx={styles.fieldText}>
+                    <Typography variant="body2">
                         {ruleData.requirement.label}
                     </Typography>
-                    <Typography sx={styles.requirementText}>
+                    <Typography variant="body1">
                         {ruleData.requirement.rule}
                     </Typography>
                 </VStack>
                 <VStack gap={0} sx={{width: '50%'}}>
-                    <Typography sx={styles.fieldText}>
+                    <Typography variant="body2">
                         {t('app.benefitPage.rulesTable.yourAnswer')}
                     </Typography>
-                    <Typography sx={styles.requirementText}>
+                    <Typography variant="body1">
                         {ruleData.userValue}
                     </Typography>
                 </VStack>
@@ -75,18 +75,6 @@ const BenefitPageRuleEntry = ({ruleData}) => {
             </HStack>
         </DynamicStacker>
     )
-}
-
-
-const styles = {
-    fieldText: {
-        fontSize: '14px',
-        fontWeight: '300',
-    },
-    requirementText: {
-        fontSize: '16px',
-        fontWeight: '400',
-    }
 }
 
 export default BenefitPageRuleEntry;

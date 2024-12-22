@@ -4,7 +4,6 @@ import HStack from "../../../shared-components/HStack";
 import globalStyles from "../../../styles/styles";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import React, {useState} from "react";
-import {useStore} from "../../../shared-components/ViewportUpdater";
 import {Link} from "react-router-dom";
 import {useSelectedBenefitStore, useSelectedTopicsStore, useValidationReportStore} from "../../../storage/zustand";
 import useIsMissingDataBenefit from "../hooks/useIsMissingDataBenefit";
@@ -12,15 +11,11 @@ import useTranslation from "../../../language/useTranslation";
 
 const BenefitPageHeader = ({id, benefit}) => {
     const {t} = useTranslation();
-
     const [leiKaInfo, setLeiKaInfo] = useState(false);
-    const isDesktop = useStore((state) => state.isDesktop);
-    const titleFontSize = isDesktop ? '32px' : '28px';
 
     const setSelectedBenefit = useSelectedBenefitStore((state) => state.setSelectedBenefit);
     const clearSelectedTopics = useSelectedTopicsStore((state) => state.clear);
     const validationReport = useValidationReportStore((state) => state.validationReport);
-
     const isMissingDataBenefit = useIsMissingDataBenefit(id, validationReport);
 
     return (
@@ -31,12 +26,12 @@ const BenefitPageHeader = ({id, benefit}) => {
             borderRadius: '12px'
         }}>
             <VStack>
-                <Typography sx={{...styles.titleText, fontSize: titleFontSize}}>
+                <Typography variant="h4">
                     {benefit.title}
                 </Typography>
                 <VStack>
                     <HStack alignItems={'center'}>
-                        <Typography sx={styles.subTitleText}>
+                        <Typography variant="body2">
                             LeiKa-Id: {benefit.leikaId}
                         </Typography>
                         <IconButton
@@ -59,7 +54,7 @@ const BenefitPageHeader = ({id, benefit}) => {
                     </HStack>
                     {leiKaInfo && (
                         <VStack sx={{backgroundColor: 'white', padding: '12px', borderRadius: '12px'}}>
-                            <Typography sx={styles.subTitleText}>
+                            <Typography variant="body2">
                                 LeiKa is a unique identifier for benefits in Germany. It helps you to
                                 find
                                 the right benefit for you.
@@ -92,19 +87,6 @@ const BenefitPageHeader = ({id, benefit}) => {
             </VStack>
         </VStack>
     );
-}
-
-
-const styles = {
-    titleText: {
-        fontWeight: 'bold',
-    },
-    subTitleText: {
-        fontSize: '14px',
-        fontWeight: '400',
-        color: 'black',
-        textTransform: 'none',
-    },
 }
 
 export default BenefitPageHeader;
