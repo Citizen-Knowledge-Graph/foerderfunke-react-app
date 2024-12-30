@@ -26,6 +26,8 @@ const theme = createTheme({
             darkGreyTransparent: 'rgba(51, 51, 51, 0.1)',
             lightGrey: '#BDBDBD',
             lightGreyTransparent: 'rgba(189, 189, 189, 0.1)',
+            colorDeepTeal: '#003F5C',
+            colorDeepTealTransparent: 'rgba(0, 63, 92, 0.1)',
         },
     },
     typography: {
@@ -64,6 +66,7 @@ const theme = createTheme({
     shape: {
         borderRadius: 2,
         roundedBox: 12,
+        circle: '50%',
     },
     components: {
         MuiButton: {
