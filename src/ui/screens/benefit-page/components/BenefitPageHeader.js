@@ -20,7 +20,10 @@ const BenefitPageHeader = ({ id, benefit }) => {
     const isMissingDataBenefit = useIsMissingDataBenefit(id, validationReport);
 
     return (
-        <ContentBox sx={{ backgroundColor: theme.palette.custom.colorDeepTealTransparent }}>
+        <ContentBox sx={{
+            width: "100%",
+            backgroundColor: theme.palette.custom.colorDeepTealTransparent
+        }}>
             <VBox sx={{ alignItems: "flex-start", gap: theme.spacing(2) }}>
                 <Typography variant="h4">
                     {benefit.title}
@@ -54,7 +57,7 @@ const BenefitPageHeader = ({ id, benefit }) => {
                                 </IconButton>
                             </HBox>
                             {leiKaInfo && (
-                                <ContentBox sx={{ padding: theme.spacing(1),  backgroundColor: "white" }}>
+                                <ContentBox sx={{ padding: theme.spacing(1), backgroundColor: "white" }}>
                                     <Typography variant="body2">
                                         LeiKa is a unique identifier for benefits in Germany. It helps you to
                                         find
