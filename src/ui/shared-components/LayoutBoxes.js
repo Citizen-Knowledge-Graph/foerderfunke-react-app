@@ -7,9 +7,8 @@ export const HBox = styled(Box)(({ theme, gap = 2 }) => ({
     gap: theme.spacing(gap),
 }));
 
-export const VBox = styled(Box)(({ theme, gap = 1, alignItems = 'center' }) => ({
+export const VBox = styled(Box)(({ theme, gap = 1 }) => ({
     display: 'flex',
     flexDirection: 'column',
-    alignItems,
     gap: theme.spacing(gap),
 }));

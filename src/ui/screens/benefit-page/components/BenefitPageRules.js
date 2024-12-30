@@ -3,13 +3,12 @@ import { Typography } from '@mui/material';
 import { useMetadataStore, useUserStore, useValidationReportStore } from "../../../storage/zustand";
 import userManager from "../../../../core/managers/userManager";
 import { buildRulesOutput } from "../../../../core/utilities/ruleParsing";
-import VStack from "../../../shared-components/VStack";
 import BenefitPageRuleEntry from "./BenefitPageRuleEntry";
 import Divider from "@mui/material/Divider";
 import useTranslation from "../../../language/useTranslation";
 import useFetchData from "../../../shared-hooks/useFetchData";
 import useBenefitPageRules from "../hooks/useBenefitPageRules";
-
+import { VBox } from "../../../shared-components/LayoutBoxes";
 
 const BenefitPageRules = ({ benefitId }) => {
     const { t } = useTranslation();    
@@ -23,27 +22,27 @@ const BenefitPageRules = ({ benefitId }) => {
     const rules = buildRulesOutput(rulesData, metadata, benefitReport, userProfile, t);
 
     return (
-        <VStack sx={{ width: '100%' }}>
+        <VBox sx={{ width: '100%' }}>
             <Typography variant="h6">
                 {t('app.benefitPage.rulesTable.header')}
             </Typography>
-            <VStack gap={1} sx={{
+            <VBox gap={1} sx={{
                 borderWidth: '1px',
                 borderStyle: 'solid',
                 borderColor: 'lightgrey',
-                borderRadius: '12px',
+                borderRadius: '12px'
             }}>
                 {
                     rules &&
                     rules.map((rule, index) => (
-                        <VStack gap={1} key={index}>
+                        <VBox gap={1} key={index}>
                             <BenefitPageRuleEntry ruleData={rule} />
                             {index < rules.length - 1 && <Divider />}
-                        </VStack>
+                        </VBox>
                     ))
                 }
-            </VStack>
-        </VStack>
+            </VBox>
+        </VBox>
 
     );
 }

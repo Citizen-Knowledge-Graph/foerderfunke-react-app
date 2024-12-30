@@ -67,7 +67,6 @@ const BenefitPageHeader = ({ id, benefit }) => {
                             )}
                         </VBox>
                     </Grid>
-
                     {id && isMissingDataBenefit && (
                         <Grid item xs={12} sm={6}
                             sx={{
