@@ -91,7 +91,7 @@ const theme = createTheme({
                 },
                 outlined: {
                     borderColor: '#333333',
-                    color: '#333333',
+                    color: 'black',
                     borderWidth: 1,
                     '&:hover': {
                         borderColor: '#333333',
