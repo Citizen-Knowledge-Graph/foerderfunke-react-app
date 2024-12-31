@@ -9,7 +9,7 @@ import { VBox, HBox } from "../../../shared-components/LayoutBoxes";
 import useTranslation from "../../../language/useTranslation";
 import theme from "../../../../theme";
 
-const EligibilityOverviewHeader = ({ isDesktop }) => {
+const EligibilityOverviewHeader = () => {
     const { t } = useTranslation();
 
     return (
