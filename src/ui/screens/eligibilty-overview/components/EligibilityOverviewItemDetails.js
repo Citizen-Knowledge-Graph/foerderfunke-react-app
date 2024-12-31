@@ -1,79 +1,52 @@
 import React from 'react';
-import {Button, Typography} from '@mui/material';
-import VStack from "../../../shared-components/VStack";
-import HStack from "../../../shared-components/HStack";
-import {Link} from "react-router-dom";
-import globalStyles from "../../../styles/styles";
+import { Link } from "react-router-dom";
+import { Button, Typography } from '@mui/material';
+import { HBox, VBox } from '../../../shared-components/LayoutBoxes';
 import useTranslation from "../../../language/useTranslation";
-import {useSelectedBenefitStore, useSelectedTopicsStore} from "../../../storage/zustand";
+import { useSelectedBenefitStore, useSelectedTopicsStore } from "../../../storage/zustand";
+import theme from '../../../../theme';
 
-const EligibilityOverviewItemDetails = ({item, eligible}) => {
-    const {t} = useTranslation();
+const EligibilityOverviewItemDetails = ({ item, eligible }) => {
+    const { t } = useTranslation();
     const setSelectedBenefit = useSelectedBenefitStore((state) => state.setSelectedBenefit);
     const clearSelectedTopics = useSelectedTopicsStore((state) => state.clear);
 
     return (
-        <VStack alignItems={'flex-start'}>
-            <Typography sx={styles.itemDescription}>
+        <VBox sx={{ gap: theme.spacing(2) }}>
+            <Typography variant="body1">
                 {item.description}
             </Typography>
-            <HStack>
+            <HBox>
                 {eligible === 'indeterminate' &&
                     <Button
-                        sx={styles.checkEligibilityButton}
-                        variant="text"
-                        component={Link}
+                        variant="contained"
                         onClick={() => {
                             setSelectedBenefit(item.id);
                             clearSelectedTopics()
                         }}
+                        sx={{
+                            backgroundColor: 'secondary.main',
+                            borderColor: 'secondary.main',
+                            color: 'white',
+                            '&:hover': {
+                                color: 'black',
+                            }
+                        }}
+                        component={Link}
                         to={`/onboarding-welcome/${true}`}>
                         {t('app.browseAll.checkElBtn')}
                     </Button>
                 }
                 <Button
-                    sx={styles.learnMoreButton}
-                    variant="text"
+                    variant="outlined"
+                    sx={{ padding: theme.spacing(1), lineHeight: 1.2 }}
                     component={Link}
                     to={`/benefit-page/${item.id}`}>
                     {t('app.browseAll.learnMoreBtn')}
                 </Button>
-            </HStack>
-        </VStack>
+            </HBox>
+        </VBox>
     );
-};
-
-const styles = {
-    itemDescription: {
-        fontSize: '16px',
-        fontWeight: '400',
-    },
-    checkEligibilityButton: {
-        borderWidth: '1px',
-        borderStyle: 'solid',
-        borderRadius: '15px',
-        borderColor: globalStyles.secondaryColor,
-        backgroundColor: globalStyles.secondaryColor,
-        color: 'white',
-        fontSize: '14px',
-        fontWeight: 'bold',
-        textTransform: 'none',
-        '&:hover': {
-            backgroundColor: globalStyles.secondaryColor,
-            color: 'white',
-            borderColor: globalStyles.secondaryColor,
-        },
-    },
-    learnMoreButton: {
-        borderWidth: '1px',
-        borderStyle: 'solid',
-        borderRadius: '15px',
-        borderColor: globalStyles.colorDarkGrey,
-        color: globalStyles.colorDarkGrey,
-        fontSize: '14px',
-        fontWeight: 'bold',
-        textTransform: 'none',
-    }
 };
 
 export default EligibilityOverviewItemDetails;

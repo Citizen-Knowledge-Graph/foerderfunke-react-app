@@ -90,11 +90,12 @@ const theme = createTheme({
                     },
                 },
                 outlined: {
-                    color: 'primary.main',
-                    borderColor: 'primary.main',
+                    borderColor: '#333333',
+                    color: '#333333',
                     borderWidth: 1,
                     '&:hover': {
-                        backgroundColor: 'primary.light',
+                        borderColor: '#333333',
+                        backgroundColor: 'rgba(51, 51, 51, 0.1)',
                     },
                 },
             },

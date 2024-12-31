@@ -24,7 +24,7 @@ const EligibilityOverviewItem = ({item, eligible}) => {
             <Circle sx={{color: color}}/>
             <HStack justifyContent={'space-between'} sx={{width: '100%'}}>
                 <VStack gap={1} alignItems={'flex-start'}>
-                    <Typography onClick={toggleDescription} sx={{...styles.itemTitle, fontWeight: fontWeight}}>
+                    <Typography variant='h6' sx={{fontWeight: fontWeight}} onClick={toggleDescription}>
                         {item.title}
                     </Typography>
                     {showDescription && (
@@ -39,12 +39,6 @@ const EligibilityOverviewItem = ({item, eligible}) => {
             </VStack>
         </HStack>
     );
-};
-
-const styles = {
-    itemTitle: {
-        fontSize: '20px',
-    }
 };
 
 export default EligibilityOverviewItem;
