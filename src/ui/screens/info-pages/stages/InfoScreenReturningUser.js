@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../../../shared-components/Layout";
 import AppScreenWrapper from "../../../shared-components/AppScreenWrapper";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
     questionsStackStore,
     useSelectedTopicsStore,
