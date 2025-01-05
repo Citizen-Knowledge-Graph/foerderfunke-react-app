@@ -2,13 +2,9 @@ import localStorageService from '../services/localStorageService';
 import userService from '../services/userService';
 
 const userManager = {
-    initialiseNewUser(userId) {
+    initialiseNewUser(userId="ff:quick-check-user") {
         if (localStorageService.getItem(userId)) {
             throw new Error('User already exists');
-        }
-
-        if (!userId) {
-            throw new Error('User id is undefined');
         }
 
         const userObject = { "@id": userId, "@type": "ff:Citizen" };
@@ -19,6 +15,20 @@ const userManager = {
             userIds.push(userId);
             localStorageService.setItem('userIds', userIds);
         }
+    },
+
+    deleteUser(userId="ff:quick-check-user") {
+        const userProfile = userManager.retrieveUserData(userId);
+
+        if (!userProfile) {
+            throw new Error(`User profile not found for userId: ${userId}`);
+        }
+
+        localStorageService.removeItem(userId);
+
+        const userIds = localStorageService.getItem('userIds') || [];
+        const updatedUserIds = userIds.filter(id => id !== userId);
+        localStorageService.setItem('userIds', updatedUserIds);
     },
 
     setField(userId, value, dataField, entityData) {
@@ -76,7 +86,7 @@ const userManager = {
         localStorageService.setItem('userIds', Array.from(userIds));
     },
 
-    retrieveUserData(entityId) {
+    retrieveUserData(entityId="ff:quick-check-user") {
         const userProfile = localStorageService.getItem(entityId);
         if (!userProfile) {
             throw new Error(`No user found with ID: ${entityId}`);

@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import { Typography, Button } from "@mui/material";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
 import DeleteIcon from "@mui/icons-material/Delete";
-import Layout from "../../shared-components/Layout";
-import { useStore } from "../../shared-components/ViewportUpdater";
-import { VBox, HBox } from "../../shared-components/LayoutBoxes";
-import ContentBox from "../../shared-components/ContentBox";
-import AppScreenWrapper from "../../shared-components/AppScreenWrapper";
-import useTranslation from "../../language/useTranslation";
-import theme from "../../../theme";
+import Layout from "../../../shared-components/Layout";
+import { useStore } from "../../../shared-components/ViewportUpdater";
+import { VBox, HBox } from "../../../shared-components/LayoutBoxes";
+import ContentBox from "../../../shared-components/ContentBox";
+import AppScreenWrapper from "../../../shared-components/AppScreenWrapper";
+import useTranslation from "../../../language/useTranslation";
+import theme from "../../../../theme";
 
 const InfoScreenPrivacy = () => {
     const { t } = useTranslation();
@@ -29,7 +29,11 @@ const InfoScreenPrivacy = () => {
                             {t('app.privacySite.text1')}
                         </Typography>
                     </VBox>
-                    <ContentBox>
+                    <ContentBox 
+                        sx={{
+                            backgroundColor: theme.palette.primary.light,
+                        }}
+                    >
                         <VBox>
                             <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
                                 {t('app.privacySite.optionHeader')}

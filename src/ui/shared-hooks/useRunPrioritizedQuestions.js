@@ -9,7 +9,7 @@ import {LanguageContext} from "../language/LanguageContext";
 import questionsManager from "../../core/managers/questionsManager";
 import {useQuestionsUpdate, useValidationUpdate} from "../storage/updates";
 
-const useRunPrioritizedQuestions = (benefitId = null) => {
+const useRunPrioritizedQuestions = () => {
     const userId = useUserStore((state) => state.activeUserId);
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
     const selectedBenefit = useSelectedBenefitStore((state) => state.selectedBenefit);

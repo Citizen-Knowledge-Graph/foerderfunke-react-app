@@ -2,7 +2,14 @@ import {create} from "zustand";
 
 export const useProfileSectionStore = create((set, get) => ({
     sectionStore: {},
-    initializeSectionStore(newSectionStore) {
+    defaultSectionStore: {
+        entityData: {
+            id: "ff:quick-check-user",
+            type: "ff:Citizen"
+        },
+        nestedSection: null,
+    },
+    initializeSectionStore(newSectionStore=get().defaultSectionStore) {
         console.log(`STATE UPDATE: We are initializing the section store`);
         set({sectionStore: newSectionStore});
     },

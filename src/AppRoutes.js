@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import LandingPage from './ui/screens/landing-page/LandingPage';
-import InfoScreenPrivacy from './ui/screens/info-screen/InfoScreenPrivacy';
+import InfoPageRouter from './ui/screens/info-pages/InfoPageRouter';
 import OnboardingChoice from './ui/screens/onboarding-choice/OnboardingChoice';
 import OnboardingWelcomeOverview from './ui/screens/onboarding-welcome/OnboardingWelcomeOverview';
 import EligibilityOverviewScreen from './ui/screens/eligibilty-overview/EligibilityOverviewScreen';
@@ -10,14 +10,16 @@ import BenefitPageScreen from './ui/screens/benefit-page/BenefitPageScreen';
 import ProfileScreen from './ui/screens/profile-screen/ProfileScreen';
 import ActivityLogScreen from './ui/screens/activity-log/ActivityLogScreen';
 import ResolveUriScreen from './ui/screens/resolve-uri/ResolveUriScreen';
-import InfoScreenReturningUser from "./ui/screens/info-screen/InfoScreenReturningUser";
 import OnboardingWelcomeTopics from "./ui/screens/onboarding-welcome/OnboardingWelcomeTopics";
+import InfoScreenReturningUser from './ui/screens/info-pages/stages/InfoScreenReturningUser';
+import InfoScreenPrivacy from './ui/screens/info-pages/stages/InfoScreenPrivacy';
 
 const AppRoutes = () => (
     <Routes>
         <Route path="/" element={<LandingPage/>}/>
-        <Route path="/user-routing" element={<InfoScreenReturningUser/>}/>
-        <Route path="/info-privacy" element={<InfoScreenPrivacy/>}/>
+        <Route path="/user-routing" element={<InfoPageRouter/>}/>
+        <Route path="/returning-user" element={<InfoScreenReturningUser/>}/>
+        <Route path="/privacy-info" element={<InfoScreenPrivacy/>}/>
         <Route path="/onboarding-choice" element={<OnboardingChoice/>}/>
         <Route path="/onboarding-welcome-topics" element={<OnboardingWelcomeTopics/>}/>
         <Route path="/onboarding-welcome" element={<OnboardingWelcomeOverview/>}/>
