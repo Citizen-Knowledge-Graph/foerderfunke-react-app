@@ -44,7 +44,7 @@ const EligibilityOverviewHeader = () => {
                 <Typography variant='body1'>
                     {t('app.browseAll.subtitle')}
                 </Typography>
-                <HBox>
+                <HBox sx={{ alignItems: 'center' }}>
                     <InfoIcon sx={{ fontSize: '16px' }} />
                     <Typography variant='body2'>
                         {t('app.browseAll.info')}

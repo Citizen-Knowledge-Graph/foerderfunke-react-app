@@ -10,13 +10,13 @@ import BenefitPageScreen from './ui/screens/benefit-page/BenefitPageScreen';
 import ProfileScreen from './ui/screens/profile-screen/ProfileScreen';
 import ActivityLogScreen from './ui/screens/activity-log/ActivityLogScreen';
 import ResolveUriScreen from './ui/screens/resolve-uri/ResolveUriScreen';
-import InfoScreenNewOrExistingUser from "./ui/screens/info-screen/InfoScreenNewOrExistingUser";
+import InfoScreenReturningUser from "./ui/screens/info-screen/InfoScreenReturningUser";
 import OnboardingWelcomeTopics from "./ui/screens/onboarding-welcome/OnboardingWelcomeTopics";
 
 const AppRoutes = () => (
     <Routes>
         <Route path="/" element={<LandingPage/>}/>
-        <Route path="/user-routing" element={<InfoScreenNewOrExistingUser/>}/>
+        <Route path="/user-routing" element={<InfoScreenReturningUser/>}/>
         <Route path="/info-privacy" element={<InfoScreenPrivacy/>}/>
         <Route path="/onboarding-choice" element={<OnboardingChoice/>}/>
         <Route path="/onboarding-welcome-topics" element={<OnboardingWelcomeTopics/>}/>

@@ -1,68 +1,65 @@
 import React from "react";
-import {Typography} from "@mui/material";
-import InfoScreen from "./components/InfoScreen";
-import VStack from "../../shared-components/VStack";
-import HStack from "../../shared-components/HStack";
-import globalStyles from "../../styles/styles";
+import { Link } from "react-router-dom";
+import { Typography, Button } from "@mui/material";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
 import DeleteIcon from "@mui/icons-material/Delete";
+import Layout from "../../shared-components/Layout";
+import { useStore } from "../../shared-components/ViewportUpdater";
+import { VBox, HBox } from "../../shared-components/LayoutBoxes";
+import ContentBox from "../../shared-components/ContentBox";
+import AppScreenWrapper from "../../shared-components/AppScreenWrapper";
 import useTranslation from "../../language/useTranslation";
+import theme from "../../../theme";
 
 const InfoScreenPrivacy = () => {
     const { t } = useTranslation();
+    const isDesktop = useStore((state) => state.isDesktop);
 
     return (
-        <InfoScreen title={t('app.privacySite.header')} imageUrl={'privacy_1'} forwardLink="/onboarding-choice">
-            <VStack sx={styles.infoBox}>
-                <Typography sx={styles.infoText}>
-                    {t('app.privacySite.text1')}
-                </Typography>
-                <Typography sx={styles.infoText}>
-                    {t('app.privacySite.text2')}
-                </Typography>
-            </VStack>
-            <VStack sx={styles.optionsBox}>
-                <Typography sx={styles.optionsText}>
-                    {t('app.privacySite.optionHeader')}
-                </Typography>
-                <VStack gap={1}>
-                    <HStack alignItems={'center'}>
-                        <FileDownloadIcon sx={{color: globalStyles.colorDarkGrey, fontSize: '16px'}}/>
-                        <Typography sx={styles.optionsText}>
-                            {t('app.privacySite.option1')}
+        <Layout isApp={true} logo={false} back="Back" >
+            <AppScreenWrapper isDesktop={isDesktop} back={true}>
+                <VBox sx={{ gap: theme.spacing(4) }}>
+                    <VBox sx={{ alignItems: "center" }}>
+                        <Typography variant="h4">
+                            {t('app.privacySite.header')}
                         </Typography>
-                    </HStack>
-                    <HStack alignItems={'center'}>
-                        <DeleteIcon sx={{color: globalStyles.colorDarkGrey, fontSize: '16px'}}/>
-                        <Typography sx={styles.optionsText}>
-                            {t('app.privacySite.option2')}
+                    </VBox>
+                    <VBox>
+                        <Typography variant="body1">
+                            {t('app.privacySite.text1')}
                         </Typography>
-                    </HStack>
-                </VStack>
-            </VStack>
-        </InfoScreen>
+                    </VBox>
+                    <ContentBox>
+                        <VBox>
+                            <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                                {t('app.privacySite.optionHeader')}
+                            </Typography>
+                            <HBox alignItems={'center'}>
+                                <FileDownloadIcon sx={{ color: theme.palette.custom.darkGrey, fontSize: '16px' }} />
+                                <Typography variant="body1">
+                                    {t('app.privacySite.option1')}
+                                </Typography>
+                            </HBox>
+                            <HBox alignItems={'center'}>
+                                <DeleteIcon sx={{ color: theme.palette.custom.darkGrey, fontSize: '16px' }} />
+                                <Typography variant="body1">
+                                    {t('app.privacySite.option2')}
+                                </Typography>
+                            </HBox>
+                        </VBox>
+                    </ContentBox>
+                    <Button
+                        variant="contained"
+                        component={Link}
+                        to={'/onboarding-choice'}>
+                        <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                            {t('app.privacySite.button')}
+                        </Typography>
+                    </Button>
+                </VBox>
+            </AppScreenWrapper>
+        </Layout >
     );
 }
-
-const styles = {
-    infoText: {
-        fontSize: '20px',
-        textAlign: 'left',
-    },
-    infoBox: {
-        width: '100%',
-    },
-    optionsBox: {
-        backgroundColor: '#F5F5F5',
-        borderRadius: '12px',
-        padding: '16px',
-        width: '100%',
-    },
-    optionsText: {
-        fontSize: '20px',
-        textAlign: 'left',
-    }
-}
-
 
 export default InfoScreenPrivacy;
