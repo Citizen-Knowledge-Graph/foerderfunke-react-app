@@ -101,7 +101,7 @@ const translations = {
             },
             discoverChoice: {
                 header: "Your choice",
-                text: "Two ways of discovering benefits for you",
+                text: "You have two options to discover benefits for yourself: You can answer a few questions for a quick check, or you can browse the entire catalog.",
                 quickCheck: "Quick eligibility check",
                 quickCheckComment: "Based on up to 10 benefits",
                 browseAll: "Browse all benefits",

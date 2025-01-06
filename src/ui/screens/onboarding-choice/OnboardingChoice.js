@@ -1,76 +1,80 @@
 import React from 'react';
-import {Typography} from '@mui/material';
+import { Typography, Button, Grid } from '@mui/material';
 import Layout from '../../shared-components/Layout';
-import VStack from "../../shared-components/VStack";
-import ClickCard from "../../shared-components/ClickCard";
 import AppScreenWrapper from "../../shared-components/AppScreenWrapper";
-import {useStore} from "../../shared-components/ViewportUpdater";
 import useTranslation from "../../language/useTranslation";
-import HStack from "../../shared-components/HStack";
+import theme from "../../../theme";
+import { Link } from "react-router-dom";
+import { VBox } from '../../shared-components/LayoutBoxes';
 
 const OnboardingChoice = () => {
-    const {t} = useTranslation();
-
-    const isDesktop = useStore((state) => state.isDesktop);
-    const quickCheckUrl = `${process.env.PUBLIC_URL}/assets/images/choice-screen/quick-check-image.jpg`;
-    const allBenefitsUrl = `${process.env.PUBLIC_URL}/assets/images/choice-screen/all-benefits.jpg`;
-    const titleFontSize = isDesktop ? 40 : 30;
-
-    const DynamicStacker = ({children}) => {
-        if (isDesktop) {
-            return (
-                <HStack justifyContent={'space-between'}>
-                    {children}
-                </HStack>
-            )
-        }
-        return (
-            <VStack>
-                {children}
-            </VStack>
-        )
-    }
+    const { t } = useTranslation();
 
     return (
         <Layout isApp={true}>
-            <AppScreenWrapper isDesktop={isDesktop} back={true}>
-                <VStack gap={1} sx={styles.container} justifyContent={'center'}>
-                    <Typography gutterBottom sx={{...styles.titleText, fontSize: titleFontSize}}>
-                        {t('app.discoverChoice.header')}
-                    </Typography>
-                    <Typography variant="body1" gutterBottom sx={styles.subTitleText}>
-                        {t('app.discoverChoice.text')}
-                    </Typography>
-                </VStack>
-                <DynamicStacker>
-                    <ClickCard
-                        link="/onboarding-welcome-topics"
-                        time="5 Min."
-                        title={t('app.discoverChoice.quickCheck')}
-                        subtitle={t('app.discoverChoice.quickCheckComment')}
-                        backgroundImage={quickCheckUrl}
-                    />
-                    <ClickCard
-                        link="/eligibility-overview"
-                        title={t('app.discoverChoice.browseAll')}
-                        backgroundImage={allBenefitsUrl}
-                    />
-                </DynamicStacker>
+            <AppScreenWrapper back={true}>
+                <VBox sx={{ gap: theme.spacing(4) }}>
+                    <VBox sx={{ alignItems: "center" }}>
+                        <Typography variant="h4">
+                            {t('app.discoverChoice.header')}
+                        </Typography>
+                    </VBox>
+                    <VBox sx={{ gap: theme.spacing(4) }}>
+                        <Typography variant="body1">
+                            {t('app.discoverChoice.text')}
+                        </Typography>
+                        <Grid container spacing={2}>
+                            <Grid item xs={12} sm={6} container>
+                                <Button
+                                    sx={{
+                                        flex: 1,
+                                        borderStyle: 'solid',
+                                        borderWidth: '1px',
+                                        borderColor: theme.palette.primary.main,
+                                        '&:hover': {
+                                            backgroundColor: theme.palette.primary.main,
+                                        },
+                                    }}
+                                    component={Link}
+                                    to={"/onboarding-welcome-topics"}
+                                >
+                                    <VBox>
+                                        <Typography variant="h6">
+                                            {t('app.discoverChoice.quickCheck')}
+                                        </Typography>
+                                        <Typography variant="body1" sx={{ textAlign: 'left' }}>
+                                            {t('app.discoverChoice.quickCheckComment')}
+                                        </Typography>
+                                    </VBox>
+                                </Button>
+                            </Grid>
+                            <Grid item xs={12} sm={6} container>
+                                <Button
+                                    sx={{
+                                        flex: 1,
+                                        borderStyle: 'solid',
+                                        borderWidth: '1px',
+                                        borderColor: theme.palette.primary.main,
+                                        '&:hover': {
+                                            backgroundColor: theme.palette.primary.main,
+                                        },
+                                    }}
+                                    component={Link}
+                                    to={"/eligibility-overview"}
+                                >
+                                    <VBox>
+                                        <Typography variant="h6">
+                                            {t('app.discoverChoice.browseAll')}
+                                        </Typography>
+                                    </VBox>
+                                </Button>
+                            </Grid>
+                        </Grid>
+                    </VBox>
+                </VBox>
             </AppScreenWrapper>
         </Layout>
     );
-};
-
-const styles = {
-    titleText: {
-        fontWeight: 'bold',
-        textAlign: 'center'
-    },
-    subTitleText: {
-        fontSize: '20px',
-        fontWeight: '400',
-        textAlign: 'left'
-    }
 };
 
 export default OnboardingChoice;

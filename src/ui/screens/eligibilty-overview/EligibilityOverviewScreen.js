@@ -3,7 +3,6 @@ import EligibilityOverviewHeader from "./components/EligibilityOverviewHeader";
 import Layout from "../../shared-components/Layout";
 import EligibilityOverviewList from "./components/EligibilityOverviewList";
 import AppScreenWrapper from "../../shared-components/AppScreenWrapper";
-import { useStore } from "../../shared-components/ViewportUpdater";
 import Divider from "@mui/material/Divider";
 import { CircularProgress } from "@mui/material";
 import { LanguageContext } from "../../language/LanguageContext";
@@ -15,7 +14,6 @@ import useEligibilityData from "./hooks/useEligibilityData";
 
 const EligibilityOverviewScreen = () => {
     const { language } = useContext(LanguageContext);
-    const isDesktop = useStore((state) => state.isDesktop);
 
     const validationReport = useValidationReportStore((state) => state.validationReport);
     const validationIsLoading = useValidationUpdate((state) => state.validationIsLoading);
@@ -24,7 +22,7 @@ const EligibilityOverviewScreen = () => {
 
     return (
         <Layout isApp={true} logo={true}>
-            <AppScreenWrapper isDesktop={isDesktop}>
+            <AppScreenWrapper>
                 <EligibilityOverviewHeader/>
                 <Divider sx={{ width: "100%" }} />
                 {

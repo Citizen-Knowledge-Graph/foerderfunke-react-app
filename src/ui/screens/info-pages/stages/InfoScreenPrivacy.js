@@ -4,7 +4,6 @@ import { Typography, Button } from "@mui/material";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Layout from "../../../shared-components/Layout";
-import { useStore } from "../../../shared-components/ViewportUpdater";
 import { VBox, HBox } from "../../../shared-components/LayoutBoxes";
 import ContentBox from "../../../shared-components/ContentBox";
 import AppScreenWrapper from "../../../shared-components/AppScreenWrapper";
@@ -13,11 +12,10 @@ import theme from "../../../../theme";
 
 const InfoScreenPrivacy = () => {
     const { t } = useTranslation();
-    const isDesktop = useStore((state) => state.isDesktop);
 
     return (
         <Layout isApp={true} logo={false} back="Back" >
-            <AppScreenWrapper isDesktop={isDesktop} back={true}>
+            <AppScreenWrapper back={true}>
                 <VBox sx={{ gap: theme.spacing(4) }}>
                     <VBox sx={{ alignItems: "center" }}>
                         <Typography variant="h4">
@@ -29,10 +27,7 @@ const InfoScreenPrivacy = () => {
                             {t('app.privacySite.text1')}
                         </Typography>
                     </VBox>
-                    <ContentBox 
-                        sx={{
-                            backgroundColor: theme.palette.primary.light,
-                        }}
+                    <ContentBox sx={{ backgroundColor: theme.palette.primary.light }}
                     >
                         <VBox>
                             <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
@@ -53,6 +48,7 @@ const InfoScreenPrivacy = () => {
                         </VBox>
                     </ContentBox>
                     <Button
+                        sx={{ padding: theme.spacing(2) }}
                         variant="contained"
                         component={Link}
                         to={'/onboarding-choice'}>

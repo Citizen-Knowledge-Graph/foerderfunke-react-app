@@ -1,30 +1,29 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import dayjs from "dayjs";
+import { Button, Typography, Grid } from "@mui/material";
+import FileDownloadIcon from '@mui/icons-material/FileDownload';
+import DeleteIcon from '@mui/icons-material/Delete';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import ReplayIcon from '@mui/icons-material/Replay';
 import Layout from "../../../shared-components/Layout";
 import AppScreenWrapper from "../../../shared-components/AppScreenWrapper";
-import { Link } from "react-router-dom";
+import { VBox, HBox } from "../../../shared-components/LayoutBoxes";
+import theme from "../../../../theme";
+import useTranslation from "../../../language/useTranslation";
+import { convertUserProfileToTurtle } from "@foerderfunke/matching-engine/src/utils";
+import userManager from "../../../../core/managers/userManager";
 import {
     questionsStackStore,
     useSelectedTopicsStore,
     useValidationReportStore
 } from "../../../storage/zustand";
-import userManager from "../../../../core/managers/userManager";
-import { convertUserProfileToTurtle } from "@foerderfunke/matching-engine/src/utils";
-import dayjs from "dayjs";
-import { Button, Typography, Grid } from "@mui/material";
-import FileDownloadIcon from '@mui/icons-material/FileDownload';
-import DeleteIcon from '@mui/icons-material/Delete';
-import { useStore } from "../../../shared-components/ViewportUpdater";
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import ReplayIcon from '@mui/icons-material/Replay';
-import useTranslation from "../../../language/useTranslation";
-import { useValidationUpdate } from "../../../storage/updates";
-import { VBox, HBox } from "../../../shared-components/LayoutBoxes";
 import { useUserStore } from "../../../storage/zustand";
-import theme from "../../../../theme";
+import { useValidationUpdate } from "../../../storage/updates";
+
 
 const InfoScreenReturningUser = () => {
     const { t } = useTranslation();
-    const isDesktop = useStore((state) => state.isDesktop);
     const triggerValidationUpdate = useValidationUpdate((state) => state.triggerValidationUpdate);
     const updateUserId = useUserStore((state) => state.updateUserId);
 
@@ -53,8 +52,8 @@ const InfoScreenReturningUser = () => {
     }
 
     return (
-        <Layout isApp={true} logo={false} back="Back">
-            <AppScreenWrapper isDesktop={isDesktop} back={true}>
+        <Layout isApp={true} logo={false}>
+            <AppScreenWrapper>
                 <VBox sx={{ gap: theme.spacing(4) }}>
                     <VBox sx={{ alignItems: "center" }}>
                         <Typography variant="h4">

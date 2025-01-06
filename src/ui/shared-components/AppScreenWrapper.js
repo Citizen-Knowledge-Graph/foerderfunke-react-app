@@ -2,8 +2,10 @@ import React from "react";
 import VStack from "./VStack";
 import AppScreenHeader from "./AppScreenHeader";
 import globalStyles from "../styles/styles";
+import { useStore } from "../shared-components/ViewportUpdater";
 
-const AppScreenWrapper = ({isDesktop, children, back = false}) => {
+const AppScreenWrapper = ({children, back = false}) => {
+    const isDesktop = useStore((state) => state.isDesktop);
     const horizontalPadding = isDesktop ? '20px' : '16px';
     const verticalPadding = isDesktop ? '20px' : '16px';
     const desktopGradient = isDesktop ? `linear-gradient(

@@ -1,20 +1,21 @@
-import React, {useState, useEffect} from 'react';
-import {Typography} from '@mui/material';
+import React, { useState, useEffect } from 'react';
+import { Typography, Button } from '@mui/material';
 import Layout from '../../../shared-components/Layout';
 import VStack from "../../../shared-components/VStack";
 import HStack from "../../../shared-components/HStack";
 import IconCard from "../../../shared-components/IconCard";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import StarBorderIcon from '@mui/icons-material/StarBorder';
-import ButtonCard from "../../../shared-components/ButtonCard";
-import {useStore} from "../../../shared-components/ViewportUpdater";
+import { useStore } from "../../../shared-components/ViewportUpdater";
 import AppScreenWrapper from "../../../shared-components/AppScreenWrapper";
 import globalStyles from "../../../styles/styles";
-import {useMetadataStore, useSelectedTopicsStore} from "../../../storage/zustand";
+import { useMetadataStore, useSelectedTopicsStore } from "../../../storage/zustand";
 import useTranslation from "../../../language/useTranslation";
+import theme from "../../../../theme";
+import { Link } from "react-router-dom";
 
 
-const OnboardingWelcomeScreen = ({children, buttonText, link, isLoading = false}) => {
+const OnboardingWelcomeScreen = ({ children, buttonText, link, isLoading = false }) => {
     const { t } = useTranslation();
 
     const isDesktop = useStore((state) => state.isDesktop);
@@ -46,14 +47,21 @@ const OnboardingWelcomeScreen = ({children, buttonText, link, isLoading = false}
                             {t('app.topicSelection.header')}
                         </Typography>
                         <HStack>
-                            <IconCard icon={AccessTimeIcon} iconColor={globalStyles.secondaryColor} text="5 Min."/>
+                            <IconCard icon={AccessTimeIcon} iconColor={globalStyles.secondaryColor} text="5 Min." />
                             {metadata && numberOfBenefits > 0 && <IconCard icon={StarBorderIcon} iconColor={globalStyles.primaryColor}
-                                      text={`Based on ${numberOfBenefits} benefits`}/>}
+                                text={`Based on ${numberOfBenefits} benefits`} />}
                         </HStack>
                     </VStack>
                     {children}
-                    <ButtonCard link={link} text={buttonText}
-                                backgroundColor={globalStyles.secondaryColor} isLoading={isLoading}/>
+                    <Button
+                        sx={{ padding: theme.spacing(2) }}
+                        variant="contained"
+                        component={Link}
+                        to={link}>
+                        <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                            {buttonText}
+                        </Typography>
+                    </Button>
                 </VStack>
             </AppScreenWrapper>
         </Layout>
