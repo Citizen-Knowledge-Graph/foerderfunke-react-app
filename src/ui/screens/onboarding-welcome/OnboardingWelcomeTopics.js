@@ -43,7 +43,7 @@ const OnboardingWelcomeTopics = () => {
                                         {topicsData?.map((topic, index) => (
                                             <Grid item xs={12} sm={6} container key={index}>
                                                 <Button variant='outlined'
-                                                    onClick={() => {handleButtonClick(topic, index);}}
+                                                    onClick={() => { handleButtonClick(topic, index); }}
                                                     sx={{
                                                         flex: 1,
                                                         padding: theme.spacing(2),
@@ -63,7 +63,6 @@ const OnboardingWelcomeTopics = () => {
                                                                 : theme.palette.primary.light,
                                                             borderColor: theme.palette.primary.main,
                                                         },
-                                                        transition: 'background-color 0.2s ease-in-out',
                                                     }}>
                                                     <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
                                                         {language === "de" ? topic.title.de : topic.title.en}
