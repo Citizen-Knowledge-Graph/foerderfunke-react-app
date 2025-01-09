@@ -1,44 +1,47 @@
 import React from "react";
-import VStack from "./VStack";
+import { VBox } from "./LayoutBoxes";
 import AppScreenHeader from "./AppScreenHeader";
 import globalStyles from "../styles/styles";
 import { useStore } from "../shared-components/ViewportUpdater";
+import theme from "../../theme";
 
-const AppScreenWrapper = ({children, back = false, home = true}) => {
+const AppScreenWrapper = ({ children, back = false, home = true }) => {
     const isDesktop = useStore((state) => state.isDesktop);
-    const horizontalPadding = isDesktop ? '20px' : '16px';
-    const verticalPadding = isDesktop ? '20px' : '16px';
-    const desktopGradient = isDesktop ? `linear-gradient(
+    const desktopGradient = `linear-gradient(
                         to bottom,
                             ${globalStyles.primaryColor}33 0%,
-                            ${globalStyles.primaryColor}99 100%)` : 'none';
+                            ${globalStyles.primaryColor}99 100%)`;
     return (
-        <VStack alignItems={'center'} sx={{
-            paddingLeft: horizontalPadding,
-            paddingRight: horizontalPadding,
-            paddingTop: verticalPadding,
-            paddingBottom: verticalPadding,
-            borderRadius: '4px',
+        <VBox sx={{
+            alignItems: 'center',
             minHeight: '100%',
-            boxSizing: 'border-box',
-            background: desktopGradient
+            width: '100%',
         }}>
             {isDesktop ? (
-                <VStack sx={{
+                <VBox sx={{
                     width: '840px',
-                    padding: '32px',
-                    backgroundColor: 'white'
+                    padding: theme.spacing(2),
+                    background: desktopGradient,
+                    borderRadius: theme.shape.borderRadius
+                }}>
+                    <VBox sx={{ 
+                        padding: theme.spacing(4), 
+                        backgroundColor: 'white', 
+                        borderRadius: theme.shape.borderRadius}}>
+                        {children}
+                        <AppScreenHeader back={back} home={home} />
+                    </VBox>
+                </VBox>
+            ) : (
+                <VBox sx={{
+                    width: '100%', boxSizing: "border-box",
+                    padding: theme.spacing(2)
                 }}>
                     {children}
-                    <AppScreenHeader back={back} home={home}/>
-                </VStack>
-            ) : (
-                <>
-                    {children}
-                    <AppScreenHeader back={back} home={home}/>
-                </>
+                    <AppScreenHeader back={back} home={home} />
+                </VBox>
             )}
-        </VStack>
+        </VBox>
     )
 }
 
