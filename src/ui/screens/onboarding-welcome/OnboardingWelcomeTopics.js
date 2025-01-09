@@ -32,7 +32,7 @@ const OnboardingWelcomeTopics = () => {
                         </Typography>
                     </VBox>
                     <VBox sx={{ gap: theme.spacing(4) }}>
-                        <TimeIcon/>
+                        <TimeIcon />
                         <Typography variant="body1">
                             {t('app.topicSelection.text')}
                         </Typography>
@@ -42,24 +42,28 @@ const OnboardingWelcomeTopics = () => {
                                     <Grid container spacing={2}>
                                         {topicsData?.map((topic, index) => (
                                             <Grid item xs={12} sm={6} container key={index}>
-                                                <Button
-                                                    onClick={() => handleButtonClick(topic, index)}
+                                                <Button variant='outlined'
+                                                    onClick={() => {handleButtonClick(topic, index);}}
                                                     sx={{
                                                         flex: 1,
                                                         padding: theme.spacing(2),
-                                                        borderStyle: 'solid',
-                                                        borderWidth: '1px',
                                                         borderColor: theme.palette.primary.main,
-                                                        '&:hover': {
-                                                            backgroundColor: theme.palette.primary.main,
-                                                        },
-                                                        backgroundColor: selectedTopicsBoolean[index] && theme.palette.primary.main,
-                                                        '&:active': {
-                                                            backgroundColor: selectedTopicsBoolean[index] && theme.palette.primary.main,
-                                                        },
+                                                        backgroundColor: selectedTopicsBoolean[index]
+                                                            ? theme.palette.primary.main
+                                                            : 'transparent',
                                                         '&:focus': {
-                                                            backgroundColor: selectedTopicsBoolean[index] && theme.palette.primary.main,
+                                                            backgroundColor: selectedTopicsBoolean[index]
+                                                                ? theme.palette.primary.main
+                                                                : 'transparent',
+                                                            outline: 'none',
                                                         },
+                                                        '&:hover': {
+                                                            backgroundColor: selectedTopicsBoolean[index]
+                                                                ? theme.palette.primary.main
+                                                                : theme.palette.primary.light,
+                                                            borderColor: theme.palette.primary.main,
+                                                        },
+                                                        transition: 'background-color 0.2s ease-in-out',
                                                     }}>
                                                     <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
                                                         {language === "de" ? topic.title.de : topic.title.en}
@@ -84,7 +88,7 @@ const OnboardingWelcomeTopics = () => {
                     </Button>
                 </VBox>
             </AppScreenWrapper>
-        </Layout>
+        </Layout >
     );
 }
 
