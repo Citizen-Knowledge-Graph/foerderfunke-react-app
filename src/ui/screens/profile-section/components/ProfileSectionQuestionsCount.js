@@ -27,6 +27,9 @@ const ProfileSectionQuestionsCount = ({ handleBack, stepsBackwardsFromStackFront
                             color: "black",
                             '&:hover': {
                                 backgroundColor: theme.palette.custom.lightGrey,
+                                '@media (hover: none)': {
+                                    backgroundColor: 'transparent',
+                                },
                             },
                         }}
                         startIcon={<ChevronLeftIcon data-testid="chevron-left-icon" />}

@@ -62,6 +62,11 @@ const OnboardingWelcomeTopics = () => {
                                                                 ? theme.palette.primary.main
                                                                 : theme.palette.primary.light,
                                                             borderColor: theme.palette.primary.main,
+                                                            '@media (hover: none)': {
+                                                                backgroundColor: selectedTopicsBoolean[index]
+                                                                ? theme.palette.primary.main
+                                                                : 'transparent',
+                                                            },
                                                         },
                                                     }}>
                                                     <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
