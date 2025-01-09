@@ -3,7 +3,6 @@ import {
     useQuestionsStore, useSelectedBenefitStore,
     useSelectedTopicsStore,
     useUserStore,
-    useValidationReportStore
 } from "../storage/zustand";
 import {LanguageContext} from "../language/LanguageContext";
 import questionsManager from "../../core/managers/questionsManager";
@@ -22,7 +21,6 @@ const useRunPrioritizedQuestions = () => {
         const fetchPrioritizedQuestions = async () => {
             setValidationIsLoading(true);
             const questionsResponse = await questionsManager.fetchPrioritizedQuestions(userId, selectedBenefit ? [] : selectedTopics.map((topic) => topic.id), selectedBenefit, language);
-            useValidationReportStore.getState().updateValidationReport(questionsResponse.validationReport);
             useQuestionsStore.getState().updateQuestions(questionsResponse.prioritizedMissingDataFields);
             setValidationIsLoading(false);
         }

@@ -30,7 +30,6 @@ const validationManager = {
             const {fileUrl, rpUri} = requirementProfile;
             requirementProfiles[rpUri] = await resourceService.fetchResource(fileUrl);
         }
-        console.log('Running validations for:', Object.keys(requirementProfiles));
 
         let validateAllReport = await validateAll(
             userProfileString,
@@ -46,7 +45,6 @@ const validationManager = {
             rp: await extractRequirementProfilesMetadata(Object.values(requirementProfiles), language),
         };
 
-        console.log('Validations ran successfully.');
         return [validateAllReport, metadata];
     }
 }

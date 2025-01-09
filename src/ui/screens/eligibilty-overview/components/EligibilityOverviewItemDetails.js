@@ -21,8 +21,8 @@ const EligibilityOverviewItemDetails = ({ item, eligible }) => {
                     <Button
                         variant="contained"
                         onClick={() => {
-                            setSelectedBenefit(item.id);
                             clearSelectedTopics()
+                            setSelectedBenefit(item.id);
                         }}
                         sx={{
                             backgroundColor: 'secondary.main',
@@ -33,7 +33,7 @@ const EligibilityOverviewItemDetails = ({ item, eligible }) => {
                             }
                         }}
                         component={Link}
-                        to={`/onboarding-welcome/${true}`}>
+                        to={`/onboarding-welcome/${item.id}`}>
                         {t('app.browseAll.checkElBtn')}
                     </Button>
                 }

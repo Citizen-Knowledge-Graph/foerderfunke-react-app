@@ -22,7 +22,7 @@ const EligibilityOverviewScreen = () => {
 
     return (
         <Layout isApp={true} logo={true}>
-            <AppScreenWrapper>
+            <AppScreenWrapper back={true}>
                 <EligibilityOverviewHeader/>
                 <Divider sx={{ width: "100%" }} />
                 {

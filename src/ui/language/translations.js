@@ -79,7 +79,8 @@ const translations = {
         },
         app: {
             nav: {
-                backBtn: "Back"
+                backBtn: "Back",
+                previousQuestion: "Previous question"
             },
             privacySite: {
                 header: "Your data is only stored locally",
@@ -277,7 +278,8 @@ const translations = {
         },
         app: {
             nav: {
-                backBtn: "Zurück"
+                backBtn: "Zurück",
+                previousQuestion: "Vorherige Frage"
             },
             privacySite: {
                 header: "Deine Daten werden nur lokal gespeichert",

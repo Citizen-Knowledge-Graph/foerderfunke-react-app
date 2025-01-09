@@ -13,7 +13,7 @@ const ProfileSectionScreen = () => {
 
     return (
         <Layout isApp={true} logo={false}>
-            <AppScreenWrapper isDesktop={isDesktop} data-testid={"app wrapper"}>
+            <AppScreenWrapper back={true} isDesktop={isDesktop} data-testid={"app wrapper"}>
                 {profileQuestions ? (
                     !completed ? (
                         <ProfileSectionTopQuestion

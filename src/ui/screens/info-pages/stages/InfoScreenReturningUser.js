@@ -53,7 +53,7 @@ const InfoScreenReturningUser = () => {
 
     return (
         <Layout isApp={true} logo={false}>
-            <AppScreenWrapper>
+            <AppScreenWrapper home={true}>
                 <VBox sx={{ gap: theme.spacing(4) }}>
                     <VBox sx={{ alignItems: "center" }}>
                         <Typography variant="h4">

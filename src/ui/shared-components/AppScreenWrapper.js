@@ -4,7 +4,7 @@ import AppScreenHeader from "./AppScreenHeader";
 import globalStyles from "../styles/styles";
 import { useStore } from "../shared-components/ViewportUpdater";
 
-const AppScreenWrapper = ({children, back = false}) => {
+const AppScreenWrapper = ({children, back = false, home = true}) => {
     const isDesktop = useStore((state) => state.isDesktop);
     const horizontalPadding = isDesktop ? '20px' : '16px';
     const verticalPadding = isDesktop ? '20px' : '16px';
@@ -29,13 +29,13 @@ const AppScreenWrapper = ({children, back = false}) => {
                     padding: '32px',
                     backgroundColor: 'white'
                 }}>
-                    {back && <AppScreenHeader/>}
                     {children}
+                    <AppScreenHeader back={back} home={home}/>
                 </VStack>
             ) : (
                 <>
-                    {back && <AppScreenHeader/>}
                     {children}
+                    <AppScreenHeader back={back} home={home}/>
                 </>
             )}
         </VStack>
