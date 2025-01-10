@@ -13,7 +13,12 @@ const AppScreenHeader = ({ back, home }) => {
     const { t } = useTranslation();
 
     return (
-        <HBox justifyContent={'space-between'} sx={{ width: '100%' }}>
+        <HBox sx={{ 
+            justifyContent: 'space-between',
+            borderTop: `1px solid ${theme.palette.custom.lightGrey}`, 
+            paddingTop: theme.spacing(1), 
+            marginTop: theme.spacing(2) 
+        }}>
             {back ? <Button
                 sx={{
                     color: "black",
