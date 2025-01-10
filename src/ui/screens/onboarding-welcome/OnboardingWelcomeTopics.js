@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Button, Checkbox, FormControlLabel, Grid, Typography } from '@mui/material';
+import { Button, Checkbox, FormControlLabel, Grid, Typography, Box } from '@mui/material';
 import { Link } from "react-router-dom";
 import useFetchData from "../../shared-hooks/useFetchData";
 import useTopicSelectionHandlers from "./hooks/useTopicSelectionHandlers";
@@ -64,8 +64,8 @@ const OnboardingWelcomeTopics = () => {
                                                             borderColor: theme.palette.primary.main,
                                                             '@media (hover: none)': {
                                                                 backgroundColor: selectedTopicsBoolean[index]
-                                                                ? theme.palette.primary.main
-                                                                : 'transparent',
+                                                                    ? theme.palette.primary.main
+                                                                    : 'transparent',
                                                             },
                                                         },
                                                     }}>
@@ -78,7 +78,12 @@ const OnboardingWelcomeTopics = () => {
                                     </Grid>
                                 )
                             }
-                            <FormControlLabel control={<Checkbox onChange={handleToggleSelectAll} />} label={t('app.topicSelection.selectAll')} />
+                            <Box>
+                                <FormControlLabel sx={{margin: 0}}
+                                    control={<Checkbox onChange={handleToggleSelectAll} />}
+                                    label={t('app.topicSelection.selectAll')}
+                                />
+                            </Box>
                         </VBox>
                     </VBox>
                     <Button
