@@ -256,7 +256,7 @@ const translations = {
             },
             principles: {
                 header: "Unsere Prinzipien",
-                part1Header: "Privay by Design",
+                part1Header: "Privacy by Design",
                 part1Text: "Uns ist wichtig, dass du die Kontrolle über deine Daten behältst. Deshalb bleiben deine Daten ausschließlich auf deinem Endgerät. Sie sind zu keinem Zeitpunkt für uns oder andere einsehbar.",
                 part2Header: "Offene Daten",
                 part2Text: "Wichtige Informationen zu Leistungen sind oft schwer zu finden. Wir machen unseren Katalog der Bedingungen für Sozialleistungen öffentlich zugänglich. Dabei setzen wir auf etablierte Standards und Formate.",
