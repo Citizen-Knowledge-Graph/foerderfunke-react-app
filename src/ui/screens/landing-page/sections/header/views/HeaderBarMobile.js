@@ -57,15 +57,6 @@ const HeaderBarMobile = ({isApp}) => {
                                 )
                                 : null
                         }
-                        {isApp ? null :
-                            featureFlags.newCollaborationSection ? (
-                                    <>
-                                        <LandingPageHollowButton text={t('home.menu.collaborate')} to={'/#collaboration'}/>
-                                        <Divider sx={{width: '100%', backgroundColor: globalStyles.colorLightGreyTransparent}}/>
-                                    </>
-                                )
-                                : null
-                        }
                         {
                             isApp ? null : (
                                 <>
