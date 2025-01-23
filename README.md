@@ -32,9 +32,7 @@ FörderFunke consists of three main components:
 
 FörderFunke is built as a Progressive Web App, offering:
 - Fast loading times
-- Offline functionality
 - Mobile-friendly interface
-- Install capability on devices
 
 ## 🔒 Privacy
 
