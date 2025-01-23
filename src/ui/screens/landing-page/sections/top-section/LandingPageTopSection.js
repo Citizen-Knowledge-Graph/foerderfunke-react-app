@@ -11,7 +11,7 @@ const LandingPageTopSection = ({isDesktop}) => {
         { id: 1, name: t("home.hero.childAllowance"), url: "Kinderzuschlag.png" },
         { id: 2, name: t("home.hero.housingBenefit"), url: "Wohngeld.png" },
         { id: 3, name: t("home.hero.citizensBenefit"), url: "Grundsicherung.png" },
-        { id: 4, name: t("home.hero.vocationalTrainingAllowance"), url: "Bildungsgutschein.png" },
+        { id: 4, name: t("home.hero.bafög"), url: "Bildungsgutschein.png" },
         { id: 5, name: t("home.hero.manyMore"), url: "VieleWeitere.png" },
     ];
 

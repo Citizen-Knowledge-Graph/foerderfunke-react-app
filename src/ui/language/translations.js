@@ -17,7 +17,7 @@ const translations = {
                 childAllowance: "Child allowance",
                 housingBenefit: "Housing benefit",
                 citizensBenefit: "Citizen's benefit",
-                vocationalTrainingAllowance: "Vocational training allowance",
+                bafög: "Bafög",
                 manyMore: "Many more"
             },
             mission: {
@@ -223,7 +223,7 @@ const translations = {
                 childAllowance: "Kinderzuschlag",
                 housingBenefit: "Wohngeld",
                 citizensBenefit: "Bürgergeld",
-                vocationalTrainingAllowance: "Berufsausbildungsbeihilfe",
+                bafög: "Bafög",
                 manyMore: "Viele Weitere",
             },
             mission: {
