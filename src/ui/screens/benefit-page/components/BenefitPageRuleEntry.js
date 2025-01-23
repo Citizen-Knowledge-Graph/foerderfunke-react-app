@@ -34,16 +34,26 @@ const BenefitPageRuleEntry = ({ ruleData }) => {
         >
             <Grid item xs={6} sm={5}>
                 <Typography variant="body2">{ruleData.requirement.label}</Typography>
-                <Typography variant="body1">{ruleData.requirement.rule}</Typography>
+                <Typography variant="body1" sx={{
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    hyphens: 'auto',
+                    WebkitHyphens: 'auto',
+                    msHyphens: 'auto'
+                }}>
+                    {ruleData.requirement.rule}
+                </Typography>
             </Grid>
             <Grid item xs={6} sm={5}>
                 <Typography variant="body2">
                     {t('app.benefitPage.rulesTable.yourAnswer')}
                 </Typography>
-                <Typography variant="body1">{ruleData.userValue}</Typography>
+                <Typography variant="body1" sx={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
+                    {ruleData.userValue}
+                </Typography>
             </Grid>
             <Grid item xs={12} sm={2}
-                sx={{ display: 'flex', justifyContent: "flex-end"}}
+                sx={{ display: 'flex', justifyContent: "flex-end" }}
             >
                 {icon}
             </Grid>
