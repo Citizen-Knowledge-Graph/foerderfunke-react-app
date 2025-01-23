@@ -59,9 +59,7 @@ const BenefitPageHeader = ({ id, benefit }) => {
                             {leiKaInfo && (
                                 <ContentBox sx={{ padding: theme.spacing(1), backgroundColor: "white" }}>
                                     <Typography variant="body2">
-                                        LeiKa is a unique identifier for benefits in Germany. It helps you to
-                                        find
-                                        the right benefit for you.
+                                        {t('app.benefitPage.LeiKaInfo')}
                                     </Typography>
                                 </ContentBox>
                             )}
