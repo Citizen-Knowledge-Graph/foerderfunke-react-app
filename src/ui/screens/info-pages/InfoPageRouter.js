@@ -19,6 +19,7 @@ const InfoPageRouter = () => {
 
     useEffect(() => {
         if (userStatus === UserStatus.USER_EXISTS) {
+            updateUserId("ff:quick-check-user");
             navigate("/returning-user");
         }
 
@@ -26,7 +27,7 @@ const InfoPageRouter = () => {
             initNewUser();
             navigate("/privacy-info");
         }
-    }, [userStatus, navigate, initNewUser]);
+    }, [userStatus, navigate, initNewUser, updateUserId]);
 
     return null;
 };
