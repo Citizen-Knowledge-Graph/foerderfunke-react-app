@@ -1,16 +1,18 @@
 import React from 'react';
-import { Typography } from "@mui/material";
+import { Typography, Button } from "@mui/material";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import VStack from "../../../shared-components/VStack";
 import HStack from "../../../shared-components/HStack";
-import ButtonCard from "../../../shared-components/ButtonCard";
 import globalStyles from "../../../styles/styles";
 import userManager from "../../../../core/managers/userManager";
 import ProfileDataList from "../../profile-screen/components/ProfileDataList";
 import useTranslation from "../../../language/useTranslation";
+import { Link } from "react-router-dom";
+import { useTheme } from "@mui/material/styles";
 
 const ProfileSectionCompleted = () => {
     const { t } = useTranslation();
+    const theme = useTheme();
     const userProfile = userManager.retrieveUserData("ff:quick-check-user");
 
     return (
@@ -32,11 +34,24 @@ const ProfileSectionCompleted = () => {
                 {userProfile && (
                     <ProfileDataList />
                 )}
-                <ButtonCard
-                    link={`/eligibility-overview`}
-                    text={t('app.qsComplete.discoverBtn')}
-                    backgroundColor={globalStyles.secondaryColor}
-                />
+                <Button
+                    variant="contained"
+                    sx={{
+                        flex: 1,
+                        padding: theme.spacing(1),
+                        backgroundColor: theme.palette.secondary.main,
+                        borderColor: theme.palette.secondary.main,
+                        '&:hover': {
+                            backgroundColor: theme.palette.secondary.main,
+                        },
+                    }}
+                    component={Link}
+                    to={`/eligibility-overview`}
+                >
+                    <Typography variant="h6" sx={{ color: 'white' }}>
+                        {t('app.qsComplete.discoverBtn')}
+                    </Typography>
+                </Button>
             </VStack>
         </VStack>
     );
