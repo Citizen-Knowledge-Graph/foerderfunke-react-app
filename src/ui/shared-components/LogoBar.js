@@ -4,6 +4,7 @@ import {Typography} from "@mui/material";
 
 const LogoBar = ({size = 'large', secondary = false}) => {
     const logoUrl =`${process.env.PUBLIC_URL}/assets/images/logos/FF_logo_round.svg`;
+    //const logoUrlSecondary =`${process.env.PUBLIC_URL}/assets/images/logos/FörderFunke_Logo_schwarz.svg`;
 
     const styles = (() => {
         switch (size) {
@@ -35,7 +36,7 @@ const LogoBar = ({size = 'large', secondary = false}) => {
     return (
         <HStack alignItems={'center'}>
             <img src={logoUrl} alt="logo" style={{height: styles.img.height}}/>
-            <Typography sx={styles.title}>
+            <Typography variant={'h1'} style={styles.title}>
                 FörderFunke
             </Typography>
         </HStack>
