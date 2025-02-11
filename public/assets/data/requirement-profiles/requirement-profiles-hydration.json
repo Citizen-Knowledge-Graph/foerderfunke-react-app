@@ -108,5 +108,17 @@
       "de": "In Deutschland sollen Kinder, Jugendliche und junge Erwachsene die gleichen Chancen haben. Wichtige Voraussetzungen für Chancengleichheit sind Bildung und die Teilnahme am sozialen und kulturellen Leben. Deswegen fördert der Staat Leistungen zur Bildung und Teilhabe, auch Bildungs- und Teilhabepaket genannt.",
       "en": "In Germany, children, teens and young adults are supposed to have equal opportunities. Education and participation in social and cultural activities are important factors in ensuring equal opportunity. For this reason, the state provides benefits to support education and participation. This is also known as the education and participation package."
     }
+  },
+  "https://foerderfunke.org/default#exist-gruendungsstipendium": {
+    "id": "ff:exist-gruendungsstipendium",
+    "title": {
+      "de": "EXIST-Gründungsstipendium",
+      "en": "EXIST start-up grant"
+    },
+    "description": {
+      "de": "Das EXIST-Gründerstipendium unterstützt Studierende, Absolventinnen und Absolventen sowie Wissenschaftlerinnen und Wissenschaftler, die ihre Gründungsidee umsetzen möchten. Das Stipendium ermöglicht es, sich voll und ganz auf die Gründung zu konzentrieren und die ersten Schritte in die Selbstständigkeit zu gehen.",
+      "en": "The EXIST start-up grant supports students, graduates and researchers who want to implement their start-up idea. The grant allows them to focus entirely on their start-up and take the first steps towards self-employment."
+    }
   }
+
 }
