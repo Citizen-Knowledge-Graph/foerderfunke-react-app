@@ -22,6 +22,7 @@ const useRunPrioritizedQuestions = () => {
             setValidationIsLoading(true);
             const questionsResponse = await questionsManager.fetchPrioritizedQuestions(userId, selectedBenefit ? [] : selectedTopics.map((topic) => topic.id), selectedBenefit, language);
             useQuestionsStore.getState().updateQuestions(questionsResponse.prioritizedMissingDataFields);
+            console.log('STATE UPDATE: We are updating the questions: ', questionsResponse.prioritizedMissingDataFields);
             setValidationIsLoading(false);
         }
         fetchPrioritizedQuestions();
