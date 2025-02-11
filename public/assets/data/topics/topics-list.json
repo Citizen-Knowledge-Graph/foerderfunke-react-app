@@ -47,5 +47,12 @@
       "en": "Social & Basic Welfare",
       "de": "Sozialhilfe & Grundsicherung"
     }
+  },
+  {
+    "id": "ff:selbstaendigkeit-gruendung",
+    "title": {
+      "en": "Self-Employment & Startups",
+      "de": "Selbständigkeit & Gründung"
+    }
   }
 ]
