@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Typography, Button } from '@mui/material';
-import VStack from "../../../shared-components/VStack";
 import { VBox } from '../../../shared-components/LayoutBoxes';
 import theme from "../../../../theme";
 import ContentBox from '../../../shared-components/ContentBox';
@@ -86,26 +85,6 @@ const ProfileSectionField = ({
             </VBox>
         </VBox>
     );
-};
-
-const styles = {
-    infoCard: {
-        width: '100%',
-        borderRadius: '12px',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: globalStyles.primaryColorTransparent,
-        boxShadow: 'none',
-    },
-    infoCardContent: {
-        width: '100%',
-        padding: '16px',
-        "&:last-child": {
-            paddingBottom: '16px',
-        }
-    }
 };
 
 export default ProfileSectionField;
