@@ -1,6 +1,7 @@
 [
   {
     "id": "ff:leistungen-fuer-familien-bc-kategorie",
+    "category": "social_benefits",
     "title": {
       "en": "Services for Families",
       "de": "Leistungen für Familien"
@@ -8,6 +9,7 @@
   },
   {
     "id": "ff:arbeitslosigkeit-bc-kategorie",
+    "category": "social_benefits",
     "title": {
       "en": "Unemployment & Job Search",
       "de": "Arbeitslosigkeit & Jobsuche"
@@ -15,6 +17,7 @@
   },
   {
     "id": "ff:alter-ruhestand-bc-kategorie",
+    "category": "social_benefits",
     "title": {
       "en": "Aging & Retirement",
       "de": "Alter & Ruhestand"
@@ -22,6 +25,7 @@
   },
   {
     "id": "ff:gesundheit-pflege-bc-kategorie",
+    "category": "social_benefits",
     "title": {
       "en": "Health & Care",
       "de": "Gesundheit & Pflege"
@@ -29,6 +33,7 @@
   },
   {
     "id": "ff:wohnen-bc-kategorie",
+    "category": "social_benefits",
     "title": {
       "en": "Housing",
       "de": "Wohnen"
@@ -36,6 +41,7 @@
   },
   {
     "id": "ff:schule-studium-ausbildung-bc-kategorie",
+    "category": "social_benefits",
     "title": {
       "en": "School, Studies, Vocational Training",
       "de": "Schule, Studium, Ausbildung"
@@ -43,9 +49,18 @@
   },
   {
     "id": "ff:sozialhilfe-grundsicherung-bc-kategorie",
+    "category": "social_benefits",
     "title": {
       "en": "Social & Basic Welfare",
       "de": "Sozialhilfe & Grundsicherung"
+    }
+  },
+  {
+    "id": "ff:selbstaendigkeit-gruendung",
+    "category": "business",
+    "title": {
+      "en": "Self-Employment & Startups",
+      "de": "Selbständigkeit & Gründung"
     }
   }
 ]

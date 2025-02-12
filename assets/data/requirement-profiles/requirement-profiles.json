@@ -41,6 +41,10 @@
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/sozialplattform/shacl/10-bildung-und-teilhabe-bei-bezug-von-buergergeld.ttl",
       "rpUri": "https://foerderfunke.org/default#bildung-und-teilhabe-bei-bezug-von-buergergeld"
+    },
+    {
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/beta/exist-gruendungsstipendium.ttl",
+      "rpUri": "https://foerderfunke.org/default#exist-gruendungsstipendium"
     }
   ]
 }
