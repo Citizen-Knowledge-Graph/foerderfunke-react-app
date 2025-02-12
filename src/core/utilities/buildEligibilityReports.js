@@ -21,7 +21,8 @@ export const buildEligibilityReports = (validationReport, hydrationData, languag
         const id = hydrationData[rpUri]?.id || 'Unknown Id';
         const title = hydrationData[rpUri]?.title?.[language] || 'Unknown Title';
         const description = hydrationData[rpUri]?.description?.[language] || 'Unknown Description';
-        const data = { uri: rpUri, id, title, description };
+        const status = hydrationData[rpUri]?.status || 'Unknown Status';
+        const data = { uri: rpUri, id, title, description, status };
         if (result === ValidationResult.ELIGIBLE) {
             eligibilityData.eligible.push(data);
         }

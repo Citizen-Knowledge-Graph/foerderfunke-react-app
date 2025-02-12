@@ -150,7 +150,8 @@ const translations = {
                     title: "We use a color code to indicate the likelihood of eligibility",
                     probableEligible: "Probable eligibility",
                     probableNotEligible: "Probable ineligibility",
-                    notEnoughData: "Not enough data for assessment"
+                    notEnoughData: "Not enough data for assessment",
+                    beta: "Some benefits are still in beta, meaning they are not fully tested and may contain errors."
                 }
             },
             profile: {
@@ -360,7 +361,8 @@ const translations = {
                     title: "Wir verwenden eine Farbkodierung, um die Wahrscheinlichkeit der Anspruchsberechtigung anzuzeigen",
                     probableEligible: "Wahrscheinlich besteht Anspruch",
                     probableNotEligible: "Wahrscheinlich besteht kein Anspruch",
-                    notEnoughData: "Nicht genügend Angaben für eine Einschätzung"
+                    notEnoughData: "Nicht genügend Angaben für eine Einschätzung",
+                    beta: "Eininge Leistungen sind noch in der Beta-Phase, d.h. sie sind noch nicht vollständig getestet und können Fehler enthalten."
                 }
             },
             profile: {

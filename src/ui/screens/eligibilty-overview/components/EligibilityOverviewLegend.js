@@ -55,6 +55,20 @@ const EligibilityOverviewLegend = () => {
                             </Typography>
                         </HBox>
                     </Grid>
+                    <Grid item xs={12} container>
+                        <HBox sx={{
+                            alignItems: "center",
+                            gap: theme.spacing(2),
+                            padding: theme.spacing(1),
+                            borderRadius: theme.shape.borderRadius,
+                        }}>                            <Typography variant='body2' sx={{ color: 'warning.main' }}>
+                                Beta
+                            </Typography>
+                            <Typography variant='body2'>
+                                {t('app.browseAll.legend.beta')}
+                            </Typography>
+                        </HBox>
+                    </Grid>
                 </Grid>
             </VBox>
         </ContentBox>

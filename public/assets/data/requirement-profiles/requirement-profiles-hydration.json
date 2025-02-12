@@ -1,6 +1,7 @@
 {
   "https://foerderfunke.org/default#hilfe-zum-lebensunterhalt": {
     "id": "ff:hilfe-zum-lebensunterhalt",
+    "status": "production",
     "title": {
       "de": "Hilfe zum Lebensunterhalt",
       "en": "Cost-of-living assistance"
@@ -12,6 +13,7 @@
   },
   "https://foerderfunke.org/default#kindergeld": {
     "id": "ff:kindergeld",
+    "status": "production",
     "title": {
       "de": "Kindergeld",
       "en": "Child benefit"
@@ -23,6 +25,7 @@
   },
   "https://foerderfunke.org/default#kinderzuschlag": {
     "id": "ff:kinderzuschlag",
+    "status": "production",
     "title": {
       "de": "Kinderzuschlag",
       "en": "Child allowance"
@@ -34,6 +37,7 @@
   },
   "https://foerderfunke.org/default#bafoeg": {
     "id": "ff:bafoeg",
+    "status": "production",
     "title": {
       "de": "BAföG",
       "en": "BAföG"
@@ -45,6 +49,7 @@
   },
   "https://foerderfunke.org/default#buergergeld": {
     "id": "ff:buergergeld",
+    "status": "production",
     "title": {
       "de": "Bürgergeld",
       "en": "Citizen's benefit"
@@ -56,6 +61,7 @@
   },
   "https://foerderfunke.org/default#arbeitslosengeld": {
     "id": "ff:arbeitslosengeld",
+    "status": "production",
     "title": {
       "de": "Arbeitslosengeld",
       "en": "Unemployment benefit"
@@ -67,6 +73,7 @@
   },
   "https://foerderfunke.org/default#berufsausbildungsbeihilfe-bab": {
     "id": "ff:berufsausbildungsbeihilfe-bab",
+    "status": "production",
     "title": {
       "de": "Berufsausbildungsbeihilfe (BAB)",
       "en": "Vocational training allowance (BAB)"
@@ -78,6 +85,7 @@
   },
   "https://foerderfunke.org/default#wohngeld": {
     "id": "ff:wohngeld",
+    "status": "production",
     "title": {
       "de": "Wohngeld",
       "en": "Housing benefit"
@@ -89,6 +97,7 @@
   },
   "https://foerderfunke.org/default#grundsicherung-im-alter-und-bei-erwerbsminderung": {
     "id": "ff:grundsicherung-im-alter-und-bei-erwerbsminderung",
+    "status": "production",
     "title": {
       "de": "Grundsicherung im Alter und bei Erwerbsminderung",
       "en": "Basic welfare for the elderly and people with reduced earnings capacity"
@@ -100,6 +109,7 @@
   },
   "https://foerderfunke.org/default#bildung-und-teilhabe-bei-bezug-von-buergergeld": {
     "id": "ff:bildung-und-teilhabe-bei-bezug-von-buergergeld",
+    "status": "production",
     "title": {
       "de": "Bildung und Teilhabe - bei Bezug von Bürgergeld",
       "en": "Education and participation - with citizen's benefit"
@@ -111,6 +121,7 @@
   },
   "https://foerderfunke.org/default#exist-gruendungsstipendium": {
     "id": "ff:exist-gruendungsstipendium",
+    "status": "beta",
     "title": {
       "de": "EXIST-Gründungsstipendium",
       "en": "EXIST start-up grant"
