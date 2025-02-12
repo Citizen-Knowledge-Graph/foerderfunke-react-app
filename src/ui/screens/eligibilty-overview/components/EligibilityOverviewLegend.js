@@ -10,7 +10,7 @@ const EligibilityOverviewLegend = () => {
     const { t } = useTranslation();
 
     return (
-        <ContentBox sx={{ backgroundColor: theme.palette.primary.light }}>
+        <ContentBox>
             <VBox sx={{ gap: 2 }}>
                 <Typography variant="body1">
                     {t('app.browseAll.legend.title')}
