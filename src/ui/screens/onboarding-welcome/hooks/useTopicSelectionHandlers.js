@@ -1,82 +1,73 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from "react";
 import { useSelectedTopicsStore } from "../../../storage/zustand";
 import { questionsStackStore } from "../../../storage/zustand";
 
-const useTopicSelectionHandlers = (topicsData, selectedTopics) => {
+const useTopicSelectionHandlers = (topicsData) => {
     const [selectedTopicsBoolean, setSelectedTopicsBoolean] = useState({});
 
+    const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
     const addSelectedTopic = useSelectedTopicsStore((state) => state.addSelectedTopic);
     const removeSelectedTopic = useSelectedTopicsStore((state) => state.removeSelectedTopic);
     const setSelectedTopics = useSelectedTopicsStore((state) => state.setSelectedTopics);
     const resetQuestionsStack = questionsStackStore((state) => state.resetQuestionsStack);
 
-    useEffect(() => {
-        if (topicsData?.length > 0) {
-            const groupedTopics = topicsData.reduce((acc, topic) => {
-                (acc[topic.category] = acc[topic.category] || []).push(topic);
-                return acc;
-            }, {});
+    console.log("Selected topics: ", selectedTopics);
 
-            Object.entries(groupedTopics).forEach(([category, topics]) => {
-                const newCategorySelectedTopicsBoolean = topics.map(topic =>
-                    selectedTopics.some(selectedTopic => selectedTopic.id === topic.id)
-                );
-                setSelectedTopicsBoolean((prevSelectedTopicsBoolean) => ({
-                    ...prevSelectedTopicsBoolean,
-                    [category]: newCategorySelectedTopicsBoolean,
-                }));
-            });
-        }
+    useEffect(() => {
+        if (!topicsData?.length) return;
+        console.log("🔄 Syncing selectedTopicsBoolean with selectedTopics");
+
+        const groupedTopics = topicsData.reduce((acc, topic) => {
+            (acc[topic.category] = acc[topic.category] || []).push(topic);
+            return acc;
+        }, {});
+
+        const newSelectedTopicsBoolean = {};
+        Object.entries(groupedTopics).forEach(([category, topics]) => {
+            newSelectedTopicsBoolean[category] = topics.map(topic =>
+                selectedTopics.some(selected => selected.id === topic.id)
+            );
+        });
+
+        setSelectedTopicsBoolean(newSelectedTopicsBoolean);
     }, [topicsData, selectedTopics]);
 
     const handleButtonClick = useCallback((topic, index, category) => {
-        let categorySelectedTopicsBoolean = selectedTopicsBoolean[category];
-        categorySelectedTopicsBoolean[index] = !categorySelectedTopicsBoolean[index];
-        setSelectedTopicsBoolean((prevSelectedTopicsBoolean) => ({
-            ...prevSelectedTopicsBoolean,
-            [category]: categorySelectedTopicsBoolean,
-        }));
+        setSelectedTopicsBoolean((prev) => {
+            const newCategoryState = [...prev[category]];
+            newCategoryState[index] = !newCategoryState[index];
 
-        if (categorySelectedTopicsBoolean[index]) {
-            addSelectedTopic(topic);
-        } else {
+            return { ...prev, [category]: newCategoryState };
+        });
+
+        if (selectedTopics.some(selected => selected.id === topic.id)) {
             removeSelectedTopic(topic.id);
+        } else {
+            addSelectedTopic(topic);
         }
 
         resetQuestionsStack();
-    }, [selectedTopicsBoolean, addSelectedTopic, removeSelectedTopic, resetQuestionsStack]);
+    }, [selectedTopics, addSelectedTopic, removeSelectedTopic, resetQuestionsStack]);
 
     const handleToggleSelectAll = useCallback((event, category) => {
         const isChecked = event.target.checked;
+        const categoryTopics = topicsData.filter(topic => topic.category === category);
+    
+        console.log(`🔄 Toggle All - ${category}: ${isChecked ? "Selecting all" : "Deselecting all"}`);
+    
+        setSelectedTopicsBoolean((prev) => ({
+            ...prev,
+            [category]: new Array(categoryTopics.length).fill(isChecked),
+        }));
+    
+        const newSelectedTopics = isChecked
+            ? [...selectedTopics, ...categoryTopics.filter(
+                (topic) => !selectedTopics.some(existing => existing.id === topic.id)
+              )]
+            : selectedTopics.filter(topic => topic.category !== category);
 
-        if (isChecked) {
-            const newCategorySelectedTopicsBoolean = new Array(topicsData[category].length).fill(true);
-            setSelectedTopicsBoolean((prevSelectedTopicsBoolean) => ({
-                ...prevSelectedTopicsBoolean,
-                [category]: newCategorySelectedTopicsBoolean,
-            }));
-            setSelectedTopics((prevSelectedTopics) => {
-                const newTopics = topicsData[category].filter(
-                    (topic) => !prevSelectedTopics.some(existing => existing.id === topic.id)
-                );
-                return [
-                    ...prevSelectedTopics,
-                    ...newTopics,
-                ];
-            });
-        } else {
-            const newCategorySelectedTopicsBoolean = new Array(topicsData[category].length).fill(false);
-            setSelectedTopicsBoolean((prevSelectedTopicsBoolean) => ({
-                ...prevSelectedTopicsBoolean,
-                [category]: newCategorySelectedTopicsBoolean,
-            }));
-            setSelectedTopics((prevSelectedTopics) => {
-                return prevSelectedTopics.filter(
-                    (topic) => !topicsData[category].some(existing => existing.id === topic.id)
-                );
-            });
-        }
-    }, [topicsData, setSelectedTopics]);
+        setSelectedTopics(newSelectedTopics);
+    }, [topicsData, setSelectedTopics, selectedTopics]);
 
     return {
         selectedTopicsBoolean,

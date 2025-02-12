@@ -109,9 +109,12 @@ const translations = {
             },
             topicSelection: {
                 header: "Quick eligibility check",
-                text: "Which topics are you interested in exploring benefits for?",
                 selectAll: "Select all",
                 confirmBtn: "Confirm",
+                socialBenefitsTitle: "Social benefits",
+                socialBenefitsSubtitle: "Which topics are you interested in exploring benefits for?",
+                businessTitle: "Business and startup support",
+                businessSubtitle: "Do you want to explore support programs for business and startups?",
             },
             topicsChosen: {
                 topicsText: "Based on your chosen topics we will provide you with a list of benefits you may be eligible for.",
@@ -307,17 +310,21 @@ const translations = {
             },
             discoverChoice: {
                 header: "Deine Wahl",
-                text: "Du hast zwei Möglichkeiten, um Leistungen für dich zu entdecken. Du kannst ein paar Fragen beantworten " +
-                    "und so einen Schnellcheck machen oder dir den gesamten Katalog ansehen.",
+                text: "Du hast zwei Möglichkeiten, um Leistungen für dich zu entdecken. Du kannst ein paar Fragen beantworten und so einen Schnellcheck machen oder dir den gesamten Katalog ansehen.",
                 quickCheck: "Schneller Anspruchscheck",
                 quickCheckComment: "Basierend auf bis zu 10 Leistungen",
+                quickCheckInfo: "Der Schnellcheck ist eine schnelle Methode, um deinen Anspruchsstatus zu überprüfen. Es dauert nur wenige Minuten.",
                 browseAll: "Alle Leistungen durchsuchen",
+                browseInfo: "Beim Durchsuchen erhältst du einen Überblick über die im Katalog verfügbaren Programme. Für eine detaillierte Anspruchsüberprüfung musst du jedoch einzeln vorgehen."
             },
             topicSelection: {
                 header: "Schneller Anspruchscheck",
-                text: "Für welche Themen möchtest du Leistungen entdecken?",
                 selectAll: "Alle auswählen",
                 confirmBtn: "Bestätigen",
+                socialBenefitsTitle: "Sozialleistungen",
+                socialBenefitsSubtitle: "Für welche Themen möchtest du Leistungen entdecken?",
+                businessTitle: "Gründung und Unternehmensförderung",
+                businessSubtitle: "Möchtest du Förderprogramme für Unternehmen und Startups erkunden?",
             },
             topicsChosen: {
                 topicsText: "Basierend auf deinen ausgewählten Themen stellen wir dir eine Liste von Leistungen zur Verfügung, für die du möglicherweise infrage kommst.",
