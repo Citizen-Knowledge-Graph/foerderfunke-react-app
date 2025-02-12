@@ -142,7 +142,13 @@ const translations = {
                 notEligible: "Not eligible:",
                 missingData: "Missing data:",
                 checkElBtn: "Check eligibility",
-                learnMoreBtn: "Learn more"
+                learnMoreBtn: "Learn more",
+                legend: {
+                    title: "We use a color code to indicate the likelihood of eligibility",
+                    probableEligible: "Probable eligibility",
+                    probableNotEligible: "Probable ineligibility",
+                    notEnoughData: "Not enough data for assessment"
+                }
             },
             profile: {
                 header: "Your profile",
@@ -343,6 +349,12 @@ const translations = {
                 missingData: "Fehlende Daten:",
                 checkElBtn: "Anspruch prüfen",
                 learnMoreBtn: "Mehr erfahren",
+                legend: {
+                    title: "Wir verwenden eine Farbkodierung, um die Wahrscheinlichkeit der Anspruchsberechtigung anzuzeigen",
+                    probableEligible: "Wahrscheinlich besteht Anspruch",
+                    probableNotEligible: "Wahrscheinlich besteht kein Anspruch",
+                    notEnoughData: "Nicht genügend Angaben für eine Einschätzung"
+                }
             },
             profile: {
                 header: "Dein Profil",
