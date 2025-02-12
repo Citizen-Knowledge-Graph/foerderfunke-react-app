@@ -3,7 +3,7 @@ import EligibilityOverviewHeader from "./components/EligibilityOverviewHeader";
 import Layout from "../../shared-components/Layout";
 import EligibilityOverviewList from "./components/EligibilityOverviewList";
 import AppScreenWrapper from "../../shared-components/AppScreenWrapper";
-import Divider from "@mui/material/Divider";
+import EligibilityOverviewLegend from "./components/EligibilityOverviewLegend";
 import { CircularProgress } from "@mui/material";
 import { LanguageContext } from "../../language/LanguageContext";
 import { useValidationReportStore } from "../../storage/zustand";
@@ -23,25 +23,27 @@ const EligibilityOverviewScreen = () => {
     return (
         <Layout isApp={true} logo={true}>
             <AppScreenWrapper back={true}>
-                <EligibilityOverviewHeader/>
-                <Divider sx={{ width: "100%" }} />
-                {
-                    eligibilityData && !validationIsLoading ? (
-                        <>
-                            {eligibilityData.eligible.length > 0 &&
-                                <EligibilityOverviewList items={eligibilityData.eligible} eligible={'eligible'} />}
-                            {eligibilityData.missingData.length > 0 &&
-                                <EligibilityOverviewList items={eligibilityData.missingData}
-                                    eligible={'indeterminate'} />}
-                            {eligibilityData.nonEligible.length > 0 &&
-                                <EligibilityOverviewList items={eligibilityData.nonEligible}
-                                    eligible={'non-eligible'} />}
-                        </>
-                    ) :
-                        <VBox sx={{ alignItems: "center" }}><CircularProgress /></VBox>
-                }
+                <VBox sx={{ gap: 3 }} >
+                    <EligibilityOverviewHeader />
+                    <EligibilityOverviewLegend />
+                    {
+                        eligibilityData && !validationIsLoading ? (
+                            <>
+                                {eligibilityData.eligible.length > 0 &&
+                                    <EligibilityOverviewList items={eligibilityData.eligible} eligible={'eligible'} />}
+                                {eligibilityData.missingData.length > 0 &&
+                                    <EligibilityOverviewList items={eligibilityData.missingData}
+                                        eligible={'indeterminate'} />}
+                                {eligibilityData.nonEligible.length > 0 &&
+                                    <EligibilityOverviewList items={eligibilityData.nonEligible}
+                                        eligible={'non-eligible'} />}
+                            </>
+                        ) :
+                            <VBox sx={{ alignItems: "center" }}><CircularProgress /></VBox>
+                    }
+                </VBox>
             </AppScreenWrapper>
-        </Layout>
+        </Layout >
     );
 };
 
