@@ -4,11 +4,8 @@ import AppScreenWrapper from "../../shared-components/AppScreenWrapper";
 import {useStore} from "../../shared-components/ViewportUpdater";
 import {useLocation} from "react-router-dom";
 import resourceService from "../../../core/services/resourceService";
-import {
-    convertUserProfileToTurtle,
-    createStoreWithTempUrisForBlankNodes,
-    getAllTriplesContainingUri
-} from "@foerderfunke/matching-engine/src/utils";
+import { createStoreWithTempUrisForBlankNodes, getAllTriplesContainingUri } from "@foerderfunke/matching-engine/src/uri-resolving";
+import { convertUserProfileToTurtle } from "@foerderfunke/matching-engine/src/profile-conversion";
 import {Checkbox, CircularProgress, FormControlLabel} from "@mui/material";
 import userManager from "../../../core/managers/userManager";
 

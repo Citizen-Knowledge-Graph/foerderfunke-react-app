@@ -1,12 +1,13 @@
 import userManager from "./userManager";
 import {validateAll, validateUserProfile} from '@foerderfunke/matching-engine';
-import {
-    convertUserProfileToTurtle, extractDatafieldsMetadata, extractRequirementProfilesMetadata,
-} from '@foerderfunke/matching-engine/src/utils';
+import { convertUserProfileToTurtle } from "@foerderfunke/matching-engine/src/profile-conversion";
+import { extractDatafieldsMetadata, extractRequirementProfilesMetadata } from '@foerderfunke/matching-engine/src/extract-metadata';
 import resourceService from "../services/resourceService";
 
 const validationManager = {
     async runValidation(userId, language = "en") {
+
+        let start = performance.now();
 
         // Get the active user profile
         const userProfile = userManager.retrieveUserData(userId);
@@ -31,6 +32,11 @@ const validationManager = {
             requirementProfiles[rpUri] = await resourceService.fetchResource(fileUrl);
         }
 
+        let end = performance.now();
+        console.log(`Time elapsed in validationManager before validateAll(): ${end - start} ms`);
+
+        start = performance.now();
+
         let validateAllReport = await validateAll(
             userProfileString,
             requirementProfiles,
@@ -38,6 +44,9 @@ const validationManager = {
             materializationString,
             false
         );
+
+        end = performance.now();
+        console.log(`Time it took in validationManager for validateAll(): ${end - start} ms`);
 
         // fetch metadata
         let metadata = {
