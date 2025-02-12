@@ -6,6 +6,8 @@ import {getPrioritizedMissingDataFieldsJson} from "@foerderfunke/matching-engine
 const questionsManager = {
     async fetchPrioritizedQuestions(userId, topicIds, benefitId, language = "en") {
 
+        let start = performance.now();
+
         // Get the active user profile
         const userProfile = userManager.retrieveUserData(userId);
         const userProfileString = await convertUserProfileToTurtle(userProfile);
@@ -28,7 +30,12 @@ const questionsManager = {
             return id.startsWith("ff:") ? "https://foerderfunke.org/default#" + id.split(":")[1] : id;
         }
 
-        return await getPrioritizedMissingDataFieldsJson(
+        let end = performance.now();
+        console.log(`Time elapsed in questionsManager before getPrioritizedMissingDataFieldsJson(): ${end - start} ms`);
+
+        start = performance.now();
+
+        let result = await getPrioritizedMissingDataFieldsJson(
             topicIds,
             benefitId ? [expand(benefitId)] : [],
             userProfileString,
@@ -37,6 +44,11 @@ const questionsManager = {
             materializationString,
             language
         );
+
+        end = performance.now();
+        console.log(`Time elapsed in questionsManager for getPrioritizedMissingDataFieldsJson(): ${end - start} ms`);
+
+        return result;
     }
 }
 
