@@ -11,6 +11,7 @@ import { VBox } from "../../shared-components/LayoutBoxes";
 import TimeIcon from './components/TimeIcon';
 import { useSelectedBenefitStore, useSelectedTopicsStore } from "../../storage/zustand";
 import theme from "../../../theme";
+import ContentBox from '../../shared-components/ContentBox';
 
 const OnboardingWelcomeTopics = () => {
     const { t } = useTranslation();
@@ -21,6 +22,12 @@ const OnboardingWelcomeTopics = () => {
     const topicsData = useFetchData('assets/data/topics/topics-list.json')
     const { selectedTopicsBoolean, handleButtonClick, handleToggleSelectAll } =
         useTopicSelectionHandlers(topicsData, selectedTopics);
+
+    try {
+        console.log(topicsData)
+    } catch (e) {
+        console.log(e)
+    }
 
     return (
         <Layout isApp={true} logo={false}>
@@ -33,37 +40,44 @@ const OnboardingWelcomeTopics = () => {
                     </VBox>
                     <VBox sx={{ gap: theme.spacing(4) }}>
                         <TimeIcon />
-                        <Typography variant="body1">
-                            {t('app.topicSelection.text')}
-                        </Typography>
+                        <ContentBox sx={{ backgroundColor: theme.palette.primary.light }}>
+                            <VBox>
+                                <Typography variant="h6">
+                                    Sozialleistungen
+                                </Typography>
+                                <Typography variant="body1">
+                                    {t('app.topicSelection.text')}
+                                </Typography>
+                            </VBox>
+                        </ContentBox>
                         <VBox sx={{ gap: theme.spacing(2) }}>
                             {
-                                selectedTopicsBoolean.length > 0 && (
+                                selectedTopicsBoolean['social_benefits']?.length > 0 && (
                                     <Grid container spacing={2}>
-                                        {topicsData?.map((topic, index) => (
+                                        {topicsData?.filter(topic => topic.category === 'social_benefits').map((topic, index) => (
                                             <Grid item xs={12} sm={6} container key={index}>
                                                 <Button variant='outlined'
-                                                    onClick={() => { handleButtonClick(topic, index); }}
+                                                    onClick={() => { handleButtonClick(topic, index, 'social_benefits'); }}
                                                     sx={{
                                                         flex: 1,
                                                         padding: theme.spacing(2),
                                                         borderColor: theme.palette.primary.main,
-                                                        backgroundColor: selectedTopicsBoolean[index]
+                                                        backgroundColor: selectedTopicsBoolean['social_benefits'][index]
                                                             ? theme.palette.primary.main
                                                             : 'transparent',
                                                         '&:focus': {
-                                                            backgroundColor: selectedTopicsBoolean[index]
+                                                            backgroundColor: selectedTopicsBoolean['social_benefits'][index]
                                                                 ? theme.palette.primary.main
                                                                 : 'transparent',
                                                             outline: 'none',
                                                         },
                                                         '&:hover': {
-                                                            backgroundColor: selectedTopicsBoolean[index]
+                                                            backgroundColor: selectedTopicsBoolean['social_benefits'][index]
                                                                 ? theme.palette.primary.main
                                                                 : theme.palette.primary.light,
                                                             borderColor: theme.palette.primary.main,
                                                             '@media (hover: none)': {
-                                                                backgroundColor: selectedTopicsBoolean[index]
+                                                                backgroundColor: selectedTopicsBoolean['social_benefits'][index]
                                                                     ? theme.palette.primary.main
                                                                     : 'transparent',
                                                             },
@@ -79,8 +93,74 @@ const OnboardingWelcomeTopics = () => {
                                 )
                             }
                             <Box>
-                                <FormControlLabel sx={{margin: 0}}
-                                    control={<Checkbox onChange={handleToggleSelectAll} />}
+                                <FormControlLabel sx={{ margin: 0 }}
+                                    control={<Checkbox onChange={(event) => handleToggleSelectAll(event, 'social_benefits')} />}
+                                    label={t('app.topicSelection.selectAll')}
+                                />
+                            </Box>
+                        </VBox>
+                    </VBox>
+                    <VBox sx={{ gap: theme.spacing(4) }}>
+                        <ContentBox sx={{ backgroundColor: theme.palette.custom.colorDeepTealTransparent }}>
+                            <VBox>
+                                <Typography variant="h6">
+                                    Gründung und Unternehmensförderung
+                                </Typography>
+                                <Typography variant="body1">
+                                    {t('app.topicSelection.text')}
+                                </Typography>
+                            </VBox>
+                        </ContentBox>
+                        <VBox sx={{ gap: theme.spacing(2) }}>
+                            {
+                                selectedTopicsBoolean['business']?.length > 0 && (
+                                    <Grid container spacing={2}>
+                                        {topicsData?.filter(topic => topic.category === 'business').map((topic, index) => (
+                                            <Grid item xs={12} sm={6} container key={index}>
+                                                <Button variant='outlined'
+                                                    onClick={() => { handleButtonClick(topic, index, 'business'); }}
+                                                    sx={{
+                                                        flex: 1,
+                                                        padding: theme.spacing(2),
+                                                        borderColor: theme.palette.custom.colorDeepTeal,
+                                                        backgroundColor: selectedTopicsBoolean['business'][index]
+                                                            ? theme.palette.custom.colorDeepTeal
+                                                            : 'transparent',
+                                                        '&:focus': {
+                                                            backgroundColor: selectedTopicsBoolean['business'][index]
+                                                                ? theme.palette.custom.colorDeepTeal
+                                                                : 'transparent',
+                                                            outline: 'none',
+                                                        },
+                                                        '&:hover': {
+                                                            backgroundColor: selectedTopicsBoolean['business'][index]
+                                                                ? theme.palette.custom.colorDeepTeal
+                                                                : theme.palette.custom.colorDeepTealTransparent,
+                                                            borderColor: theme.palette.custom.colorDeepTeal,
+                                                            '@media (hover: none)': {
+                                                                backgroundColor: selectedTopicsBoolean['business'][index]
+                                                                    ? theme.palette.custom.colorDeepTeal
+                                                                    : 'transparent',
+                                                            },
+                                                        },
+                                                    }}>
+                                                    <Typography variant="body1" sx={{
+                                                        fontWeight: 'bold',
+                                                        color: selectedTopicsBoolean['business'][index]
+                                                            ? 'white'
+                                                            : 'black',
+                                                    }}>
+                                                        {language === "de" ? topic.title.de : topic.title.en}
+                                                    </Typography>
+                                                </Button>
+                                            </Grid>
+                                        ))}
+                                    </Grid>
+                                )
+                            }
+                            <Box>
+                                <FormControlLabel sx={{ margin: 0 }}
+                                    control={<Checkbox onChange={(event) => handleToggleSelectAll(event, 'business')} />}
                                     label={t('app.topicSelection.selectAll')}
                                 />
                             </Box>
