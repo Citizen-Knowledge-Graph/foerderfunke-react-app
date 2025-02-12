@@ -1,5 +1,5 @@
 import userManager from "./userManager";
-import {convertUserProfileToTurtle} from "@foerderfunke/matching-engine/src/utils";
+import { convertUserProfileToTurtle } from "@foerderfunke/matching-engine/src/profile-conversion";
 import resourceService from "../services/resourceService";
 import {getPrioritizedMissingDataFieldsJson} from "@foerderfunke/matching-engine/src/prematch";
 

@@ -1,8 +1,7 @@
 import userManager from "./userManager";
 import {validateAll, validateUserProfile} from '@foerderfunke/matching-engine';
-import {
-    convertUserProfileToTurtle, extractDatafieldsMetadata, extractRequirementProfilesMetadata,
-} from '@foerderfunke/matching-engine/src/utils';
+import { convertUserProfileToTurtle } from "@foerderfunke/matching-engine/src/profile-conversion";
+import { extractDatafieldsMetadata, extractRequirementProfilesMetadata } from '@foerderfunke/matching-engine/src/extract-metadata';
 import resourceService from "../services/resourceService";
 
 const validationManager = {

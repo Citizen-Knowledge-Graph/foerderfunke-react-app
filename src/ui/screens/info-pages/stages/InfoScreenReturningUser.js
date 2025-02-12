@@ -11,7 +11,7 @@ import AppScreenWrapper from "../../../shared-components/AppScreenWrapper";
 import { VBox, HBox } from "../../../shared-components/LayoutBoxes";
 import theme from "../../../../theme";
 import useTranslation from "../../../language/useTranslation";
-import { convertUserProfileToTurtle } from "@foerderfunke/matching-engine/src/utils";
+import { convertUserProfileToTurtle } from "@foerderfunke/matching-engine/src/profile-conversion";
 import userManager from "../../../../core/managers/userManager";
 import {
     questionsStackStore,
