@@ -125,7 +125,8 @@ const translations = {
                 progress: "Question",
                 info: "We update the number of questions and potential benefits depending on your answers.",
                 multipleAnswers: "Multiple answers possible",
-                confirmBtn: "Confirm"
+                confirmBtn: "Confirm",
+                showComment: "Show explanation"
             },
             datafields: {
                 pickBday: "Pick your birthdate",
@@ -337,6 +338,7 @@ const translations = {
                 info: "Wir aktualisieren die Anzahl der Fragen und möglichen Leistungen basierend auf deinen Antworten.",
                 multipleAnswers: "Mehrere Antworten möglich",
                 confirmBtn: "Bestätigen",
+                showComment: "Erklärung anzeigen"
             },
             datafields: {
                 pickBday: "Wähle dein Geburtsdatum",

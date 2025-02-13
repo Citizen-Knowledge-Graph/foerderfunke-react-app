@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { Typography, Button } from '@mui/material';
-import { VBox } from '../../../shared-components/LayoutBoxes';
+import { Typography, Button, Collapse } from '@mui/material';
+import { VBox, HBox } from '../../../shared-components/LayoutBoxes';
 import theme from "../../../../theme";
 import ContentBox from '../../../shared-components/ContentBox';
 
@@ -11,6 +11,8 @@ import ProfileSectionInputSwitch from "./input-types/ProfileSectionInputSwitch";
 import { useHandleAddClick } from "../handlers/addClickHandler";
 import { useProfileSectionStore } from "../../../storage/useProfileSectionStore";
 import useTranslation from "../../../language/useTranslation";
+import { ExpandMore } from '@mui/icons-material';
+import IconButton from '@mui/material/IconButton';
 
 const ProfileSectionField = ({
     currentField,
@@ -20,6 +22,7 @@ const ProfileSectionField = ({
 }) => {
     const { t } = useTranslation();
     const [value, setValue] = useState(null);
+    const [showComment, setShowComment] = useState(false); // Toggle state for comment visibility
     const retrieveCurrentEntityData = useProfileSectionStore((state) => state.retrieveCurrentEntityData)
     const entityData = useMemo(() => retrieveCurrentEntityData(), [retrieveCurrentEntityData]);
     const fetchProfileField = useFetchProfileField(currentField.datafield, entityData);
@@ -53,11 +56,28 @@ const ProfileSectionField = ({
                         <Typography variant='h6'>
                             {currentField.question}
                         </Typography>
-                        {(currentField.comment.length > 0 &&
-                            <Typography variant='body2'>
+                        {currentField.comment.length > 0 && (
+                            <HBox sx={{ alignItems: 'center', justifyContent: 'flex-start' }}>
+                                <Typography variant='body2'>
+                                    {t('app.questions.showComment')}
+                                </Typography>
+                                <IconButton
+                                    onClick={() => setShowComment(!showComment)}
+                                    sx={{
+                                        width: '40px',
+                                        transition: 'transform 0.3s',
+                                        transform: showComment ? 'rotate(180deg)' : 'rotate(0deg)',
+                                    }}
+                                >
+                                    <ExpandMore />
+                                </IconButton>
+                            </HBox>
+                        )}
+                        <Collapse in={showComment}>
+                            <Typography variant='body2' sx={{ marginTop: 1 }}>
                                 {currentField.comment}
-                            </Typography>)
-                        }
+                            </Typography>
+                        </Collapse>
                     </VBox>
                 </ContentBox>
                 <ProfileSectionInputSwitch value={value}
