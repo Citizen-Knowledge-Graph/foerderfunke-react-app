@@ -130,6 +130,17 @@
       "de": "Das EXIST-Gründerstipendium unterstützt Studierende, Absolventinnen und Absolventen sowie Wissenschaftlerinnen und Wissenschaftler, die ihre Gründungsidee umsetzen möchten. Das Stipendium ermöglicht es, sich voll und ganz auf die Gründung zu konzentrieren und die ersten Schritte in die Selbstständigkeit zu gehen.",
       "en": "The EXIST start-up grant supports students, graduates and researchers who want to implement their start-up idea. The grant allows them to focus entirely on their start-up and take the first steps towards self-employment."
     }
+  },
+  "https://foerderfunke.org/default#ibb-gruendungsbonus": {
+    "id": "ff:ibb-gruendungsbonus",
+    "status": "beta",
+    "title": {
+      "de": "IBB-Gründungsbonus", 
+      "en": "IBB start-up bonus"
+    },
+    "description": {
+      "de": "Der IBB-Gründungsbonus ist eine finanzielle Unterstützung für Gründerinnen und Gründer in Berlin. Der Bonus hilft dabei, die ersten Schritte in die Selbstständigkeit zu gehen und das eigene Unternehmen aufzubauen.",
+      "en": "The IBB start-up bonus is financial support for start-ups in Berlin. The bonus helps them take the first steps towards self-employment and build their own business."
+    }
   }
-
 }
