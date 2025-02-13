@@ -165,7 +165,7 @@ const translations = {
                 eligibilityBtn: "Check eligibility",
                 whatIsIt: "What is it",
                 rulesTable: {
-                    header: "Eligibility rules",
+                    header: "Who is eligible?",
                     yourAnswer: "Your answer",
                     mustBeAnswered: "Must be answered",
                     mustBe: "Must be",
@@ -377,7 +377,7 @@ const translations = {
                 eligibilityBtn: "Anspruch prüfen",
                 whatIsIt: "Was ist das?",
                 rulesTable: {
-                    header: "Anspruchsregeln",
+                    header: "Wer ist anspruchsberechtigt?",
                     yourAnswer: "Deine Antwort",
                     mustBeAnswered: "Muss beantwortet werden",
                     mustBe: "Muss sein",

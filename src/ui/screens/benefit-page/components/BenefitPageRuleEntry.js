@@ -1,39 +1,37 @@
 import React from "react";
-import { Grid, Typography } from "@mui/material";
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import HelpIcon from '@mui/icons-material/Help';
-import CancelIcon from '@mui/icons-material/Cancel';
+import { Typography } from "@mui/material";
 import useTranslation from "../../../language/useTranslation";
-import globalStyles from "../../../styles/styles";
+import ContentBox from "../../../shared-components/ContentBox";
+import { VBox } from "../../../shared-components/LayoutBoxes";
+import theme from "../../../../theme";
 
 const BenefitPageRuleEntry = ({ ruleData }) => {
     const { t } = useTranslation();
 
-    const icon = (() => {
+    const validtyColor = (() => {
         switch (ruleData.validity) {
             case 'valid':
-                return <CheckCircleIcon sx={{ fontSize: 30, color: globalStyles.secondaryColor }} />;
+                return theme.palette.secondary.light;
             case 'missing':
-                return <HelpIcon sx={{ fontSize: 30, color: globalStyles.colorDarkGrey }} />;
+                return theme.palette.custom.darkGreyTransparent;
             case 'invalid':
-                return <CancelIcon sx={{ fontSize: 30, color: globalStyles.colorCoralRed }} />;
+                return theme.palette.error.light;
             default:
-                return <HelpIcon sx={{ fontSize: 30, color: globalStyles.colorDarkGrey }} />;
+                return theme.palette.custom.darkGreyTransparent;
         }
     })();
 
     return (
-        <Grid
-            container
-            spacing={2}
-            sx={{
-                padding: '12px',
-                borderRadius: '12px',
-                alignItems: 'center',
-            }}
-        >
-            <Grid item xs={6} sm={5}>
-                <Typography variant="body2">{ruleData.requirement.label}</Typography>
+        <VBox sx={{
+            borderRadius: theme.shape.borderRadius,
+            borderStyle: 'solid',
+            borderWidth: '1px',
+            borderColor: theme.palette.custom.lightGrey,
+            padding: theme.spacing(2),
+            backgroundColor: "white"
+        }}>
+            <VBox sx={{ gap: 0 }}>
+                <Typography variant="body1" sx={{ fontWeight: 'bold' }}>{ruleData.requirement.label}</Typography>
                 <Typography variant="body1" sx={{
                     wordBreak: 'break-word',
                     overflowWrap: 'break-word',
@@ -43,21 +41,16 @@ const BenefitPageRuleEntry = ({ ruleData }) => {
                 }}>
                     {ruleData.requirement.rule}
                 </Typography>
-            </Grid>
-            <Grid item xs={6} sm={5}>
+            </VBox>
+            <ContentBox sx={{ padding: theme.spacing(1), backgroundColor: validtyColor }}>
                 <Typography variant="body2">
                     {t('app.benefitPage.rulesTable.yourAnswer')}
                 </Typography>
                 <Typography variant="body1" sx={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
                     {ruleData.userValue}
                 </Typography>
-            </Grid>
-            <Grid item xs={12} sm={2}
-                sx={{ display: 'flex', justifyContent: "flex-end" }}
-            >
-                {icon}
-            </Grid>
-        </Grid>
+            </ContentBox>
+        </VBox>
     );
 };
 

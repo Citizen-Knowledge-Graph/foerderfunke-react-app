@@ -59,7 +59,7 @@ const BenefitPageScreen = () => {
                         ))}
                     </Box>
                 </Box>
-                <Box gap={3} sx={{
+                <Box gap={2} sx={{
                     display: "flex",
                     flexDirection: "column",
                     width: '100%'
