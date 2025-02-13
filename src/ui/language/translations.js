@@ -147,8 +147,8 @@ const translations = {
                 missingData: "Missing data:",
                 checkElBtn: "Check eligibility",
                 learnMoreBtn: "Learn more",
+                legendTitle: "We use a color code to indicate the likelihood of eligibility. See the legend",
                 legend: {
-                    title: "We use a color code to indicate the likelihood of eligibility",
                     probableEligible: "Probable eligibility",
                     probableNotEligible: "Probable ineligibility",
                     notEnoughData: "Not enough data for assessment",
@@ -359,8 +359,8 @@ const translations = {
                 missingData: "Fehlende Daten:",
                 checkElBtn: "Anspruch prüfen",
                 learnMoreBtn: "Mehr erfahren",
+                legendTitle: "Wir verwenden eine Farbkodierung, um die Wahrscheinlichkeit der Anspruchsberechtigung anzuzeigen. Siehe die Legende",
                 legend: {
-                    title: "Wir verwenden eine Farbkodierung, um die Wahrscheinlichkeit der Anspruchsberechtigung anzuzeigen",
                     probableEligible: "Wahrscheinlich besteht Anspruch",
                     probableNotEligible: "Wahrscheinlich besteht kein Anspruch",
                     notEnoughData: "Nicht genügend Angaben für eine Einschätzung",

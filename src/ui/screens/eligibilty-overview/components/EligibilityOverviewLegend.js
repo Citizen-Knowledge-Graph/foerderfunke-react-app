@@ -10,11 +10,8 @@ const EligibilityOverviewLegend = () => {
     const { t } = useTranslation();
 
     return (
-        <ContentBox>
+        <ContentBox sx={{ backgroundColor: theme.palette.custom.colorDeepTealTransparent}}>
             <VBox sx={{ gap: 2 }}>
-                <Typography variant="body1">
-                    {t('app.browseAll.legend.title')}
-                </Typography>
                 <Grid container spacing={2} alignItems="center">
                     <Grid item xs={12} sm={4} container alignItems="center">
                         <HBox sx={{
