@@ -153,7 +153,13 @@ const OnboardingWelcomeTopics = () => {
                             }
                             <Box>
                                 <FormControlLabel sx={{ margin: 0 }}
-                                    control={<Checkbox onChange={(event) => handleToggleSelectAll(event, 'business')} />}
+                                    control={<Checkbox 
+                                        sx={{
+                                            "&.Mui-checked": {
+                                              color: theme.palette.custom.colorDeepTeal,
+                                            },
+                                          }}
+                                        onChange={(event) => handleToggleSelectAll(event, 'business')} />}
                                     label={t('app.topicSelection.selectAll')}
                                 />
                             </Box>
