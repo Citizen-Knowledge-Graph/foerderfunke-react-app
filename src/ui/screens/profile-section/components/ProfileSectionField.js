@@ -73,11 +73,16 @@ const ProfileSectionField = ({
                                 </IconButton>
                             </HBox>
                         )}
-                        <Collapse in={showComment}>
-                            <Typography variant='body2' sx={{ marginTop: 1 }}>
-                                {currentField.comment}
-                            </Typography>
-                        </Collapse>
+                        {
+                            showComment && (
+                                <Collapse in={showComment}>
+                                    <Typography variant='body2' sx={{ marginTop: 1 }}>
+                                        {currentField.comment}
+                                    </Typography>
+                                </Collapse>
+                            )
+                        }
+
                     </VBox>
                 </ContentBox>
                 <ProfileSectionInputSwitch value={value}
