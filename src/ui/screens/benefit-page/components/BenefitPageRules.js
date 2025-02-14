@@ -10,7 +10,7 @@ import useFetchData from "../../../shared-hooks/useFetchData";
 import useBenefitPageRules from "../hooks/useBenefitPageRules";
 import { VBox, HBox } from "../../../shared-components/LayoutBoxes";
 
-const BenefitPageRules = ({ benefitId }) => {
+const BenefitPageRules = ({ benefitId, validated_status }) => {
     const { t } = useTranslation();
     const metadata = useMetadataStore((state) => state.metadata);
     const validationReport = useValidationReportStore((state) => state.validationReport);
@@ -45,7 +45,7 @@ const BenefitPageRules = ({ benefitId }) => {
                         <VBox gap={1}>
                             {rules &&
                                 rules.map((rule, index) => (
-                                    <BenefitPageRuleEntry key={index} ruleData={rule} />
+                                    <BenefitPageRuleEntry key={index} ruleData={rule} validated_status={validated_status}/>
                                 ))}
                         </VBox>
                     </Collapse>

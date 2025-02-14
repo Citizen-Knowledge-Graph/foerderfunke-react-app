@@ -9,7 +9,7 @@ const useIsMissingDataBenefit = (id, validationReport) => {
             report => report.rpUri === `https://foerderfunke.org/default#${id.split(":")[1]}`
         );
 
-        return report?.result === ValidationResult.UNDETERMINABLE;
+        return report?.result !== ValidationResult.UNDETERMINABLE;
     }, [id, validationReport]);
 };
 

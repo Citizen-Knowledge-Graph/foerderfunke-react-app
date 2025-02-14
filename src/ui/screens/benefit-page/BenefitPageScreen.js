@@ -79,7 +79,7 @@ const BenefitPageScreen = () => {
                         <Typography variant="body1">{benefitPageData.benefitInfo || t('app.noData')}</Typography>
                     </Box>
                     <Divider/>
-                    <BenefitPageRules benefitId={id}/>
+                    <BenefitPageRules benefitId={id} validated_status={validated_status}/>
                     <Divider/>
                     <Box sx={{display: "flex", alignItems: 'center'}} gap={1}>
                         <Typography variant="body1">{t('app.benefitPage.moreInfo')}</Typography>
