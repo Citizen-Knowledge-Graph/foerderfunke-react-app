@@ -13,6 +13,8 @@ import {LanguageContext} from "../../language/LanguageContext";
 import useBenefitPageData from "./hooks/useBenefitPageData";
 import useCategoryTitles from "./hooks/useCategoryTitles";
 import useFetchData from "../../shared-hooks/useFetchData";
+import useIsMissingDataBenefit from "./hooks/useIsMissingDataBenefit";
+import {useValidationReportStore} from "../../storage/zustand";
 
 const BenefitPageScreen = () => {
     const {id} = useParams();
@@ -21,10 +23,13 @@ const BenefitPageScreen = () => {
 
     const isDesktop = useStore((state) => state.isDesktop);
     const metadata = useMetadataStore((state) => state.metadata);
+    const validationReport = useValidationReportStore((state) => state.validationReport);
 
     const topicsData = useFetchData('assets/data/topics/topics-list.json');
     const benefitPageData = useBenefitPageData(id, metadata);
     const categoryTitles = useCategoryTitles(topicsData, benefitPageData, language);
+    const validated_status = useIsMissingDataBenefit(id, validationReport);
+    
 
     if (!benefitPageData || topicsData?.length === 0) {
     return <Typography>Loading...</Typography>;
@@ -33,7 +38,7 @@ const BenefitPageScreen = () => {
     return (
         <Layout isApp={true} logo={false} back="Back">
             <AppScreenWrapper isDesktop={isDesktop} back={true}>
-                <BenefitPageHeader id={id} benefit={benefitPageData}/>
+                <BenefitPageHeader id={id} benefit={benefitPageData} validated_status={validated_status} />
                 <Box sx={{
                     display: "flex",
                     flexDirection: "column",

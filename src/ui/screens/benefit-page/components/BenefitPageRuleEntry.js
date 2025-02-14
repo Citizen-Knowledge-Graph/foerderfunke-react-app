@@ -5,7 +5,7 @@ import ContentBox from "../../../shared-components/ContentBox";
 import { VBox } from "../../../shared-components/LayoutBoxes";
 import theme from "../../../../theme";
 
-const BenefitPageRuleEntry = ({ ruleData }) => {
+const BenefitPageRuleEntry = ({ ruleData, validated_status }) => {
     const { t } = useTranslation();
 
     const validtyColor = (() => {
@@ -42,14 +42,16 @@ const BenefitPageRuleEntry = ({ ruleData }) => {
                     {ruleData.requirement.rule}
                 </Typography>
             </VBox>
-            <ContentBox sx={{ padding: theme.spacing(1), backgroundColor: validtyColor }}>
-                <Typography variant="body2">
-                    {t('app.benefitPage.rulesTable.yourAnswer')}
-                </Typography>
-                <Typography variant="body1" sx={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
-                    {ruleData.userValue}
-                </Typography>
-            </ContentBox>
+            {validated_status && (
+                <ContentBox sx={{ padding: theme.spacing(1), backgroundColor: validtyColor }}>
+                    <Typography variant="body2">
+                        {t('app.benefitPage.rulesTable.yourAnswer')}
+                    </Typography>
+                    <Typography variant="body1" sx={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
+                        {ruleData.userValue}
+                    </Typography>
+                </ContentBox>
+            )}
         </VBox>
     );
 };

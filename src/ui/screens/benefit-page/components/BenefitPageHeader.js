@@ -5,19 +5,16 @@ import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import ContentBox from "../../../shared-components/ContentBox";
 import { HBox, VBox } from "../../../shared-components/LayoutBoxes";
 import globalStyles from "../../../styles/styles";
-import { useSelectedBenefitStore, useSelectedTopicsStore, useValidationReportStore } from "../../../storage/zustand";
-import useIsMissingDataBenefit from "../hooks/useIsMissingDataBenefit";
+import { useSelectedBenefitStore, useSelectedTopicsStore } from "../../../storage/zustand";
 import useTranslation from "../../../language/useTranslation";
 import theme from "../../../../theme";
 
-const BenefitPageHeader = ({ id, benefit }) => {
+const BenefitPageHeader = ({ id, benefit, validatedStatus }) => {
     const { t } = useTranslation();
     const [leiKaInfo, setLeiKaInfo] = useState(false);
 
     const setSelectedBenefit = useSelectedBenefitStore((state) => state.setSelectedBenefit);
     const clearSelectedTopics = useSelectedTopicsStore((state) => state.clear);
-    const validationReport = useValidationReportStore((state) => state.validationReport);
-    const isMissingDataBenefit = useIsMissingDataBenefit(id, validationReport);
 
     return (
         <ContentBox sx={{
@@ -65,7 +62,7 @@ const BenefitPageHeader = ({ id, benefit }) => {
                             )}
                         </VBox>
                     </Grid>
-                    {id && isMissingDataBenefit && (
+                    {id && !validatedStatus && (
                         <Grid item xs={12} sm={6}
                             sx={{
                                 textAlign: { xs: 'left', sm: 'right' },
