@@ -22,6 +22,42 @@
       "de": "Alle Eltern, die in Deutschland leben bzw. arbeiten,  können für Ihre Kinder Kindergeld bekommen. Das Kindergeld wird unabhängig vom Einkommen der Eltern ausgezahlt. Das Kindergeld beträgt 250€ pro Monat pro Kind (Stand 2025). Kindergeld erhält man grundsätzlich bis das Kind 18 Jahre alt ist. In manchen Fällen (z.B. Ausbdildung oder Arbeitssuche) kann Kingergeld aber auch länger bezogen werden. Kindergeld muss beantragt werden, dies geht bis zu 6 Monate rückwirkend.",
       "en": "All parents living or working in Germany are entitled to child benefit for their children. Child benefit is paid regardless of the parents' income. Child benefit amounts to 250€ per month per child (as of 2025). Child benefit is generally paid until the child is 18 years old. In some cases (e.g. education or job search), child benefit can be received for a longer period. Child benefit must be applied for, this can be done up to 6 months retroactively."
     },
+    "application_process": {
+      "de": {
+        "title": "Kindergeld kann über die Seite der Bundesagentur für Arbeit online beantragt werden. Dieser muss dann an die regional zuständige Familienkasse gesendet werden. Kindergeld für Kinder ab 18 Jahren muss gesondert beantragt werden, da entsprechende Nachweise zur Situation gefordert werden.",
+        "links": [
+          {
+            "title": "Online Antrag",
+            "url": "http://arbeitsagentur.de/familie-und-kinder/infos-rund-um-kindergeld/kindergeld-anspruch-hoehe-dauer"
+          },
+          {
+            "title": "Informationen und Antrag zum Ausdrucken",
+            "url": "https://www.arbeitsagentur.de/familie-und-kinder/infos-rund-um-kindergeld"
+          },
+          {
+            "title": "Kindergeld für Kinder ab 18 Jahren",
+            "url": "https://www.arbeitsagentur.de/familie-und-kinder/infos-rund-um-kindergeld/kindergeld-ab-18-jahren"
+          }
+        ]
+      },
+      "en": {
+        "title": "Child benefit can be applied for online via the Federal Employment Agency website. You can find information about child benefit and the official application form for printing here. This must then be sent to the regionally responsible family benefits office. You can find this here. Child benefit for children over 18 years of age must be applied for separately, as corresponding proof of the situation is required. You can find information and the application form here.",
+        "links": [
+          {
+            "title": "Online application",
+            "url": "http://arbeitsagentur.de/familie-und-kinder/infos-rund-um-kindergeld/kindergeld-anspruch-hoehe-dauer"
+          },
+          {
+            "title": "Information and application for printing",
+            "url": "https://www.arbeitsagentur.de/familie-und-kinder/infos-rund-um-kindergeld"
+          },
+          {
+            "title": "Child benefit for children over 18 years",
+            "url": "https://www.arbeitsagentur.de/familie-und-kinder/infos-rund-um-kindergeld/kindergeld-ab-18-jahren"
+          }
+        ]
+      }
+    },
     "required_documents": {
       "de": [
         "Steuerliche Identifikationsnummer des Kindes",
@@ -125,6 +161,42 @@
     "description": {
       "de": "Den Kinderzuschlag (kurz: KiZ) können Eltern bekommen, deren Einkommen für den eigenen Lebensunterhalt reicht, aber nicht oder nur knapp ausreicht, um auch für den gesamten Bedarf Ihrer Familie aufzukommen. Voraussetzung ist, dass Sie schon Kindergeld beziehen. Der Kinderzuschlag wird immer für sechs Monate am Stück bewilligt.",
       "en": "Child allowance (KiZ) is a benefit for parents whose income is sufficient to cover their own living expenses, but not enough to cover the entire needs of their family. The child allowance is always granted for six months at a time."
+    },
+    "application_process": {
+      "de": {
+        "title": "Den Kinderzuschlag können Sie online auf der Seite der Bundesagentur für Arbeit beantragen. Den Papierantrag gibt es auch zum Ausdrucken. Dieser muss dann an die regional zuständige Familienkasse gesendet werden.",
+        "links": [
+          {
+            "title": "Online Antrag",
+            "url": "https://web.arbeitsagentur.de/kiz/ui/start"
+          },
+          {
+            "title": "Antrag zum Ausdrucken",
+            "url": "https://www.arbeitsagentur.de/familie-und-kinder/downloads-familie-und-kinder"
+          },
+          {
+            "title": "Familienkassen in Deutschland",
+            "url": "https://web.arbeitsagentur.de/portal/metasuche/suche/dienststellen?in=familienkassen"
+          }
+        ]
+      },
+      "en": {
+        "title": "You can apply for the child allowance online on the Federal Employment Agency website. The paper application form is also available for printing. This must then be sent to the regionally responsible family benefits office.",
+        "links": [
+          {
+            "title": "Online application",
+            "url": "https://web.arbeitsagentur.de/kiz/ui/start"
+          },
+          {
+            "title": "Application for printing",
+            "url": "https://www.arbeitsagentur.de/familie-und-kinder/downloads-familie-und-kinder"
+          },
+          {
+            "title": "Family benefits offices in Germany",
+            "url": "https://web.arbeitsagentur.de/portal/metasuche/suche/dienststellen?in=familienkassen"
+          }
+        ]
+      }
     },
     "required_documents": {
       "de": [
@@ -268,6 +340,16 @@
     "description": {
       "de": "Wohngeld ist eine Leistung für Menschen mit geringem Einkommen, die ihren Lebensunterhalt bzw. ihren alltäglichen Bedarf und die Miete/Wohnkosten nicht vollständig alleine stemmen können. Wohngeld wird als Zuschuss zur Miete oder zu den Kosten selbst genutzten Wohneigentums gezahlt und richtet sich nach dem eigenen Einkommen, der Miete/Wohnkosten sowie der Wohnregion.",
       "en": "Housing benefit is a benefit for people with low incomes who cannot fully cover their living expenses, daily needs, and rent/housing costs on their own. Housing allowance is granted as a subsidy for rent or the costs of owner-occupied housing and is determined based on one’s income, rent/housing costs, and the residential region."
+    },
+    "application_process": {
+      "de": {
+        "title": "Wohngeld kann bei der zuständigen Wohngeldbehörde beantragt werden. Die Antragsformulare können online heruntergeladen oder direkt bei der Behörde abgeholt werden. Die Bearbeitungsdauer beträgt in der Regel 6 bis 8 Wochen.",
+        "links": []
+      },
+      "en": {
+        "title": "Housing benefit can be applied for at the responsible housing benefit authority. The application forms can be downloaded online or picked up directly from the authority. The processing time is usually 6 to 8 weeks.",
+        "links": []
+      }
     },
     "required_documents": {
       "de": [
