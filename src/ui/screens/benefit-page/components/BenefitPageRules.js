@@ -27,7 +27,7 @@ const BenefitPageRules = ({ benefitId, validated_status }) => {
 
     return (
         <ContentBox sx={{ width: "100%" }}>
-            <HBox sx={{ alignItems: "center", cursor: "pointer" }} onClick={() => setShowRules(!showRules)}>
+            <HBox sx={{ justifyContent: 'space-between', alignItems: "center", cursor: "pointer" }} onClick={() => setShowRules(!showRules)}>
                 <Typography variant="h6" sx={{ fontWeight: "bold" }}>
                     {t("app.benefitPage.rulesTable.header")}
                 </Typography>

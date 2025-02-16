@@ -15,7 +15,7 @@ const BenefitPageRequiredDocuments = ({ requiredDocuments }) => {
 
     return (
         <ContentBox sx={{ width: "100%" }}>
-            <HBox sx={{ alignItems: "center", cursor: "pointer" }} onClick={() => setShowRequiredDocuments(!showRequiredDocuments)}>
+            <HBox sx={{ justifyContent: 'space-between', alignItems: "center", cursor: "pointer" }} onClick={() => setShowRequiredDocuments(!showRequiredDocuments)}>
                 <Typography variant="h6">{t('app.benefitPage.requiredDocuments')}</Typography>
                 <IconButton
                     sx={{

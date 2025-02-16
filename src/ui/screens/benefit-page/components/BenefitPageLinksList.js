@@ -13,7 +13,7 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
 
     return (
         <ContentBox sx={{ width: "100%" }}>
-            <HBox sx={{ alignItems: "center", cursor: "pointer" }} onClick={() => setShowAdditionalSupport(!showAdditionalSupport)}>
+            <HBox sx={{ justifyContent: 'space-between', alignItems: "center", cursor: "pointer" }} onClick={() => setShowAdditionalSupport(!showAdditionalSupport)}>
                 <Typography variant="h6">{listTitle}</Typography>
                 <IconButton
                     sx={{
