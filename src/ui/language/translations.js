@@ -166,6 +166,8 @@ const translations = {
                 whatIsIt: "What is ",
                 requiredDocuments: "Which documents do I need?",
                 additionalSupport: "Where can I get additional support?",
+                legalBasis: "Legal basis",
+                furtherInformation: "Further information",
                 rulesTable: {
                     header: "Who is eligible?",
                     yourAnswer: "Your answer",
@@ -380,6 +382,8 @@ const translations = {
                 whatIsIt: "Was ist ",
                 requiredDocuments: "Welche Dokumente benötige ich?",
                 additionalSupport: "Wo kann ich zusätzliche Unterstützung erhalten?",
+                legalBasis: "Rechtsgrundlage",
+                furtherInformation: "Weitere Informationen",
                 rulesTable: {
                     header: "Wer ist anspruchsberechtigt?",
                     yourAnswer: "Deine Antwort",

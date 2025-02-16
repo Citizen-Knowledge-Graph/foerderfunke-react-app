@@ -17,11 +17,11 @@ import useFetchBenefitPageData from './hooks/useFetchBenefitPageData';
 import { useMetadataStore } from '../../storage/zustand';
 import BenefitPageRequiredDocuments from './components/BenefitPageRequiredDocuments';
 import ContentBox from '../../shared-components/ContentBox';
-import BenefitPageSupport from './components/BenefitPageSupport';
+import BenefitPageLinksList from './components/BenefitPageLinksList';
 import theme from '../../../theme';
 
 const BenefitPageScreen = () => {
-    const {id} = useParams();
+    const { id } = useParams();
     const { t } = useTranslation();
     const { language } = useContext(LanguageContext);
 
@@ -91,7 +91,17 @@ const BenefitPageScreen = () => {
                     }
                     {
                         benefitPageData.additionalSupport.title && (
-                            <BenefitPageSupport additionalSupport={benefitPageData.additionalSupport} />
+                            <BenefitPageLinksList listTitle={t('app.benefitPage.additionalSupport')} data={benefitPageData.additionalSupport} />
+                        )
+                    }
+                    {
+                        benefitPageData.legalBasis.title && (
+                            <BenefitPageLinksList listTitle={t('app.benefitPage.legalBasis')} data={benefitPageData.legalBasis} />
+                        )
+                    }
+                    {
+                        benefitPageData.furtherInformation.title && (
+                            <BenefitPageLinksList listTitle={t('app.benefitPage.furtherInformation')} data={benefitPageData.furtherInformation} />
                         )
                     }
                 </Box>

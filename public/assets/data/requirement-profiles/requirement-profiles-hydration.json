@@ -132,34 +132,50 @@
     "legal_basis": {
       "de": {
         "title": "Die Gesetzesgrundlage für das Wohngeld findet sich im Wohngeldgesetz.",
-        "url": "https://www.gesetze-im-internet.de/wogg/"
+        "links": [
+          {
+            "title": "Wohngeldgesetz",
+            "url": "https://www.gesetze-im-internet"
+          }
+        ]
       },
       "en": {
         "title": "The legal basis for housing benefit can be found in the Housing Benefit Act.",
-        "url": "https://www.gesetze-im-internet.de/wogg/"
+        "links": [
+          {
+            "title": "Housing Benefit Act",
+            "url": "https://www.gesetze-im-internet"
+          }
+        ]
       }
     },
     "further_information": {
-      "de": [
-        {
-          "title": "Häufige Fragen und die dazugehörigen Antworten zum Wohngeld finden Sie auf der offiziellen Seite des Bundesministerium für Wohnen, Stadtentwicklung und Bauwesen.",
-          "url": "https://www.bmwsb.bund.de/SharedDocs/faqs/Webs/BMWSB/DE/wohnen/wohngeld/wohngeld-faq-liste.html"
-        },
-        {
-          "title": "Mehr Informationen zum Wohngeld erhalten Sie auf der Seite der Soziaplattform.",
-          "url": "https://sozialplattform.de/wohngeld"
-        }
-      ],
-      "en": [
-        {
-          "title": "Frequently asked questions and answers about housing benefit can be found on the official website of the Federal Ministry of Housing, Urban Development and Construction.",
-          "url": "https://www.bmwsb.bund.de/SharedDocs/faqs/Webs/BMWSB/DE/wohnen/wohngeld/wohngeld-faq-liste.html"
-        },
-        {
-          "title": "You can find more information about housing benefit on the Soziaplattform website.",
-          "url": "https://sozialplattform.de/wohngeld"
-        }
-      ]
+      "de": {
+        "title": "Hier finden Sie weitere Informationen zum Wohngeld:",
+        "links": [
+          {
+            "title": "Offiziellen Seite des Bundesministerium für Wohnen, Stadtentwicklung und Bauwesen.",
+            "url": "https://www.bmwsb.bund.de/SharedDocs/faqs/Webs/BMWSB/DE/wohnen/wohngeld/wohngeld-faq-liste.html"
+          },
+          {
+            "title": "Soziaplattform.",
+            "url": "https://sozialplattform.de/wohngeld"
+          }
+        ]
+      },
+      "en": {
+        "title": "You can find more information about housing benefit on the following websites:",
+        "links": [
+          {
+            "title": "Federal Ministry of Housing, Urban Development and Construction",
+            "url": "https://www.bmwsb.bund.de/SharedDocs/faqs/Webs/BMWSB/DE/wohnen/wohngeld/wohngeld-faq-liste.html"
+          },
+          {
+            "title": "Soziaplattform",
+            "url": "https://sozialplattform.de/wohngeld"
+          }
+        ]
+      }
     }
   },
   "https://foerderfunke.org/default#grundsicherung-im-alter-und-bei-erwerbsminderung": {
