@@ -11,7 +11,11 @@ const validationManager = {
 
         // Get the active user profile
         const userProfile = userManager.retrieveUserData(userId);
+
+        let start2 = performance.now();
         const userProfileString = await convertUserProfileToTurtle(userProfile);
+        let end2 = performance.now();
+        console.log(`Time elapsed in validationManager for convertUserProfileToTurtle(): ${end2 - start2} ms`);
 
         // load validation config
         const validationConfig = await resourceService.fetchResource('assets/data/requirement-profiles/requirement-profiles.json');
