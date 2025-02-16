@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-const useBenefitPageData = (id, metadata) => {
+const useFetchRPMetaData = (id, metadata) => {
     return useMemo(() => {
         if (!metadata || !id) return null;
 
@@ -12,4 +12,4 @@ const useBenefitPageData = (id, metadata) => {
     }, [id, metadata]);
 };
 
-export default useBenefitPageData;
+export default useFetchRPMetaData;

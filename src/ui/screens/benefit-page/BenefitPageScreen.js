@@ -1,39 +1,45 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import Layout from "../../shared-components/Layout";
-import {useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 import BenefitPageHeader from "./components/BenefitPageHeader";
 import AppScreenWrapper from "../../shared-components/AppScreenWrapper";
-import {useStore} from "../../shared-components/ViewportUpdater";
-import {useMetadataStore} from "../../storage/zustand";
+import { useStore } from "../../shared-components/ViewportUpdater";
 import BenefitPageRules from "./components/BenefitPageRules";
-import {Box, Typography, Divider, IconButton} from "@mui/material";
-import OpenInNewOutlinedIcon from '@mui/icons-material/OpenInNewOutlined';
+import { Box, Typography, Divider } from "@mui/material";
 import useTranslation from "../../language/useTranslation";
-import {LanguageContext} from "../../language/LanguageContext";
-import useBenefitPageData from "./hooks/useBenefitPageData";
+import { LanguageContext } from "../../language/LanguageContext";
 import useCategoryTitles from "./hooks/useCategoryTitles";
 import useFetchData from "../../shared-hooks/useFetchData";
 import useIsMissingDataBenefit from "./hooks/useIsMissingDataBenefit";
-import {useValidationReportStore} from "../../storage/zustand";
+import { useValidationReportStore } from "../../storage/zustand";
+import useFetchRPMetaData from './hooks/useFetchRPMetaData';
+import useFetchBenefitPageData from './hooks/useFetchBenefitPageData';
+import { useMetadataStore } from '../../storage/zustand';
+import BenefitPageRequiredDocuments from './components/BenefitPageRequiredDocuments';
 
 const BenefitPageScreen = () => {
     const {id} = useParams();
-    const {t} = useTranslation();
-    const {language} = useContext(LanguageContext);
+    const { t } = useTranslation();
+    const { language } = useContext(LanguageContext);
 
     const isDesktop = useStore((state) => state.isDesktop);
-    const metadata = useMetadataStore((state) => state.metadata);
     const validationReport = useValidationReportStore((state) => state.validationReport);
+    const metadata = useMetadataStore((state) => state.metadata);
+
+    const hydrationData = useFetchData('assets/data/requirement-profiles/requirement-profiles-hydration.json')
+    const benefitPageData = useFetchBenefitPageData(id, hydrationData, language);
 
     const topicsData = useFetchData('assets/data/topics/topics-list.json');
-    const benefitPageData = useBenefitPageData(id, metadata);
-    const categoryTitles = useCategoryTitles(topicsData, benefitPageData, language);
+    const rpMetaData = useFetchRPMetaData(id, metadata);
+    const categoryTitles = useCategoryTitles(topicsData, rpMetaData, language);
     const validated_status = useIsMissingDataBenefit(id, validationReport);
-    
 
     if (!benefitPageData || topicsData?.length === 0) {
-    return <Typography>Loading...</Typography>;
+        return <Typography>Loading...</Typography>;
     }
+
+    console.log('categoryTitles', rpMetaData);
+    console.log('BenefitPageScreen', benefitPageData);
 
     return (
         <Layout isApp={true} logo={false} back="Back">
@@ -44,8 +50,8 @@ const BenefitPageScreen = () => {
                     flexDirection: "column",
                     width: '100%'
                 }} gap={2}>
-                    <Typography variant="body1" sx={{fontWeight: 300}}>{t('app.benefitPage.inTopics')}:</Typography>
-                    <Box sx={{display: 'flex', flexWrap: 'wrap'}} gap={2}>
+                    <Typography variant="body1" sx={{ fontWeight: 300 }}>{t('app.benefitPage.inTopics')}:</Typography>
+                    <Box sx={{ display: 'flex', flexWrap: 'wrap' }} gap={2}>
                         {categoryTitles.map((category, index) => (
                             <Box
                                 key={index}
@@ -69,39 +75,20 @@ const BenefitPageScreen = () => {
                     flexDirection: "column",
                     width: '100%'
                 }}>
-                    <Divider/>
+                    <Divider />
                     <Box sx={{
                         display: "flex",
                         flexDirection: "column",
                         width: '100%'
                     }} gap={1}>
                         <Typography variant="h6">{t('app.benefitPage.whatIsIt')}</Typography>
-                        <Typography variant="body1">{benefitPageData.benefitInfo || t('app.noData')}</Typography>
+                        <Typography variant="body1">{benefitPageData.description || t('app.noData')}</Typography>
                     </Box>
-                    <Divider/>
-                    <BenefitPageRules benefitId={id} validated_status={validated_status}/>
-                    <Divider/>
-                    <Box sx={{display: "flex", alignItems: 'center'}} gap={1}>
-                        <Typography variant="body1">{t('app.benefitPage.moreInfo')}</Typography>
-                        <a href={benefitPageData.seeAlso} target="_blank" rel="noopener noreferrer">
-                            <IconButton
-                                sx={{
-                                    width: 24,
-                                    height: 24,
-                                    borderRadius: '50%',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    backgroundColor: 'white',
-                                    '&:hover': {
-                                        backgroundColor: 'palette.custom.lightGrey',
-                                    },
-                                }}
-                            >
-                                <OpenInNewOutlinedIcon sx={{fontSize: 16, color: 'black'}}/>
-                            </IconButton>
-                        </a>
-                    </Box>
+                    <Divider />
+                    <BenefitPageRules benefitId={id} validated_status={validated_status} />
+                    <Divider />
+                    {/* Required Documents */}
+                    <BenefitPageRequiredDocuments requiredDocuments={benefitPageData.requiredDocuments} />
                 </Box>
             </AppScreenWrapper>
         </Layout>

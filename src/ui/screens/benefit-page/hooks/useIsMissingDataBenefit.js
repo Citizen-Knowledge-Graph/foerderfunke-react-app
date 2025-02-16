@@ -5,7 +5,7 @@ const useIsMissingDataBenefit = (id, validationReport) => {
     return useMemo(() => {
         if (!validationReport) return false;
 
-        const report = validationReport.reports.find(
+        const report = validationReport.reports?.find(
             report => report.rpUri === `https://foerderfunke.org/default#${id.split(":")[1]}`
         );
 

@@ -22,7 +22,11 @@ export const buildEligibilityReports = (validationReport, hydrationData, languag
         const title = hydrationData[rpUri]?.title?.[language] || 'Unknown Title';
         const description = hydrationData[rpUri]?.description?.[language] || 'Unknown Description';
         const status = hydrationData[rpUri]?.status || 'Unknown Status';
-        const data = { uri: rpUri, id, title, description, status };
+        const requiredDocuments = hydrationData[rpUri]?.required_documents?.[language] || [];
+        const additionalSupport = hydrationData[rpUri]?.additional_support?.[language] || {};
+        const legalBasis = hydrationData[rpUri]?.legal_basis?.[language] || {};
+        const furtherInformation = hydrationData[rpUri]?.further_information?.[language] || [];
+        const data = { uri: rpUri, id, title, description, status, requiredDocuments, additionalSupport, legalBasis, furtherInformation };
         if (result === ValidationResult.ELIGIBLE) {
             eligibilityData.eligible.push(data);
         }

@@ -164,6 +164,7 @@ const translations = {
                 inTopics: "Appears in the following topics",
                 eligibilityBtn: "Check eligibility",
                 whatIsIt: "What is it",
+                requiredDocuments: "Which documents do I need?",
                 rulesTable: {
                     header: "Who is eligible?",
                     yourAnswer: "Your answer",
@@ -376,6 +377,7 @@ const translations = {
                 inTopics: "Erscheint in den folgenden Themen",
                 eligibilityBtn: "Anspruch prüfen",
                 whatIsIt: "Was ist das?",
+                requiredDocuments: "Welche Dokumente benötige ich?",
                 rulesTable: {
                     header: "Wer ist anspruchsberechtigt?",
                     yourAnswer: "Deine Antwort",
