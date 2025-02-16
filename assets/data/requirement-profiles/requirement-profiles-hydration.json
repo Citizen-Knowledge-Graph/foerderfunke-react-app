@@ -86,6 +86,7 @@
   "https://foerderfunke.org/default#wohngeld": {
     "id": "ff:wohngeld",
     "status": "production",
+    "leika_id": "99107023037000",
     "title": {
       "de": "Wohngeld",
       "en": "Housing benefit"
@@ -93,6 +94,62 @@
     "description": {
       "de": "Wohngeld ist eine Leistung für Menschen mit geringem Einkommen, die ihren Lebensunterhalt bzw. ihren alltäglichen Bedarf und die Miete/Wohnkosten nicht vollständig alleine stemmen können. Wohngeld wird als Zuschuss zur Miete oder zu den Kosten selbst genutzten Wohneigentums gezahlt und richtet sich nach dem eigenen Einkommen, der Miete/Wohnkosten sowie der Wohnregion.",
       "en": "Housing benefit is a benefit for people with low incomes who cannot fully cover their living expenses, daily needs, and rent/housing costs on their own. Housing allowance is granted as a subsidy for rent or the costs of owner-occupied housing and is determined based on one’s income, rent/housing costs, and the residential region."
+    },
+    "required_documents": {
+      "de": [
+        "Mietvertrag oder Mietbescheinigung",
+        "Lohn- oder Gehaltsnachweise der letzten sechs Monate",
+        "Bescheide über etwaiges anderes Einkommen (z.B. Rente, BAföG, Elterngeld, Unterhalt)",
+        "Gegebenenfalls Kontoauszüge der letzten drei Monate"
+      ],
+      "en": [
+        "Rental agreement or rental certificate",
+        "Pay slips for the last six months",
+        "Notices of any other income (e.g. pension, BAföG, parental allowance, maintenance)",
+        "Possibly bank statements for the last three months"
+      ]
+    },
+    "additional_support": {
+      "de": {
+        "title": "Für mehr Informationen und Fragen zur Antragsstellung, Anspruch, etc. wenden Sie sich an Ihre lokale Wohngeldbehörde. Einen ersten Eindruck über die Mögliche Wohngeldhöhe bietet der offizielle Wohngeld-Rechner des Bundesministerium für Wohnen, Stadtentwicklung und Bauwesen",
+        "url": "https://www.bmwsb.bund.de/Webs/BMWSB/DE/themen/stadt-wohnen/wohnraumfoerderung/wohngeld/wohngeldrechner-2023-artikel.html"
+      },
+      "en": {
+        "title": "For more information and questions about the application process, entitlement, etc., please contact your local housing benefit authority. The official housing benefit calculator of the Federal Ministry of Housing, Urban Development and Construction provides a first impression of the possible housing benefit amount.",
+        "url": "https://www.bmwsb.bund.de/Webs/BMWSB/DE/themen/stadt-wohnen/wohnraumfoerderung/wohngeld/wohngeldrechner-2023-artikel.html"
+      }
+    },
+    "legal_basis": {
+      "de": {
+        "title": "Die Gesetzesgrundlage für das Wohngeld findet sich im Wohngeldgesetz.",
+        "url": "https://www.gesetze-im-internet.de/wogg/"
+      },
+      "en": {
+        "title": "The legal basis for housing benefit can be found in the Housing Benefit Act.",
+        "url": "https://www.gesetze-im-internet.de/wogg/"
+      }
+    },
+    "further_information": {
+      "de": [
+        {
+          "title": "Häufige Fragen und die dazugehörigen Antworten zum Wohngeld finden Sie auf der offiziellen Seite des Bundesministerium für Wohnen, Stadtentwicklung und Bauwesen.",
+          "url": "https://www.bmwsb.bund.de/SharedDocs/faqs/Webs/BMWSB/DE/wohnen/wohngeld/wohngeld-faq-liste.html"
+        },
+        {
+          "title": "Mehr Informationen zum Wohngeld erhalten Sie auf der Seite der Soziaplattform.",
+          "url": "https://sozialplattform.de/wohngeld"
+        }
+      ],
+      "en": [
+        {
+          "title": "Frequently asked questions and answers about housing benefit can be found on the official website of the Federal Ministry of Housing, Urban Development and Construction.",
+          "url": "https://www.bmwsb.bund.de/SharedDocs/faqs/Webs/BMWSB/DE/wohnen/wohngeld/wohngeld-faq-liste.html"
+        },
+        {
+          "title": "You can find more information about housing benefit on the Soziaplattform website.",
+          "url": "https://sozialplattform.de/wohngeld"
+        }
+      ]
     }
   },
   "https://foerderfunke.org/default#grundsicherung-im-alter-und-bei-erwerbsminderung": {
@@ -135,7 +192,7 @@
     "id": "ff:ibb-gruendungsbonus",
     "status": "beta",
     "title": {
-      "de": "IBB-Gründungsbonus", 
+      "de": "IBB-Gründungsbonus",
       "en": "IBB start-up bonus"
     },
     "description": {
