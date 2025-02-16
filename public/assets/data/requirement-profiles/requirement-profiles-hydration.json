@@ -19,8 +19,100 @@
       "en": "Child benefit"
     },
     "description": {
-      "de": "Das Kindergeld ist eine staatliche Förderung, die Eltern und Erziehungsberechtigte ab der Geburt des ersten Kindes beantragen können. Damit soll die Grundversorgung eines Kindes gesichert werden. Kindergeld wird mindestens bis zum 18. und höchstens bis zum 25. Geburtstag eines Kindes gezahlt. Alle Familien erhalten Kindergeld, unabhängig davon, wie viel sie verdienen.",
-      "en": "Parents and guardians are entitled to receive child benefit from the state starting with their first child. Find out here whether you qualify for child benefit and how you can apply."
+      "de": "Alle Eltern, die in Deutschland leben bzw. arbeiten,  können für Ihre Kinder Kindergeld bekommen. Das Kindergeld wird unabhängig vom Einkommen der Eltern ausgezahlt. Das Kindergeld beträgt 250€ pro Monat pro Kind (Stand 2025). Kindergeld erhält man grundsätzlich bis das Kind 18 Jahre alt ist. In manchen Fällen (z.B. Ausbdildung oder Arbeitssuche) kann Kingergeld aber auch länger bezogen werden. Kindergeld muss beantragt werden, dies geht bis zu 6 Monate rückwirkend.",
+      "en": "All parents living or working in Germany are entitled to child benefit for their children. Child benefit is paid regardless of the parents' income. Child benefit amounts to 250€ per month per child (as of 2025). Child benefit is generally paid until the child is 18 years old. In some cases (e.g. education or job search), child benefit can be received for a longer period. Child benefit must be applied for, this can be done up to 6 months retroactively."
+    },
+    "required_documents": {
+      "de": [
+        "Steuerliche Identifikationsnummer des Kindes",
+        "Geburtsurkunde des Kindes",
+        "Gegebenenfalls Nachweis zum Aufenthaltstitel der antragstellenden Person",
+        "Gegebenenfalls Nachweis über die Schulausbildung oder Ausbildung des Kindes",
+        "Gegebenenfalls Nachweis über die Behinderung des Kindes (falls zutreffend)"
+      ],
+      "en": [
+        "Tax identification number of the child",
+        "Birth certificate of the child",
+        "Proof of the residence permit of the applicant",
+        "Proof of the child's school education or training",
+        "Proof of the child's disability (if applicable)"
+      ]
+    },
+    "additional_support": {
+      "de": {
+        "title": "Für mehr Informationen und Fragen zur Antragsstellung, Anspruch, etc. wendest du dich am besten an deine lokale Familienkasse.",
+        "links": [
+          {
+            "title": "Familienkassen in Deutschland",
+            "url": "https://web.arbeitsagentur.de/portal/metasuche/suche/dienststellen?in=familienkassen"
+          }
+        ]
+      },
+      "en": {
+        "title": "For more information and questions about the application process, entitlement, etc., please contact your local family benefits office.",
+        "links": [
+          {
+            "title": "Family benefits offices in Germany",
+            "url": "https://web.arbeitsagentur.de/portal/metasuche/suche/dienststellen?in=familienkassen"
+          }
+        ]
+      }
+    },
+    "legal_basis": {
+      "de": {
+        "title": "Die Gesetzesgrundlage für das Kindergeld findet sich im Einkommensteuergesetz und im Bundeskindergeldgesetz.",
+        "links": [
+          {
+            "title": "Einkommensteuergesetz",
+            "url": "https://www.gesetze-im-internet.de/estg/BJNR010050934.html#BJNR010050934BJNG023403140"
+          },
+          {
+            "title": "Bundeskindergeldgesetz",
+            "url": "https://www.gesetze-im-internet.de/bkgg_1996/BJNR137800995.html"
+          }
+        ]
+      },
+      "en": {
+        "title": "The legal basis for child benefit can be found in the Income Tax Act and the Federal Child Benefit Act.",
+        "links": [
+          {
+            "title": "Income Tax Act",
+            "url": "https://www.gesetze-im-internet.de/estg/BJNR010050934.html#BJNR010050934BJNG023403140"
+          },
+          {
+            "title": "Federal Child Benefit Act",
+            "url": "https://www.gesetze-im-internet.de/bkgg_1996/BJNR137800995.html"
+          }
+        ]
+      }
+    },
+    "further_information": {
+      "de": {
+        "title": "Hier finden Sie weitere Informationen zum Kindergeld:",
+        "links": [
+          {
+            "title": "Offizielles Merkblatt zum Kindergeld",
+            "url": "https://sozialplattform.de/content/sites/default/files/2022-09/Merkblatt.pdf"
+          },
+          {
+            "title": "Sozialplattform.",
+            "url": "https://sozialplattform.de/inhalt/kindergeld"
+          }
+        ]
+      },
+      "en": {
+        "title": "You can find more information about child benefit on the following websites:",
+        "links": [
+          {
+            "title": "Official information sheet on child benefit",
+            "url": "https://sozialplattform.de/content/sites/default/files/2022-09/Merkblatt.pdf"
+          },
+          {
+            "title": "Sozialplattform",
+            "url": "https://sozialplattform.de/inhalt/kindergeld"
+          }
+        ]
+      }
     }
   },
   "https://foerderfunke.org/default#kinderzuschlag": {
