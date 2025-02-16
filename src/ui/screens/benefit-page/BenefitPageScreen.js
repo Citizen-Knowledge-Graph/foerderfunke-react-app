@@ -78,7 +78,7 @@ const BenefitPageScreen = () => {
                 }}>
                     <Divider />
                     <ContentBox>
-                        <Typography variant="h6">{t('app.benefitPage.whatIsIt')}</Typography>
+                        <Typography variant="h6">{t('app.benefitPage.whatIsIt')}{benefitPageData.title}</Typography>
                         <Typography variant="body1">{benefitPageData.description || t('app.noData')}</Typography>
                     </ContentBox>
                     <Divider />

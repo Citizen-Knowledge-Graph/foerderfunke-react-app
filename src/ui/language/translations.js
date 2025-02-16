@@ -163,7 +163,7 @@ const translations = {
                 LeiKaInfo: "LeiKa is a unique identifier for benefits in Germany. It helps you to find the right benefit for you.",
                 inTopics: "Appears in the following topics",
                 eligibilityBtn: "Check eligibility",
-                whatIsIt: "What is it",
+                whatIsIt: "What is ",
                 requiredDocuments: "Which documents do I need?",
                 rulesTable: {
                     header: "Who is eligible?",
@@ -376,7 +376,7 @@ const translations = {
                 LeiKaInfo: "LeiKa ist ein eindeutiger Identifikator für Leistungen in Deutschland. Er hilft dir, die richtige Leistung für dich zu finden.",
                 inTopics: "Erscheint in den folgenden Themen",
                 eligibilityBtn: "Anspruch prüfen",
-                whatIsIt: "Was ist das?",
+                whatIsIt: "Was ist ",
                 requiredDocuments: "Welche Dokumente benötige ich?",
                 rulesTable: {
                     header: "Wer ist anspruchsberechtigt?",
