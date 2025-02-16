@@ -111,12 +111,22 @@
     },
     "additional_support": {
       "de": {
-        "title": "Für mehr Informationen und Fragen zur Antragsstellung, Anspruch, etc. wenden Sie sich an Ihre lokale Wohngeldbehörde. Einen ersten Eindruck über die Mögliche Wohngeldhöhe bietet der offizielle Wohngeld-Rechner des Bundesministerium für Wohnen, Stadtentwicklung und Bauwesen",
-        "url": "https://www.bmwsb.bund.de/Webs/BMWSB/DE/themen/stadt-wohnen/wohnraumfoerderung/wohngeld/wohngeldrechner-2023-artikel.html"
+        "title": "Für mehr Informationen und Fragen zur Antragsstellung, Anspruch, etc. wenden Sie sich an Ihre lokale Wohngeldbehörde. Einen ersten Eindruck über die Mögliche Wohngeldhöhe bietet der offizielle Wohngeld-Rechner des Bundesministerium für Wohnen, Stadtentwicklung und Bauwesen.",
+        "links": [
+          {
+            "title": "Wohngeldrechner 2023",
+            "url": "https://www.bmwsb.bund.de/Webs/BMWSB/DE/themen/stadt-wohnen/wohnraumfoerderung/wohngeld/wohngeldrechner-2023-artikel.html"
+          }
+        ]
       },
       "en": {
         "title": "For more information and questions about the application process, entitlement, etc., please contact your local housing benefit authority. The official housing benefit calculator of the Federal Ministry of Housing, Urban Development and Construction provides a first impression of the possible housing benefit amount.",
-        "url": "https://www.bmwsb.bund.de/Webs/BMWSB/DE/themen/stadt-wohnen/wohnraumfoerderung/wohngeld/wohngeldrechner-2023-artikel.html"
+        "links": [
+          {
+            "title": "Housing benefit calculator 2023",
+            "url": "https://www.bmwsb.bund.de/Webs/BMWSB/DE/themen/stadt-wohnen/wohnraumfoerderung/wohngeld/wohngeldrechner-2023-artikel.html"
+          }
+        ]
       }
     },
     "legal_basis": {
