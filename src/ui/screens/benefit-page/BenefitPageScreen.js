@@ -81,7 +81,6 @@ const BenefitPageScreen = () => {
                         <Typography variant="h6">{t('app.benefitPage.whatIsIt')}{benefitPageData.title}</Typography>
                         <Typography variant="body1">{benefitPageData.description || t('app.noData')}</Typography>
                     </ContentBox>
-                    <Divider />
                     <BenefitPageRules benefitId={id} validated_status={validated_status} />
                     {
                         benefitPageData.requiredDocuments.length > 0 && (
