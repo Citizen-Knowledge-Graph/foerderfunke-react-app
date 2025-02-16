@@ -10,6 +10,7 @@ import useFetchData from "../../../shared-hooks/useFetchData";
 import useBenefitPageRules from "../hooks/useBenefitPageRules";
 import { VBox, HBox } from "../../../shared-components/LayoutBoxes";
 import ContentBox from "../../../shared-components/ContentBox";
+import theme from "../../../../theme";
 
 const BenefitPageRules = ({ benefitId, validated_status }) => {
     const { t } = useTranslation();
@@ -42,7 +43,7 @@ const BenefitPageRules = ({ benefitId, validated_status }) => {
             </HBox>
             {
                 showRules && (
-                    <Collapse in={showRules}>
+                    <Collapse in={showRules} sx={{ marginTop: theme.spacing(1) }}>
                         <VBox gap={1}>
                             {rules &&
                                 rules.map((rule, index) => (

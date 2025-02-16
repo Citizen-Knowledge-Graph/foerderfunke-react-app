@@ -7,6 +7,7 @@ import { HBox, VBox } from "../../../shared-components/LayoutBoxes";
 import useTranslation from "../../../language/useTranslation";
 import ContentPasteIcon from '@mui/icons-material/ContentPaste';
 import ContentBox from "../../../shared-components/ContentBox";
+import theme from '../../../../theme';
 
 const BenefitPageRequiredDocuments = ({ requiredDocuments }) => {
     const { t } = useTranslation();
@@ -28,7 +29,7 @@ const BenefitPageRequiredDocuments = ({ requiredDocuments }) => {
             </HBox>
             {
                 showRequiredDocuments && (
-                    <Collapse in={showRequiredDocuments}>
+                    <Collapse in={showRequiredDocuments} sx={{ marginTop: theme.spacing(1) }}>
                         <VBox>
                             {requiredDocuments.map((doc, index) => (
                                 <HBox key={index}>

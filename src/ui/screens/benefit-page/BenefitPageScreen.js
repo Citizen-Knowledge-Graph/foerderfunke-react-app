@@ -17,6 +17,8 @@ import useFetchBenefitPageData from './hooks/useFetchBenefitPageData';
 import { useMetadataStore } from '../../storage/zustand';
 import BenefitPageRequiredDocuments from './components/BenefitPageRequiredDocuments';
 import ContentBox from '../../shared-components/ContentBox';
+import BenefitPageSupport from './components/BenefitPageSupport';
+import theme from '../../../theme';
 
 const BenefitPageScreen = () => {
     const {id} = useParams();
@@ -79,12 +81,17 @@ const BenefitPageScreen = () => {
                     <Divider />
                     <ContentBox>
                         <Typography variant="h6">{t('app.benefitPage.whatIsIt')}{benefitPageData.title}</Typography>
-                        <Typography variant="body1">{benefitPageData.description || t('app.noData')}</Typography>
+                        <Typography sx={{ marginTop: theme.spacing(1) }} variant="body1">{benefitPageData.description || t('app.noData')}</Typography>
                     </ContentBox>
                     <BenefitPageRules benefitId={id} validated_status={validated_status} />
                     {
                         benefitPageData.requiredDocuments.length > 0 && (
                             <BenefitPageRequiredDocuments requiredDocuments={benefitPageData.requiredDocuments} />
+                        )
+                    }
+                    {
+                        benefitPageData.additionalSupport.title && (
+                            <BenefitPageSupport additionalSupport={benefitPageData.additionalSupport} />
                         )
                     }
                 </Box>
