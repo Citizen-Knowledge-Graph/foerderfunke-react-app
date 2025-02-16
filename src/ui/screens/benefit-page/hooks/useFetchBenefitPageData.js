@@ -10,11 +10,12 @@ const useFetchBenefitPageData = (id, hydrationData, language) => {
             const leikaId = hydrationData[rpUri]?.leika_id || 'Unknown Id';
             const description = hydrationData[rpUri]?.description?.[language] || 'Unknown Description';
             const status = hydrationData[rpUri]?.status || 'Unknown Status';
+            const applicationProcess = hydrationData[rpUri]?.application_process?.[language] || {};
             const requiredDocuments = hydrationData[rpUri]?.required_documents?.[language] || [];
             const additionalSupport = hydrationData[rpUri]?.additional_support?.[language] || {};
             const legalBasis = hydrationData[rpUri]?.legal_basis?.[language] || {};
             const furtherInformation = hydrationData[rpUri]?.further_information?.[language] || [];
-            const data = { title, leikaId, description, status, requiredDocuments, additionalSupport, legalBasis, furtherInformation };
+            const data = { title, leikaId, description, status, applicationProcess, requiredDocuments, additionalSupport, legalBasis, furtherInformation };
             setBenefitPageData(data);
         }
     }, [rpUri, hydrationData, language]);

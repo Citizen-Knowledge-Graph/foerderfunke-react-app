@@ -85,6 +85,11 @@ const BenefitPageScreen = () => {
                     </ContentBox>
                     <BenefitPageRules benefitId={id} validated_status={validated_status} />
                     {
+                        benefitPageData.applicationProcess.title && (
+                            <BenefitPageLinksList listTitle={t('app.benefitPage.applicationProcess')} data={benefitPageData.applicationProcess} />
+                        )
+                    }
+                    {
                         benefitPageData.requiredDocuments.length > 0 && (
                             <BenefitPageRequiredDocuments requiredDocuments={benefitPageData.requiredDocuments} />
                         )

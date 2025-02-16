@@ -31,7 +31,7 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
                         <VBox gap={2}>
                             <Typography variant="body1">{data.title}</Typography>
                             {
-                                data.links && (
+                                data.links.length > 0 && (
                                     <VBox gap={1}>
                                         {
                                             data.links.map((link, index) => (
