@@ -31,8 +31,90 @@
       "en": "Child allowance"
     },
     "description": {
-      "de": "Wenn Sie ein geringes Einkommen haben und Kindergeld beziehen, können Sie zusätzlich den Kinderzuschlag, abgekürzt auch KiZ genannt, beantragen.",
-      "en": "If you are a low-earner and receive child benefit, you can also apply for the child allowance."
+      "de": "Den Kinderzuschlag (kurz: KiZ) können Eltern bekommen, deren Einkommen für den eigenen Lebensunterhalt reicht, aber nicht oder nur knapp ausreicht, um auch für den gesamten Bedarf Ihrer Familie aufzukommen. Voraussetzung ist, dass Sie schon Kindergeld beziehen. Der Kinderzuschlag wird immer für sechs Monate am Stück bewilligt.",
+      "en": "Child allowance (KiZ) is a benefit for parents whose income is sufficient to cover their own living expenses, but not enough to cover the entire needs of their family. The child allowance is always granted for six months at a time."
+    },
+    "required_documents": {
+      "de": [
+        "Einkommensnachweise der letzten sechs Monate",
+        "Mietvertrag oder Mietbescheinigung",
+        "Nachweise über das Einkommen des Partners oder der Partnerin",
+        "Nachweise über das Einkommen der Kinder"
+      ],
+      "en": [
+        "Income statements for the last six months",
+        "Rental agreement or rental certificate",
+        "Proof of income of the partner",
+        "Proof of income of the children"
+      ]
+    },
+    "additional_support": {
+      "de": {
+        "title": "Für mehr Informationen und Fragen zur Antragsstellung, Anspruch, etc. wendest du dich am besten an deine lokale Familienkasse.",
+        "links": [
+          {
+            "title": "Familienkassen in Deutschland",
+            "url": "https://web.arbeitsagentur.de/portal/metasuche/suche/dienststellen?in=familienkassen"
+          }
+        ]
+      },
+      "en": {
+        "title": "For more information and questions about the application process, entitlement, etc., please contact your local family benefits office.",
+        "links": [
+          {
+            "title": "Family benefits offices in Germany",
+            "url": "https://web.arbeitsagentur.de/portal/metasuche/suche/dienststellen?in=familienkassen"
+          }
+        ]
+      }
+    },
+    "legal_basis": {
+      "de": {
+        "title": "Die Gesetzesgrundlage für den Kinderzuschlag findet sich im Bundeskindergeldgesetz.",
+        "links": [
+          {
+            "title": "Bundeskindergeldgesetz",
+            "url": "https://www.gesetze-im-internet.de/bkgg_1996/BJNR137800995.html"
+          }
+        ]
+      },
+      "en": {
+        "title": "The legal basis for the child allowance can be found in the Federal Child Benefit Act.",
+        "links": [
+          {
+            "title": "Federal Child Benefit Act",
+            "url": "https://www.gesetze-im-internet.de/bkgg_1996/BJNR137800995.html"
+          }
+        ]
+      }
+    },
+    "further_information": {
+      "de": {
+        "title": "Hier finden Sie weitere Informationen zum Kinderzuschlag:",
+        "links": [
+          {
+            "title": "Familienportal des Bundes",
+            "url": "https://familienportal.de/familienportal/familienleistungen/kinderzuschlag"
+          },
+          {
+            "title": "Sozialplattform.",
+            "url": "https://sozialplattform.de/inhalt/kinderzuschlag"
+          }
+        ]
+      },
+      "en": {
+        "title": "You can find more information about the child allowance on the following websites:",
+        "links": [
+          {
+            "title": "Federal Family Portal",
+            "url": "https://familienportal.de/familienportal/familienleistungen/kinderzuschlag"
+          },
+          {
+            "title": "Sozialplattform",
+            "url": "https://sozialplattform.de/inhalt/kinderzuschlag"
+          }
+        ]
+      }
     }
   },
   "https://foerderfunke.org/default#bafoeg": {
