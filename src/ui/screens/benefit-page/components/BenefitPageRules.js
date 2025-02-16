@@ -9,6 +9,7 @@ import useTranslation from "../../../language/useTranslation";
 import useFetchData from "../../../shared-hooks/useFetchData";
 import useBenefitPageRules from "../hooks/useBenefitPageRules";
 import { VBox, HBox } from "../../../shared-components/LayoutBoxes";
+import ContentBox from "../../../shared-components/ContentBox";
 
 const BenefitPageRules = ({ benefitId, validated_status }) => {
     const { t } = useTranslation();
@@ -24,7 +25,7 @@ const BenefitPageRules = ({ benefitId, validated_status }) => {
     const [showRules, setShowRules] = useState(false);
 
     return (
-        <VBox sx={{ width: "100%" }}>
+        <ContentBox sx={{ width: "100%" }}>
             <HBox sx={{ alignItems: "center", cursor: "pointer" }} onClick={() => setShowRules(!showRules)}>
                 <Typography variant="h6" sx={{ fontWeight: "bold" }}>
                     {t("app.benefitPage.rulesTable.header")}
@@ -51,7 +52,7 @@ const BenefitPageRules = ({ benefitId, validated_status }) => {
                     </Collapse>
                 )
             }
-        </VBox>
+        </ContentBox>
     );
 };
 

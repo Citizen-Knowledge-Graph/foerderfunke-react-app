@@ -6,13 +6,14 @@ import Collapse from "@mui/material/Collapse";
 import { HBox, VBox } from "../../../shared-components/LayoutBoxes";
 import useTranslation from "../../../language/useTranslation";
 import ContentPasteIcon from '@mui/icons-material/ContentPaste';
+import ContentBox from "../../../shared-components/ContentBox";
 
 const BenefitPageRequiredDocuments = ({ requiredDocuments }) => {
     const { t } = useTranslation();
     const [showRequiredDocuments, setShowRequiredDocuments] = useState(false);
 
     return (
-        <VBox sx={{ width: "100%" }}>
+        <ContentBox sx={{ width: "100%" }}>
             <HBox sx={{ alignItems: "center", cursor: "pointer" }} onClick={() => setShowRequiredDocuments(!showRequiredDocuments)}>
                 <Typography variant="h6">{t('app.benefitPage.requiredDocuments')}</Typography>
                 <IconButton
@@ -39,7 +40,7 @@ const BenefitPageRequiredDocuments = ({ requiredDocuments }) => {
                     </Collapse>
                 )
             }
-        </VBox>
+        </ContentBox>
     );
 }
 

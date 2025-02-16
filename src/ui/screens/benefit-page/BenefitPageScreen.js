@@ -16,6 +16,7 @@ import useFetchRPMetaData from './hooks/useFetchRPMetaData';
 import useFetchBenefitPageData from './hooks/useFetchBenefitPageData';
 import { useMetadataStore } from '../../storage/zustand';
 import BenefitPageRequiredDocuments from './components/BenefitPageRequiredDocuments';
+import ContentBox from '../../shared-components/ContentBox';
 
 const BenefitPageScreen = () => {
     const {id} = useParams();
@@ -76,19 +77,17 @@ const BenefitPageScreen = () => {
                     width: '100%'
                 }}>
                     <Divider />
-                    <Box sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        width: '100%'
-                    }} gap={1}>
+                    <ContentBox>
                         <Typography variant="h6">{t('app.benefitPage.whatIsIt')}</Typography>
                         <Typography variant="body1">{benefitPageData.description || t('app.noData')}</Typography>
-                    </Box>
+                    </ContentBox>
                     <Divider />
                     <BenefitPageRules benefitId={id} validated_status={validated_status} />
-                    <Divider />
-                    {/* Required Documents */}
-                    <BenefitPageRequiredDocuments requiredDocuments={benefitPageData.requiredDocuments} />
+                    {
+                        benefitPageData.requiredDocuments.length > 0 && (
+                            <BenefitPageRequiredDocuments requiredDocuments={benefitPageData.requiredDocuments} />
+                        )
+                    }
                 </Box>
             </AppScreenWrapper>
         </Layout>
