@@ -15,9 +15,17 @@ const theme = createTheme({
             main: '#FF0000',
             light: 'rgba(255, 0, 0, 0.2)',
         },
+        yellow: {
+            main: '#FFEEA6 ',
+            light: '#9E872C ',
+        },
         blue: {
             main: '#84AAD7',
             dark: '#263046',
+        },
+        grey: {
+            main: '#868B8E',
+            dark: '#26242E',
         },
         custom: {
             amberOrange: '#FFA600',
@@ -84,6 +92,7 @@ const theme = createTheme({
                     borderRadius: "16px",
                     padding: '16px 28px',
                     fontSize: '18px',
+                    fontWeight: '400',
                     fontFamily: '"Funnel Display", sans-serif',
                 },
                 text: {
@@ -95,16 +104,15 @@ const theme = createTheme({
                     },
                 },
                 contained: {
-                    backgroundColor: 'primary.main',
-                    borderColor: '#FCD755',
-                    borderWidth: 1,
-                    borderStyle: 'solid',
+                    backgroundColor: '#26242E',
+                    color: 'white',
                     boxShadow: 'none',
-                    color: 'black',
-                    fontWeight: 'bold',
+                    borderWidth: 1,
+                    borderColor: '#26242E',
+                    borderStyle: 'solid',
                     '&:hover': {
                         backgroundColor: 'white',
-                        borderColor: 'primary.main',
+                        color: '#26242E',
                         boxShadow: 'none',
                     },
                 },

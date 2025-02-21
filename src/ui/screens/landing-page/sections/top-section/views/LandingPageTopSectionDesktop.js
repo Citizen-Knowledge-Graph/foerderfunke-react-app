@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Typography } from "@mui/material";
+import { Typography, Button } from "@mui/material";
 import { motion } from "framer-motion";
 import useTranslation from "../../../../../language/useTranslation";
 import { HBox, VBox } from "../../../../../shared-components/LayoutBoxes";
 import theme from "../../../../../../theme";
+import { Link } from "react-router-dom";
 
 const LandingPageTopSectionDesktop = () => {
     const { t } = useTranslation();
@@ -22,29 +23,45 @@ const LandingPageTopSectionDesktop = () => {
     return (
         <HBox justifyContent="space-between" alignItems="center">
             <VBox sx={{ width: "50%", boxSizing: "border-box", alignItems: "flex-end" }}>
-                <VBox sx={{ maxWidth: "600px", gap: theme.spacing(2) }}>
-                    <VBox sx={{ gap: theme.spacing(0) }}>
-                        <HBox>
-                            <Typography variant="h1">{t("home.hero.headerShard1")}</Typography>
-                            <Typography variant="h1" sx={{ color: theme.palette.blue.main, fontWeight: "bold", whiteSpace: "nowrap" }}>
-                                <motion.span
-                                    key={words[currentWordIndex]}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -20 }}
-                                    transition={{ duration: 1.0 }}
-                                >
-                                    {words[currentWordIndex]}
-                                </motion.span>
-                            </Typography>
-                        </HBox>
-                        <Typography variant="h1">{t("home.hero.headerShard2")}</Typography>
+                <VBox sx={{ maxWidth: "600px", gap: theme.spacing(8) }}>
+                    <VBox sx={{ gap: theme.spacing(1) }}>
+                        <VBox sx={{ gap: theme.spacing(0) }}>
+                            <HBox>
+                                <Typography variant="h1">{t("home.hero.headerShard1")}</Typography>
+                                <Typography variant="h1" sx={{ color: theme.palette.blue.main, fontWeight: "bold", whiteSpace: "nowrap" }}>
+                                    <motion.span
+                                        key={words[currentWordIndex]}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: -20 }}
+                                        transition={{ duration: 1.0 }}
+                                    >
+                                        {words[currentWordIndex]}
+                                    </motion.span>
+                                </Typography>
+                            </HBox>
+                            <Typography variant="h1">{t("home.hero.headerShard2")}</Typography>
+                        </VBox>
+                        <Typography variant="body1">{t("home.hero.subHeader")}</Typography>
                     </VBox>
-                    <Typography variant="body1">{t("home.hero.subHeader")}</Typography>
+                    <HBox sx={{ gap: theme.spacing(2) }}>
+                        <Button variant="contained"
+                            sx={{ 
+                                backgroundColor: theme.palette.yellow.main,
+                                color: theme.palette.grey.dark,
+                                borderColor: theme.palette.yellow.main,
+                                '&:hover': {
+                                    backgroundColor: theme.palette.grey.dark,
+                                    color: "white",
+                                    borderColor: theme.palette.grey.dark
+                                }
+                            }}
+                            component={Link}
+                            to="/user-routing">{t('home.global.actionButton')}
+                        </Button>
+                    </HBox>
                 </VBox>
             </VBox>
-
-            {/* Right Section */}
             <VBox sx={{ width: "50%", boxSizing: "border-box", alignItems: "center" }}>
                 <img src={starWoman} alt="logo" style={{ width: "506px" }} />
             </VBox>
