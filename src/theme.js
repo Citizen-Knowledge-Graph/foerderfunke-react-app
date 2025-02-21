@@ -23,9 +23,17 @@ const theme = createTheme({
             main: '#84AAD7',
             dark: '#263046',
         },
-        grey: {
-            main: '#868B8E',
-            dark: '#26242E',
+        pink: {
+            main: '#F77BB6',
+            dark: '#7C1E59',
+        },
+        black: {
+            main: '#26242E',
+            light: '#868B8E',
+        },
+        white: {
+            main: '#FFFFFF',
+            dark: '#CECECE',
         },
         custom: {
             amberOrange: '#FFA600',
@@ -64,7 +72,7 @@ const theme = createTheme({
             fontFamily: '"Funnel Display", sans-serif',
         },
         h4: {
-            fontSize: '28px',
+            fontSize: '24px',
             fontWeight: 'bold',
             lineHeight: '1.3',
             color: '#333333',
@@ -83,6 +91,10 @@ const theme = createTheme({
             lineHeight: '1.5',
             color: '#333333',
         },
+    },
+    shape: {
+        borderRadius:
+            '16px',
     },
     components: {
         MuiButton: {

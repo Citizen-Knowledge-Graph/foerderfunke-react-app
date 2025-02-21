@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { HBox } from '../../../../../shared-components/LayoutBoxes';
 import LogoBar from '../../../../../shared-components/LogoBar';
 import AntSwitch from '../../../../../shared-components/AntSwitch';
+import theme from "../../../../../../theme";
 
 const HeaderBarDesktop = () => {
     const { language, setLanguage } = useContext(LanguageContext);
@@ -19,6 +20,7 @@ const HeaderBarDesktop = () => {
 
     return (
         <HBox sx={{
+            backgroundColor: theme.palette.white.main,
             justifyContent: 'space-between',
             alignItems: 'center',
             padding: '59px 96px',

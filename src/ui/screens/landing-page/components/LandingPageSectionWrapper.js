@@ -4,7 +4,7 @@ import {useStore} from "../../../shared-components/ViewportUpdater";
 
 const LandingPageSectionWrapper = ({backgroundColor= null, isTop = false, children}) => {
     const isDesktop = useStore((state) => state.isDesktop);
-    const horizontalPadding = isDesktop ? '60px' : '16px';
+    const horizontalPadding = isDesktop ? '96px' : '16px';
     const verticalPadding = isDesktop
         ? isTop
             ? '16px'
@@ -20,6 +20,7 @@ const LandingPageSectionWrapper = ({backgroundColor= null, isTop = false, childr
             paddingRight: horizontalPadding,
             paddingTop: verticalPadding,
             paddingBottom: verticalPadding,
+            boxSizing: 'border-box',
         }}>
             {children}
         </VStack>

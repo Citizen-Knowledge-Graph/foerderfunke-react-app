@@ -48,12 +48,12 @@ const LandingPageTopSectionDesktop = () => {
                         <Button variant="contained"
                             sx={{ 
                                 backgroundColor: theme.palette.yellow.main,
-                                color: theme.palette.grey.dark,
+                                color: theme.palette.black.main,
                                 borderColor: theme.palette.yellow.main,
                                 '&:hover': {
-                                    backgroundColor: theme.palette.grey.dark,
-                                    color: "white",
-                                    borderColor: theme.palette.grey.dark
+                                    backgroundColor: theme.palette.black.main,
+                                    color: theme.palette.white.main,
+                                    borderColor: theme.palette.black.main
                                 }
                             }}
                             component={Link}
@@ -62,7 +62,7 @@ const LandingPageTopSectionDesktop = () => {
                     </HBox>
                 </VBox>
             </VBox>
-            <VBox sx={{ width: "50%", boxSizing: "border-box", alignItems: "center" }}>
+            <VBox sx={{ width: "50%", boxSizing: "border-box", alignItems: "flex-end" }}>
                 <img src={starWoman} alt="logo" style={{ width: "506px" }} />
             </VBox>
         </HBox>

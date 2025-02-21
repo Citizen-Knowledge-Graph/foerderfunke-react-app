@@ -24,7 +24,7 @@ const translations = {
                 manyMore: "Many more"
             },
             mission: {
-                header: "1 out of 5 households in Germany don't claim social benefits they are entitled to.",
+                subHeader: "unclaimed social benefits per year",
                 text: "We are on a mission to make social benefits in Germany accessible and easy to understand by everyone. We show you what social benefits you might be eligible for and point you the way to apply for them."
             },
             howItWorks: {
@@ -241,7 +241,7 @@ const translations = {
                 headerShard1: "Entdecke ",
                 headerShard2: "und mehr!",
                 headerBenefits: ["Kindergeld", "Wohngeld", "Bürgergeld"],
-                subHeader: "Finde Sozialleistungen die zu dir und deiner Situation passen. Beantworte einfach ein paar fragen und wir zeigen dir, auf welche Sozialleistungen du Anspruch haben könntest.",
+                subHeader: "Finde Sozialleistungen, die zu dir und deiner Situation passen. Beantworte einfach ein paar fragen und wir zeigen dir, auf welche Sozialleistungen du Anspruch haben könntest.",
                 childAllowance: "Kinderzuschlag",
                 housingBenefit: "Wohngeld",
                 citizensBenefit: "Bürgergeld",
@@ -249,7 +249,7 @@ const translations = {
                 manyMore: "Viele Weitere",
             },
             mission: {
-                header: "1 von 5 Haushalten in Deutschland verpasst zustehende Sozialleistungen",
+                subHeader: "nicht in Anspruch genommener Sozialleistungen pro Jahr",
                 text: "Mit Förderfunke möchten wir erreichen, dass Sozialleistungen in Deutschland für alle zugänglich und leicht verständlich sind. Wir zeigen dir, auf welche Sozialleistungen du Anspruch haben könntest und wie du sie beantragen kannst."
             },
             howItWorks: {

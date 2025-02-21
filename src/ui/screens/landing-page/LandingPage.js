@@ -6,7 +6,7 @@ import LandingPageHowItWorks from "./sections/how-it-works/LandingPageHowItWorks
 import LandingPagePrinciples from "./sections/principles/LandingPagePrinciples";
 import LandingPageTeam from "./sections/team/LandingPageTeam";
 import LandingPageFooter from "./sections/footer/LandingPageFooter";
-import LandingPageFact from "./sections/LandingPageFact";
+import LandingPageFact from "./sections/fact/LandingPageFact";
 import LandingPageTopSection from "./sections/top-section/LandingPageTopSection";
 import LandingPageFeedback from "./sections/feedback/LandingPageFeedback";
 import featureFlags from "../../../featureFlags";
