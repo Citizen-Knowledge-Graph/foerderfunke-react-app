@@ -343,11 +343,11 @@
     },
     "application_process": {
       "de": {
-        "title": "Wohngeld kann bei der zuständigen Wohngeldbehörde beantragt werden. Die Antragsformulare können online heruntergeladen oder direkt bei der Behörde abgeholt werden. Die Bearbeitungsdauer beträgt in der Regel 6 bis 8 Wochen.",
+        "title": "Wohngeld kann bei der zuständigen Wohngeldbehörde beantragt werden. Die Antragsformulare können online heruntergeladen oder direkt bei der Behörde abgeholt werden.",
         "links": []
       },
       "en": {
-        "title": "Housing benefit can be applied for at the responsible housing benefit authority. The application forms can be downloaded online or picked up directly from the authority. The processing time is usually 6 to 8 weeks.",
+        "title": "Housing benefit can be applied for at the responsible housing benefit authority.",
         "links": []
       }
     },
