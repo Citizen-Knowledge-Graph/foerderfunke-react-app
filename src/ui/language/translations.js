@@ -13,7 +13,10 @@ const translations = {
                 activityLog: "Activity log"
             },
             hero: {
-                header: "Check benefits and financial support you can get",
+                headerShard1: "Discover ",
+                headerShard2: "and more!",
+                headerBenefits: ["Child allowance", "Housing benefit", "Citizen's benefit"],
+                subHeader: "Find social benefits that fit you and your situation. Answer a few questions and we will show you which social benefits you might be eligible for.",
                 childAllowance: "Child allowance",
                 housingBenefit: "Housing benefit",
                 citizensBenefit: "Citizen's benefit",
@@ -235,7 +238,10 @@ const translations = {
                 activityLog: "Aktivitäten"
             },
             hero: {
-                header: "Entdecke Leistungen und Angebote für dich",
+                headerShard1: "Entdecke ",
+                headerShard2: "und mehr!",
+                headerBenefits: ["Kindergeld", "Wohngeld", "Bürgergeld"],
+                subHeader: "Finde Sozialleistungen die zu dir und deiner Situation passen. Beantworte einfach ein paar fragen und wir zeigen dir, auf welche Sozialleistungen du Anspruch haben könntest.",
                 childAllowance: "Kinderzuschlag",
                 housingBenefit: "Wohngeld",
                 citizensBenefit: "Bürgergeld",

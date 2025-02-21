@@ -11,26 +11,13 @@ import LandingPageTopSection from "./sections/top-section/LandingPageTopSection"
 import LandingPageFeedback from "./sections/feedback/LandingPageFeedback";
 import featureFlags from "../../../featureFlags";
 import LandingPageFunding from "./sections/funding/LandingPageFunding";
-import globalStyles from "../../styles/styles";
 
 const LandingPage = () => {
     const isDesktop = useStore((state) => state.isDesktop);
 
     return (
         <Layout>
-            <VStack
-                gap={0}
-                sx={{
-                    background: `linear-gradient(
-                        to bottom,
-                            ${globalStyles.primaryColor}33 0%,
-                            ${globalStyles.primaryColor}80 20%,
-                            ${globalStyles.primaryColor}33 40%,
-                            ${globalStyles.primaryColor}80 60%,
-                            ${globalStyles.primaryColor}33 80%,
-                            ${globalStyles.primaryColor}80 100%)`,
-                }}
-            >
+            <VStack gap={0}>
                 <VStack>
                     <LandingPageTopSection isDesktop={isDesktop}/>
                 </VStack>

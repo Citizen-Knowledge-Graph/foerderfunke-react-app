@@ -15,6 +15,10 @@ const theme = createTheme({
             main: '#FF0000',
             light: 'rgba(255, 0, 0, 0.2)',
         },
+        blue: {
+            main: '#84AAD7',
+            dark: '#263046',
+        },
         custom: {
             amberOrange: '#FFA600',
             amberOrangeTransparent: 'rgba(255, 166, 0, 0.1)',
@@ -55,6 +59,13 @@ const theme = createTheme({
             fontSize: '28px',
             fontWeight: 'bold',
             lineHeight: '1.3',
+            color: '#333333',
+            fontFamily: '"Funnel Display", sans-serif',
+        },
+        h1: {
+            fontSize: '48px',
+            fontWeight: '500',
+            lineHeight: '60px',
             color: '#333333',
             fontFamily: '"Funnel Display", sans-serif',
         },
