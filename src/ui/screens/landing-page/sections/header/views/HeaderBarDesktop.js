@@ -1,77 +1,52 @@
-import React, {useContext} from 'react';
-import {ToggleButton, ToggleButtonGroup} from "@mui/material";
-import HStack from "../../../../../shared-components/HStack";
+import React, { useContext } from 'react';
 import LandingPageWAppButton from "../../../components/LandingPageWAppButton";
 import LandingPageHollowButton from "../../../components/LandingPageButton";
-import {LanguageContext} from "../../../../../language/LanguageContext";
-import featureFlags from "../../../../../../featureFlags";
+import { LanguageContext } from "../../../../../language/LanguageContext";
 import useTranslation from "../../../../../language/useTranslation";
-import {Link} from "react-router-dom";
-import LogoBar from "../../../../../shared-components/LogoBar";
+import { Link } from "react-router-dom";
+import { HBox } from '../../../../../shared-components/LayoutBoxes';
+import LogoBar from '../../../../../shared-components/LogoBar';
+import AntSwitch from '../../../../../shared-components/AntSwitch';
 
-const HeaderBarDesktop = ({isApp}) => {
-    const {language, setLanguage} = useContext(LanguageContext);
-    const {t} = useTranslation();
+const HeaderBarDesktop = () => {
+    const { language, setLanguage } = useContext(LanguageContext);
+    const { t } = useTranslation();
+    const isEnglish = language === "en";
 
-    const handleLanguageChange = (event, newLanguage) => {
-        if (newLanguage !== null) {
-            setLanguage(newLanguage);
-        }
+    const handleLanguageToggle = (event) => {
+        setLanguage(event.target.checked ? "en" : "de");
     };
 
     return (
-        <HStack gap={5} justifyContent={'space-between'} alignItems={'center'} sx={{width: '100%'}}>
-            <HStack alignItems={'center'}>
-                <Link to={"/"} style={{textDecoration: 'none', color: "black", width: '100%'}}>
-                    <LogoBar size={'large'}/>
+        <HBox sx={{
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            backgroundColor: 'white',
+            padding: '59px 96px',
+        }}>
+            <HBox alignItems={'center'}>
+                <Link to={"/"} style={{ textDecoration: 'none', color: "black" }}>
+                    <LogoBar size={'large'} />
                 </Link>
-            </HStack>
-            <HStack gap={9} justifyContent={'flex-end'} alignItems={'center'} sx={{width: '100%'}}>
-                <HStack gap={5}>
-                    {isApp ? null : <LandingPageWAppButton backgroundColor={'primary'}/>}
-                    {isApp ? null :
-                        featureFlags.newFeedbackSection ?
-                            <LandingPageHollowButton text={t('home.menu.improve')} to={'/#feedback'}/>
-                            : null
-                    }
-                    {
-                        isApp ? null :
-                            <LandingPageHollowButton text={t('home.menu.aboutUs')} to={"/#about-us"}/>
-                    }
-                    {isApp ? null :
-                        featureFlags.newActivityLog ?
-                            <LandingPageHollowButton text={t('home.menu.activityLog')} to={'/activity-log'}/>
-                            : null
-                    }
-                    {
-                        featureFlags.newLanguageToggle && (
-                            <ToggleButtonGroup
-                                value={language}
-                                exclusive
-                                onChange={handleLanguageChange}
-                                aria-label="language selection"
-                                size="small"
-                            >
-                                <ToggleButton
-                                    value="en"
-                                    aria-label="english"
-                                    sx={{padding: '8px'}}
-                                >
-                                    EN
-                                </ToggleButton>
-                                <ToggleButton
-                                    value="de"
-                                    aria-label="german"
-                                    sx={{padding: '8px'}}
-                                >
-                                    DE
-                                </ToggleButton>
-                            </ToggleButtonGroup>
-                        )
-                    }
-                </HStack>
-            </HStack>
-        </HStack>
+            </HBox>
+            <HBox justifyContent={'flex-end'} alignItems={'center'}>
+                <HBox gap={5}>
+                    <LandingPageWAppButton />
+                    <LandingPageHollowButton text={t('home.menu.improve')} to={'/#feedback'} />
+                    <LandingPageHollowButton text={t('home.menu.aboutUs')} to={"/#about-us"} />
+                    <LandingPageHollowButton text={t('home.menu.activityLog')} to={'/activity-log'} />
+                    <HBox alignItems="center" gap={1}>
+                        <span>DE</span>
+                        <AntSwitch
+                            checked={isEnglish}
+                            onChange={handleLanguageToggle}
+                            inputProps={{ 'aria-label': 'language selection' }}
+                        />
+                        <span>EN</span>
+                    </HBox>
+                </HBox>
+            </HBox>
+        </HBox>
     )
 }
 
