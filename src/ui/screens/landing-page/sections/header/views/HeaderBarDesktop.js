@@ -21,7 +21,6 @@ const HeaderBarDesktop = () => {
         <HBox sx={{
             justifyContent: 'space-between',
             alignItems: 'center',
-            backgroundColor: 'white',
             padding: '59px 96px',
         }}>
             <HBox alignItems={'center'}>
