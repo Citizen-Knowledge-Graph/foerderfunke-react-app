@@ -1,11 +1,14 @@
 import React from "react";
 import LandingPageSectionWrapper from "../../components/LandingPageSectionWrapper";
 import { VBox, HBox } from "../../../../shared-components/LayoutBoxes";
-import { Typography } from "@mui/material";
+import { Typography, Button } from "@mui/material";
 import theme from "../../../../../theme";
 import { SupporterCardNGI, SupporterCardPF } from "./components/LandingPageSupporters";
+import { Link } from "react-router-dom";
+import useTranslation from "../../../../language/useTranslation";
 
 const LandingPageFunding = ({ isDesktop }) => {
+    const { t } = useTranslation();
 
     return (
         <LandingPageSectionWrapper isDesktop={isDesktop}>
@@ -23,6 +26,22 @@ const LandingPageFunding = ({ isDesktop }) => {
                     <HBox sx={{ gap: theme.spacing(4) }}>
                         <SupporterCardNGI />
                         <SupporterCardPF />
+                    </HBox>
+                    <HBox sx={{ width: "100%", justifyContent: 'center' }}>
+                        <Button variant="contained"
+                            sx={{
+                                backgroundColor: theme.palette.yellow.main,
+                                color: theme.palette.black.main,
+                                borderColor: theme.palette.yellow.main,
+                                '&:hover': {
+                                    backgroundColor: theme.palette.blue.dark,
+                                    color: theme.palette.white.main,
+                                    borderColor: theme.palette.blue.dark
+                                }
+                            }}
+                            component={Link}
+                            to="/user-routing">{t('home.global.actionButton')}
+                        </Button>
                     </HBox>
                 </VBox>
             </VBox>
