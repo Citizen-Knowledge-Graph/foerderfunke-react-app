@@ -19,13 +19,12 @@ const LandingPagePrinciples = ({ isDesktop }) => {
     return (
         <LandingPageSectionWrapper isDesktop={isDesktop}>
             <VBox sx={{
-                paddingTop: '104px',
-                paddingBottom: '104px',
-                paddingLeft: '96px',
-                paddingRight: '96px',
                 alignItems: 'center',
             }}>
-                <VBox sx={{ gap: theme.spacing(10) }}>
+                <VBox sx={{ 
+                    maxWidth: "1118px",
+                    gap: theme.spacing(10) }}
+                >
                     <HBox sx={{ gap: theme.spacing(8) }}>
                         <VBox sx={{ maxWidth: '760px', gap: theme.spacing(6) }}>
                             <Typography variant="h1" sx={{ color: theme.palette.black.main }}>
@@ -79,7 +78,7 @@ const LandingPagePrinciples = ({ isDesktop }) => {
                             <HBox sx={{ alignItems: 'center' }}>
                                 <GitHubIcon sx={{ fontSize: 24, color: "text.primary" }} />
                                 <Typography variant="body1">
-                                {t('home.principles.githubText')}
+                                    {t('home.principles.githubText')}
                                 </Typography>
                             </HBox>
                         </HBox>

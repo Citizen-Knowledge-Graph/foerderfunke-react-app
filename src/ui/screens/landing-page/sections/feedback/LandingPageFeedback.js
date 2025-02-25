@@ -11,11 +11,7 @@ const LandingPageFeedback = ({ isDesktop }) => {
 
     return (
         <LandingPageSectionWrapper backgroundColor={'white'} isDesktop={isDesktop}>
-            <VBox sx={{
-                paddingTop: '104px',
-                paddingBottom: '104px',
-                alignItems: 'center',
-            }}>
+            <VBox sx={{ alignItems: 'center' }}>
                 <VBox sx={{ maxWidth: "1118px", gap: theme.spacing(10) }}>
                     <Typography variant="h1">
                         Feedback

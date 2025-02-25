@@ -13,6 +13,7 @@ const LandingPageFunding = ({ isDesktop }) => {
                 alignItems: 'center',
             }}>
                 <VBox sx={{
+                    maxWidth: "1118px",
                     alignItems: 'flex-start',
                     gap: theme.spacing(10),
                 }}>

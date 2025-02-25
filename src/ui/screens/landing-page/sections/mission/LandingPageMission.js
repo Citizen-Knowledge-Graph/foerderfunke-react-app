@@ -18,10 +18,12 @@ const LandingPageMission = ({ isDesktop }) => {
                 paddingBottom: '104px',
                 paddingLeft: '96px',
                 paddingRight: '96px',
+                marginTop: '96px',
+                marginBottom: '96px',
                 alignItems: 'center',
             }}>
-                <HBox sx={{ alignItems: 'center', gap: theme.spacing(8) }}>
-                    <VBox sx={{ gap: theme.spacing(6), maxWidth: '760px' }}>
+                <HBox sx={{ alignItems: 'center', gap: theme.spacing(8), maxWidth: '1118px' }}>
+                    <VBox sx={{ gap: theme.spacing(6) }}>
                         <Typography variant="h1" sx={{ color: theme.palette.white.main }}>
                             {t('home.mission.header')}
                         </Typography>

@@ -15,16 +15,9 @@ const LandingPageHowItWorksDesktop = () => {
     const handleMouseLeave = () => setHoveredIndex(null);
 
     return (
-        <VBox>
-            <HBox sx={{
-                gap: theme.spacing(6),
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                padding: '0 96px',
-            }}>
-            </HBox>
+        <VBox sx={{ width: "100%", alignItems: 'center' }}>
             <HBox gap={10} sx={{
-                width: '100%',
+                maxWidth: "1118px",
                 justifyContent: 'center',
                 alignItems: 'flex-end',
             }}>

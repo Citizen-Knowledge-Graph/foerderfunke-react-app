@@ -14,6 +14,8 @@ const LandingPageFact = ({ isDesktop }) => {
             <VBox sx={{
                 paddingTop: '104px',
                 paddingBottom: '104px',
+                paddingLeft: '96px',
+                paddingRight: '96px',
                 backgroundColor: `${theme.palette.white.dark}40`,
                 borderRadius: theme.shape.borderRadius,
             }}>

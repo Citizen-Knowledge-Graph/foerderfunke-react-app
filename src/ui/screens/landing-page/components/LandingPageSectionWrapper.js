@@ -2,16 +2,11 @@ import React from "react";
 import {VBox} from "../../../shared-components/LayoutBoxes";
 import {useStore} from "../../../shared-components/ViewportUpdater";
 
-const LandingPageSectionWrapper = ({backgroundColor= null, isTop = false, children, fullWidth = false}) => {
+const LandingPageSectionWrapper = ({backgroundColor= null, children, fullWidth = false}) => {
     const isDesktop = useStore((state) => state.isDesktop);
     const horizontalPadding = fullWidth ? 0 : isDesktop ? '96px' : '16px';
-    const verticalPadding = fullWidth ? 0 : isDesktop
-        ? isTop
-            ? '16px'
-            : '80px'
-        : isTop
-            ? '28px'
-            : '60px';
+    const verticalPadding = fullWidth ? 0 : isDesktop ? '80px' : '60px';
+
     return (
         <VBox sx={{
             backgroundColor: backgroundColor,

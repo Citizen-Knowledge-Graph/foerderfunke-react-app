@@ -9,12 +9,15 @@ const LandingPageTeamDesktop = () => {
         <VBox sx={{
             paddingTop: '104px',
             paddingBottom: '104px',
+            paddingLeft: '96px',
+            paddingRight: '96px',
             backgroundColor: `${theme.palette.white.dark}40`,
             borderRadius: theme.shape.borderRadius,
             alignItems: 'center',
         }}>
             <VBox sx={{
-                width: '100%',
+                width: "100%",
+                maxWidth: "1118px",
                 gap: theme.spacing(10)
             }}>
                 <HBox sx={{ alignItems: 'center', justifyContent: 'center' }}>
