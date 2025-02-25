@@ -34,10 +34,10 @@ const LandingPageFact = ({ isDesktop }) => {
                                 textAlign: 'center',
                                 fontWeight: '400',
                                 maxWidth: '400px',
-                            }}>{t('home.mission.subHeader')}</Typography>
+                            }}>{t('home.fact.subHeader')}</Typography>
                         </VBox>
                         <HBox>
-                            <Typography variant="body1" sx={{ textAlign: 'center' }} >{t('home.mission.text')}</Typography>
+                            <Typography variant="body1" sx={{ textAlign: 'center' }} >{t('home.fact.text')}</Typography>
                         </HBox>
                     </VBox>
                     <HBox sx={{ gap: theme.spacing(2) }}>

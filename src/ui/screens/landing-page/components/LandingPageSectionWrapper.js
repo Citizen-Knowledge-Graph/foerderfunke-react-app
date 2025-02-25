@@ -2,9 +2,9 @@ import React from "react";
 import VStack from "../../../shared-components/VStack";
 import {useStore} from "../../../shared-components/ViewportUpdater";
 
-const LandingPageSectionWrapper = ({backgroundColor= null, isTop = false, children}) => {
+const LandingPageSectionWrapper = ({backgroundColor= null, isTop = false, children, fullWidth = false}) => {
     const isDesktop = useStore((state) => state.isDesktop);
-    const horizontalPadding = isDesktop ? '96px' : '16px';
+    const horizontalPadding = fullWidth ? 0 : isDesktop ? '96px' : '16px';
     const verticalPadding = isDesktop
         ? isTop
             ? '16px'
@@ -12,6 +12,7 @@ const LandingPageSectionWrapper = ({backgroundColor= null, isTop = false, childr
         : isTop
             ? '28px'
             : '60px';
+
     return (
         <VStack sx={{
             backgroundColor: backgroundColor,
@@ -24,7 +25,7 @@ const LandingPageSectionWrapper = ({backgroundColor= null, isTop = false, childr
         }}>
             {children}
         </VStack>
-    )
+    );
 }
 
 export default LandingPageSectionWrapper;

@@ -63,7 +63,7 @@ const LandingPageTopSectionDesktop = () => {
                 </VBox>
             </VBox>
             <VBox sx={{ width: "50%", boxSizing: "border-box", alignItems: "flex-end" }}>
-                <img src={starWoman} alt="logo" style={{ width: "506px" }} />
+                <img src={starWoman} alt="logo" style={{ width: "523px" }} />
             </VBox>
         </HBox>
     );

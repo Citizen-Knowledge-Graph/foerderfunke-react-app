@@ -23,7 +23,7 @@ const translations = {
                 bafög: "Bafög",
                 manyMore: "Many more"
             },
-            mission: {
+            fact: {
                 subHeader: "unclaimed social benefits per year",
                 text: "We are on a mission to make social benefits in Germany accessible and easy to understand by everyone. We show you what social benefits you might be eligible for and point you the way to apply for them."
             },
@@ -35,6 +35,13 @@ const translations = {
                 part2Text: "The more complete your profile is, the more accurate the list of benefits you get.",
                 part3Header: "Learn about relevant benefits",
                 part3Text: "Learn about requirements and necessary steps to apply for you benefits.",
+            },
+            mission: {
+                header: "Our mission: Information for all!",
+                part1Header: "Open Data",
+                part1Text: "Important information for citizens about their benefits is all too often difficult to find. We make our catalogue of conditions for social benefits publicly available.",
+                part2Header: "User Centric Design",
+                part2Text: "We work in a user-centered and iterative way. We talk with users and constantly improve our product so that it is easy to use, understandable and accessible.",
             },
             theBasics: {
                 header: "The basics",
@@ -247,8 +254,8 @@ const translations = {
                 citizensBenefit: "Bürgergeld",
                 bafög: "Bafög",
                 manyMore: "Viele Weitere",
-            },
-            mission: {
+            },  
+            fact: {
                 subHeader: "nicht in Anspruch genommener Sozialleistungen pro Jahr",
                 text: "Mit Förderfunke möchten wir erreichen, dass Sozialleistungen in Deutschland für alle zugänglich und leicht verständlich sind. Wir zeigen dir, auf welche Sozialleistungen du Anspruch haben könntest und wie du sie beantragen kannst."
             },
@@ -260,6 +267,13 @@ const translations = {
                 part2Text: "In der Übersicht erfährst, auf welche Leistungen du Anspruch haben könntest.",
                 part3Header: "Informiere dich zu Leistungen",
                 part3Text: "In der Detailansicht kannst du dich genauer über eine Leistung informieren."
+            },
+            mission: {
+                header: "Unsere Mission: Informationen für alle!",
+                part1Header: "Offene Daten",
+                part1Text: "Wichtige Informationen zu Leistungen sind oft schwer zu finden. Wir machen unseren Katalog der Bedingungen für Sozialleistungen öffentlich zugänglich. Dabei setzen wir auf etablierte Standards und Formate.",
+                part2Header: "Nutzerzentriertes Design",
+                part2Text: "Wir arbeiten nutzerzentriert und iterativ. Deswegen sprechen wir regelmäßig mit Nutzer*innen und versuchen ständig, das Produkt zu verbessern. Damit alle eine Chance auf Sozialleistungen haben."
             },
             theBasics: {
                 line1: "FörderFunke ist kostenlos nutzbar",
