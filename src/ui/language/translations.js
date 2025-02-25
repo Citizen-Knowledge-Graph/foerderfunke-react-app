@@ -66,13 +66,11 @@ const translations = {
                 messagePrompt: "Or send us an email. We will get back to you as quickly as we can!"
             },
             principles: {
-                header: "Our principles",
-                part1Header: "Privacy By Design",
-                part1Text: "It is important to us that you maintain control over your data. That's why your data remains on your device.",
-                part2Header: "Open Data",
-                part2Text: "Important information for citizens about their benefits is all too often difficult to find. We make our catalogue of conditions for social benefits publicly available.",
-                part3Header: "User Centric Design",
-                part3Text: "We work in a user-centered and iterative way. We talk with users and constantly improve our product so that it is easy to use, understandable and accessible.",
+                header: "And this is how it works",
+                part1Header: "Privacy by Design",
+                part1Text: "We believe you should have control over your data. That's why we keep your data only on your device. It is never visible to us or anyone else.",
+                part2Header: "Open Source",
+                part2Text: "Our development work is open source and tracked on GitHub. You can see our latest five commits here or explore more on our GitHub organization page."
             },
             connect: {
                 header: "Let's connect",
@@ -291,13 +289,11 @@ const translations = {
                 messagePrompt: "Oder schick uns eine Nachricht. Wir melden uns so schnell wie möglich zurück!"
             },
             principles: {
-                header: "Unsere Prinzipien",
+                header: "Und so funktioniert's",
                 part1Header: "Privacy by Design",
                 part1Text: "Uns ist wichtig, dass du die Kontrolle über deine Daten behältst. Deshalb bleiben deine Daten ausschließlich auf deinem Endgerät. Sie sind zu keinem Zeitpunkt für uns oder andere einsehbar.",
-                part2Header: "Offene Daten",
-                part2Text: "Wichtige Informationen zu Leistungen sind oft schwer zu finden. Wir machen unseren Katalog der Bedingungen für Sozialleistungen öffentlich zugänglich. Dabei setzen wir auf etablierte Standards und Formate.",
-                part3Header: "Nutzerzentriertes Design",
-                part3Text: "Wir arbeiten nutzerzentriert und iterativ. Deswegen sprechen wir regelmäßig mit Nutzer*innen und versuchen ständig, das Produkt zu verbessern."
+                part2Header: "Open Source",
+                part2Text: "Unsere Entwicklungsarbeit ist Open Source und wird auf GitHub erfasst. Du kannst unsere letzten fünf Commits hier einsehen oder mehr auf unserer GitHub-Organisationsseite entdecken."
             },
             connect: {
                 header: "Das Team",
