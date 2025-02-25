@@ -15,7 +15,12 @@ const LandingPageMemberCard = ({ imageUrl, name, position, email, linkedin }) =>
             <HBox justifyContent={'center'}>
                 <HBox justifyContent={'center'} sx={{ width: '300px', height: '300px', overflow: 'hidden' }}>
                     <img src={imageUrl} alt="Landing Page"
-                        style={{ width: "100%", height: "auto", borderRadius: "50%" }} />
+                        style={{ 
+                            backgroundColor: theme.palette.white.dark,
+                            width: "100%", 
+                            height: "auto", 
+                            borderRadius: "50%"
+                        }} />
                 </HBox>
             </HBox>
             <VBox gap={1} alignItems={'center'}>

@@ -2,7 +2,7 @@ import LandingPageMemberCard from "./LandingPageMemberCard";
 
 
 export const MemberCardBenjamin = () => {
-    const portraitUrl = `${process.env.PUBLIC_URL}/assets/images/portraits/Portrait_Benjamin_Cropped.jpg`;
+    const portraitUrl = `${process.env.PUBLIC_URL}/assets/images/portraits/benjamin.png`;
 
     return (
         <LandingPageMemberCard
@@ -16,7 +16,7 @@ export const MemberCardBenjamin = () => {
 }
 
 export const MemberCardBen = () => {
-    const portraitUrl = `${process.env.PUBLIC_URL}/assets/images/portraits/Portrait_Ben_Cropped.jpg`;
+    const portraitUrl = `${process.env.PUBLIC_URL}/assets/images/portraits/ben.png`;
 
     return (
         <LandingPageMemberCard
