@@ -37,6 +37,9 @@ const LandingPage = () => {
                 <VStack id="about-us">
                     <LandingPageTeam isDesktop={isDesktop}/>
                 </VStack>
+                <VStack id="funding">
+                    <LandingPageFunding isDesktop={isDesktop}/>
+                </VStack>                
                 {
                     featureFlags.newFeedbackSection && (
                         <VStack id="feedback">
@@ -44,9 +47,6 @@ const LandingPage = () => {
                         </VStack>
                     )
                 }
-                <VStack id="funding">
-                    <LandingPageFunding isDesktop={isDesktop}/>
-                </VStack>
                 <VStack id="footer">
                     <LandingPageFooter isDesktop={isDesktop}/>
                 </VStack>

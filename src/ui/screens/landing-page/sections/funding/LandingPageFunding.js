@@ -1,19 +1,30 @@
 import React from "react";
 import LandingPageSectionWrapper from "../../components/LandingPageSectionWrapper";
-import useTranslation from "../../../../language/useTranslation";
-import LandingPageSectionGrid from "../../components/LandingPageSectionGrid";
-import LandingPageSupportCard from "./components/LandingPageSupportCard";
-import LandingPageSupportCardNGI from "./components/LandingPageSupportCardNGI";
+import { VBox, HBox } from "../../../../shared-components/LayoutBoxes";
+import { Typography } from "@mui/material";
+import theme from "../../../../../theme";
+import { SupporterCardNGI, SupporterCardPF } from "./components/LandingPageSupporters";
 
-const LandingPageFunding = ({isDesktop}) => {
-    const {t} = useTranslation();
+const LandingPageFunding = ({ isDesktop }) => {
 
     return (
-        <LandingPageSectionWrapper backgroundColor={'white'} isDesktop={isDesktop}>
-            <LandingPageSectionGrid title={t('home.supportedBy.header')}>
-                <LandingPageSupportCardNGI isDesktop={isDesktop}/>
-                <LandingPageSupportCard isDesktop={isDesktop}/>
-            </LandingPageSectionGrid>
+        <LandingPageSectionWrapper isDesktop={isDesktop}>
+            <VBox sx={{
+                alignItems: 'center',
+            }}>
+                <VBox sx={{
+                    alignItems: 'flex-start',
+                    gap: theme.spacing(10),
+                }}>
+                    <Typography variant="h1">
+                        Unsere Unterstützung
+                    </Typography>
+                    <HBox sx={{ gap: theme.spacing(4) }}>
+                        <SupporterCardNGI />
+                        <SupporterCardPF />
+                    </HBox>
+                </VBox>
+            </VBox>
         </LandingPageSectionWrapper>
     );
 }

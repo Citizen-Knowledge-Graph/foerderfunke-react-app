@@ -59,6 +59,8 @@ const LandingPageHowItWorksDesktop = () => {
                     <HBox sx={{ gap: theme.spacing(2) }}>
                         <Button variant="contained"
                             sx={{
+                                backgroundColor: theme.palette.blue.dark,
+                                borderColor: theme.palette.blue.dark,
                                 '&:hover': {
                                     backgroundColor: theme.palette.yellow.main,
                                     color: theme.palette.black.main,
