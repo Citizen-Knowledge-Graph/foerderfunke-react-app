@@ -1,5 +1,5 @@
 import React from "react";
-import VStack from "../../../shared-components/VStack";
+import {VBox} from "../../../shared-components/LayoutBoxes";
 import {useStore} from "../../../shared-components/ViewportUpdater";
 
 const LandingPageSectionWrapper = ({backgroundColor= null, isTop = false, children, fullWidth = false}) => {
@@ -12,9 +12,8 @@ const LandingPageSectionWrapper = ({backgroundColor= null, isTop = false, childr
         : isTop
             ? '28px'
             : '60px';
-
     return (
-        <VStack sx={{
+        <VBox sx={{
             backgroundColor: backgroundColor,
             width: '100%',
             paddingLeft: horizontalPadding,
@@ -24,7 +23,7 @@ const LandingPageSectionWrapper = ({backgroundColor= null, isTop = false, childr
             boxSizing: 'border-box',
         }}>
             {children}
-        </VStack>
+        </VBox>
     );
 }
 
