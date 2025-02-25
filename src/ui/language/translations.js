@@ -70,7 +70,9 @@ const translations = {
                 part1Header: "Privacy by Design",
                 part1Text: "We believe you should have control over your data. That's why we keep your data only on your device. It is never visible to us or anyone else.",
                 part2Header: "Open Source",
-                part2Text: "Our development work is open source and tracked on GitHub. You can see our latest five commits here or explore more on our GitHub organization page."
+                part2Text: "Our development work is open source and tracked on GitHub. You can see our latest five commits here or explore more on our GitHub organization page.",
+                githubHeader: "Want to know more?",
+                githubText: "The last commits"
             },
             connect: {
                 header: "Let's connect",
@@ -293,7 +295,9 @@ const translations = {
                 part1Header: "Privacy by Design",
                 part1Text: "Uns ist wichtig, dass du die Kontrolle über deine Daten behältst. Deshalb bleiben deine Daten ausschließlich auf deinem Endgerät. Sie sind zu keinem Zeitpunkt für uns oder andere einsehbar.",
                 part2Header: "Open Source",
-                part2Text: "Unsere Entwicklungsarbeit ist Open Source und wird auf GitHub erfasst. Du kannst unsere letzten fünf Commits hier einsehen oder mehr auf unserer GitHub-Organisationsseite entdecken."
+                part2Text: "Unsere Entwicklungsarbeit ist Open Source und wird auf GitHub erfasst. Du kannst unsere letzten fünf Commits hier einsehen oder mehr auf unserer GitHub-Organisationsseite entdecken.",
+                githubHeader: "Du willst es genau wissen?",
+                githubText: "Die letzten Commits"
             },
             connect: {
                 header: "Das Team",

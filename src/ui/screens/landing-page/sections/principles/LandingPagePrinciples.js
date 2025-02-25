@@ -7,6 +7,7 @@ import { Typography, Collapse, IconButton } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import useFetchLatestCommitsHandler from "../../../activity-log/sections/commithistory/hooks/useFetchLatestCommitsHandler";
 import GithubCommitElement from "../../../activity-log/sections/commithistory/components/GithubCommitElement";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 const LandingPagePrinciples = ({ isDesktop }) => {
     const { t } = useTranslation();
@@ -72,12 +73,13 @@ const LandingPagePrinciples = ({ isDesktop }) => {
                                     <ExpandMoreIcon />
                                 </IconButton>
                                 <Typography variant="h4" sx={{ fontWeight: 400, color: theme.palette.black.main }}>
-                                    Du willst es genau wissen?
+                                    {t('home.principles.githubHeader')}
                                 </Typography>
                             </HBox>
                             <HBox sx={{ alignItems: 'center' }}>
+                                <GitHubIcon sx={{ fontSize: 24, color: "text.primary" }} />
                                 <Typography variant="body1">
-                                    Die letzten Commits
+                                {t('home.principles.githubText')}
                                 </Typography>
                             </HBox>
                         </HBox>
