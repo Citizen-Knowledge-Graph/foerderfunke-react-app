@@ -51,7 +51,7 @@ const theme = createTheme({
         },
     },
     typography: {
-        fontFamily: '"Funnel Sans", sans-serif', 
+        fontFamily: '"Funnel Sans", sans-serif',
         body1: {
             fontSize: '16px',
             lineHeight: '1.5',
@@ -72,18 +72,22 @@ const theme = createTheme({
             fontFamily: '"Funnel Display", sans-serif',
         },
         h4: {
-            fontSize: '24px',
             fontWeight: 'bold',
             lineHeight: '1.3',
             color: '#333333',
             fontFamily: '"Funnel Display", sans-serif',
+            fontSize: '24px', // Default font size
+            [`@media (max-width:600px)`]: { fontSize: '20px' }, // Smaller screens
+            [`@media (min-width:960px)`]: { fontSize: '28px' }, // Large screens
         },
         h1: {
-            fontSize: '48px',
             fontWeight: '500',
             lineHeight: '60px',
             color: '#333333',
             fontFamily: '"Funnel Display", sans-serif',
+            fontSize: '48px', // Default font size
+            [`@media (max-width:600px)`]: { fontSize: '32px', lineHeight: '40px' }, // Small screens
+            [`@media (min-width:960px)`]: { fontSize: '56px', lineHeight: '70px' }, // Large screens
         },
         caption: {
             fontSize: '12px',
