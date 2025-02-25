@@ -1,51 +1,38 @@
-import VStack from "../../../../../shared-components/VStack";
-import HStack from "../../../../../shared-components/HStack";
 import {Typography} from "@mui/material";
-import globalStyles from "../../../../../styles/styles";
+import { HBox, VBox } from "../../../../../shared-components/LayoutBoxes";
+import theme from "../../../../../../theme";
 
 const LandingPageInfoCard = ({title, text, onMouseLeave, onMouseEnter, hovered}) => {
     return (
-        <VStack gap={0}
+        <VBox gap={0}
                 onMouseEnter={onMouseEnter}
                 onMouseLeave={onMouseLeave}
                 sx={{
-                    maxWidth: '425px',
-                    backgroundColor: hovered ? globalStyles.primaryColor : 'white',
-                    borderRadius: '4px',
+                    maxWidth: '424px',
+                    padding: theme.spacing(4),
+                    backgroundColor: hovered ? theme.palette.yellow.main : `${theme.palette.white.dark}40`,
+                    borderRadius: theme.shape.borderRadius,
                     transition: 'background-color 0.2s',
-                    borderStyle: 'solid',
-                    borderWidth: '1px',
-                    borderColor: globalStyles.primaryColor,
+                    boxShadow: `0px 1px 2px ${theme.palette.black.main}40`,
                 }}
         >
-            <VStack gap={1} sx={styles.infoCard}>
-                <HStack>
-                    <Typography sx={styles.titleText}>
+            <VBox gap={1}>
+                <HBox>
+                    <Typography variant="h4" sx={{
+                        fontWeight: 400,
+                        color: hovered ? theme.palette.black.main : theme.palette.pink.main,
+                    }}>
                         {title}
                     </Typography>
-                </HStack>
-                <HStack>
-                    <Typography sx={styles.subTitleText}>
+                </HBox>
+                <HBox>
+                    <Typography variant="body1">
                         {text}
                     </Typography>
-                </HStack>
-            </VStack>
-        </VStack>
+                </HBox>
+            </VBox>
+        </VBox>
     );
 }
-
-const styles = {
-    infoCard: {
-        borderRadius: '4px',
-        padding: '16px',
-    },
-    titleText: {
-        fontWeight: 'bold',
-        fontSize: '24px',
-    },
-    subTitleText: {
-        fontSize: '20px',
-    }
-};
 
 export default LandingPageInfoCard;
