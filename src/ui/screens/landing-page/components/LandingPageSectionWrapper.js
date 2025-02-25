@@ -5,7 +5,7 @@ import {useStore} from "../../../shared-components/ViewportUpdater";
 const LandingPageSectionWrapper = ({backgroundColor= null, isTop = false, children, fullWidth = false}) => {
     const isDesktop = useStore((state) => state.isDesktop);
     const horizontalPadding = fullWidth ? 0 : isDesktop ? '96px' : '16px';
-    const verticalPadding = isDesktop
+    const verticalPadding = fullWidth ? 0 : isDesktop
         ? isTop
             ? '16px'
             : '80px'
