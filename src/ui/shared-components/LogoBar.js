@@ -1,45 +1,11 @@
 import React from "react";
-import HStack from "./HStack";
-import {Typography} from "@mui/material";
 
-const LogoBar = ({size = 'large', secondary = false}) => {
-    const logoUrl =`${process.env.PUBLIC_URL}/assets/images/logos/FF_logo_round.svg`;
-    //const logoUrlSecondary =`${process.env.PUBLIC_URL}/assets/images/logos/FörderFunke_Logo_schwarz.svg`;
-
-    const styles = (() => {
-        switch (size) {
-            case 'small':
-                return {
-                    img: {
-                        height: '50px'
-                    },
-                    title: {
-                        fontSize: '24px',
-                        fontWeight: 'bold',
-                    }
-                }
-            case 'large':
-                return {
-                    img: {
-                        height: '65px'
-                    },
-                    title: {
-                        fontSize: '28px',
-                        fontWeight: 'bold',
-                    }
-                };
-            default:
-                return null
-        }
-    })();
+const LogoBar = ({ size = 'large', secondary = false }) => {
+    //const logoUrl =`${process.env.PUBLIC_URL}/assets/images/logos/FF_logo_round.svg`;
+    const logoUrlSecondary = `${process.env.PUBLIC_URL}/assets/images/logos/FörderFunke_Logo_schwarz.svg`;
 
     return (
-        <HStack alignItems={'center'}>
-            <img src={logoUrl} alt="logo" style={{height: styles.img.height}}/>
-            <Typography variant={'h1'} style={styles.title}>
-                FörderFunke
-            </Typography>
-        </HStack>
+        <img src={logoUrlSecondary} alt="logo" style={{ width: '200px' }} />
     );
 }
 

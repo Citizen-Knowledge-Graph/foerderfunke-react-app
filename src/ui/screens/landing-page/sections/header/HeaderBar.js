@@ -1,41 +1,25 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import HeaderBarMobile from "./views/HeaderBarMobile";
 import HeaderBarDesktop from "./views/HeaderBarDesktop";
-import VStack from "../../../../shared-components/VStack";
+import { VBox } from "../../../../shared-components/LayoutBoxes";
+import theme from "../../../../../theme";
 
-const HeaderBar = ({isApp, isDesktop}) => {
-    const [isHidden, setIsHidden] = useState(false);
-    const horizontalPadding = isDesktop ? '60px' : '16px';
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setIsHidden(true);
-            } else {
-                setIsHidden(false);
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
+const HeaderBar = ({ isApp, isDesktop }) => {
     return (
-        <VStack sx={{
-            backgroundColor: 'white',
-            zIndex: 1000,
-            paddingLeft: horizontalPadding,
-            paddingRight: horizontalPadding,
-            paddingTop: '16px',
-            paddingBottom: '16px',
-            position: 'sticky',
-            top: 0,
-            transition: 'opacity 0.5s ease',
-            opacity: isHidden ? 0 : 1,
-        }}>
-            {isDesktop ? <HeaderBarDesktop isApp={isApp}/> : <HeaderBarMobile isApp={isApp}/>}
-        </VStack>
-    )
-}
+        <VBox
+            sx={{
+                zIndex: 1000,
+                position: "sticky",
+                top: 0,
+                left: 0,
+                right: 0,
+                width: "100%",
+                backgroundColor: theme.palette.white.main,
+            }}
+        >
+            {isDesktop ? <HeaderBarDesktop isApp={isApp} /> : <HeaderBarMobile isApp={isApp} />}
+        </VBox>
+    );
+};
 
 export default HeaderBar;

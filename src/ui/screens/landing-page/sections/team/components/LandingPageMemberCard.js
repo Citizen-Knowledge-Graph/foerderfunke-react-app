@@ -1,49 +1,41 @@
 import React from "react";
-import {Typography} from "@mui/material";
-import HStack from "../../../../../shared-components/HStack";
-import VStack from "../../../../../shared-components/VStack";
+import { Typography } from "@mui/material";
 import EmailLink from "../../../../../shared-components/EmailLink";
 import LinkedInLink from "../../../../../shared-components/LinkedInLink";
+import { VBox, HBox } from "../../../../../shared-components/LayoutBoxes";
+import theme from "../../../../../../theme";
 
-const LandingPageMemberCard = ({imageUrl, name, position, email, linkedin}) => {
+const LandingPageMemberCard = ({ imageUrl, name, position, email, linkedin }) => {
     return (
-        <VStack sx={{flex: 1}}>
-            <HStack justifyContent={'center'}>
-                <HStack justifyContent={'center'} sx={{width: '200px', height: '200px', overflow: 'hidden'}}>
-                    <img src={imageUrl} alt="Landing Page"
-                         style={{width: "100%", height: "auto", borderRadius: "50%"}}/>
-                </HStack>
-            </HStack>
-            <HStack justifyContent={'center'}>
-                <VStack gap={1} alignItems={'center'}>
-                    <Typography sx={styles.itemTitle}>
-                        {name}
-                    </Typography>
-                    <Typography sx={styles.itemText}>
-                        {position}
-                    </Typography>
-                    <EmailLink email={email}/>
-                    <LinkedInLink linkedin={linkedin}/>
-                </VStack>
-            </HStack>
-        </VStack>)
-}
+        <VBox sx={{
+            flex: 1,
+            gap: theme.spacing(6),
 
-const styles = {
-    itemTitle: {
-        fontWeight: 'bold',
-        fontSize: '24px',
-        textAlign: 'center',
-    },
-    itemText: {
-        fontSize: '16px',
-        textAlign: 'center',
-    },
-    itemEmail: {
-        fontSize: '16px',
-        textAlign: 'center',
-        textDecoration: 'underline',
-    }
+        }}>
+            <HBox justifyContent={'center'}>
+                <HBox justifyContent={'center'} sx={{ width: '300px', height: '300px', overflow: 'hidden' }}>
+                    <img src={imageUrl} alt="Landing Page"
+                        style={{ 
+                            backgroundColor: theme.palette.white.dark,
+                            width: "100%", 
+                            height: "auto", 
+                            borderRadius: "50%"
+                        }} />
+                </HBox>
+            </HBox>
+            <VBox gap={1} alignItems={'center'}>
+                <Typography variant="h4" sx={{ color: theme.palette.pink.main }}>
+                    {name}
+                </Typography>
+                <Typography variant="body1">
+                    {position}
+                </Typography>
+            </VBox>
+            <VBox gap={1} alignItems={'center'}>
+                <EmailLink email={email} />
+                <LinkedInLink linkedin={linkedin} />
+            </VBox>
+        </VBox>)
 }
 
 export default LandingPageMemberCard;

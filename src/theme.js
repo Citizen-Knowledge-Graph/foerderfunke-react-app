@@ -1,4 +1,4 @@
-import {createTheme} from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
     palette: {
@@ -14,6 +14,26 @@ const theme = createTheme({
         error: {
             main: '#FF0000',
             light: 'rgba(255, 0, 0, 0.2)',
+        },
+        yellow: {
+            main: '#FFEEA6 ',
+            light: '#9E872C ',
+        },
+        blue: {
+            main: '#84AAD7',
+            dark: '#263046',
+        },
+        pink: {
+            main: '#F77BB6',
+            dark: '#7C1E59',
+        },
+        black: {
+            main: '#26242E',
+            light: '#868B8E',
+        },
+        white: {
+            main: '#FFFFFF',
+            dark: '#CECECE',
         },
         custom: {
             amberOrange: '#FFA600',
@@ -31,7 +51,7 @@ const theme = createTheme({
         },
     },
     typography: {
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+        fontFamily: '"Funnel Sans", sans-serif',
         body1: {
             fontSize: '16px',
             lineHeight: '1.5',
@@ -49,12 +69,25 @@ const theme = createTheme({
             fontWeight: 'bold',
             lineHeight: '1.5',
             color: '#333333',
+            fontFamily: '"Funnel Display", sans-serif',
         },
         h4: {
-            fontSize: '28px',
             fontWeight: 'bold',
             lineHeight: '1.3',
             color: '#333333',
+            fontFamily: '"Funnel Display", sans-serif',
+            fontSize: '24px', // Default font size
+            [`@media (max-width:600px)`]: { fontSize: '20px' }, // Smaller screens
+            [`@media (min-width:960px)`]: { fontSize: '28px' }, // Large screens
+        },
+        h1: {
+            fontWeight: '500',
+            lineHeight: '60px',
+            color: '#333333',
+            fontFamily: '"Funnel Display", sans-serif',
+            fontSize: '48px', // Default font size
+            [`@media (max-width:600px)`]: { fontSize: '32px', lineHeight: '40px' }, // Small screens
+            [`@media (min-width:960px)`]: { fontSize: '56px', lineHeight: '70px' }, // Large screens
         },
         caption: {
             fontSize: '12px',
@@ -64,38 +97,49 @@ const theme = createTheme({
         },
     },
     shape: {
-        borderRadius: 2,
-        roundedBox: 12,
-        circle: '50%',
+        borderRadius:
+            '16px',
     },
     components: {
         MuiButton: {
             styleOverrides: {
                 root: {
                     textTransform: 'none',
-                    borderRadius: "4px",
+                    borderRadius: "16px",
+                    padding: '16px 28px',
+                    fontSize: '18px',
+                    fontWeight: '400',
+                    fontFamily: '"Funnel Display", sans-serif',
+                },
+                text: {
+                    color: '#26242E',
+                    backgroundColor: 'white',
+                    '&:hover': {
+                        backgroundColor: '#26242E',
+                        color: 'white',
+                    },
                 },
                 contained: {
-                    backgroundColor: 'primary.main',
-                    borderColor: '#FCD755',
-                    borderWidth: 1,
-                    borderStyle: 'solid',
+                    backgroundColor: '#26242E',
+                    color: 'white',
                     boxShadow: 'none',
-                    color: 'black',
-                    fontWeight: 'bold',
+                    borderWidth: 1,
+                    borderColor: '#26242E',
+                    borderStyle: 'solid',
                     '&:hover': {
                         backgroundColor: 'white',
-                        borderColor: 'primary.main',
+                        color: '#26242E',
                         boxShadow: 'none',
                     },
                 },
                 outlined: {
-                    borderColor: '#333333',
-                    color: 'black',
+                    borderColor: '#26242E',
+                    color: '#26242E',
                     borderWidth: 1,
                     '&:hover': {
-                        borderColor: '#333333',
-                        backgroundColor: 'rgba(51, 51, 51, 0.1)',
+                        backgroundColor: '#26242E',
+                        color: 'white',
+                        borderColor: '#26242E',
                     },
                 },
             },

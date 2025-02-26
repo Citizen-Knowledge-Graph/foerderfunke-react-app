@@ -153,12 +153,12 @@ const OnboardingWelcomeTopics = () => {
                             }
                             <Box>
                                 <FormControlLabel sx={{ margin: 0 }}
-                                    control={<Checkbox 
+                                    control={<Checkbox
                                         sx={{
                                             "&.Mui-checked": {
-                                              color: theme.palette.custom.colorDeepTeal,
+                                                color: theme.palette.custom.colorDeepTeal,
                                             },
-                                          }}
+                                        }}
                                         onChange={(event) => handleToggleSelectAll(event, 'business')} />}
                                     label={t('app.topicSelection.selectAll')}
                                 />
@@ -166,7 +166,11 @@ const OnboardingWelcomeTopics = () => {
                         </VBox>
                     </VBox>
                     <Button
-                        sx={{ padding: theme.spacing(2) }}
+                        sx={{
+                            padding: theme.spacing(2),
+                            backgroundColor: theme.palette.primary.main,
+                            borderColor: theme.palette.primary.main
+                        }}
                         variant="contained"
                         component={Link}
                         to={'/onboarding-welcome'}>

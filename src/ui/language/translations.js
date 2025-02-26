@@ -13,15 +13,18 @@ const translations = {
                 activityLog: "Activity log"
             },
             hero: {
-                header: "Check benefits and financial support you can get",
+                headerShard1: "Discover ",
+                headerShard2: "and more!",
+                headerBenefits: ["Child allowance", "Housing benefit", "Citizen's benefit"],
+                subHeader: "Find social benefits that fit you and your situation. Answer a few questions and we will show you which social benefits you might be eligible for.",
                 childAllowance: "Child allowance",
                 housingBenefit: "Housing benefit",
                 citizensBenefit: "Citizen's benefit",
                 bafög: "Bafög",
                 manyMore: "Many more"
             },
-            mission: {
-                header: "1 out of 5 households in Germany don't claim social benefits they are entitled to.",
+            fact: {
+                subHeader: "unclaimed social benefits per year",
                 text: "We are on a mission to make social benefits in Germany accessible and easy to understand by everyone. We show you what social benefits you might be eligible for and point you the way to apply for them."
             },
             howItWorks: {
@@ -32,6 +35,13 @@ const translations = {
                 part2Text: "The more complete your profile is, the more accurate the list of benefits you get.",
                 part3Header: "Learn about relevant benefits",
                 part3Text: "Learn about requirements and necessary steps to apply for you benefits.",
+            },
+            mission: {
+                header: "Our mission: Information for all!",
+                part1Header: "Open Data",
+                part1Text: "Important information for citizens about their benefits is all too often difficult to find. We make our catalogue of conditions for social benefits publicly available.",
+                part2Header: "User Centric Design",
+                part2Text: "We work in a user-centered and iterative way. We talk with users and constantly improve our product so that it is easy to use, understandable and accessible.",
             },
             theBasics: {
                 header: "The basics",
@@ -56,13 +66,13 @@ const translations = {
                 messagePrompt: "Or send us an email. We will get back to you as quickly as we can!"
             },
             principles: {
-                header: "Our principles",
-                part1Header: "Privacy By Design",
-                part1Text: "It is important to us that you maintain control over your data. That's why your data remains on your device.",
-                part2Header: "Open Data",
-                part2Text: "Important information for citizens about their benefits is all too often difficult to find. We make our catalogue of conditions for social benefits publicly available.",
-                part3Header: "User Centric Design",
-                part3Text: "We work in a user-centered and iterative way. We talk with users and constantly improve our product so that it is easy to use, understandable and accessible.",
+                header: "And this is how it works",
+                part1Header: "Privacy by Design",
+                part1Text: "We believe you should have control over your data. That's why we keep your data only on your device. It is never visible to us or anyone else.",
+                part2Header: "Open Source",
+                part2Text: "Our development work is open source and tracked on GitHub. You can see our latest five commits here or explore more on our GitHub organization page.",
+                githubHeader: "Want to know more?",
+                githubText: "The last commits"
             },
             connect: {
                 header: "Let's connect",
@@ -235,15 +245,18 @@ const translations = {
                 activityLog: "Aktivitäten"
             },
             hero: {
-                header: "Entdecke Leistungen und Angebote für dich",
+                headerShard1: "Entdecke ",
+                headerShard2: "und mehr!",
+                headerBenefits: ["Kindergeld", "Wohngeld", "Bürgergeld"],
+                subHeader: "Finde Sozialleistungen, die zu dir und deiner Situation passen. Beantworte einfach ein paar fragen und wir zeigen dir, auf welche Sozialleistungen du Anspruch haben könntest.",
                 childAllowance: "Kinderzuschlag",
                 housingBenefit: "Wohngeld",
                 citizensBenefit: "Bürgergeld",
                 bafög: "Bafög",
                 manyMore: "Viele Weitere",
-            },
-            mission: {
-                header: "1 von 5 Haushalten in Deutschland verpasst zustehende Sozialleistungen",
+            },  
+            fact: {
+                subHeader: "nicht in Anspruch genommener Sozialleistungen pro Jahr",
                 text: "Mit Förderfunke möchten wir erreichen, dass Sozialleistungen in Deutschland für alle zugänglich und leicht verständlich sind. Wir zeigen dir, auf welche Sozialleistungen du Anspruch haben könntest und wie du sie beantragen kannst."
             },
             howItWorks: {
@@ -254,6 +267,13 @@ const translations = {
                 part2Text: "In der Übersicht erfährst, auf welche Leistungen du Anspruch haben könntest.",
                 part3Header: "Informiere dich zu Leistungen",
                 part3Text: "In der Detailansicht kannst du dich genauer über eine Leistung informieren."
+            },
+            mission: {
+                header: "Unsere Mission: Informationen für alle!",
+                part1Header: "Offene Daten",
+                part1Text: "Wichtige Informationen zu Leistungen sind oft schwer zu finden. Wir machen unseren Katalog der Bedingungen für Sozialleistungen öffentlich zugänglich. Dabei setzen wir auf etablierte Standards und Formate.",
+                part2Header: "Nutzerzentriertes Design",
+                part2Text: "Wir arbeiten nutzerzentriert und iterativ. Deswegen sprechen wir regelmäßig mit Nutzer*innen und versuchen ständig, das Produkt zu verbessern. Damit alle eine Chance auf Sozialleistungen haben."
             },
             theBasics: {
                 line1: "FörderFunke ist kostenlos nutzbar",
@@ -271,13 +291,13 @@ const translations = {
                 messagePrompt: "Oder schick uns eine Nachricht. Wir melden uns so schnell wie möglich zurück!"
             },
             principles: {
-                header: "Unsere Prinzipien",
+                header: "Und so funktioniert's",
                 part1Header: "Privacy by Design",
                 part1Text: "Uns ist wichtig, dass du die Kontrolle über deine Daten behältst. Deshalb bleiben deine Daten ausschließlich auf deinem Endgerät. Sie sind zu keinem Zeitpunkt für uns oder andere einsehbar.",
-                part2Header: "Offene Daten",
-                part2Text: "Wichtige Informationen zu Leistungen sind oft schwer zu finden. Wir machen unseren Katalog der Bedingungen für Sozialleistungen öffentlich zugänglich. Dabei setzen wir auf etablierte Standards und Formate.",
-                part3Header: "Nutzerzentriertes Design",
-                part3Text: "Wir arbeiten nutzerzentriert und iterativ. Deswegen sprechen wir regelmäßig mit Nutzer*innen und versuchen ständig, das Produkt zu verbessern."
+                part2Header: "Open Source",
+                part2Text: "Unsere Entwicklungsarbeit ist Open Source und wird auf GitHub erfasst. Du kannst unsere letzten fünf Commits hier einsehen oder mehr auf unserer GitHub-Organisationsseite entdecken.",
+                githubHeader: "Du willst es genau wissen?",
+                githubText: "Die letzten Commits"
             },
             connect: {
                 header: "Das Team",

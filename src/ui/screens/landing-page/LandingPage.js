@@ -1,65 +1,51 @@
 import React from "react";
-import {useStore} from "../../shared-components/ViewportUpdater";
-import VStack from "../../shared-components/VStack";
+import { useStore } from "../../shared-components/ViewportUpdater";
+import { VBox } from "../../shared-components/LayoutBoxes";
 import Layout from "../../shared-components/Layout";
 import LandingPageHowItWorks from "./sections/how-it-works/LandingPageHowItWorks";
 import LandingPagePrinciples from "./sections/principles/LandingPagePrinciples";
 import LandingPageTeam from "./sections/team/LandingPageTeam";
 import LandingPageFooter from "./sections/footer/LandingPageFooter";
-import LandingPageFact from "./sections/LandingPageFact";
+import LandingPageFact from "./sections/fact/LandingPageFact";
 import LandingPageTopSection from "./sections/top-section/LandingPageTopSection";
 import LandingPageFeedback from "./sections/feedback/LandingPageFeedback";
-import featureFlags from "../../../featureFlags";
 import LandingPageFunding from "./sections/funding/LandingPageFunding";
-import globalStyles from "../../styles/styles";
+import LandingPageMission from "./sections/mission/LandingPageMission";
 
 const LandingPage = () => {
     const isDesktop = useStore((state) => state.isDesktop);
 
     return (
         <Layout>
-            <VStack
-                gap={0}
-                sx={{
-                    background: `linear-gradient(
-                        to bottom,
-                            ${globalStyles.primaryColor}33 0%,
-                            ${globalStyles.primaryColor}80 20%,
-                            ${globalStyles.primaryColor}33 40%,
-                            ${globalStyles.primaryColor}80 60%,
-                            ${globalStyles.primaryColor}33 80%,
-                            ${globalStyles.primaryColor}80 100%)`,
-                }}
-            >
-                <VStack>
-                    <LandingPageTopSection isDesktop={isDesktop}/>
-                </VStack>
-                <VStack>
-                    <LandingPageFact isDesktop={isDesktop}/>
-                </VStack>
-                <VStack id="how-it-works">
-                    <LandingPageHowItWorks isDesktop={isDesktop}/>
-                </VStack>
-                <VStack id="principles">
-                    <LandingPagePrinciples isDesktop={isDesktop}/>
-                </VStack>
-                {
-                    featureFlags.newFeedbackSection && (
-                        <VStack id="feedback">
-                            <LandingPageFeedback isDesktop={isDesktop}/>
-                        </VStack>
-                    )
-                }
-                <VStack id="about-us">
-                    <LandingPageTeam isDesktop={isDesktop}/>
-                </VStack>
-                <VStack id="funding">
-                    <LandingPageFunding isDesktop={isDesktop}/>
-                </VStack>
-                <VStack id="footer">
-                    <LandingPageFooter isDesktop={isDesktop}/>
-                </VStack>
-            </VStack>
+            <VBox sx={{ width: '100%' }}>
+                <VBox>
+                    <LandingPageTopSection isDesktop={isDesktop} />
+                </VBox>
+                <VBox>
+                    <LandingPageFact isDesktop={isDesktop} />
+                </VBox>
+                <VBox id="how-it-works">
+                    <LandingPageHowItWorks isDesktop={isDesktop} />
+                </VBox>
+                <VBox id="principles">
+                    <LandingPageMission isDesktop={isDesktop} />
+                </VBox>
+                <VBox id="principles">
+                    <LandingPagePrinciples isDesktop={isDesktop} />
+                </VBox>
+                <VBox id="about-us">
+                    <LandingPageTeam isDesktop={isDesktop} />
+                </VBox>
+                <VBox id="funding">
+                    <LandingPageFunding isDesktop={isDesktop} />
+                </VBox>
+                <VBox id="feedback">
+                    <LandingPageFeedback isDesktop={isDesktop} />
+                </VBox>
+                <VBox id="footer">
+                    <LandingPageFooter isDesktop={isDesktop} />
+                </VBox>
+            </VBox>
         </Layout>
     );
 }

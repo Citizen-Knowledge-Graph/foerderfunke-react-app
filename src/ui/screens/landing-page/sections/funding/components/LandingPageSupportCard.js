@@ -1,60 +1,72 @@
-import VStack from "../../../../../shared-components/VStack";
-import {Typography} from "@mui/material";
-import useTranslation from "../../../../../language/useTranslation";
-import LandingPageSupportCardStacker from "./LandingPageSupportCardStacker";
-import HStack from "../../../../../shared-components/HStack";
-import globalStyles from "../../../../../styles/styles";
+import React, { useState } from "react";
+import { Typography, Collapse } from "@mui/material";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { VBox, HBox } from "../../../../../shared-components/LayoutBoxes";
+import theme from "../../../../../../theme";
 
-const LandingPageSupportCard = ({isDesktop}) => {
-    const {t} = useTranslation();
-
-    const PFLogoUrl = `${process.env.PUBLIC_URL}/assets/images/logos/PF_logo.svg`;
-    const BMBFUrl = `${process.env.PUBLIC_URL}/assets/images/logos/BMBF_logo.svg`;
-
+const LandingPageSupportCard = ({ header, text, logo1, logo2, disclaimer = null, isDesktop }) => {
+    const [showDisclaimer, setShowDisclaimer] = useState(false);
 
     return (
-        <VStack sx={styles.infoCard}>
-            <LandingPageSupportCardStacker isDesktop={isDesktop}>
-                <VStack gap={1} sx={{flex: 1}}>
-                    <Typography sx={styles.titleText}>
-                        {t('home.supportedBy.headerPF')}
-                    </Typography>
-                    <Typography sx={styles.subTitleText}>
-                        {t('home.supportedBy.textPF')}
-                    </Typography>
-                </VStack>
-                <HStack justifyContent={'center'}>
-                    <VStack justifyContent={'flex-end'} alignItems={'center'} sx={{width: "125px", height: "125px"}}>
-                        <img src={PFLogoUrl} alt={'Prototype Fund Logo'}
-                             style={{maxWidth: "125px", maxHeight: "125px"}}/>
-                    </VStack>
-                    <VStack justifyContent={'flex-end'} alignItems={'center'} sx={{width: "125px", height: "125px"}}>
-                        <img src={BMBFUrl} alt={'BMBF Logo'} style={{maxWidth: "125px", maxHeight: "125px"}}/>
-                    </VStack>
-                </HStack>
-            </LandingPageSupportCardStacker>
-        </VStack>
-    )
-        ;
+        <VBox sx={{
+            maxWidth: '506px',
+            padding: theme.spacing(4),
+            backgroundColor: `${theme.palette.white.dark}40`,
+            borderRadius: theme.shape.borderRadius,
+            boxShadow: `0px 1px 2px ${theme.palette.black.main}40`,
+            gap: theme.spacing(1),
+            alignItems: 'center'
+        }}>
+            <VBox sx={{
+                gap: isDesktop ? theme.spacing(4) : theme.spacing(2),
+                alignItems: 'center'
+            }}>
+                <Typography variant="h4" sx={{ fontWeight: 400, color: theme.palette.pink.main }}>
+                    {header}
+                </Typography>
+                <Typography variant="body1">
+                    {text}
+                </Typography>
+                <HBox sx={{ justifyContent: 'center', gap: theme.spacing(12) }}>
+                    <VBox justifyContent={'center'} alignItems={'center'} sx={{ width: "100px", height: "100px" }}>
+                        <img src={logo1} alt={'Prototype Fund Logo'}
+                            style={{ maxWidth: "100px", maxHeight: "100px" }} />
+                    </VBox>
+                    <VBox justifyContent={'center'} alignItems={'center'} sx={{ width: "100px", height: "100px" }}>
+                        <img src={logo2} alt={'BMBF Logo'} style={{ maxWidth: "100px", maxHeight: "100px" }} />
+                    </VBox>
+                </HBox>
+            </VBox>
+            {disclaimer && (
+                <HBox sx={{ width: "100%" }}>
+                    <VBox sx={{ alignItems: "flex-start", width: "100%" }}>
+                        <HBox sx={{ alignItems: 'center', justifyContent: 'center' }}
+                            onClick={() => setShowDisclaimer(!showDisclaimer)}>
+                            <KeyboardArrowDownIcon
+                                sx={{
+                                    fontSize: 16,
+                                    transition: "transform 0.3s",
+                                    transform: showDisclaimer ? "rotate(180deg)" : "rotate(0deg)"
+                                }}
+                            />
+                            <Typography variant="body2">
+                                Disclaimer
+                            </Typography>
+                        </HBox>
+                        {
+                            showDisclaimer && (
+                                <Collapse in={showDisclaimer}>
+                                    <Typography variant="body2">
+                                        {disclaimer}
+                                    </Typography>
+                                </Collapse>
+                            )
+                        }
+                    </VBox>
+                </HBox>
+            )}
+        </VBox >
+    );
 }
-
-const styles = {
-    infoCard: {
-        width: '100%',
-        padding: '24px',
-        backgroundColor: 'white',
-        borderRadius: '4px',
-        borderStyle: 'solid',
-        borderWidth: '1px',
-        borderColor: globalStyles.primaryColor
-    },
-    titleText: {
-        fontWeight: 'bold',
-        fontSize: '28px',
-    },
-    subTitleText: {
-        fontSize: '20px',
-    }
-};
 
 export default LandingPageSupportCard;

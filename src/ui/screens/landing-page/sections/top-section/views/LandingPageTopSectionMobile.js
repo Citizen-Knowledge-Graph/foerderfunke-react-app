@@ -1,32 +1,20 @@
 import React from "react";
-import {Typography} from "@mui/material";
-import VStack from "../../../../../shared-components/VStack";
-import LandingPageWAppButton from "../../../components/LandingPageWAppButton";
-import LandingPageBenefitsListMobile from "../components/LandingPageBenefitsListMobile";
-import useTranslation from "../../../../../language/useTranslation";
+import { VBox } from "../../../../../shared-components/LayoutBoxes";
+import LandingPageTopSectionShared from "../components/LandingPageTopSectionShared";
+import LandingPageButton from "../components/LandingPageButton";
 
-const LandingPageTopSectionMobile = ({benefits}) => {
-    const { t } = useTranslation();
+const LandingPageTopSectionMobile = () => {
+    const starWoman = `${process.env.PUBLIC_URL}/assets/images/landing-page/star_woman.svg`;
 
     return (
-        <VStack>
-            <VStack alignItems={'center'}>
-                <Typography sx={styles.headerSectionTitle}>
-                    {t('home.hero.header')}
-                </Typography>
-                <LandingPageWAppButton backgroundColor={'primary'}/>
-            </VStack>
-            <LandingPageBenefitsListMobile benefits={benefits}/>
-        </VStack>
+        <VBox sx={{ gap: "46px", alignItems: "center" }}>
+            <img src={starWoman} alt="logo" style={{ width: "328px" }} />
+            <VBox sx={{ gap: "16px" }}>
+                <LandingPageTopSectionShared isDesktop={false}/>
+                <LandingPageButton />
+            </VBox>
+        </VBox>
     );
-}
-
-const styles = {
-    headerSectionTitle: {
-        fontWeight: 'bold',
-        fontSize: '32px',
-        textAlign: 'center',
-    }
-}
+};
 
 export default LandingPageTopSectionMobile;
