@@ -3,8 +3,11 @@ import { MemberCardBen, MemberCardBenjamin } from "../components/LandingPageMemb
 import theme from "../../../../../../theme";
 import { VBox, HBox } from "../../../../../shared-components/LayoutBoxes";
 import { Typography } from "@mui/material";
+import useTranslation from "../../../../../language/useTranslation";
 
 const LandingPageTeamDesktop = () => {
+    const { t } = useTranslation();
+
     return (
         <VBox sx={{
             paddingTop: '104px',
@@ -22,7 +25,7 @@ const LandingPageTeamDesktop = () => {
             }}>
                 <HBox sx={{ alignItems: 'center', justifyContent: 'center' }}>
                     <Typography variant="h1" sx={{ color: theme.palette.black.main }}>
-                        Our Team
+                        {t('home.connect.header')}
                     </Typography>
                 </HBox>
                 <HBox sx={{ alignItems: 'center', justifyContent: 'space-between' }}>

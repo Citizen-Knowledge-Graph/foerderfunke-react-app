@@ -12,7 +12,6 @@ const LandingPagePrinciplesDesktop = () => {
     const { t } = useTranslation();
     const locket = `${process.env.PUBLIC_URL}/assets/images/landing-page/lockets.svg`;
     const { commits, error } = useFetchLatestCommitsHandler();
-
     const [showCommits, setShowCommits] = useState(false);
 
     return (

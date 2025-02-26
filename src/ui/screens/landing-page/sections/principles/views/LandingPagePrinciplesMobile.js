@@ -12,7 +12,6 @@ const LandingPagePrinciplesMobile = ({ isDesktop }) => {
     const { t } = useTranslation();
     const locket = `${process.env.PUBLIC_URL}/assets/images/landing-page/lockets.svg`;
     const { commits, error } = useFetchLatestCommitsHandler();
-
     const [showCommits, setShowCommits] = useState(false);
 
     return (
@@ -53,8 +52,7 @@ const LandingPagePrinciplesMobile = ({ isDesktop }) => {
                         onClick={() => setShowCommits(!showCommits)}
                         sx={{
                             width: "100%",
-                            paddingBottom: theme.spacing(2),
-                            borderBottom: `1px solid ${theme.palette.black.light}`
+                            paddingBottom: theme.spacing(2)
                         }}>
                         <HBox sx={{ alignItems: 'center' }}>
                             <Typography variant="h4" sx={{ fontWeight: 400, color: theme.palette.black.main }}>
