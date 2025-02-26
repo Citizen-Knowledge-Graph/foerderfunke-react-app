@@ -38,12 +38,9 @@ const ProfileSectionCompleted = () => {
                     variant="contained"
                     sx={{
                         flex: 1,
-                        padding: theme.spacing(1),
+                        padding: theme.spacing(2),
                         backgroundColor: theme.palette.secondary.main,
                         borderColor: theme.palette.secondary.main,
-                        '&:hover': {
-                            backgroundColor: theme.palette.secondary.main,
-                        },
                     }}
                     component={Link}
                     to={`/eligibility-overview`}

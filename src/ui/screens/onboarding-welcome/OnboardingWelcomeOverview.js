@@ -91,7 +91,11 @@ const OnboardingWelcomeOverview = () => {
                         }
                     </VBox>
                     <Button
-                        sx={{ padding: theme.spacing(2) }}
+                        sx={{
+                            padding: theme.spacing(2),
+                            backgroundColor: theme.palette.primary.main,
+                            borderColor: theme.palette.primary.main
+                        }}
                         variant="contained"
                         component={Link}
                         to={'/profile-section'}>

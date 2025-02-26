@@ -5,7 +5,6 @@ import theme from "../../../../theme";
 import ContentBox from '../../../shared-components/ContentBox';
 
 import useFetchProfileField from "../hooks/useFetchProfileField";
-import globalStyles from "../../../styles/styles";
 import ProfileSectionInputSwitch from "./input-types/ProfileSectionInputSwitch";
 
 import { useHandleAddClick } from "../handlers/addClickHandler";
@@ -91,23 +90,18 @@ const ProfileSectionField = ({
                     entityData={entityData}
                     error={localError} />
             </VBox>
-            <VBox alignItems={'center'} sx={{
-                width: '100%',
-                backgroundColor: isLoading ? null : globalStyles.primaryColor,
-                borderRadius: '12px'
-            }}>
-                <Button variant="text"
-                    sx={{
-                        width: '100%',
-                        fontSize: '16px',
-                        color: 'black',
-                        fontWeight: 'bold',
-                        textTransform: 'none',
-                        padding: '12px'
-                    }}
-                    onClick={() => handleAddClick(value, currentIndex)}
-                >{t('app.questions.confirmBtn')}</Button>
-            </VBox>
+            <Button variant="contained"
+                sx={{
+                    width: '100%',
+                    padding: theme.spacing(2),
+                    backgroundColor: theme.palette.primary.main,
+                    borderColor: theme.palette.primary.main
+                }}
+                onClick={() => handleAddClick(value, currentIndex)}
+            >
+                <Typography variant="body1" sx={{ fontWeight: 'bold' }}>{t('app.questions.confirmBtn')}</Typography>
+            </Button>
+
         </VBox>
     );
 };

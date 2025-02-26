@@ -48,7 +48,11 @@ const InfoScreenPrivacy = () => {
                         </VBox>
                     </ContentBox>
                     <Button
-                        sx={{ padding: theme.spacing(2) }}
+                        sx={{ 
+                            padding: theme.spacing(2), 
+                            backgroundColor: theme.palette.primary.main, 
+                            borderColor: theme.palette.primary.main
+                        }}
                         variant="contained"
                         component={Link}
                         to={'/onboarding-choice'}>

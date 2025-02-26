@@ -26,7 +26,7 @@ const AppScreenWrapper = ({ children, back = false, home = true }) => {
                 }}>
                     <VBox sx={{ 
                         padding: theme.spacing(4), 
-                        backgroundColor: 'white', 
+                        backgroundColor: theme.palette.white.main,
                         borderRadius: theme.shape.borderRadius}}>
                         {children}
                         <AppScreenHeader back={back} home={home} />
