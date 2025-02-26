@@ -10,9 +10,12 @@ const LandingPageFeedback = ({ isDesktop }) => {
     const { t } = useTranslation();
 
     return (
-        <LandingPageSectionWrapper backgroundColor={'white'} isDesktop={isDesktop}>
+        <LandingPageSectionWrapper isDesktop={isDesktop}>
             <VBox sx={{ alignItems: 'center' }}>
-                <VBox sx={{ maxWidth: "1118px", gap: theme.spacing(10) }}>
+                <VBox sx={{ 
+                    maxWidth: "1118px", 
+                    gap: isDesktop ? theme.spacing(10) : theme.spacing(6) 
+                }}>
                     <Typography variant="h1">
                         Feedback
                     </Typography>
