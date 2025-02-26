@@ -20,9 +20,9 @@ const LandingPageTopSectionShared = () => {
     return (
         <VBox sx={{ gap: theme.spacing(2) }}>
             <VBox sx={{ alignItems: 'flex-start', gap: theme.spacing(0) }}>
-                <HBox sx={{ alignItems: "center", gap: theme.spacing(1.5) }}>
+                <HBox sx={{ alignItems: "flex-end", gap: theme.spacing(2) }}>
                     <Typography variant="h1">{t("home.hero.headerShard1")}</Typography>
-                    <Typography variant="h1" sx={{ color: theme.palette.blue.main, fontWeight: "bold", whiteSpace: "nowrap" }}>
+                    <Typography variant="h1" sx={{ color: theme.palette.blue.main, fontWeight: "bold"}}>
                         <motion.span
                             key={words[currentWordIndex]}
                             initial={{ opacity: 0, y: 20 }}
