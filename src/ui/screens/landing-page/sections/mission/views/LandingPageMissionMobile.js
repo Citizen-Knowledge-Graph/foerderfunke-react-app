@@ -20,13 +20,13 @@ const LandingPageMissionMobile = () => {
             marginBottom: '32px',
             alignItems: 'center',
         }}>
-            <VBox sx={{ gap: theme.spacing(8) }}>
+            <VBox sx={{ gap: theme.spacing(8), alignItems: 'center' }}>
                 <img
                     src={starWoman}
                     alt="logo"
                     style={{ maxWidth: "330px" }}
                 />
-                <HBox sx={{ alignItems: 'center', gap: theme.spacing(8), maxWidth: '1118px' }}>
+                <HBox sx={{ alignItems: 'center', gap: theme.spacing(8) }}>
                     <VBox sx={{ gap: theme.spacing(6) }}>
                         <Typography variant="h1" sx={{ color: theme.palette.white.main }}>
                             {t('home.mission.header')}
