@@ -17,16 +17,26 @@ const LandingPageFunding = ({ isDesktop }) => {
             }}>
                 <VBox sx={{
                     maxWidth: "1118px",
-                    alignItems: 'flex-start',
+                    alignItems: isDesktop ? 'flex-start' : 'center',
                     gap: theme.spacing(10),
                 }}>
                     <Typography variant="h1">
-                        Unsere Unterstützung
+                        {t('home.supportedBy.header')}
                     </Typography>
-                    <HBox sx={{ gap: theme.spacing(4) }}>
-                        <SupporterCardNGI />
-                        <SupporterCardPF />
-                    </HBox>
+                    {
+                        isDesktop ? (
+                            <HBox sx={{ gap: theme.spacing(4) }}>
+                                <SupporterCardNGI isDesktop={isDesktop} />
+                                <SupporterCardPF isDesktop={isDesktop} />
+                            </HBox>
+                        ) : (
+                            <VBox sx={{ gap: theme.spacing(4) }}>
+                                <SupporterCardNGI isDesktop={isDesktop} />
+                                <SupporterCardPF isDesktop={isDesktop} />
+                            </VBox>
+                        )
+                    }
+
                     <HBox sx={{ width: "100%", justifyContent: 'center' }}>
                         <Button variant="contained"
                             sx={{

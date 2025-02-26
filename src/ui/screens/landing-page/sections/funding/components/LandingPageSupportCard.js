@@ -4,7 +4,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { VBox, HBox } from "../../../../../shared-components/LayoutBoxes";
 import theme from "../../../../../../theme";
 
-const LandingPageSupportCard = ({ header, text, logo1, logo2, disclaimer = null }) => {
+const LandingPageSupportCard = ({ header, text, logo1, logo2, disclaimer = null, isDesktop }) => {
     const [showDisclaimer, setShowDisclaimer] = useState(false);
 
     return (
@@ -18,7 +18,7 @@ const LandingPageSupportCard = ({ header, text, logo1, logo2, disclaimer = null 
             alignItems: 'center'
         }}>
             <VBox sx={{
-                gap: theme.spacing(4),
+                gap: isDesktop ? theme.spacing(4) : theme.spacing(2),
                 alignItems: 'center'
             }}>
                 <Typography variant="h4" sx={{ fontWeight: 400, color: theme.palette.pink.main }}>
