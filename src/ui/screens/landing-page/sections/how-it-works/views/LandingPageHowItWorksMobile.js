@@ -10,8 +10,11 @@ import useTranslation from "../../../../../language/useTranslation";
 import { VBox } from "../../../../../shared-components/LayoutBoxes";
 import theme from "../../../../../../theme";
 
-const LandingPageHowItWorksMobile = ({ quick_check, benefits_overview, benefit_page }) => {
+const LandingPageHowItWorksMobile = () => {
     const { t } = useTranslation();
+    const quick_check = `${process.env.PUBLIC_URL}/assets/images/landing-page/current_quickcheck_page.jpg`;
+    const benefits_overview = `${process.env.PUBLIC_URL}/assets/images/landing-page/current_overview_page.jpg`;
+    const benefit_page = `${process.env.PUBLIC_URL}/assets/images/landing-page/current_benefits_page.jpg`;
 
     return (
         <VBox alignItems={"flex-start"} sx={{ gap: theme.spacing(6), width: "100%", maxWidth: "400px" }}>
@@ -21,7 +24,12 @@ const LandingPageHowItWorksMobile = ({ quick_check, benefits_overview, benefit_p
                 slidesPerView={1}
                 pagination={{ clickable: true }}
                 modules={[Pagination, Navigation]}
-                style={{ width: "100%" }}
+                style={{
+                    width: "100%",
+                    "--swiper-pagination-color": theme.palette.blue.dark,
+                    "--swiper-pagination-bullet-inactive-color": theme.palette.blue.main,
+                    "--swiper-pagination-bullet-inactive-opacity": "0.5",
+                }}
             >
                 <SwiperSlide>
                     <LandingPageInfoCard

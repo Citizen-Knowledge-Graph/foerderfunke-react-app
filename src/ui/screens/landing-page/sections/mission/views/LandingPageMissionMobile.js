@@ -1,0 +1,60 @@
+import React from "react";
+import { Typography } from "@mui/material";
+import useTranslation from "../../../../../language/useTranslation";
+import { HBox, VBox } from "../../../../../shared-components/LayoutBoxes";
+import LandingPageButton from "../../top-section/components/LandingPageButton";
+import theme from "../../../../../../theme";
+
+const LandingPageMissionMobile = () => {
+    const { t } = useTranslation();
+    const starWoman = `${process.env.PUBLIC_URL}/assets/images/landing-page/flying-kid.svg`;
+
+    return (
+        <VBox sx={{
+            backgroundColor: `${theme.palette.blue.dark}`,
+            paddingTop: '64px',
+            paddingBottom: '64px',
+            paddingLeft: '32px',
+            paddingRight: '32px',
+            marginTop: '32px',
+            marginBottom: '32px',
+            alignItems: 'center',
+        }}>
+            <VBox sx={{ gap: theme.spacing(8) }}>
+                <img
+                    src={starWoman}
+                    alt="logo"
+                    style={{ maxWidth: "330px" }}
+                />
+                <HBox sx={{ alignItems: 'center', gap: theme.spacing(8), maxWidth: '1118px' }}>
+                    <VBox sx={{ gap: theme.spacing(6) }}>
+                        <Typography variant="h1" sx={{ color: theme.palette.white.main }}>
+                            {t('home.mission.header')}
+                        </Typography>
+                        <VBox sx={{ gap: theme.spacing(4) }}>
+                            <VBox>
+                                <Typography variant="h4" sx={{ color: theme.palette.white.main }}>
+                                    {t('home.mission.part1Header')}
+                                </Typography>
+                                <Typography variant="body1" sx={{ color: theme.palette.white.main }}>
+                                    {t('home.mission.part1Text')}
+                                </Typography>
+                            </VBox>
+                            <VBox>
+                                <Typography variant="h4" sx={{ color: theme.palette.white.main }}>
+                                    {t('home.mission.part2Header')}
+                                </Typography>
+                                <Typography variant="body1" sx={{ color: theme.palette.white.main }}>
+                                    {t('home.mission.part2Text')}
+                                </Typography>
+                            </VBox>
+                        </VBox>
+                    </VBox>
+                </HBox>
+                <LandingPageButton variant="blueHollow" />
+            </VBox>
+        </VBox>
+    )
+}
+
+export default LandingPageMissionMobile;

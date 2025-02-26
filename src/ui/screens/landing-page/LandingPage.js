@@ -28,7 +28,7 @@ const LandingPage = () => {
                     <LandingPageHowItWorks isDesktop={isDesktop} />
                 </VBox>
                 <VBox id="principles">
-                    <LandingPageMission />
+                    <LandingPageMission isDesktop={isDesktop} />
                 </VBox>
                 <VBox id="principles">
                     <LandingPagePrinciples isDesktop={isDesktop} />
