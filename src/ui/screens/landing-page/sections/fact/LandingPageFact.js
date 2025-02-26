@@ -12,15 +12,15 @@ const LandingPageFact = ({ isDesktop }) => {
     return (
         <LandingPageSectionWrapper isDesktop={isDesktop}>
             <VBox sx={{
-                paddingTop: '104px',
-                paddingBottom: '104px',
-                paddingLeft: '96px',
-                paddingRight: '96px',
+                paddingTop: isDesktop ? '104px' : '32px',
+                paddingBottom: isDesktop ? '104px' : '32px',
+                paddingLeft: isDesktop ? '96px' : '32px',
+                paddingRight: isDesktop ? '96px' : '32px',
                 backgroundColor: `${theme.palette.white.dark}40`,
                 borderRadius: theme.shape.borderRadius,
             }}>
                 <VBox sx={{
-                    gap: theme.spacing(6), alignItems: 'center',
+                    gap: theme.spacing(6), alignItems: isDesktop ? 'center' : 'flex-start'
                 }}>
                     <VBox
                         sx={{
@@ -29,22 +29,22 @@ const LandingPageFact = ({ isDesktop }) => {
                             gap: theme.spacing(4),
                         }}
                     >
-                        <VBox sx={{ alignItems: 'center' }}>
-                            <Typography variant="h1" sx={{ color: theme.palette.pink.main }}>15.000.000.000 Euro</Typography>
+                        <VBox sx={{ alignItems: isDesktop ? 'center' : 'flex-start' }}>
+                            <Typography variant="h1" sx={{ color: theme.palette.pink.main }}>15.000.000.000 €</Typography>
                             <Typography variant="h4" sx={{
                                 color: theme.palette.black.main,
-                                textAlign: 'center',
+                                textAlign: isDesktop ? 'center' : 'left',
                                 fontWeight: '400',
                                 maxWidth: '400px',
                             }}>{t('home.fact.subHeader')}</Typography>
                         </VBox>
                         <HBox>
-                            <Typography variant="body1" sx={{ textAlign: 'center' }} >{t('home.fact.text')}</Typography>
+                            <Typography variant="body1" sx={{ textAlign: isDesktop ? 'center' : 'left', }} >{t('home.fact.text')}</Typography>
                         </HBox>
                     </VBox>
                     <HBox sx={{ gap: theme.spacing(2) }}>
                         <Button variant="contained"
-                            sx={{ 
+                            sx={{
                                 '&:hover': {
                                     backgroundColor: theme.palette.yellow.main,
                                     color: theme.palette.black.main,
