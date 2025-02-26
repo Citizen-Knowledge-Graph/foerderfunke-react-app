@@ -118,6 +118,14 @@ const theme = createTheme({
                         backgroundColor: '#26242E',
                         color: 'white',
                     },
+                    '&:active': {
+                        backgroundColor: '#26242E',
+                        color: 'white',
+                    },
+                    '&:focus': {
+                        backgroundColor: '#26242E',
+                        color: 'white',
+                    },
                 },
                 contained: {
                     backgroundColor: '#26242E',

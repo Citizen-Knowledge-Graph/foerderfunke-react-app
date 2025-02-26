@@ -48,9 +48,9 @@ const HeaderBarMobile = ({ isApp }) => {
                 showDropdown && (
                     <VBox sx={{ gap: theme.spacing(10), alignItems: 'center', justifyContent: 'center', height: '85vh' }}>
                         <VBox sx={{ gap: theme.spacing(2), alignItems: 'center' }}>
-                            <LandingPageHollowButtonMobile text={t('home.menu.improve')} to='/#feedback' />
-                            <LandingPageHollowButtonMobile text={t('home.menu.aboutUs')} to={"/#about-us"} />
-                            <LandingPageHollowButtonMobile text={t('home.menu.activityLog')} to={'/activity-log'} />
+                            <LandingPageHollowButtonMobile setShowDropdown={setShowDropdown} text={t('home.menu.improve')} to='/#feedback' />
+                            <LandingPageHollowButtonMobile setShowDropdown={setShowDropdown} text={t('home.menu.aboutUs')} to={"/#about-us"} />
+                            <LandingPageHollowButtonMobile setShowDropdown={setShowDropdown} text={t('home.menu.activityLog')} to={'/activity-log'} />
                         </VBox>
                         <LandingPageButton />
                         <HBox alignItems="center" gap={1}>
