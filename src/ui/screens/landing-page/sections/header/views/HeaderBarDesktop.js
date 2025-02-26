@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import LandingPageWAppButton from "../../../components/LandingPageWAppButton";
-import LandingPageHollowButton from "../../../components/LandingPageButton";
 import { LanguageContext } from "../../../../../language/LanguageContext";
 import useTranslation from "../../../../../language/useTranslation";
 import { Link } from "react-router-dom";
@@ -8,6 +7,7 @@ import { HBox } from '../../../../../shared-components/LayoutBoxes';
 import LogoBar from '../../../../../shared-components/LogoBar';
 import AntSwitch from '../../../../../shared-components/AntSwitch';
 import theme from "../../../../../../theme";
+import LandingPageHollowButtonDesktop from '../../../components/LandingPageButtonDesktop';
 
 const HeaderBarDesktop = () => {
     const { language, setLanguage } = useContext(LanguageContext);
@@ -33,9 +33,9 @@ const HeaderBarDesktop = () => {
             <HBox justifyContent={'flex-end'} alignItems={'center'}>
                 <HBox gap={5}>
                     <LandingPageWAppButton />
-                    <LandingPageHollowButton text={t('home.menu.improve')} to={'/#feedback'} />
-                    <LandingPageHollowButton text={t('home.menu.aboutUs')} to={"/#about-us"} />
-                    <LandingPageHollowButton text={t('home.menu.activityLog')} to={'/activity-log'} />
+                    <LandingPageHollowButtonDesktop text={t('home.menu.improve')} to={'/#feedback'} />
+                    <LandingPageHollowButtonDesktop text={t('home.menu.aboutUs')} to={"/#about-us"} />
+                    <LandingPageHollowButtonDesktop text={t('home.menu.activityLog')} to={'/activity-log'} />
                     <HBox alignItems="center" gap={1}>
                         <span>DE</span>
                         <AntSwitch

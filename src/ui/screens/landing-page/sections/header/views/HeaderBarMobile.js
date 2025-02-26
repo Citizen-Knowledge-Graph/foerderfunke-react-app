@@ -1,111 +1,76 @@
-import React, {useContext, useState} from 'react';
+import React, { useState, useContext } from 'react';
+import { LanguageContext } from "../../../../../language/LanguageContext";
 import MenuIcon from '@mui/icons-material/Menu';
-import {IconButton, ToggleButtonGroup, ToggleButton} from '@mui/material';
-import {Link} from 'react-router-dom';
-import HStack from "../../../../../shared-components/HStack";
+import { IconButton } from '@mui/material';
+import { Link } from 'react-router-dom';
 import LogoBar from "../../../../../shared-components/LogoBar";
-import VStack from "../../../../../shared-components/VStack";
-import featureFlags from "../../../../../../featureFlags";
-import LandingPageHollowButton from "../../../components/LandingPageButton";
-import {LanguageContext} from "../../../../../language/LanguageContext";
 import useTranslation from "../../../../../language/useTranslation";
-import Divider from "@mui/material/Divider";
-import globalStyles from "../../../../../styles/styles";
+import { HBox, VBox } from "../../../../../shared-components/LayoutBoxes";
+import theme from "../../../../../../theme";
+import LandingPageHollowButtonMobile from '../../../components/LandingPageButtonMobile';
+import AntSwitch from '../../../../../shared-components/AntSwitch';
+import LandingPageButton from '../../top-section/components/LandingPageButton';
 
-const HeaderBarMobile = ({isApp}) => {
+const HeaderBarMobile = ({ isApp }) => {
     const [showDropdown, setShowDropdown] = useState(false);
+    const { language, setLanguage } = useContext(LanguageContext);
+    const { t } = useTranslation();
+    const isEnglish = language === "en";
 
-    const {language, setLanguage} = useContext(LanguageContext);
-    const {t} = useTranslation();
-
-    const handleLanguageChange = (event, newLanguage) => {
-        if (newLanguage !== null) {
-            setLanguage(newLanguage);
-        }
+    const handleLanguageToggle = (event) => {
+        setLanguage(event.target.checked ? "en" : "de");
     };
 
     return (
-        <VStack gap={5}>
-            <HStack gap={5} justifyContent={'space-between'} alignItems={'center'} sx={{width: '100%'}}>
-                <HStack alignItems={'center'}>
-                    <Link to={"/"} style={{textDecoration: 'none', color: "black", width: '100%'}}>
-                        <LogoBar size={'large'}/>
+        <VBox sx={{
+            alignItems: 'center',
+            padding: '20px 32px',
+        }}>
+            <HBox sx={{
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                width: '100%'
+            }}>
+                <HBox alignItems={'center'}>
+                    <Link to={"/"} style={{ textDecoration: 'none', color: "black", width: '100%' }}>
+                        <LogoBar size={'large'} />
                     </Link>
-                </HStack>
+                </HBox>
                 <IconButton
                     aria-controls="simple-menu"
                     aria-haspopup="true"
                     onClick={() => setShowDropdown(!showDropdown)}
                 >
-                    <MenuIcon sx={{fontSize: '32px'}}/>
+                    <MenuIcon sx={{ color: theme.palette.black.main, fontSize: '32px' }} />
                 </IconButton>
-            </HStack>
+            </HBox>
             {
                 showDropdown && (
-                    <VStack
-                        gap={2} alignItems={'center'}
-                        sx={{
-                            paddingBottom: '16px'
-                        }}
-                    >
-                        {isApp ? null :
-                            featureFlags.newFeedbackSection ? (
-                                    <>
-                                        <LandingPageHollowButton text={t('home.menu.improve')} to={'/#feedback'}/>
-                                        <Divider sx={{width: '100%', backgroundColor: globalStyles.colorLightGreyTransparent}}/>
-                                    </>
-                                )
-                                : null
-                        }
-                        {
-                            isApp ? null : (
-                                <>
-                                    <LandingPageHollowButton text={t('home.menu.aboutUs')} to={"/#about-us"}/>
-                                    <Divider sx={{width: '100%', backgroundColor: globalStyles.colorLightGreyTransparent}}/>
-                                </>
-                            )
-                        }
-                        {isApp ? null :
-                            featureFlags.newActivityLog ?
-                                (<>
-                                        <LandingPageHollowButton text={t('home.menu.activityLog')} to={'/activity-log'}/>
-                                        <Divider
-                                            sx={{width: '100%', backgroundColor: globalStyles.colorLightGreyTransparent}}/>
-                                    </>
-                                )
-                                : null
-                        }
-                        {
-                            featureFlags.newLanguageToggle && (
-                                <ToggleButtonGroup
-                                    value={language}
-                                    exclusive
-                                    onChange={handleLanguageChange}
-                                    aria-label="language selection"
-                                    size="small"
-                                >
-                                    <ToggleButton
-                                        value="en"
-                                        aria-label="english"
-                                        sx={{padding: '8px'}}
-                                    >
-                                        EN
-                                    </ToggleButton>
-                                    <ToggleButton
-                                        value="de"
-                                        aria-label="german"
-                                        sx={{padding: '8px'}}
-                                    >
-                                        DE
-                                    </ToggleButton>
-                                </ToggleButtonGroup>
-                            )
-                        }
-                    </VStack>)
+                    <VBox sx={{gap: theme.spacing(10), alignItems: 'center', justifyContent: 'center', height: '85vh'}}>
+                        <VBox sx={{gap: theme.spacing(2), alignItems: 'center'}}>
+                            {isApp ? null :
+                                <LandingPageHollowButtonMobile text={t('home.menu.improve')} to='/#feedback' />
+                            }
+                            {isApp ? null :
+                                <LandingPageHollowButtonMobile text={t('home.menu.aboutUs')} to={"/#about-us"} />
+                            }
+                            {isApp ? null :
+                                <LandingPageHollowButtonMobile text={t('home.menu.activityLog')} to={'/activity-log'} />
+                            }
+                        </VBox>
+                        <LandingPageButton />
+                        <HBox alignItems="center" gap={1}>
+                            <span>DE</span>
+                            <AntSwitch
+                                checked={isEnglish}
+                                onChange={handleLanguageToggle}
+                                inputProps={{ 'aria-label': 'language selection' }}
+                            />
+                            <span>EN</span>
+                        </HBox>
+                    </VBox>)
             }
-
-
-        </VStack>
+        </VBox>
     )
 }
 

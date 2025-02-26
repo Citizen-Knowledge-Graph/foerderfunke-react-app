@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
-const LandingPageHollowButton = ({ text, to }) => {
+const LandingPageHollowButtonDesktop = ({ text, to }) => {
 
     return (
         <Button variant="text"
@@ -12,4 +12,4 @@ const LandingPageHollowButton = ({ text, to }) => {
 }
 
 
-export default LandingPageHollowButton;
+export default LandingPageHollowButtonDesktop;
