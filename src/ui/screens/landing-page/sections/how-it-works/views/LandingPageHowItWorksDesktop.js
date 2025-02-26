@@ -25,6 +25,7 @@ const LandingPageHowItWorksDesktop = () => {
                     <Typography variant="h1">{t('home.howItWorks.header')}</Typography>
                     <VBox gap={3}>
                         <LandingPageInfoCard
+                            isDesktop={true}
                             title={t('home.howItWorks.part1Header')}
                             text={t('home.howItWorks.part1Text')}
                             onMouseEnter={() => handleMouseEnter(0)}
@@ -32,6 +33,7 @@ const LandingPageHowItWorksDesktop = () => {
                             hovered={hoveredIndex === 0}
                         />
                         <LandingPageInfoCard
+                            isDesktop={true}
                             title={t('home.howItWorks.part2Header')}
                             text={t('home.howItWorks.part2Text')}
                             onMouseEnter={() => handleMouseEnter(1)}
@@ -39,6 +41,7 @@ const LandingPageHowItWorksDesktop = () => {
                             hovered={hoveredIndex === 1}
                         />
                         <LandingPageInfoCard
+                            isDesktop={true}
                             title={t('home.howItWorks.part3Header')}
                             text={t('home.howItWorks.part3Text')}
                             onMouseEnter={() => handleMouseEnter(2)}

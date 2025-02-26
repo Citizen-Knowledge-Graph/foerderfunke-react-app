@@ -1,20 +1,20 @@
-import {Typography} from "@mui/material";
+import { Typography } from "@mui/material";
 import { HBox, VBox } from "../../../../../shared-components/LayoutBoxes";
 import theme from "../../../../../../theme";
 
-const LandingPageInfoCard = ({title, text, onMouseLeave, onMouseEnter, hovered}) => {
+const LandingPageInfoCard = ({ isDesktop, title, text, onMouseLeave, onMouseEnter, hovered, image }) => {
     return (
-        <VBox gap={0}
-                onMouseEnter={onMouseEnter}
-                onMouseLeave={onMouseLeave}
-                sx={{
-                    maxWidth: '424px',
-                    padding: theme.spacing(4),
-                    backgroundColor: hovered ? theme.palette.yellow.main : `${theme.palette.white.dark}40`,
-                    borderRadius: theme.shape.borderRadius,
-                    transition: 'background-color 0.2s',
-                    boxShadow: `0px 1px 2px ${theme.palette.black.main}40`,
-                }}
+        <VBox
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+            sx={{
+                maxWidth: '424px',
+                gap: theme.spacing(4),
+                padding: theme.spacing(4),
+                backgroundColor: hovered ? theme.palette.yellow.main : `${theme.palette.white.dark}40`,
+                borderRadius: theme.shape.borderRadius,
+                transition: 'background-color 0.2s'
+            }}
         >
             <VBox gap={1}>
                 <HBox>
@@ -31,6 +31,17 @@ const LandingPageInfoCard = ({title, text, onMouseLeave, onMouseEnter, hovered})
                     </Typography>
                 </HBox>
             </VBox>
+            {
+                !isDesktop && <img
+                    src={image}
+                    style={{
+                        maxWidth: '250px',
+                        height: 'auto',
+                        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.15)',
+                        borderRadius: '18px'
+                    }}
+                    alt={'phone 1'} />
+            }
         </VBox>
     );
 }
