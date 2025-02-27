@@ -34,7 +34,13 @@ const BenefitPageRequiredDocuments = ({ requiredDocuments }) => {
                             {requiredDocuments.map((doc, index) => (
                                 <HBox key={index}>
                                     <ContentPasteIcon />
-                                    <Typography variant="body1">{doc}</Typography>
+                                    <Typography sx={{
+                                                                '&:hover': {
+                                                                    color: 'white',
+                                                                }
+                                                            }}
+                                    
+                                    variant="body1">{doc}</Typography>
                                 </HBox>
                             ))}
                         </VBox>

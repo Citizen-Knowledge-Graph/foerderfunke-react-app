@@ -492,6 +492,100 @@
     "description": {
       "de": "Das Förderprogramm 'IBB Altersgerecht Wohnen' unterstützt Vermieter:innen und Investor:innen bei der Finanzierung von Modernisierungsmaßnahmen zur Barrierereduzierung, Erhöhung des Wohnkomforts und Einbruchschutz in Berlin. Ziel ist es, altersgerechtes Wohnen zu fördern und die Lebensqualität in Wohngebäuden zu verbessern.",
       "en": "The 'IBB Altersgerecht Wohnen' funding program supports landlords and investors in financing modernization measures for barrier reduction, increased living comfort, and burglary protection in Berlin. The goal is to promote age-appropriate living and improve the quality of life in residential buildings."
+    },
+    "application_process": {
+      "de": {
+        "title": "Die Förderung kann über die IBB beantragt werden. Der Antrag muss vor Beginn der Maßnahmen gestellt werden. Detaillierte Informationen zur Antragstellung sind auf der Website der IBB verfügbar.",
+        "links": [
+          {
+            "title": "IBB Altersgerecht Wohnen",
+            "url": "https://ibb.de/altersgerecht-wohnen"
+          }
+        ]
+      },
+      "en": {
+        "title": "The funding can be applied for through IBB. The application must be submitted before the start of the measures. Detailed information on the application process is available on the IBB website.",
+        "links": [
+          {
+            "title": "IBB Age-Appropriate Housing",
+            "url": "https://ibb.de/altersgerecht-wohnen"
+          }
+        ]
+      }
+    },
+    "required_documents": {
+      "de": [
+        "Ausgefülltes Antragsformular",
+        "Nachweise zur geplanten Baumaßnahme (z. B. Kostenvoranschläge, Baupläne)",
+        "Eigentumsnachweis oder Nachweis über die Vermietung",
+        "Bonitätsnachweise"
+      ],
+      "en": [
+        "Completed application form",
+        "Proof of planned construction measures (e.g., cost estimates, building plans)",
+        "Proof of ownership or rental documentation",
+        "Creditworthiness documentation"
+      ]
+    },
+    "additional_support": {
+      "de": {
+        "title": "Für weitere Informationen und Beratung können Sie sich an die IBB-Kundenbetreuung wenden.",
+        "links": [
+          {
+            "title": "Kontakt zur IBB",
+            "url": "mailto:immobilien@ibb.de"
+          }
+        ]
+      },
+      "en": {
+        "title": "For further information and advice, you can contact the IBB customer service.",
+        "links": [
+          {
+            "title": "Contact IBB",
+            "url": "mailto:immobilien@ibb.de"
+          }
+        ]
+      }
+    },
+    "legal_basis": {
+      "de": {
+        "title": "Die Förderung basiert auf den Richtlinien der KfW Bankengruppe und der IBB.",
+        "links": [
+          {
+            "title": "Förderbedingungen der IBB",
+            "url": "https://ibb.de/altersgerecht-wohnen"
+          }
+        ]
+      },
+      "en": {
+        "title": "The funding is based on the guidelines of the KfW Banking Group and IBB.",
+        "links": [
+          {
+            "title": "IBB Funding Conditions",
+            "url": "https://ibb.de/altersgerecht-wohnen"
+          }
+        ]
+      }
+    },
+    "further_information": {
+      "de": {
+        "title": "Hier finden Sie weitere Informationen zur Förderung altersgerechten Wohnens:",
+        "links": [
+          {
+            "title": "IBB Altersgerecht Wohnen",
+            "url": "https://ibb.de/altersgerecht-wohnen"
+          }
+        ]
+      },
+      "en": {
+        "title": "Here you can find more information about age-appropriate housing support:",
+        "links": [
+          {
+            "title": "IBB Age-Appropriate Housing",
+            "url": "https://ibb.de/altersgerecht-wohnen"
+          }
+        ]
+      }
     }
   }
 }

@@ -35,11 +35,11 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
                                     <VBox gap={1}>
                                         {
                                             data.links.map((link, index) => (
-                                                <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+                                                <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
                                                     <Button variant="outlined">
                                                         <HBox gap={1}>
                                                             <OpenInNewIcon />
-                                                            <Typography variant="body1">{link.title}</Typography>
+                                                            <Typography sx={{ color: "inherit" }} variant="body1">{link.title}</Typography>
                                                         </HBox>
                                                     </Button>
                                                 </a>
