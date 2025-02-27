@@ -49,6 +49,10 @@
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/beta/ibb-gruendungsbonus.ttl",
       "rpUri": "https://foerderfunke.org/default#ibb-gruendungsbonus"
+    },
+    {
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/beta/ibb-altersgerecht-wohnen.ttl",
+      "rpUri": "https://foerderfunke.org/default#ibb-altersgerecht-wohnen"
     }
   ]
 }

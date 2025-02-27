@@ -481,5 +481,17 @@
       "de": "Der IBB-Gründungsbonus ist eine finanzielle Unterstützung für Gründerinnen und Gründer in Berlin. Der Bonus hilft dabei, die ersten Schritte in die Selbstständigkeit zu gehen und das eigene Unternehmen aufzubauen.",
       "en": "The IBB start-up bonus is financial support for start-ups in Berlin. The bonus helps them take the first steps towards self-employment and build their own business."
     }
+  },
+  "https://foerderfunke.org/default#ibb-altersgerecht-wohnen": {
+    "id": "ff:ibb-altersgerecht-wohnen",
+    "status": "beta",
+    "title": {
+      "de": "IBB Altersgerecht Wohnen",
+      "en": "IBB age-appropriate living"
+    },
+    "description": {
+      "de": "Das Förderprogramm 'IBB Altersgerecht Wohnen' unterstützt Vermieter:innen und Investor:innen bei der Finanzierung von Modernisierungsmaßnahmen zur Barrierereduzierung, Erhöhung des Wohnkomforts und Einbruchschutz in Berlin. Ziel ist es, altersgerechtes Wohnen zu fördern und die Lebensqualität in Wohngebäuden zu verbessern.",
+      "en": "The 'IBB Altersgerecht Wohnen' funding program supports landlords and investors in financing modernization measures for barrier reduction, increased living comfort, and burglary protection in Berlin. The goal is to promote age-appropriate living and improve the quality of life in residential buildings."
+    }
   }
 }
