@@ -110,39 +110,40 @@ const OnboardingWelcomeTopics = () => {
                                     <Grid container spacing={2}>
                                         {topicsData?.filter(topic => topic.category === 'business').map((topic, index) => (
                                             <Grid item xs={12} sm={6} container key={index}>
-                                                <Button variant='outlined'
-                                                    onClick={() => { handleButtonClick(topic, index, 'business'); }}
+                                                <Button
+                                                    variant="outlined"
+                                                    onClick={() => handleButtonClick(topic, index, "business")}
                                                     sx={{
                                                         flex: 1,
                                                         padding: theme.spacing(2),
                                                         borderColor: theme.palette.custom.colorDeepTeal,
-                                                        backgroundColor: selectedTopicsBoolean['business'][index]
+                                                        backgroundColor: selectedTopicsBoolean["business"][index]
                                                             ? theme.palette.custom.colorDeepTeal
-                                                            : 'transparent',
-                                                        '&:focus': {
-                                                            backgroundColor: selectedTopicsBoolean['business'][index]
-                                                                ? theme.palette.custom.colorDeepTeal
-                                                                : 'transparent',
-                                                            outline: 'none',
-                                                        },
-                                                        '&:hover': {
-                                                            backgroundColor: selectedTopicsBoolean['business'][index]
+                                                            : "transparent",
+                                                        color: selectedTopicsBoolean["business"][index] ? "white" : "black",
+                                                        "&:hover": {
+                                                            backgroundColor: selectedTopicsBoolean["business"][index]
                                                                 ? theme.palette.custom.colorDeepTeal
                                                                 : theme.palette.custom.colorDeepTealTransparent,
                                                             borderColor: theme.palette.custom.colorDeepTeal,
-                                                            '@media (hover: none)': {
-                                                                backgroundColor: selectedTopicsBoolean['business'][index]
-                                                                    ? theme.palette.custom.colorDeepTeal
-                                                                    : 'transparent',
-                                                            },
+                                                            color: selectedTopicsBoolean["business"][index] ? "white" : "black",
                                                         },
-                                                    }}>
-                                                    <Typography variant="body1" sx={{
-                                                        fontWeight: 'bold',
-                                                        color: selectedTopicsBoolean['business'][index]
-                                                            ? 'white'
-                                                            : 'black',
-                                                    }}>
+
+                                                        "&:focus": {
+                                                            backgroundColor: selectedTopicsBoolean["business"][index]
+                                                                ? theme.palette.custom.colorDeepTeal
+                                                                : "transparent",
+                                                            outline: "none",
+                                                        },
+                                                    }}
+                                                >
+                                                    <Typography
+                                                        variant="body1"
+                                                        sx={{
+                                                            fontWeight: "bold",
+                                                            color: selectedTopicsBoolean["business"][index] ? "white !important" : "black !important",
+                                                        }}
+                                                    >
                                                         {language === "de" ? topic.title.de : topic.title.en}
                                                     </Typography>
                                                 </Button>
