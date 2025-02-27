@@ -62,5 +62,13 @@
       "en": "Self-Employment & Startups",
       "de": "Selbständigkeit & Gründung"
     }
+  },
+  {
+    "id": "ff:wohnungsbau-modernisierung",
+    "category": "business",
+    "title": {
+      "en": "Housing Construction & Modernization",
+      "de": "Wohnungsbau & Modernisierung"
+    }
   }
 ]
