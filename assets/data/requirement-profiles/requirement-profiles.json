@@ -53,6 +53,10 @@
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/beta/ibb-altersgerecht-wohnen.ttl",
       "rpUri": "https://foerderfunke.org/default#ibb-altersgerecht-wohnen"
+    },
+    {
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/beta/ifb-gruendung-nachfolge.ttl",
+      "rpUri": "https://foerderfunke.org/default#ifb-gruendung-nachfolge"
     }
   ]
 }
