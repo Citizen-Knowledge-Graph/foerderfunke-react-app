@@ -20,8 +20,11 @@ const LandingPageMissionDesktop = ({ isDesktop }) => {
             marginBottom: '96px',
             alignItems: 'center',
         }}>
-            <HBox sx={{ alignItems: 'center', gap: theme.spacing(8), maxWidth: '1118px' }}>
-                <VBox sx={{ gap: theme.spacing(6) }}>
+            <HBox sx={{ alignItems: 'center', gap: theme.spacing(8) }}>
+                <VBox sx={{
+                    flex: 2,
+                    gap: theme.spacing(6)
+                }}>
                     <Typography variant="h1" sx={{ color: theme.palette.white.main }}>
                         {t('home.mission.header')}
                     </Typography>
@@ -47,9 +50,9 @@ const LandingPageMissionDesktop = ({ isDesktop }) => {
                 </VBox>
                 <VBox
                     sx={{
-                        width: "50%",
+                        flex: 1,
                         boxSizing: "border-box",
-                        alignItems: "flex-end"
+                        alignItems: "center"
                     }}
                 >
                     <img

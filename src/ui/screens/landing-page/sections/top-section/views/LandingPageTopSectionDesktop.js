@@ -9,13 +9,13 @@ const LandingPageTopSectionDesktop = () => {
 
     return (
         <HBox justifyContent="space-between" alignItems="center">
-            <VBox sx={{ width: "50%", boxSizing: "border-box", alignItems: "flex-end" }}>
+            <VBox sx={{ width: "50%", boxSizing: "border-box", alignItems: "center" }}>
                 <VBox sx={{ maxWidth: "600px", gap: theme.spacing(8) }}>
                     <LandingPageTopSectionShared />
                     <LandingPageButton />
                 </VBox>
             </VBox>
-            <VBox sx={{ width: "50%", boxSizing: "border-box", alignItems: "flex-end" }}>
+            <VBox sx={{ width: "50%", boxSizing: "border-box", alignItems: "center" }}>
                 <img src={starWoman} alt="logo" style={{ width: "523px" }} />
             </VBox>
         </HBox>
