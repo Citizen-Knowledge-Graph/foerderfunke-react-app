@@ -723,7 +723,7 @@
         "links": [
           {
             "title": "Antragstellung IFB",
-            "url": "https://www.innovationsstarter.com"
+            "url": "https://innovationsstarter.com/innofounder/"
           }
         ]
       },
@@ -732,7 +732,7 @@
         "links": [
           {
             "title": "IFB Application",
-            "url": "https://www.innovationsstarter.com"
+            "url": "https://innovationsstarter.com/innofounder/"
           }
         ]
       }
@@ -777,11 +777,11 @@
         "links": [
           {
             "title": "IFB-Förderbedingungen",
-            "url": "https://www.innovationsstarter.com"
+            "url": "https://www.ifbhh.de/api/services/document/594"
           },
           {
             "title": "De-Minimis-Verordnung EU",
-            "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:32003H0361"
+            "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=OJ:L_202302831"
           }
         ]
       },
@@ -790,11 +790,11 @@
         "links": [
           {
             "title": "IFB Funding Conditions",
-            "url": "https://www.innovationsstarter.com"
+            "url": "https://www.ifbhh.de/api/services/document/594"
           },
           {
             "title": "EU De-Minimis Regulation",
-            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32003H0361"
+            "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=OJ:L_202302831"
           }
         ]
       }
