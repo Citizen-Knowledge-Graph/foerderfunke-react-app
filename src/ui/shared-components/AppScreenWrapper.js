@@ -1,16 +1,12 @@
 import React from "react";
 import { VBox } from "./LayoutBoxes";
 import AppScreenHeader from "./AppScreenHeader";
-import globalStyles from "../styles/styles";
 import { useStore } from "../shared-components/ViewportUpdater";
 import theme from "../../theme";
 
 const AppScreenWrapper = ({ children, back = false, home = true }) => {
     const isDesktop = useStore((state) => state.isDesktop);
-    const desktopGradient = `linear-gradient(
-                        to bottom,
-                            ${globalStyles.primaryColor}33 0%,
-                            ${globalStyles.primaryColor}99 100%)`;
+    const desktopGradient = theme.palette.yellow.main;
     return (
         <VBox sx={{
             alignItems: 'center',
@@ -20,7 +16,7 @@ const AppScreenWrapper = ({ children, back = false, home = true }) => {
             {isDesktop ? (
                 <VBox sx={{
                     width: '840px',
-                    padding: theme.spacing(2),
+                    padding: theme.spacing(1),
                     background: desktopGradient,
                     borderRadius: theme.shape.borderRadius
                 }}>
