@@ -19,6 +19,7 @@ import BenefitPageRequiredDocuments from './components/BenefitPageRequiredDocume
 import ContentBox from '../../shared-components/ContentBox';
 import BenefitPageLinksList from './components/BenefitPageLinksList';
 import theme from '../../../theme';
+import BenefitPageInfoList from './components/BenefitPageInfoList';
 
 const BenefitPageScreen = () => {
     const { id } = useParams();
@@ -83,6 +84,11 @@ const BenefitPageScreen = () => {
                         <Typography variant="h6">{t('app.benefitPage.whatIsIt')}{benefitPageData.title}</Typography>
                         <Typography sx={{ marginTop: theme.spacing(1) }} variant="body1">{benefitPageData.description || t('app.noData')}</Typography>
                     </ContentBox>
+                    {
+                        benefitPageData.fundingConditions.title && (
+                            <BenefitPageInfoList listTitle={t('app.benefitPage.fundingConditions')} data={benefitPageData.fundingConditions} />
+                        )
+                    }     
                     <BenefitPageRules benefitId={id} validated_status={validated_status} />
                     {
                         benefitPageData.applicationProcess.title && (
@@ -93,7 +99,7 @@ const BenefitPageScreen = () => {
                         benefitPageData.requiredDocuments.length > 0 && (
                             <BenefitPageRequiredDocuments requiredDocuments={benefitPageData.requiredDocuments} />
                         )
-                    }
+                    }               
                     {
                         benefitPageData.additionalSupport.title && (
                             <BenefitPageLinksList listTitle={t('app.benefitPage.additionalSupport')} data={benefitPageData.additionalSupport} />
