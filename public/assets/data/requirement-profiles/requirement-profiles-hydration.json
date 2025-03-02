@@ -705,5 +705,119 @@
         ]
       }
     }
+  },
+  "https://foerderfunke.org/default#ifb-inno-founder": {
+    "id": "ff:ifb-inno-founder",
+    "status": "beta",
+    "title": {
+      "de": "InnoFounder - Förderprogramm für innovative und wissensbasierte Gründungsvorhaben",
+      "en": "InnoFounder - Funding Program for Innovative and Knowledge-Based Startups"
+    },
+    "description": {
+      "de": "InnoFounder unterstützt innovative Startups in Hamburg mit einem nicht rückzahlbaren Zuschuss für Lebensunterhalt und Gründungskosten.",
+      "en": "InnoFounder supports innovative startups in Hamburg with a non-repayable grant for living expenses and startup costs."
+    },
+    "application_process": {
+      "de": {
+        "title": "Die Antragstellung erfolgt über die IFB Innovationsstarter GmbH. Anträge müssen vor Beginn des Vorhabens eingereicht werden. Weitere Details sind auf der IFB-Website zu finden.",
+        "links": [
+          {
+            "title": "Antragstellung IFB",
+            "url": "https://www.innovationsstarter.com"
+          }
+        ]
+      },
+      "en": {
+        "title": "Applications are submitted via IFB Innovationsstarter GmbH. Applications must be submitted before the project begins. Further details can be found on the IFB website.",
+        "links": [
+          {
+            "title": "IFB Application",
+            "url": "https://www.innovationsstarter.com"
+          }
+        ]
+      }
+    },
+    "required_documents": {
+      "de": [
+        "Vollständig ausgefülltes Antragsformular",
+        "Projektskizze mit Geschäftsmodell und Finanzierungsplan",
+        "Lebensläufe der Gründungspersonen",
+        "De-Minimis-Erklärung",
+        "Nachweis des Wohnsitzes oder Unternehmenssitzes in Hamburg"
+      ],
+      "en": [
+        "Fully completed application form",
+        "Project outline with business model and financial plan",
+        "CVs of the founders",
+        "De-minimis declaration",
+        "Proof of residence or company headquarters in Hamburg"
+      ]
+    },
+    "funding_conditions": {
+      "de": {
+        "title": "Die Förderkonditionen umfassen folgende Punkte:",
+        "details": [
+          "Förderbetrag: Bis zu 2.500 €/Monat pro Gründerperson für maximal 18 Monate.",
+          "Maximalförderung: 75.000 € für Teams, 45.000 € für Einzelgründer.",
+          "Arbeitseinsatz: Volle Förderung bei 100 % Arbeitseinsatz, anteilige Kürzung bei weniger Einsatz."
+        ]
+      },
+      "en": {
+        "title": "The funding conditions include the following:",
+        "details": [
+          "Funding amount: Up to €2,500/month per founder for a maximum of 18 months.",
+          "Maximum funding: €75,000 for teams, €45,000 for solo founders.",
+          "Work effort: Full funding at 100% work commitment, proportional reduction for lower commitment."
+        ]
+      }
+    },
+    "legal_basis": {
+      "de": {
+        "title": "Rechtsgrundlagen der Förderung:",
+        "links": [
+          {
+            "title": "IFB-Förderbedingungen",
+            "url": "https://www.innovationsstarter.com"
+          },
+          {
+            "title": "De-Minimis-Verordnung EU",
+            "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:32003H0361"
+          }
+        ]
+      },
+      "en": {
+        "title": "Legal basis of the funding:",
+        "links": [
+          {
+            "title": "IFB Funding Conditions",
+            "url": "https://www.innovationsstarter.com"
+          },
+          {
+            "title": "EU De-Minimis Regulation",
+            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32003H0361"
+          }
+        ]
+      }
+    },
+    "further_information": {
+      "de": {
+        "title": "Weitere Informationen zur InnoFounder-Förderung:",
+        "links": [
+          {
+            "title": "IFB Innovationsstarter GmbH",
+            "url": "https://www.innovationsstarter.com"
+          }
+        ]
+      },
+      "en": {
+        "title": "Further information on InnoFounder funding:",
+        "links": [
+          {
+            "title": "IFB Innovationsstarter GmbH",
+            "url": "https://www.innovationsstarter.com"
+          }
+        ]
+      }
+    }
   }
 }
