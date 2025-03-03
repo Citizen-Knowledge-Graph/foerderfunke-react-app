@@ -65,11 +65,21 @@ const theme = createTheme({
             color: '#333333',
         },
         h6: {
-            fontSize: '20px',
-            fontWeight: 'bold',
-            lineHeight: '1.5',
+            lineHeight: '1.3',
             color: '#333333',
             fontFamily: '"Funnel Display", sans-serif',
+            fontSize: '20px', // Default font size
+            [`@media (max-width:600px)`]: { fontSize: '16px' }, // Smaller screens
+            [`@media (min-width:960px)`]: { fontSize: '18px' }, // Large screens
+        },
+        h5: {
+            fontWeight: '500',
+            lineHeight: '1.3',
+            color: '#333333',
+            fontFamily: '"Funnel Display", sans-serif',
+            fontSize: '18px', // Default font size
+            [`@media (max-width:600px)`]: { fontSize: '16px' }, // Smaller screens
+            [`@media (min-width:960px)`]: { fontSize: '20px' }, // Large screens
         },
         h4: {
             fontWeight: 'bold',
@@ -106,7 +116,7 @@ const theme = createTheme({
                 root: {
                     textTransform: 'none',
                     borderRadius: "16px",
-                    padding: '16px 28px',
+                    padding: '12px 20px',
                     fontSize: '18px',
                     fontWeight: '400',
                     fontFamily: '"Funnel Display", sans-serif',

@@ -9,6 +9,7 @@ const useEligibilityData = (validationReport, hydrationData, language) => {
             const data = buildEligibilityReports(validationReport, hydrationData, language);
             setEligibilityData(data);
         }
+
     }, [validationReport, hydrationData, language]);
 
     return eligibilityData;

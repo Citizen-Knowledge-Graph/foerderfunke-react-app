@@ -23,7 +23,7 @@ const EligibilityOverviewItem = ({ item, eligible }) => {
                 <Circle sx={{ color: color }} />
                 <HBox sx={{ width: '100%' }}>
                     <HBox sx={{ alignItems: 'center' }}>
-                        <Typography variant='h6' sx={{ fontWeight: fontWeight }} onClick={toggleDescription}>
+                        <Typography variant='h5' sx={{ fontWeight: fontWeight }} onClick={toggleDescription}>
                             {item.title}
                         </Typography>
                         {item.status === "beta" && (
