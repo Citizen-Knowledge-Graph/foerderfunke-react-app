@@ -1,6 +1,7 @@
 {
   "https://foerderfunke.org/default#hilfe-zum-lebensunterhalt": {
     "id": "ff:hilfe-zum-lebensunterhalt",
+    "category": "social_benefit",
     "status": "production",
     "title": {
       "de": "Hilfe zum Lebensunterhalt",
@@ -13,6 +14,7 @@
   },
   "https://foerderfunke.org/default#kindergeld": {
     "id": "ff:kindergeld",
+    "category": "social_benefit",
     "status": "production",
     "title": {
       "de": "Kindergeld",
@@ -153,6 +155,7 @@
   },
   "https://foerderfunke.org/default#kinderzuschlag": {
     "id": "ff:kinderzuschlag",
+    "category": "social_benefit",
     "status": "production",
     "title": {
       "de": "Kinderzuschlag",
@@ -283,6 +286,7 @@
   },
   "https://foerderfunke.org/default#bafoeg": {
     "id": "ff:bafoeg",
+    "category": "social_benefit",
     "status": "production",
     "title": {
       "de": "BAföG",
@@ -295,6 +299,7 @@
   },
   "https://foerderfunke.org/default#buergergeld": {
     "id": "ff:buergergeld",
+    "category": "social_benefit",
     "status": "production",
     "title": {
       "de": "Bürgergeld",
@@ -307,6 +312,7 @@
   },
   "https://foerderfunke.org/default#arbeitslosengeld": {
     "id": "ff:arbeitslosengeld",
+    "category": "social_benefit",
     "status": "production",
     "title": {
       "de": "Arbeitslosengeld",
@@ -319,6 +325,7 @@
   },
   "https://foerderfunke.org/default#berufsausbildungsbeihilfe-bab": {
     "id": "ff:berufsausbildungsbeihilfe-bab",
+    "category": "social_benefit",
     "status": "production",
     "title": {
       "de": "Berufsausbildungsbeihilfe (BAB)",
@@ -331,6 +338,7 @@
   },
   "https://foerderfunke.org/default#wohngeld": {
     "id": "ff:wohngeld",
+    "category": "social_benefit",
     "status": "production",
     "leika_id": "99107023037000",
     "title": {
@@ -436,6 +444,7 @@
   },
   "https://foerderfunke.org/default#grundsicherung-im-alter-und-bei-erwerbsminderung": {
     "id": "ff:grundsicherung-im-alter-und-bei-erwerbsminderung",
+    "category": "social_benefit",
     "status": "production",
     "title": {
       "de": "Grundsicherung im Alter und bei Erwerbsminderung",
@@ -448,6 +457,7 @@
   },
   "https://foerderfunke.org/default#bildung-und-teilhabe-bei-bezug-von-buergergeld": {
     "id": "ff:bildung-und-teilhabe-bei-bezug-von-buergergeld",
+    "category": "social_benefit",
     "status": "production",
     "title": {
       "de": "Bildung und Teilhabe - bei Bezug von Bürgergeld",
@@ -460,6 +470,7 @@
   },
   "https://foerderfunke.org/default#exist-gruendungsstipendium": {
     "id": "ff:exist-gruendungsstipendium",
+    "category": "business",
     "status": "beta",
     "title": {
       "de": "EXIST-Gründungsstipendium",
@@ -472,6 +483,7 @@
   },
   "https://foerderfunke.org/default#ibb-gruendungsbonus": {
     "id": "ff:ibb-gruendungsbonus",
+    "category": "business",
     "status": "beta",
     "title": {
       "de": "IBB-Gründungsbonus",
@@ -484,6 +496,7 @@
   },
   "https://foerderfunke.org/default#ibb-altersgerecht-wohnen": {
     "id": "ff:ibb-altersgerecht-wohnen",
+    "category": "business",
     "status": "beta",
     "title": {
       "de": "IBB Altersgerecht Wohnen",
@@ -590,6 +603,7 @@
   },
   "https://foerderfunke.org/default#ifb-gruendung-nachfolge": {
     "id": "ff:ifb-gruendung-nachfolge",
+    "category": "business",
     "status": "beta",
     "title": {
       "de": "Hamburg-Kredit Gründung und Nachfolge III 2025",
@@ -708,6 +722,7 @@
   },
   "https://foerderfunke.org/default#ifb-inno-founder": {
     "id": "ff:ifb-inno-founder",
+    "category": "business",
     "status": "beta",
     "title": {
       "de": "InnoFounder - Förderprogramm für innovative und wissensbasierte Gründungsvorhaben",
