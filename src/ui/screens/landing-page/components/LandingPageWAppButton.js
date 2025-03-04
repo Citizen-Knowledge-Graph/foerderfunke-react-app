@@ -12,14 +12,12 @@ const LandingPageWAppButton = () => {
             to="/user-routing"
             sx={{
                 "&:hover": {
-                    color: "white",
+                    color: "white !important",
                 },
             }}>
             <Typography sx={{
                 fontWeight: 400,
-                "&:hover": {
-                    color: "white !important",
-                },
+                color: "inherit",
             }} variant="h6">{t('home.global.actionButton')}</Typography>
         </Button>
     );
