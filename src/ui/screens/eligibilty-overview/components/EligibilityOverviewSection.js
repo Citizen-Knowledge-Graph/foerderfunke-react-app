@@ -16,7 +16,7 @@ const EligibilityOverviewSection = ({ color, category, eligibilitySection }) => 
     return (
         <VBox sx={{ gap: 3 }}>
             <ContentBox sx={{ backgroundColor: color }}>
-                <Typography variant="h4">
+                <Typography variant="h5">
                     {category}
                 </Typography>
             </ContentBox>

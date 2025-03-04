@@ -44,7 +44,7 @@ const EligibilityOverviewScreen = () => {
                                 {
                                     eligibilityData["business"] && (
                                         <EligibilityOverviewSection
-                                            color={theme.palette.blue.main}
+                                            color={theme.palette.custom.colorDeepTealTransparent}
                                             category={t('app.topicSelection.businessTitle')}
                                             eligibilitySection={eligibilityData["business"]}
                                         />
