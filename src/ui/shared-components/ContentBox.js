@@ -5,7 +5,7 @@ import { styled } from '@mui/system';
 
 const ContentBoxStyled = styled(Box)(({ theme }) => ({
     backgroundColor: theme.palette.custom.lightGreyTransparent,
-    borderRadius: theme.shape.borderRadius,
+    borderRadius: '16px',
     padding: theme.spacing(2),
     boxSizing: 'border-box',
 }));
