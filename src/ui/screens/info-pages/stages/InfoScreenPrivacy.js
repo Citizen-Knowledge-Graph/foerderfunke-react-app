@@ -55,7 +55,7 @@ const InfoScreenPrivacy = () => {
                         }}
                         variant="contained"
                         component={Link}
-                        to={'/onboarding-choice'}>
+                        to={'/benefit-type'}>
                         <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
                             {t('app.privacySite.button')}
                         </Typography>

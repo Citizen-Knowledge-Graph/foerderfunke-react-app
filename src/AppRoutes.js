@@ -13,6 +13,7 @@ import ResolveUriScreen from './ui/screens/resolve-uri/ResolveUriScreen';
 import OnboardingWelcomeTopics from "./ui/screens/onboarding-welcome/OnboardingWelcomeTopics";
 import InfoScreenReturningUser from './ui/screens/info-pages/stages/InfoScreenReturningUser';
 import InfoScreenPrivacy from './ui/screens/info-pages/stages/InfoScreenPrivacy';
+import OnboardingChoiceApplicantType from './ui/screens/onboarding-choice/OnboardingChoiceApplicantType';
 
 const AppRoutes = () => (
     <Routes>
@@ -31,6 +32,7 @@ const AppRoutes = () => (
         <Route path="/profile-overview" element={<ProfileScreen/>}/>
         <Route path="/activity-log" element={<ActivityLogScreen/>}/>
         <Route path="/default" element={<ResolveUriScreen/>}/>
+        <Route path="/benefit-type" element={<OnboardingChoiceApplicantType/>}/>
     </Routes>
 );
 
