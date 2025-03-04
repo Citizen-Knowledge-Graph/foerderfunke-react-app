@@ -42,9 +42,6 @@ const BenefitPageScreen = () => {
         return <Typography>Loading...</Typography>;
     }
 
-    console.log('categoryTitles', rpMetaData);
-    console.log('BenefitPageScreen', benefitPageData);
-
     return (
         <Layout isApp={true} logo={false} back="Back">
             <AppScreenWrapper isDesktop={isDesktop} back={true}>

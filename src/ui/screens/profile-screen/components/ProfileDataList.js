@@ -28,6 +28,7 @@ const ProfileDataList = () => {
                             userProfileData.map(({label, value}, index) => (
                                 <>
                                     <VStack
+                                        key={index}
                                         gap={0}
                                         sx={styles.dataBox}
                                         justifyContent={'center'}

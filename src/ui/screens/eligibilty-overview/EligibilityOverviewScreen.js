@@ -22,7 +22,7 @@ const EligibilityOverviewScreen = () => {
     const hydrationData = useFetchData('assets/data/requirement-profiles/requirement-profiles-hydration.json')
     const eligibilityData = useEligibilityData(validationReport, hydrationData, language);
 
-    console.log('EligibilityOverviewScreen', eligibilityData);
+    console.log(validationReport)
 
     return (
         <Layout isApp={true} logo={true}>

@@ -106,10 +106,7 @@ const theme = createTheme({
             color: '#333333',
         },
     },
-    shape: {
-        borderRadius:
-            '16px',
-    },
+    shape: { borderRadius: 4 },
     components: {
         MuiButton: {
             styleOverrides: {

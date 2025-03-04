@@ -13,12 +13,6 @@ const EligibilityOverviewSection = ({ color, category, eligibilitySection }) => 
     const ineligibleBenefits = eligibilitySection[ValidationResult.INELIGIBLE] || []
     const undeterminableBenefits = eligibilitySection[ValidationResult.UNDETERMINABLE] || []
 
-    console.log('category', eligibilitySection);
-    console.log('eligible', eligibleBenefits);
-    console.log('undeterminable', undeterminableBenefits);
-    console.log('ineligible', ineligibleBenefits);
-
-
     return (
         <VBox sx={{ gap: 3 }}>
             <ContentBox sx={{ backgroundColor: color }}>

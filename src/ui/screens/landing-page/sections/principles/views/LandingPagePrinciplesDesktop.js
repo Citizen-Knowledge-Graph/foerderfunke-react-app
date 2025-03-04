@@ -78,8 +78,8 @@ const LandingPagePrinciplesDesktop = () => {
                             </HBox>
                         </HBox>
                         <Collapse in={showCommits}>
-                            {commits.map((item) => (
-                                <GithubCommitElement key={item.sha || item.id} commit={item} />
+                            {commits.map((item, index) => (
+                                <GithubCommitElement key={index} commit={item} />
                             ))}
                             {error && (
                                 <Typography color="error" sx={{ marginTop: 2 }}>

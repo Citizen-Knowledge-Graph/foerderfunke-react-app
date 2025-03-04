@@ -61,6 +61,10 @@
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/beta/ifb-inno-founder.ttl",
       "rpUri": "https://foerderfunke.org/default#ifb-inno-founder"
+    },
+    {
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/beta/ilb-kredit-gruendung.ttl",
+      "rpUri": "https://foerderfunke.org/default#ilb-kredit-gruendung"
     }
   ]
 }
