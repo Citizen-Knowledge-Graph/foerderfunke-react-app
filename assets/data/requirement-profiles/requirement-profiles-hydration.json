@@ -834,5 +834,120 @@
         ]
       }
     }
+  },
+  "https://foerderfunke.org/default#ilb-kredit-gruendung": {
+    "id": "ff:ilb-kredit-gruendung",
+    "category": "business",
+    "status": "beta",
+    "title": {
+      "de": "Brandenburg-Kredit Gründung",
+      "en": "Brandenburg Start-up Credit"
+    },
+    "description": {
+      "de": "Der Brandenburg-Kredit Gründung unterstützt junge Unternehmen in Brandenburg mit zinsgünstigen Krediten für Investitionen und Betriebsmittel.",
+      "en": "The Brandenburg Start-up Credit supports young businesses in Brandenburg with low-interest loans for investments and working capital."
+    },
+    "application_process": {
+      "de": {
+        "title": "Die Antragstellung erfolgt über die Investitionsbank des Landes Brandenburg (ILB). Weitere Details sind auf der ILB-Website zu finden.",
+        "links": [
+          {
+            "title": "Antragstellung ILB",
+            "url": "https://www.ilb.de/de/wirtschaft/darlehen/brandenburg-kredit-gruendung/"
+          }
+        ]
+      },
+      "en": {
+        "title": "Applications are submitted via the Investitionsbank des Landes Brandenburg (ILB). Further details can be found on the ILB website.",
+        "links": [
+          {
+            "title": "ILB Application",
+            "url": "https://www.ilb.de/de/wirtschaft/darlehen/brandenburg-kredit-gruendung/"
+          }
+        ]
+      }
+    },
+    "required_documents": {
+      "de": [
+        "Vollständig ausgefülltes Antragsformular",
+        "Businessplan mit Finanzierungsplan",
+        "Bonitätsnachweise und wirtschaftliche Unterlagen des Unternehmens",
+        "Nachweis der Geschäftstätigkeit in Brandenburg"
+      ],
+      "en": [
+        "Fully completed application form",
+        "Business plan with financing plan",
+        "Creditworthiness certificates and financial documents of the company",
+        "Proof of business activity in Brandenburg"
+      ]
+    },
+    "funding_conditions": {
+      "de": {
+        "title": "Die Förderkonditionen umfassen folgende Punkte:",
+        "details": [
+          "Darlehensbetrag: Bis zu 100 % der förderfähigen Kosten, maximal 25 Mio. EUR.",
+          "Zinsbindung: Maximal 10 Jahre.",
+          "Laufzeit: Bis zu 20 Jahre, mit tilgungsfreien Anlaufzeiten von bis zu 3 Jahren.",
+          "Förderfähige Kosten: Investitionen, Betriebsmittel, Warenlager, Unternehmensübernahmen."
+        ]
+      },
+      "en": {
+        "title": "The funding conditions include the following:",
+        "details": [
+          "Loan amount: Up to 100% of eligible costs, maximum €25 million.",
+          "Interest rate fixed for up to 10 years.",
+          "Term: Up to 20 years, with repayment-free periods of up to 3 years.",
+          "Eligible costs: Investments, working capital, inventory, business takeovers."
+        ]
+      }
+    },
+    "legal_basis": {
+      "de": {
+        "title": "Rechtsgrundlagen der Förderung:",
+        "links": [
+          {
+            "title": "ILB-Förderbedingungen",
+            "url": "https://www.ilb.de/de/pdf/merkblatt_57921.pdf"
+          },
+          {
+            "title": "De-Minimis-Verordnung EU",
+            "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:32003H0361"
+          }
+        ]
+      },
+      "en": {
+        "title": "Legal basis of the funding:",
+        "links": [
+          {
+            "title": "ILB Funding Conditions",
+            "url": "https://www.ilb.de/de/pdf/merkblatt_57921.pdf"
+          },
+          {
+            "title": "EU De-Minimis Regulation",
+            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32003H0361"
+          }
+        ]
+      }
+    },
+    "further_information": {
+      "de": {
+        "title": "Weitere Informationen zur ILB-Förderung:",
+        "links": [
+          {
+            "title": "Investitionsbank des Landes Brandenburg",
+            "url": "https://www.ilb.de/de/wirtschaft/darlehen/brandenburg-kredit-gruendung/"
+          }
+        ]
+      },
+      "en": {
+        "title": "Further information on ILB funding:",
+        "links": [
+          {
+            "title": "Investitionsbank des Landes Brandenburg",
+            "url": "https://www.ilb.de/de/wirtschaft/darlehen/brandenburg-kredit-gruendung/"
+          }
+        ]
+      }
+    }
   }
 }
