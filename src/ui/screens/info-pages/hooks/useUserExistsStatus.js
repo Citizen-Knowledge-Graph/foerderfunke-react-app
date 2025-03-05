@@ -1,21 +1,14 @@
-import { useEffect, useState } from "react";
-
 export const UserStatus = {
   USER_EXISTS: "USER_EXISTS",
   USER_DOES_NOT_EXIST: "USER_DOES_NOT_EXIST",
 };
 
 export const useUserExistsStatus = (userManager) => {
-  const [userStatus, setUserStatus] = useState(null);
+  if (!userManager || typeof userManager.retrieveUserIds !== "function") {
+    return UserStatus.USER_DOES_NOT_EXIST;
+  }
 
-  useEffect(() => {
-    const userIds = userManager.retrieveUserIds();
-    if (userIds.length === 0) {
-      setUserStatus(UserStatus.USER_DOES_NOT_EXIST);
-    } else {
-      setUserStatus(UserStatus.USER_EXISTS);
-    }
-  }, [userManager]);
-
-  return userStatus;
+  return userManager.retrieveUserIds()?.length > 0
+    ? UserStatus.USER_EXISTS
+    : UserStatus.USER_DOES_NOT_EXIST;
 };

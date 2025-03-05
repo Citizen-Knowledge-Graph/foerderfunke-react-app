@@ -100,3 +100,10 @@ export const questionsStackStore = create((set) => ({
     },
 }));
 
+export const useEntityTypeStore = create((set) => ({
+    entityType: 'social_benefits',
+    setEntityType: (newEntityType) => {
+        console.log('STATE UPDATE: We are setting the entity type');
+        set({entityType: newEntityType});
+    }
+}));

@@ -3,10 +3,17 @@ import { VBox } from "./LayoutBoxes";
 import AppScreenHeader from "./AppScreenHeader";
 import { useStore } from "../shared-components/ViewportUpdater";
 import theme from "../../theme";
+import { useEntityTypeStore } from '../storage/zustand';
+
 
 const AppScreenWrapper = ({ children, back = false, home = true }) => {
     const isDesktop = useStore((state) => state.isDesktop);
-    const desktopGradient = theme.palette.yellow.main;
+    const entityType = useEntityTypeStore(state => state.entityType);
+    const desktopGradient = entityType === "social_benefits" ? theme.palette.yellow.main : theme.palette.blue.main;
+
+    console.log('AppScreenWrapper: entityType', entityType);
+    console.log('AppScreenWrapper: desktopGradient', desktopGradient);
+
     return (
         <VBox sx={{
             alignItems: 'center',
