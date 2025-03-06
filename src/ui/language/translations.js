@@ -327,7 +327,7 @@ const translations = {
                 button: "Weiter"
             },
             welcomeBack: {
-                header: "Willkommen zurück",
+                header: "Willkommen zurück!",
                 text: "Wir haben ein Profil im lokalen Speicher deines Browsers gefunden. Möchtest du es weiter nutzen?",
                 yesBtnTitle: "Ja",
                 yesBtnText: "Du kannst mit deinem Profil weiter erkunden",
