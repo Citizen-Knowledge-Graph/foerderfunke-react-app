@@ -19,7 +19,9 @@ const AppScreenWrapper = ({ children, back = false, home = true }) => {
                 boxSizing: "border-box",
                 margin: "0px 96px",
             }}>
-                {children}
+                <VBox sx={{ width: '100%', boxSizing: "border-box" }}>
+                    {children}
+                </VBox>
             </VBox>
         )
 

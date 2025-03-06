@@ -93,15 +93,16 @@ const translations = {
                 previousQuestion: "Previous question"
             },
             privacySite: {
-                header: "Your data is only stored locally",
+                header: "Let's check your benefits!",
+                subHeader: "Your data is only stored locally",
                 text1: "Only you should have access to your personal data. That is why we do not offer user accounts managed by us. All of your information is only stored locally in your browser.",
                 optionHeader: "You do have some options though:",
                 option1: "You can export your data as an RDF file.",
                 option2: "You can erase it from the browser with one click.",
-                button: "Next"
+                button: "Let's go!"
             },
             welcomeBack: {
-                header: "Welcome back",
+                header: "Welcome back!",
                 text: "We found a profile in the local storage of your browser. Do you want to continue using it?",
                 yesBtnTitle: "Yes",
                 yesBtnText: "You can continue exploring with your profile",
@@ -319,12 +320,13 @@ const translations = {
                 previousQuestion: "Vorherige Frage"
             },
             privacySite: {
-                header: "Deine Daten werden nur lokal gespeichert",
+                header: "Lass uns deine Ansprüche prüfen!",
+                subHeader: "Deine Daten werden nur lokal gespeichert",
                 text1: "Nur du solltest Zugriff auf deine persönlichen Daten haben. Deshalb bieten wir keine von uns verwalteten Benutzerkonten an. Alle deine Informationen werden nur lokal in deinem Browser gespeichert.",
                 optionHeader: "Du hast aber einige Optionen:",
                 option1: "Du kannst deine Daten als RDF-Datei exportieren.",
                 option2: "Du kannst sie mit einem Klick aus dem Browser löschen.",
-                button: "Weiter"
+                button: "Los geht's!"
             },
             welcomeBack: {
                 header: "Willkommen zurück!",
