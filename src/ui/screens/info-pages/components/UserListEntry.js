@@ -19,27 +19,14 @@ const UserListEntry = ({ userId, index }) => {
             borderRadius: theme.shape.borderRadius,
             flexWrap: 'wrap',
         }}>
-            {/* User Information */}
             <VBox sx={{ alignItems: 'flex-start' }}>
                 <Typography variant="h6">{userId}</Typography>
                 <Typography variant="body1" sx={{ textAlign: 'left' }}>
-                    Company Profile
+                    Individual Profile
                 </Typography>
             </VBox>
             <HBox sx={{ flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
-                <HBox sx={{
-                    alignItems: 'center',
-                    border: `1px solid ${theme.palette.custom.darkGrey}`,
-                    padding: `${theme.spacing(1)} ${theme.spacing(2)}`,
-                    borderRadius: theme.shape.borderRadius,
-                    '&:hover': {
-                        backgroundColor: theme.palette.black.main,
-                        color: theme.palette.common.white,
-                    },
-                }}>
-                    <Typography variant="body2" sx={{ color: 'inherit' }}>Continue</Typography>
-                    <ArrowForwardIcon sx={{ color: 'inherit' }} />
-                </HBox> 
+
                 <Collapse in={open} timeout="auto" unmountOnExit>
                     <HBox sx={{ gap: theme.spacing(0.5), marginTop: theme.spacing(1) }}>
                         <HBox sx={{
@@ -73,6 +60,19 @@ const UserListEntry = ({ userId, index }) => {
                 <IconButton onClick={() => setOpen(!open)} sx={{ marginLeft: theme.spacing(1) }}>
                     <MoreVertIcon />
                 </IconButton>
+                <HBox sx={{
+                    alignItems: 'center',
+                    border: `1px solid ${theme.palette.custom.darkGrey}`,
+                    padding: `${theme.spacing(1)} ${theme.spacing(2)}`,
+                    borderRadius: theme.shape.borderRadius,
+                    '&:hover': {
+                        backgroundColor: theme.palette.black.main,
+                        color: theme.palette.common.white,
+                    },
+                }}>
+                    <Typography variant="body2" sx={{ color: 'inherit' }}>Continue</Typography>
+                    <ArrowForwardIcon sx={{ color: 'inherit' }} />
+                </HBox> 
             </HBox>
         </HBox>
     );
