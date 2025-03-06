@@ -35,6 +35,9 @@ const theme = createTheme({
             main: '#FFFFFF',
             dark: '#CECECE',
         },
+        greyTransparent: {
+            main: '#F3F3F3',
+        },
         custom: {
             amberOrange: '#FFA600',
             amberOrangeTransparent: 'rgba(255, 166, 0, 0.1)',

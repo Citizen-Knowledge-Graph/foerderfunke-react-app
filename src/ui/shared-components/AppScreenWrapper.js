@@ -6,39 +6,34 @@ import theme from "../../theme";
 
 const AppScreenWrapper = ({ children, back = false, home = true }) => {
     const isDesktop = useStore((state) => state.isDesktop);
-    const desktopGradient = theme.palette.yellow.main;
-    return (
-        <VBox sx={{
-            alignItems: 'center',
-            minHeight: '100%',
-            width: '100%',
-        }}>
-            {isDesktop ? (
-                <VBox sx={{
-                    width: '840px',
-                    padding: theme.spacing(1),
-                    background: desktopGradient,
-                    borderRadius: theme.shape.borderRadius
-                }}>
-                    <VBox sx={{ 
-                        padding: theme.spacing(4), 
-                        backgroundColor: theme.palette.white.main,
-                        borderRadius: theme.shape.borderRadius}}>
-                        {children}
-                        <AppScreenHeader back={back} home={home} />
-                    </VBox>
-                </VBox>
-            ) : (
-                <VBox sx={{
-                    width: '100%', boxSizing: "border-box",
-                    padding: theme.spacing(2)
-                }}>
-                    {children}
-                    <AppScreenHeader back={back} home={home} />
-                </VBox>
-            )}
-        </VBox>
-    )
+
+    if (isDesktop) {
+        return (
+            <VBox sx={{
+                alignItems: 'center',
+                minHeight: '100%',
+                width: "calc(100% - 192px)",
+                backgroundColor: `${theme.palette.greyTransparent.main}`,
+                borderRadius: theme.shape.borderRadius,
+                padding: "96px 108px",
+                boxSizing: "border-box",
+                margin: "0px 96px",
+            }}>
+                {children}
+            </VBox>
+        )
+
+    } else {
+        return (
+            <VBox sx={{
+                width: '100%', boxSizing: "border-box",
+                padding: theme.spacing(2)
+            }}>
+                {children}
+                <AppScreenHeader back={back} home={home} />
+            </VBox>
+        )
+    }
 }
 
 export default AppScreenWrapper;
