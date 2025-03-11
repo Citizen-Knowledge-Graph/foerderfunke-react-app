@@ -17,7 +17,7 @@ const AppScreenWrapper = ({ children, back = false, home = true }) => {
                 borderRadius: theme.shape.borderRadius,
                 padding: "96px 108px",
                 boxSizing: "border-box",
-                margin: "0px 96px",
+                margin: "0px 96px 96px 96px",
             }}>
                 <VBox sx={{ width: '100%', boxSizing: "border-box" }}>
                     {children}

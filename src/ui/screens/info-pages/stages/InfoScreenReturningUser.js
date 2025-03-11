@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import dayjs from "dayjs";
-import { Button, Typography, Grid } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Layout from "../../../shared-components/Layout";
@@ -59,66 +59,65 @@ const InfoScreenReturningUser = () => {
                     <Typography variant="body1">
                         {t("app.welcomeBack.text")}
                     </Typography>
-                    <Grid container spacing={2}>
-                        <Grid item xs={12} sm={6} container>
-                            <HBox>
-                                <Button variant="text"
-                                    sx={{
-                                        boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
-                                        '&:hover': {
-                                            backgroundColor: theme.palette.yellow.main,
-                                        },
-                                    }}
-                                    onClick={continueWithExisting}
-                                    component={Link}
-                                    to={'/onboarding-choice'}
-                                >
-                                    <HBox sx={{ alignItems: 'center' }}>
-                                        <VBox sx={{ alignItems: 'flex-start' }}>
-                                            <Typography variant="h6">
-                                                {t("app.welcomeBack.yesBtnTitle")}
-                                            </Typography>
-                                            <Typography variant="body2" sx={{ textAlign: 'left' }}>
-                                                {t("app.welcomeBack.yesBtnText")}
-                                            </Typography>
-                                        </VBox>
-                                    </HBox>
-                                </Button>
-                            </HBox>
-                        </Grid>
-                        <Grid item xs={12} sm={6} container>
-                            <HBox>
-                                <Button
-                                    sx={{
-                                        boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
-                                        '&:hover': {
-                                            backgroundColor: theme.palette.yellow.main,
-                                        },
-                                    }}
-                                    onClick={deleteExistingProfile}
-                                    component={Link}
-                                    to={'/user-routing'}
-                                >
-                                    <HBox sx={{ alignItems: 'center' }}>
-                                        <VBox sx={{ alignItems: 'flex-start' }}>
-                                            <Typography variant="h6">
-                                                {t("app.welcomeBack.noBtnTitle")}
-                                            </Typography>
-                                            <Typography variant="body2" sx={{ textAlign: 'left' }}>
-                                                {t("app.welcomeBack.noBtnText")}
-                                            </Typography>
-                                        </VBox>
-                                    </HBox>
-                                </Button>
-                            </HBox>
-                        </Grid>
-                    </Grid>
+                    <HBox sx={{ flexWrap: 'wrap' }}>
+                        <HBox>
+                            <Button variant="text"
+                                sx={{
+                                    padding: "32px 32px",
+                                    boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
+                                    '&:hover': {
+                                        backgroundColor: theme.palette.yellow.main,
+                                    },
+                                }}
+                                onClick={continueWithExisting}
+                                component={Link}
+                                to={'/onboarding-choice'}
+                            >
+                                <HBox sx={{ alignItems: 'center' }}>
+                                    <VBox sx={{ alignItems: 'flex-start' }}>
+                                        <Typography variant="h6">
+                                            {t("app.welcomeBack.yesBtnTitle")}
+                                        </Typography>
+                                        <Typography variant="body2" sx={{ textAlign: 'left' }}>
+                                            {t("app.welcomeBack.yesBtnText")}
+                                        </Typography>
+                                    </VBox>
+                                </HBox>
+                            </Button>
+                        </HBox>
+                        <HBox>
+                            <Button
+                                sx={{
+                                    padding: "32px 32px",
+                                    boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
+                                    '&:hover': {
+                                        backgroundColor: theme.palette.yellow.main,
+                                    },
+                                }}
+                                onClick={deleteExistingProfile}
+                                component={Link}
+                                to={'/user-routing'}
+                            >
+                                <HBox sx={{ alignItems: 'center' }}>
+                                    <VBox sx={{ alignItems: 'flex-start' }}>
+                                        <Typography variant="h6">
+                                            {t("app.welcomeBack.noBtnTitle")}
+                                        </Typography>
+                                        <Typography variant="body2" sx={{ textAlign: 'left' }}>
+                                            {t("app.welcomeBack.noBtnText")}
+                                        </Typography>
+                                    </VBox>
+                                </HBox>
+                            </Button>
+                        </HBox>
+                    </HBox>
                     <HBox>
                         <Button
                             sx={{
                                 borderWidth: '1px',
                                 borderStyle: 'solid',
                                 borderColor: theme.palette.custom.darkGrey,
+                                backgroundColor: theme.palette.greyTransparent.main,
                                 '&:hover': {
                                     backgroundColor: theme.palette.custom.lightGrey,
                                 },
@@ -135,6 +134,7 @@ const InfoScreenReturningUser = () => {
                                 borderWidth: '1px',
                                 borderStyle: 'solid',
                                 borderColor: theme.palette.custom.darkGrey,
+                                backgroundColor: theme.palette.greyTransparent.main,
                                 '&:hover': {
                                     backgroundColor: theme.palette.custom.lightGrey,
                                 },
