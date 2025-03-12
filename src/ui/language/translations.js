@@ -154,13 +154,14 @@ const translations = {
             },
             browseAll: {
                 header: "Your potential benefits",
+                profileBtn: "locally stored profile",
                 subtitle: "Results are based on the information you provided.",
                 info: "Results are not legally binding and should be considered as informational or advisory",
                 eligible: "Eligible:",
                 notEligible: "Not eligible:",
                 missingData: "Missing data:",
                 checkElBtn: "Check eligibility",
-                learnMoreBtn: "Learn more",
+                learnMoreBtn: "Learn more!",
                 legendTitle: "We use a color code to indicate the likelihood of eligibility. See the legend",
                 legend: {
                     probableEligible: "Probable eligibility",
@@ -386,13 +387,14 @@ const translations = {
             },
             browseAll: {
                 header: "Deine potenziellen Leistungen",
+                profileBtn: "lokal gespeichertes Profil",
                 subtitle: "Die Ergebnisse basieren auf den von dir angegebenen Informationen.",
                 info: "Die Ergebnisse sind nicht rechtsverbindlich und sollten als informativ oder beratend betrachtet werden.",
                 eligible: "Anspruch:",
                 notEligible: "Kein Anspruch:",
                 missingData: "Fehlende Daten:",
                 checkElBtn: "Anspruch prüfen",
-                learnMoreBtn: "Mehr erfahren",
+                learnMoreBtn: "Mehr erfahren!",
                 legendTitle: "Wir verwenden eine Farbkodierung, um die Wahrscheinlichkeit der Anspruchsberechtigung anzuzeigen. Siehe die Legende",
                 legend: {
                     probableEligible: "Wahrscheinlich besteht Anspruch",

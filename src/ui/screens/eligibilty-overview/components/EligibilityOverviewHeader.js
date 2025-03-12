@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import { IconButton, Typography, Collapse } from '@mui/material';
+import { IconButton, Typography, Collapse, Button } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
-import globalStyles from "../../../styles/styles";
-import ContentBox from '../../../shared-components/ContentBox';
 import { VBox, HBox } from "../../../shared-components/LayoutBoxes";
 import useTranslation from "../../../language/useTranslation";
 import theme from "../../../../theme";
@@ -15,47 +13,43 @@ const EligibilityOverviewHeader = () => {
     const [showLegend, setShowLegend] = useState(false);
 
     return (
-        <ContentBox sx={{
-            width: "100%",
-            backgroundColor: theme.palette.primary.light,
-        }}>
-            <VBox sx={{ alignItems: "flex-start", gap: theme.spacing(2) }}>
-                <HBox sx={{ width: "100%", justifyContent: 'space-between' }}>
-                    <Typography variant="h4">
-                        {t('app.browseAll.header')}
-                    </Typography>
-                    <IconButton
-                        component={Link}
-                        to='/profile-overview'
-                        sx={{
-                            width: 40,
-                            height: 40,
-                            borderRadius: '50%',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            backgroundColor: 'white',
-                            '&:hover': {
-                                backgroundColor: globalStyles.colorLightGrey,
-                            },
-                        }}
-                    >
-                        <PersonIcon sx={{ fontSize: 20, color: 'black' }} />
-                    </IconButton>
-                </HBox>
-                <Typography variant='body1'>
-                    {t('app.browseAll.subtitle')}{" "}{t('app.browseAll.info')}
+        <VBox sx={{ alignItems: "flex-start", gap: theme.spacing(8) }}>
+            <VBox sx={{ width: "100%", justifyContent: 'space-between' }}>
+                <Typography variant="h1">
+                    {t('app.browseAll.header')}
                 </Typography>
-                {/* Expandable Legend Section */}
+                <HBox>
+                    <Button sx={{
+                        gap: theme.spacing(1),
+                        padding: '0',
+                        backgroundColor: 'transparent',
+                        color: theme.palette.blue.main,
+                        '&:hover': {
+                            backgroundColor: 'transparent',
+                            color: theme.palette.black.main,
+                        }
+                    }} component={Link} to='/profile-overview' variant="text">
+                        <PersonIcon data-testid="chevron-left-icon" sx={{ fontSize: '16px' }} />
+                        <Typography variant="body2" sx={{ color: 'inherit' }}>
+                            {t('app.browseAll.profileBtn')}
+                        </Typography>
+                    </Button>
+                </HBox>
+            </VBox>
+            <VBox sx={{ gap: theme.spacing(2) }}>
+                <HBox sx={{ maxWidth: '840px' }}>
+                    <Typography variant='body1'>
+                        {t('app.browseAll.subtitle')}{" "}{t('app.browseAll.info')}
+                    </Typography>
+                </HBox>
                 <HBox sx={{ alignItems: 'center', cursor: 'pointer' }} onClick={() => setShowLegend(!showLegend)}>
-                    <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                    <Typography variant="body1">
                         {t('app.browseAll.legendTitle')}
                     </Typography>
                     <IconButton
                         sx={{
                             transition: 'transform 0.3s',
-                            transform: showLegend ? 'rotate(180deg)' : 'rotate(0deg)',
-                            marginLeft: '8px',
+                            transform: showLegend ? 'rotate(180deg)' : 'rotate(0deg)'
                         }}
                     >
                         <ExpandMoreIcon />
@@ -68,9 +62,9 @@ const EligibilityOverviewHeader = () => {
                         <EligibilityOverviewLegend />
                     </Collapse>
                 }
-
             </VBox>
-        </ContentBox >
+
+        </VBox>
     );
 };
 

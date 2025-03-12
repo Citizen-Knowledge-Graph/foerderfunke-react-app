@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import EligibilityOverviewItemDetails from "./EligibilityOverviewItemDetails";
-import { green, red, grey } from "@mui/material/colors";
-import { Circle, Add, Remove } from "@mui/icons-material";
+import { Add, Remove } from "@mui/icons-material";
 import { IconButton, Typography, Box } from '@mui/material';
 import { HBox, VBox } from '../../../shared-components/LayoutBoxes';
+import theme from '../../../../theme';
 
-const EligibilityOverviewItem = ({ item, eligible }) => {
+const EligibilityOverviewItem = ({ item, eligible, iconPath }) => {
     const [showDescription, setShowDescription] = useState(false);
 
     const toggleDescription = () => {
@@ -13,17 +13,16 @@ const EligibilityOverviewItem = ({ item, eligible }) => {
     };
 
     const marginBottom = showDescription ? '16px' : '0';
-    const fontWeight = showDescription ? 'bold' : '400';
-    const color = (eligible === 'eligible') ? green[500] : ((eligible === 'non-eligible') ? red[500] :
-        grey[500]);
+    const color = (eligible === 'eligible') ? theme.palette.green.main : ((eligible === 'non-eligible') ? theme.palette.red.main :
+        theme.palette.black.light);
 
     return (
         <VBox sx={{ marginBottom: marginBottom }}>
             <HBox sx={{ alignItems: "center", width: '100%' }}>
-                <Circle sx={{ color: color }} />
+                <img src={iconPath} alt="logo" style={{ width: "20px", color: color }} />
                 <HBox sx={{ width: '100%' }}>
                     <HBox sx={{ alignItems: 'center' }}>
-                        <Typography variant='h6' sx={{ fontWeight: fontWeight }} onClick={toggleDescription}>
+                        <Typography variant='h5' sx={{ fontWeight: '400' }} onClick={toggleDescription}>
                             {item.title}
                         </Typography>
                         {item.status === "beta" && (

@@ -27,7 +27,7 @@ const EligibilityOverviewScreen = () => {
     return (
         <Layout isApp={true} logo={true}>
             <AppScreenWrapper back={true}>
-                <VBox sx={{ gap: 6 }} >
+                <VBox sx={{ gap: 8 }} >
                     <EligibilityOverviewHeader />
                     {
                         eligibilityData && !validationIsLoading ? (

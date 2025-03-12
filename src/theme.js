@@ -23,6 +23,12 @@ const theme = createTheme({
             main: '#84AAD7',
             dark: '#263046',
         },
+        green: {
+            main: '#B1EE9B',
+        },
+        red: {
+            main: '#F47B66',
+        },
         pink: {
             main: '#F77BB6',
             dark: '#7C1E59',
