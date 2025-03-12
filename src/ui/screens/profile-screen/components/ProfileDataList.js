@@ -1,83 +1,75 @@
 import React from 'react';
 import globalStyles from "../../../styles/styles";
-import VStack from "../../../shared-components/VStack";
-import {IconButton, Typography} from "@mui/material";
+import { VBox, HBox } from "../../../shared-components/LayoutBoxes";
+import { Button, Typography } from "@mui/material";
 import useUserProfileData from "../hooks/useUserProfileData";
-import HStack from "../../../shared-components/HStack";
-import RestartAltIcon from '@mui/icons-material/RestartAlt';
-import {Link} from "react-router-dom";
-import Divider from "@mui/material/Divider";
+import { Link } from "react-router-dom";
 import useTranslation from "../../../language/useTranslation";
+import theme from "../../../../theme";
 
 const ProfileDataList = () => {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
     const userProfileData = useUserProfileData();
 
     return (
-        <VStack>
+        <VBox sx={{ gap: theme.spacing(8) }}>
             {
                 userProfileData.length > 0 ? (
-                    <VStack sx={{
-                        borderWidth: '1px',
-                        borderStyle: 'solid',
-                        borderColor: 'lightgrey',
-                        borderRadius: '12px',
-                        gap: 0,
-                    }}>
+                    <VBox sx={{ gap: theme.spacing(2) }}>
                         {
-                            userProfileData.map(({label, value}, index) => (
-                                <>
-                                    <VStack
-                                        key={index}
-                                        gap={0}
-                                        sx={styles.dataBox}
-                                        justifyContent={'center'}
-                                    >
-                                        <Typography sx={styles.labelText}>
-                                            {label}
-                                        </Typography>
-                                        <Typography sx={styles.valueText}>
-                                            {value}
-                                        </Typography>
-                                    </VStack>
-                                    {index < userProfileData.length - 1 && <Divider/>}
-                                </>
+                            userProfileData.map(({ label, value }, index) => (
+                                <VBox
+                                    key={index}
+                                    gap={0}
+                                    sx={{
+                                        padding: '32px',
+                                        borderRadius: theme.shape.borderRadius,
+                                        backgroundColor: theme.palette.white.main,
+                                    }}
+                                    justifyContent={'center'}
+                                >
+                                    <Typography variant='body2'>
+                                        {label}
+                                    </Typography>
+                                    <Typography variant='h5' sx={{ fontWeight: '400' }}>
+                                        {value}
+                                    </Typography>
+                                </VBox>
                             ))}
-                    </VStack>) : (
-                    <VStack sx={styles.restartBox}>
-                        <Typography>
+                    </VBox>) : (
+                    <VBox sx={styles.restartBox}>
+                        <Typography variant='body1'>
                             {t('app.profile.noInfoYet')}
                         </Typography>
-                    </VStack>)
+                    </VBox>)
             }
-            <VStack sx={styles.restartBox}>
-                <HStack gap={3} justifyContent={'space-between'} alignItems={'center'}>
-                    <Typography>
-                        {t('app.qsComplete.hint')}
-                    </Typography>
-                    <IconButton
+            <HBox sx={{ gap: theme.spacing(4) }}>
+                <Typography>
+                    {t('app.qsComplete.hint')}
+                </Typography>
+                <HBox>
+                    <Button
+                        sx={{
+                            padding: "16px 28px",
+                            backgroundColor: theme.palette.black.light,
+                            color: theme.palette.white.main,
+                        }}
                         component={Link}
                         to='/user-routing'
-                        sx={{
-                            width: 40,
-                            height: 40,
-                            borderRadius: '50%',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            backgroundColor: globalStyles.primaryColor,
-                            '&:hover': {
-                                backgroundColor: globalStyles.colorLightGrey,
-                            },
-                        }}
                     >
-                        <RestartAltIcon sx={{fontSize: 24, color: 'black'}}/>
-                    </IconButton>
-                </HStack>
-            </VStack>
-        </VStack>
+                        <Typography variant="body1" sx={{ color: 'inherit', whiteSpace: 'nowrap' }}>
+                            {t('app.qsComplete.restartBtn')}
+                        </Typography>
+                    </Button>
+                </HBox>
+
+            </HBox>
+        </VBox>
     );
 };
+
+
+
 
 const styles = {
     restartBox: {

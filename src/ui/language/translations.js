@@ -149,7 +149,8 @@ const translations = {
             qsComplete: {
                 header: "Your quick check is complete",
                 hint: "You currently cannot edit your profile data. If you need to make changes, you can restart the discovery journey.",
-                discoverBtn: "Discover your benefits"
+                discoverBtn: "Discover your benefits",
+                restartBtn: "Restart"
             },
             browseAll: {
                 header: "Your potential benefits",
@@ -381,6 +382,7 @@ const translations = {
                 header: "Dein schneller Anspruchscheck ist abgeschlossen",
                 hint: "Du kannst deine Profildaten derzeit nicht bearbeiten. Wenn du Änderungen vornehmen möchtest, kannst du den Entdeckungsprozess neu starten.",
                 discoverBtn: "Entdecke deine Leistungen",
+                restartBtn: "Neu starten"   
             },
             browseAll: {
                 header: "Deine potenziellen Leistungen",

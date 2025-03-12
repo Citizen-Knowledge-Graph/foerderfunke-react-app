@@ -20,7 +20,7 @@ const ProfileSectionField = ({
 }) => {
     const { t } = useTranslation();
     const [value, setValue] = useState(null);
-    const [showComment, setShowComment] = useState(false); // Toggle state for comment visibility
+    const [showComment, setShowComment] = useState(false);
     const retrieveCurrentEntityData = useProfileSectionStore((state) => state.retrieveCurrentEntityData)
     const entityData = useMemo(() => retrieveCurrentEntityData(), [retrieveCurrentEntityData]);
     const fetchProfileField = useFetchProfileField(currentField.datafield, entityData);
@@ -43,7 +43,7 @@ const ProfileSectionField = ({
     }, [currentField, fetchProfileField, setLocalError]);
 
     return (
-        <VBox sx={{ gap: theme.spacing(8) }}>
+        <VBox sx={{ gap: theme.spacing(4) }}>
             <VBox>
                 <Typography variant='h4' sx={{ fontWeight: '400' }}>
                     {currentField.question}
