@@ -2,7 +2,6 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { Typography, Button, Collapse } from '@mui/material';
 import { VBox, HBox } from '../../../shared-components/LayoutBoxes';
 import theme from "../../../../theme";
-import ContentBox from '../../../shared-components/ContentBox';
 
 import useFetchProfileField from "../hooks/useFetchProfileField";
 import ProfileSectionInputSwitch from "./input-types/ProfileSectionInputSwitch";
@@ -44,65 +43,58 @@ const ProfileSectionField = ({
     }, [currentField, fetchProfileField, setLocalError]);
 
     return (
-        <VBox gap={5}>
-            <VBox gap={3}>
-                <ContentBox sx={{
-                    width: "100%",
-                    backgroundColor: theme.palette.primary.light,
-                    borderRadius: '12px',
-                }}>
-                    <VBox>
-                        <Typography variant='h6'>
-                            {currentField.question}
+        <VBox sx={{ gap: theme.spacing(8) }}>
+            <VBox>
+                <Typography variant='h4' sx={{ fontWeight: '400' }}>
+                    {currentField.question}
+                </Typography>
+                {currentField.comment.length > 0 && (
+                    <HBox sx={{ alignItems: 'center' }}>
+                        <Typography variant='body2'>
+                            {t('app.questions.showComment')}
                         </Typography>
-                        {currentField.comment.length > 0 && (
-                            <HBox sx={{ alignItems: 'center', justifyContent: 'flex-start' }}>
-                                <Typography variant='body2'>
-                                    {t('app.questions.showComment')}
-                                </Typography>
-                                <IconButton
-                                    onClick={() => setShowComment(!showComment)}
-                                    sx={{
-                                        width: '40px',
-                                        transition: 'transform 0.3s',
-                                        transform: showComment ? 'rotate(180deg)' : 'rotate(0deg)',
-                                    }}
-                                >
-                                    <ExpandMore />
-                                </IconButton>
-                            </HBox>
-                        )}
-                        {
-                            showComment && (
-                                <Collapse in={showComment}>
-                                    <Typography variant='body2' sx={{ marginTop: 1 }}>
-                                        {currentField.comment}
-                                    </Typography>
-                                </Collapse>
-                            )
-                        }
-
-                    </VBox>
-                </ContentBox>
-                <ProfileSectionInputSwitch value={value}
-                    setValue={setValue}
-                    currentField={currentField}
-                    entityData={entityData}
-                    error={localError} />
+                        <IconButton
+                            onClick={() => setShowComment(!showComment)}
+                            sx={{
+                                width: '40px',
+                                transition: 'transform 0.3s',
+                                transform: showComment ? 'rotate(180deg)' : 'rotate(0deg)',
+                            }}
+                        >
+                            <ExpandMore />
+                        </IconButton>
+                    </HBox>
+                )}
+                {
+                    showComment && (
+                        <Collapse in={showComment}>
+                            <Typography variant='body2' sx={{ marginTop: 1 }}>
+                                {currentField.comment}
+                            </Typography>
+                        </Collapse>
+                    )
+                }
             </VBox>
-            <Button variant="contained"
-                sx={{
-                    width: '100%',
-                    padding: theme.spacing(2),
-                    backgroundColor: theme.palette.primary.main,
-                    borderColor: theme.palette.primary.main
-                }}
-                onClick={() => handleAddClick(value, currentIndex)}
-            >
-                <Typography variant="body1" sx={{ fontWeight: 'bold' }}>{t('app.questions.confirmBtn')}</Typography>
-            </Button>
-
+            <ProfileSectionInputSwitch value={value}
+                setValue={setValue}
+                currentField={currentField}
+                entityData={entityData}
+                error={localError} />
+            <HBox>
+                <Button variant="contained"
+                    sx={{
+                        padding: "16px 28px",
+                        backgroundColor: theme.palette.blue.dark,
+                        color: theme.palette.white.main,
+                    }}
+                    onClick={() => handleAddClick(value, currentIndex)}
+                >
+                    <Typography variant="body1" sx={{ fontWeight: 'bold', color: 'inherit' }}>{t('app.questions.confirmBtn')}</Typography>
+                </Button>
+            </HBox>
         </VBox>
+
+
     );
 };
 

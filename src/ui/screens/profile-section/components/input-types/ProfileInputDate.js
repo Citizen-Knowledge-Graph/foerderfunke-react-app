@@ -18,6 +18,15 @@ const ProfileInputDate = ({ value, setValue, error }) => {
                         label={t('app.datafields.pickBday')}
                         value={value ? dayjs(value) : null}
                         onChange={(newValue) => setValue(newValue)}
+                        sx={{
+                            '& .MuiInputLabel-root.Mui-focused': {
+                                color: 'blue.main',
+                            },
+                            '& .MuiOutlinedInput-root': {
+                                '&:hover fieldset': { borderColor: 'blue.main' },
+                                '&.Mui-focused fieldset': { borderColor: 'blue.main' }
+                            }
+                        }}
                     />
                 </FormControl>
             </LocalizationProvider>
