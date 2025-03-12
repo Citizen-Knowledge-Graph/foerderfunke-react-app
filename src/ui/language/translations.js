@@ -128,7 +128,9 @@ const translations = {
                 businessSubtitle: "Do you want to explore support programs for business and startups?",
             },
             topicsChosen: {
+                topicsTitle: "Selected topics",
                 topicsText: "Based on your chosen topics we will provide you with a list of benefits you may be eligible for.",
+                benefitTitle: "Selected benefit",
                 benefitText: "Based on your chosen benefit we will ask you the questions necessary to determine your eligibility.",
                 discoverBtn: "Discover your benefits",
             },
@@ -357,7 +359,9 @@ const translations = {
                 businessSubtitle: "Möchtest du Förderprogramme für Unternehmen und Startups erkunden?",
             },
             topicsChosen: {
+                topicsTitle: "Ausgewählte Themen",
                 topicsText: "Basierend auf deinen ausgewählten Themen stellen wir dir eine Liste von Leistungen zur Verfügung, für die du möglicherweise infrage kommst.",
+                benefitTitle: "Ausgewählte Leistung",
                 benefitText: "Basierend auf deiner ausgewählten Leistung stellen wir dir die notwendigen Fragen, um deine Anspruchsberechtigung zu ermitteln.",
                 discoverBtn: "Entdecke deine Leistungen",
             },

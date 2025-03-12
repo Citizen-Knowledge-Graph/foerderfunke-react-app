@@ -24,14 +24,12 @@ const OnboardingWelcomeTopics = () => {
         <Layout isApp={true} logo={false}>
             <AppScreenWrapper back={true}>
                 <VBox sx={{ gap: theme.spacing(8) }}>
-                    <HBox sx={{ alignItems: "center" }}>
-                        <VBox>
-                            <Typography variant="h1">
-                                {t('app.topicSelection.header')}
-                            </Typography>
-                            <TimeIcon />
-                        </VBox>
-                    </HBox>
+                    <VBox>
+                        <Typography variant="h1">
+                            {t('app.topicSelection.header')}
+                        </Typography>
+                        <TimeIcon />
+                    </VBox>
                     <VBox sx={{ gap: theme.spacing(4) }}>
                         <VBox>
                             <Typography variant="h4" sx={{ color: theme.palette.pink.main }}>

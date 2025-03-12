@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { CircularProgress, Typography, Box, Button } from '@mui/material';
+import { CircularProgress, Typography, Button } from '@mui/material';
 import { useParams, Link } from "react-router-dom";
 import useTranslation from "../../language/useTranslation";
 import { LanguageContext } from "../../language/LanguageContext";
@@ -7,7 +7,6 @@ import useNumberOfBenefits from "./hooks/useNumberOfBenefits";
 import Layout from "../../shared-components/Layout";
 import AppScreenWrapper from "../../shared-components/AppScreenWrapper";
 import { VBox, HBox } from "../../shared-components/LayoutBoxes";
-import ContentBox from "../../shared-components/ContentBox";
 import TimeIcon from './components/TimeIcon';
 import BenefitsIcon from './components/BenefitsIcon';
 import { useMetadataStore, useSelectedBenefitStore, useSelectedTopicsStore } from "../../storage/zustand";
@@ -29,7 +28,11 @@ const OnboardingWelcomeOverview = () => {
         return (
             <ul style={{ marginTop: -8 }}>
                 {rps.map((rp, index) => (
-                    <li key={index}>{rp.title}</li>
+                    <li key={index}>
+                        <Typography variant="body1">
+                            {rp.title}
+                        </Typography>
+                    </li>
                 ))}
             </ul>
         );
@@ -43,66 +46,73 @@ const OnboardingWelcomeOverview = () => {
     return (
         <Layout isApp={true} logo={false}>
             <AppScreenWrapper back={true}>
-                <VBox sx={{ gap: theme.spacing(4) }}>
-                    <VBox sx={{ alignItems: "center" }}>
-                        <Typography variant="h4">
+                <VBox sx={{ gap: theme.spacing(8) }}>
+                    <VBox>
+                        <Typography variant="h1">
                             {t('app.topicSelection.header')}
                         </Typography>
-                    </VBox>
-                    <VBox sx={{ gap: theme.spacing(4) }}>
-                        <HBox>
+                        <HBox sx={{ gap: theme.spacing(4), alignItems: 'center' }}>
                             <TimeIcon />
                             {!benefitMode && <BenefitsIcon numberOfBenefits={numberOfBenefits} />}
                         </HBox>
+                    </VBox>
+                    <VBox sx={{ maxWidth: '840px' }}>
+                        <Typography variant="h4" sx={{ color: theme.palette.pink.main }}>
+                            {benefitMode ? t('app.topicsChosen.benefitTitle') : t('app.topicsChosen.topicsTitle')}
+                        </Typography>
                         <Typography variant="body1">
                             {benefitMode ? t('app.topicsChosen.benefitText') : t('app.topicsChosen.topicsText')}
                         </Typography>
+                    </VBox>
+                    <VBox sx={{ gap: theme.spacing(4) }}>
                         {
                             benefitMode ? (
                                 <VBox alignItems={'flex-start'}>
-                                    <Box
-                                        sx={(theme) => ({
-                                            padding: theme.spacing(1),
-                                            borderRadius: theme.shape.borderRadius,
-                                            borderWidth: 1,
-                                            borderStyle: 'solid',
-                                            borderColor: theme.palette.primary.main,
-                                        })}
-                                    >
-                                        <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                                    <HBox sx={{
+                                        padding: theme.spacing(4),
+                                        borderRadius: theme.shape.borderRadius,
+                                        backgroundColor: theme.palette.white.main,
+                                    }}>
+                                        <Typography variant="h5" sx={{ fontWeight: '400' }}>
                                             {metadata.rp && getRpTitle()}
                                         </Typography>
-                                    </Box>
+                                    </HBox>
                                 </VBox>
                             ) : (
                                 <VBox sx={{ gap: theme.spacing(2) }}>
                                     {metadata.rp ? selectedTopics.map((topic, index) => (
-                                        <ContentBox key={index} sx={{ width: "100%", backgroundColor: theme.palette.primary.light }}>
-                                            <VBox gap={2} alignItems={'flex-start'}>
-                                                <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                                        <HBox key={index} sx={{
+                                            padding: theme.spacing(4),
+                                            borderRadius: theme.shape.borderRadius,
+                                            backgroundColor: theme.palette.white.main,
+                                        }}>
+                                            <VBox sx={{ gap: theme.spacing(4) }}>
+                                                <Typography variant="h5" sx={{ fontWeight: '400' }}>
                                                     {language === "de" ? topic.title.de : topic.title.en}
                                                 </Typography>
                                                 {listRPsForTopic(topic)}
                                             </VBox>
-                                        </ContentBox>
+                                        </HBox>
                                     )) : <CircularProgress size={24} />}
                                 </VBox>
                             )
                         }
                     </VBox>
-                    <Button
-                        sx={{
-                            padding: theme.spacing(2),
-                            backgroundColor: theme.palette.primary.main,
-                            borderColor: theme.palette.primary.main
-                        }}
-                        variant="contained"
-                        component={Link}
-                        to={'/profile-section'}>
-                        <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-                            {t('app.topicsChosen.discoverBtn')}
-                        </Typography>
-                    </Button>
+                    <HBox>
+                        <Button
+                            sx={{
+                                padding: "16px 28px",
+                                backgroundColor: theme.palette.blue.dark,
+                                color: theme.palette.white.main,
+                            }}
+                            variant="contained"
+                            component={Link}
+                            to={'/profile-section'}>
+                            <Typography variant="body1" sx={{ fontWeight: 'bold', color: 'inherit' }}>
+                                {t('app.topicsChosen.discoverBtn')}
+                            </Typography>
+                        </Button>
+                    </HBox>
                 </VBox>
             </AppScreenWrapper>
         </Layout >
