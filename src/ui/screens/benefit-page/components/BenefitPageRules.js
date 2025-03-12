@@ -9,7 +9,6 @@ import useTranslation from "../../../language/useTranslation";
 import useFetchData from "../../../shared-hooks/useFetchData";
 import useBenefitPageRules from "../hooks/useBenefitPageRules";
 import { VBox, HBox } from "../../../shared-components/LayoutBoxes";
-import ContentBox from "../../../shared-components/ContentBox";
 import theme from "../../../../theme";
 
 const BenefitPageRules = ({ benefitId, validated_status }) => {
@@ -26,7 +25,14 @@ const BenefitPageRules = ({ benefitId, validated_status }) => {
     const [showRules, setShowRules] = useState(false);
 
     return (
-        <ContentBox sx={{ width: "100%" }}>
+        <VBox
+            sx={{
+                gap: theme.spacing(2),
+                backgroundColor: theme.palette.white.main,
+                padding: '32px',
+                borderRadius: theme.shape.borderRadius,
+            }}
+        >
             <HBox sx={{ justifyContent: 'space-between', alignItems: "center", cursor: "pointer" }} onClick={() => setShowRules(!showRules)}>
                 <Typography variant="h6" sx={{ fontWeight: "bold" }}>
                     {t("app.benefitPage.rulesTable.header")}
@@ -47,13 +53,13 @@ const BenefitPageRules = ({ benefitId, validated_status }) => {
                         <VBox gap={1}>
                             {rules &&
                                 rules.map((rule, index) => (
-                                    <BenefitPageRuleEntry key={index} ruleData={rule} validated_status={validated_status}/>
+                                    <BenefitPageRuleEntry key={index} ruleData={rule} validated_status={validated_status} />
                                 ))}
                         </VBox>
                     </Collapse>
                 )
             }
-        </ContentBox>
+        </VBox>
     );
 };
 

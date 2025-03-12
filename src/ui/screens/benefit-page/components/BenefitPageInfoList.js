@@ -4,7 +4,6 @@ import IconButton from "@mui/material/IconButton";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Collapse from "@mui/material/Collapse";
 import { HBox, VBox } from "../../../shared-components/LayoutBoxes";
-import ContentBox from "../../../shared-components/ContentBox";
 import theme from '../../../../theme';
 import InfoIcon from '@mui/icons-material/Info';
 
@@ -13,7 +12,14 @@ const BenefitPageInfoList = ({ listTitle, data }) => {
     const [showAdditionalSupport, setShowAdditionalSupport] = useState(false);
 
     return (
-        <ContentBox sx={{ width: "100%" }}>
+        <VBox
+            sx={{
+                gap: theme.spacing(2),
+                backgroundColor: theme.palette.white.main,
+                padding: '32px',
+                borderRadius: theme.shape.borderRadius,
+            }}
+        >
             <HBox sx={{ justifyContent: 'space-between', alignItems: "center", cursor: "pointer" }} onClick={() => setShowAdditionalSupport(!showAdditionalSupport)}>
                 <Typography variant="h6">{listTitle}</Typography>
                 <IconButton
@@ -36,8 +42,8 @@ const BenefitPageInfoList = ({ listTitle, data }) => {
                                     <VBox gap={1}>
                                         {
                                             data.details.map((item, index) => (
-                                                <HBox sx={{alignItems: 'center'}} >
-                                                    <InfoIcon sx={{fontSize: '20px'}} />
+                                                <HBox sx={{ alignItems: 'center' }} >
+                                                    <InfoIcon sx={{ fontSize: '20px' }} />
                                                     <Typography sx={{ color: "inherit" }} variant="body1">{item}</Typography>
                                                 </HBox>
                                             ))
@@ -49,7 +55,7 @@ const BenefitPageInfoList = ({ listTitle, data }) => {
                     </Collapse>
                 )
             }
-        </ContentBox>
+        </VBox>
     );
 }
 

@@ -43,7 +43,8 @@ const LandingPageFact = ({ isDesktop }) => {
                         </HBox>
                     </VBox>
                     <HBox sx={{ gap: theme.spacing(2) }}>
-                        <Button variant="contained"
+                        <Button 
+                            variant="contained"
                             sx={{
                                 '&:hover': {
                                     backgroundColor: theme.palette.yellow.main,
