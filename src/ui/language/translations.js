@@ -112,7 +112,7 @@ const translations = {
                 deleteBtn: "Delete your profile",
             },
             discoverChoice: {
-                header: "Your choice",
+                header: "You have the choice:",
                 text: "You have two options to discover benefits for yourself: You can answer a few questions for a quick check, or you can browse the entire catalog.",
                 quickCheck: "Quick eligibility check",
                 quickCheckComment: "Based on up to 10 benefits",
@@ -339,7 +339,7 @@ const translations = {
                 deleteBtn: "Profil löschen",
             },
             discoverChoice: {
-                header: "Deine Wahl",
+                header: "Du hast die Wahl:",
                 text: "Du hast zwei Möglichkeiten, um Leistungen für dich zu entdecken. Du kannst ein paar Fragen beantworten und so einen Schnellcheck machen oder dir den gesamten Katalog ansehen.",
                 quickCheck: "Schneller Anspruchscheck",
                 quickCheckComment: "Basierend auf bis zu 10 Leistungen",

@@ -11,14 +11,10 @@ const TimeIcon = () => {
             <HBox sx={{
                 alignItems: 'center',
                 gap: theme.spacing(1),
-                padding: theme.spacing(0.5),
-                borderStyle: 'solid',
-                borderWidth: '1px',
-                borderColor: theme.palette.secondary.main,
-                borderRadius: theme.shape.borderRadius,
+                padding: theme.spacing(0.5)
             }}>
-                <AccessTimeIcon sx={{ fontSize: "20px", color: theme.palette.secondary.main }} />
-                <Typography variant="body2">
+                <AccessTimeIcon sx={{ fontSize: "20px", color: theme.palette.blue.main }} />
+                <Typography variant="body1" sx={{ color: theme.palette.blue.main }}>
                     5 Min.
                 </Typography>
             </HBox>
