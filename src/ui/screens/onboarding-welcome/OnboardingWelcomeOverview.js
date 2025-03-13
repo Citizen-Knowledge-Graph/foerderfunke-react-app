@@ -11,8 +11,10 @@ import TimeIcon from './components/TimeIcon';
 import BenefitsIcon from './components/BenefitsIcon';
 import { useMetadataStore, useSelectedBenefitStore, useSelectedTopicsStore } from "../../storage/zustand";
 import theme from "../../../theme";
+import { useStore } from "../../shared-components/ViewportUpdater";
 
 const OnboardingWelcomeOverview = () => {
+    const isDesktop = useStore((state) => state.isDesktop);
     const { benefitMode } = useParams();
     const { t } = useTranslation();
     const { language } = useContext(LanguageContext);
@@ -42,22 +44,24 @@ const OnboardingWelcomeOverview = () => {
         const rpUri = "https://foerderfunke.org/default#" + selectedBenefit?.split(":")[1];
         return metadata.rp[rpUri].title;
     }
+    const gap = isDesktop ? theme.spacing(8) : theme.spacing(4);
+    const padding = isDesktop ? theme.spacing(4) : '20px';
 
     return (
         <Layout isApp={true} logo={false}>
             <AppScreenWrapper back={true}>
-                <VBox sx={{ gap: theme.spacing(8) }}>
+                <VBox sx={{ gap: gap }}>
                     <VBox>
                         <Typography variant="h1">
                             {t('app.topicSelection.header')}
                         </Typography>
-                        <HBox sx={{ gap: theme.spacing(4), alignItems: 'center' }}>
+                        <HBox sx={{ gap: theme.spacing(4), alignItems: 'center', flexWrap: 'wrap' }}>
                             <TimeIcon />
                             {!benefitMode && <BenefitsIcon numberOfBenefits={numberOfBenefits} />}
                         </HBox>
                     </VBox>
                     <VBox sx={{ maxWidth: '840px' }}>
-                        <Typography variant="h4" sx={{ color: theme.palette.pink.main }}>
+                        <Typography variant="h2" sx={{ color: theme.palette.pink.main, fontWeight: '500' }}>
                             {benefitMode ? t('app.topicsChosen.benefitTitle') : t('app.topicsChosen.topicsTitle')}
                         </Typography>
                         <Typography variant="body1">
@@ -69,11 +73,11 @@ const OnboardingWelcomeOverview = () => {
                             benefitMode ? (
                                 <VBox alignItems={'flex-start'}>
                                     <HBox sx={{
-                                        padding: theme.spacing(4),
+                                        padding: padding,
                                         borderRadius: theme.shape.borderRadius,
                                         backgroundColor: theme.palette.white.main,
                                     }}>
-                                        <Typography variant="h5" sx={{ fontWeight: '400' }}>
+                                        <Typography variant="h2" sx={{ fontWeight: '400' }}>
                                             {metadata.rp && getRpTitle()}
                                         </Typography>
                                     </HBox>
@@ -82,12 +86,12 @@ const OnboardingWelcomeOverview = () => {
                                 <VBox sx={{ gap: theme.spacing(2) }}>
                                     {metadata.rp ? selectedTopics.map((topic, index) => (
                                         <HBox key={index} sx={{
-                                            padding: theme.spacing(4),
+                                            padding: padding,
                                             borderRadius: theme.shape.borderRadius,
                                             backgroundColor: theme.palette.white.main,
                                         }}>
                                             <VBox sx={{ gap: theme.spacing(4) }}>
-                                                <Typography variant="h5" sx={{ fontWeight: '400' }}>
+                                                <Typography variant="h2" sx={{ fontWeight: '500' }}>
                                                     {language === "de" ? topic.title.de : topic.title.en}
                                                 </Typography>
                                                 {listRPsForTopic(topic)}
@@ -108,7 +112,7 @@ const OnboardingWelcomeOverview = () => {
                             variant="contained"
                             component={Link}
                             to={'/profile-section'}>
-                            <Typography variant="body1" sx={{ fontWeight: 'bold', color: 'inherit' }}>
+                            <Typography variant="body1" sx={{ color: 'inherit' }}>
                                 {t('app.topicsChosen.discoverBtn')}
                             </Typography>
                         </Button>

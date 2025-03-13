@@ -11,19 +11,22 @@ import TimeIcon from './components/TimeIcon';
 import { useSelectedBenefitStore } from "../../storage/zustand";
 import theme from "../../../theme";
 import ClickableTopicBox from "./components/ClickableTopicBox";
+import { useStore } from "../../shared-components/ViewportUpdater";
 
 const OnboardingWelcomeTopics = () => {
+    const isDesktop = useStore((state) => state.isDesktop);
     const { t } = useTranslation();
     const clearSelectedBenefit = useSelectedBenefitStore((state) => state.clear);
     clearSelectedBenefit()
     const topicsData = useFetchData('assets/data/topics/topics-list.json')
     const { selectedTopicsBoolean, handleButtonClick, handleToggleSelectAll } =
         useTopicSelectionHandlers(topicsData);
+    const gap = isDesktop ? theme.spacing(8) : theme.spacing(4);
 
     return (
         <Layout isApp={true} logo={false}>
             <AppScreenWrapper back={true}>
-                <VBox sx={{ gap: theme.spacing(8) }}>
+                <VBox sx={{ gap: gap }}>
                     <VBox>
                         <Typography variant="h1">
                             {t('app.topicSelection.header')}
@@ -32,7 +35,7 @@ const OnboardingWelcomeTopics = () => {
                     </VBox>
                     <VBox sx={{ gap: theme.spacing(4) }}>
                         <VBox>
-                            <Typography variant="h4" sx={{ color: theme.palette.pink.main }}>
+                            <Typography variant="h2" sx={{ color: 'pink.main', fontWeight: '500' }}>
                                 {t('app.topicSelection.socialBenefitsTitle')}
                             </Typography>
                             <Typography variant="body1">
@@ -66,7 +69,7 @@ const OnboardingWelcomeTopics = () => {
                     </VBox>
                     <VBox sx={{ gap: theme.spacing(4) }}>
                         <VBox>
-                            <Typography variant="h4" sx={{ color: theme.palette.pink.main }}>
+                            <Typography variant="h2" sx={{ color: 'pink.main', fontWeight: '500' }}>
                                 {t('app.topicSelection.businessTitle')}
                             </Typography>
                             <Typography variant="body1">
@@ -114,7 +117,7 @@ const OnboardingWelcomeTopics = () => {
                             variant="contained"
                             component={Link}
                             to={'/onboarding-welcome'}>
-                            <Typography variant="body1" sx={{ fontWeight: 'bold', color: 'inherit' }}>
+                            <Typography variant="body1" sx={{ color: 'inherit' }}>
                                 {t('app.topicSelection.confirmBtn')}
                             </Typography>
                         </Button>

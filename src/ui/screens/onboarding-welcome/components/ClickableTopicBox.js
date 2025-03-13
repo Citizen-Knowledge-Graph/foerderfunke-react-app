@@ -32,7 +32,7 @@ const ClickableTopicBox = ({ topic, index, category, isSelected, onClick }) => {
                     },
                 }}
             >
-                <Typography variant="h5" sx={{ fontWeight: '400', whiteSpace: 'nowrap' }}>
+                <Typography variant="h2" sx={{ fontWeight: '400', whiteSpace: 'wrap' }}>
                     {language === "de" ? topic.title.de : topic.title.en}
                 </Typography>
             </HBox>

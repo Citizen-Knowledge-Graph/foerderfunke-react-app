@@ -73,40 +73,36 @@ const theme = createTheme({
             fontWeight: 400,
             color: '#333333',
         },
-        h6: {
+        h4: {
             lineHeight: '1.3',
             color: '#333333',
             fontFamily: '"Funnel Display", sans-serif',
-            fontSize: '20px', // Default font size
-            [`@media (max-width:600px)`]: { fontSize: '18px' }, // Smaller screens
-            [`@media (min-width:960px)`]: { fontSize: '18px' }, // Large screens
+            fontSize: '20px',
+            [`@media (max-width:600px)`]: { fontSize: '18px' },
         },
-        h5: {
+        h3: {
             fontWeight: '500',
             lineHeight: '1.3',
             color: '#333333',
             fontFamily: '"Funnel Display", sans-serif',
-            fontSize: '18px', // Default font size
-            [`@media (max-width:600px)`]: { fontSize: '16px' }, // Smaller screens
-            [`@media (min-width:960px)`]: { fontSize: '20px' }, // Large screens
+            fontSize: '18px',
+            [`@media (max-width:600px)`]: { fontSize: '16px' },
         },
-        h4: {
+        h2: {
             fontWeight: 'bold',
             lineHeight: '1.3',
             color: '#333333',
             fontFamily: '"Funnel Display", sans-serif',
-            fontSize: '24px', // Default font size
-            [`@media (max-width:600px)`]: { fontSize: '20px' }, // Smaller screens
-            [`@media (min-width:960px)`]: { fontSize: '28px' }, // Large screens
+            fontSize: '24px',
+            [`@media (max-width:600px)`]: { fontSize: '18px' },
         },
         h1: {
             fontWeight: '500',
             lineHeight: '60px',
             color: '#333333',
             fontFamily: '"Funnel Display", sans-serif',
-            fontSize: '48px', // Default font size
-            [`@media (max-width:600px)`]: { fontSize: '32px', lineHeight: '40px' }, // Small screens
-            [`@media (min-width:960px)`]: { fontSize: '56px', lineHeight: '70px' }, // Large screens
+            fontSize: '48px',
+            [`@media (max-width:600px)`]: { fontSize: '32px', lineHeight: '40px' },
         },
         caption: {
             fontSize: '12px',
