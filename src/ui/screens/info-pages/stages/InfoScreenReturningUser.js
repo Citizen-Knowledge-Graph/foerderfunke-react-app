@@ -78,7 +78,7 @@ const InfoScreenReturningUser = () => {
                                         <Typography variant="h6">
                                             {t("app.welcomeBack.yesBtnTitle")}
                                         </Typography>
-                                        <Typography variant="body2" sx={{ textAlign: 'left' }}>
+                                        <Typography variant="body1" sx={{ textAlign: 'left' }}>
                                             {t("app.welcomeBack.yesBtnText")}
                                         </Typography>
                                     </VBox>
@@ -103,7 +103,7 @@ const InfoScreenReturningUser = () => {
                                         <Typography variant="h6">
                                             {t("app.welcomeBack.noBtnTitle")}
                                         </Typography>
-                                        <Typography variant="body2" sx={{ textAlign: 'left' }}>
+                                        <Typography variant="body1" sx={{ textAlign: 'left' }}>
                                             {t("app.welcomeBack.noBtnText")}
                                         </Typography>
                                     </VBox>
@@ -111,7 +111,7 @@ const InfoScreenReturningUser = () => {
                             </Button>
                         </HBox>
                     </HBox>
-                    <HBox>
+                    <HBox sx={{ flexWrap: 'wrap' }}>
                         <Button
                             sx={{
                                 borderWidth: '1px',

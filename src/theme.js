@@ -27,7 +27,7 @@ const theme = createTheme({
             main: '#B1EE9B',
         },
         red: {
-            main: '#F47B66',
+            main: '#FF0000',
         },
         pink: {
             main: '#F77BB6',
@@ -78,7 +78,7 @@ const theme = createTheme({
             color: '#333333',
             fontFamily: '"Funnel Display", sans-serif',
             fontSize: '20px', // Default font size
-            [`@media (max-width:600px)`]: { fontSize: '16px' }, // Smaller screens
+            [`@media (max-width:600px)`]: { fontSize: '18px' }, // Smaller screens
             [`@media (min-width:960px)`]: { fontSize: '18px' }, // Large screens
         },
         h5: {

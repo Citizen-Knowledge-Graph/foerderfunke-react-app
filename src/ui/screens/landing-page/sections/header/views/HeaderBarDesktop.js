@@ -7,8 +7,9 @@ import { HBox } from '../../../../../shared-components/LayoutBoxes';
 import LogoBar from '../../../../../shared-components/LogoBar';
 import AntSwitch from '../../../../../shared-components/AntSwitch';
 import LandingPageHollowButtonDesktop from '../../../components/LandingPageButtonDesktop';
+import theme from '../../../../../../theme';
 
-const HeaderBarDesktop = ({isApp}) => {
+const HeaderBarDesktop = ({ isApp }) => {
     const { language, setLanguage } = useContext(LanguageContext);
     const { t } = useTranslation();
     const isEnglish = language === "en";
@@ -30,7 +31,7 @@ const HeaderBarDesktop = ({isApp}) => {
             </HBox>
             <HBox justifyContent={'flex-end'} alignItems={'center'}>
                 <HBox gap={5}>
-                    { !isApp ? <LandingPageWAppButton /> : null }
+                    {!isApp ? <LandingPageWAppButton /> : null}
                     <LandingPageHollowButtonDesktop isApp={isApp} text={t('home.menu.improve')} to={'/#feedback'} />
                     <LandingPageHollowButtonDesktop isApp={isApp} text={t('home.menu.aboutUs')} to={"/#about-us"} />
                     <LandingPageHollowButtonDesktop isApp={isApp} text={t('home.menu.activityLog')} to={'/activity-log'} />
@@ -40,9 +41,11 @@ const HeaderBarDesktop = ({isApp}) => {
                             checked={isEnglish}
                             onChange={handleLanguageToggle}
                             inputProps={{ 'aria-label': 'language selection' }}
+                            backgroundColor={isApp ? 'white' : theme.palette.blue.dark }
+                            color={isApp ? theme.palette.blue.dark : 'white'}
                         />
                         <span style={{ color: isApp ? 'white' : 'black' }}>EN</span>
-                        </HBox>
+                    </HBox>
                 </HBox>
             </HBox>
         </HBox>

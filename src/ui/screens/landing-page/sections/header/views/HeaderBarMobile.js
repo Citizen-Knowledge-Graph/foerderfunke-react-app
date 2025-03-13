@@ -16,6 +16,7 @@ const HeaderBarMobile = ({ isApp }) => {
     const { language, setLanguage } = useContext(LanguageContext);
     const { t } = useTranslation();
     const isEnglish = language === "en";
+    const color = isApp ? 'white.main' : 'black.main';
 
     const handleLanguageToggle = (event) => {
         setLanguage(event.target.checked ? "en" : "de");
@@ -24,7 +25,7 @@ const HeaderBarMobile = ({ isApp }) => {
     return (
         <VBox sx={{
             alignItems: 'center',
-            padding: '20px 32px',
+            padding: '20px 24px',
         }}>
             <HBox sx={{
                 justifyContent: 'space-between',
@@ -33,7 +34,7 @@ const HeaderBarMobile = ({ isApp }) => {
             }}>
                 <HBox alignItems={'center'}>
                     <Link to={"/"} style={{ textDecoration: 'none', color: "black", width: '100%' }}>
-                        <LogoBar size={'large'} />
+                        <LogoBar size={'large'} isApp={isApp} />
                     </Link>
                 </HBox>
                 <IconButton
@@ -41,26 +42,28 @@ const HeaderBarMobile = ({ isApp }) => {
                     aria-haspopup="true"
                     onClick={() => setShowDropdown(!showDropdown)}
                 >
-                    <MenuIcon sx={{ color: theme.palette.black.main, fontSize: '32px' }} />
+                    <MenuIcon sx={{ color: color, fontSize: '32px' }} />
                 </IconButton>
             </HBox>
             {
                 showDropdown && (
                     <VBox sx={{ gap: theme.spacing(10), alignItems: 'center', justifyContent: 'center', height: '85vh' }}>
                         <VBox sx={{ gap: theme.spacing(2), alignItems: 'center' }}>
-                            <LandingPageHollowButtonMobile setShowDropdown={setShowDropdown} text={t('home.menu.improve')} to='/#feedback' />
-                            <LandingPageHollowButtonMobile setShowDropdown={setShowDropdown} text={t('home.menu.aboutUs')} to={"/#about-us"} />
-                            <LandingPageHollowButtonMobile setShowDropdown={setShowDropdown} text={t('home.menu.activityLog')} to={'/activity-log'} />
+                            <LandingPageHollowButtonMobile isApp={isApp} setShowDropdown={setShowDropdown} text={t('home.menu.improve')} to='/#feedback' />
+                            <LandingPageHollowButtonMobile isApp={isApp} setShowDropdown={setShowDropdown} text={t('home.menu.aboutUs')} to={"/#about-us"} />
+                            <LandingPageHollowButtonMobile isApp={isApp} setShowDropdown={setShowDropdown} text={t('home.menu.activityLog')} to={'/activity-log'} />
                         </VBox>
                         <LandingPageButton />
                         <HBox alignItems="center" gap={1}>
-                            <span>DE</span>
+                            <span style={{ color: isApp ? 'white' : 'black' }}>DE</span>
                             <AntSwitch
                                 checked={isEnglish}
                                 onChange={handleLanguageToggle}
                                 inputProps={{ 'aria-label': 'language selection' }}
+                                backgroundColor={isApp ? 'white' : 'black'}
+                                color={isApp ? 'black' : 'white'}
                             />
-                            <span>EN</span>
+                            <span style={{ color: isApp ? 'white' : 'black' }}>EN</span>
                         </HBox>
                     </VBox>)
             }
