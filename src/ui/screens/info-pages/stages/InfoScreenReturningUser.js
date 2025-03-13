@@ -113,10 +113,8 @@ const InfoScreenReturningUser = () => {
                     </HBox>
                     <HBox sx={{ flexWrap: 'wrap' }}>
                         <Button
+                            variant="text"
                             sx={{
-                                borderWidth: '1px',
-                                borderStyle: 'solid',
-                                borderColor: theme.palette.custom.darkGrey,
                                 backgroundColor: theme.palette.greyTransparent.main,
                                 '&:hover': {
                                     backgroundColor: theme.palette.custom.lightGrey,
@@ -130,10 +128,8 @@ const InfoScreenReturningUser = () => {
                             </Typography>
                         </Button>
                         <Button
+                            variant="text"
                             sx={{
-                                borderWidth: '1px',
-                                borderStyle: 'solid',
-                                borderColor: theme.palette.custom.darkGrey,
                                 backgroundColor: theme.palette.greyTransparent.main,
                                 '&:hover': {
                                     backgroundColor: theme.palette.custom.lightGrey,

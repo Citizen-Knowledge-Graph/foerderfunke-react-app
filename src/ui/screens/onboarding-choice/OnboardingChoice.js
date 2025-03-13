@@ -6,14 +6,17 @@ import useTranslation from "../../language/useTranslation";
 import theme from "../../../theme";
 import { Link } from "react-router-dom";
 import { HBox, VBox } from '../../shared-components/LayoutBoxes';
+import { useStore } from '../../shared-components/ViewportUpdater';
 
 const OnboardingChoice = () => {
+    const isDesktop = useStore((state) => state.isDesktop);
     const { t } = useTranslation();
+    const gap = isDesktop ? theme.spacing(8) : theme.spacing(4);
 
     return (
         <Layout isApp={true}>
             <AppScreenWrapper back={true}>
-                <VBox sx={{ gap: theme.spacing(8) }}>
+                <VBox sx={{ gap: gap }}>
                     <HBox sx={{ maxWidth: '840px' }}>
                         <Typography variant="h1">
                             {t('app.discoverChoice.header')}
@@ -42,7 +45,7 @@ const OnboardingChoice = () => {
                                         <Typography variant="h6">
                                             {t('app.discoverChoice.quickCheck')}
                                         </Typography>
-                                        <Typography variant="body2" sx={{ textAlign: 'left' }}>
+                                        <Typography variant="body1" sx={{ textAlign: 'left' }}>
                                             {t('app.discoverChoice.quickCheckComment')}
                                         </Typography>
                                     </VBox>

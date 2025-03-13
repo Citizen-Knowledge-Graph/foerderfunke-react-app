@@ -8,17 +8,27 @@ import { VBox, HBox } from "../../../shared-components/LayoutBoxes";
 import AppScreenWrapper from "../../../shared-components/AppScreenWrapper";
 import useTranslation from "../../../language/useTranslation";
 import theme from "../../../../theme";
-
-
+import { useStore } from "../../../shared-components/ViewportUpdater";
 
 const InfoScreenPrivacy = () => {
+    const isDesktop = useStore((state) => state.isDesktop);
     const { t } = useTranslation();
-    const privacyBox = `${process.env.PUBLIC_URL}/assets/images/application/privacy_box.svg`;
+    const privacyBox = `${process.env.PUBLIC_URL}/assets/images/application/privacy_box.svg`
+    const gap = isDesktop ? theme.spacing(8) : theme.spacing(4);
 
     return (
         <Layout isApp={true} logo={false} back="Back" >
             <AppScreenWrapper back={true}>
-                <VBox sx={{ gap: theme.spacing(8) }}>
+                <VBox sx={{ gap: gap }}>
+                    {
+                        !isDesktop ? (
+                            <VBox sx={{ alignItems: 'center' }}>
+                                <img src={privacyBox} alt="logo" style={{
+                                    width: "150px",
+                                }} />
+                            </VBox>
+                        ) : null
+                    }
                     <Typography variant="h1">
                         {t('app.privacySite.header')}
                     </Typography>
@@ -72,13 +82,17 @@ const InfoScreenPrivacy = () => {
                                 </Button>
                             </HBox>
                         </VBox>
-                        <VBox sx={{ justifyContent: 'flex-end' }}>
-                            <img src={privacyBox} alt="logo" style={{ 
-                                width: "315px",
-                                marginRight: "-50px",
-                                marginBottom: "-50px"
-                            }} />
-                        </VBox>
+                        {
+                            isDesktop ? (
+                                <VBox sx={{ justifyContent: 'flex-end' }}>
+                                    <img src={privacyBox} alt="logo" style={{
+                                        width: "315px",
+                                        marginRight: "-50px",
+                                        marginBottom: "-50px"
+                                    }} />
+                                </VBox>
+                            ) : null
+                        }
                     </HBox>
                 </VBox>
             </AppScreenWrapper>
