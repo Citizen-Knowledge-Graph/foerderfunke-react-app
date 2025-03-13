@@ -3,10 +3,14 @@ import { Typography } from '@mui/material';
 import { HBox, VBox } from '../../../shared-components/LayoutBoxes';
 import useTranslation from "../../../language/useTranslation";
 import theme from '../../../../theme';
-import { Circle } from "@mui/icons-material";
 
 const EligibilityOverviewLegend = () => {
     const { t } = useTranslation();
+
+    const eligibleIcon = `${process.env.PUBLIC_URL}/assets/images/application/icon-image-eligible.svg`;
+    const ineligibleIcon = `${process.env.PUBLIC_URL}/assets/images/application/icon-image-ineligible.svg`;
+    const missingIcon = `${process.env.PUBLIC_URL}/assets/images/application/icon-image-missing.svg`;
+
 
     return (
         <VBox sx={{
@@ -14,13 +18,14 @@ const EligibilityOverviewLegend = () => {
             backgroundColor: theme.palette.white.main,
             padding: '32px',
             borderRadius: theme.shape.borderRadius,
+            maxWidth: '506px',
         }}>
 
             <HBox sx={{
                 alignItems: "center",
                 gap: theme.spacing(2),
             }}>
-                <Circle sx={{ color: theme.palette.secondary.main, width: '40px' }} />
+                <img src={eligibleIcon} alt="logo" style={{ width: "20px"}} />
                 <Typography variant="h6" sx={{ fontWeight: '400' }}>
                     {t('app.browseAll.legend.probableEligible')}
                 </Typography>
@@ -30,7 +35,7 @@ const EligibilityOverviewLegend = () => {
                 gap: theme.spacing(2),
                 borderRadius: theme.shape.borderRadius,
             }}>
-                <Circle sx={{ color: theme.palette.error.main, width: '40px' }} />
+                <img src={ineligibleIcon} alt="logo" style={{ width: "20px"}} />
                 <Typography variant="h6" sx={{ fontWeight: '400' }}>
                     {t('app.browseAll.legend.probableNotEligible')}
                 </Typography>
@@ -40,7 +45,7 @@ const EligibilityOverviewLegend = () => {
                 gap: theme.spacing(2),
                 borderRadius: theme.shape.borderRadius,
             }}>
-                <Circle sx={{ color: theme.palette.custom.lightGrey, width: '40px' }} />
+                <img src={missingIcon} alt="logo" style={{ width: "20px"}} />
                 <Typography variant="h6" sx={{ fontWeight: '400' }}>
                     {t('app.browseAll.legend.notEnoughData')}
                 </Typography>
