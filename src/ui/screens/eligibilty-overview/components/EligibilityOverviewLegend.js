@@ -15,6 +15,7 @@ const EligibilityOverviewLegend = () => {
 
     return (
         <VBox sx={{
+            maxwidth: '840px',
             gap: theme.spacing(4),
             backgroundColor: theme.palette.white.main,
             padding: '32px',

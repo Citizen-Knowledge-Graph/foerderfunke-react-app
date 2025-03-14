@@ -13,10 +13,12 @@ const EligibilityOverviewItemDetails = ({ item, eligible }) => {
 
     return (
         <VBox sx={{ gap: theme.spacing(2) }}>
-            <Typography variant="body1">
-                {item.description}
-            </Typography>
-            <HBox sx={{ gap: theme.spacing(2), flexWrap: 'wrap' }}>            
+            <HBox sx={{ maxWidth: '840px' }}>
+                <Typography variant="body1">
+                    {item.description}
+                </Typography>
+            </HBox>
+            <HBox sx={{ gap: theme.spacing(2), flexWrap: 'wrap' }}>
                 <Button
                     variant="text"
                     sx={{
