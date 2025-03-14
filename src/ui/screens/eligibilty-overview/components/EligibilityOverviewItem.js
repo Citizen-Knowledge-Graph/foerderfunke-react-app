@@ -3,7 +3,6 @@ import EligibilityOverviewItemDetails from "./EligibilityOverviewItemDetails";
 import { Add, Remove } from "@mui/icons-material";
 import { IconButton, Typography, Box } from '@mui/material';
 import { HBox, VBox } from '../../../shared-components/LayoutBoxes';
-import theme from '../../../../theme';
 
 const EligibilityOverviewItem = ({ item, eligible, iconPath }) => {
     const [showDescription, setShowDescription] = useState(false);
@@ -13,16 +12,15 @@ const EligibilityOverviewItem = ({ item, eligible, iconPath }) => {
     };
 
     const marginBottom = showDescription ? '16px' : '0';
-    const color = (eligible === 'eligible') ? theme.palette.green.main : ((eligible === 'non-eligible') ? theme.palette.red.main :
-        theme.palette.black.light);
+    const color = eligible === 'indeterminate' ? 'black.light' : 'black.main';
 
     return (
         <VBox sx={{ marginBottom: marginBottom }}>
             <HBox sx={{ alignItems: "center", width: '100%' }}>
-                <img src={iconPath} alt="logo" style={{ width: "20px", color: color }} />
+                <img src={iconPath} alt="logo" style={{ width: "20px" }} />
                 <HBox sx={{ width: '100%' }}>
-                    <HBox sx={{ alignItems: 'center' }}>
-                        <Typography variant='h5' sx={{ fontWeight: '400' }} onClick={toggleDescription}>
+                    <HBox sx={{ alignItems: 'center', gap:1, flexWrap: 'wrap' }}>
+                        <Typography variant='h2' sx={{ color: color, fontWeight: '400', wordBreak: 'break-word' }} onClick={toggleDescription}>
                             {item.title}
                         </Typography>
                         {item.status === "beta" && (
@@ -34,7 +32,7 @@ const EligibilityOverviewItem = ({ item, eligible, iconPath }) => {
                 </HBox>
                 <Box>
                     <IconButton onClick={toggleDescription} size="small" >
-                        {showDescription ? <Remove sx={{ color: 'black' }} /> : <Add sx={{ color: 'black' }} />}
+                        {showDescription ? <Remove sx={{ color: color }} /> : <Add sx={{ color: color }} />}
                     </IconButton>
                 </Box>
             </HBox>

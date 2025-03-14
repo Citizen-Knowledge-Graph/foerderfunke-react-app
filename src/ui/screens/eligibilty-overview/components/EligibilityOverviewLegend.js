@@ -11,6 +11,7 @@ const EligibilityOverviewLegend = () => {
     const ineligibleIcon = `${process.env.PUBLIC_URL}/assets/images/application/icon-image-ineligible.svg`;
     const missingIcon = `${process.env.PUBLIC_URL}/assets/images/application/icon-image-missing.svg`;
 
+    console.log("we are rendering");
 
     return (
         <VBox sx={{
@@ -18,15 +19,13 @@ const EligibilityOverviewLegend = () => {
             backgroundColor: theme.palette.white.main,
             padding: '32px',
             borderRadius: theme.shape.borderRadius,
-            maxWidth: '506px',
         }}>
-
             <HBox sx={{
                 alignItems: "center",
                 gap: theme.spacing(2),
             }}>
-                <img src={eligibleIcon} alt="logo" style={{ width: "20px"}} />
-                <Typography variant="h6" sx={{ fontWeight: '400' }}>
+                <img src={eligibleIcon} alt="logo" style={{ width: "16px"}} />
+                <Typography variant="body1" sx={{ fontWeight: '400' }}>
                     {t('app.browseAll.legend.probableEligible')}
                 </Typography>
             </HBox>
@@ -35,8 +34,8 @@ const EligibilityOverviewLegend = () => {
                 gap: theme.spacing(2),
                 borderRadius: theme.shape.borderRadius,
             }}>
-                <img src={ineligibleIcon} alt="logo" style={{ width: "20px"}} />
-                <Typography variant="h6" sx={{ fontWeight: '400' }}>
+                <img src={ineligibleIcon} alt="logo" style={{ width: "16px"}} />
+                <Typography variant="body1" sx={{ fontWeight: '400' }}>
                     {t('app.browseAll.legend.probableNotEligible')}
                 </Typography>
             </HBox>
@@ -45,8 +44,8 @@ const EligibilityOverviewLegend = () => {
                 gap: theme.spacing(2),
                 borderRadius: theme.shape.borderRadius,
             }}>
-                <img src={missingIcon} alt="logo" style={{ width: "20px"}} />
-                <Typography variant="h6" sx={{ fontWeight: '400' }}>
+                <img src={missingIcon} alt="logo" style={{ width: "16px"}} />
+                <Typography variant="body1" sx={{ fontWeight: '400' }}>
                     {t('app.browseAll.legend.notEnoughData')}
                 </Typography>
             </HBox>
@@ -58,7 +57,7 @@ const EligibilityOverviewLegend = () => {
                 <Typography variant='body2' sx={{ color: 'warning.main', width: '40px' }}>
                     Beta
                 </Typography>
-                <Typography variant="h6" sx={{ fontWeight: '400' }}>
+                <Typography variant="body1" sx={{ fontWeight: '400' }}>
                     {t('app.browseAll.legend.beta')}
                 </Typography>
             </HBox>

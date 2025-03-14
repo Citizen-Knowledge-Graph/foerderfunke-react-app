@@ -12,23 +12,25 @@ import useEligibilityData from "./hooks/useEligibilityData";
 import EligibilityOverviewSection from "./components/EligibilityOverviewSection";
 import useTranslation from "../../language/useTranslation";
 import theme from '../../../theme';
+import { useStore } from "../../shared-components/ViewportUpdater";
 
 const EligibilityOverviewScreen = () => {
     const { t } = useTranslation();
     const { language } = useContext(LanguageContext);
+    const isDesktop = useStore((state) => state.isDesktop);
 
     const validationReport = useValidationReportStore((state) => state.validationReport);
     const validationIsLoading = useValidationUpdate((state) => state.validationIsLoading);
     const hydrationData = useFetchData('assets/data/requirement-profiles/requirement-profiles-hydration.json')
     const eligibilityData = useEligibilityData(validationReport, hydrationData, language);
 
-    console.log(validationReport)
+    const gap = isDesktop ? theme.spacing(8) : theme.spacing(4);
 
     return (
         <Layout isApp={true} logo={true}>
             <AppScreenWrapper back={true}>
-                <VBox sx={{ gap: 8 }} >
-                    <EligibilityOverviewHeader />
+                <VBox sx={{ gap: gap }} >
+                    <EligibilityOverviewHeader isDesktop={isDesktop} />
                     {
                         eligibilityData && !validationIsLoading ? (
                             <>

@@ -16,7 +16,7 @@ const EligibilityOverviewItemDetails = ({ item, eligible }) => {
             <Typography variant="body1">
                 {item.description}
             </Typography>
-            <HBox sx={{ gap: theme.spacing(4) }}>            
+            <HBox sx={{ gap: theme.spacing(2), flexWrap: 'wrap' }}>            
                 <Button
                     variant="text"
                     sx={{

@@ -15,7 +15,7 @@ const EligibilityOverviewList = ({ items, eligible, iconPath }) => {
             <Typography variant="h6">
                 {headerText}
             </Typography>
-            <VBox>
+            <VBox sx={{ gap: theme.spacing(2) }}>
                 {items.map((item, index) => (
                     <EligibilityOverviewItem key={index} item={item} eligible={eligible} iconPath={iconPath}/>
                 ))}
