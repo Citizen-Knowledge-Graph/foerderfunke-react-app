@@ -17,7 +17,7 @@ const ProfileSectionQuestionsCount = ({ handleBack, stepsBackwardsFromStackFront
 
     return (
         <VBox>
-            <HBox sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
+            <HBox sx={{ justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
                 {questionsAnswered > 1 ?
                     <ProfileSectionBackButton handleBack={handleBack} /> : <div />}
                 <HBox sx={{ alignItems: 'center', padding: '8px', }}>

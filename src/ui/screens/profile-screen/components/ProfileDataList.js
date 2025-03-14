@@ -31,7 +31,9 @@ const ProfileDataList = () => {
                                     <Typography variant='body2'>
                                         {label}
                                     </Typography>
-                                    <Typography variant='h5' sx={{ fontWeight: '400' }}>
+                                    <Typography variant='h2' sx={{
+                                        fontWeight: '500', wordWrap: "break-word",
+                                    }}>
                                         {value}
                                     </Typography>
                                 </VBox>
@@ -43,7 +45,7 @@ const ProfileDataList = () => {
                         </Typography>
                     </VBox>)
             }
-            <HBox sx={{ gap: theme.spacing(4) }}>
+            <HBox sx={{ flexWrap: 'wrap' }}>
                 <Typography>
                     {t('app.qsComplete.hint')}
                 </Typography>
