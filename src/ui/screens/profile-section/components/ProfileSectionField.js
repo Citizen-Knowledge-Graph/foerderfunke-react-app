@@ -75,11 +75,17 @@ const ProfileSectionField = ({
                     )
                 }
             </VBox>
-            <ProfileSectionInputSwitch value={value}
-                setValue={setValue}
-                currentField={currentField}
-                entityData={entityData}
-                error={localError} />
+            <HBox sx={{ 
+                padding: "32px", 
+                backgroundColor: 'white.main', 
+                borderRadius: theme.shape.borderRadius 
+            }}>
+                <ProfileSectionInputSwitch value={value}
+                    setValue={setValue}
+                    currentField={currentField}
+                    entityData={entityData}
+                    error={localError} />
+            </HBox>
             <HBox>
                 <Button variant="contained"
                     sx={{
