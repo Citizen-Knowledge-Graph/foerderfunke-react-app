@@ -45,7 +45,7 @@ const ProfileSectionField = ({
     return (
         <VBox sx={{ gap: theme.spacing(4) }}>
             <VBox>
-                <Typography variant='h4' sx={{ fontWeight: '400' }}>
+                <Typography variant='h2' sx={{ fontWeight: '400' }}>
                     {currentField.question}
                 </Typography>
                 {currentField.comment.length > 0 && (
@@ -89,7 +89,7 @@ const ProfileSectionField = ({
                     }}
                     onClick={() => handleAddClick(value, currentIndex)}
                 >
-                    <Typography variant="body1" sx={{ fontWeight: 'bold', color: 'inherit' }}>{t('app.questions.confirmBtn')}</Typography>
+                    <Typography variant="body1" sx={{ color: 'inherit' }}>{t('app.questions.confirmBtn')}</Typography>
                 </Button>
             </HBox>
         </VBox>
