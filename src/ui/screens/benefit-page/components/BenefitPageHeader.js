@@ -16,11 +16,65 @@ const BenefitPageHeader = ({ id, benefit, validatedStatus, categoryTitles }) => 
     const clearSelectedTopics = useSelectedTopicsStore((state) => state.clear);
 
     return (
-        <VBox sx={{ width: '100%', gap: theme.spacing(2) }}>
-            <HBox sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
+        <HBox sx={{ justifyContent: 'space-between', gap: theme.spacing(4), flexWrap: 'wrap' }}>
+            <VBox sx={{ gap: theme.spacing(2) }}>
                 <Typography variant="h1">
                     {benefit.title}
                 </Typography>
+                <VBox sx={{ gap: theme.spacing(2) }}>
+                    <HBox sx={{ gap: theme.spacing(1), alignItems: 'center' }}>
+                        <Typography variant="body2" sx={{ color: 'blue.main' }}>
+                            LeiKa-Id: {benefit.leikaId}
+                        </Typography>
+                        <IconButton
+                            sx={{
+                                width: 24,
+                                height: 24,
+                                borderRadius: theme.shape.circle,
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                backgroundColor: 'white',
+                                '&:hover': {
+                                    backgroundColor: globalStyles.colorLightGrey,
+                                },
+                            }}
+                            onClick={() => setLeiKaInfo(!leiKaInfo)}
+                        >
+                            <InfoOutlinedIcon sx={{ fontSize: 16, color: 'blue.main' }} />
+                        </IconButton>
+                    </HBox>
+                    {leiKaInfo && (
+                        <Typography variant="body2" sx={{ color: 'blue.main' }}>
+                            {t('app.benefitPage.LeiKaInfo')}
+                        </Typography>
+                    )}
+                    <Box sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        width: '100%'
+                    }} gap={2}>
+                        <Box sx={{ display: 'flex', flexWrap: 'wrap' }} gap={2}>
+                            {categoryTitles.map((category, index) => (
+                                <Box
+                                    key={index}
+                                    sx={(theme) => ({
+                                        padding: '8px 12px',
+                                        borderRadius: theme.shape.borderRadius,
+                                        border: `1px solid ${theme.palette.blue.main}`,
+                                    })}
+                                >
+                                    <Typography variant="body2" sx={{ color: 'blue.main' }}>
+                                        {category}
+                                    </Typography>
+                                </Box>
+                            ))}
+                        </Box>
+                    </Box>
+                </VBox>
+
+            </VBox>
+            <HBox sx={{ alignItems: 'flex-start' }}>
                 {
                     id && !validatedStatus && (
                         <Button
@@ -39,62 +93,14 @@ const BenefitPageHeader = ({ id, benefit, validatedStatus, categoryTitles }) => 
                                 clearSelectedTopics()
                             }}
                         >
-                            {t('app.benefitPage.eligibilityBtn')}
+                            <Typography variant="body1" sx={{ color: 'inherit', whiteSpace: 'nowrap' }}>
+                                {t('app.benefitPage.eligibilityBtn')}
+                            </Typography>
                         </Button>
                     )
                 }
-
             </HBox>
-            <HBox sx={{ gap: theme.spacing(1), alignItems: 'center' }}>
-                <Typography variant="body2" sx={{ color: 'blue.main' }}>
-                    LeiKa-Id: {benefit.leikaId}
-                </Typography>
-                <IconButton
-                    sx={{
-                        width: 24,
-                        height: 24,
-                        borderRadius: theme.shape.circle,
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        backgroundColor: 'white',
-                        '&:hover': {
-                            backgroundColor: globalStyles.colorLightGrey,
-                        },
-                    }}
-                    onClick={() => setLeiKaInfo(!leiKaInfo)}
-                >
-                    <InfoOutlinedIcon sx={{ fontSize: 16, color: 'blue.main' }} />
-                </IconButton>
-            </HBox>
-            {leiKaInfo && (
-                <Typography variant="body2" sx={{ color: 'blue.main' }}>
-                    {t('app.benefitPage.LeiKaInfo')}
-                </Typography>
-            )}
-            <Box sx={{
-                display: "flex",
-                flexDirection: "column",
-                width: '100%'
-            }} gap={2}>
-                <Box sx={{ display: 'flex', flexWrap: 'wrap' }} gap={2}>
-                    {categoryTitles.map((category, index) => (
-                        <Box
-                            key={index}
-                            sx={(theme) => ({
-                                padding: '8px 12px',
-                                borderRadius: theme.shape.borderRadius,
-                                border: `1px solid ${theme.palette.blue.main}`,
-                            })}
-                        >
-                            <Typography variant="body2" sx={{ color: 'blue.main' }}>
-                                {category}
-                            </Typography>
-                        </Box>
-                    ))}
-                </Box>
-            </Box>
-        </VBox>
+        </HBox>
     );
 }
 
