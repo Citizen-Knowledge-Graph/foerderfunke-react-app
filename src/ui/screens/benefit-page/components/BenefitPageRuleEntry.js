@@ -25,7 +25,7 @@ const BenefitPageRuleEntry = ({ ruleData, validated_status }) => {
             backgroundColor: validtyColor,
             gap: theme.spacing(2),
         }}>
-            <HBox sx={{ gap: 1 }}>
+            <HBox sx={{ gap: 1, flexWrap: 'wrap' }}>
                 <Typography variant="body1">{ruleData.requirement.label}{':'}</Typography>
                 <Typography variant="body1" sx={{
                     wordBreak: 'break-word',
@@ -39,7 +39,7 @@ const BenefitPageRuleEntry = ({ ruleData, validated_status }) => {
             </HBox>
             {validated_status && (
                 <HBox sx={{ gap: theme.spacing(2)}}>
-                    <Typography variant="h6" sx={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
+                    <Typography variant="h2" sx={{ wordBreak: 'break-word', fontWeight: '500' }}>
                         {ruleData.userValue}
                     </Typography>
                 </HBox>

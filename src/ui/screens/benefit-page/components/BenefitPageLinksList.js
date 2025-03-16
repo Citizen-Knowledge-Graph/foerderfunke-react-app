@@ -19,7 +19,8 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
                 borderRadius: theme.shape.borderRadius,
             }}>
             <HBox sx={{ justifyContent: 'space-between', alignItems: "center", cursor: "pointer" }} onClick={() => setShowAdditionalSupport(!showAdditionalSupport)}>
-                <Typography variant="h6">{listTitle}</Typography>
+                <Typography variant="h2" sx={{ fontWeight: '500', wordBreak: "break-word" }}>
+                    {listTitle}</Typography>
                 <IconButton
                     sx={{
                         transition: "transform 0.3s",
@@ -41,16 +42,16 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
                                         {
                                             data.links.map((link, index) => (
                                                 <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-                                                    <Button variant="text" sx={{ 
+                                                    <Button variant="text" sx={{
                                                         padding: 0, color: 'pink.main', textDecoration: 'underline',
                                                         '&:hover': {
                                                             backgroundColor: 'transparent',
                                                             color: 'black.main',
                                                             textDecoration: 'underline',
-                                                        }   
+                                                        }
                                                     }}>
                                                         <HBox sx={{ alignItems: 'center' }} >
-                                                            <OpenInNewIcon sx={{ fontSize: '20px' }}/>
+                                                            <OpenInNewIcon sx={{ fontSize: '20px' }} />
                                                             <Typography sx={{ color: "inherit" }} variant="body1">{link.title}</Typography>
                                                         </HBox>
                                                     </Button>

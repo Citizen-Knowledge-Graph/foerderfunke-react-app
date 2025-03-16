@@ -8,6 +8,7 @@ import theme from '../../../../theme';
 import InfoIcon from '@mui/icons-material/Info';
 
 
+
 const BenefitPageInfoList = ({ listTitle, data }) => {
     const [showAdditionalSupport, setShowAdditionalSupport] = useState(false);
 
@@ -21,7 +22,9 @@ const BenefitPageInfoList = ({ listTitle, data }) => {
             }}
         >
             <HBox sx={{ justifyContent: 'space-between', alignItems: "center", cursor: "pointer" }} onClick={() => setShowAdditionalSupport(!showAdditionalSupport)}>
-                <Typography variant="h6">{listTitle}</Typography>
+                <Typography variant="h2" sx={{ fontWeight: '500', wordBreak: "break-word" }}>
+                    {listTitle}
+                </Typography>
                 <IconButton
                     sx={{
                         transition: "transform 0.3s",
