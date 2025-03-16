@@ -22,33 +22,35 @@ const BenefitPageHeader = ({ id, benefit, validatedStatus, categoryTitles }) => 
                     {benefit.title}
                 </Typography>
                 <VBox sx={{ gap: theme.spacing(2) }}>
-                    <HBox sx={{ gap: theme.spacing(1), alignItems: 'center' }}>
-                        <Typography variant="body2" sx={{ color: 'black.light' }}>
-                            LeiKa-Id: {benefit.leikaId}
-                        </Typography>
-                        <IconButton
-                            sx={{
-                                width: 24,
-                                height: 24,
-                                borderRadius: theme.shape.circle,
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                backgroundColor: 'white',
-                                '&:hover': {
-                                    backgroundColor: globalStyles.colorLightGrey,
-                                },
-                            }}
-                            onClick={() => setLeiKaInfo(!leiKaInfo)}
-                        >
-                            <InfoOutlinedIcon sx={{ fontSize: 16, color: 'black.light' }} />
-                        </IconButton>
-                    </HBox>
-                    {leiKaInfo && (
-                        <Typography variant="body2" sx={{ color: 'black.light' }}>
-                            {t('app.benefitPage.LeiKaInfo')}
-                        </Typography>
-                    )}
+                    <VBox sx={{ gap: theme.spacing(1) }}>
+                        <HBox sx={{ gap: theme.spacing(1), alignItems: 'center' }}>
+                            <Typography variant="body2" sx={{ color: 'black.light' }}>
+                                LeiKa-Id: {benefit.leikaId}
+                            </Typography>
+                            <IconButton
+                                sx={{
+                                    width: 24,
+                                    height: 24,
+                                    borderRadius: theme.shape.circle,
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    backgroundColor: 'white',
+                                    '&:hover': {
+                                        backgroundColor: globalStyles.colorLightGrey,
+                                    },
+                                }}
+                                onClick={() => setLeiKaInfo(!leiKaInfo)}
+                            >
+                                <InfoOutlinedIcon sx={{ fontSize: 16, color: 'black.light' }} />
+                            </IconButton>
+                        </HBox>
+                        {leiKaInfo && (
+                            <Typography variant="body2" sx={{ color: 'black.light' }}>
+                                {t('app.benefitPage.LeiKaInfo')}
+                            </Typography>
+                        )}
+                    </VBox>
                     <Box sx={{
                         display: "flex",
                         flexDirection: "column",
