@@ -139,7 +139,11 @@ const translations = {
                 info: "We update the number of questions and potential benefits depending on your answers.",
                 multipleAnswers: "Multiple answers possible",
                 confirmBtn: "Confirm",
-                showComment: "Show explanation"
+                showComment: "Show explanation",
+                unlockedPart1: "You have unlocked",
+                unlockedPart2Multiple: "benefits",
+                unlockedPart2Single: "benefit",
+                unlockedPart3: "based on your answers.",
             },
             datafields: {
                 pickBday: "Pick your birthdate",
@@ -372,7 +376,11 @@ const translations = {
                 info: "Wir aktualisieren die Anzahl der Fragen und möglichen Leistungen basierend auf deinen Antworten.",
                 multipleAnswers: "Mehrere Antworten möglich",
                 confirmBtn: "Bestätigen",
-                showComment: "Erklärung anzeigen"
+                showComment: "Erklärung anzeigen",
+                unlockedPart1: "Du hast",
+                unlockedPart2Multiple: "Leistungen freigeschaltet",
+                unlockedPart2Single: "Leistung freigeschaltet",
+                unlockedPart3: "basierend auf deinen Antworten.",
             },
             datafields: {
                 pickBday: "Wähle dein Geburtsdatum",
