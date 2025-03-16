@@ -23,7 +23,7 @@ const BenefitPageHeader = ({ id, benefit, validatedStatus, categoryTitles }) => 
                 </Typography>
                 <VBox sx={{ gap: theme.spacing(2) }}>
                     <HBox sx={{ gap: theme.spacing(1), alignItems: 'center' }}>
-                        <Typography variant="body2" sx={{ color: 'blue.main' }}>
+                        <Typography variant="body2" sx={{ color: 'black.light' }}>
                             LeiKa-Id: {benefit.leikaId}
                         </Typography>
                         <IconButton
@@ -41,11 +41,11 @@ const BenefitPageHeader = ({ id, benefit, validatedStatus, categoryTitles }) => 
                             }}
                             onClick={() => setLeiKaInfo(!leiKaInfo)}
                         >
-                            <InfoOutlinedIcon sx={{ fontSize: 16, color: 'blue.main' }} />
+                            <InfoOutlinedIcon sx={{ fontSize: 16, color: 'black.light' }} />
                         </IconButton>
                     </HBox>
                     {leiKaInfo && (
-                        <Typography variant="body2" sx={{ color: 'blue.main' }}>
+                        <Typography variant="body2" sx={{ color: 'black.light' }}>
                             {t('app.benefitPage.LeiKaInfo')}
                         </Typography>
                     )}
@@ -61,10 +61,10 @@ const BenefitPageHeader = ({ id, benefit, validatedStatus, categoryTitles }) => 
                                     sx={(theme) => ({
                                         padding: '8px 12px',
                                         borderRadius: theme.shape.borderRadius,
-                                        border: `1px solid ${theme.palette.blue.main}`,
+                                        border: `1px solid ${theme.palette.black.light}`,
                                     })}
                                 >
-                                    <Typography variant="body2" sx={{ color: 'blue.main' }}>
+                                    <Typography variant="body2" sx={{ color: 'black.light' }}>
                                         {category}
                                     </Typography>
                                 </Box>

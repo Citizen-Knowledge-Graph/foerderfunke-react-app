@@ -21,11 +21,11 @@ const ProfileSectionQuestionsCount = ({ handleBack, stepsBackwardsFromStackFront
                 {questionsAnswered > 1 ?
                     <ProfileSectionBackButton handleBack={handleBack} /> : <div />}
                 <HBox sx={{ alignItems: 'center', padding: '8px', }}>
-                    <Typography variant="body2" sx={{ color: theme.palette.blue.main }}>
+                    <Typography variant="body2" sx={{ color: 'black.light' }}>
                         {t('app.questions.progress')}: {questionsAnswered} / {questionsLeft}
                     </Typography>
                     <InfoIcon
-                        sx={{ fontSize: '20px', color: theme.palette.blue.main, cursor: 'pointer' }}
+                        sx={{ fontSize: '20px', color: 'black.light', cursor: 'pointer' }}
                         onClick={() => setIsVisible(isVisible => !isVisible)}
                     />
                 </HBox>

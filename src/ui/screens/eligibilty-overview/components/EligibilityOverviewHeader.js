@@ -24,10 +24,10 @@ const EligibilityOverviewHeader = ({isDesktop}) => {
                         gap: theme.spacing(1),
                         padding: '0',
                         backgroundColor: 'transparent',
-                        color: theme.palette.blue.main,
+                        color: 'black.ligth',
                         '&:hover': {
                             backgroundColor: 'transparent',
-                            color: theme.palette.black.main,
+                            color: 'blue.main',
                         }
                     }} component={Link} to='/profile-overview' variant="text">
                         <PersonIcon data-testid="chevron-left-icon" sx={{ fontSize: '18px' }} />
