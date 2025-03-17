@@ -175,7 +175,7 @@ const translations = {
                 }
             },
             profile: {
-                header: "Your profile",
+                header: "Your locally stored profile",
                 noInfoYet: "You haven't provided any information about yourself yet"
             },
             benefitPage: {
@@ -412,7 +412,7 @@ const translations = {
                 }
             },
             profile: {
-                header: "Dein Profil",
+                header: "Dein lokal gespeicherters Profil",
                 noInfoYet: "Du hast noch keine Informationen über dich angegeben",
             },
             benefitPage: {
