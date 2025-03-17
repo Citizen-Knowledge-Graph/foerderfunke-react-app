@@ -24,7 +24,7 @@ const EligibilityOverviewItem = ({ item, eligible, iconPath }) => {
                             {item.title}
                         </Typography>
                         {item.status === "beta" && (
-                            <Typography variant='body1' sx={{ color: 'warning.main' }}>
+                            <Typography variant='body1' sx={{ color: 'blue.main' }}>
                                 Beta
                             </Typography>
                         )}

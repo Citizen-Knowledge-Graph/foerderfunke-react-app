@@ -13,7 +13,7 @@ const EligibilityOverviewItemDetails = ({ item, eligible }) => {
 
     return (
         <VBox sx={{ gap: theme.spacing(2) }}>
-            <HBox sx={{ maxWidth: '840px' }}>
+            <HBox sx={{ maxWidth: '800px' }}>
                 <Typography variant="body1">
                     {item.description}
                 </Typography>

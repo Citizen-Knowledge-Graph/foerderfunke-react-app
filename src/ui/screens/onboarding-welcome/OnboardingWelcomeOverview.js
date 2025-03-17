@@ -60,7 +60,7 @@ const OnboardingWelcomeOverview = () => {
                             {!benefitMode && <BenefitsIcon numberOfBenefits={numberOfBenefits} />}
                         </HBox>
                     </VBox>
-                    <VBox sx={{ maxWidth: '840px' }}>
+                    <VBox sx={{ maxWidth: '800px' }}>
                         <Typography variant="h2" sx={{ color: theme.palette.pink.main, fontWeight: '500' }}>
                             {benefitMode ? t('app.topicsChosen.benefitTitle') : t('app.topicsChosen.topicsTitle')}
                         </Typography>

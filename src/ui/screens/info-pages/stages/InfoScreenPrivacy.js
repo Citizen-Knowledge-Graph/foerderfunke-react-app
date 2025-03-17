@@ -34,7 +34,7 @@ const InfoScreenPrivacy = () => {
                     </Typography>
                     <HBox>
                         <VBox sx={{ gap: theme.spacing(4) }}>
-                            <VBox sx={{ maxWidth: '840px' }}>
+                            <VBox sx={{ maxWidth: '800px' }}>
                                 <Typography variant="h4">
                                     {t('app.privacySite.subHeader')}
                                 </Typography>

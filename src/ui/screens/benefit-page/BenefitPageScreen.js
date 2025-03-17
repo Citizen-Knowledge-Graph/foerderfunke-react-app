@@ -54,14 +54,15 @@ const BenefitPageScreen = () => {
                     }}>
                         <VBox
                             sx={{
-                                gap: theme.spacing(2),
                                 backgroundColor: theme.palette.white.main,
                                 padding: '32px',
                                 borderRadius: theme.shape.borderRadius,
                             }}
                         >
-                            <Typography variant="h4" sx={{ fontWeight: '400' }}>{t('app.benefitPage.whatIsIt')}{benefitPageData.title}</Typography>
-                            <Typography sx={{ marginTop: theme.spacing(1) }} variant="body1">{benefitPageData.description || t('app.noData')}</Typography>
+                            <VBox sx={{ gap: theme.spacing(2), maxWidth: '800px' }}>
+                                <Typography variant="h2" sx={{ fontWeight: '400' }}>{t('app.benefitPage.whatIsIt')}{benefitPageData.title}</Typography>
+                                <Typography sx={{ marginTop: theme.spacing(1) }} variant="body1">{benefitPageData.description || t('app.noData')}</Typography>
+                            </VBox>
                         </VBox>
                         <BenefitPageRules benefitId={id} validated_status={validated_status} />
                         {

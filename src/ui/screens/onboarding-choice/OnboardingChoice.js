@@ -17,12 +17,12 @@ const OnboardingChoice = () => {
         <Layout isApp={true}>
             <AppScreenWrapper back={true}>
                 <VBox sx={{ gap: gap }}>
-                    <HBox sx={{ maxWidth: '840px' }}>
+                    <HBox sx={{ maxWidth: '800px' }}>
                         <Typography variant="h1">
                             {t('app.discoverChoice.header')}
                         </Typography>
                     </HBox>
-                    <HBox sx={{ maxWidth: '840px' }}>
+                    <HBox sx={{ maxWidth: '800px' }}>
                         <Typography variant="body1">
                             {t('app.discoverChoice.text')}
                         </Typography>

@@ -22,7 +22,7 @@ const BenefitPageRequiredDocuments = ({ requiredDocuments }) => {
             }}
         >
             <HBox sx={{ justifyContent: 'space-between', alignItems: "center", cursor: "pointer" }} onClick={() => setShowRequiredDocuments(!showRequiredDocuments)}>
-                <Typography variant="h2" sx={{ fontWeight: '500', wordBreak: "break-word" }}>
+                <Typography variant="h2" sx={{ fontWeight: '400', wordBreak: "break-word" }}>
                     {t('app.benefitPage.requiredDocuments')}</Typography>
                 <IconButton
                     sx={{
@@ -37,7 +37,7 @@ const BenefitPageRequiredDocuments = ({ requiredDocuments }) => {
             {
                 showRequiredDocuments && (
                     <Collapse in={showRequiredDocuments} sx={{ marginTop: theme.spacing(1) }}>
-                        <VBox>
+                        <VBox sx={{ maxWidth: '800px' }}>
                             {requiredDocuments.map((doc, index) => (
                                 <HBox key={index}>
                                     <ContentPasteIcon />

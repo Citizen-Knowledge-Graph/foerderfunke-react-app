@@ -45,10 +45,12 @@ const ProfileDataList = () => {
                         </Typography>
                     </VBox>)
             }
-            <HBox sx={{ flexWrap: 'wrap' }}>
-                <Typography>
-                    {t('app.qsComplete.hint')}
-                </Typography>
+            <HBox sx={{ justifyContent: 'space-between', flexWrap: 'wrap' }}>
+                <HBox sx={{ maxWidth: '800px' }}>
+                    <Typography>
+                        {t('app.qsComplete.hint')}
+                    </Typography>
+                </HBox>
                 <HBox>
                     <Button
                         sx={{

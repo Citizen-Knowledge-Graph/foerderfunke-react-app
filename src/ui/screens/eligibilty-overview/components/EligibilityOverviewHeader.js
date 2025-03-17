@@ -15,7 +15,7 @@ const EligibilityOverviewHeader = ({isDesktop}) => {
 
     return (
         <VBox sx={{ width: "100%", alignItems: "flex-start", gap: gap }}>
-            <VBox sx={{justifyContent: 'space-between' }}>
+            <VBox>
                 <Typography variant="h1">
                     {t('app.browseAll.header')}
                 </Typography>
@@ -38,12 +38,12 @@ const EligibilityOverviewHeader = ({isDesktop}) => {
                 </HBox>
             </VBox>
             <VBox sx={{ width: '100%', gap: theme.spacing(2) }}>
-                <HBox sx={{ maxWidth: '840px' }}>
+                <HBox sx={{ maxWidth: '800px' }}>
                     <Typography variant='body1'>
                         {t('app.browseAll.subtitle')}{" "}{t('app.browseAll.info')}
                     </Typography>
                 </HBox>
-                <HBox sx={{ alignItems: 'center', cursor: 'pointer' }} onClick={() => setShowLegend(!showLegend)}>
+                <HBox sx={{ alignItems: 'center', cursor: 'pointer', maxWidth: '800px' }} onClick={() => setShowLegend(!showLegend)}>
                     <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
                         {t('app.browseAll.legendTitle')}
                     </Typography>

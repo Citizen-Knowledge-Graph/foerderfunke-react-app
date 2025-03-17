@@ -34,7 +34,7 @@ const BenefitPageRules = ({ benefitId, validated_status }) => {
             }}
         >
             <HBox sx={{ justifyContent: 'space-between', alignItems: "center", cursor: "pointer" }} onClick={() => setShowRules(!showRules)}>
-                <Typography variant="h2" sx={{ fontWeight: '500', wordBreak: "break-word" }}>
+                <Typography variant="h2" sx={{ fontWeight: '400', wordBreak: "break-word" }}>
                     {t("app.benefitPage.rulesTable.header")}
                 </Typography>
                 <IconButton

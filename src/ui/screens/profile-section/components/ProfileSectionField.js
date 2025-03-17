@@ -44,7 +44,7 @@ const ProfileSectionField = ({
 
     return (
         <VBox sx={{ gap: theme.spacing(4) }}>
-            <VBox>
+            <VBox sx={{ maxWidth: '800px' }}>
                 <Typography variant='h2' sx={{ fontWeight: '400' }}>
                     {currentField.question}
                 </Typography>

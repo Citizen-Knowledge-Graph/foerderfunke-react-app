@@ -34,7 +34,7 @@ const OnboardingWelcomeTopics = () => {
                         <TimeIcon />
                     </VBox>
                     <VBox sx={{ gap: theme.spacing(4) }}>
-                        <VBox>
+                        <VBox sx={{ maxWidth: '800px' }}>
                             <Typography variant="h2" sx={{ color: 'pink.main', fontWeight: '500' }}>
                                 {t('app.topicSelection.socialBenefitsTitle')}
                             </Typography>
@@ -68,7 +68,7 @@ const OnboardingWelcomeTopics = () => {
                         </Box>
                     </VBox>
                     <VBox sx={{ gap: theme.spacing(4) }}>
-                        <VBox>
+                        <VBox sx={{ maxWidth: '800px' }}>
                             <Typography variant="h2" sx={{ color: 'pink.main', fontWeight: '500' }}>
                                 {t('app.topicSelection.businessTitle')}
                             </Typography>

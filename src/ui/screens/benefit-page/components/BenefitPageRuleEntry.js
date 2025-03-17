@@ -39,7 +39,7 @@ const BenefitPageRuleEntry = ({ ruleData, validated_status }) => {
             </HBox>
             {validated_status && (
                 <HBox sx={{ gap: theme.spacing(2)}}>
-                    <Typography variant="h2" sx={{ wordBreak: 'break-word', fontWeight: '500' }}>
+                    <Typography variant="h2" sx={{ wordBreak: 'break-word', fontWeight: '400' }}>
                         {ruleData.userValue}
                     </Typography>
                 </HBox>

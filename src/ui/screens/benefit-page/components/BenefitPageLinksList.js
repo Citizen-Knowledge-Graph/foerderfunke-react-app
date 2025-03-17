@@ -19,7 +19,7 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
                 borderRadius: theme.shape.borderRadius,
             }}>
             <HBox sx={{ justifyContent: 'space-between', alignItems: "center", cursor: "pointer" }} onClick={() => setShowAdditionalSupport(!showAdditionalSupport)}>
-                <Typography variant="h2" sx={{ fontWeight: '500', wordBreak: "break-word" }}>
+                <Typography variant="h2" sx={{ fontWeight: '400', wordBreak: "break-word" }}>
                     {listTitle}</Typography>
                 <IconButton
                     sx={{
@@ -34,7 +34,7 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
             {
                 showAdditionalSupport && (
                     <Collapse in={showAdditionalSupport} sx={{ marginTop: theme.spacing(1) }}>
-                        <VBox gap={4}>
+                        <VBox sx={{ gap: 4, maxWidth: '800px' }}>
                             <Typography variant="body1">{data.title}</Typography>
                             {
                                 data.links.length > 0 && (
