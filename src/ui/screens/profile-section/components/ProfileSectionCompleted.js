@@ -1,73 +1,66 @@
 import React from 'react';
 import { Typography, Button } from "@mui/material";
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import VStack from "../../../shared-components/VStack";
-import HStack from "../../../shared-components/HStack";
-import globalStyles from "../../../styles/styles";
 import userManager from "../../../../core/managers/userManager";
 import ProfileDataList from "../../profile-screen/components/ProfileDataList";
 import useTranslation from "../../../language/useTranslation";
+import { VBox, HBox } from "../../../shared-components/LayoutBoxes";
 import { Link } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
+import { useStore } from "../../../shared-components/ViewportUpdater";
+
 
 const ProfileSectionCompleted = () => {
     const { t } = useTranslation();
+    const isDesktop = useStore((state) => state.isDesktop);
     const theme = useTheme();
     const userProfile = userManager.retrieveUserData("ff:quick-check-user");
+    const privacyBox = `${process.env.PUBLIC_URL}/assets/images/application/quick-check-completed.svg`;
+    const gap = isDesktop ? theme.spacing(8) : theme.spacing(4);
 
     return (
-        <VStack>
-            <VStack />
-            <VStack gap={5} justifyContent={'flex-start'}>
-                <HStack justifyContent={'center'} sx={{ width: "100%" }}>
-                    <VStack gap={1} alignItems={'center'} sx={styles.completeTextBox}>
-                        <CheckCircleIcon sx={styles.icon} />
-                    </VStack>
-                </HStack>
-                <HStack justifyContent={'center'} sx={{ width: "100%" }}>
-                    <VStack gap={1} alignItems={'center'} sx={styles.completeTextBox}>
-                        <Typography variant="h4" sx={styles.completeText}>
-                            {t('app.qsComplete.header')}
-                        </Typography>
-                    </VStack>
-                </HStack>
-                {userProfile && (
-                    <ProfileDataList />
-                )}
+        <VBox sx={{ gap: gap }}>
+            {
+                !isDesktop && (
+                    <HBox sx={{ justifyContent: 'center' }}>
+                        <img src={privacyBox} alt="logo" style={{ width: "232px" }} />
+                    </HBox>
+                )
+            }
+            <HBox sx={{ alignItems: 'center', flexWrap: 'wrap' }}>
+                <HBox sx={{ flex: 5 }}>
+                    <Typography variant="h1">
+                        {t('app.qsComplete.header')}
+                    </Typography>
+                </HBox>
+                {
+                    isDesktop && (
+                        <HBox sx={{ flex: 1 }}>
+                            <img src={privacyBox} alt="logo" style={{ width: "232px" }} />
+                        </HBox>
+                    )
+                }
+            </HBox>
+            {userProfile && (
+                <ProfileDataList />
+            )}
+            <HBox>
                 <Button
-                    variant="contained"
                     sx={{
-                        flex: 1,
-                        padding: theme.spacing(2),
-                        backgroundColor: theme.palette.secondary.main,
-                        borderColor: theme.palette.secondary.main,
+                        padding: '16px 28px',
+                        backgroundColor: theme.palette.blue.dark,
+                        color: theme.palette.white.main,
                     }}
+                    variant='contained'
                     component={Link}
                     to={`/eligibility-overview`}
                 >
-                    <Typography variant="h6" sx={{ color: 'white' }}>
+                    <Typography variant="body1" sx={{ color: 'inherit' }}>
                         {t('app.qsComplete.discoverBtn')}
                     </Typography>
                 </Button>
-            </VStack>
-        </VStack>
+            </HBox>
+        </VBox>
     );
-};
-
-const styles = {
-    completeTextBox: {
-        paddingLeft: '45px',
-        paddingRight: '45px',
-    },
-    completeText: {
-        fontWeight: 'bold',
-        textAlign: 'center',
-    },
-    icon: {
-        width: '80px',
-        height: '80px',
-        color: globalStyles.secondaryColor,
-    },
 };
 
 export default ProfileSectionCompleted;

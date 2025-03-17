@@ -19,6 +19,7 @@ const ProfileInputBoolean = ({ value, setValue, error }) => {
                     [[false, t('app.datafields.boolNo')], [true, t('app.datafields.boolYes')]].map((choice, i) => (
                         <FormControlLabel
                             key={i}
+                            sx={{ mb: 2 }} // Increased spacing between entries
                             value={choice[0]}
                             control={<Radio />}
                             label={choice[1]}

@@ -12,13 +12,9 @@ const BenefitsIcon = ({numberOfBenefits}) => {
                 alignItems: 'center',
                 gap: theme.spacing(1),
                 padding: theme.spacing(0.5),
-                borderStyle: 'solid',
-                borderWidth: '1px',
-                borderColor: theme.palette.primary.main,
-                borderRadius: theme.shape.borderRadius,
             }}>
-                <StarBorderIcon sx={{ fontSize: "20px", color: theme.palette.primary.main }} />
-                <Typography variant="body2">
+                <StarBorderIcon sx={{ fontSize: "20px", color: theme.palette.blue.main }} />
+                <Typography variant="body1" sx={{ color: theme.palette.blue.main }}>
                     Based on {numberOfBenefits} benefts
                 </Typography>
             </HBox>

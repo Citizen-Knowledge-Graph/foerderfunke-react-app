@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import EligibilityOverviewItemDetails from "./EligibilityOverviewItemDetails";
-import { green, red, grey } from "@mui/material/colors";
-import { Circle, Add, Remove } from "@mui/icons-material";
+import { Add, Remove } from "@mui/icons-material";
 import { IconButton, Typography, Box } from '@mui/material';
 import { HBox, VBox } from '../../../shared-components/LayoutBoxes';
 
-const EligibilityOverviewItem = ({ item, eligible }) => {
+const EligibilityOverviewItem = ({ item, eligible, iconPath }) => {
     const [showDescription, setShowDescription] = useState(false);
 
     const toggleDescription = () => {
@@ -13,21 +12,19 @@ const EligibilityOverviewItem = ({ item, eligible }) => {
     };
 
     const marginBottom = showDescription ? '16px' : '0';
-    const fontWeight = showDescription ? 'bold' : '400';
-    const color = (eligible === 'eligible') ? green[500] : ((eligible === 'non-eligible') ? red[500] :
-        grey[500]);
+    const color = eligible === 'indeterminate' ? 'black.light' : 'black.main';
 
     return (
         <VBox sx={{ marginBottom: marginBottom }}>
             <HBox sx={{ alignItems: "center", width: '100%' }}>
-                <Circle sx={{ color: color }} />
+                <img src={iconPath} alt="logo" style={{ width: "20px" }} />
                 <HBox sx={{ width: '100%' }}>
-                    <HBox sx={{ alignItems: 'center' }}>
-                        <Typography variant='h6' sx={{ fontWeight: fontWeight }} onClick={toggleDescription}>
+                    <HBox sx={{ alignItems: 'center', gap:1, flexWrap: 'wrap' }}>
+                        <Typography variant='h2' sx={{ color: color, fontWeight: '400', wordBreak: 'break-word' }} onClick={toggleDescription}>
                             {item.title}
                         </Typography>
                         {item.status === "beta" && (
-                            <Typography variant='body1' sx={{ color: 'warning.main' }}>
+                            <Typography variant='body1' sx={{ color: 'blue.main' }}>
                                 Beta
                             </Typography>
                         )}
@@ -35,7 +32,7 @@ const EligibilityOverviewItem = ({ item, eligible }) => {
                 </HBox>
                 <Box>
                     <IconButton onClick={toggleDescription} size="small" >
-                        {showDescription ? <Remove sx={{ color: 'black' }} /> : <Add sx={{ color: 'black' }} />}
+                        {showDescription ? <Remove sx={{ color: color }} /> : <Add sx={{ color: color }} />}
                     </IconButton>
                 </Box>
             </HBox>

@@ -33,6 +33,7 @@ const ProfileInputMultiSelection = ({ value, setValue, currentField, error }) =>
                 {Object.entries(choices).map(([key, label]) => (
                     <FormControlLabel
                         key={key}
+                        sx={{ mb: 2 }} // Increased spacing between entries
                         control={
                             <Checkbox
                                 checked={value? value.includes(key) : false}

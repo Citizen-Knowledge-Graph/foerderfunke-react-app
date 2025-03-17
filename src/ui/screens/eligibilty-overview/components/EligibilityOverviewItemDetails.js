@@ -13,37 +13,50 @@ const EligibilityOverviewItemDetails = ({ item, eligible }) => {
 
     return (
         <VBox sx={{ gap: theme.spacing(2) }}>
-            <Typography variant="body1">
-                {item.description}
-            </Typography>
-            <HBox>
+            <HBox sx={{ maxWidth: '800px' }}>
+                <Typography variant="body1">
+                    {item.description}
+                </Typography>
+            </HBox>
+            <HBox sx={{ gap: theme.spacing(2), flexWrap: 'wrap' }}>
+                <Button
+                    variant="text"
+                    sx={{
+                        color: 'pink.main',
+                        padding: '0',
+                        '&:hover': {
+                            backgroundColor: 'transparent',
+                            color: theme.palette.black.main,
+                        }
+                    }}
+                    component={Link}
+                    to={`/benefit-page/${item.id}`}>
+                    <Typography variant="body1" sx={{ color: 'inherit', fontWeight: 'bold', textDecoration: 'underline' }}>
+                        {t('app.browseAll.learnMoreBtn')}
+                    </Typography>
+                </Button>
                 {eligible === 'indeterminate' &&
                     <Button
-                        variant="contained"
+                        variant="text"
                         onClick={() => {
                             clearSelectedTopics()
                             setSelectedBenefit(item.id);
                         }}
                         sx={{
-                            backgroundColor: 'secondary.main',
-                            borderColor: 'secondary.main',
-                            color: 'white',
+                            color: 'blue.main',
+                            padding: '0',
                             '&:hover': {
-                                color: 'black',
+                                backgroundColor: 'transparent',
+                                color: theme.palette.black.main,
                             }
                         }}
                         component={Link}
                         to={`/onboarding-welcome/${item.id}`}>
-                        {t('app.browseAll.checkElBtn')}
+                        <Typography variant="body1" sx={{ color: 'inherit', fontWeight: 'bold', textDecoration: 'underline' }}>
+                            {t('app.browseAll.checkElBtn')}
+                        </Typography>
                     </Button>
                 }
-                <Button
-                    variant="outlined"
-                    sx={{ padding: theme.spacing(1), lineHeight: 1.2 }}
-                    component={Link}
-                    to={`/benefit-page/${item.id}`}>
-                    {t('app.browseAll.learnMoreBtn')}
-                </Button>
             </HBox>
         </VBox>
     );

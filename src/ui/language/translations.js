@@ -93,15 +93,16 @@ const translations = {
                 previousQuestion: "Previous question"
             },
             privacySite: {
-                header: "Your data is only stored locally",
+                header: "Let's check your benefits!",
+                subHeader: "Your data is only stored locally",
                 text1: "Only you should have access to your personal data. That is why we do not offer user accounts managed by us. All of your information is only stored locally in your browser.",
                 optionHeader: "You do have some options though:",
                 option1: "You can export your data as an RDF file.",
                 option2: "You can erase it from the browser with one click.",
-                button: "Next"
+                button: "Let's go!"
             },
             welcomeBack: {
-                header: "Welcome back",
+                header: "Welcome back!",
                 text: "We found a profile in the local storage of your browser. Do you want to continue using it?",
                 yesBtnTitle: "Yes",
                 yesBtnText: "You can continue exploring with your profile",
@@ -111,7 +112,7 @@ const translations = {
                 deleteBtn: "Delete your profile",
             },
             discoverChoice: {
-                header: "Your choice",
+                header: "You have the choice:",
                 text: "You have two options to discover benefits for yourself: You can answer a few questions for a quick check, or you can browse the entire catalog.",
                 quickCheck: "Quick eligibility check",
                 quickCheckComment: "Based on up to 10 benefits",
@@ -127,7 +128,9 @@ const translations = {
                 businessSubtitle: "Do you want to explore support programs for business and startups?",
             },
             topicsChosen: {
+                topicsTitle: "Selected topics",
                 topicsText: "Based on your chosen topics we will provide you with a list of benefits you may be eligible for.",
+                benefitTitle: "Selected benefit",
                 benefitText: "Based on your chosen benefit we will ask you the questions necessary to determine your eligibility.",
                 discoverBtn: "Discover your benefits",
             },
@@ -136,7 +139,11 @@ const translations = {
                 info: "We update the number of questions and potential benefits depending on your answers.",
                 multipleAnswers: "Multiple answers possible",
                 confirmBtn: "Confirm",
-                showComment: "Show explanation"
+                showComment: "Show explanation",
+                unlockedPart1: "You have unlocked",
+                unlockedPart2Multiple: "benefits",
+                unlockedPart2Single: "benefit",
+                unlockedPart3: "based on your answers.",
             },
             datafields: {
                 pickBday: "Pick your birthdate",
@@ -146,17 +153,19 @@ const translations = {
             qsComplete: {
                 header: "Your quick check is complete",
                 hint: "You currently cannot edit your profile data. If you need to make changes, you can restart the discovery journey.",
-                discoverBtn: "Discover your benefits"
+                discoverBtn: "Discover your benefits",
+                restartBtn: "Restart"
             },
             browseAll: {
                 header: "Your potential benefits",
+                profileBtn: "locally stored profile",
                 subtitle: "Results are based on the information you provided.",
                 info: "Results are not legally binding and should be considered as informational or advisory",
                 eligible: "Eligible:",
                 notEligible: "Not eligible:",
                 missingData: "Missing data:",
                 checkElBtn: "Check eligibility",
-                learnMoreBtn: "Learn more",
+                learnMoreBtn: "Learn more!",
                 legendTitle: "We use a color code to indicate the likelihood of eligibility. See the legend",
                 legend: {
                     probableEligible: "Probable eligibility",
@@ -319,15 +328,16 @@ const translations = {
                 previousQuestion: "Vorherige Frage"
             },
             privacySite: {
-                header: "Deine Daten werden nur lokal gespeichert",
+                header: "Lass uns deine Ansprüche prüfen!",
+                subHeader: "Deine Daten werden nur lokal gespeichert",
                 text1: "Nur du solltest Zugriff auf deine persönlichen Daten haben. Deshalb bieten wir keine von uns verwalteten Benutzerkonten an. Alle deine Informationen werden nur lokal in deinem Browser gespeichert.",
                 optionHeader: "Du hast aber einige Optionen:",
                 option1: "Du kannst deine Daten als RDF-Datei exportieren.",
                 option2: "Du kannst sie mit einem Klick aus dem Browser löschen.",
-                button: "Weiter"
+                button: "Los geht's!"
             },
             welcomeBack: {
-                header: "Willkommen zurück",
+                header: "Willkommen zurück!",
                 text: "Wir haben ein Profil im lokalen Speicher deines Browsers gefunden. Möchtest du es weiter nutzen?",
                 yesBtnTitle: "Ja",
                 yesBtnText: "Du kannst mit deinem Profil weiter erkunden",
@@ -337,7 +347,7 @@ const translations = {
                 deleteBtn: "Profil löschen",
             },
             discoverChoice: {
-                header: "Deine Wahl",
+                header: "Du hast die Wahl:",
                 text: "Du hast zwei Möglichkeiten, um Leistungen für dich zu entdecken. Du kannst ein paar Fragen beantworten und so einen Schnellcheck machen oder dir den gesamten Katalog ansehen.",
                 quickCheck: "Schneller Anspruchscheck",
                 quickCheckComment: "Basierend auf bis zu 10 Leistungen",
@@ -355,7 +365,9 @@ const translations = {
                 businessSubtitle: "Möchtest du Förderprogramme für Unternehmen und Startups erkunden?",
             },
             topicsChosen: {
+                topicsTitle: "Ausgewählte Themen",
                 topicsText: "Basierend auf deinen ausgewählten Themen stellen wir dir eine Liste von Leistungen zur Verfügung, für die du möglicherweise infrage kommst.",
+                benefitTitle: "Ausgewählte Leistung",
                 benefitText: "Basierend auf deiner ausgewählten Leistung stellen wir dir die notwendigen Fragen, um deine Anspruchsberechtigung zu ermitteln.",
                 discoverBtn: "Entdecke deine Leistungen",
             },
@@ -364,7 +376,11 @@ const translations = {
                 info: "Wir aktualisieren die Anzahl der Fragen und möglichen Leistungen basierend auf deinen Antworten.",
                 multipleAnswers: "Mehrere Antworten möglich",
                 confirmBtn: "Bestätigen",
-                showComment: "Erklärung anzeigen"
+                showComment: "Erklärung anzeigen",
+                unlockedPart1: "Du hast",
+                unlockedPart2Multiple: "Leistungen freigeschaltet",
+                unlockedPart2Single: "Leistung freigeschaltet",
+                unlockedPart3: "basierend auf deinen Antworten.",
             },
             datafields: {
                 pickBday: "Wähle dein Geburtsdatum",
@@ -375,16 +391,18 @@ const translations = {
                 header: "Dein schneller Anspruchscheck ist abgeschlossen",
                 hint: "Du kannst deine Profildaten derzeit nicht bearbeiten. Wenn du Änderungen vornehmen möchtest, kannst du den Entdeckungsprozess neu starten.",
                 discoverBtn: "Entdecke deine Leistungen",
+                restartBtn: "Neu starten"   
             },
             browseAll: {
                 header: "Deine potenziellen Leistungen",
+                profileBtn: "lokal gespeichertes Profil",
                 subtitle: "Die Ergebnisse basieren auf den von dir angegebenen Informationen.",
                 info: "Die Ergebnisse sind nicht rechtsverbindlich und sollten als informativ oder beratend betrachtet werden.",
                 eligible: "Anspruch:",
                 notEligible: "Kein Anspruch:",
                 missingData: "Fehlende Daten:",
                 checkElBtn: "Anspruch prüfen",
-                learnMoreBtn: "Mehr erfahren",
+                learnMoreBtn: "Mehr erfahren!",
                 legendTitle: "Wir verwenden eine Farbkodierung, um die Wahrscheinlichkeit der Anspruchsberechtigung anzuzeigen. Siehe die Legende",
                 legend: {
                     probableEligible: "Wahrscheinlich besteht Anspruch",

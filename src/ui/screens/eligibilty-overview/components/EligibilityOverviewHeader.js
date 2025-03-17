@@ -1,76 +1,70 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import { IconButton, Typography, Collapse } from '@mui/material';
+import { IconButton, Typography, Collapse, Button } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
-import globalStyles from "../../../styles/styles";
-import ContentBox from '../../../shared-components/ContentBox';
 import { VBox, HBox } from "../../../shared-components/LayoutBoxes";
 import useTranslation from "../../../language/useTranslation";
 import theme from "../../../../theme";
 import EligibilityOverviewLegend from './EligibilityOverviewLegend';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-const EligibilityOverviewHeader = () => {
+const EligibilityOverviewHeader = ({isDesktop}) => {
     const { t } = useTranslation();
     const [showLegend, setShowLegend] = useState(false);
+    const gap = isDesktop ? theme.spacing(8) : theme.spacing(4);
 
     return (
-        <ContentBox sx={{
-            width: "100%",
-            backgroundColor: theme.palette.primary.light,
-        }}>
-            <VBox sx={{ alignItems: "flex-start", gap: theme.spacing(2) }}>
-                <HBox sx={{ width: "100%", justifyContent: 'space-between' }}>
-                    <Typography variant="h4">
-                        {t('app.browseAll.header')}
-                    </Typography>
-                    <IconButton
-                        component={Link}
-                        to='/profile-overview'
-                        sx={{
-                            width: 40,
-                            height: 40,
-                            borderRadius: '50%',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            backgroundColor: 'white',
-                            '&:hover': {
-                                backgroundColor: globalStyles.colorLightGrey,
-                            },
-                        }}
-                    >
-                        <PersonIcon sx={{ fontSize: 20, color: 'black' }} />
-                    </IconButton>
-                </HBox>
-                <Typography variant='body1'>
-                    {t('app.browseAll.subtitle')}{" "}{t('app.browseAll.info')}
+        <VBox sx={{ width: "100%", alignItems: "flex-start", gap: gap }}>
+            <VBox>
+                <Typography variant="h1">
+                    {t('app.browseAll.header')}
                 </Typography>
-                {/* Expandable Legend Section */}
-                <HBox sx={{ alignItems: 'center', cursor: 'pointer' }} onClick={() => setShowLegend(!showLegend)}>
+                <HBox sx={{ alignItems: 'center' }}>
+                    <Button sx={{
+                        gap: theme.spacing(1),
+                        padding: '0',
+                        backgroundColor: 'transparent',
+                        color: 'black.ligth',
+                        '&:hover': {
+                            backgroundColor: 'transparent',
+                            color: 'blue.main',
+                        }
+                    }} component={Link} to='/profile-overview' variant="text">
+                        <PersonIcon data-testid="chevron-left-icon" sx={{ fontSize: '18px' }} />
+                        <Typography variant="body1" sx={{ color: 'inherit' }}>
+                            {t('app.browseAll.profileBtn')}
+                        </Typography>
+                    </Button>
+                </HBox>
+            </VBox>
+            <VBox sx={{ width: '100%', gap: theme.spacing(2) }}>
+                <HBox sx={{ maxWidth: '800px' }}>
+                    <Typography variant='body1'>
+                        {t('app.browseAll.subtitle')}{" "}{t('app.browseAll.info')}
+                    </Typography>
+                </HBox>
+                <HBox sx={{ alignItems: 'center', cursor: 'pointer', maxWidth: '800px' }} onClick={() => setShowLegend(!showLegend)}>
                     <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
                         {t('app.browseAll.legendTitle')}
                     </Typography>
                     <IconButton
                         sx={{
                             transition: 'transform 0.3s',
-                            transform: showLegend ? 'rotate(180deg)' : 'rotate(0deg)',
-                            marginLeft: '8px',
+                            transform: showLegend ? 'rotate(180deg)' : 'rotate(0deg)'
                         }}
                     >
                         <ExpandMoreIcon />
                     </IconButton>
                 </HBox>
-
                 {
                     showLegend &&
                     <Collapse in={showLegend}>
                         <EligibilityOverviewLegend />
                     </Collapse>
                 }
-
             </VBox>
-        </ContentBox >
+
+        </VBox>
     );
 };
 

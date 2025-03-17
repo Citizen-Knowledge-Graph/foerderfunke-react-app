@@ -5,16 +5,19 @@ import { VBox } from "../../../../shared-components/LayoutBoxes";
 import theme from "../../../../../theme";
 
 const HeaderBar = ({ isApp, isDesktop }) => {
+    const backgroundColor = isApp ? `${theme.palette.blue.dark}` : `${theme.palette.white.main}`;
+    const sticky = isApp ? "relative" : "sticky";
+
     return (
         <VBox
             sx={{
                 zIndex: 1000,
-                position: "sticky",
+                position: sticky,
                 top: 0,
                 left: 0,
                 right: 0,
                 width: "100%",
-                backgroundColor: theme.palette.white.main,
+                backgroundColor: backgroundColor
             }}
         >
             {isDesktop ? <HeaderBarDesktop isApp={isApp} /> : <HeaderBarMobile isApp={isApp} />}

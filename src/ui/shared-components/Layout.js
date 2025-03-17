@@ -5,10 +5,12 @@ import {useStore} from "./ViewportUpdater";
 
 const Layout = ({children, isApp = false, logo = true, back = null, gap = 2}) => {
     const isDesktop = useStore((state) => state.isDesktop);
+    const backgroundColor = isApp ? 'blue.dark' : 'transparent';
+    const minHeight = isApp ? '100vh' : 'auto';    
 
     return (
-        <VBox gap={0}>
-            <HeaderBar isDesktop={isDesktop} isApp={isApp} logo={logo} back={back}/>
+        <VBox gap={0} sx={{backgroundColor: backgroundColor, minHeight: minHeight}}>
+            <HeaderBar isApp={isApp} isDesktop={isDesktop} logo={logo} back={back}/>
             <VBox data-testid={'layout-container'}>
                 <VBox gap={gap} sx={styles.contentContainerStyle} data-testid="main-parent container" alignItems={'center'}>
                     {children}

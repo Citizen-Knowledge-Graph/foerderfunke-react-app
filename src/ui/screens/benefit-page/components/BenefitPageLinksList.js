@@ -4,7 +4,6 @@ import IconButton from "@mui/material/IconButton";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Collapse from "@mui/material/Collapse";
 import { HBox, VBox } from "../../../shared-components/LayoutBoxes";
-import ContentBox from "../../../shared-components/ContentBox";
 import theme from '../../../../theme';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
@@ -12,9 +11,16 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
     const [showAdditionalSupport, setShowAdditionalSupport] = useState(false);
 
     return (
-        <ContentBox sx={{ width: "100%" }}>
+        <VBox
+            sx={{
+                gap: theme.spacing(2),
+                backgroundColor: theme.palette.white.main,
+                padding: '32px',
+                borderRadius: theme.shape.borderRadius,
+            }}>
             <HBox sx={{ justifyContent: 'space-between', alignItems: "center", cursor: "pointer" }} onClick={() => setShowAdditionalSupport(!showAdditionalSupport)}>
-                <Typography variant="h6">{listTitle}</Typography>
+                <Typography variant="h2" sx={{ fontWeight: '400', wordBreak: "break-word" }}>
+                    {listTitle}</Typography>
                 <IconButton
                     sx={{
                         transition: "transform 0.3s",
@@ -28,7 +34,7 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
             {
                 showAdditionalSupport && (
                     <Collapse in={showAdditionalSupport} sx={{ marginTop: theme.spacing(1) }}>
-                        <VBox gap={2}>
+                        <VBox sx={{ gap: 4, maxWidth: '800px' }}>
                             <Typography variant="body1">{data.title}</Typography>
                             {
                                 data.links.length > 0 && (
@@ -36,9 +42,16 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
                                         {
                                             data.links.map((link, index) => (
                                                 <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-                                                    <Button variant="outlined">
-                                                        <HBox gap={1}>
-                                                            <OpenInNewIcon />
+                                                    <Button variant="text" sx={{
+                                                        padding: 0, color: 'pink.main', textDecoration: 'underline',
+                                                        '&:hover': {
+                                                            backgroundColor: 'transparent',
+                                                            color: 'black.main',
+                                                            textDecoration: 'underline',
+                                                        }
+                                                    }}>
+                                                        <HBox sx={{ alignItems: 'center' }} >
+                                                            <OpenInNewIcon sx={{ fontSize: '20px' }} />
                                                             <Typography sx={{ color: "inherit" }} variant="body1">{link.title}</Typography>
                                                         </HBox>
                                                     </Button>
@@ -52,7 +65,7 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
                     </Collapse>
                 )
             }
-        </ContentBox>
+        </VBox>
     );
 }
 

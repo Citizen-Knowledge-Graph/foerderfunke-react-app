@@ -1,44 +1,32 @@
 import React from "react";
 import { VBox } from "./LayoutBoxes";
-import AppScreenHeader from "./AppScreenHeader";
+//import AppScreenHeader from "./AppScreenHeader";
 import { useStore } from "../shared-components/ViewportUpdater";
 import theme from "../../theme";
 
 const AppScreenWrapper = ({ children, back = false, home = true }) => {
     const isDesktop = useStore((state) => state.isDesktop);
-    const desktopGradient = theme.palette.yellow.main;
+    const width = isDesktop ? "calc(100% - 192px)" : "calc(100% - 48px)";
+    const padding = isDesktop ? "96px 108px" : "32px 24px";
+    const margin = isDesktop ? "0px 96px 96px 96px" : "0px 24px 24px 24px";
+
     return (
         <VBox sx={{
             alignItems: 'center',
             minHeight: '100%',
-            width: '100%',
+            width: width,
+            backgroundColor: `${theme.palette.greyTransparent.main}`,
+            borderRadius: theme.shape.borderRadius,
+            padding: padding,
+            boxSizing: "border-box",
+            margin: margin,
         }}>
-            {isDesktop ? (
-                <VBox sx={{
-                    width: '840px',
-                    padding: theme.spacing(1),
-                    background: desktopGradient,
-                    borderRadius: theme.shape.borderRadius
-                }}>
-                    <VBox sx={{ 
-                        padding: theme.spacing(4), 
-                        backgroundColor: theme.palette.white.main,
-                        borderRadius: theme.shape.borderRadius}}>
-                        {children}
-                        <AppScreenHeader back={back} home={home} />
-                    </VBox>
-                </VBox>
-            ) : (
-                <VBox sx={{
-                    width: '100%', boxSizing: "border-box",
-                    padding: theme.spacing(2)
-                }}>
-                    {children}
-                    <AppScreenHeader back={back} home={home} />
-                </VBox>
-            )}
+            <VBox sx={{ width: '100%', boxSizing: "border-box" }}>
+                {children}
+            </VBox>
         </VBox>
     )
+
 }
 
 export default AppScreenWrapper;

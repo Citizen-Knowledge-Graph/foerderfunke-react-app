@@ -6,10 +6,10 @@ import { Link } from "react-router-dom";
 import { HBox } from '../../../../../shared-components/LayoutBoxes';
 import LogoBar from '../../../../../shared-components/LogoBar';
 import AntSwitch from '../../../../../shared-components/AntSwitch';
-import theme from "../../../../../../theme";
 import LandingPageHollowButtonDesktop from '../../../components/LandingPageButtonDesktop';
+import theme from '../../../../../../theme';
 
-const HeaderBarDesktop = () => {
+const HeaderBarDesktop = ({ isApp }) => {
     const { language, setLanguage } = useContext(LanguageContext);
     const { t } = useTranslation();
     const isEnglish = language === "en";
@@ -20,30 +20,31 @@ const HeaderBarDesktop = () => {
 
     return (
         <HBox sx={{
-            backgroundColor: theme.palette.white.main,
             justifyContent: 'space-between',
             alignItems: 'center',
             padding: '59px 96px',
         }}>
             <HBox alignItems={'center'}>
                 <Link to={"/"} style={{ textDecoration: 'none', color: "black" }}>
-                    <LogoBar size={'large'} />
+                    <LogoBar size={'large'} isApp={isApp} />
                 </Link>
             </HBox>
             <HBox justifyContent={'flex-end'} alignItems={'center'}>
                 <HBox gap={5}>
-                    <LandingPageWAppButton />
-                    <LandingPageHollowButtonDesktop text={t('home.menu.improve')} to={'/#feedback'} />
-                    <LandingPageHollowButtonDesktop text={t('home.menu.aboutUs')} to={"/#about-us"} />
-                    <LandingPageHollowButtonDesktop text={t('home.menu.activityLog')} to={'/activity-log'} />
-                    <HBox alignItems="center" gap={1}>
-                        <span>DE</span>
+                    {!isApp ? <LandingPageWAppButton /> : null}
+                    <LandingPageHollowButtonDesktop isApp={isApp} text={t('home.menu.improve')} to={'/#feedback'} />
+                    <LandingPageHollowButtonDesktop isApp={isApp} text={t('home.menu.aboutUs')} to={"/#about-us"} />
+                    <LandingPageHollowButtonDesktop isApp={isApp} text={t('home.menu.activityLog')} to={'/activity-log'} />
+                    <HBox alignItems="center" gap={1} sx={{ color: isApp ? 'white' : 'black' }}>
+                        <span style={{ color: isApp ? 'white' : 'black' }}>DE</span>
                         <AntSwitch
                             checked={isEnglish}
                             onChange={handleLanguageToggle}
                             inputProps={{ 'aria-label': 'language selection' }}
+                            backgroundColor={isApp ? 'white' : theme.palette.blue.dark }
+                            color={isApp ? theme.palette.blue.dark : 'white'}
                         />
-                        <span>EN</span>
+                        <span style={{ color: isApp ? 'white' : 'black' }}>EN</span>
                     </HBox>
                 </HBox>
             </HBox>

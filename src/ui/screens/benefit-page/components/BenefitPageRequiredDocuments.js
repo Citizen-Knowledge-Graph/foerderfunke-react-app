@@ -6,7 +6,6 @@ import Collapse from "@mui/material/Collapse";
 import { HBox, VBox } from "../../../shared-components/LayoutBoxes";
 import useTranslation from "../../../language/useTranslation";
 import ContentPasteIcon from '@mui/icons-material/ContentPaste';
-import ContentBox from "../../../shared-components/ContentBox";
 import theme from '../../../../theme';
 
 const BenefitPageRequiredDocuments = ({ requiredDocuments }) => {
@@ -14,9 +13,17 @@ const BenefitPageRequiredDocuments = ({ requiredDocuments }) => {
     const [showRequiredDocuments, setShowRequiredDocuments] = useState(false);
 
     return (
-        <ContentBox sx={{ width: "100%" }}>
+        <VBox
+            sx={{
+                gap: theme.spacing(2),
+                backgroundColor: theme.palette.white.main,
+                padding: '32px',
+                borderRadius: theme.shape.borderRadius,
+            }}
+        >
             <HBox sx={{ justifyContent: 'space-between', alignItems: "center", cursor: "pointer" }} onClick={() => setShowRequiredDocuments(!showRequiredDocuments)}>
-                <Typography variant="h6">{t('app.benefitPage.requiredDocuments')}</Typography>
+                <Typography variant="h2" sx={{ fontWeight: '400', wordBreak: "break-word" }}>
+                    {t('app.benefitPage.requiredDocuments')}</Typography>
                 <IconButton
                     sx={{
                         transition: "transform 0.3s",
@@ -30,24 +37,24 @@ const BenefitPageRequiredDocuments = ({ requiredDocuments }) => {
             {
                 showRequiredDocuments && (
                     <Collapse in={showRequiredDocuments} sx={{ marginTop: theme.spacing(1) }}>
-                        <VBox>
+                        <VBox sx={{ maxWidth: '800px' }}>
                             {requiredDocuments.map((doc, index) => (
                                 <HBox key={index}>
                                     <ContentPasteIcon />
                                     <Typography sx={{
-                                                                '&:hover': {
-                                                                    color: 'white',
-                                                                }
-                                                            }}
-                                    
-                                    variant="body1">{doc}</Typography>
+                                        '&:hover': {
+                                            color: 'white',
+                                        }
+                                    }}
+
+                                        variant="body1">{doc}</Typography>
                                 </HBox>
                             ))}
                         </VBox>
                     </Collapse>
                 )
             }
-        </ContentBox>
+        </VBox>
     );
 }
 

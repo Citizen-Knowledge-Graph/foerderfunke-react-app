@@ -1,12 +1,13 @@
 import { styled } from '@mui/material/styles';
 import Switch from '@mui/material/Switch';
 
-const AntSwitch = styled(Switch)(({ theme }) => ({
+const AntSwitch = styled(Switch)(({ theme, backgroundColor, color }) => ({
+
     width: 28,
     height: 16,
     padding: 0,
     display: 'flex',
-    
+
     '&:active': {
         '& .MuiSwitch-thumb': {
             width: 15,
@@ -23,7 +24,7 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
             color: '#fff',
             '& + .MuiSwitch-track': {
                 opacity: 1,
-                backgroundColor: 'rgba(0,0,0,.25) !important',
+                backgroundColor: backgroundColor,
             },
         },
         '&:hover': {
@@ -39,7 +40,7 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
         width: 12,
         height: 12,
         borderRadius: 6,
-        backgroundColor: '#fff',
+        backgroundColor: color,
         transition: theme.transitions.create(['width'], {
             duration: 200,
         }),
@@ -48,7 +49,7 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
     '& .MuiSwitch-track': {
         borderRadius: 16 / 2,
         opacity: 1,
-        backgroundColor: 'rgba(0,0,0,.25) !important',
+        backgroundColor: backgroundColor,
         boxSizing: 'border-box',
     },
 }));

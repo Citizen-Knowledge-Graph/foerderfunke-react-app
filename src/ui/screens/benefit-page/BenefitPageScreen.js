@@ -5,7 +5,7 @@ import BenefitPageHeader from "./components/BenefitPageHeader";
 import AppScreenWrapper from "../../shared-components/AppScreenWrapper";
 import { useStore } from "../../shared-components/ViewportUpdater";
 import BenefitPageRules from "./components/BenefitPageRules";
-import { Box, Typography, Divider } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import useTranslation from "../../language/useTranslation";
 import { LanguageContext } from "../../language/LanguageContext";
 import useCategoryTitles from "./hooks/useCategoryTitles";
@@ -16,10 +16,10 @@ import useFetchRPMetaData from './hooks/useFetchRPMetaData';
 import useFetchBenefitPageData from './hooks/useFetchBenefitPageData';
 import { useMetadataStore } from '../../storage/zustand';
 import BenefitPageRequiredDocuments from './components/BenefitPageRequiredDocuments';
-import ContentBox from '../../shared-components/ContentBox';
 import BenefitPageLinksList from './components/BenefitPageLinksList';
 import theme from '../../../theme';
 import BenefitPageInfoList from './components/BenefitPageInfoList';
+import { VBox } from '../../shared-components/LayoutBoxes';
 
 const BenefitPageScreen = () => {
     const { id } = useParams();
@@ -45,74 +45,58 @@ const BenefitPageScreen = () => {
     return (
         <Layout isApp={true} logo={false} back="Back">
             <AppScreenWrapper isDesktop={isDesktop} back={true}>
-                <BenefitPageHeader id={id} benefit={benefitPageData} validated_status={validated_status} />
-                <Box sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    width: '100%'
-                }} gap={2}>
-                    <Typography variant="body1" sx={{ fontWeight: 300 }}>{t('app.benefitPage.inTopics')}:</Typography>
-                    <Box sx={{ display: 'flex', flexWrap: 'wrap' }} gap={2}>
-                        {categoryTitles.map((category, index) => (
-                            <Box
-                                key={index}
-                                sx={(theme) => ({
-                                    padding: 0.75,
-                                    borderRadius: theme.shape.borderRadius,
-                                    borderWidth: 1,
-                                    borderStyle: 'solid',
-                                    borderColor: theme.palette.primary.main,
-                                })}
-                            >
-                                <Typography variant="body2">
-                                    {category}
-                                </Typography>
-                            </Box>
-                        ))}
+                <VBox sx={{ gap: theme.spacing(8) }}>
+                    <BenefitPageHeader id={id} benefit={benefitPageData} validated_status={validated_status} categoryTitles={categoryTitles} />
+                    <Box gap={2} sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        width: '100%'
+                    }}>
+                        <VBox
+                            sx={{
+                                backgroundColor: theme.palette.white.main,
+                                padding: '32px',
+                                borderRadius: theme.shape.borderRadius,
+                            }}
+                        >
+                            <VBox sx={{ gap: theme.spacing(2), maxWidth: '800px' }}>
+                                <Typography variant="h2" sx={{ fontWeight: '400' }}>{t('app.benefitPage.whatIsIt')}{benefitPageData.title}</Typography>
+                                <Typography sx={{ marginTop: theme.spacing(1) }} variant="body1">{benefitPageData.description || t('app.noData')}</Typography>
+                            </VBox>
+                        </VBox>
+                        <BenefitPageRules benefitId={id} validated_status={validated_status} />
+                        {
+                            benefitPageData.fundingConditions.title && (
+                                <BenefitPageInfoList listTitle={t('app.benefitPage.fundingConditions')} data={benefitPageData.fundingConditions} />
+                            )
+                        }
+                        {
+                            benefitPageData.applicationProcess.title && (
+                                <BenefitPageLinksList listTitle={t('app.benefitPage.applicationProcess')} data={benefitPageData.applicationProcess} />
+                            )
+                        }
+                        {
+                            benefitPageData.requiredDocuments.length > 0 && (
+                                <BenefitPageRequiredDocuments requiredDocuments={benefitPageData.requiredDocuments} />
+                            )
+                        }
+                        {
+                            benefitPageData.additionalSupport.title && (
+                                <BenefitPageLinksList listTitle={t('app.benefitPage.additionalSupport')} data={benefitPageData.additionalSupport} />
+                            )
+                        }
+                        {
+                            benefitPageData.legalBasis.title && (
+                                <BenefitPageLinksList listTitle={t('app.benefitPage.legalBasis')} data={benefitPageData.legalBasis} />
+                            )
+                        }
+                        {
+                            benefitPageData.furtherInformation.title && (
+                                <BenefitPageLinksList listTitle={t('app.benefitPage.furtherInformation')} data={benefitPageData.furtherInformation} />
+                            )
+                        }
                     </Box>
-                </Box>
-                <Box gap={2} sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    width: '100%'
-                }}>
-                    <Divider />
-                    <ContentBox>
-                        <Typography variant="h6">{t('app.benefitPage.whatIsIt')}{benefitPageData.title}</Typography>
-                        <Typography sx={{ marginTop: theme.spacing(1) }} variant="body1">{benefitPageData.description || t('app.noData')}</Typography>
-                    </ContentBox>
-                    {
-                        benefitPageData.fundingConditions.title && (
-                            <BenefitPageInfoList listTitle={t('app.benefitPage.fundingConditions')} data={benefitPageData.fundingConditions} />
-                        )
-                    }     
-                    <BenefitPageRules benefitId={id} validated_status={validated_status} />
-                    {
-                        benefitPageData.applicationProcess.title && (
-                            <BenefitPageLinksList listTitle={t('app.benefitPage.applicationProcess')} data={benefitPageData.applicationProcess} />
-                        )
-                    }
-                    {
-                        benefitPageData.requiredDocuments.length > 0 && (
-                            <BenefitPageRequiredDocuments requiredDocuments={benefitPageData.requiredDocuments} />
-                        )
-                    }               
-                    {
-                        benefitPageData.additionalSupport.title && (
-                            <BenefitPageLinksList listTitle={t('app.benefitPage.additionalSupport')} data={benefitPageData.additionalSupport} />
-                        )
-                    }
-                    {
-                        benefitPageData.legalBasis.title && (
-                            <BenefitPageLinksList listTitle={t('app.benefitPage.legalBasis')} data={benefitPageData.legalBasis} />
-                        )
-                    }
-                    {
-                        benefitPageData.furtherInformation.title && (
-                            <BenefitPageLinksList listTitle={t('app.benefitPage.furtherInformation')} data={benefitPageData.furtherInformation} />
-                        )
-                    }
-                </Box>
+                </VBox>
             </AppScreenWrapper>
         </Layout>
     );

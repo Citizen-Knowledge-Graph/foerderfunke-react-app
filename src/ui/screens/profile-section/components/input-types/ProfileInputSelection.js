@@ -12,13 +12,21 @@ const ProfileInputSelection = ({ value, setValue, currentField, error }) => {
             <RadioGroup
                 value={value}
                 onChange={handleChange}
+                sx={{ gap: 2 }}
             >
                 {
                     currentField.choices.map((choice, i) => (
                         <FormControlLabel
                             key={i}
                             value={choice.value}
-                            control={<Radio />}
+                            control={
+                                <Radio 
+                                    sx={{
+                                        color: "white",
+                                        '&.Mui-checked': { color: "yellow.dark" }
+                                    }} 
+                                />
+                            }
                             label={choice.label}
                         />
                     ))
