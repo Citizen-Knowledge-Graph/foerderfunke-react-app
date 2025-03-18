@@ -12,6 +12,8 @@ import BenefitsIcon from './components/BenefitsIcon';
 import { useMetadataStore, useSelectedBenefitStore, useSelectedTopicsStore } from "../../storage/zustand";
 import theme from "../../../theme";
 import { useStore } from "../../shared-components/ViewportUpdater";
+import { useValidationUpdate } from "../../storage/updates";
+
 
 const OnboardingWelcomeOverview = () => {
     const isDesktop = useStore((state) => state.isDesktop);
@@ -19,6 +21,7 @@ const OnboardingWelcomeOverview = () => {
     const { t } = useTranslation();
     const { language } = useContext(LanguageContext);
 
+    const validationIsLoading = useValidationUpdate((state) => state.validationIsLoading);
     const selectedBenefit = useSelectedBenefitStore((state) => state.selectedBenefit);
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
     const metadata = useMetadataStore((state) => state.metadata);
@@ -111,7 +114,9 @@ const OnboardingWelcomeOverview = () => {
                             }}
                             variant="contained"
                             component={Link}
-                            to={'/profile-section'}>
+                            to={'/profile-section'}
+                            disabled={validationIsLoading}
+                        >
                             <Typography variant="body1" sx={{ color: 'inherit' }}>
                                 {t('app.topicsChosen.discoverBtn')}
                             </Typography>
