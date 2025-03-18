@@ -115,7 +115,7 @@ const OnboardingWelcomeOverview = () => {
                             variant="contained"
                             component={Link}
                             to={'/profile-section'}
-                            disabled={validationIsLoading}
+                            disabled={validationIsLoading && metadata.rp}
                         >
                             <Typography variant="body1" sx={{ color: 'inherit' }}>
                                 {t('app.topicsChosen.discoverBtn')}
