@@ -18,7 +18,7 @@ const ProfileScreen = () => {
         <Layout isApp={true} logo={true}>
             <AppScreenWrapper isDesktop={isDesktop} back={true}>
                 <VBox sx={{ gap: gap }}>
-                    <HBox gap={1} sx={{ flexWrap: wrap, justifyContent: 'center' }}>
+                    <HBox gap={1} sx={{ flexWrap: wrap, justifyContent: 'space-between' }}>
                         {
                             !isDesktop && (
                                 <img src={fileIcon}
