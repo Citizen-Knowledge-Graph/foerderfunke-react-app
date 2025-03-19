@@ -4,14 +4,10 @@ import { HBox, VBox } from '../../../shared-components/LayoutBoxes';
 import useTranslation from "../../../language/useTranslation";
 import theme from '../../../../theme';
 
-const EligibilityOverviewLegend = () => {
+const EligibilityOverviewLegend = ({iconPaths}) => {
     const { t } = useTranslation();
-
-    const eligibleIcon = `${process.env.PUBLIC_URL}/assets/images/application/icon-image-eligible.svg`;
-    const ineligibleIcon = `${process.env.PUBLIC_URL}/assets/images/application/icon-image-ineligible.svg`;
-    const missingIcon = `${process.env.PUBLIC_URL}/assets/images/application/icon-image-missing.svg`;
-
-    console.log("we are rendering");
+    console.log("iconPaths", iconPaths);
+    const { eligible, ineligible, preliminaryEligible, missing } = iconPaths
 
     return (
         <VBox sx={{
@@ -27,7 +23,7 @@ const EligibilityOverviewLegend = () => {
                     alignItems: "center",
                     gap: theme.spacing(2),
                 }}>
-                    <img src={eligibleIcon} alt="logo" style={{ width: "16px" }} />
+                    <img src={eligible} alt="logo" style={{ width: "16px" }} />
                     <Typography variant="body1" sx={{ fontWeight: '400' }}>
                         {t('app.browseAll.legend.probableEligible')}
                     </Typography>
@@ -37,7 +33,17 @@ const EligibilityOverviewLegend = () => {
                     gap: theme.spacing(2),
                     borderRadius: theme.shape.borderRadius,
                 }}>
-                    <img src={ineligibleIcon} alt="logo" style={{ width: "16px" }} />
+                    <img src={preliminaryEligible} alt="logo" style={{ width: "16px" }} />
+                    <Typography variant="body1" sx={{ fontWeight: '400' }}>
+                        {t('app.browseAll.legend.preliminaryEligible')}
+                    </Typography>
+                </HBox>                
+                <HBox sx={{
+                    alignItems: "center",
+                    gap: theme.spacing(2),
+                    borderRadius: theme.shape.borderRadius,
+                }}>
+                    <img src={ineligible} alt="logo" style={{ width: "16px" }} />
                     <Typography variant="body1" sx={{ fontWeight: '400' }}>
                         {t('app.browseAll.legend.probableNotEligible')}
                     </Typography>
@@ -47,7 +53,7 @@ const EligibilityOverviewLegend = () => {
                     gap: theme.spacing(2),
                     borderRadius: theme.shape.borderRadius,
                 }}>
-                    <img src={missingIcon} alt="logo" style={{ width: "16px" }} />
+                    <img src={missing} alt="logo" style={{ width: "16px" }} />
                     <Typography variant="body1" sx={{ fontWeight: '400' }}>
                         {t('app.browseAll.legend.notEnoughData')}
                     </Typography>

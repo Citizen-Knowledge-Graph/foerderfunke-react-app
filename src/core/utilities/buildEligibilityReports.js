@@ -1,4 +1,4 @@
-export const buildEligibilityReports = (validationReport, hydrationData, language) => {
+export const buildEligibilityReports = (validationReport, metadata, hydrationData, language) => {
     if (!validationReport || !('reports' in validationReport)) {
         return {
             eligible: [],
@@ -20,20 +20,38 @@ export const buildEligibilityReports = (validationReport, hydrationData, languag
         const additionalSupport = hydrationData[rpUri]?.additional_support?.[language] || {};
         const legalBasis = hydrationData[rpUri]?.legal_basis?.[language] || {};
         const furtherInformation = hydrationData[rpUri]?.further_information?.[language] || [];
-        return { uri: rpUri, result, id, title, category, description, status, requiredDocuments, additionalSupport, legalBasis, furtherInformation };
+        const validationStage = metadata.rp[rpUri]?.validationStage || 'Unknown Validation Stage';
+        return { uri: rpUri, result, id, title, category, description, status, requiredDocuments, additionalSupport, legalBasis, furtherInformation, validationStage };
     });    
 
-    return allReports.reduce((acc, report) => {
+    const eligibilityStatus = allReports.reduce((acc, report) => {
         const { category, result } = report;
-        
+
         if (!acc[category]) {
             acc[category] = {};
         }
-        if (!acc[category][result]) {
-            acc[category][result] = [];
+
+        if (result === "eligible") {
+            if (!acc[category][result]) {
+                acc[category][result] = { preliminary: [], final: [] };
+            }
+
+            if (report.validationStage === "https://foerderfunke.org/default#complete-validation") {
+                acc[category][result].final.push(report);
+            }
+
+            if (report.validationStage === "https://foerderfunke.org/default#preliminary-validation") {
+                acc[category][result].preliminary.push(report);
+            }        
+        } else {
+            if (!acc[category][result]) {
+                acc[category][result] = [];
+            }
+            acc[category][result].push(report);
         }
-        
-        acc[category][result].push(report);
+
         return acc;
     }, {});
+
+    return eligibilityStatus;
 };

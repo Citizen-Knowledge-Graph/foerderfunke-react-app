@@ -8,7 +8,7 @@ import theme from "../../../../theme";
 import EligibilityOverviewLegend from './EligibilityOverviewLegend';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-const EligibilityOverviewHeader = ({isDesktop}) => {
+const EligibilityOverviewHeader = ({ isDesktop, iconPaths }) => {
     const { t } = useTranslation();
     const [showLegend, setShowLegend] = useState(false);
     const gap = isDesktop ? theme.spacing(8) : theme.spacing(4);
@@ -37,15 +37,29 @@ const EligibilityOverviewHeader = ({isDesktop}) => {
                     </Button>
                 </HBox>
             </VBox>
-            <VBox sx={{ width: '100%', gap: theme.spacing(2) }}>
-                <HBox sx={{ maxWidth: '800px' }}>
-                    <Typography variant='body1'>
-                        {t('app.browseAll.subtitle')}{" "}{t('app.browseAll.info')}
-                    </Typography>
-                </HBox>
+            <VBox sx={{ maxWidth: '800px' }}>
+                <Typography variant='h2'>
+                    {t('app.browseAll.disclaimerTitle')}
+                </Typography>
+                <Typography variant='body1'>
+                {t('app.browseAll.disclaimerText')}
+                </Typography>
+            </VBox>
+            <VBox sx={{ maxWidth: '800px' }}>
+                <Typography variant='h2'>
+                    {t('app.browseAll.preliminaryEligibleTitle')}
+                </Typography>
+                <Typography variant='body1'>
+                    {t('app.browseAll.preliminaryEligibleText')}
+                </Typography>
+            </VBox>
+            <VBox>
+                <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                    {t('app.browseAll.legendTitle')}
+                </Typography>
                 <HBox sx={{ alignItems: 'center', cursor: 'pointer', maxWidth: '800px' }} onClick={() => setShowLegend(!showLegend)}>
-                    <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-                        {t('app.browseAll.legendTitle')}
+                    <Typography variant="body1">
+                        {t('app.browseAll.legendText')}
                     </Typography>
                     <IconButton
                         sx={{
@@ -59,11 +73,10 @@ const EligibilityOverviewHeader = ({isDesktop}) => {
                 {
                     showLegend &&
                     <Collapse in={showLegend}>
-                        <EligibilityOverviewLegend />
+                        <EligibilityOverviewLegend iconPaths={iconPaths} />
                     </Collapse>
                 }
             </VBox>
-
         </VBox>
     );
 };

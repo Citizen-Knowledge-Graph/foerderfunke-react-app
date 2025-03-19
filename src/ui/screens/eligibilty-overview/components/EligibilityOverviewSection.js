@@ -6,14 +6,12 @@ import EligibilityOverviewList from "./EligibilityOverviewList"
 import theme from "../../../../theme";
 
 
-const EligibilityOverviewSection = ({ category, eligibilitySection }) => {
-    const eligibleBenefits = eligibilitySection[ValidationResult.ELIGIBLE] || []
+const EligibilityOverviewSection = ({ category, eligibilitySection, iconPaths }) => {
+    const eligibleBenefitsComplete = eligibilitySection[ValidationResult.ELIGIBLE]?.final || [];
+    const eligibleBenefitsPreliminary = eligibilitySection[ValidationResult.ELIGIBLE]?.preliminary || [];
     const ineligibleBenefits = eligibilitySection[ValidationResult.INELIGIBLE] || []
     const undeterminableBenefits = eligibilitySection[ValidationResult.UNDETERMINABLE] || []
-
-    const eligibleIcon = `${process.env.PUBLIC_URL}/assets/images/application/icon-image-eligible.svg`;
-    const ineligibleIcon = `${process.env.PUBLIC_URL}/assets/images/application/icon-image-ineligible.svg`;
-    const missingIcon = `${process.env.PUBLIC_URL}/assets/images/application/icon-image-missing.svg`;
+    const { eligible, preliminaryEligible, ineligible, missing } = iconPaths;
 
     return (
         <VBox sx={{ 
@@ -30,12 +28,14 @@ const EligibilityOverviewSection = ({ category, eligibilitySection }) => {
                     gap: theme.spacing(4),
                 }}
             >
-                {eligibleBenefits.length > 0 &&
-                    <EligibilityOverviewList items={eligibleBenefits} eligible={'eligible'} iconPath={eligibleIcon} />}
+                {eligibleBenefitsComplete.length > 0 &&
+                    <EligibilityOverviewList items={eligibleBenefitsComplete} eligible={'eligible'} iconPath={eligible} />}
+                {eligibleBenefitsPreliminary.length > 0 &&
+                    <EligibilityOverviewList items={eligibleBenefitsPreliminary} eligible={'preliminary-eligible'} iconPath={preliminaryEligible} />}                    
                 {ineligibleBenefits.length > 0 &&
-                    <EligibilityOverviewList items={ineligibleBenefits} eligible={'non-eligible'} iconPath={ineligibleIcon} />}
+                    <EligibilityOverviewList items={ineligibleBenefits} eligible={'non-eligible'} iconPath={ineligible} />}
                 {undeterminableBenefits.length > 0 &&
-                    <EligibilityOverviewList items={undeterminableBenefits} eligible={'indeterminate'} iconPath={missingIcon} />}
+                    <EligibilityOverviewList items={undeterminableBenefits} eligible={'indeterminate'} iconPath={missing} />}
             </VBox>
         </VBox >
     );

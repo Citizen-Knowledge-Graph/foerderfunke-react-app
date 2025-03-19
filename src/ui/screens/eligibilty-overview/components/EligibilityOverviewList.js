@@ -7,8 +7,18 @@ import theme from '../../../../theme';
 
 const EligibilityOverviewList = ({ items, eligible, iconPath }) => {
     const { t } = useTranslation();
-    const headerText = (eligible === 'eligible') ? t('app.browseAll.eligible') : ((eligible === 'non-eligible') ? t('app.browseAll.notEligible') :
-        t('app.browseAll.missingData'));
+    const headerText = (() => {
+        switch (eligible) {
+            case 'eligible':
+                return t('app.browseAll.eligible');
+            case 'preliminary-eligible':
+                return t('app.browseAll.preliminaryEligible');
+            case 'non-eligible':
+                return t('app.browseAll.notEligible');
+            default:
+                return t('app.browseAll.missingData');
+        }
+    })();        
 
     return (
         <VBox sx={{ gap: theme.spacing(2) }}>
