@@ -9,7 +9,22 @@ import { Link } from "react-router-dom";
 const LandingPageHowItWorksDesktop = () => {
     const { t } = useTranslation();
     const [hoveredIndex, setHoveredIndex] = useState(null);
-    const appLaptop = `${process.env.PUBLIC_URL}/assets/images/landing-page/macbook-app-showcase.svg`;
+    const appLaptop1 = `${process.env.PUBLIC_URL}/assets/images/landing-page/Macbook_Anspruchscheck.svg`;
+    const appLaptop2 = `${process.env.PUBLIC_URL}/assets/images/landing-page/Macbook_Leistungen.svg`;
+    const appLaptop3 = `${process.env.PUBLIC_URL}/assets/images/landing-page/Macbook_Bafög.svg`;
+
+    const currentImage = (() => {
+        switch (hoveredIndex) {
+            case 0:
+                return appLaptop1;
+            case 1:
+                return appLaptop2;
+            case 2:
+                return appLaptop3;
+            default:
+                return appLaptop1;
+        }
+    })();
 
     const handleMouseEnter = (index) => setHoveredIndex(index);
     const handleMouseLeave = () => setHoveredIndex(null);
@@ -51,7 +66,7 @@ const LandingPageHowItWorksDesktop = () => {
                     </VBox>
                 </VBox>
                 <VBox sx={{ gap: theme.spacing(6), alignItems: 'flex-end', justifyContent: 'flex-end' }}>
-                    <img src={appLaptop} alt="logo" style={{ width: "506px" }} />
+                    <img src={currentImage} alt="logo" style={{ width: "506px" }} />
                     <HBox sx={{ gap: theme.spacing(2) }}>
                         <Button variant="contained"
                             sx={{
