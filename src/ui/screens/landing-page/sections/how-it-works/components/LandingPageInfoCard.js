@@ -37,7 +37,6 @@ const LandingPageInfoCard = ({ isDesktop, title, text, onMouseLeave, onMouseEnte
                     style={{
                         maxWidth: '250px',
                         height: 'auto',
-                        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.15)',
                         borderRadius: '18px'
                     }}
                     alt={'phone 1'} />

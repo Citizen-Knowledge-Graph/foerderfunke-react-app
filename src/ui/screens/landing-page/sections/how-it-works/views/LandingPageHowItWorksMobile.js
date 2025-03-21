@@ -12,9 +12,9 @@ import theme from "../../../../../../theme";
 
 const LandingPageHowItWorksMobile = () => {
     const { t } = useTranslation();
-    const quick_check = `${process.env.PUBLIC_URL}/assets/images/landing-page/current_quickcheck_page.jpg`;
-    const benefits_overview = `${process.env.PUBLIC_URL}/assets/images/landing-page/current_overview_page.jpg`;
-    const benefit_page = `${process.env.PUBLIC_URL}/assets/images/landing-page/current_benefits_page.jpg`;
+    const quick_check = `${process.env.PUBLIC_URL}/assets/images/landing-page/Iphone_Mockup_Themen.svg`;
+    const benefits_overview = `${process.env.PUBLIC_URL}/assets/images/landing-page/Iphone_Mockup_Leistungen.svg`;
+    const benefit_page = `${process.env.PUBLIC_URL}/assets/images/landing-page/Iphone_Mockup_Details.svg`;
 
     return (
         <VBox alignItems={"flex-start"} sx={{ gap: theme.spacing(6), width: "100%", maxWidth: "400px" }}>
