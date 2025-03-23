@@ -65,7 +65,10 @@
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/beta/ilb-kredit-gruendung.ttl",
       "rpUri": "https://foerderfunke.org/default#ilb-kredit-gruendung"
+    },
+    {
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/beta/forschungszulage.ttl",
+      "rpUri": "https://foerderfunke.org/default#forschungszulage"      
     }
   ]
 }
-

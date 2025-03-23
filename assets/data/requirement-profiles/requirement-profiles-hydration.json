@@ -949,5 +949,130 @@
         ]
       }
     }
+  },
+  "https://foerderfunke.org/default#forschungszulage": {
+    "id": "ff:forschungszulage",
+    "category": "business",
+    "status": "beta",
+    "title": {
+      "de": "Forschungszulage",
+      "en": "Research Allowance"
+    },
+    "description": {
+      "de": "Steuerpflichtige Unternehmen in Deutschland können eine Forschungszulage für förderfähige Aufwendungen in Grundlagenforschung, industrieller Forschung und experimenteller Entwicklung erhalten.",
+      "en": "Tax-liable companies in Germany may claim a research allowance for eligible expenses related to basic research, industrial research, and experimental development."
+    },
+    "application_process": {
+      "de": {
+        "title": "Die Antragstellung erfolgt zweistufig über das BSFZ-Portal (Bescheinigungsverfahren) und das zuständige Finanzamt (Geltendmachung). Weitere Informationen sind beim Bundesministerium der Finanzen erhältlich.",
+        "links": [
+          {
+            "title": "BSFZ Portal zur Forschungszulage",
+            "url": "https://www.bescheinigung-forschungszulage.de/"
+          },
+          {
+            "title": "BMF Informationen zur Forschungszulage",
+            "url": "https://www.bundesfinanzministerium.de"
+          }
+        ]
+      },
+      "en": {
+        "title": "The application process consists of two steps: certification via the BSFZ portal and claiming via the local tax office. More information is available from the Federal Ministry of Finance.",
+        "links": [
+          {
+            "title": "BSFZ Research Allowance Portal",
+            "url": "https://www.bescheinigung-forschungszulage.de/"
+          },
+          {
+            "title": "Federal Ministry of Finance",
+            "url": "https://www.bundesfinanzministerium.de"
+          }
+        ]
+      }
+    },
+    "required_documents": {
+      "de": [
+        "Antrag auf Forschungszulage beim Finanzamt",
+        "Nachweise über förderfähige Aufwendungen (z. B. Lohnkosten, Vertragsunterlagen)"
+      ],
+      "en": [
+        "Research allowance application submitted to the tax office",
+        "Evidence of eligible expenses (e.g., personnel costs, contract documents)"
+      ]
+    },
+    "funding_conditions": {
+      "de": {
+        "title": "Förderkonditionen der Forschungszulage:",
+        "details": [
+          "Förderfähige Aufwendungen: Löhne und Gehälter für F&E-Personal, Auftragsforschung, Eigenleistungen.",
+          "Fördersatz: 25 % der förderfähigen Aufwendungen, 35 % für KMUs.",
+          "Maximale Bemessungsgrundlage: 10 Millionen ."
+        ]
+      },
+      "en": {
+        "title": "Funding conditions of the Research Allowance:",
+        "details": [
+          "Eligible costs: wages and salaries for R&D personnel, contract research, in-house development.",
+          "Funding rate: 25% of eligible costs, 35% for SMEs.",
+          "Maximum basis of assessment: €10 million."
+        ]
+      }
+    },
+    "legal_basis": {
+      "de": {
+        "title": "Rechtsgrundlagen der Förderung:",
+        "links": [
+          {
+            "title": "Forschungszulagengesetz (FZulG)",
+            "url": "https://www.gesetze-im-internet.de/fzulg/FZulG.pdf"
+          },
+          {
+            "title": "De-Minimis-Verordnung EU",
+            "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:32003H0361"
+          }
+        ]
+      },
+      "en": {
+        "title": "Legal basis of the funding:",
+        "links": [
+          {
+            "title": "Research Allowance Act (FZulG)",
+            "url": "https://www.gesetze-im-internet.de/fzulg/FZulG.pdf"
+          },
+          {
+            "title": "EU De-Minimis Regulation",
+            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32003H0361"
+          }
+        ]
+      }
+    },
+    "further_information": {
+      "de": {
+        "title": "Weitere Informationen zur Forschungszulage:",
+        "links": [
+          {
+            "title": "BSFZ Website",
+            "url": "https://www.bescheinigung-forschungszulage.de/"
+          },
+          {
+            "title": "Bundesfinanzministerium",
+            "url": "https://www.bundesfinanzministerium.de"
+          }
+        ]
+      },
+      "en": {
+        "title": "Further information on the Research Allowance:",
+        "links": [
+          {
+            "title": "BSFZ Website",
+            "url": "https://www.bescheinigung-forschungszulage.de/"
+          },
+          {
+            "title": "Federal Ministry of Finance",
+            "url": "https://www.bundesfinanzministerium.de"
+          }
+        ]
+      }
+    }
   }
 }
