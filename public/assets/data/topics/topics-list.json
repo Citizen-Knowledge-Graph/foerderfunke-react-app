@@ -70,5 +70,13 @@
       "en": "Housing Construction & Modernization",
       "de": "Wohnungsbau & Modernisierung"
     }
+  },
+  {
+    "id": "ff:innovation-forschung",
+    "category": "business",
+    "title": {
+      "en": "Innovation & Research",
+      "de": "Innovation & Forschung"
+    }
   }
 ]

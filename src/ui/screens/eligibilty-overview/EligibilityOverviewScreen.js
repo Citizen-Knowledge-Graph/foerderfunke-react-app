@@ -32,7 +32,6 @@ const EligibilityOverviewScreen = () => {
         ineligible: `${process.env.PUBLIC_URL}/assets/images/application/icon-image-ineligible.svg`,
         missing: `${process.env.PUBLIC_URL}/assets/images/application/icon-image-missing.svg`
     };
-
     const gap = isDesktop ? theme.spacing(8) : theme.spacing(4);
 
     return (
