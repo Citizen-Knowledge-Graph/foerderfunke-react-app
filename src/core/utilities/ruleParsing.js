@@ -48,7 +48,7 @@ export const buildSingleRuleOutput = (rulesObj, dfObj, metadata, t) => {
 }
 
 export const showUserValue = (dfObj, userProfile, materializedOutputs, metadata, t) => {
-    if (dfObj.datafield && userProfile[dfObj.datafield]) { // ff:pensionable and ff:age don't have it, they will also not show up in the profile as they are materialized on the fly
+    if (dfObj.datafield && userProfile.hasOwnProperty(dfObj.datafield)) { // ff:pensionable and ff:age don't have it, they will also not show up in the profile as they are materialized on the fly
         let userValueRaw = userProfile[dfObj.datafield];
         return convertUserValueRaw(userValueRaw, dfObj, t);
     }
@@ -87,7 +87,6 @@ export const buildRulesOutput = (rulesData, metadata, benefitReport, userProfile
 
         let userValue = "-";
         let validity = "unknown"; // "valid", "invalid", "missing"
-
         if (dfObj) {
             dfObj.uri = dfUri;
             userValue = showUserValue(dfObj, userProfile, materializedOutputs, metadata, t);
