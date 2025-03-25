@@ -1,6 +1,7 @@
 import {RuleType} from "@foerderfunke/matching-engine/src/prematch";
 import {convertUserValueRaw, expand, getChoiceLabel} from "./rdfParsing";
 import {ValidationResult} from "@foerderfunke/matching-engine";
+import {formatEuro} from "../../ui/utils/currencyUtils";
 
 const trim = (str) => {
     return str.substring(0, str.length - 2);
@@ -48,6 +49,11 @@ export const buildSingleRuleOutput = (rulesObj, dfObj, metadata, t) => {
 }
 
 export const showUserValue = (dfObj, userProfile, materializedOutputs, metadata, t) => {
+    if (dfObj.datafield === "ff:vermoegen") {
+        let userValueRaw = userProfile[dfObj.datafield];
+        return formatEuro(userValueRaw);
+    }
+    
     if (dfObj.datafield && userProfile.hasOwnProperty(dfObj.datafield)) { // ff:pensionable and ff:age don't have it, they will also not show up in the profile as they are materialized on the fly
         let userValueRaw = userProfile[dfObj.datafield];
         return convertUserValueRaw(userValueRaw, dfObj, t);

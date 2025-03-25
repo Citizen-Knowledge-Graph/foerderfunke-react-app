@@ -3,6 +3,7 @@ import {useMetadataStore} from "../../../storage/zustand";
 import userManager from "../../../../core/managers/userManager";
 import {convertUserValueRaw, expand} from "../../../../core/utilities/rdfParsing";
 import useTranslation from "../../../language/useTranslation";
+import { formatEuro } from '../../../utils/currencyUtils';
 
 const useUserProfileData = () => {
     const { t } = useTranslation();
@@ -15,7 +16,8 @@ const useUserProfileData = () => {
             .map(([key, value]) => {
                 const dfObj = metadata.df[expand(key)];
                 const dfLabel = dfObj.label;
-                const dfValue = convertUserValueRaw(value, dfObj, t);
+                let dfValue = convertUserValueRaw(value, dfObj, t);
+                dfValue = dfObj.datafield === "ff:vermoegen" ? formatEuro(dfValue) : dfValue;
                 return {
                     label: dfLabel,
                     value: dfValue
