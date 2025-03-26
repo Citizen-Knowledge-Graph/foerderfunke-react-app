@@ -69,6 +69,10 @@
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/beta/forschungszulage.ttl",
       "rpUri": "https://foerderfunke.org/default#forschungszulage"      
+    },
+    {
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/beta/bundesfoerderung-effiziente-gebaeude.ttl",
+      "rpUri": "https://foerderfunke.org/default#bundesfoerderung-effiziente-gebaeude"      
     }
   ]
 }

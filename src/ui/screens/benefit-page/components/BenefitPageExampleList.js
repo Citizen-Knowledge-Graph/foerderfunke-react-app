@@ -5,9 +5,8 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Collapse from "@mui/material/Collapse";
 import { HBox, VBox } from "../../../shared-components/LayoutBoxes";
 import theme from '../../../../theme';
-import InfoIcon from '@mui/icons-material/Info';
 
-const BenefitPageInfoList = ({ listTitle, data }) => {
+const BenefitPageExampleList = ({ listTitle, data }) => {
     const [showAdditionalSupport, setShowAdditionalSupport] = useState(false);
 
     return (
@@ -36,17 +35,17 @@ const BenefitPageInfoList = ({ listTitle, data }) => {
             {
                 showAdditionalSupport && (
                     <Collapse in={showAdditionalSupport} sx={{ marginTop: theme.spacing(1) }}>
-                        <VBox sx={{ gap: 2, maxWidth: '800px' }}>
+                        <VBox sx={{ gap: 4, maxWidth: '800px' }}>
                             <Typography variant="body1">{data.title}</Typography>
                             {
-                                data.details.length > 0 && (
-                                    <VBox gap={1}>
+                                data.examples?.length > 0 && (
+                                    <VBox gap={4}>
                                         {
-                                            data.details.map((item, index) => (
-                                                <HBox key={index} sx={{ alignItems: 'center' }} >
-                                                    <InfoIcon sx={{ fontSize: '20px' }} />
-                                                    <Typography sx={{ color: "inherit" }} variant="body1">{item}</Typography>
-                                                </HBox>
+                                            data.examples.map((item, index) => (
+                                                <VBox key={index}>
+                                                    <Typography sx={{ color: "inherit", fontWeight: 'bold' }} variant="body1">{item.title}</Typography>
+                                                    <Typography sx={{ color: "inherit" }} variant="body1">{item.text}</Typography>
+                                                </VBox>
                                             ))
                                         }
                                     </VBox>
@@ -60,4 +59,4 @@ const BenefitPageInfoList = ({ listTitle, data }) => {
     );
 }
 
-export default BenefitPageInfoList;
+export default BenefitPageExampleList;

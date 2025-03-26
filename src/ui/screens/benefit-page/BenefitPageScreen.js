@@ -17,6 +17,7 @@ import useFetchBenefitPageData from './hooks/useFetchBenefitPageData';
 import { useMetadataStore } from '../../storage/zustand';
 import BenefitPageRequiredDocuments from './components/BenefitPageRequiredDocuments';
 import BenefitPageLinksList from './components/BenefitPageLinksList';
+import BenefitPageExampleList from './components/BenefitPageExampleList';
 import theme from '../../../theme';
 import BenefitPageInfoList from './components/BenefitPageInfoList';
 import { VBox } from '../../shared-components/LayoutBoxes';
@@ -67,9 +68,14 @@ const BenefitPageScreen = () => {
                         <BenefitPageRules benefitId={id} validated_status={validated_status} />
                         {
                             benefitPageData.fundingConditions.title && (
+                                <BenefitPageExampleList listTitle={t('app.benefitPage.examples')} data={benefitPageData.examples} />
+                            )
+                        }                           
+                        {
+                            benefitPageData.fundingConditions.title && (
                                 <BenefitPageInfoList listTitle={t('app.benefitPage.fundingConditions')} data={benefitPageData.fundingConditions} />
                             )
-                        }
+                        }                     
                         {
                             benefitPageData.applicationProcess.title && (
                                 <BenefitPageLinksList listTitle={t('app.benefitPage.applicationProcess')} data={benefitPageData.applicationProcess} />

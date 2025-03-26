@@ -1,5 +1,5 @@
-import React, {useMemo} from 'react';
-import {Checkbox, FormControlLabel, FormGroup, FormLabel, Typography} from '@mui/material';
+import React, { useMemo } from 'react';
+import { Checkbox, FormControlLabel, FormGroup, FormLabel, Typography } from '@mui/material';
 import useTranslation from "../../../../language/useTranslation";
 
 const ProfileInputMultiSelection = ({ value, setValue, currentField, error }) => {
@@ -26,6 +26,9 @@ const ProfileInputMultiSelection = ({ value, setValue, currentField, error }) =>
         }
     };
 
+    console.log('ProfileInputMultiSelection -> value', value);
+    console.log('ProfileInputMultiSelection -> choices', choices);
+
     return (
         <>
             <FormGroup>
@@ -36,8 +39,7 @@ const ProfileInputMultiSelection = ({ value, setValue, currentField, error }) =>
                         sx={{ mb: 2 }} // Increased spacing between entries
                         control={
                             <Checkbox
-                                checked={value? value.includes(key) : false}
-                                onChange={handleChange}
+                                checked={Array.isArray(value) ? value.includes(key) : false} onChange={handleChange}
                                 name={key}
                             />
                         }

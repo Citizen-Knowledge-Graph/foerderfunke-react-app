@@ -1074,5 +1074,147 @@
         ]
       }
     }
+  },
+  "https://foerderfunke.org/default#bundesfoerderung-effiziente-gebaeude": {
+    "id": "ff:bundesfoerderung-effiziente-gebaeude",
+    "category": "business",
+    "status": "beta",
+    "title": {
+      "de": "Bundesförderung für effiziente Gebäude – Einzelmaßnahmen: Sanieren",
+      "en": "Federal Funding for Efficient Buildings – Individual Measures: Renovation"
+    },
+    "description": {
+      "de": "Die BEG EM Sanierung fördert Maßnahmen zur Verbesserung der Energieeffizienz und des Anteils erneuerbarer Energien bei bestehenden Gebäuden durch Zuschüsse oder Kredite. Die Förderung kann entweder über das Bundesamt für Wirtschaft und Ausfuhrkontrolle (BAFA) oder über die KFW abgewickelt werden.",
+      "en": "The BEG EM Renovation program supports measures to improve energy efficiency and the share of renewable energies in existing buildings through grants or loans. Funding can be processed either through the Federal Office for Economic Affairs and Export Control (BAFA) or through KfW."
+    },
+    "examples": {
+      "de": {
+        "title": "Folgende Beispiel veranschaulichen die Fördermöglichkeiten:",
+        "examples": [
+          {
+            "title": "Sanierung einer selbstgenutzten Wohneinheit",
+            "text": "Ein:e selbstnutzende:r Eigentümer:in erhält bei förderfähigen Kosten von 30.000 € einen Zuschuss von 21.000 €, wenn der maximale Fördersatz von 70 % erreicht wird – durch Kombination der Grundförderung (30 %), dem Klimageschwindigkeitsbonus (20 %, für den frühzeitigen Austausch einer fossilen Heizung) und dem Einkommensbonus (20 %, bei einem zu versteuernden Haushaltseinkommen unter 40.000 €)."
+          },
+          {
+            "title": "Heizungstausch in einem Mehrfamilienhaus mit 10 Wohneinheiten",
+            "text": "Bei einem Mehrfamilienhaus mit 10 Wohneinheiten beträgt die Höchstgrenze der förderfähigen Ausgaben für den Heizungstausch 137.000 € (30.000 € für die erste Wohneinheit, je 15.000 € für die zweite bis sechste und je 8.000 € ab der siebten), was bei der Grundförderung von 30 % (für Vermietende oder Unternehmen ohne Boni) einem Investitionszuschuss von 41.100 € entspricht."
+          }
+        ]
+      },
+      "en": {
+        "title": "The following examples illustrate the funding possibilities:",
+        "examples": [
+          {
+            "title": "Renovation of a self-occupied residential unit",
+            "text": "A self-occupying owner receives a grant of €21,000 for eligible costs of €30,000 if the maximum funding rate of 70% is reached – through a combination of the basic grant (30%), the climate speed bonus (20%, for the early replacement of a fossil heating system), and the income bonus (20%, for a taxable household income below €40,000)."
+          },
+          {
+            "title": "Heating system replacement in a multi-family house with 10 residential units",
+            "text": "For a multi-family house with 10 residential units, the maximum limit of eligible expenses for heating system replacement is €137,000 (€30,000 for the first residential unit, €15,000 each for the second to sixth, and €8,000 each from the seventh), which corresponds to an investment grant of €41,100 with the basic grant of 30% (for landlords or companies without bonuses)."
+          }
+        ]
+      }
+    },
+    "application_process": {
+      "de": {
+        "title": "Die Antragstellung erfolgt vor Vorhabensbeginn über über die Website des Bundesamt für Wirtschaft und Ausfuhrkontrolle (BAFA) oder über einen Finanzierungspartner bei einem Kredit. Details zur BEG-Richtlinie finden Sie auf der BAFA-Website.",
+        "links": [
+          {
+            "title": "BEG Antragstellung – BAFA",
+            "url": "https://www.bafa.de/DE/Energie/Effiziente_Gebaeude/Informationen_fuer_Antragstellende/informationen_fuer_antragstellende_node.html"
+          }
+        ]
+      },
+      "en": {
+        "title": "Applications must be submitted before the start of the project via the Federal Office for Economic Affairs and Export Control (BAFA) website or through a financing partner for a loan. Details on the BEG guideline can be found on the BAFA website.",
+        "links": [
+          {
+            "title": "BEG Antragstellung – BAFA",
+            "url": "https://www.bafa.de/DE/Energie/Effiziente_Gebaeude/Informationen_fuer_Antragstellende/informationen_fuer_antragstellende_node.html"
+          }
+        ]
+      }
+    },
+    "required_documents": {
+      "de": [
+        "Nachweis über den Standort des Gebäudes in Deutschland",
+        "Bestätigung zum Antrag (BzA) durch eine Energieeffizienz-Expertin bzw. einen -Experten",
+        "Technischer Projektplan mit Nachweis über Einhaltung der technischen Mindestanforderungen",
+        "Kostenschätzung für förderfähige Maßnahmen"
+      ],
+      "en": [
+        "Proof of building location in Germany",
+        "Confirmation of application (BzA) by a certified energy efficiency expert",
+        "Technical project plan confirming compliance with minimum technical requirements",
+        "Cost estimate for eligible measures"
+      ]
+    },
+    "funding_conditions": {
+      "de": {
+        "title": "Förderkonditionen der BEG EM – Sanieren:",
+        "details": [
+          "Zuschuss oder Kredit über die KfW möglich",
+          "Förderhöhe abhängig vom Maßnahmentyp und Einhaltung der Effizienzanforderungen",
+          "Zuschüsse für Fachplanung und Baubegleitung separat förderfähig"
+        ]
+      },
+      "en": {
+        "title": "Funding conditions of BEG EM – Renovation:",
+        "details": [
+          "Grant or loan available via KfW",
+          "Amount of funding depends on measure type and compliance with efficiency standards",
+          "Grants for planning and construction supervision are separately eligible"
+        ]
+      }
+    },
+    "legal_basis": {
+      "de": {
+        "title": "Rechtsgrundlagen der Förderung:",
+        "links": [
+          {
+            "title": "Förderrichtlinie des Bundesministeriums für Wirtschaft und Klimaschutz",
+            "url": "https://www.bundesanzeiger.de/pub/publication/TevdpcR9NeEp7m7RhbJ/content/TevdpcR9NeEp7m7RhbJ/BAnz%20AT%2029.12.2023%20B1.pdf"
+          }
+        ]
+      },
+      "en": {
+        "title": "Legal basis of the funding:",
+        "links": [
+          {
+            "title": "Funding guidelines of the Federal Ministry for Economic Affairs and Climate Protection",
+            "url": "https://www.bundesanzeiger.de/pub/publication/TevdpcR9NeEp7m7RhbJ/content/TevdpcR9NeEp7m7RhbJ/BAnz%20AT%2029.12.2023%20B1.pdf"
+          }
+        ]
+      }
+    },
+    "further_information": {
+      "de": {
+        "title": "Allgemeine Informationen zur Antragstellung finden Sie in den folgenden Webseiten:",
+        "links": [
+          {
+            "title": "BAFA Merkblatt zur Antragstellung",
+            "url": "https://www.bafa.de/SharedDocs/Downloads/DE/Energie/beg_merkblatt_allgemein_antragstellung.pdf?__blob=publicationFile&v=9"
+          },
+          {
+            "title": "KfW Arbeitshilfe für Produkte der BEG",
+            "url": "https://www.kfw.de/partner/KfW-Partnerportal/Architekten-Bauingenieure-Energieberater/Arbeitshilfen-Service/Arbeitshilfen-Pr%C3%A4sentationen/Arbeitshilfen-BEG/index.jsp?redirect=360896"
+          }
+
+        ]
+      },
+      "en": {
+        "title": "General information on the application process can be found on the following websites:",
+        "links": [
+          {
+            "title": "BAFA Information Sheet on Application",
+            "url": "https://www.bafa.de/SharedDocs/Downloads/DE/Energie/beg_merkblatt_allgemein_antragstellung.pdf?__blob=publicationFile&v=9"
+          },
+          {
+            "title": "KfW Guide for BEG Products",
+            "url": "https://www.kfw.de/partner/KfW-Partnerportal/Architekten-Bauingenieure-Energieberater/Arbeitshilfen-Service/Arbeitshilfen-Pr%C3%A4sentationen/Arbeitshilfen-BEG/index.jsp?redirect=360896"
+          }
+        ]
+      }
+    }
   }
 }

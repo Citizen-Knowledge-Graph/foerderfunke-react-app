@@ -19,7 +19,7 @@ const EligibilityOverviewScreen = () => {
     const { t } = useTranslation();
     const { language } = useContext(LanguageContext);
     const isDesktop = useStore((state) => state.isDesktop);
-
+    
     const validationReport = useValidationReportStore((state) => state.validationReport);
     const validationIsLoading = useValidationUpdate((state) => state.validationIsLoading);
     const hydrationData = useFetchData('assets/data/requirement-profiles/requirement-profiles-hydration.json')
