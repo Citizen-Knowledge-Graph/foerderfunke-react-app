@@ -29,8 +29,8 @@ const GithubCommitsList = ({ commits }) => {
                     },
                 }}
             >
-                {commits.map((item) => (
-                    <GithubCommitElement key={item.sha || item.id} commit={item} />
+                {commits.map((item, index) => (
+                    <GithubCommitElement key={index} commit={item} />
                 ))}
             </Box>
         </Box>

@@ -41,7 +41,6 @@ const HeaderBarDesktop = ({ isApp }) => {
                             checked={isEnglish}
                             onChange={handleLanguageToggle}
                             inputProps={{ 'aria-label': 'language selection' }}
-                            backgroundColor={isApp ? 'white' : theme.palette.blue.dark }
                             color={isApp ? theme.palette.blue.dark : 'white'}
                         />
                         <span style={{ color: isApp ? 'white' : 'black' }}>EN</span>

@@ -60,7 +60,6 @@ const HeaderBarMobile = ({ isApp }) => {
                                 checked={isEnglish}
                                 onChange={handleLanguageToggle}
                                 inputProps={{ 'aria-label': 'language selection' }}
-                                backgroundColor={isApp ? 'white' : 'black'}
                                 color={isApp ? 'black' : 'white'}
                             />
                             <span style={{ color: isApp ? 'white' : 'black' }}>EN</span>
