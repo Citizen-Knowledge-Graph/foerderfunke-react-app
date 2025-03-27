@@ -3,23 +3,22 @@ import { Link } from "react-router-dom";
 import { Typography, Button } from "@mui/material";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
 import DeleteIcon from "@mui/icons-material/Delete";
-import Layout from "../../../shared-components/Layout";
-import { VBox, HBox } from "../../../shared-components/LayoutBoxes";
-import AppScreenWrapper from "../../../shared-components/AppScreenWrapper";
-import useTranslation from "../../../language/useTranslation";
-import theme from "../../../../theme";
-import { useStore } from "../../../shared-components/ViewportUpdater";
+import Layout from "@/ui/shared-components/Layout";
+import { VBox, HBox } from "@/ui/shared-components/LayoutBoxes";
+import AppScreenWrapper from "@/ui/shared-components/AppScreenWrapper";
+import useTranslation from "@/ui/language/useTranslation";
+import theme from "@/theme";
+import { useStore } from "@/ui/shared-components/ViewportUpdater";
 
 const InfoScreenPrivacy = () => {
     const isDesktop = useStore((state) => state.isDesktop);
     const { t } = useTranslation();
     const privacyBox = `${process.env.PUBLIC_URL}/assets/images/application/privacy_box.svg`
-    const gap = isDesktop ? theme.spacing(8) : theme.spacing(4);
 
     return (
         <Layout isApp={true} logo={false} back="Back" >
             <AppScreenWrapper back={true}>
-                <VBox sx={{ gap: gap }}>
+                <VBox sx={{ gap: { xs: 4, md: 8 } }}>
                     {
                         !isDesktop ? (
                             <VBox sx={{ alignItems: 'center' }}>
