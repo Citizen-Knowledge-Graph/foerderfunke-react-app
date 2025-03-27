@@ -1,45 +1,45 @@
 {
-  "datafields": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/sozialplattform/datafields.ttl",
-  "materialization": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/sozialplattform/materialization.ttl",
+  "datafields": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/datafields.ttl",
+  "materialization": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/materialization.ttl",
   "queries": [
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/sozialplattform/shacl/01-hilfe-zum-lebensunterhalt.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/01-hilfe-zum-lebensunterhalt.ttl",
       "rpUri": "https://foerderfunke.org/default#hilfe-zum-lebensunterhalt"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/sozialplattform/shacl/02-kindergeld.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/02-kindergeld.ttl",
       "rpUri": "https://foerderfunke.org/default#kindergeld"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/sozialplattform/shacl/03-kinderzuschlag.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/03-kinderzuschlag.ttl",
       "rpUri": "https://foerderfunke.org/default#kinderzuschlag"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/sozialplattform/shacl/04-bafoeg.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/04-bafoeg.ttl",
       "rpUri": "https://foerderfunke.org/default#bafoeg"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/sozialplattform/shacl/05-buergergeld.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/05-buergergeld.ttl",
       "rpUri": "https://foerderfunke.org/default#buergergeld"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/sozialplattform/shacl/06-arbeitslosengeld.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/06-arbeitslosengeld.ttl",
       "rpUri": "https://foerderfunke.org/default#arbeitslosengeld"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/sozialplattform/shacl/07-berufsausbildungsbeihilfe-bab.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/07-berufsausbildungsbeihilfe-bab.ttl",
       "rpUri": "https://foerderfunke.org/default#berufsausbildungsbeihilfe-bab"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/sozialplattform/shacl/08-wohngeld.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/08-wohngeld.ttl",
       "rpUri": "https://foerderfunke.org/default#wohngeld"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/sozialplattform/shacl/09-grundsicherung-im-alter-und-bei-erwerbsminderung.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/09-grundsicherung-im-alter-und-bei-erwerbsminderung.ttl",
       "rpUri": "https://foerderfunke.org/default#grundsicherung-im-alter-und-bei-erwerbsminderung"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/sozialplattform/shacl/10-bildung-und-teilhabe-bei-bezug-von-buergergeld.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/10-bildung-und-teilhabe-bei-bezug-von-buergergeld.ttl",
       "rpUri": "https://foerderfunke.org/default#bildung-und-teilhabe-bei-bezug-von-buergergeld"
     },
     {
