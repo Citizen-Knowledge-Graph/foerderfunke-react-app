@@ -37,17 +37,19 @@ const BenefitPageScreen = () => {
     const topicsData = useFetchData('assets/data/topics/topics-list.json');
     const rpMetaData = useFetchRPMetaData(id, metadata);
     const categoryTitles = useCategoryTitles(topicsData, rpMetaData, language);
-    const validated_status = useIsMissingDataBenefit(id, validationReport);
+    const validatedStatus = useIsMissingDataBenefit(id, validationReport);
 
     if (!benefitPageData || topicsData?.length === 0) {
         return <Typography>Loading...</Typography>;
     }
 
+    console.log("benefitPageData", validatedStatus);
+
     return (
         <Layout isApp={true} logo={false} back="Back">
             <AppScreenWrapper isDesktop={isDesktop} back={true}>
                 <VBox sx={{ gap: theme.spacing(8) }}>
-                    <BenefitPageHeader id={id} benefit={benefitPageData} validated_status={validated_status} categoryTitles={categoryTitles} />
+                    <BenefitPageHeader id={id} benefit={benefitPageData} validatedStatus={validatedStatus} categoryTitles={categoryTitles} />
                     <Box gap={2} sx={{
                         display: "flex",
                         flexDirection: "column",
@@ -65,7 +67,7 @@ const BenefitPageScreen = () => {
                                 <Typography sx={{ marginTop: theme.spacing(1) }} variant="body1">{benefitPageData.description || t('app.noData')}</Typography>
                             </VBox>
                         </VBox>
-                        <BenefitPageRules benefitId={id} validated_status={validated_status} />
+                        <BenefitPageRules benefitId={id} validatedStatus={validatedStatus} />
                         {
                             benefitPageData.fundingConditions.title && (
                                 <BenefitPageExampleList listTitle={t('app.benefitPage.examples')} data={benefitPageData.examples} />

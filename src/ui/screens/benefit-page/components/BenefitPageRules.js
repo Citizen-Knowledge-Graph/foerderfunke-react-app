@@ -11,7 +11,7 @@ import useBenefitPageRules from "../hooks/useBenefitPageRules";
 import { VBox, HBox } from "../../../shared-components/LayoutBoxes";
 import theme from "../../../../theme";
 
-const BenefitPageRules = ({ benefitId, validated_status }) => {
+const BenefitPageRules = ({ benefitId, validatedStatus }) => {
     const { t } = useTranslation();
     const metadata = useMetadataStore((state) => state.metadata);
     const validationReport = useValidationReportStore((state) => state.validationReport);
@@ -53,7 +53,7 @@ const BenefitPageRules = ({ benefitId, validated_status }) => {
                         <VBox gap={1}>
                             {rules &&
                                 rules.map((rule, index) => (
-                                    <BenefitPageRuleEntry key={index} ruleData={rule} validated_status={validated_status} />
+                                    <BenefitPageRuleEntry key={index} ruleData={rule} validatedStatus={validatedStatus} />
                                 ))}
                         </VBox>
                     </Collapse>
