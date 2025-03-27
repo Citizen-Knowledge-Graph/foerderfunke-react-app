@@ -15,8 +15,6 @@ const BenefitPageHeader = ({ id, benefit, validatedStatus, categoryTitles }) => 
     const setSelectedBenefit = useSelectedBenefitStore((state) => state.setSelectedBenefit);
     const clearSelectedTopics = useSelectedTopicsStore((state) => state.clear);
 
-    console.log("validatedStatus", validatedStatus);
-
     return (
         <HBox sx={{ justifyContent: 'space-between', gap: theme.spacing(4), flexWrap: 'wrap' }}>
             <VBox sx={{ gap: theme.spacing(2) }}>

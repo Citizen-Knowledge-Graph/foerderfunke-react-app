@@ -43,8 +43,6 @@ const BenefitPageScreen = () => {
         return <Typography>Loading...</Typography>;
     }
 
-    console.log("benefitPageData", validatedStatus);
-
     return (
         <Layout isApp={true} logo={false} back="Back">
             <AppScreenWrapper isDesktop={isDesktop} back={true}>
