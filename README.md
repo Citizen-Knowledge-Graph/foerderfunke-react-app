@@ -25,7 +25,7 @@ FörderFunke combines a powerful matching engine with user-friendly interfaces t
 FörderFunke consists of three main components:
 1. **Frontend Application** (this repository)
 2. **[Matching Engine](https://github.com/Citizen-Knowledge-Graph/matching-engine)**: Powers the intelligent funding program matching
-3. **[Requirement Profiles](https://github.com/Citizen-Knowledge-Graph/requirement-profiles)**: Contains funding program definitions in Turtle format
+3. **[Knowledge Base](https://github.com/Citizen-Knowledge-Graph/knowledge-base)**: Contains funding program definitions in Turtle format
 
 
 ## 📱 Progressive Web App
