@@ -9,7 +9,7 @@ import { VBox, HBox } from "../../../shared-components/LayoutBoxes";
 import theme from "../../../../theme";
 
 const InfoScreenReturningUser = ({ t, exportProfile, continueWithExisting, deleteExistingProfile }) => {
-  return (
+    return (
     <Layout isApp={true} logo={false}>
       <AppScreenWrapper home={true}>
         <VBox sx={{ gap: theme.spacing(8) }}>

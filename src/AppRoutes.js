@@ -11,14 +11,14 @@ import ProfileScreen from './ui/screens/profile-screen/ProfileScreen';
 import ActivityLogScreen from './ui/screens/activity-log/ActivityLogScreen';
 import ResolveUriScreen from './ui/screens/resolve-uri/ResolveUriScreen';
 import OnboardingWelcomeTopics from "./ui/screens/onboarding-welcome/OnboardingWelcomeTopics";
-import InfoScreenReturningUser from './ui/screens/info-pages/returning-user/InfoScreenReturningUser';
+import InfoScreenReturningUserContainer from './ui/screens/info-pages/returning-user/InfoScreenReturningUserContainer';
 import InfoScreenPrivacy from './ui/screens/info-pages/privacy/InfoScreenPrivacy';
 
 const AppRoutes = () => (
     <Routes>
         <Route path="/" element={<LandingPage/>}/>
         <Route path="/user-routing" element={<InfoPageRouter/>}/>
-        <Route path="/returning-user" element={<InfoScreenReturningUser/>}/>
+        <Route path="/returning-user" element={<InfoScreenReturningUserContainer/>}/>
         <Route path="/privacy-info" element={<InfoScreenPrivacy/>}/>
         <Route path="/onboarding-choice" element={<OnboardingChoice/>}/>
         <Route path="/onboarding-welcome-topics" element={<OnboardingWelcomeTopics/>}/>
