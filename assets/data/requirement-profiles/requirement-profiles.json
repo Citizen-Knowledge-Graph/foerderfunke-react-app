@@ -1,77 +1,77 @@
 {
-  "datafields": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/datafields.ttl",
-  "materialization": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/materialization.ttl",
+  "datafields": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/datafields.ttl",
+  "materialization": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/materialization.ttl",
   "queries": [
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/01-hilfe-zum-lebensunterhalt.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/01-hilfe-zum-lebensunterhalt.ttl",
       "rpUri": "https://foerderfunke.org/default#hilfe-zum-lebensunterhalt"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/02-kindergeld.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/02-kindergeld.ttl",
       "rpUri": "https://foerderfunke.org/default#kindergeld"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/03-kinderzuschlag.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/03-kinderzuschlag.ttl",
       "rpUri": "https://foerderfunke.org/default#kinderzuschlag"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/04-bafoeg.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/04-bafoeg.ttl",
       "rpUri": "https://foerderfunke.org/default#bafoeg"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/05-buergergeld.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/05-buergergeld.ttl",
       "rpUri": "https://foerderfunke.org/default#buergergeld"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/06-arbeitslosengeld.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/06-arbeitslosengeld.ttl",
       "rpUri": "https://foerderfunke.org/default#arbeitslosengeld"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/07-berufsausbildungsbeihilfe-bab.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/07-berufsausbildungsbeihilfe-bab.ttl",
       "rpUri": "https://foerderfunke.org/default#berufsausbildungsbeihilfe-bab"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/08-wohngeld.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/08-wohngeld.ttl",
       "rpUri": "https://foerderfunke.org/default#wohngeld"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/09-grundsicherung-im-alter-und-bei-erwerbsminderung.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/09-grundsicherung-im-alter-und-bei-erwerbsminderung.ttl",
       "rpUri": "https://foerderfunke.org/default#grundsicherung-im-alter-und-bei-erwerbsminderung"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/shacl/10-bildung-und-teilhabe-bei-bezug-von-buergergeld.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/10-bildung-und-teilhabe-bei-bezug-von-buergergeld.ttl",
       "rpUri": "https://foerderfunke.org/default#bildung-und-teilhabe-bei-bezug-von-buergergeld"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/beta/exist-gruendungsstipendium.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/exist-gruendungsstipendium.ttl",
       "rpUri": "https://foerderfunke.org/default#exist-gruendungsstipendium"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/beta/ibb-gruendungsbonus.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/ibb-gruendungsbonus.ttl",
       "rpUri": "https://foerderfunke.org/default#ibb-gruendungsbonus"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/beta/ibb-altersgerecht-wohnen.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/ibb-altersgerecht-wohnen.ttl",
       "rpUri": "https://foerderfunke.org/default#ibb-altersgerecht-wohnen"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/beta/ifb-gruendung-nachfolge.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/ifb-gruendung-nachfolge.ttl",
       "rpUri": "https://foerderfunke.org/default#ifb-gruendung-nachfolge"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/beta/ifb-inno-founder.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/ifb-inno-founder.ttl",
       "rpUri": "https://foerderfunke.org/default#ifb-inno-founder"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/beta/ilb-kredit-gruendung.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/ilb-kredit-gruendung.ttl",
       "rpUri": "https://foerderfunke.org/default#ilb-kredit-gruendung"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/beta/forschungszulage.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/forschungszulage.ttl",
       "rpUri": "https://foerderfunke.org/default#forschungszulage"      
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/requirement-profiles/main/beta/bundesfoerderung-effiziente-gebaeude.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/bundesfoerderung-effiziente-gebaeude.ttl",
       "rpUri": "https://foerderfunke.org/default#bundesfoerderung-effiziente-gebaeude"      
     }
   ]
