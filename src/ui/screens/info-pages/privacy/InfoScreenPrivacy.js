@@ -7,14 +7,8 @@ import Layout from "@/ui/shared-components/Layout";
 import { VBox, HBox } from "@/ui/shared-components/LayoutBoxes";
 import AppScreenWrapper from "@/ui/shared-components/AppScreenWrapper";
 import theme from "@/theme";
-import { useStore } from '@/ui/shared-components/ViewportUpdater';
-import useTranslation from '@/ui/language/useTranslation';
 
-const InfoScreenPrivacy = () => {
-    const isDesktop = useStore((state) => state.isDesktop);
-    const { t } = useTranslation();
-    const privacyBox = `${process.env.PUBLIC_URL}/assets/images/application/privacy_box.svg`;
-
+const InfoScreenPrivacy = ({t, isDesktop, privacyBox, initialiseNewUser}) => {
     return (
         <Layout isApp={true} logo={false} back="Back" >
             <AppScreenWrapper back={true}>
@@ -74,6 +68,7 @@ const InfoScreenPrivacy = () => {
                                     }}
                                     variant="contained"
                                     component={Link}
+                                    onClick={initialiseNewUser}
                                     to={'/onboarding-choice'}>
                                     <Typography variant="body1" sx={{ color: 'inherit' }}>
                                         {t('app.privacySite.button')}
