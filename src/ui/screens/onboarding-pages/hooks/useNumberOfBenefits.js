@@ -4,7 +4,7 @@ const useNumberOfBenefits = (selectedTopics, metadata) => {
     const [numberOfBenefits, setNumberOfBenefits] = useState(0);
 
     useEffect(() => {
-        if (selectedTopics.length > 0 && metadata?.rp) {
+        if (selectedTopics?.length > 0 && metadata?.rp) {
             let distinctRPs = {};
             for (let topic of selectedTopics) {
                 const topicUri = "https://foerderfunke.org/default#" + topic.id.split(":")[1];

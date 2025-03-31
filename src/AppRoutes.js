@@ -2,15 +2,15 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import LandingPage from './ui/screens/landing-page/LandingPage';
 import InfoPageRouter from './ui/screens/info-pages/InfoPageRouter';
-import OnboardingChoice from './ui/screens/onboarding-choice/OnboardingChoice';
-import OnboardingWelcomeOverview from './ui/screens/onboarding-welcome/OnboardingWelcomeOverview';
+import OnboardingChoice from './ui/screens/onboarding-pages/choice/OnboardingChoice';
+import OnboardingWelcomeOverview from './ui/screens/onboarding-pages/overview/OnboardingWelcomeOverview';
 import EligibilityOverviewScreen from './ui/screens/eligibilty-overview/EligibilityOverviewScreen';
 import ProfileSectionScreen from './ui/screens/profile-section/ProfileSectionScreen';
 import BenefitPageScreen from './ui/screens/benefit-page/BenefitPageScreen';
 import ProfileScreen from './ui/screens/profile-screen/ProfileScreen';
 import ActivityLogScreen from './ui/screens/activity-log/ActivityLogScreen';
 import ResolveUriScreen from './ui/screens/resolve-uri/ResolveUriScreen';
-import OnboardingWelcomeTopics from "./ui/screens/onboarding-welcome/OnboardingWelcomeTopics";
+import OnboardingWelcomeTopicsContainer from "./ui/screens/onboarding-pages/topics/OnboardingWelcomeTopicsContainer";
 import InfoScreenReturningUserContainer from './ui/screens/info-pages/returning-user/InfoScreenReturningUserContainer';
 import InfoScreenPrivacyContainer from './ui/screens/info-pages/privacy/InfoScreenPrivacyContainer';
 
@@ -21,7 +21,7 @@ const AppRoutes = () => (
         <Route path="/returning-user" element={<InfoScreenReturningUserContainer/>}/>
         <Route path="/privacy-info" element={<InfoScreenPrivacyContainer/>}/>
         <Route path="/onboarding-choice" element={<OnboardingChoice/>}/>
-        <Route path="/onboarding-welcome-topics" element={<OnboardingWelcomeTopics/>}/>
+        <Route path="/onboarding-welcome-topics" element={<OnboardingWelcomeTopicsContainer/>}/>
         <Route path="/onboarding-welcome" element={<OnboardingWelcomeOverview/>}/>
         <Route path="/onboarding-welcome/:benefitMode" element={<OnboardingWelcomeOverview/>}/>
         <Route path="/eligibility-overview" element={<EligibilityOverviewScreen/>}/>

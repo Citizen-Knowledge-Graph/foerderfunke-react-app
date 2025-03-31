@@ -3,7 +3,7 @@ import {create} from 'zustand';
 export const useUserStore = create((set) => ({
     activeUserId: null,
     updateUserId: (newUserId) => {
-        console.log('STATE UPDATE: We are switching user');
+        console.log('STATE UPDATE: User id set to ' + newUserId);
         set((state) => ({activeUserId: newUserId}));
     },
 }));
@@ -31,7 +31,7 @@ export const useValidationReportStore = create((set) => ({
 export const useSelectedTopicsStore = create((set) => ({
     selectedTopics: [],
     setSelectedTopics(newSelectedTopics) {
-        console.log('STATE UPDATE: We are setting the selected topics');
+        console.log('STATE UPDATE: We are setting the selected topics: ' + newSelectedTopics);
         set({selectedTopics: newSelectedTopics});
     },
     addSelectedTopic: (newSelectedTopic) => {

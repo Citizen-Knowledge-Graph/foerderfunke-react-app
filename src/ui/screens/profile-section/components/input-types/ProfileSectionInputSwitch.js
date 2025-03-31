@@ -7,7 +7,6 @@ import ProfileInputBoolean from "./ProfileInputBoolean";
 import ProfileInputMultiSelection from "./ProfileInputMultiSelection";
 
 const ProfileSectionInputSwitch = ({ value, setValue, currentField, entityData, error }) => {
-    console.log('ProfileSectionInputSwitch', currentField);
     switch (currentField.datatype) {
         case 'selection':
             return <ProfileInputSelection

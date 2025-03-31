@@ -1,18 +1,18 @@
 import React, { useContext } from 'react';
 import { CircularProgress, Typography, Button } from '@mui/material';
 import { useParams, Link } from "react-router-dom";
-import useTranslation from "../../language/useTranslation";
-import { LanguageContext } from "../../language/LanguageContext";
-import useNumberOfBenefits from "./hooks/useNumberOfBenefits";
-import Layout from "../../shared-components/Layout";
-import AppScreenWrapper from "../../shared-components/AppScreenWrapper";
-import { VBox, HBox } from "../../shared-components/LayoutBoxes";
-import TimeIcon from './components/TimeIcon';
-import BenefitsIcon from './components/BenefitsIcon';
-import { useMetadataStore, useSelectedBenefitStore, useSelectedTopicsStore } from "../../storage/zustand";
-import theme from "../../../theme";
-import { useStore } from "../../shared-components/ViewportUpdater";
-import { useValidationUpdate } from "../../storage/updates";
+import useTranslation from "../../../language/useTranslation";
+import { LanguageContext } from "../../../language/LanguageContext";
+import useNumberOfBenefits from "../hooks/useNumberOfBenefits";
+import Layout from "../../../shared-components/Layout";
+import AppScreenWrapper from "../../../shared-components/AppScreenWrapper";
+import { VBox, HBox } from "../../../shared-components/LayoutBoxes";
+import TimeIcon from '../components/TimeIcon';
+import BenefitsIcon from '../components/BenefitsIcon';
+import { useMetadataStore, useSelectedBenefitStore, useSelectedTopicsStore } from "../../../storage/zustand";
+import theme from "../../../../theme";
+import { useStore } from "../../../shared-components/ViewportUpdater";
+import { useValidationUpdate } from "../../../storage/updates";
 
 
 const OnboardingWelcomeOverview = () => {
@@ -87,7 +87,7 @@ const OnboardingWelcomeOverview = () => {
                                 </VBox>
                             ) : (
                                 <VBox sx={{ gap: theme.spacing(2) }}>
-                                    {metadata.rp ? selectedTopics.map((topic, index) => (
+                                    {metadata.rp ? selectedTopics?.map((topic, index) => (
                                         <HBox key={index} sx={{
                                             padding: padding,
                                             borderRadius: theme.shape.borderRadius,

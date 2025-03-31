@@ -1,22 +1,18 @@
 import React from 'react';
 import { Typography, Button } from '@mui/material';
-import Layout from '../../shared-components/Layout';
-import AppScreenWrapper from "../../shared-components/AppScreenWrapper";
-import useTranslation from "../../language/useTranslation";
-import theme from "../../../theme";
+import Layout from '@/ui/shared-components/Layout';
+import AppScreenWrapper from "@/ui/shared-components/AppScreenWrapper";
+import useTranslation from "@/ui/language/useTranslation";
 import { Link } from "react-router-dom";
-import { HBox, VBox } from '../../shared-components/LayoutBoxes';
-import { useStore } from '../../shared-components/ViewportUpdater';
+import { HBox, VBox } from '@/ui/shared-components/LayoutBoxes';
 
 const OnboardingChoice = () => {
-    const isDesktop = useStore((state) => state.isDesktop);
     const { t } = useTranslation();
-    const gap = isDesktop ? theme.spacing(8) : theme.spacing(4);
 
     return (
         <Layout isApp={true}>
             <AppScreenWrapper back={true}>
-                <VBox sx={{ gap: gap }}>
+                <VBox sx={{ gap: { xs: 4, md: 8 } }}>
                     <HBox sx={{ maxWidth: '800px' }}>
                         <Typography variant="h1">
                             {t('app.discoverChoice.header')}
@@ -34,7 +30,7 @@ const OnboardingChoice = () => {
                                     padding: "32px 32px",
                                     boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
                                     '&:hover': {
-                                        backgroundColor: theme.palette.yellow.main,
+                                        backgroundColor: 'yellow.main',
                                     },
                                 }}
                                 component={Link}
@@ -58,7 +54,7 @@ const OnboardingChoice = () => {
                                     padding: "32px 32px",
                                     boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
                                     '&:hover': {
-                                        backgroundColor: theme.palette.yellow.main,
+                                        backgroundColor: 'yellow.main',
                                     },
                                 }}
                                 component={Link}
