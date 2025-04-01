@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import LandingPage from './ui/screens/landing-page/LandingPage';
 import InfoPageRouter from './ui/screens/info-pages/InfoPageRouter';
 import OnboardingChoice from './ui/screens/onboarding-pages/choice/OnboardingChoice';
-import OnboardingWelcomeOverview from './ui/screens/onboarding-pages/overview/OnboardingWelcomeOverview';
+import OnboardingWelcomeOverviewContainer from './ui/screens/onboarding-pages/overview/OnboardingWelcomeOverviewContainer';
 import EligibilityOverviewScreen from './ui/screens/eligibilty-overview/EligibilityOverviewScreen';
 import ProfileSectionScreen from './ui/screens/profile-section/ProfileSectionScreen';
 import BenefitPageScreen from './ui/screens/benefit-page/BenefitPageScreen';
@@ -22,8 +22,8 @@ const AppRoutes = () => (
         <Route path="/privacy-info" element={<InfoScreenPrivacyContainer/>}/>
         <Route path="/onboarding-choice" element={<OnboardingChoice/>}/>
         <Route path="/onboarding-welcome-topics" element={<OnboardingWelcomeTopicsContainer/>}/>
-        <Route path="/onboarding-welcome" element={<OnboardingWelcomeOverview/>}/>
-        <Route path="/onboarding-welcome/:benefitMode" element={<OnboardingWelcomeOverview/>}/>
+        <Route path="/onboarding-welcome" element={<OnboardingWelcomeOverviewContainer/>}/>
+        <Route path="/onboarding-welcome/:benefitMode" element={<OnboardingWelcomeOverviewContainer/>}/>
         <Route path="/eligibility-overview" element={<EligibilityOverviewScreen/>}/>
         <Route path="/profile-section" element={<ProfileSectionScreen/>}/>
         <Route path="/profile-section/:benefitMode" element={<ProfileSectionScreen/>}/>
