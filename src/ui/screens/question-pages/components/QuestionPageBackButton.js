@@ -5,8 +5,7 @@ import { HBox } from '../../../shared-components/LayoutBoxes';
 import theme from "../../../../theme";
 import useTranslation from "../../../language/useTranslation";
 
-
-const ProfileSectionBackButton = ({ handleBack }) => {
+const QuestionPageBackButton = ({ handleBack }) => {
     const { t } = useTranslation();
 
     return (
@@ -38,4 +37,4 @@ const ProfileSectionBackButton = ({ handleBack }) => {
     )
 }
 
-export default ProfileSectionBackButton;
+export default QuestionPageBackButton;

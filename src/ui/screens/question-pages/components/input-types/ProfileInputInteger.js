@@ -2,23 +2,25 @@ import React from 'react';
 import { TextField, Typography } from '@mui/material';
 
 const ProfileInputInteger = ({ value, setValue, error }) => {
-    if (typeof value !== 'number') {
-        setValue(null);
-    }
+    const handleChange = (e) => {
+        const parsed = parseInt(e.target.value, 10);
+        setValue(Number.isNaN(parsed) ? null : parsed);
+    };
 
     return (
         <>
             <TextField
                 label="Value"
                 variant="outlined"
-                onChange={(e) => setValue(parseInt(e.target.value, 10))}
-                value={value || ''}
+                type="number"
+                onChange={handleChange}
+                value={value ?? ''}
             />
-            {error ? (
+            {error && (
                 <Typography variant="body1" color="error">
                     {error}
                 </Typography>
-            ) : null}
+            )}
         </>
     );
 };

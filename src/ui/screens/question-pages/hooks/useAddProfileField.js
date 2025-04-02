@@ -2,16 +2,16 @@ import {useCallback} from 'react';
 import userManager from '../../../../core/managers/userManager';
 import {useUserStore} from '../../../storage/zustand';
 
-function useRemoveProfileObject(currentField, entityData) {
-    return useCallback((id) => {
+function useAddProfileField(currentField, entityData) {
+    return useCallback((value) => {
         const activeUserId = useUserStore.getState().activeUserId;
         return new Promise((resolve, reject) => {
-            if (currentField.datatype === 'class') {
+            if (currentField.datatype !== 'class') {
                 try {
-                    userManager.removeObjectFromField(activeUserId, id, currentField.datafield, entityData);
+                    userManager.setField(activeUserId, value, currentField.datafield, entityData);
                     resolve();
                 } catch (error) {
-                    console.log('Error removing profile field')
+                    console.log('Error adding profile field')
                     reject(error);
                 }
             } else {
@@ -21,4 +21,4 @@ function useRemoveProfileObject(currentField, entityData) {
     }, [currentField, entityData]);
 }
 
-export default useRemoveProfileObject;
+export default useAddProfileField;

@@ -26,9 +26,6 @@ const ProfileInputMultiSelection = ({ value, setValue, currentField, error }) =>
         }
     };
 
-    console.log('ProfileInputMultiSelection -> value', value);
-    console.log('ProfileInputMultiSelection -> choices', choices);
-
     return (
         <>
             <FormGroup>
@@ -36,7 +33,7 @@ const ProfileInputMultiSelection = ({ value, setValue, currentField, error }) =>
                 {Object.entries(choices).map(([key, label]) => (
                     <FormControlLabel
                         key={key}
-                        sx={{ mb: 2 }} // Increased spacing between entries
+                        sx={{ mb: 2 }}
                         control={
                             <Checkbox
                                 checked={Array.isArray(value) ? value.includes(key) : false} onChange={handleChange}

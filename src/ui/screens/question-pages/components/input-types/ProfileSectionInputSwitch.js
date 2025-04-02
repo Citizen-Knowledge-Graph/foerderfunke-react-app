@@ -1,12 +1,11 @@
 import ProfileInputSelection from "./ProfileInputSelection";
-import ProfileInputClass from "./ProfileInputClass";
 import ProfileInputText from "./ProfileInputText";
 import ProfileInputInteger from "./ProfileInputInteger";
 import ProfileInputDate from "./ProfileInputDate";
 import ProfileInputBoolean from "./ProfileInputBoolean";
 import ProfileInputMultiSelection from "./ProfileInputMultiSelection";
 
-const ProfileSectionInputSwitch = ({ value, setValue, currentField, entityData, error }) => {
+const ProfileSectionInputSwitch = ({ t, value, setValue, currentField, error }) => {
     switch (currentField.datatype) {
         case 'selection':
             return <ProfileInputSelection
@@ -22,14 +21,10 @@ const ProfileSectionInputSwitch = ({ value, setValue, currentField, entityData, 
                 error={error} />;
         case 'date':
             return <ProfileInputDate
+                t={t}
                 value={value}
                 setValue={setValue}
                 error={error} />;
-        case 'class':
-            return <ProfileInputClass
-                value={value}
-                currentField={currentField}
-                entityData={entityData} />;
         case 'boolean':
             return <ProfileInputBoolean
                 value={value}

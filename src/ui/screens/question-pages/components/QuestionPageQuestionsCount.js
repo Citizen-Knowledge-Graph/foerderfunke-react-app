@@ -2,26 +2,20 @@ import React, { useState } from 'react';
 import { Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import InfoIcon from "@mui/icons-material/Info";
-import useTranslation from "../../../language/useTranslation";
 import { HBox, VBox } from "../../../shared-components/LayoutBoxes";
-import theme from "../../../../theme";
-import ProfileSectionBackButton from "./ProfileSectionBackButton";
+import QuestionPageBackButton from "./QuestionPageBackButton";
 
-const ProfileSectionQuestionsCount = ({ handleBack, stepsBackwardsFromStackFront, stack, profileQuestions }) => {
-    const { t } = useTranslation();
+const QuestionPageQuestionsCount = ({ t, handleBackClick, questionsCount }) => {
     const [isVisible, setIsVisible] = useState(false);
 
-    const questionsAnswered = stack.length - stepsBackwardsFromStackFront;
-    const questionsLeft = stack.length + profileQuestions.fields.length
-
     return (
-        <VBox sx={{ gap: theme.spacing(0) }}>
+        <VBox sx={{ gap: 0 }}>
             <HBox sx={{ justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
-                {questionsAnswered > 1 ?
-                    <ProfileSectionBackButton handleBack={handleBack} /> : <div />}
+                {questionsCount[0] > 1 ?
+                    <QuestionPageBackButton handleBack={handleBackClick} /> : <div />}
                 <HBox sx={{ alignItems: 'center', padding: '8px', }}>
                     <Typography variant="body2" sx={{ color: 'black.light' }}>
-                        {t('app.questions.progress')}: {questionsAnswered} / {questionsLeft}
+                        {t('app.questions.progress')}: {questionsCount[0]} / {questionsCount[1]}
                     </Typography>
                     {
                         isVisible ? (
@@ -40,7 +34,7 @@ const ProfileSectionQuestionsCount = ({ handleBack, stepsBackwardsFromStackFront
             </HBox>
             {
                 isVisible && (
-                    <HBox sx={{ justifyContent: 'flex-end', gap: theme.spacing(1), alignItems: 'center' }}>
+                    <HBox sx={{ justifyContent: 'flex-end', gap: 1, alignItems: 'center' }}>
                         <Typography variant="body2" sx={{ color: 'black.light' }}>
                             {t('app.questions.info')}
                         </Typography>
@@ -51,4 +45,4 @@ const ProfileSectionQuestionsCount = ({ handleBack, stepsBackwardsFromStackFront
     );
 };
 
-export default ProfileSectionQuestionsCount;
+export default QuestionPageQuestionsCount;
