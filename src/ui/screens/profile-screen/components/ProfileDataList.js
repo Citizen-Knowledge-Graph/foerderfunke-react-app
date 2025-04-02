@@ -1,11 +1,11 @@
 import React from 'react';
-import globalStyles from "../../../styles/styles";
-import { VBox, HBox } from "../../../shared-components/LayoutBoxes";
-import { Button, Typography } from "@mui/material";
+import { VBox, HBox } from "@/ui/shared-components/LayoutBoxes";
+import { Typography } from "@mui/material";
+import useTranslation from "@/ui/language/useTranslation";
+import theme from "@/theme";
+import RegularButton from '@/ui/shared-components/RegularButton';
 import useUserProfileData from "../hooks/useUserProfileData";
-import { Link } from "react-router-dom";
-import useTranslation from "../../../language/useTranslation";
-import theme from "../../../../theme";
+
 
 const ProfileDataList = () => {
     const { t } = useTranslation();
@@ -39,7 +39,7 @@ const ProfileDataList = () => {
                                 </VBox>
                             ))}
                     </VBox>) : (
-                    <VBox sx={styles.restartBox}>
+                    <VBox>
                         <Typography variant='body1'>
                             {t('app.profile.noInfoYet')}
                         </Typography>
@@ -51,52 +51,14 @@ const ProfileDataList = () => {
                         {t('app.qsComplete.hint')}
                     </Typography>
                 </HBox>
-                <HBox>
-                    <Button
-                        sx={{
-                            padding: "16px 28px",
-                            backgroundColor: theme.palette.black.light,
-                            color: theme.palette.white.main,
-                        }}
-                        component={Link}
-                        to='/user-routing'
-                    >
-                        <Typography variant="body1" sx={{ color: 'inherit', whiteSpace: 'nowrap' }}>
-                            {t('app.qsComplete.restartBtn')}
-                        </Typography>
-                    </Button>
-                </HBox>
-
+                <RegularButton
+                    variant='greyContained'
+                    text={'app.qsComplete.restartBtn'}
+                    link={'/user-routing'}
+                />
             </HBox>
         </VBox>
     );
 };
 
-
-
-
-const styles = {
-    restartBox: {
-        padding: '16px',
-        width: '100%',
-        backgroundColor: 'white',
-        borderRadius: '12px',
-        borderWidth: '1px',
-        borderColor: globalStyles.colorLightGrey,
-    },
-    dataBox: {
-        padding: '12px',
-        borderRadius: '12px'
-    },
-    labelText: {
-        fontWeight: '300',
-        fontSize: '14px',
-        color: globalStyles.colorDarkGrey
-    },
-    valueText: {
-        fontSize: '16px'
-    }
-};
-
 export default ProfileDataList;
-

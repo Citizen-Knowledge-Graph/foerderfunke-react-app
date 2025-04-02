@@ -51,6 +51,7 @@ const OnboardingChoice = () => {
                         <HBox>
                             <Button
                                 sx={{
+                                    height: '100%',
                                     padding: "32px 32px",
                                     boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
                                     '&:hover': {

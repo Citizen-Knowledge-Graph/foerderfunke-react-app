@@ -1,12 +1,12 @@
 import React from 'react';
-import { Typography, Button } from '@mui/material';
-import { Link } from "react-router-dom";
-import Layout from "../../../shared-components/Layout";
-import AppScreenWrapper from "../../../shared-components/AppScreenWrapper";
-import { VBox, HBox } from "../../../shared-components/LayoutBoxes";
+import { Typography } from '@mui/material';
+import Layout from "@/ui/shared-components/Layout";
+import AppScreenWrapper from "@/ui/shared-components/AppScreenWrapper";
+import { VBox, HBox } from "@/ui/shared-components/LayoutBoxes";
+import theme from "@/theme";
+import RegularButton from '@/ui/shared-components/RegularButton';
 import TimeIcon from '../components/TimeIcon';
 import BenefitsIcon from '../components/BenefitsIcon';
-import theme from "@/theme";
 
 const OnboardingWelcomeOverviewView = ({
     t,
@@ -73,22 +73,11 @@ const OnboardingWelcomeOverviewView = ({
                             </VBox>
                         )}
                     </VBox>
-                    <HBox>
-                        <Button
-                            sx={{
-                                padding: "16px 28px",
-                                backgroundColor: 'blue.dark',
-                                color: 'white.main',
-                            }}
-                            variant="contained"
-                            component={Link}
-                            to={'/questions'}
-                        >
-                            <Typography variant="body1" sx={{ color: 'inherit' }}>
-                                {t('app.topicsChosen.discoverBtn')}
-                            </Typography>
-                        </Button>
-                    </HBox>
+                    <RegularButton
+                        variant={'blueContained'}
+                        text={t('app.topicsChosen.discoverBtn')}
+                        link={'/questions'}
+                    />
                 </VBox>
             </AppScreenWrapper>
         </Layout>

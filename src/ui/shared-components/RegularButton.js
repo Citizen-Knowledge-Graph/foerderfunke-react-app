@@ -61,6 +61,26 @@ const RegularButton = ({
                 borderColor: 'black.main'
             }
         },
+        blueContained: {
+            backgroundColor: 'blue.dark',
+            color: 'white.main',
+            borderColor: 'blue.dark',
+            '&:hover': {
+                backgroundColor: 'white.main',
+                color: 'blue.dark',
+                borderColor: 'blue.dark'
+            }
+        },
+        greyContained: {
+            backgroundColor: 'black.light',
+            color: 'white.main',
+            borderColor: 'black.light',
+            '&:hover': {
+                backgroundColor: 'black.main',
+                color: 'white.main',
+                borderColor: 'black.main'
+            }
+        },
         blueHollow: {
             backgroundColor: 'blue.dark',
             color: 'white.main',

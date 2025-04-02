@@ -1,11 +1,12 @@
 import React from 'react';
-import { Button, Checkbox, FormControlLabel, Typography, Box } from '@mui/material';
-import { Link } from "react-router-dom";
-import Layout from "../../../shared-components/Layout";
+import { Checkbox, FormControlLabel, Typography, Box } from '@mui/material';
+import Layout from "@/ui/shared-components/Layout";
 import AppScreenWrapper from "@/ui/shared-components/AppScreenWrapper";
 import { VBox, HBox } from "@/ui/shared-components/LayoutBoxes";
+import RegularButton from '@/ui/shared-components/RegularButton';
 import TimeIcon from '../components/TimeIcon';
 import ClickableTopicBox from "../components/ClickableTopicBox";
+
 
 const OnboardingWelcomeTopics = ({
     t,
@@ -87,22 +88,12 @@ const OnboardingWelcomeTopics = ({
                             />
                         </Box>
                     </VBox>
-                    <HBox>
-                        <Button
-                            sx={{
-                                padding: "16px 28px",
-                                backgroundColor: 'blue.dark',
-                                color: 'white.main',
-                            }}
-                            variant="contained"
-                            onClick={onConfirm}
-                            component={Link}
-                            to={'/onboarding-welcome'}>
-                            <Typography variant="body1" sx={{ color: 'inherit' }}>
-                                {t('app.topicSelection.confirmBtn')}
-                            </Typography>
-                        </Button>
-                    </HBox>
+                    <RegularButton 
+                        variant={'blueContained'} 
+                        text={'app.topicSelection.confirmBtn'} 
+                        onClick={onConfirm} 
+                        link={'/onboarding-welcome'} 
+                    />
                 </VBox>
             </AppScreenWrapper>
         </Layout >

@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-import { Typography, Button } from "@mui/material";
+import { Typography } from "@mui/material";
 import ProfileDataList from "@/ui/screens/profile-screen/components/ProfileDataList";
 import useTranslation from "@/ui/language/useTranslation";
 import { VBox, HBox } from "@/ui/shared-components/LayoutBoxes";
 import Layout from "@/ui/shared-components/Layout";
 import AppScreenWrapper from "@/ui/shared-components/AppScreenWrapper";
 import { useStore } from "@/ui/shared-components/ViewportUpdater";
+import RegularButton from '@/ui/shared-components/RegularButton';
 
 const QuestionPageCompleted = () => {
     const { t } = useTranslation();
@@ -39,22 +39,11 @@ const QuestionPageCompleted = () => {
                         }
                     </HBox>
                     <ProfileDataList />
-                    <HBox>
-                        <Button
-                            sx={{
-                                padding: '16px 28px',
-                                backgroundColor: 'blue.dark',
-                                color: 'white.main',
-                            }}
-                            variant='contained'
-                            component={Link}
-                            to={`/eligibility-overview`}
-                        >
-                            <Typography variant="body1" sx={{ color: 'inherit' }}>
-                                {t('app.qsComplete.discoverBtn')}
-                            </Typography>
-                        </Button>
-                    </HBox>
+                    <RegularButton
+                        variant="blueContained"
+                        text={t('app.qsComplete.discoverBtn')}
+                        link={'/eligibility-overview'}
+                    />
                 </VBox>
             </AppScreenWrapper>
         </Layout>

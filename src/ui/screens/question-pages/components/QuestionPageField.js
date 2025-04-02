@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Typography, Button, Collapse } from '@mui/material';
+import { Typography, Collapse } from '@mui/material';
 import { VBox, HBox } from '@/ui/shared-components/LayoutBoxes';
 import ProfileSectionInputSwitch from "./input-types/ProfileSectionInputSwitch";
 import { ExpandMore } from '@mui/icons-material';
 import IconButton from '@mui/material/IconButton';
 import theme from "@/theme";
+import RegularButton from '@/ui/shared-components/RegularButton';
 
 const QuestionPageField = ({
     t,
@@ -61,18 +62,11 @@ const QuestionPageField = ({
                     currentField={currentQuestion}
                     error={error} />
             </HBox>
-            <HBox>
-                <Button variant="contained"
-                    sx={{
-                        padding: "16px 28px",
-                        backgroundColor: 'blue.dark',
-                        color: 'white.main',
-                    }}
-                    onClick={() => handleAddClick(value)}
-                >
-                    <Typography variant="body1" sx={{ color: 'inherit' }}>{t('app.questions.confirmBtn')}</Typography>
-                </Button>
-            </HBox>
+            <RegularButton 
+                variant={'blueContained'} 
+                onClick={() => handleAddClick(value)}
+                text={'app.questions.confirmBtn'} 
+            />        
         </VBox>
 
 
