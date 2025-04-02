@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
-import LandingPageWAppButton from "../../../components/LandingPageWAppButton";
-import { LanguageContext } from "../../../../../language/LanguageContext";
-import useTranslation from "../../../../../language/useTranslation";
+import { LanguageContext } from "@/ui/language/LanguageContext";
+import useTranslation from "@/ui/language/useTranslation";
 import { Link } from "react-router-dom";
-import { HBox } from '../../../../../shared-components/LayoutBoxes';
-import LogoBar from '../../../../../shared-components/LogoBar';
-import AntSwitch from '../../../../../shared-components/AntSwitch';
+import { HBox } from '@/ui/shared-components/LayoutBoxes';
+import LogoBar from '@/ui/shared-components/LogoBar';
+import AntSwitch from '@/ui/shared-components/AntSwitch';
 import LandingPageHollowButtonDesktop from '../../../components/LandingPageButtonDesktop';
-import theme from '../../../../../../theme';
+import theme from '@/theme';
+import RegularButton from '@/ui/shared-components/RegularButton';
 
 const HeaderBarDesktop = ({ isApp }) => {
     const { language, setLanguage } = useContext(LanguageContext);
@@ -31,7 +31,11 @@ const HeaderBarDesktop = ({ isApp }) => {
             </HBox>
             <HBox justifyContent={'flex-end'} alignItems={'center'}>
                 <HBox gap={5}>
-                    {!isApp ? <LandingPageWAppButton /> : null}
+                    {!isApp ? 
+                        <RegularButton 
+                            variant={'blackOutlined'} 
+                            link='/user-routing' 
+                        /> : null}
                     <LandingPageHollowButtonDesktop isApp={isApp} text={t('home.menu.improve')} to={'/#feedback'} />
                     <LandingPageHollowButtonDesktop isApp={isApp} text={t('home.menu.aboutUs')} to={"/#about-us"} />
                     <LandingPageHollowButtonDesktop isApp={isApp} text={t('home.menu.activityLog')} to={'/activity-log'} />

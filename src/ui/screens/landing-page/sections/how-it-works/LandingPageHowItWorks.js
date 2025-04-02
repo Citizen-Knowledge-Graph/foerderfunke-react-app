@@ -1,21 +1,21 @@
 import React, { useState } from "react";
-import { Typography, Button } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Typography } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
-import useTranslation from "../../../../language/useTranslation";
+import useTranslation from "@/ui/language/useTranslation";
 import LandingPageSectionWrapper from "../../components/LandingPageSectionWrapper";
 import LandingPageInfoCard from "./components/LandingPageInfoCard";
-import { VBox, HBox } from "../../../../shared-components/LayoutBoxes";
-import { useStore } from "../../../../shared-components/ViewportUpdater";
+import { VBox, HBox } from "@/ui/shared-components/LayoutBoxes";
+import { useStore } from "@/ui/shared-components/ViewportUpdater";
+import RegularButton from "@/ui/shared-components/RegularButton";
 
 const LandingPageHowItWorks = () => {
     const { t } = useTranslation();
     const isDesktop = useStore((state) => state.isDesktop);
-    
+
 
     const desktopImages = [
         `${process.env.PUBLIC_URL}/assets/images/landing-page/Macbook_Anspruchscheck.svg`,
@@ -80,23 +80,8 @@ const LandingPageHowItWorks = () => {
                                 alt="how it works"
                                 style={{ width: "506px" }}
                             />
-                            <HBox sx={{ gap: 2 }}>
-                                <Button
-                                    variant="contained"
-                                    sx={{
-                                        backgroundColor: 'blue.dark',
-                                        borderColor: 'blue.dark',
-                                        '&:hover': {
-                                            backgroundColor: 'yellow.main',
-                                            color: 'black.main',
-                                            borderColor: 'yellow.main',
-                                        },
-                                    }}
-                                    component={Link}
-                                    to="/user-routing"
-                                >
-                                    {t("home.global.actionButton")}
-                                </Button>
+                            <HBox justifyContent="flex-end">
+                                <RegularButton variant="blackContained" link={'/user-routing'} />
                             </HBox>
                         </VBox>
                     </HBox>

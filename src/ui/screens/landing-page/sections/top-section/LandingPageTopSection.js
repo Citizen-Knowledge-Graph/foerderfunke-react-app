@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { useStore } from "../../../../shared-components/ViewportUpdater";
+import { useStore } from "@/ui/shared-components/ViewportUpdater";
+import { HBox, VBox } from "@/ui/shared-components/LayoutBoxes";
+import RegularButton from "@/ui/shared-components/RegularButton";
 import LandingPageSectionWrapper from "../../components/LandingPageSectionWrapper";
 import LandingPageTopSectionShared from "./components/LandingPageTopSectionShared";
-import LandingPageButton from "./components/LandingPageButton";
-import { HBox, VBox } from "../../../../shared-components/LayoutBoxes";
 
 const LandingPageTopSection = () => {
     const isDesktop = useStore((state) => state.isDesktop);
@@ -17,7 +17,7 @@ const LandingPageTopSection = () => {
                     <VBox sx={{ width: "50%", alignItems: "center" }}>
                         <VBox sx={{ maxWidth: "600px", gap: 8 }}>
                             <LandingPageTopSectionShared />
-                            <LandingPageButton />
+                            <RegularButton variant={'yellowContained'} link='/user-routing' />
                         </VBox>
                     </VBox>
                     <VBox sx={{ width: "50%", alignItems: "center" }}>
@@ -39,7 +39,7 @@ const LandingPageTopSection = () => {
                     <img src={starWoman} alt="logo" style={{ width: "328px" }} />
                     <VBox sx={{ gap: "16px" }}>
                         <LandingPageTopSectionShared />
-                        <LandingPageButton />
+                        <RegularButton variant={'yellowContained'} link='/user-routing' />
                     </VBox>
                 </VBox>
             )}

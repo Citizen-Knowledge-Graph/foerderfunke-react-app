@@ -1,7 +1,6 @@
 import React from "react";
 import { Button } from "@mui/material";
 import { HBox } from "../../../../../shared-components/LayoutBoxes";
-import theme from "../../../../../../theme";
 import { Link } from "react-router-dom";
 import useTranslation from "../../../../../language/useTranslation";
 
@@ -9,30 +8,39 @@ const LandingPageButton = ({ variant }) => {
     const { t } = useTranslation();
 
     const buttonStyles = {
-        blueHollow: {
-            backgroundColor: theme.palette.blue.dark,
-            color: theme.palette.white.main,
-            borderColor: theme.palette.white.main,
+        blackHollow: {
+            backgroundColor: 'white.main',
+            color: 'black.main',
+            borderColor: 'black.main',
             '&:hover': {
-                backgroundColor: theme.palette.yellow.main,
-                color: theme.palette.black.main,
-                borderColor: theme.palette.yellow.main
+                backgroundColor: 'black.main',
+                color: 'white.main'
+            }
+        },
+        blueHollow: {
+            backgroundColor: 'blue.dark',
+            color: 'white.main',
+            borderColor: 'white.main',
+            '&:hover': {
+                backgroundColor: 'yellow.main',
+                color: 'black.main',
+                borderColor: 'yellow.main'
             }
         },
         default: {
-            backgroundColor: theme.palette.yellow.main,
-            color: theme.palette.black.main,
-            borderColor: theme.palette.yellow.main,
+            backgroundColor: 'yellow.main',
+            color: 'black.main',
+            borderColor: 'yellow.main',
             '&:hover': {
-                backgroundColor: theme.palette.black.main,
-                color: theme.palette.white.main,
-                borderColor: theme.palette.black.main
+                backgroundColor: 'black.main',
+                color: 'white.main',
+                borderColor: 'black.main'
             }
         }
     };
 
     return (
-        <HBox sx={{ gap: theme.spacing(2), marginTop: theme.spacing(2), justifyContent: "flex-start" }}>
+        <HBox sx={{ gap: 2, marginTop: 2, justifyContent: "flex-start" }}>
             <Button
                 variant="contained"
                 sx={buttonStyles[variant] || buttonStyles.default}

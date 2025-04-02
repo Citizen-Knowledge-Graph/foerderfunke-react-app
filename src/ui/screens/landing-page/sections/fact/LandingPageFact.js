@@ -1,9 +1,9 @@
 import React from "react";
-import { Typography, Button } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Typography } from "@mui/material";
 import LandingPageSectionWrapper from "../../components/LandingPageSectionWrapper";
-import useTranslation from "../../../../language/useTranslation";
-import { HBox, VBox } from "../../../../shared-components/LayoutBoxes";
+import useTranslation from "@/ui/language/useTranslation";
+import { HBox, VBox } from "@/ui/shared-components/LayoutBoxes";
+import RegularButton from "@/ui/shared-components/RegularButton";
 
 const LandingPageFact = () => {
     const { t } = useTranslation();
@@ -31,7 +31,7 @@ const LandingPageFact = () => {
                             gap: 4,
                         }}
                     >
-                        <VBox sx={{ width: "100%",alignItems: { xs: "flex-start", md: "center" } }}>
+                        <VBox sx={{ width: "100%", alignItems: { xs: "flex-start", md: "center" } }}>
                             <Typography variant="h1" color="pink.main">
                                 15.000.000.000 €
                             </Typography>
@@ -56,21 +56,8 @@ const LandingPageFact = () => {
                             </Typography>
                         </HBox>
                     </VBox>
-                    <HBox sx={{ gap: 2 }}>
-                        <Button
-                            variant="contained"
-                            sx={{
-                                "&:hover": {
-                                    backgroundColor: "yellow.main",
-                                    color: "black.main",
-                                    borderColor: "yellow.main",
-                                },
-                            }}
-                            component={Link}
-                            to="/user-routing"
-                        >
-                            {t("home.global.actionButton")}
-                        </Button>
+                    <HBox>
+                        <RegularButton variant={'blackContained'} link={'/user-routing'} />
                     </HBox>
                 </VBox>
             </VBox>

@@ -122,6 +122,9 @@ const theme = createTheme({
                     fontSize: '18px',
                     fontWeight: '400',
                     fontFamily: '"Funnel Display", sans-serif',
+                    width: 'auto',
+                    maxWidth: 'max-content',
+                    alignSelf: 'start',
                 },
                 text: {
                     color: '#26242E',

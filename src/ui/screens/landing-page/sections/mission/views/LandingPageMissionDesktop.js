@@ -1,9 +1,9 @@
 import React from "react";
 import { Typography } from "@mui/material";
-import useTranslation from "../../../../../language/useTranslation";
-import { HBox, VBox } from "../../../../../shared-components/LayoutBoxes";
-import theme from "../../../../../../theme";
-import LandingPageButton from "../../top-section/components/LandingPageButton";
+import useTranslation from "@/ui/language/useTranslation";
+import { HBox, VBox } from "@/ui/shared-components/LayoutBoxes";
+import theme from "@/theme";
+import RegularButton from "@/ui/shared-components/RegularButton";
 
 const LandingPageMissionDesktop = ({ isDesktop }) => {
     const { t } = useTranslation();
@@ -46,7 +46,7 @@ const LandingPageMissionDesktop = ({ isDesktop }) => {
                             </Typography>
                         </VBox>
                     </HBox>
-                    <LandingPageButton variant="blueHollow" />
+                    <RegularButton variant="whiteOutlinedBlue" link={'/user-routing'} />
                 </VBox>
                 <VBox
                     sx={{

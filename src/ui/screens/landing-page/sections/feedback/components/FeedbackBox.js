@@ -1,10 +1,11 @@
 import React from "react";
-import { Button, Link, TextField, Typography } from "@mui/material";
-import { HBox, VBox } from "../../../../../shared-components/LayoutBoxes";
+import { Link, TextField, Typography } from "@mui/material";
+import { HBox, VBox } from "@/ui/shared-components/LayoutBoxes";
 import useFeedbackHandler from "../hooks/useFeedbackHandler";
-import useTranslation from "../../../../../language/useTranslation";
+import useTranslation from "@/ui/language/useTranslation";
 import EmailIcon from "@mui/icons-material/Email";
-import theme from "../../../../../../theme";
+import theme from "@/theme";
+import RegularButton from "@/ui/shared-components/RegularButton";
 
 const FeedbackBox = ({ isDesktop }) => {
     const { t } = useTranslation();
@@ -49,22 +50,11 @@ const FeedbackBox = ({ isDesktop }) => {
                         borderRadius: '12px'
                     }}
                 />
-                <HBox sx={{ gap: theme.spacing(2) }}>
-                    <Button variant="contained"
-                        sx={{
-                            backgroundColor: theme.palette.pink.main,
-                            color: theme.palette.black.main,
-                            borderColor: theme.palette.pink.main,
-                            '&:hover': {
-                                backgroundColor: theme.palette.blue.dark,
-                                color: theme.palette.white.main,
-                                borderColor: theme.palette.blue.dark,
-                            }
-                        }}
-                        onClick={submitFeedback}
-                        to="/user-routing">{t('home.feedback.submitBtn')}
-                    </Button>
-                </HBox>
+                <RegularButton 
+                    variant="pinkContained"
+                    text={'home.feedback.submitBtn'}
+                    onClick={submitFeedback}  
+                />
             </VBox>
             {error && (
                 <Typography color="error">
