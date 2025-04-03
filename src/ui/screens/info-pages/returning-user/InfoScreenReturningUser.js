@@ -8,10 +8,10 @@ import AppScreenWrapper from "../../../shared-components/AppScreenWrapper";
 import { VBox, HBox } from "../../../shared-components/LayoutBoxes";
 import theme from "../../../../theme";
 
-const InfoScreenReturningUser = ({ t, exportProfile, continueWithExisting, deleteExistingProfile }) => {
+const InfoScreenReturningUser = ({ t, isLoading, exportProfile, continueWithExisting, deleteExistingProfile }) => {
     return (
     <Layout isApp={true} logo={false}>
-      <AppScreenWrapper home={true}>
+      <AppScreenWrapper isLoading={isLoading} home={true}>
         <VBox sx={{ gap: theme.spacing(8) }}>
           <Typography variant="h1">{t('app.welcomeBack.header')}</Typography>
           <Typography variant="body1">{t("app.welcomeBack.text")}</Typography>

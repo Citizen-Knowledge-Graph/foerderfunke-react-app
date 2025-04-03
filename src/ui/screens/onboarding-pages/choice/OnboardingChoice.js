@@ -5,13 +5,15 @@ import AppScreenWrapper from "@/ui/shared-components/AppScreenWrapper";
 import useTranslation from "@/ui/language/useTranslation";
 import { Link } from "react-router-dom";
 import { HBox, VBox } from '@/ui/shared-components/LayoutBoxes';
+import useJointValidationStatus from "@/ui/shared-hooks/useJointValidationStatus";
 
 const OnboardingChoice = () => {
     const { t } = useTranslation();
+    const { isLoadingJointStatus } = useJointValidationStatus();
 
     return (
         <Layout isApp={true}>
-            <AppScreenWrapper back={true}>
+            <AppScreenWrapper isLoading={isLoadingJointStatus} back={true}>
                 <VBox sx={{ gap: { xs: 4, md: 8 } }}>
                     <HBox sx={{ maxWidth: '800px' }}>
                         <Typography variant="h1">

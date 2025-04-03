@@ -11,9 +11,11 @@ import {
 import { useUserStore } from "../../../storage/zustand";
 import { useValidationUpdate } from "../../../storage/updates";
 import InfoScreenReturningUser from "./InfoScreenReturningUser";
+import useJointValidationStatus from "@/ui/shared-hooks/useJointValidationStatus";
 
 const InfoScreenReturningUserContainer = () => {
   const { t } = useTranslation();
+  const { isLoadingJointStatus } = useJointValidationStatus();
   const triggerValidationUpdate = useValidationUpdate((state) => state.triggerValidationUpdate);
   const updateUserId = useUserStore((state) => state.updateUserId);
 
@@ -43,6 +45,7 @@ const InfoScreenReturningUserContainer = () => {
 
   return (
     <InfoScreenReturningUser
+      isLoading={isLoadingJointStatus}
       t={t}
       exportProfile={exportProfile}
       continueWithExisting={continueWithExisting}

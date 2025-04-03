@@ -6,11 +6,13 @@ import { LanguageContext } from "@/ui/language/LanguageContext";
 import useNumberOfBenefits from "../hooks/useNumberOfBenefits";
 import { useMetadataStore, useSelectedBenefitStore, useSelectedTopicsStore } from "@/ui/storage/zustand";
 import { useValidationUpdate } from "@/ui/storage/updates";
+import useJointValidationStatus from "@/ui/shared-hooks/useJointValidationStatus";
 import OnboardingWelcomeOverview from './OnboardingWelcomeOverview';
 
 const OnboardingWelcomeOverviewContainer = () => {
     const { benefitMode } = useParams();
     const { t } = useTranslation();
+    const { isLoadingJointStatus } = useJointValidationStatus();
     const { language } = useContext(LanguageContext);
 
     const validationIsLoading = useValidationUpdate((state) => state.validationIsLoading);
@@ -31,7 +33,7 @@ const OnboardingWelcomeOverviewContainer = () => {
         })
         : [];
 
-    const isLoading = !metadata?.rp || validationIsLoading;
+    const isLoading = !metadata?.rp || validationIsLoading || isLoadingJointStatus;
 
     return (
         <OnboardingWelcomeOverview
