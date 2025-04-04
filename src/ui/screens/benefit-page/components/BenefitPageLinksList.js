@@ -6,6 +6,7 @@ import Collapse from "@mui/material/Collapse";
 import { HBox, VBox } from "../../../shared-components/LayoutBoxes";
 import theme from '../../../../theme';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import featureFlags from "../../../../featureFlags";
 
 const BenefitPageLinksList = ({ listTitle, data }) => {
     const [showAdditionalSupport, setShowAdditionalSupport] = useState(false);
@@ -62,6 +63,13 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
                                 )
                             }
                         </VBox>
+                        {featureFlags.showNearestCounselingCentre &&
+                            <VBox sx={{ gap: 4, maxWidth: '800px' }}>
+                                <Typography variant="h3" sx={{ fontWeight: '600', wordBreak: "break-word", paddingTop: '32px' }}>
+                                    Finde die nächste Sozialberatungsstelle
+                                </Typography>
+                            </VBox>
+                        }
                     </Collapse>
                 )
             }

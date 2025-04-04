@@ -21,7 +21,6 @@ import BenefitPageExampleList from './components/BenefitPageExampleList';
 import theme from '../../../theme';
 import BenefitPageInfoList from './components/BenefitPageInfoList';
 import { VBox } from '../../shared-components/LayoutBoxes';
-import featureFlags from "../../../featureFlags";
 
 const BenefitPageScreen = () => {
     const { id } = useParams();
@@ -89,10 +88,7 @@ const BenefitPageScreen = () => {
                         }
                         {
                             benefitPageData.additionalSupport.title && (
-                                <>
-                                    <BenefitPageLinksList listTitle={t('app.benefitPage.additionalSupport')} data={benefitPageData.additionalSupport} />
-                                    {featureFlags.showNearestCounselingCentre && <span>TODO</span>}
-                                </>
+                                <BenefitPageLinksList listTitle={t('app.benefitPage.additionalSupport')} data={benefitPageData.additionalSupport} />
                             )
                         }
                         {
