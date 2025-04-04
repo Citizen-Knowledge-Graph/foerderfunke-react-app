@@ -7,13 +7,35 @@ import { HBox, VBox } from "../../../shared-components/LayoutBoxes";
 import theme from '../../../../theme';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import featureFlags from "../../../../featureFlags";
+import { runSparqlSelectQueryOnRdfString } from "@foerderfunke/matching-engine/src/utils";
+import resourceService from "@/core/services/resourceService";
 
 const BenefitPageLinksList = ({ listTitle, data }) => {
     const [showAdditionalSupport, setShowAdditionalSupport] = useState(false);
     const [userCoordinates, setUserCoordinates] = useState(null);
+    const [counselingCenters, setCounselingCenters] = useState([]);
 
-    const convertAddressToCoordinates = () => {
+    const convertAddressToCoordinates = async () => {
         const address = prompt("Enter your address:");
+        const url = `https://nominatim.openstreetmap.org/search?format=json&q=${address}&limit=1`;
+        const response = await fetch(url);
+        const data = await response.json();
+        setUserCoordinates({ address: address, lat: data[0].lat, lon: data[0].lon });
+    }
+
+    const findNearestCounselingCentres = async () => {
+        let query = `
+            PREFIX ff: <https://foerderfunke.org/default#>
+            SELECT * WHERE {
+                ?cc a ff:CounselingCentre ;
+                    ff:hasTitle ?title ;
+                    ff:hasCoordinates ?coordinates ;
+                    ff:hasAddress ?address .
+            }`
+        const turtle = await resourceService.fetchResource("https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/resources/sozialberatungsstellen_caritas.ttl");
+        let results = await runSparqlSelectQueryOnRdfString(query, turtle);
+        setCounselingCenters(results);
+
         // TODO
     }
 
@@ -74,8 +96,21 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
                                 <Typography variant="h3" sx={{ fontWeight: '600', wordBreak: "break-word", paddingTop: '32px' }}>
                                     Finde die nächste Sozialberatungsstelle
                                 </Typography>
-                                {!userCoordinates &&
+                                {userCoordinates ?
+                                    <>
+                                        <span>
+                                            Your location: {userCoordinates.address} ({userCoordinates.lat} / {userCoordinates.lon})
+                                        </span>
+                                        {/* eslint-disable jsx-a11y/anchor-is-valid */}
+                                        <a href="#" onClick={(e) => {
+                                            e.preventDefault()
+                                            findNearestCounselingCentres()
+                                        }}
+                                        >Find nearest counseling centres</a>
+                                    </>
+                                    :
                                     <span>
+                                      {/* eslint-disable jsx-a11y/anchor-is-valid */}
                                       <a href="#" onClick={(e) => {
                                               e.preventDefault()
                                               convertAddressToCoordinates()
