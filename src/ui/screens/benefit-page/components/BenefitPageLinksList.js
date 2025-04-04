@@ -9,14 +9,16 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import featureFlags from "../../../../featureFlags";
 import { runSparqlSelectQueryOnRdfString } from "@foerderfunke/matching-engine/src/utils";
 import resourceService from "@/core/services/resourceService";
+import haversine from "haversine-distance"
 
 const BenefitPageLinksList = ({ listTitle, data }) => {
     const [showAdditionalSupport, setShowAdditionalSupport] = useState(false);
     const [userCoordinates, setUserCoordinates] = useState(null);
-    const [counselingCenters, setCounselingCenters] = useState([]);
+    const [nearestCounselingCenters, setNearestCounselingCenters] = useState([]);
 
     const convertAddressToCoordinates = async () => {
         const address = prompt("Enter your address:");
+        // e.g. Pariser Platz 1, 10117 Berlin
         const url = `https://nominatim.openstreetmap.org/search?format=json&q=${address}&limit=1`;
         const response = await fetch(url);
         const data = await response.json();
@@ -24,6 +26,7 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
     }
 
     const findNearestCounselingCentres = async () => {
+        const RADIUS = 10; // km
         let query = `
             PREFIX ff: <https://foerderfunke.org/default#>
             SELECT * WHERE {
@@ -33,10 +36,21 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
                     ff:hasAddress ?address .
             }`
         const turtle = await resourceService.fetchResource("https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/resources/sozialberatungsstellen_caritas.ttl");
-        let results = await runSparqlSelectQueryOnRdfString(query, turtle);
-        setCounselingCenters(results);
-
-        // TODO
+        let rows = await runSparqlSelectQueryOnRdfString(query, turtle);
+        let nearby = [];
+        for (let row of rows) {
+            let coords = row.coordinates.split("/").map(Number);
+            let distKm = Math.round(haversine({ lat: userCoordinates.lat, lon: userCoordinates.lon }, { lat: coords[0], lon: coords[1] }) / 100) / 10;
+            if (distKm <= RADIUS) {
+                nearby.push({
+                    title: row.title,
+                    address: row.address,
+                    distance: distKm,
+                });
+            }
+        }
+        nearby.sort((a, b) => a.distance - b.distance);
+        setNearestCounselingCenters(nearby);
     }
 
     return (
@@ -101,21 +115,33 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
                                         <span>
                                             Your location: {userCoordinates.address} ({userCoordinates.lat} / {userCoordinates.lon})
                                         </span>
-                                        {/* eslint-disable jsx-a11y/anchor-is-valid */}
-                                        <a href="#" onClick={(e) => {
-                                            e.preventDefault()
-                                            findNearestCounselingCentres()
-                                        }}
-                                        >Find nearest counseling centres</a>
+                                        {nearestCounselingCenters.length === 0 ?
+                                            /* eslint-disable jsx-a11y/anchor-is-valid */
+                                            <a href="#" onClick={(e) => {
+                                                e.preventDefault()
+                                                findNearestCounselingCentres()
+                                            }}
+                                            >Find nearest counseling centres</a>
+                                        :
+                                            <div>
+                                                <ul>
+                                                    {nearestCounselingCenters.map((cc, index) => (
+                                                        <li key={index} style={{ marginBottom: '1rem' }}>
+                                                            <small>{cc.distance} km</small> <strong>{cc.title}</strong><br/>{cc.address}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        }
+
                                     </>
                                     :
                                     <span>
                                       {/* eslint-disable jsx-a11y/anchor-is-valid */}
                                       <a href="#" onClick={(e) => {
-                                              e.preventDefault()
-                                              convertAddressToCoordinates()
-                                          }}
-                                      >Click here</a> to convert your address to coordinates using nominatim.org
+                                          e.preventDefault()
+                                          convertAddressToCoordinates()
+                                      }}>Click here</a> to convert your address to coordinates using nominatim.org
                                     </span>
                                 }
                             </VBox>
