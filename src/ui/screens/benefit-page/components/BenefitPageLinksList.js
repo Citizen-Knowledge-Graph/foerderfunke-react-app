@@ -45,12 +45,19 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
                 nearby.push({
                     title: row.title,
                     address: row.address,
+                    lat: coords[0],
+                    lon: coords[1],
                     distance: distKm,
                 });
             }
         }
         nearby.sort((a, b) => a.distance - b.distance);
         setNearestCounselingCenters(nearby);
+    }
+
+    const buildOsmUrl = (cc) => {
+        const routeParam = `${userCoordinates.lat},${userCoordinates.lon};${cc.lat},${cc.lon}`;
+        return `https://www.openstreetmap.org/directions?engine=fossgis_osrm_bicycle&route=${encodeURIComponent(routeParam)}`;
     }
 
     return (
@@ -127,7 +134,9 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
                                                 <ul>
                                                     {nearestCounselingCenters.map((cc, index) => (
                                                         <li key={index} style={{ marginBottom: '1rem' }}>
-                                                            <small>{cc.distance} km</small> <strong>{cc.title}</strong><br/>{cc.address}
+                                                            <small>{cc.distance} km</small> <strong>{cc.title}</strong>
+                                                            <br/>
+                                                            <small><a href={buildOsmUrl(cc)} target="_blank" rel="noopener noreferrer">{cc.address}</a></small>
                                                         </li>
                                                     ))}
                                                 </ul>
