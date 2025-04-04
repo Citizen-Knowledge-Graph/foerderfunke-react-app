@@ -88,6 +88,9 @@ const translations = {
             },
         },
         app: {
+            loading: {
+                header: "Validating your benefits",
+            },
             nav: {
                 backBtn: "Back",
                 previousQuestion: "Previous question"
@@ -330,6 +333,9 @@ const translations = {
             }
         },
         app: {
+            loading: {
+                header: "Wir prüfen Deine Leistungen",
+            },
             nav: {
                 backBtn: "Zurück",
                 previousQuestion: "Vorherige Frage"
