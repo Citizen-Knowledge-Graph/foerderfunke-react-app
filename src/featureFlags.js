@@ -3,6 +3,7 @@ const defaultFlags = {
     newCollaborationSection: true,
     newLanguageToggle: true,
     newActivityLog: true,
+    showNearestCounselingCentre: false
 };
 
 const getFeatureFlag = (flag) => {
@@ -15,6 +16,7 @@ const featureFlags = {
     newCollaborationSection: getFeatureFlag('newCollaborationSection'),
     newLanguageToggle: getFeatureFlag('newLanguageToggle'),
     newActivityLog: getFeatureFlag('newActivityLog'),
+    showNearestCounselingCentre: getFeatureFlag('showNearestCounselingCentre'),
 };
 
 export const setFeatureFlag = (flag, value) => {
