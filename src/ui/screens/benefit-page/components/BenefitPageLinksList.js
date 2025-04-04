@@ -115,12 +115,12 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
                         {featureFlags.showNearestCounselingCentre &&
                             <VBox sx={{ gap: 4, maxWidth: '800px' }}>
                                 <Typography variant="h3" sx={{ fontWeight: '600', wordBreak: "break-word", paddingTop: '32px' }}>
-                                    Finde die nächste Sozialberatungsstelle
+                                    Finde die nächste Caritas-Sozialberatungsstelle
                                 </Typography>
                                 {userCoordinates ?
                                     <>
                                         <span>
-                                            Your location: {userCoordinates.address} ({userCoordinates.lat} / {userCoordinates.lon})
+                                            Your location: {userCoordinates.address} <small>({userCoordinates.lat} / {userCoordinates.lon})</small>
                                         </span>
                                         {nearestCounselingCenters.length === 0 ?
                                             /* eslint-disable jsx-a11y/anchor-is-valid */
@@ -134,7 +134,7 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
                                                 <ul>
                                                     {nearestCounselingCenters.map((cc, index) => (
                                                         <li key={index} style={{ marginBottom: '1rem' }}>
-                                                            <small>{cc.distance} km</small> <strong>{cc.title}</strong>
+                                                            <small style={{ color: "gray"}}>{cc.distance} km</small> <strong>{cc.title}</strong>
                                                             <br/>
                                                             <small><a href={buildOsmUrl(cc)} target="_blank" rel="noopener noreferrer">{cc.address}</a></small>
                                                         </li>
