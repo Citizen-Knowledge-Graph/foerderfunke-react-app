@@ -10,6 +10,12 @@ import featureFlags from "../../../../featureFlags";
 
 const BenefitPageLinksList = ({ listTitle, data }) => {
     const [showAdditionalSupport, setShowAdditionalSupport] = useState(false);
+    const [userCoordinates, setUserCoordinates] = useState(null);
+
+    const convertAddressToCoordinates = () => {
+        const address = prompt("Enter your address:");
+        // TODO
+    }
 
     return (
         <VBox
@@ -68,6 +74,15 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
                                 <Typography variant="h3" sx={{ fontWeight: '600', wordBreak: "break-word", paddingTop: '32px' }}>
                                     Finde die nächste Sozialberatungsstelle
                                 </Typography>
+                                {!userCoordinates &&
+                                    <span>
+                                      <a href="#" onClick={(e) => {
+                                              e.preventDefault()
+                                              convertAddressToCoordinates()
+                                          }}
+                                      >Click here</a> to convert your address to coordinates using nominatim.org
+                                    </span>
+                                }
                             </VBox>
                         }
                     </Collapse>
