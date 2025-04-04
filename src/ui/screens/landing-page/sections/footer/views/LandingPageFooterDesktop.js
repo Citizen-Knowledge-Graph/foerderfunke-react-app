@@ -6,6 +6,7 @@ import LinkedInLink from "../../../../../shared-components/LinkedInLink";
 import LogoBar from "../../../../../shared-components/LogoBar";
 import GitHubLink from "../../../../../shared-components/GitHubLink";
 import theme from "../../../../../../theme";
+import FeatureToggle from "../components/FeatureToggle";
 
 const LandingPageFooterDesktop = () => {
 
@@ -25,6 +26,7 @@ const LandingPageFooterDesktop = () => {
                     <EmailLink email={'info@foerderfunke.org'}/>
                     <LinkedInLink linkedin={'https://www.linkedin.com/company/foerderfunke'}/>
                     <GitHubLink href={"https://github.com/Citizen-Knowledge-Graph"}/>
+                    <FeatureToggle/>
                 </HBox>
             </HBox>
             <HBox justifyContent={'center'} alignItems={'center'}>
