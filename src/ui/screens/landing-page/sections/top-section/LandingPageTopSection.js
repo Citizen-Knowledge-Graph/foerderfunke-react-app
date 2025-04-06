@@ -8,7 +8,8 @@ import LandingPageTopSectionShared from "./components/LandingPageTopSectionShare
 const LandingPageTopSection = () => {
     const isDesktop = useStore((state) => state.isDesktop);
     const [loaded, setLoaded] = useState(false);
-    const starWoman = `${process.env.PUBLIC_URL}/assets/images/landing-page/star_woman.svg`;
+    const starWoman = `${process.env.PUBLIC_URL}/assets/images/landing-page/star_woman.png`;
+    const imageSize = isDesktop ? 523 : 328;
 
     return (
         <LandingPageSectionWrapper>
@@ -20,15 +21,25 @@ const LandingPageTopSection = () => {
                             <RegularButton variant={'yellowContained'} link='/user-routing' />
                         </VBox>
                     </VBox>
-                    <VBox sx={{ width: "50%", alignItems: "center" }}>
+                    <VBox sx={{ width: "50%", alignItems: "center", position: "relative" }}>
+                        {!loaded && (
+                            <div
+                                style={{
+                                    width: `${imageSize}px`,
+                                    height: `${imageSize}px`
+                                }}
+                            />
+                        )}
                         <img
                             src={starWoman}
                             alt="logo"
                             style={{
-                                width: "523px",
-                                height: "523px",
+                                width: `${imageSize}px`,
+                                height: `${imageSize}px`,
+                                position: loaded ? "static" : "absolute",
                                 opacity: loaded ? 1 : 0,
                                 transition: "opacity 0.8s ease-in-out",
+                                borderRadius: "12px",
                             }}
                             onLoad={() => setLoaded(true)}
                         />
@@ -36,7 +47,30 @@ const LandingPageTopSection = () => {
                 </HBox>
             ) : (
                 <VBox sx={{ gap: "46px", alignItems: "center" }}>
-                    <img src={starWoman} alt="logo" style={{ width: "328px" }} />
+                    <VBox sx={{ alignItems: "center", position: "relative" }}>
+                        {!loaded && (
+                            <div
+                                style={{
+                                    width: `${imageSize}px`,
+                                    height: `${imageSize}px`,
+                                }}
+                            />
+                        )}
+                        <img
+                            src={starWoman}
+                            alt="logo"
+                            style={{
+                                width: `${imageSize}px`,
+                                height: `${imageSize}px`,
+                                position: loaded ? "static" : "absolute",
+                                opacity: loaded ? 1 : 0,
+                                transition: "opacity 0.8s ease-in-out",
+                                borderRadius: "12px",
+                            }}
+                            onLoad={() => setLoaded(true)}
+                        />
+                    </VBox>
+
                     <VBox sx={{ gap: "16px" }}>
                         <LandingPageTopSectionShared />
                         <RegularButton variant={'yellowContained'} link='/user-routing' />
