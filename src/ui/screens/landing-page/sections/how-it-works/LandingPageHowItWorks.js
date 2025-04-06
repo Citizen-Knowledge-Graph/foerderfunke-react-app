@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Pagination, Navigation } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 import useTranslation from "@/ui/language/useTranslation";
 import LandingPageSectionWrapper from "../../components/LandingPageSectionWrapper";
 import LandingPageInfoCard from "./components/LandingPageInfoCard";
