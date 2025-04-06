@@ -1,15 +1,14 @@
 import React, { useState, useContext } from 'react';
-import { LanguageContext } from "../../../../../language/LanguageContext";
+import { LanguageContext } from "@/ui/language/LanguageContext";
 import MenuIcon from '@mui/icons-material/Menu';
 import { IconButton } from '@mui/material';
 import { Link } from 'react-router-dom';
-import LogoBar from "../../../../../shared-components/LogoBar";
-import useTranslation from "../../../../../language/useTranslation";
-import { HBox, VBox } from "../../../../../shared-components/LayoutBoxes";
-import theme from "../../../../../../theme";
-import LandingPageHollowButtonMobile from '../../../components/LandingPageButtonMobile';
-import AntSwitch from '../../../../../shared-components/AntSwitch';
-import LandingPageButton from '../../top-section/components/LandingPageButton';
+import LogoBar from "@/ui/shared-components/LogoBar";
+import useTranslation from "@/ui/language/useTranslation";
+import { HBox, VBox } from "@/ui/shared-components/LayoutBoxes";
+import LandingPageHollowButtonMobile from '@/ui/screens/landing-page/components/LandingPageButtonMobile';
+import AntSwitch from '@/ui/shared-components/AntSwitch';
+import LandingPageButton from '@/ui/screens/landing-page/sections/top-section/components/LandingPageButton';
 
 const HeaderBarMobile = ({ isApp }) => {
     const [showDropdown, setShowDropdown] = useState(false);
@@ -47,8 +46,8 @@ const HeaderBarMobile = ({ isApp }) => {
             </HBox>
             {
                 showDropdown && (
-                    <VBox sx={{ gap: theme.spacing(10), alignItems: 'center', justifyContent: 'center', height: '85vh' }}>
-                        <VBox sx={{ gap: theme.spacing(2), alignItems: 'center' }}>
+                    <VBox sx={{ gap: 10, alignItems: 'center', justifyContent: 'center', height: '85vh' }}>
+                        <VBox sx={{ gap: 2, alignItems: 'center' }}>
                             <LandingPageHollowButtonMobile isApp={isApp} setShowDropdown={setShowDropdown} text={t('home.menu.improve')} to='/#feedback' />
                             <LandingPageHollowButtonMobile isApp={isApp} setShowDropdown={setShowDropdown} text={t('home.menu.aboutUs')} to={"/#about-us"} />
                             <LandingPageHollowButtonMobile isApp={isApp} setShowDropdown={setShowDropdown} text={t('home.menu.activityLog')} to={'/activity-log'} />

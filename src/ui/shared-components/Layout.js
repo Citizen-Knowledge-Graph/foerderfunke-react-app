@@ -1,6 +1,6 @@
 import React from 'react';
 import {VBox} from "./LayoutBoxes";
-import HeaderBar from "../screens/landing-page/sections/header/HeaderBar";
+import HeaderBar from "./header/HeaderBar";
 import {useStore} from "./ViewportUpdater";
 
 const Layout = ({children, isApp = false, logo = true, back = null, gap = 2}) => {

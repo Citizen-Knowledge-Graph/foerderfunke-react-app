@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { LanguageContext } from "@/ui/language/LanguageContext";
 import useTranslation from "@/ui/language/useTranslation";
 import { Link } from "react-router-dom";
 import { HBox } from '@/ui/shared-components/LayoutBoxes';
 import LogoBar from '@/ui/shared-components/LogoBar';
 import AntSwitch from '@/ui/shared-components/AntSwitch';
-import LandingPageHollowButtonDesktop from '../../../components/LandingPageButtonDesktop';
+import LandingPageHollowButtonDesktop from '@/ui/screens/landing-page/components/LandingPageButtonDesktop';
 import theme from '@/theme';
 import RegularButton from '@/ui/shared-components/RegularButton';
 
@@ -13,6 +13,17 @@ const HeaderBarDesktop = ({ isApp }) => {
     const { language, setLanguage } = useContext(LanguageContext);
     const { t } = useTranslation();
     const isEnglish = language === "en";
+
+    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1200);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsSmallScreen(window.innerWidth < 1200);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const handleLanguageToggle = (event) => {
         setLanguage(event.target.checked ? "en" : "de");
@@ -33,6 +44,7 @@ const HeaderBarDesktop = ({ isApp }) => {
                 <HBox gap={5}>
                     {!isApp ? 
                         <RegularButton 
+                            text={isSmallScreen ? 'home.global.actionButtonShort' : 'home.global.actionButton'}
                             variant={'blackOutlined'} 
                             link='/user-routing' 
                         /> : null}

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Typography } from "@mui/material";
 import { motion } from "framer-motion";
-import { HBox, VBox } from "../../../../../shared-components/LayoutBoxes";
-import useTranslation from "../../../../../language/useTranslation";
+import { HBox, VBox } from "@/ui/shared-components/LayoutBoxes";
+import useTranslation from "@/ui/language/useTranslation";
 
 const LandingPageTopSectionShared = () => {
     const { t } = useTranslation();

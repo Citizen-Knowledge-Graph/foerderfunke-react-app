@@ -1,11 +1,10 @@
 import React from "react";
 import HeaderBarMobile from "./views/HeaderBarMobile";
 import HeaderBarDesktop from "./views/HeaderBarDesktop";
-import { VBox } from "../../../../shared-components/LayoutBoxes";
-import theme from "../../../../../theme";
+import { VBox } from "@/ui/shared-components/LayoutBoxes";
 
 const HeaderBar = ({ isApp, isDesktop }) => {
-    const backgroundColor = isApp ? `${theme.palette.blue.dark}` : `${theme.palette.white.main}`;
+    const backgroundColor = isApp ? 'blue.dark' : 'white.main';
     const sticky = isApp ? "relative" : "sticky";
 
     return (

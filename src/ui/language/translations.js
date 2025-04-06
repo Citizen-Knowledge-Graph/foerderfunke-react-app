@@ -2,12 +2,13 @@ const translations = {
     en: {
         home: {
             global: {
-                actionButton: "Discover benefits"
+                actionButton: "Discover benefits",
+                actionButtonShort: "Discover"
             },
             menu: {
                 howWorks: "How it works",
                 principles: "Principles",
-                aboutUs: "About us",
+                aboutUs: "Team",
                 improve: "Help us improve",
                 collaborate: "Collaborate",
                 activityLog: "Activity log"
@@ -254,12 +255,13 @@ const translations = {
     de: {
         home: {
             global: {
-                actionButton: "Anspruch prüfen"
+                actionButton: "Anspruch prüfen",
+                actionButtonShort: "Prüfen"
             },
             menu: {
                 howWorks: "So geht's",
                 principles: "Prinzipien",
-                aboutUs: "Über uns",
+                aboutUs: "Team",
                 improve: "Feedback",
                 collaborate: "Zusammenarbeit",
                 activityLog: "Aktivitäten"
