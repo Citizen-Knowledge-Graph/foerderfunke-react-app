@@ -4,21 +4,32 @@ import Loading from "./Loading";
 import { useStore } from "./ViewportUpdater";
 import theme from "@/theme";
 
-const AppScreenWrapper = ({ children, isLoading }) => {
+const AppScreenWrapper = ({ children, isLoading, scrollKey }) => {
     const wrapperRef = useRef(null);
     const isDesktop = useStore((state) => state.isDesktop);
+    const hasScrolled = useRef(false);
 
     useLayoutEffect(() => {
-        if (wrapperRef.current) {
-            const rect = wrapperRef.current.getBoundingClientRect();
-            const absoluteTop = rect.top + window.pageYOffset;
-            const topPaddingOffset = isDesktop ? 48 : 32;
-            window.scrollTo({
-                top: absoluteTop - topPaddingOffset,
-                behavior: 'smooth',
-            });
+        if (!wrapperRef.current) return;
+
+        if (!hasScrolled.current || scrollKey != null) {
+            if (isDesktop) {
+                const rect = wrapperRef.current.getBoundingClientRect();
+                const absoluteTop = rect.top + window.pageYOffset;
+                const topPaddingOffset = 48;
+                window.scrollTo({
+                    top: absoluteTop - topPaddingOffset,
+                    behavior: 'smooth',
+                });
+            } else {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth',
+                });
+            }
+            hasScrolled.current = true;
         }
-    }, [children, isDesktop]);
+    }, [scrollKey, isDesktop]);
 
     return (
         <VBox

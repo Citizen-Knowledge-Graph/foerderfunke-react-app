@@ -21,7 +21,7 @@ const QuestionPageNext = ({
     
     return (
         <Layout isApp={true} logo={false}>
-            <AppScreenWrapper isLoading={isLoading} back={true}>
+            <AppScreenWrapper isLoading={isLoading} scrollKey={currentQuestion}>
                 <VBox sx={{ gap: 2 }}>
                     <QuestionPageHeader t={t} eligibleRPs={eligibleRPs} />
                     <QuestionPageQuestionsCount
