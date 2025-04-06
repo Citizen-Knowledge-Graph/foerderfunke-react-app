@@ -3,7 +3,6 @@ import { Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import { HBox, VBox } from "../../../../../shared-components/LayoutBoxes";
 import useTranslation from "../../../../../language/useTranslation";
-import theme from "../../../../../../theme";
 
 const LandingPageTopSectionShared = () => {
     const { t } = useTranslation();
@@ -18,11 +17,11 @@ const LandingPageTopSectionShared = () => {
     }, [words.length]);
 
     return (
-        <VBox sx={{ gap: theme.spacing(2) }}>
-            <VBox sx={{ alignItems: 'flex-start', gap: theme.spacing(0) }}>
-                <HBox sx={{ alignItems: "flex-end", gap: theme.spacing(2), flexWrap: "wrap" }}>
+        <VBox sx={{ gap: 4 }}>
+            <VBox sx={{ alignItems: 'flex-start', gap: 1 }}>
+                <HBox sx={{ alignItems: "flex-end", gap: 2, flexWrap: "wrap" }}>
                     <Typography variant="h1">{t("home.hero.headerShard1")}</Typography>
-                    <Typography variant="h1" sx={{ color: theme.palette.blue.main, fontWeight: "bold" }}>
+                    <Typography variant="h1" sx={{ color: 'blue.main', fontWeight: "bold", minWidth: '262px' }}>
                         <motion.span
                             key={words[currentWordIndex]}
                             initial={{ opacity: 0, y: 20 }}
