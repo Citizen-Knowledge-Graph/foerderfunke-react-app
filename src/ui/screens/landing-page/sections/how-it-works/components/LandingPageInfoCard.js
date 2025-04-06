@@ -8,7 +8,7 @@ const LandingPageInfoCard = ({ isDesktop, title, text, onMouseLeave, onMouseEnte
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             sx={{
-                maxWidth: '424px',
+                alignItems: 'center',
                 gap: theme.spacing(4),
                 padding: theme.spacing(4),
                 backgroundColor: hovered ? theme.palette.yellow.main : `${theme.palette.white.dark}40`,
