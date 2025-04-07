@@ -7,7 +7,7 @@ import RegularButton from "@/ui/shared-components/RegularButton";
 
 const LandingPageMissionMobile = () => {
     const { t } = useTranslation();
-    const starWoman = `${process.env.PUBLIC_URL}/assets/images/landing-page/flying-kid.svg`;
+    const starWoman = `${process.env.PUBLIC_URL}/assets/images/landing-page/flying-kid.png`;
 
     return (
         <VBox sx={{

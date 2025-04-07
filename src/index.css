@@ -12,7 +12,6 @@ code {
     monospace;
 }
 
-/* 👇 Add this at the bottom */
 @keyframes pulse {
   0% {
     background-position: 100% 50%;
