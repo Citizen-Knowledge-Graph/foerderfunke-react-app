@@ -28,16 +28,24 @@ const OnboardingWelcomeOverviewView = ({
                         </Typography>
                         <HBox sx={{ gap: 4, alignItems: 'center', flexWrap: 'wrap' }}>
                             <TimeIcon />
-                            {!benefitMode && <BenefitsIcon numberOfBenefits={numberOfBenefits} />}
+                            {!benefitMode && numberOfBenefits > 0 && <BenefitsIcon numberOfBenefits={numberOfBenefits} />}
                         </HBox>
                     </VBox>
                     <VBox sx={{ maxWidth: '800px' }}>
-                        <Typography variant="h2" sx={{ color: 'pink.main', fontWeight: '500' }}>
-                            {benefitMode ? t('app.topicsChosen.benefitTitle') : t('app.topicsChosen.topicsTitle')}
-                        </Typography>
-                        <Typography variant="body1">
-                            {benefitMode ? t('app.topicsChosen.benefitText') : t('app.topicsChosen.topicsText')}
-                        </Typography>
+                        {
+                            !benefitMode && numberOfBenefits === 0 ? (
+                                <Typography variant="h2" sx={{ color: 'pink.main', fontWeight: '500' }}>
+                                    {t('app.topicsChosen.noChoiceTitle')}
+                                </Typography>)
+                                : (
+                                    <>
+                                        <Typography variant="h2" sx={{ color: 'pink.main', fontWeight: '500' }}>
+                                            {benefitMode ? t('app.topicsChosen.benefitTitle') : t('app.topicsChosen.topicsTitle')}
+                                        </Typography>
+                                        <Typography variant="body1">
+                                            {benefitMode ? t('app.topicsChosen.benefitText') : t('app.topicsChosen.topicsText')}
+                                        </Typography>
+                                    </>)}
                     </VBox>
                     <VBox sx={{ gap: 4 }}>
                         {benefitMode ? (
