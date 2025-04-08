@@ -16,12 +16,12 @@ const EligibilityOverviewLegend = ({iconPaths}) => {
             borderRadius: theme.shape.borderRadius,
         }}>
             <VBox sx={{
-                gap: theme.spacing(4),
+                gap: 4,
                 maxWidth: '800px',
             }}>
                 <HBox sx={{
                     alignItems: "center",
-                    gap: theme.spacing(2),
+                    gap: 2,
                 }}>
                     <img src={eligible} alt="logo" style={{ width: "16px" }} />
                     <Typography variant="body1" sx={{ fontWeight: '400' }}>
@@ -30,7 +30,7 @@ const EligibilityOverviewLegend = ({iconPaths}) => {
                 </HBox>
                 <HBox sx={{
                     alignItems: "center",
-                    gap: theme.spacing(2),
+                    gap: 2,
                     borderRadius: theme.shape.borderRadius,
                 }}>
                     <img src={preliminaryEligible} alt="logo" style={{ width: "16px" }} />
@@ -40,7 +40,7 @@ const EligibilityOverviewLegend = ({iconPaths}) => {
                 </HBox>                
                 <HBox sx={{
                     alignItems: "center",
-                    gap: theme.spacing(2),
+                    gap: 2,
                     borderRadius: theme.shape.borderRadius,
                 }}>
                     <img src={ineligible} alt="logo" style={{ width: "16px" }} />
@@ -50,7 +50,7 @@ const EligibilityOverviewLegend = ({iconPaths}) => {
                 </HBox>
                 <HBox sx={{
                     alignItems: "center",
-                    gap: theme.spacing(2),
+                    gap: 2,
                     borderRadius: theme.shape.borderRadius,
                 }}>
                     <img src={missing} alt="logo" style={{ width: "16px" }} />
@@ -60,7 +60,7 @@ const EligibilityOverviewLegend = ({iconPaths}) => {
                 </HBox>
                 <HBox sx={{
                     alignItems: "center",
-                    gap: theme.spacing(2),
+                    gap: 2,
                     borderRadius: theme.shape.borderRadius,
                 }}>
                     <Typography variant='body2' sx={{ color: 'blue.main', width: '40px' }}>

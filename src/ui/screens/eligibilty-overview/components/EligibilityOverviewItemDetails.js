@@ -47,7 +47,7 @@ const EligibilityOverviewItemDetails = ({ item, eligible }) => {
                             padding: '0',
                             '&:hover': {
                                 backgroundColor: 'transparent',
-                                color: theme.palette.black.main,
+                                color: 'black.main',
                             }
                         }}
                         component={Link}
