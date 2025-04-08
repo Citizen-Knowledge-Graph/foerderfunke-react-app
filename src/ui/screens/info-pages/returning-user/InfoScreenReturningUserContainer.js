@@ -1,23 +1,24 @@
 import React from "react";
-import useTranslation from "../../../language/useTranslation";
-import userManager from "../../../../core/managers/userManager";
+import useTranslation from "@/ui/language/useTranslation";
 import dayjs from "dayjs";
 import { convertUserProfileToTurtle } from "@foerderfunke/matching-engine/src/profile-conversion";
 import {
   questionsStackStore,
   useSelectedTopicsStore,
   useValidationReportStore,
-} from "../../../storage/zustand";
-import { useUserStore } from "../../../storage/zustand";
-import { useValidationUpdate } from "../../../storage/updates";
+} from "@/ui/storage/zustand";
+import { useUserStore } from "@/ui/storage/zustand";
+import { useValidationUpdate } from "@/ui/storage/updates";
 import InfoScreenReturningUser from "./InfoScreenReturningUser";
 import useJointValidationStatus from "@/ui/shared-hooks/useJointValidationStatus";
+import userManager from "@/core/managers/userManager";
 
 const InfoScreenReturningUserContainer = () => {
   const { t } = useTranslation();
   const { isLoadingJointStatus } = useJointValidationStatus();
   const triggerValidationUpdate = useValidationUpdate((state) => state.triggerValidationUpdate);
   const updateUserId = useUserStore((state) => state.updateUserId);
+  const userIds = userManager.retrieveUserIds();
 
   const exportProfile = async () => {
     const userProfile = userManager.retrieveUserData();
@@ -46,6 +47,7 @@ const InfoScreenReturningUserContainer = () => {
   return (
     <InfoScreenReturningUser
       isLoading={isLoadingJointStatus}
+      userIds={userIds}
       t={t}
       exportProfile={exportProfile}
       continueWithExisting={continueWithExisting}

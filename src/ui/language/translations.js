@@ -114,6 +114,7 @@ const translations = {
                 noBtnText: "You will start the journey with a new profile",
                 exportBtn: "Export your profile",
                 deleteBtn: "Delete your profile",
+                continueBtn: "Continue",
             },
             discoverChoice: {
                 header: "You have the choice:",
@@ -361,6 +362,7 @@ const translations = {
                 noBtnText: "Du wirst die Reise mit einem neuen Profil beginnen",
                 exportBtn: "Profil exportieren",
                 deleteBtn: "Profil löschen",
+                continueBtn: "Weiter nutzen",
             },
             discoverChoice: {
                 header: "Du hast die Wahl:",

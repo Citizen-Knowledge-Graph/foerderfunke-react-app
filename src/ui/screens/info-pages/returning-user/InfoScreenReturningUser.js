@@ -1,89 +1,136 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Button, Typography } from "@mui/material";
-import FileDownloadIcon from '@mui/icons-material/FileDownload';
-import DeleteIcon from '@mui/icons-material/Delete';
 import Layout from "../../../shared-components/Layout";
 import AppScreenWrapper from "../../../shared-components/AppScreenWrapper";
 import { VBox, HBox } from "../../../shared-components/LayoutBoxes";
 import theme from "../../../../theme";
+import RegularButton from "@/ui/shared-components/RegularButton";
 
-const InfoScreenReturningUser = ({ t, isLoading, exportProfile, continueWithExisting, deleteExistingProfile }) => {
-    return (
+const InfoScreenReturningUser = ({ t, isLoading, userIds, exportProfile, continueWithExisting, deleteExistingProfile }) => {
+  return (
     <Layout isApp={true} logo={false}>
       <AppScreenWrapper isLoading={isLoading} home={true}>
         <VBox sx={{ gap: theme.spacing(8) }}>
           <Typography variant="h1">{t('app.welcomeBack.header')}</Typography>
           <Typography variant="body1">{t("app.welcomeBack.text")}</Typography>
-          <HBox sx={{ flexWrap: 'wrap' }}>
-            <HBox>
-              <Button
-                variant="text"
-                sx={{
-                  padding: "32px 32px",
-                  boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
-                  '&:hover': { backgroundColor: theme.palette.yellow.main },
-                }}
-                onClick={continueWithExisting}
-                component={Link}
-                to={'/onboarding-choice'}
-              >
-                <HBox sx={{ alignItems: 'center' }}>
-                  <VBox sx={{ alignItems: 'flex-start' }}>
-                    <Typography variant="h6">{t("app.welcomeBack.yesBtnTitle")}</Typography>
-                    <Typography variant="body1" sx={{ textAlign: 'left' }}>{t("app.welcomeBack.yesBtnText")}</Typography>
-                  </VBox>
-                </HBox>
-              </Button>
-            </HBox>
-            <HBox>
-              <Button
-                sx={{
-                  padding: "32px 32px",
-                  boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
-                  '&:hover': { backgroundColor: theme.palette.yellow.main },
-                }}
-                onClick={deleteExistingProfile}
-                component={Link}
-                to={'/user-routing'}
-              >
-                <HBox sx={{ alignItems: 'center' }}>
-                  <VBox sx={{ alignItems: 'flex-start' }}>
-                    <Typography variant="h6">{t("app.welcomeBack.noBtnTitle")}</Typography>
-                    <Typography variant="body1" sx={{ textAlign: 'left' }}>{t("app.welcomeBack.noBtnText")}</Typography>
-                  </VBox>
-                </HBox>
-              </Button>
-            </HBox>
-          </HBox>
-          <HBox sx={{ flexWrap: 'wrap' }}>
-            <Button
-              variant="text"
-              sx={{
-                backgroundColor: theme.palette.greyTransparent.main,
-                '&:hover': { backgroundColor: theme.palette.custom.lightGrey },
-              }}
-              startIcon={<FileDownloadIcon sx={{ color: theme.palette.custom.darkGrey }} />}
-              onClick={exportProfile}
-            >
-              <Typography variant="body2" sx={{ color: theme.palette.custom.darkGrey }}>
-                {t("app.welcomeBack.exportBtn")}
-              </Typography>
-            </Button>
-            <Button
-              variant="text"
-              sx={{
-                backgroundColor: theme.palette.greyTransparent.main,
-                '&:hover': { backgroundColor: theme.palette.custom.lightGrey },
-              }}
-              startIcon={<DeleteIcon sx={{ color: theme.palette.custom.darkGrey }} />}
-              onClick={deleteExistingProfile}
-            >
-              <Typography variant="body2" sx={{ color: theme.palette.custom.darkGrey }}>
-                {t("app.welcomeBack.deleteBtn")}
-              </Typography>
-            </Button>
-          </HBox>
+          <VBox sx={{ gap: 2 }}>
+            {userIds.length > 0 && (
+              userIds.map((userId) => (
+                <>
+                  <HBox key={userId} sx={{
+                    maxWidth: '800px',
+                    padding: '32px 32px',
+                    borderRadius: theme.shape.borderRadius,
+                    backgroundColor: 'white.main',
+                    flexWrap: 'wrap',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                  }}>
+                    <Typography variant="h6">{userId}</Typography>
+                    <HBox alignItems={'center'}>
+                      <Button
+                        variant="text"
+                        onClick={exportProfile}
+                        sx={{
+                          color: 'blue.main',
+                          '&:hover': {
+                            backgroundColor: 'transparent',
+                            color: 'black.main',
+                          },
+                          '&:focus': {
+                            backgroundColor: 'transparent',
+                            color: 'black.main',
+                          }
+                        }}
+                      >
+                        <Typography variant="body2" sx={{ color: 'inherit' }}>
+                          {t("app.welcomeBack.exportBtn")}
+                        </Typography>
+                      </Button>
+                      <Button
+                        variant="text"
+                        onClick={deleteExistingProfile}
+                        sx={{
+                          color: 'blue.main',
+                          '&:hover': {
+                            backgroundColor: 'transparent',
+                            color: 'black.main',
+                          },
+                          '&:focus': {
+                            backgroundColor: 'transparent',
+                            color: 'black.main',
+                          }
+                        }}>
+                        <Typography variant="body2" sx={{ color: 'inherit' }}>
+                          {t("app.welcomeBack.deleteBtn")}
+                        </Typography>
+                      </Button>
+                    </HBox>
+                    <RegularButton
+                      variant={'blueContained'}
+                      onClick={continueWithExisting}
+                      text={'app.welcomeBack.continueBtn'}
+                    />
+                  </HBox>
+                  <HBox key={userId} sx={{
+                    maxWidth: '800px',
+                    padding: '32px 32px',
+                    borderRadius: theme.shape.borderRadius,
+                    backgroundColor: 'white.main',
+                    flexWrap: 'wrap',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                  }}>
+                    <Typography variant="h6">{userId}</Typography>
+                    <HBox alignItems={'center'}>
+                      <Button
+                        variant="text"
+                        onClick={exportProfile}
+                        sx={{
+                          color: 'blue.main',
+                          '&:hover': {
+                            backgroundColor: 'transparent',
+                            color: 'black.main',
+                          },
+                          '&:focus': {
+                            backgroundColor: 'transparent',
+                            color: 'black.main',
+                          }
+                        }}
+                      >
+                        <Typography variant="body2" sx={{ color: 'inherit' }}>
+                          {t("app.welcomeBack.exportBtn")}
+                        </Typography>
+                      </Button>
+                      <Button
+                        variant="text"
+                        onClick={deleteExistingProfile}
+                        sx={{
+                          color: 'blue.main',
+                          '&:hover': {
+                            backgroundColor: 'transparent',
+                            color: 'black.main',
+                          },
+                          '&:focus': {
+                            backgroundColor: 'transparent',
+                            color: 'black.main',
+                          }
+                        }}>
+                        <Typography variant="body2" sx={{ color: 'inherit' }}>
+                          {t("app.welcomeBack.deleteBtn")}
+                        </Typography>
+                      </Button>
+                    </HBox>
+                    <RegularButton
+                      variant={'blueContained'}
+                      onClick={continueWithExisting}
+                      text={'app.welcomeBack.continueBtn'}
+                    />
+                  </HBox>
+                </>
+              ))
+            )}
+          </VBox >
         </VBox>
       </AppScreenWrapper>
     </Layout>
