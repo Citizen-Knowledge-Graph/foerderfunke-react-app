@@ -5,7 +5,7 @@ import { HBox, VBox } from "@/ui/shared-components/LayoutBoxes";
 import theme from "@/theme";
 import RegularButton from "@/ui/shared-components/RegularButton";
 
-const LandingPageMissionDesktop = ({ isDesktop }) => {
+const LandingPageMissionDesktop = () => {
     const { t } = useTranslation();
     const starWoman = `${process.env.PUBLIC_URL}/assets/images/landing-page/flying-kid.png`;
 
