@@ -12,13 +12,16 @@ import { useValidationUpdate } from "@/ui/storage/updates";
 import InfoScreenReturningUser from "./InfoScreenReturningUser";
 import useJointValidationStatus from "@/ui/shared-hooks/useJointValidationStatus";
 import userManager from "@/core/managers/userManager";
+import { useStore } from "@/ui/shared-components/ViewportUpdater";
+import useFetchUserList from "../hooks/useFetchUserList";
 
 const InfoScreenReturningUserContainer = () => {
   const { t } = useTranslation();
+  const isDesktop = useStore((state) => state.isDesktop);
   const { isLoadingJointStatus } = useJointValidationStatus();
   const triggerValidationUpdate = useValidationUpdate((state) => state.triggerValidationUpdate);
   const updateUserId = useUserStore((state) => state.updateUserId);
-  const userIds = userManager.retrieveUserIds();
+  const userList = useFetchUserList();
 
   const exportProfile = async () => {
     const userProfile = userManager.retrieveUserData();
@@ -47,7 +50,8 @@ const InfoScreenReturningUserContainer = () => {
   return (
     <InfoScreenReturningUser
       isLoading={isLoadingJointStatus}
-      userIds={userIds}
+      isDesktop={isDesktop}
+      userList={userList}
       t={t}
       exportProfile={exportProfile}
       continueWithExisting={continueWithExisting}

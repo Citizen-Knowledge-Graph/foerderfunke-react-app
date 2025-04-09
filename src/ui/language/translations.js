@@ -115,6 +115,7 @@ const translations = {
                 exportBtn: "Export your profile",
                 deleteBtn: "Delete your profile",
                 continueBtn: "Continue",
+                createNewBtn: "Create new profile"
             },
             discoverChoice: {
                 header: "You have the choice:",
@@ -363,6 +364,7 @@ const translations = {
                 exportBtn: "Profil exportieren",
                 deleteBtn: "Profil löschen",
                 continueBtn: "Weiter nutzen",
+                createNewBtn: "Neues Profil erstellen"
             },
             discoverChoice: {
                 header: "Du hast die Wahl:",
