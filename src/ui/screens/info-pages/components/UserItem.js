@@ -7,11 +7,11 @@ import RegularButton from "@/ui/shared-components/RegularButton";
 import { IconButton } from "@mui/material";
 
 
-const UserItem = ({ t, index, user, continueWithExisting, deleteExistingProfile, exportProfile }) => {
+const UserItem = ({ t, user, continueWithExisting, deleteExistingProfile, exportProfile }) => {
     const [isVisible, setIsVisible] = useState(false);
 
     return (
-        <HBox key={index} sx={{
+        <HBox sx={{
             maxWidth: '800px',
             padding: '32px 32px',
             borderRadius: theme.shape.borderRadius,
@@ -26,7 +26,7 @@ const UserItem = ({ t, index, user, continueWithExisting, deleteExistingProfile,
                     <HBox alignItems={'center'} justifyContent={'flex-end'}>
                         <RegularButton
                             variant={'yellowContained'}
-                            onClick={continueWithExisting}
+                            onClick={() => continueWithExisting(user.id)}
                             text={'app.welcomeBack.continueBtn'}
                             link={'/onboarding-choice'}
                         />
@@ -51,7 +51,7 @@ const UserItem = ({ t, index, user, continueWithExisting, deleteExistingProfile,
                         <HBox alignItems={'center'} justifyContent={'flex-end'}>
                             <Button
                                 variant="text"
-                                onClick={exportProfile}
+                                onClick={() => exportProfile(user.id)}
                                 sx={{
                                     color: 'blue.main',
                                     padding: '0',
@@ -71,7 +71,7 @@ const UserItem = ({ t, index, user, continueWithExisting, deleteExistingProfile,
                             </Button>
                             <Button
                                 variant="text"
-                                onClick={deleteExistingProfile}
+                                onClick={() => deleteExistingProfile(user.id)}
                                 sx={{
                                     padding: '0',
                                     color: 'blue.main',

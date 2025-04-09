@@ -8,7 +8,6 @@ import {
   useValidationReportStore,
 } from "@/ui/storage/zustand";
 import { useUserStore } from "@/ui/storage/zustand";
-import { useValidationUpdate } from "@/ui/storage/updates";
 import InfoScreenReturningUser from "./InfoScreenReturningUser";
 import useJointValidationStatus from "@/ui/shared-hooks/useJointValidationStatus";
 import userManager from "@/core/managers/userManager";
@@ -19,32 +18,30 @@ const InfoScreenReturningUserContainer = () => {
   const { t } = useTranslation();
   const isDesktop = useStore((state) => state.isDesktop);
   const { isLoadingJointStatus } = useJointValidationStatus();
-  const triggerValidationUpdate = useValidationUpdate((state) => state.triggerValidationUpdate);
   const updateUserId = useUserStore((state) => state.updateUserId);
   const userList = useFetchUserList();
 
-  const exportProfile = async () => {
-    const userProfile = userManager.retrieveUserData();
+  const exportProfile = async (userId) => {
+    const userProfile = userManager.retrieveUserData(userId);
     const userProfileTurtleString = await convertUserProfileToTurtle(userProfile);
     const blob = new Blob([userProfileTurtleString], { type: 'text/turtle' });
     const link = document.createElement('a');
     link.href = window.URL.createObjectURL(blob);
-    link.download = `FörderFunke_ProfileExport_${dayjs().format("YYYY-MM-DD_HH-mm-ss")}.ttl`;
+    link.download = `FörderFunke_ProfileExport_${userId}_${dayjs().format("YYYY-MM-DD_HH-mm-ss")}.ttl`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
-  const continueWithExisting = () => {
-    triggerValidationUpdate();
+  const continueWithExisting = (userId) => {
+    updateUserId(userId);
   };
 
-  const deleteExistingProfile = () => {
-    userManager.deleteUser();
+  const deleteExistingProfile = (userId) => {
+    userManager.deleteUser(userId);
     useValidationReportStore.getState().clear();
     useSelectedTopicsStore.getState().clear();
     questionsStackStore.getState().resetQuestionsStack();
-    updateUserId(null);
   };
 
   return (
