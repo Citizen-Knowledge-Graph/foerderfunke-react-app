@@ -7,9 +7,15 @@ import theme from "@/theme";
 import UserItem from "../components/UserItem";
 import RegularButton from "@/ui/shared-components/RegularButton";
 
-const InfoScreenReturningUser = ({ t, isDesktop, isLoading, userList, exportProfile, continueWithExisting, deleteExistingProfile }) => {
+const InfoScreenReturningUser = ({
+  t,
+  isLoading,
+  userList,
+  exportProfile,
+  continueWithExisting,
+  deleteExistingProfile
+}) => {
 
-  console.log(isDesktop, "isDesktop");
   return (
     <Layout isApp={true} logo={false}>
       <AppScreenWrapper isLoading={isLoading} home={true}>
@@ -19,24 +25,14 @@ const InfoScreenReturningUser = ({ t, isDesktop, isLoading, userList, exportProf
           <VBox sx={{ gap: 2 }}>
             {userList.length > 0 && (
               userList.map((user, index) => (
-                <>
-                  <UserItem
-                    t={t}
-                    index={index}
-                    user={user}
-                    continueWithExisting={continueWithExisting}
-                    deleteExistingProfile={deleteExistingProfile}
-                    exportProfile={exportProfile}
-                  />
-                  <UserItem
-                    t={t}
-                    index={index}
-                    user={user}
-                    continueWithExisting={continueWithExisting}
-                    deleteExistingProfile={deleteExistingProfile}
-                    exportProfile={exportProfile}
-                  />
-                </>
+                <UserItem
+                  t={t}
+                  key={index}
+                  user={user}
+                  continueWithExisting={continueWithExisting}
+                  deleteExistingProfile={deleteExistingProfile}
+                  exportProfile={exportProfile}
+                />
               ))
             )}
           </VBox>
