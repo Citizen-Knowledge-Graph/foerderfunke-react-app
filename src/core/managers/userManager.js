@@ -31,18 +31,18 @@ const userManager = {
         localStorageService.setItem('userIds', updatedUserIds);
     },
 
-    setField(userId, value, dataField, entityData) {
+    setField(userId, value, dataField) {
         const userProfile = userManager.retrieveUserData(userId);
 
         if (!userProfile) {
             throw new Error(`User profile not found for userId: ${userId}`);
         }
 
-        const updated = userService.updateOrAddField(userProfile, value, dataField, entityData);
+        const updated = userService.updateOrAddField(userProfile, value, dataField);
 
         if (!updated) {
             throw new Error(
-                `Could not set datafield ${entityData.datafield} in user profile`
+                `Could not set datafield ${dataField} in user profile`
             );
         }
 
@@ -67,14 +67,14 @@ const userManager = {
         userManager.storeUserData(userProfile);
     },
 
-    retrieveUserField(userId, dataField, entityData) {
+    retrieveUserField(userId, dataField) {
         const userProfile = userManager.retrieveUserData(userId);
 
         if (!userProfile) {
             throw new Error(`User profile not found for userId: ${userId}`);
         }
 
-        return userService.retrieveField(userProfile, dataField, entityData);
+        return userService.retrieveField(userProfile, dataField);
     },
 
     storeUserData(userData) {

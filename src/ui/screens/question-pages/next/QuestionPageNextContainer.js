@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { useQuestionsUpdate, useValidationUpdate } from "@/ui/storage/updates";
 import useTranslation from "@/ui/language/useTranslation";
 import { ValidationResult } from "@foerderfunke/matching-engine";
-import { useProfileSectionStore } from "@/ui/storage/useProfileSectionStore";
 import {
     questionsStackStore,
     useQuestionsStore,
@@ -30,17 +29,13 @@ const QuestionPageNextContainer = () => {
         stackCounter,
         setStackCounter
     } = questionsStackStore();
-    const retrieveCurrentEntityData = useProfileSectionStore((s) => s.retrieveCurrentEntityData);
-    const entityData = useMemo(() => retrieveCurrentEntityData(), [retrieveCurrentEntityData]);
 
-    console.log('entityData', entityData);
     const {
         currentQuestion,
         value,
         setValue,
         profileFieldRetrievalError,
     } = useSetupQuestionPage(
-        entityData,
         profileQuestions,
         questionsStack,
         stackCounter,
@@ -52,7 +47,6 @@ const QuestionPageNextContainer = () => {
     const { handleAddClick, handleBackClick } = useQuestionNavigationHandlers({
         setProfileFieldUpdateError,
         currentQuestion,
-        entityData,
         setStackCounter,
         stackCounter,
         questionsStack,
