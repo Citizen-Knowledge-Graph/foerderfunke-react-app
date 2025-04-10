@@ -62,8 +62,7 @@ const InfoScreenPrivacy = ({t, isDesktop, privacyBox, initialiseNewUser}) => {
                             <RegularButton 
                                 variant={'blueContained'} 
                                 text={'app.privacySite.button'} 
-                                onClick={initialiseNewUser} 
-                                link={'/onboarding-choice'} 
+                                link={'/onboarding-user'} 
                             />
                         </VBox>
                         {
