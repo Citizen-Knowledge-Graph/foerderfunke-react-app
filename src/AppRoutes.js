@@ -10,6 +10,7 @@ import ProfileScreen from '@/ui/screens/profile-screen/ProfileScreen';
 import ActivityLogScreen from '@/ui/screens/activity-log/ActivityLogScreen';
 import ResolveUriScreen from '@/ui/screens/resolve-uri/ResolveUriScreen';
 import OnboardingWelcomeTopicsContainer from "@/ui/screens/onboarding-pages/topics/OnboardingWelcomeTopicsContainer";
+import OnboardingUserContainer from '@/ui/screens/onboarding-pages/user/OnboardingUserContainer';
 import InfoScreenReturningUserContainer from '@/ui/screens/info-pages/returning-user/InfoScreenReturningUserContainer';
 import InfoScreenPrivacyContainer from '@/ui/screens/info-pages/privacy/InfoScreenPrivacyContainer';
 import QuestionPageRouter from '@/ui/screens/question-pages/QuestionPageRouter';
@@ -20,6 +21,7 @@ const AppRoutes = () => (
         <Route path="/user-routing" element={<InfoPageRouter/>}/>
         <Route path="/returning-user" element={<InfoScreenReturningUserContainer/>}/>
         <Route path="/privacy-info" element={<InfoScreenPrivacyContainer/>}/>
+        <Route path="/onboarding-user" element={<OnboardingUserContainer/>}/>
         <Route path="/onboarding-choice" element={<OnboardingChoice/>}/>
         <Route path="/onboarding-welcome-topics" element={<OnboardingWelcomeTopicsContainer/>}/>
         <Route path="/onboarding-welcome" element={<OnboardingWelcomeOverviewContainer/>}/>
