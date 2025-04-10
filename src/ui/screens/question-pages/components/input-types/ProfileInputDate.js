@@ -12,7 +12,6 @@ const ProfileInputDate = ({ t, value, setValue, error }) => {
             <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <FormControl>
                     <DatePicker
-                        label={t('app.datafields.pickBday')}
                         value={value ? dayjs(value) : null}
                         onChange={(newValue) => setValue(newValue)}
                         sx={{

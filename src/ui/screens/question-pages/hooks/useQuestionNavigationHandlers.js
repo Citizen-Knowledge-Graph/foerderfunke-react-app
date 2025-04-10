@@ -6,7 +6,6 @@ import { useQuestionsUpdate, useValidationUpdate } from "@/ui/storage/updates";
 const useQuestionNavigationHandlers = ({
     setProfileFieldUpdateError,
     currentQuestion,
-    entityData,
     setStackCounter,
     stackCounter,
     questionsStack,
@@ -15,7 +14,7 @@ const useQuestionNavigationHandlers = ({
     const triggerQuestionsUpdate = useQuestionsUpdate((s) => s.triggerQuestionsUpdate);
     const triggerValidationUpdate = useValidationUpdate((s) => s.triggerValidationUpdate);
     const validateValue = useInputValidation(currentQuestion?.datatype);
-    const addProfileData = useAddProfileField(currentQuestion, entityData);
+    const addProfileData = useAddProfileField(currentQuestion);
 
     const handleAddClick = useCallback(async (value) => {
         try {

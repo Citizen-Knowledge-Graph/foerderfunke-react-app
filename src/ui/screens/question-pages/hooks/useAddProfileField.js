@@ -2,13 +2,13 @@ import {useCallback} from 'react';
 import userManager from '../../../../core/managers/userManager';
 import {useUserStore} from '../../../storage/zustand';
 
-function useAddProfileField(currentField, entityData) {
+function useAddProfileField(currentField) {
     return useCallback((value) => {
         const activeUserId = useUserStore.getState().activeUserId;
         return new Promise((resolve, reject) => {
             if (currentField.datatype !== 'class') {
                 try {
-                    userManager.setField(activeUserId, value, currentField.datafield, entityData);
+                    userManager.setField(activeUserId, value, currentField.datafield);
                     resolve();
                 } catch (error) {
                     console.log('Error adding profile field')
@@ -18,7 +18,7 @@ function useAddProfileField(currentField, entityData) {
                 resolve();
             }
         });
-    }, [currentField, entityData]);
+    }, [currentField]);
 }
 
 export default useAddProfileField;

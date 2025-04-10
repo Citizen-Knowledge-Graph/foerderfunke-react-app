@@ -1,20 +1,21 @@
-import {useCallback} from 'react';
-import userManager from '../../../../core/managers/userManager';
-import {useUserStore} from '../../../storage/zustand';
+import { useMemo } from 'react';
+import userManager from '@/core/managers/userManager';
+import { useUserStore } from '@/ui/storage/zustand';
 
-function useFetchProfileField(dataField, entityData) {
-    return useCallback(() => {
+function useFetchProfileField(dataField) {
+    console.log('useFetchProfileField', dataField);
+
+    const fieldData = useMemo(() => {
         const activeUserId = useUserStore.getState().activeUserId;
-        return new Promise((resolve, reject) => {
-            try {
-                const fieldData = userManager.retrieveUserField(activeUserId, dataField, entityData);
-                resolve(fieldData);
-            } catch (error) {
-                console.log('Error fetching profile field')
-                reject(error);
-            }
-        });
-    }, [dataField, entityData]);
+        try {
+            return userManager.retrieveUserField(activeUserId, dataField);
+        } catch (error) {
+            console.error('Error fetching profile field', error);
+            return null;
+        }
+    }, [dataField]);
+
+    return fieldData;
 }
 
 export default useFetchProfileField;
