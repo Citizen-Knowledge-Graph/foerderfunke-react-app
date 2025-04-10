@@ -2,12 +2,12 @@ import localStorageService from '../services/localStorageService';
 import userService from '../services/userService';
 
 const userManager = {
-    initialiseNewUser(userId="ff:quick-check-user") {
+    initialiseNewUser(userId="ff:quick-check-user", userType="ff:Citizen") {
         if (localStorageService.getItem(userId)) {
             throw new Error('User already exists');
         }
 
-        const userObject = { "@id": userId, "@type": "ff:Citizen" };
+        const userObject = { "@id": userId, "@type": userType };
         localStorageService.setItem(userId, userObject);
 
         const userIds = localStorageService.getItem('userIds') || [];

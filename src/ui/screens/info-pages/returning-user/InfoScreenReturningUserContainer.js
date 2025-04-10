@@ -34,6 +34,7 @@ const InfoScreenReturningUserContainer = () => {
   };
 
   const continueWithExisting = (userId) => {
+    console.log("Continuing with existing user:", userId);
     updateUserId(userId);
   };
 

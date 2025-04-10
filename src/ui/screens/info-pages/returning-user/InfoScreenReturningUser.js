@@ -3,9 +3,8 @@ import { Typography } from "@mui/material";
 import Layout from "@/ui/shared-components/Layout";
 import AppScreenWrapper from "@/ui/shared-components/AppScreenWrapper";
 import { VBox } from "@/ui/shared-components/LayoutBoxes";
-import theme from "@/theme";
-import UserItem from "../components/UserItem";
 import RegularButton from "@/ui/shared-components/RegularButton";
+import UserItem from "../components/UserItem";
 
 const InfoScreenReturningUser = ({
   t,
@@ -19,9 +18,9 @@ const InfoScreenReturningUser = ({
   return (
     <Layout isApp={true} logo={false}>
       <AppScreenWrapper isLoading={isLoading} home={true}>
-        <VBox sx={{ gap: theme.spacing(8) }}>
+        <VBox sx={{ gap: { xs: 4, md: 8 } }}>
           <Typography variant="h1">{t('app.welcomeBack.header')}</Typography>
-          <Typography variant="body1">{t("app.welcomeBack.text")}</Typography>
+          <Typography variant="body1">{userList?.length === 0 ? t("app.welcomeBack.textSingle") : t("app.welcomeBack.textMultiple")}</Typography>
           <VBox sx={{ gap: 2 }}>
             {userList.length > 0 && (
               userList.map((user, index) => (
@@ -38,9 +37,8 @@ const InfoScreenReturningUser = ({
           </VBox>
           <RegularButton
             variant={'blueContained'}
-            onClick={continueWithExisting}
             text={'app.welcomeBack.createNewBtn'}
-            link={'/onboarding-choice'}
+            link={'/onboarding-user'}
           />
         </VBox>
       </AppScreenWrapper>

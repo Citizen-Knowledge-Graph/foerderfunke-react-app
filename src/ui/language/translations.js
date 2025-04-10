@@ -107,7 +107,8 @@ const translations = {
             },
             welcomeBack: {
                 header: "Welcome back!",
-                text: "We found a profile in the local storage of your browser. Do you want to continue using it?",
+                textSingle: "We found a profile in the local storage of your browser. Do you want to continue using it?",
+                textMultiple: "We found multiple profiles in the local storage of your browser. Do you want to continue using one of them?",
                 yesBtnTitle: "Yes",
                 yesBtnText: "You can continue exploring with your profile",
                 noBtnTitle: "No",
@@ -356,7 +357,8 @@ const translations = {
             },
             welcomeBack: {
                 header: "Willkommen zurück!",
-                text: "Wir haben ein Profil im lokalen Speicher deines Browsers gefunden. Möchtest du es weiter nutzen?",
+                textSingle: "Wir haben ein Profil im lokalen Speicher deines Browsers gefunden. Möchtest du es weiter nutzen?",
+                textMultiple: "Wir haben mehrere Profile im lokalen Speicher deines Browsers gefunden. Möchtest du eines davon weiter nutzen?",
                 yesBtnTitle: "Ja",
                 yesBtnText: "Du kannst mit deinem Profil weiter erkunden",
                 noBtnTitle: "Nein",

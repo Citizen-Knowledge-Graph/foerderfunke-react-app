@@ -33,6 +33,7 @@ const QuestionPageNextContainer = () => {
     const retrieveCurrentEntityData = useProfileSectionStore((s) => s.retrieveCurrentEntityData);
     const entityData = useMemo(() => retrieveCurrentEntityData(), [retrieveCurrentEntityData]);
 
+    console.log('entityData', entityData);
     const {
         currentQuestion,
         value,

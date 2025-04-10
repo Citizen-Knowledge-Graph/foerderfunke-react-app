@@ -9,9 +9,17 @@ export const useProfileSectionStore = create((set, get) => ({
         },
         nestedSection: null,
     },
-    initializeSectionStore(newSectionStore=get().defaultSectionStore) {
+    initializeSectionStore(userId, userType) {
         console.log(`STATE UPDATE: We are initializing the section store`);
-        set({sectionStore: newSectionStore});
+        set({sectionStore: 
+            {
+                entityData: {
+                    id: userId,
+                    type: userType
+                },
+                nestedSection: null,
+            }
+        });
     },
     retrieveCurrentEntityData() {
         const data = get().sectionStore;
