@@ -1,9 +1,8 @@
-import { useState, useCallback } from "react";
+import { useCallback } from "react";
 import userManager from "@/core/managers/userManager";
 import { useUserStore } from "@/ui/storage/zustand";
 
 const useInitialiseNewUser = () => {
-    const [error, setError] = useState(null);
     const updateUserId = useUserStore((state) => state.updateUserId);
 
     const initialiseNewUser = useCallback((userId, userType) => {
@@ -13,13 +12,14 @@ const useInitialiseNewUser = () => {
         try {
             userManager.initialiseNewUser(userIdWithNameSpace, userTypeWithNameSpace);
             updateUserId(userIdWithNameSpace);
+            return { success: true, error: null };
         } catch (err) {
             console.error(`Error initializing new user: ${err.message}`);
-            setError(err);
+            return { success: false, error: err };
         }
     }, [updateUserId]);
 
-    return { initialiseNewUser, error };
+    return { initialiseNewUser };
 };
 
 export default useInitialiseNewUser;

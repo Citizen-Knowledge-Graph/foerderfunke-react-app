@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import { Typography, TextField } from "@mui/material";
 import Layout from "@/ui/shared-components/Layout";
 import AppScreenWrapper from "@/ui/shared-components/AppScreenWrapper";
@@ -10,6 +11,19 @@ const OnboardingUser = () => {
     const [userId, setUserId] = useState('');
     const userType = 'Citizen'; // This is hardcoded for now, but it should be dynamic based on the user type
     const { initialiseNewUser, error } = useInitialiseNewUser();
+    const navigate = useNavigate();
+
+    const handleCreateUser = () => {
+        const { success, error } = initialiseNewUser(userId, userType);
+        console.log('User creation result:', success, error);
+    
+        if (success) {
+            navigate("/onboarding-choice");
+            console.log('User created successfully');
+        } else {
+            console.error('Failed to create user:', error.message);
+        }
+    };
 
     return (
         <Layout isApp={true} logo={false}>
@@ -43,17 +57,16 @@ const OnboardingUser = () => {
                             value={userId}
                             onChange={(e) => setUserId(e.target.value)}
                         />
-                        {error ? (
+                        {error?.message ? (
                             <Typography variant="body1" color="error">
-                                {error}
+                                {error.message}
                             </Typography>
                         ) : null}
                     </VBox>
                     <RegularButton
                         variant={'blueContained'}
                         text={'app.welcomeBack.createNewBtn'}
-                        onClick={() => initialiseNewUser(userId, userType)}
-                        link={'/onboarding-choice'}
+                        onClick={handleCreateUser}
                     />
                 </VBox>
             </AppScreenWrapper>

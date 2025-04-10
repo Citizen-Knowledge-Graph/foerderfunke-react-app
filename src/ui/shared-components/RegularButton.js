@@ -107,7 +107,7 @@ const RegularButton = ({
         <Button
             variant="contained"
             sx={{...buttonStyles[variant] || buttonStyles.default}}
-            component={Link}
+            component={link ? Link : 'button'}
             to={link}
             onClick={onClick}
         >
