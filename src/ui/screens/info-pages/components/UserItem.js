@@ -1,15 +1,14 @@
-import React, { useState } from "react";
-import { Typography, Button } from "@mui/material";
+import React from "react";
+import { Typography } from "@mui/material";
 import { VBox, HBox } from "@/ui/shared-components/LayoutBoxes";
 import theme from "@/theme";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import RegularButton from "@/ui/shared-components/RegularButton";
 import { IconButton } from "@mui/material";
+import DeleteIcon from '@mui/icons-material/Delete';
+import FileDownloadIcon from '@mui/icons-material/FileDownload';
 
 
 const UserItem = ({ t, user, continueWithExisting, deleteExistingProfile, exportProfile }) => {
-    const [isVisible, setIsVisible] = useState(false);
-
     return (
         <HBox sx={{
             maxWidth: '800px',
@@ -23,13 +22,7 @@ const UserItem = ({ t, user, continueWithExisting, deleteExistingProfile, export
                         <Typography variant="h6">{user.id}</Typography>
                         <Typography variant="body2">{user.type}</Typography>
                     </VBox>
-                    <HBox alignItems={'center'} justifyContent={'flex-end'}>
-                        <RegularButton
-                            variant={'yellowContained'}
-                            onClick={() => continueWithExisting(user.id)}
-                            text={'app.welcomeBack.continueBtn'}
-                            link={'/onboarding-choice'}
-                        />
+                    <HBox alignItems={'center'} justifyContent={'flex-end'} sx={{ flexWrap : 'wrap' }}>
                         <IconButton
                             aria-label="more options"
                             sx={{
@@ -40,57 +33,32 @@ const UserItem = ({ t, user, continueWithExisting, deleteExistingProfile, export
                                     color: 'black.main',
                                 },
                             }}
-                            onClick={() => setIsVisible(!isVisible)}
+                            onClick={() => exportProfile(user.id)}
                         >
-                            <MoreVertIcon />
+                            <FileDownloadIcon sx={{ fontSize: '20px'}} />
                         </IconButton>
+                        <IconButton
+                            aria-label="more options"
+                            sx={{
+                                padding: '8px',
+                                color: 'blue.main',
+                                '&:hover': {
+                                    backgroundColor: 'transparent',
+                                    color: 'black.main',
+                                },
+                            }}
+                            onClick={() => deleteExistingProfile(user.id)}
+                        >
+                            <DeleteIcon sx={{ fontSize: '20px'}} />
+                        </IconButton>
+                        <RegularButton
+                            variant={'yellowContained'}
+                            onClick={() => continueWithExisting(user.id)}
+                            text={'app.welcomeBack.continueBtn'}
+                            link={'/onboarding-choice'}
+                        />
                     </HBox>
                 </HBox>
-                {
-                    isVisible && (
-                        <HBox alignItems={'center'} justifyContent={'flex-end'}>
-                            <Button
-                                variant="text"
-                                onClick={() => exportProfile(user.id)}
-                                sx={{
-                                    color: 'blue.main',
-                                    padding: '0',
-                                    '&:hover': {
-                                        backgroundColor: 'transparent',
-                                        color: 'black.main',
-                                    },
-                                    '&:focus': {
-                                        backgroundColor: 'transparent',
-                                        color: 'black.main',
-                                    }
-                                }}
-                            >
-                                <Typography variant="body2" sx={{ color: 'inherit' }}>
-                                    {t("app.welcomeBack.exportBtn")}
-                                </Typography>
-                            </Button>
-                            <Button
-                                variant="text"
-                                onClick={() => deleteExistingProfile(user.id)}
-                                sx={{
-                                    padding: '0',
-                                    color: 'blue.main',
-                                    '&:hover': {
-                                        backgroundColor: 'transparent',
-                                        color: 'black.main',
-                                    },
-                                    '&:focus': {
-                                        backgroundColor: 'transparent',
-                                        color: 'black.main',
-                                    }
-                                }}>
-                                <Typography variant="body2" sx={{ color: 'inherit' }}>
-                                    {t("app.welcomeBack.deleteBtn")}
-                                </Typography>
-                            </Button>
-                        </HBox>
-                    )
-                }
             </VBox>
         </HBox>
     );

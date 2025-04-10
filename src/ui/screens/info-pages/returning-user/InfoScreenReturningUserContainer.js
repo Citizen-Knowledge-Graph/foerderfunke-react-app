@@ -1,12 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import useTranslation from "@/ui/language/useTranslation";
 import dayjs from "dayjs";
 import { convertUserProfileToTurtle } from "@foerderfunke/matching-engine/src/profile-conversion";
-import {
-  questionsStackStore,
-  useSelectedTopicsStore,
-  useValidationReportStore,
-} from "@/ui/storage/zustand";
 import { useUserStore } from "@/ui/storage/zustand";
 import InfoScreenReturningUser from "./InfoScreenReturningUser";
 import useJointValidationStatus from "@/ui/shared-hooks/useJointValidationStatus";
@@ -16,10 +11,11 @@ import useFetchUserList from "../hooks/useFetchUserList";
 
 const InfoScreenReturningUserContainer = () => {
   const { t } = useTranslation();
+  const [userDeleted, setUserDeleted] = useState(false);
   const isDesktop = useStore((state) => state.isDesktop);
   const { isLoadingJointStatus } = useJointValidationStatus();
   const updateUserId = useUserStore((state) => state.updateUserId);
-  const userList = useFetchUserList();
+  const userList = useFetchUserList(userDeleted);
 
   const exportProfile = async (userId) => {
     const userProfile = userManager.retrieveUserData(userId);
@@ -40,17 +36,15 @@ const InfoScreenReturningUserContainer = () => {
 
   const deleteExistingProfile = (userId) => {
     userManager.deleteUser(userId);
-    useValidationReportStore.getState().clear();
-    useSelectedTopicsStore.getState().clear();
-    questionsStackStore.getState().resetQuestionsStack();
+    setUserDeleted(!userDeleted);
   };
 
   return (
     <InfoScreenReturningUser
+      t={t}
       isLoading={isLoadingJointStatus}
       isDesktop={isDesktop}
       userList={userList}
-      t={t}
       exportProfile={exportProfile}
       continueWithExisting={continueWithExisting}
       deleteExistingProfile={deleteExistingProfile}
