@@ -20,7 +20,7 @@ const InfoScreenReturningUser = ({
       <AppScreenWrapper isLoading={isLoading} home={true}>
         <VBox sx={{ gap: { xs: 4, md: 8 } }}>
           <Typography variant="h1">{t('app.welcomeBack.header')}</Typography>
-          <Typography variant="body1">{userList?.length === 0 ? t("app.welcomeBack.textSingle") : t("app.welcomeBack.textMultiple")}</Typography>
+          <Typography variant="body1">{userList?.length === 1 ? t("app.welcomeBack.textSingle") : t("app.welcomeBack.textMultiple")}</Typography>
           <VBox sx={{ gap: 2 }}>
             {userList.length > 0 && (
               userList.map((user, index) => (
