@@ -23,8 +23,6 @@ const validationManager = {
         // load materialization scripts
         const materializationString = await resourceService.fetchResourceWithCache(validationConfig['materialization']);
 
-        console.time('Validation Manager: Fetch requirement profiles');
-
         // collect requirement profiles
         let requirementProfiles = {};
         for (const requirementProfile of validationConfig['queries']) {
@@ -32,8 +30,6 @@ const validationManager = {
             requirementProfiles[rpUri] = await resourceService.fetchResourceWithCache(fileUrl);
         }
         
-        console.timeEnd('Validation Manager: Fetch requirement profiles');
-
         let validateAllReport = await validateAll(
             userProfileString,
             requirementProfiles,
