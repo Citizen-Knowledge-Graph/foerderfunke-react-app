@@ -11,18 +11,22 @@ const questionsManager = {
         const userProfileString = await convertUserProfileToTurtle(userProfile);
 
         // load validation config
-        const validationConfig = await resourceService.fetchResource('assets/data/requirement-profiles/requirement-profiles.json');
+        const validationConfig = await resourceService.fetchResourceWithCache('assets/data/requirement-profiles/requirement-profiles.json');
 
         // validate user profile against data fields
-        const dataFieldsString = await resourceService.fetchResource(validationConfig['datafields']);
-        const materializationString = await resourceService.fetchResource(validationConfig['materialization']);
+        const dataFieldsString = await resourceService.fetchResourceWithCache(validationConfig['datafields']);
+        const materializationString = await resourceService.fetchResourceWithCache(validationConfig['materialization']);
+
+        console.time('Question Manager: Fetch requirement profiles');
 
         // collect requirement profiles
         let requirementProfiles = {};
         for (const requirementProfile of validationConfig['queries']) {
-            const {fileUrl, rpUri} = requirementProfile;
-            requirementProfiles[rpUri] = await resourceService.fetchResource(fileUrl);
+            const { fileUrl, rpUri } = requirementProfile;
+            requirementProfiles[rpUri] = await resourceService.fetchResourceWithCache(fileUrl);
         }
+        
+        console.timeEnd('Question Manager: Fetch requirement profiles');
 
         const expand = (id) => {
             return id.startsWith("ff:") ? "https://foerderfunke.org/default#" + id.split(":")[1] : id;

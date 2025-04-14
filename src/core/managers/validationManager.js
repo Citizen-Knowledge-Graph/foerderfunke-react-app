@@ -12,23 +12,27 @@ const validationManager = {
         const userProfileString = await convertUserProfileToTurtle(userProfile);
 
         // load validation config
-        const validationConfig = await resourceService.fetchResource('assets/data/requirement-profiles/requirement-profiles.json');
+        const validationConfig = await resourceService.fetchResourceWithCache('assets/data/requirement-profiles/requirement-profiles.json');
 
         // validate user profile against datafields
-        const dataFieldsString = await resourceService.fetchResource(validationConfig['datafields']);
+        const dataFieldsString = await resourceService.fetchResourceWithCache(validationConfig['datafields']);
         if (!(await validateUserProfile(userProfileString, dataFieldsString))) {
             console.error('Invalid user profile');
         }
 
         // load materialization scripts
-        const materializationString = await resourceService.fetchResource(validationConfig['materialization']);
+        const materializationString = await resourceService.fetchResourceWithCache(validationConfig['materialization']);
+
+        console.time('Validation Manager: Fetch requirement profiles');
 
         // collect requirement profiles
         let requirementProfiles = {};
         for (const requirementProfile of validationConfig['queries']) {
-            const {fileUrl, rpUri} = requirementProfile;
-            requirementProfiles[rpUri] = await resourceService.fetchResource(fileUrl);
+            const { fileUrl, rpUri } = requirementProfile;
+            requirementProfiles[rpUri] = await resourceService.fetchResourceWithCache(fileUrl);
         }
+        
+        console.timeEnd('Validation Manager: Fetch requirement profiles');
 
         let validateAllReport = await validateAll(
             userProfileString,
