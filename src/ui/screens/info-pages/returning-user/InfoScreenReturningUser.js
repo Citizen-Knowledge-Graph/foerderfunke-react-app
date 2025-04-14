@@ -11,7 +11,7 @@ import theme from "../../../../theme";
 const InfoScreenReturningUser = ({ t, isLoading, exportProfile, continueWithExisting, deleteExistingProfile }) => {
     return (
     <Layout isApp={true} logo={false}>
-      <AppScreenWrapper isLoading={isLoading} home={true}>
+      <AppScreenWrapper isLoading={isLoading} home={true} backTarget={-1}>
         <VBox sx={{ gap: theme.spacing(8) }}>
           <Typography variant="h1">{t('app.welcomeBack.header')}</Typography>
           <Typography variant="body1">{t("app.welcomeBack.text")}</Typography>

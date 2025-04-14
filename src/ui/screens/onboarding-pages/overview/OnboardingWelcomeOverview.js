@@ -20,7 +20,7 @@ const OnboardingWelcomeOverviewView = ({
 
     return (
         <Layout isApp={true} logo={false}>
-            <AppScreenWrapper isLoading={isLoading} back={true}>
+            <AppScreenWrapper isLoading={isLoading} back={true} backTarget={'/onboarding-welcome-topics'}>
                 <VBox sx={{ gap: { xs: 4, md: 8 } }}>
                     <VBox>
                         <Typography variant="h1">

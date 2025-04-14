@@ -19,7 +19,7 @@ const OnboardingWelcomeTopics = ({
 
     return (
         <Layout isApp={true} logo={false}>
-            <AppScreenWrapper back={true}>
+            <AppScreenWrapper back={true} backTarget={'/onboarding-choice'}>
                 <VBox sx={{ gap: { xs: 4, md: 8 } }}>
                     <VBox>
                         <Typography variant="h1">

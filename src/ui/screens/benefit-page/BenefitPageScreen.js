@@ -1,26 +1,27 @@
 import React, { useContext } from 'react';
-import Layout from "../../shared-components/Layout";
 import { useParams } from "react-router-dom";
-import BenefitPageHeader from "./components/BenefitPageHeader";
-import AppScreenWrapper from "../../shared-components/AppScreenWrapper";
-import { useStore } from "../../shared-components/ViewportUpdater";
-import BenefitPageRules from "./components/BenefitPageRules";
+import Layout from "@/ui/shared-components/Layout";
+import AppScreenWrapper from "@/ui/shared-components/AppScreenWrapper";
+import { useStore } from "@/ui/shared-components/ViewportUpdater";
 import { Box, Typography } from "@mui/material";
-import useTranslation from "../../language/useTranslation";
-import { LanguageContext } from "../../language/LanguageContext";
-import useCategoryTitles from "./hooks/useCategoryTitles";
-import useFetchData from "../../shared-hooks/useFetchData";
-import useIsMissingDataBenefit from "./hooks/useIsMissingDataBenefit";
-import { useValidationReportStore } from "../../storage/zustand";
-import useFetchRPMetaData from './hooks/useFetchRPMetaData';
-import useFetchBenefitPageData from './hooks/useFetchBenefitPageData';
-import { useMetadataStore } from '../../storage/zustand';
+import useTranslation from "@/ui/language/useTranslation";
+import { LanguageContext } from "@/ui/language/LanguageContext";
+import useFetchData from "@/ui/shared-hooks/useFetchData";
+import { useValidationReportStore } from "@/ui/storage/zustand";
+import { useMetadataStore } from '@/ui/storage/zustand';
+import theme from '../../../theme';
+import { VBox } from '@/ui/shared-components/LayoutBoxes';
+import BenefitPageInfoList from './components/BenefitPageInfoList';
 import BenefitPageRequiredDocuments from './components/BenefitPageRequiredDocuments';
 import BenefitPageLinksList from './components/BenefitPageLinksList';
 import BenefitPageExampleList from './components/BenefitPageExampleList';
-import theme from '../../../theme';
-import BenefitPageInfoList from './components/BenefitPageInfoList';
-import { VBox } from '../../shared-components/LayoutBoxes';
+import BenefitPageRules from "./components/BenefitPageRules";
+import BenefitPageHeader from "./components/BenefitPageHeader";
+import useFetchRPMetaData from './hooks/useFetchRPMetaData';
+import useFetchBenefitPageData from './hooks/useFetchBenefitPageData';
+import useIsMissingDataBenefit from "./hooks/useIsMissingDataBenefit";
+import useCategoryTitles from "./hooks/useCategoryTitles";
+
 
 const BenefitPageScreen = () => {
     const { id } = useParams();
@@ -45,8 +46,8 @@ const BenefitPageScreen = () => {
 
     return (
         <Layout isApp={true} logo={false} back="Back">
-            <AppScreenWrapper isDesktop={isDesktop} back={true}>
-                <VBox sx={{ gap: theme.spacing(8) }}>
+            <AppScreenWrapper isDesktop={isDesktop} back={true} backTarget={'/eligibility-overview'}>
+                <VBox sx={{ gap: { xs: 4, md: 8 } }}>
                     <BenefitPageHeader id={id} benefit={benefitPageData} validatedStatus={validatedStatus} categoryTitles={categoryTitles} />
                     <Box gap={2} sx={{
                         display: "flex",
@@ -55,14 +56,14 @@ const BenefitPageScreen = () => {
                     }}>
                         <VBox
                             sx={{
-                                backgroundColor: theme.palette.white.main,
+                                backgroundColor: 'white.main',
                                 padding: '32px',
                                 borderRadius: theme.shape.borderRadius,
                             }}
                         >
-                            <VBox sx={{ gap: theme.spacing(2), maxWidth: '800px' }}>
+                            <VBox sx={{ gap: 2, maxWidth: '800px' }}>
                                 <Typography variant="h2" sx={{ fontWeight: '400' }}>{t('app.benefitPage.whatIsIt')}{benefitPageData.title}</Typography>
-                                <Typography sx={{ marginTop: theme.spacing(1) }} variant="body1">{benefitPageData.description || t('app.noData')}</Typography>
+                                <Typography sx={{ marginTop: 1 }} variant="body1">{benefitPageData.description || t('app.noData')}</Typography>
                             </VBox>
                         </VBox>
                         <BenefitPageRules benefitId={id} validatedStatus={validatedStatus} />

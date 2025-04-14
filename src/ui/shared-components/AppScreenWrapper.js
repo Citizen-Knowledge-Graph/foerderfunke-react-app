@@ -3,8 +3,9 @@ import { VBox } from "./LayoutBoxes";
 import Loading from "./Loading";
 import { useStore } from "./ViewportUpdater";
 import theme from "@/theme";
+import AppScreenNavigation from "./AppScreenNavigation";
 
-const AppScreenWrapper = ({ children, isLoading, scrollKey }) => {
+const AppScreenWrapper = ({ children, isLoading, scrollKey, backTarget }) => {
     const wrapperRef = useRef(null);
     const isDesktop = useStore((state) => state.isDesktop);
     const hasScrolled = useRef(false);
@@ -62,8 +63,18 @@ const AppScreenWrapper = ({ children, isLoading, scrollKey }) => {
                 {isLoading ? (
                     <Loading />
                 ) : (
-                    <VBox sx={{ width: '100%', boxSizing: "border-box" }}>
-                        {children}
+                    <VBox
+                        sx={{
+                            width: '100%',
+                            gap: {
+                                xs: 4,
+                                md: 8
+                            }
+                        }}>
+                        <VBox sx={{ width: '100%', boxSizing: "border-box" }}>
+                            {children}
+                        </VBox>
+                        <AppScreenNavigation backTarget={backTarget} />
                     </VBox>
                 )}
             </VBox>

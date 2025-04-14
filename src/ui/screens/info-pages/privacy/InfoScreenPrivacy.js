@@ -10,8 +10,8 @@ import RegularButton from "@/ui/shared-components/RegularButton";
 
 const InfoScreenPrivacy = ({t, isDesktop, privacyBox, initialiseNewUser}) => {
     return (
-        <Layout isApp={true} logo={false} back="Back" >
-            <AppScreenWrapper back={true}>
+        <Layout isApp={true} logo={false}>
+            <AppScreenWrapper back={true} backTarget={'/'} isLoading={false}>
                 <VBox sx={{ gap: { xs: 4, md: 8 } }}>
                     {
                         !isDesktop ? (

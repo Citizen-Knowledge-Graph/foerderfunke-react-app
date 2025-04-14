@@ -13,7 +13,7 @@ const OnboardingChoice = () => {
 
     return (
         <Layout isApp={true}>
-            <AppScreenWrapper isLoading={isLoadingJointStatus} back={true}>
+            <AppScreenWrapper isLoading={isLoadingJointStatus} backTarget={'/user-routing'}>
                 <VBox sx={{ gap: { xs: 4, md: 8 } }}>
                     <HBox sx={{ maxWidth: '800px' }}>
                         <Typography variant="h1">
