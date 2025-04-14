@@ -16,7 +16,7 @@ const OnboardingUser = () => {
     const handleCreateUser = () => {
         const { success, error } = initialiseNewUser(userId, userType);
         console.log('User creation result:', success, error);
-    
+
         if (success) {
             navigate("/onboarding-choice");
             console.log('User created successfully');
@@ -35,11 +35,13 @@ const OnboardingUser = () => {
                     }
                 }}>
                     <Typography variant='h1' >User Creation</Typography>
-                    <Typography variant='body1'>
-                        Bitte gib deinem Profil einen Namen.
-                        Das Profil wird in deinem lokalen Browser hinterlegt.
-                        Du kannst es weiternutzen, wenn du zu einem späteren Zeitpunkt zurückkehrst
-                    </Typography>
+                    <VBox sx={{ maxWidth: '800px' }}>
+                        <Typography variant='body1'>
+                            Bitte gib deinem Profil einen Namen.
+                            Das Profil wird in deinem lokalen Browser hinterlegt.
+                            Du kannst es weiternutzen, wenn du zu einem späteren Zeitpunkt zurückkehrst
+                        </Typography>
+                    </VBox>
                     <VBox>
                         <TextField
                             variant="filled"
