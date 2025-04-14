@@ -15,7 +15,7 @@ const LandingPagePrinciplesMobile = ({ isDesktop }) => {
     const [showCommits, setShowCommits] = useState(false);
 
     return (
-        <VBox sx={{alignItems: 'center'}}>
+        <VBox sx={{ alignItems: 'center' }}>
             <VBox sx={{ gap: theme.spacing(8), alignItems: 'center' }}>
                 <img
                     src={locket}
@@ -81,7 +81,7 @@ const LandingPagePrinciplesMobile = ({ isDesktop }) => {
                         ))}
                         {error && (
                             <Typography color="error" sx={{ marginTop: 2 }}>
-                                {error}
+                                {error ? t('activityLog.gitCommits.errorMessage') : null}
                             </Typography>
                         )}
                     </Collapse>

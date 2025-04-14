@@ -13,7 +13,7 @@ const ActivityLogCommits = () => {
             title={t("activityLog.gitCommits.title")}
             description={t("activityLog.gitCommits.description")}
             content={<GithubCommitsList commits={commits} />}
-            error={error ? "Commits cannot be loaded." : null}
+            error={error ? t('activityLog.gitCommits.errorMessage') : null}
         />
     );
 };

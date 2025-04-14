@@ -250,6 +250,7 @@ const translations = {
                 today: "Today",
                 yesterday: "Yesterday",
                 daysAgo: "{{count}} days ago",
+                errorMessage: "An error occurred while fetching the commits. Please try again later.",
             },
         }
     },
@@ -480,6 +481,7 @@ const translations = {
                 today: "Heute",
                 yesterday: "Gestern",
                 daysAgo: "Vor {{count}} Tagen",
+                errorMessage: "Beim Abrufen der Commits ist ein Fehler aufgetreten. Bitte versuche es später erneut.",
             }
         }
     },

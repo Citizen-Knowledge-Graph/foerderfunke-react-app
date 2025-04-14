@@ -83,7 +83,7 @@ const LandingPagePrinciplesDesktop = () => {
                             ))}
                             {error && (
                                 <Typography color="error" sx={{ marginTop: 2 }}>
-                                    {error}
+                                    {error ? t('activityLog.gitCommits.errorMessage') : null}
                                 </Typography>
                             )}
                         </Collapse>
