@@ -1199,7 +1199,6 @@
             "title": "KfW Arbeitshilfe für Produkte der BEG",
             "url": "https://www.kfw.de/partner/KfW-Partnerportal/Architekten-Bauingenieure-Energieberater/Arbeitshilfen-Service/Arbeitshilfen-Pr%C3%A4sentationen/Arbeitshilfen-BEG/index.jsp?redirect=360896"
           }
-
         ]
       },
       "en": {
@@ -1212,6 +1211,97 @@
           {
             "title": "KfW Guide for BEG Products",
             "url": "https://www.kfw.de/partner/KfW-Partnerportal/Architekten-Bauingenieure-Energieberater/Arbeitshilfen-Service/Arbeitshilfen-Pr%C3%A4sentationen/Arbeitshilfen-BEG/index.jsp?redirect=360896"
+          }
+        ]
+      }
+    }
+  },
+  "https://foerderfunke.org/default#wolfenbuettel-stiftung": {
+    "id": "ff:wolfenbuettel-stiftung",
+    "status": "beta",
+    "category": "social_benefit",
+    "title": {
+      "de": "Wolfenbüttel-Stiftung",
+      "en": "Wolfenbüttel Foundation"
+    },
+    "description": {
+      "de": "Die Wolfenbüttel-Stiftung unterstützt bedürftige Kinder, hilfsbedürftige ältere Menschen sowie soziale Projekte in der Stadt Wolfenbüttel. Die Förderung erfolgt in der Regel als einmalige Zuwendung ohne Rechtsanspruch.",
+      "en": "The Wolfenbüttel Foundation supports needy children, elderly people in need, and social projects within the city of Wolfenbüttel. Funding is typically provided as a one-time grant without legal entitlement."
+    },
+    "application_process": {
+      "de": {
+        "title": "Der Antrag ist schriftlich bei der Stadt Wolfenbüttel zu stellen. Die Entscheidung über die Förderung trifft der Stiftungsvorstand.",
+        "links": [
+          {
+            "title": "Informationen und Online-Antrag",
+            "url": "https://www.wolfenbuettel.de/index.php?ModID=7&FID=2672.9007.1&object=tx%7C2672.9007.1"
+          }
+        ]
+      },
+      "en": {
+        "title": "Applications must be submitted in writing to the City of Wolfenbüttel. The foundation board decides on funding approval.",
+        "links": [
+          {
+            "title": "Information and Online Application",
+            "url": "https://www.wolfenbuettel.de/index.php?ModID=7&FID=2672.9007.1&object=tx%7C2672.9007.1"
+          }
+        ]
+      }
+    },
+    "required_documents": {
+      "de": [
+        "Vollständiger Name, Adresse und Telefonnummer für Rückfragen",
+        "Angabe der Bankverbindung",
+        "Nachweis der Bedürftigkeit",
+        "Begründung des Antrags",
+        "Zeitpunkt der benötigten Förderung (bei Projekten)",
+        "Genaue Angabe zur gewünschten Fördersumme"
+      ],
+      "en": [
+        "Full name, address and phone number for inquiries",
+        "Bank account details",
+        "Proof of financial need",
+        "Justification for the application",
+        "Requested date of funding (for projects)",
+        "Exact amount of requested funding"
+      ]
+    },
+    "funding_conditions": {
+      "de": {
+        "title": "Die Förderung erfolgt unter folgenden Bedingungen:",
+        "details": [
+          "Kein Rechtsanspruch auf Förderung",
+          "Mittel müssen zweckgebunden verwendet werden",
+          "Verwendungsnachweis muss innerhalb von 3 Monaten erbracht werden",
+          "Förderung ist einmalig und bevorzugt wechselnde Empfänger:innen"
+        ]
+      },
+      "en": {
+        "title": "Funding is subject to the following conditions:",
+        "details": [
+          "No legal entitlement to funding",
+          "Funds must be used according to the purpose stated",
+          "Proof of use must be provided within 3 months",
+          "Funding is one-time and prioritizes changing recipients"
+        ]
+      }
+    },
+    "further_information": {
+      "de": {
+        "title": "Weitere Informationen zur Stiftung:",
+        "links": [
+          {
+            "title": "Wolfenbüttel-Stiftung auf wolfenbuettel.de",
+            "url": "https://www.wolfenbuettel.de/index.php?ModID=7&FID=2672.9007.1&object=tx%7C2672.9007.1"
+          }
+        ]
+      },
+      "en": {
+        "title": "Further information about the foundation:",
+        "links": [
+          {
+            "title": "Wolfenbüttel Foundation on wolfenbuettel.de",
+            "url": "https://www.wolfenbuettel.de/index.php?ModID=7&FID=2672.9007.1&object=tx%7C2672.9007.1"
           }
         ]
       }
