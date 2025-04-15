@@ -68,7 +68,7 @@ const BenefitPageScreen = () => {
                         </VBox>
                         <BenefitPageRules benefitId={id} validatedStatus={validatedStatus} />
                         {
-                            benefitPageData.fundingConditions.title && (
+                            benefitPageData.examples.title && (
                                 <BenefitPageExampleList listTitle={t('app.benefitPage.examples')} data={benefitPageData.examples} />
                             )
                         }                           

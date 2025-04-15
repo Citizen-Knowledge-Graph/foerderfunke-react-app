@@ -51,28 +51,30 @@ const BenefitPageHeader = ({ id, benefit, validatedStatus, categoryTitles }) => 
                             </Typography>
                         )}
                     </VBox>
-                    <Box sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        width: '100%'
-                    }} gap={2}>
-                        <Box sx={{ display: 'flex', flexWrap: 'wrap' }} gap={2}>
-                            {categoryTitles.map((category, index) => (
-                                <Box
-                                    key={index}
-                                    sx={(theme) => ({
-                                        padding: '8px 12px',
-                                        borderRadius: theme.shape.borderRadius,
-                                        border: `1px solid ${theme.palette.black.light}`,
-                                    })}
-                                >
-                                    <Typography variant="body2" sx={{ color: 'black.light' }}>
-                                        {category}
-                                    </Typography>
-                                </Box>
-                            ))}
+                    {categoryTitles.length > 0 && (
+                        <Box sx={{
+                            display: "flex",
+                            flexDirection: "column",
+                            width: '100%'
+                        }} gap={2}>
+                            <Box sx={{ display: 'flex', flexWrap: 'wrap' }} gap={2}>
+                                {categoryTitles.map((category, index) => (
+                                    <Box
+                                        key={index}
+                                        sx={(theme) => ({
+                                            padding: '8px 12px',
+                                            borderRadius: theme.shape.borderRadius,
+                                            border: `1px solid ${theme.palette.black.light}`,
+                                        })}
+                                    >
+                                        <Typography variant="body2" sx={{ color: 'black.light' }}>
+                                            {category}
+                                        </Typography>
+                                    </Box>
+                                ))}
+                            </Box>
                         </Box>
-                    </Box>
+                    )}
                 </VBox>
 
             </VBox>
