@@ -39,9 +39,7 @@ const useSetupQuestionPage = (
     
                 if (nextQuestion && currentQuestion?.datafield !== nextQuestion?.datafield) {
                     setCurrentQuestion(nextQuestion);
-                    if (!profileFieldUpdateError) {
-                        setProfileFieldUpdateError(null);
-                    }
+                    setProfileFieldUpdateError(null);
                 }
     
                 const questionToFetch = nextQuestion || currentQuestion;
