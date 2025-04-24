@@ -66,7 +66,7 @@ const QuestionPageNextContainer = () => {
     ), [validationReport, metadata]);
 
     const questionsCount = useMemo(() => (
-        [questionsStack.length - stackCounter, questionsStack.length + profileQuestions.fields.length]
+        [questionsStack.length - stackCounter, questionsStack?.length + profileQuestions?.fields?.length]
     ), [questionsStack, stackCounter, profileQuestions]);
 
     const isLoading = validationIsLoading || questionsAreLoading || !currentQuestion;

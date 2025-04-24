@@ -9,15 +9,17 @@ import {
   useValidationReportStore,
 } from "../../../storage/zustand";
 import { useUserStore } from "../../../storage/zustand";
-import { useValidationUpdate } from "../../../storage/updates";
 import InfoScreenReturningUser from "./InfoScreenReturningUser";
 import useJointValidationStatus from "@/ui/shared-hooks/useJointValidationStatus";
 
 const InfoScreenReturningUserContainer = () => {
   const { t } = useTranslation();
   const { isLoadingJointStatus } = useJointValidationStatus();
-  const triggerValidationUpdate = useValidationUpdate((state) => state.triggerValidationUpdate);
   const updateUserId = useUserStore((state) => state.updateUserId);
+
+  const continueWithExisting = () => {
+    updateUserId("ff:quick-check-user")
+  };
 
   const exportProfile = async () => {
     const userProfile = userManager.retrieveUserData();
@@ -29,10 +31,6 @@ const InfoScreenReturningUserContainer = () => {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-  };
-
-  const continueWithExisting = () => {
-    triggerValidationUpdate();
   };
 
   const deleteExistingProfile = () => {

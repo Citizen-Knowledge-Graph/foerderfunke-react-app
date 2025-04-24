@@ -4,24 +4,22 @@ import { IconButton, Typography, Collapse, Button } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
 import { VBox, HBox } from "../../../shared-components/LayoutBoxes";
 import useTranslation from "../../../language/useTranslation";
-import theme from "../../../../theme";
 import EligibilityOverviewLegend from './EligibilityOverviewLegend';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-const EligibilityOverviewHeader = ({ isDesktop, iconPaths }) => {
+const EligibilityOverviewHeader = ({ iconPaths }) => {
     const { t } = useTranslation();
     const [showLegend, setShowLegend] = useState(false);
-    const gap = isDesktop ? theme.spacing(8) : theme.spacing(4);
 
     return (
-        <VBox sx={{ width: "100%", alignItems: "flex-start", gap: gap }}>
+        <VBox sx={{ width: "100%", alignItems: "flex-start", gap: { xs: 4, md: 8 } }}>
             <VBox>
                 <Typography variant="h1">
                     {t('app.browseAll.header')}
                 </Typography>
                 <HBox sx={{ alignItems: 'center' }}>
                     <Button sx={{
-                        gap: theme.spacing(1),
+                        gap: 1,
                         padding: '0',
                         backgroundColor: 'transparent',
                         color: 'black.ligth',

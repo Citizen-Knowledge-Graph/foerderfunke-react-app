@@ -16,6 +16,7 @@ const OnboardingWelcomeOverviewView = ({
     numberOfBenefits,
     rpTitle,
     topicRps,
+    runPrioritizedQuestions
 }) => {
 
     return (
@@ -84,6 +85,7 @@ const OnboardingWelcomeOverviewView = ({
                     <RegularButton
                         variant={'blueContained'}
                         text={t('app.topicsChosen.discoverBtn')}
+                        onClick={runPrioritizedQuestions}
                         link={'/questions'}
                     />
                 </VBox>

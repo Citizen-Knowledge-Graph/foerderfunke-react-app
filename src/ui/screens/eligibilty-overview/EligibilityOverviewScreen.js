@@ -1,44 +1,24 @@
-import React, { useContext } from 'react';
-import EligibilityOverviewHeader from "./components/EligibilityOverviewHeader";
-import Layout from "../../shared-components/Layout";
-import AppScreenWrapper from "../../shared-components/AppScreenWrapper";
+import React from 'react';
 import { CircularProgress } from "@mui/material";
-import { LanguageContext } from "../../language/LanguageContext";
-import { useValidationReportStore } from "../../storage/zustand";
-import { useValidationUpdate } from "../../storage/updates";
-import useFetchData from "../../shared-hooks/useFetchData";
-import { VBox } from '../../shared-components/LayoutBoxes';
-import useEligibilityData from "./hooks/useEligibilityData";
+import Layout from "@/ui/shared-components/Layout";
+import AppScreenWrapper from "@/ui/shared-components/AppScreenWrapper";
+import { VBox } from '@/ui/shared-components/LayoutBoxes';
+import EligibilityOverviewHeader from "./components/EligibilityOverviewHeader";
 import EligibilityOverviewSection from "./components/EligibilityOverviewSection";
-import useTranslation from "../../language/useTranslation";
-import theme from '../../../theme';
-import { useStore } from "../../shared-components/ViewportUpdater";
-import { useMetadataStore } from "../../storage/zustand";
 
-const EligibilityOverviewScreen = () => {
-    const { t } = useTranslation();
-    const { language } = useContext(LanguageContext);
-    const isDesktop = useStore((state) => state.isDesktop);
-    
-    const validationReport = useValidationReportStore((state) => state.validationReport);
-    const validationIsLoading = useValidationUpdate((state) => state.validationIsLoading);
-    const hydrationData = useFetchData('assets/data/requirement-profiles/requirement-profiles-hydration.json')
-    const metadata = useMetadataStore((state) => state.metadata);
-    const eligibilityData = useEligibilityData(validationReport, metadata, hydrationData, language);
 
-    const iconPaths = {
-        eligible: `${process.env.PUBLIC_URL}/assets/images/application/icon-image-eligible.svg`,
-        preliminaryEligible: `${process.env.PUBLIC_URL}/assets/images/application/icon-image-preliminary-eligible.svg`,
-        ineligible: `${process.env.PUBLIC_URL}/assets/images/application/icon-image-ineligible.svg`,
-        missing: `${process.env.PUBLIC_URL}/assets/images/application/icon-image-missing.svg`
-    };
-    const gap = isDesktop ? theme.spacing(8) : theme.spacing(4);
+const EligibilityOverviewScreen = ({
+    t,
+    iconPaths,
+    eligibilityData,
+    validationIsLoading,
+}) => {
 
     return (
         <Layout isApp={true} logo={true}>
-            <AppScreenWrapper back={true}>
-                <VBox sx={{ gap: gap }} >
-                    <EligibilityOverviewHeader isDesktop={isDesktop} iconPaths={iconPaths} />
+            <AppScreenWrapper isLoading={validationIsLoading} back={true}>
+                <VBox sx={{ gap: { xs: 4, md: 8 } }} >
+                    <EligibilityOverviewHeader iconPaths={iconPaths} />
                     {
                         eligibilityData && !validationIsLoading ? (
                             <>
@@ -46,7 +26,7 @@ const EligibilityOverviewScreen = () => {
                                     eligibilityData["social_benefit"] && (
                                         <EligibilityOverviewSection
                                             iconPaths={iconPaths}
-                                            color={theme.palette.yellow.main}
+                                            color={'yellow.main'}
                                             category={t('app.topicSelection.socialBenefitsTitle')}
                                             eligibilitySection={eligibilityData["social_benefit"]}
                                         />
@@ -56,7 +36,7 @@ const EligibilityOverviewScreen = () => {
                                     eligibilityData["business"] && (
                                         <EligibilityOverviewSection
                                             iconPaths={iconPaths}
-                                            color={theme.palette.custom.colorDeepTealTransparent}
+                                            color={'custom.colorDeepTealTransparent'}
                                             category={t('app.topicSelection.businessTitle')}
                                             eligibilitySection={eligibilityData["business"]}
                                         />

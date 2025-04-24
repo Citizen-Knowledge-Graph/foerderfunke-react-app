@@ -38,6 +38,9 @@ const validationManager = {
             false
         );
 
+        // add user profile to the report
+        validateAllReport['userProfile'] = userProfile;
+
         // fetch metadata
         let metadata = {
             df: await extractDatafieldsMetadata(dataFieldsString, language),
