@@ -48,6 +48,28 @@ const validationManager = {
         };
 
         return [validateAllReport, metadata];
+    },
+    async fetchMetadata() {
+        // load validation config
+        const validationConfig = await resourceService.fetchResourceWithCache('assets/data/requirement-profiles/requirement-profiles.json');
+
+        // validate user profile against datafields
+        const dataFieldsString = await resourceService.fetchResourceWithCache(validationConfig['datafields']);
+
+        // collect requirement profiles
+        let requirementProfiles = {};
+        for (const requirementProfile of validationConfig['queries']) {
+            const { fileUrl, rpUri } = requirementProfile;
+            requirementProfiles[rpUri] = await resourceService.fetchResourceWithCache(fileUrl);
+        }
+
+        // fetch metadata
+        let metadata = {
+            df: await extractDatafieldsMetadata(dataFieldsString, "en"),
+            rp: await extractRequirementProfilesMetadata(Object.values(requirementProfiles), "en"),
+        };
+
+        return metadata;
     }
 }
 

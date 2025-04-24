@@ -1,12 +1,10 @@
 import { useCallback, useState } from "react";
 import { useSelectedTopicsStore } from "@/ui/storage/zustand";
-import useRunValidation from "@/ui/shared-hooks/useRunValidation";
 
 const useTopicSelectionHandlers = (topicsData) => {
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
     const [selectedTopicsLocal, setSelectedTopicsLocal] = useState(selectedTopics);
     const setSelectedTopics = useSelectedTopicsStore((state) => state.setSelectedTopics);
-    const triggerValidation = useRunValidation()
 
     const handleButtonClick = useCallback((topic) => {
         const newSelectedTopicsTemp = selectedTopicsLocal?.some(selected => selected.id === topic.id)
@@ -33,7 +31,6 @@ const useTopicSelectionHandlers = (topicsData) => {
 
     const persistSelectedTopics = () => {
         setSelectedTopics(selectedTopicsLocal);
-        triggerValidation();
     };
 
     return {

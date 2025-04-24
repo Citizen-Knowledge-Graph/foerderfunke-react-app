@@ -11,7 +11,7 @@ export const useUserStore = create((set) => ({
 export const useMetadataStore = create((set) => ({
     metadata: {},
     updateMetadata: (newMetadata) => {
-        console.log('STATE UPDATE: We are updating the metadata');
+        console.log('STATE UPDATE: We are updating the metadata, new metadata: ' + newMetadata);
         set((_) => ({metadata: newMetadata}));
     },
 }));
