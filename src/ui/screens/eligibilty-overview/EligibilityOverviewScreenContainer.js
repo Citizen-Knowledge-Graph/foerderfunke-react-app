@@ -6,8 +6,6 @@ import useTranslation from "@/ui/language/useTranslation";
 import EligibilityOverviewScreen from './EligibilityOverviewScreen';
 import useEligibilityData from "./hooks/useEligibilityData";
 import useProduceValidationReport from './hooks/useProduceValidationReport';
-import useRenderWhyLogger from "@/ui/shared-hooks/useRenderWhyLogger";
-
 
 const EligibilityOverviewScreenContainer = () => {
     const { t } = useTranslation();
