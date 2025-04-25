@@ -28,7 +28,7 @@ const questionsManager = {
             return id.startsWith("ff:") ? "https://foerderfunke.org/default#" + id.split(":")[1] : id;
         }
 
-        return await getPrioritizedMissingDataFieldsJson(
+        const missingQuestions = await getPrioritizedMissingDataFieldsJson(
             topicIds,
             benefitId ? [expand(benefitId)] : [],
             userProfileString,
@@ -37,6 +37,9 @@ const questionsManager = {
             materializationString,
             language
         );
+        missingQuestions['userProfile'] = userProfile;
+
+        return missingQuestions;
     }
 }
 

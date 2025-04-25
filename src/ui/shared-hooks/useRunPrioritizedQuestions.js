@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useCallback } from "react";
 import {
     useQuestionsStore,
     useSelectedBenefitStore,
@@ -16,18 +16,21 @@ const useRunPrioritizedQuestions = () => {
     const setQuestionsAreLoading = useQuestionsUpdate((state) => state.setQuestionsAreLoading);
     const { language } = useContext(LanguageContext);
 
-    const runPrioritizedQuestions = async () => {
+    const runPrioritizedQuestions = useCallback(async () => {
         if (!userId || (!selectedTopics && !selectedBenefit)) return;
+
         setQuestionsAreLoading(true);
+
         const questionsResponse = await questionsManager.fetchPrioritizedQuestions(
             userId,
             selectedBenefit ? [] : selectedTopics.map((topic) => topic.id),
             selectedBenefit,
             language
         );
-        useQuestionsStore.getState().updateQuestions(questionsResponse.prioritizedMissingDataFields);
+
+        useQuestionsStore.getState().updateQuestions(questionsResponse);
         setQuestionsAreLoading(false);
-    };
+    }, [userId, selectedTopics, selectedBenefit, language, setQuestionsAreLoading]);
 
     return runPrioritizedQuestions;
 };

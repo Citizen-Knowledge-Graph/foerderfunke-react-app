@@ -1,9 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { useNavigate } from "react-router-dom";
-import { useQuestionsUpdate, useValidationUpdate } from "@/ui/storage/updates";
+import { useQuestionsUpdate } from "@/ui/storage/updates";
 import useTranslation from "@/ui/language/useTranslation";
 import { ValidationResult } from "@foerderfunke/matching-engine";
-import { useProfileSectionStore } from "@/ui/storage/useProfileSectionStore";
 import {
     questionsStackStore,
     useQuestionsStore,
@@ -13,16 +12,21 @@ import {
 import useQuestionNavigationHandlers from "../hooks/useQuestionNavigationHandlers";
 import useSetupQuestionPage from "../hooks/useSetupQuestionPage";
 import QuestionPageNext from "./QuestionPageNext";
+import useRenderWhyLogger from '@/ui/shared-hooks/useRenderWhyLogger';
+import useRunPrioritizedQuestions from '@/ui/shared-hooks/useRunPrioritizedQuestions';
+
 
 const QuestionPageNextContainer = () => {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const [profileFieldUpdateError, setProfileFieldUpdateError] = useState(null);
-    
+    const updateCounter = useQuestionsUpdate((s) => s.updateCounter);
+    const runPrioritizedQuestions = useRunPrioritizedQuestions();
+
+
     const profileQuestions = useQuestionsStore((s) => s.questions);
     const metadata = useMetadataStore((s) => s.metadata);
     const validationReport = useValidationReportStore((s) => s.validationReport);
-    const validationIsLoading = useValidationUpdate((s) => s.validationIsLoading);
     const questionsAreLoading = useQuestionsUpdate((s) => s.questionsAreLoading);
     const {
         questionsStack,
@@ -30,8 +34,6 @@ const QuestionPageNextContainer = () => {
         stackCounter,
         setStackCounter
     } = questionsStackStore();
-    const retrieveCurrentEntityData = useProfileSectionStore((s) => s.retrieveCurrentEntityData);
-    const entityData = useMemo(() => retrieveCurrentEntityData(), [retrieveCurrentEntityData]);
 
     const {
         currentQuestion,
@@ -39,7 +41,6 @@ const QuestionPageNextContainer = () => {
         setValue,
         profileFieldRetrievalError,
     } = useSetupQuestionPage(
-        entityData,
         profileQuestions,
         questionsStack,
         stackCounter,
@@ -51,7 +52,6 @@ const QuestionPageNextContainer = () => {
     const { handleAddClick, handleBackClick } = useQuestionNavigationHandlers({
         setProfileFieldUpdateError,
         currentQuestion,
-        entityData,
         setStackCounter,
         stackCounter,
         questionsStack,
@@ -59,17 +59,45 @@ const QuestionPageNextContainer = () => {
     });
 
     // Some props for the UI
-    const eligibleRPs = useMemo(() => (
-        validationReport?.reports
+    const eligibleRPs = useMemo(() => {
+        if (!validationReport?.reports || !metadata?.rp) return [];
+
+        return validationReport.reports
             .filter(r => r.result === ValidationResult.ELIGIBLE)
-            .map(r => metadata?.rp[r.rpUri]?.title)
-    ), [validationReport, metadata]);
+            .map(r => metadata.rp[r.rpUri]?.title)
+            .filter(Boolean);
+    }, [validationReport?.reports, metadata?.rp]);
 
     const questionsCount = useMemo(() => (
-        [questionsStack.length - stackCounter, questionsStack?.length + profileQuestions?.fields?.length]
+        [questionsStack.length - stackCounter, questionsStack?.length + profileQuestions?.prioritizedMissingDataFields?.fields?.length]
     ), [questionsStack, stackCounter, profileQuestions]);
 
-    const isLoading = validationIsLoading || questionsAreLoading || !currentQuestion;
+    const isLoading = questionsAreLoading || !currentQuestion;
+
+    useRenderWhyLogger(
+        'QuestionPageNextContainer',
+        {
+        runPrioritizedQuestions,
+          updateCounter,
+          profileQuestions,
+          metadata,
+          validationReport,
+          questionsAreLoading,
+          questionsStack,
+          stackCounter,
+          addQuestionToStack,
+          setStackCounter,
+          profileFieldRetrievalError,
+          profileFieldUpdateError,
+          currentQuestionId: currentQuestion?.id,
+          value,
+          isLoading,
+          eligibleRPs,
+          questionsCount,
+          handleAddClick,
+          handleBackClick,
+        }
+      );
 
     return (
         <QuestionPageNext

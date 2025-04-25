@@ -1,37 +1,33 @@
 import { useCallback } from 'react';
 import useAddProfileField from './useAddProfileField';
 import useInputValidation from './useInputValidation';
-import { useQuestionsUpdate, useValidationUpdate } from "@/ui/storage/updates";
+import { useQuestionsUpdate } from '@/ui/storage/updates';
 
 const useQuestionNavigationHandlers = ({
     setProfileFieldUpdateError,
     currentQuestion,
-    entityData,
     setStackCounter,
     stackCounter,
     questionsStack,
     navigate
 }) => {
     const triggerQuestionsUpdate = useQuestionsUpdate((s) => s.triggerQuestionsUpdate);
-    const triggerValidationUpdate = useValidationUpdate((s) => s.triggerValidationUpdate);
     const validateValue = useInputValidation(currentQuestion?.datatype);
-    const addProfileData = useAddProfileField(currentQuestion, entityData);
+    const addProfileData = useAddProfileField(currentQuestion);
 
     const handleAddClick = useCallback(async (value) => {
         try {
             await validateValue(value);
-            await addProfileData(value);
-            triggerQuestionsUpdate();
-            triggerValidationUpdate();
+            await addProfileData(value);        
             if (stackCounter > 0) {
                 setStackCounter(stackCounter - 1);
-                return;
             }
+            triggerQuestionsUpdate()
         } catch (err) {
             console.error('Error handling add click:', err);
             setProfileFieldUpdateError(err);
         }
-    }, [validateValue, addProfileData, triggerQuestionsUpdate, triggerValidationUpdate, stackCounter, setStackCounter, setProfileFieldUpdateError]);
+    }, [validateValue, addProfileData, stackCounter, setStackCounter, setProfileFieldUpdateError, triggerQuestionsUpdate]);
 
     const handleBackClick = useCallback(() => {
         if (stackCounter === questionsStack.length - 1) {

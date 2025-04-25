@@ -1,24 +1,25 @@
-import {useCallback} from 'react';
-import userManager from '../../../../core/managers/userManager';
-import {useUserStore} from '../../../storage/zustand';
+import { useCallback } from 'react';
+import userManager from '@/core/managers/userManager';
+import { useUserStore } from '@/ui/storage/zustand';
 
-function useAddProfileField(currentField, entityData) {
-    return useCallback((value) => {
-        const activeUserId = useUserStore.getState().activeUserId;
-        return new Promise((resolve, reject) => {
-            if (currentField.datatype !== 'class') {
-                try {
-                    userManager.setField(activeUserId, value, currentField.datafield, entityData);
-                    resolve();
-                } catch (error) {
-                    console.log('Error adding profile field')
-                    reject(error);
-                }
-            } else {
-                resolve();
-            }
-        });
-    }, [currentField, entityData]);
+function useAddProfileField(currentField) {
+  const activeUserId = useUserStore((s) => s.activeUserId);
+
+  return useCallback((value) => {
+    return new Promise((resolve, reject) => {
+      if (currentField?.datatype !== 'class') {
+        try {
+          userManager.setField(activeUserId, value, currentField.datafield);
+          resolve();
+        } catch (error) {
+          console.error('Error adding profile field:', error);
+          reject(error);
+        }
+      } else {
+        resolve();
+      }
+    });
+  }, [activeUserId, currentField?.datafield, currentField?.datatype]);
 }
 
 export default useAddProfileField;
