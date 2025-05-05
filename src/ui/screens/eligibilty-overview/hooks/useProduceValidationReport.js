@@ -4,12 +4,10 @@ import useRunValidation from "@/ui/shared-hooks/useRunValidation";
 import userManager from "@/core/managers/userManager";
 import { useValidationReportStore } from "@/ui/storage/zustand";
 import { useValidationUpdate } from "@/ui/storage/updates";
-import { useMetadataStore } from "@/ui/storage/zustand";
 
 const useProduceValidationReport = () => {
   const validationIsLoading = useValidationUpdate((state) => state.validationIsLoading);
   const validationReport = useValidationReportStore((state) => state.validationReport);
-  const metadata = useMetadataStore((state) => state.metadata);
   const runValidation = useRunValidation();
 
   const isRunningRef = useRef(false);
@@ -37,10 +35,7 @@ const useProduceValidationReport = () => {
     produceValidationReport();
   }, [validationReport, validationIsLoading, runValidation]);
 
-  return {
-    validationReport,
-    metadata,
-  };
+  return validationReport;
 };
 
 export default useProduceValidationReport;

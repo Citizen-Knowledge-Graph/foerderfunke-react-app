@@ -6,7 +6,7 @@ import { useSelectedBenefitStore, useSelectedTopicsStore } from "@/ui/storage/zu
 import useJointValidationStatus from "@/ui/shared-hooks/useJointValidationStatus";
 import OnboardingWelcomeOverview from './OnboardingWelcomeOverview';
 import useNumberOfBenefits from "../hooks/useNumberOfBenefits";
-import useProduceMetadata from '../hooks/useProduceMetadata';
+import usePopulateMetadata from '../hooks/usePopulateMetadata';
 import useProduceOverviewTitles from "../hooks/useProduceOverviewTitles";
 
 const OnboardingWelcomeOverviewContainer = () => {
@@ -17,7 +17,7 @@ const OnboardingWelcomeOverviewContainer = () => {
 
     const selectedBenefit = useSelectedBenefitStore((state) => state.selectedBenefit);
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
-    const metadata = useProduceMetadata(language);
+    const metadata = usePopulateMetadata();
     const numberOfBenefits = useNumberOfBenefits(selectedTopics, metadata);
     const { rpTitle, topicRps } = useProduceOverviewTitles(metadata, selectedTopics, selectedBenefit);
     const isLoading = !metadata?.rp || isLoadingJointStatus;

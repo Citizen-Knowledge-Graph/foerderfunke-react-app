@@ -1,10 +1,9 @@
 import React from "react";
 import { Typography } from "@mui/material";
-import { ValidationResult } from "@foerderfunke/matching-engine"
-import { VBox } from "../../../shared-components/LayoutBoxes"
-import EligibilityOverviewList from "./EligibilityOverviewList"
-import theme from "../../../../theme";
-
+import { ValidationResult } from "@foerderfunke/matching-engine";
+import { VBox } from "@/ui/shared-components/LayoutBoxes";
+import theme from "@/theme";
+import EligibilityOverviewList from "./EligibilityOverviewList";
 
 const EligibilityOverviewSection = ({ category, eligibilitySection, iconPaths }) => {
     const eligibleBenefitsComplete = eligibilitySection[ValidationResult.ELIGIBLE]?.final || [];
@@ -15,17 +14,17 @@ const EligibilityOverviewSection = ({ category, eligibilitySection, iconPaths })
 
     return (
         <VBox sx={{ 
-            gap: theme.spacing(4),
-            backgroundColor: theme.palette.white.main,
+            gap: 4,
+            backgroundColor: 'white.main',
             padding: '32px',
             borderRadius: theme.shape.borderRadius,
         }}>
-            <Typography variant="h4" sx={{ color: theme.palette.pink.main, fontWeight: '400' }}>
+            <Typography variant="h4" sx={{ color: 'pink.main', fontWeight: '400' }}>
                 {category}
             </Typography>
             <VBox
                 sx={{
-                    gap: theme.spacing(4),
+                    gap: 4,
                 }}
             >
                 {eligibleBenefitsComplete.length > 0 &&

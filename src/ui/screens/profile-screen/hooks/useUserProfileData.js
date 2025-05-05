@@ -1,13 +1,13 @@
 import {useMemo} from 'react';
-import {useMetadataStore} from "../../../storage/zustand";
-import userManager from "../../../../core/managers/userManager";
-import {convertUserValueRaw, expand} from "../../../../core/utilities/rdfParsing";
-import useTranslation from "../../../language/useTranslation";
-import { formatEuro } from '../../../utils/currencyUtils';
+import userManager from "@/core/managers/userManager";
+import {convertUserValueRaw, expand} from "@/core/utilities/rdfParsing";
+import useTranslation from "@/ui/language/useTranslation";
+import { formatEuro } from '@/ui/utils/currencyUtils';
+import useAccessMetadata from '@/ui/storage/useAccessMetadata';
 
 const useUserProfileData = () => {
     const { t } = useTranslation();
-    const metadata = useMetadataStore((state) => state.metadata);
+    const metadata = useAccessMetadata();
     const userProfile = userManager.retrieveUserData("ff:quick-check-user");
 
     return useMemo(() => {

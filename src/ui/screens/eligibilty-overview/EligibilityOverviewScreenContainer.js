@@ -6,6 +6,7 @@ import useTranslation from "@/ui/language/useTranslation";
 import EligibilityOverviewScreen from './EligibilityOverviewScreen';
 import useEligibilityData from "./hooks/useEligibilityData";
 import useProduceValidationReport from './hooks/useProduceValidationReport';
+import usePopulateMetadata from '../onboarding-pages/hooks/usePopulateMetadata';
 
 const EligibilityOverviewScreenContainer = () => {
     const { t } = useTranslation();
@@ -13,7 +14,8 @@ const EligibilityOverviewScreenContainer = () => {
     
     const validationIsLoading = useValidationUpdate((state) => state.validationIsLoading);
     const hydrationData = useFetchData('assets/data/requirement-profiles/requirement-profiles-hydration.json');
-    const { validationReport, metadata } = useProduceValidationReport();
+    const metadata = usePopulateMetadata();
+    const validationReport = useProduceValidationReport();
     const eligibilityData = useEligibilityData(validationReport, metadata, hydrationData, language);
 
     const iconPaths = {

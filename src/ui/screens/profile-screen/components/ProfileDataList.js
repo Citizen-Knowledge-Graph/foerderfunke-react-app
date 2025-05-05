@@ -12,10 +12,10 @@ const ProfileDataList = () => {
     const userProfileData = useUserProfileData();
 
     return (
-        <VBox sx={{ gap: theme.spacing(8) }}>
+        <VBox sx={{ gap: 2 }}>
             {
                 userProfileData.length > 0 ? (
-                    <VBox sx={{ gap: theme.spacing(2) }}>
+                    <VBox sx={{ gap: 2 }}>
                         {
                             userProfileData.map(({ label, value }, index) => (
                                 <VBox
@@ -24,7 +24,7 @@ const ProfileDataList = () => {
                                     sx={{
                                         padding: '32px',
                                         borderRadius: theme.shape.borderRadius,
-                                        backgroundColor: theme.palette.white.main,
+                                        backgroundColor: 'white.main',
                                     }}
                                     justifyContent={'center'}
                                 >

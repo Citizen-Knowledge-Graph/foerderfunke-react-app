@@ -7,11 +7,11 @@ import {
     questionsStackStore,
     useQuestionsStore,
     useValidationReportStore,
-    useMetadataStore
 } from "@/ui/storage/zustand";
 import useQuestionNavigationHandlers from "../hooks/useQuestionNavigationHandlers";
 import useSetupQuestionPage from "../hooks/useSetupQuestionPage";
 import QuestionPageNext from "./QuestionPageNext";
+import useAccessMetadata from '@/ui/storage/useAccessMetadata';
 
 const QuestionPageNextContainer = () => {
     const { t } = useTranslation();
@@ -19,7 +19,7 @@ const QuestionPageNextContainer = () => {
     const [profileFieldUpdateError, setProfileFieldUpdateError] = useState(null);
 
     const profileQuestions = useQuestionsStore((s) => s.questions);
-    const metadata = useMetadataStore((s) => s.metadata);
+    const metadata = useAccessMetadata
     const validationReport = useValidationReportStore((s) => s.validationReport);
     const questionsAreLoading = useQuestionsUpdate((s) => s.questionsAreLoading);
     const {

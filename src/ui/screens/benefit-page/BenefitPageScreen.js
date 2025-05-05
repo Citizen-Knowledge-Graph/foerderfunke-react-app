@@ -8,7 +8,6 @@ import useTranslation from "@/ui/language/useTranslation";
 import { LanguageContext } from "@/ui/language/LanguageContext";
 import useFetchData from "@/ui/shared-hooks/useFetchData";
 import { useValidationReportStore } from "@/ui/storage/zustand";
-import { useMetadataStore } from '@/ui/storage/zustand';
 import theme from '../../../theme';
 import { VBox } from '@/ui/shared-components/LayoutBoxes';
 import BenefitPageInfoList from './components/BenefitPageInfoList';
@@ -21,7 +20,7 @@ import useFetchRPMetaData from './hooks/useFetchRPMetaData';
 import useFetchBenefitPageData from './hooks/useFetchBenefitPageData';
 import useIsMissingDataBenefit from "./hooks/useIsMissingDataBenefit";
 import useCategoryTitles from "./hooks/useCategoryTitles";
-
+import useAccessMetadata from '@/ui/storage/useAccessMetadata';
 
 const BenefitPageScreen = () => {
     const { id } = useParams();
@@ -30,7 +29,7 @@ const BenefitPageScreen = () => {
 
     const isDesktop = useStore((state) => state.isDesktop);
     const validationReport = useValidationReportStore((state) => state.validationReport);
-    const metadata = useMetadataStore((state) => state.metadata);
+    const metadata = useAccessMetadata
 
     const hydrationData = useFetchData('assets/data/requirement-profiles/requirement-profiles-hydration.json')
     const benefitPageData = useFetchBenefitPageData(id, hydrationData, language);

@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import { Typography, IconButton, Collapse } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { useMetadataStore, useUserStore, useValidationReportStore } from "../../../storage/zustand";
-import userManager from "../../../../core/managers/userManager";
-import { buildRulesOutput } from "../../../../core/utilities/ruleParsing";
+import { useUserStore, useValidationReportStore } from "@/ui/storage/zustand";
+import userManager from "@/core/managers/userManager";
+import { buildRulesOutput } from "@/core/utilities/ruleParsing";
 import BenefitPageRuleEntry from "./BenefitPageRuleEntry";
-import useTranslation from "../../../language/useTranslation";
-import useFetchData from "../../../shared-hooks/useFetchData";
+import useTranslation from "@/ui/language/useTranslation";
+import useFetchData from "@/ui/shared-hooks/useFetchData";
 import useBenefitPageRules from "../hooks/useBenefitPageRules";
-import { VBox, HBox } from "../../../shared-components/LayoutBoxes";
-import theme from "../../../../theme";
+import { VBox, HBox } from "@/ui/shared-components/LayoutBoxes";
+import theme from "@/theme";
+import useAccessMetadata from "@/ui/storage/useAccessMetadata";
 
 const BenefitPageRules = ({ benefitId, validatedStatus }) => {
     const { t } = useTranslation();
-    const metadata = useMetadataStore((state) => state.metadata);
+    const metadata = useAccessMetadata();
     const validationReport = useValidationReportStore((state) => state.validationReport);
     const activeUser = useUserStore((state) => state.activeUserId);
     const userProfile = userManager.retrieveUserData(activeUser);
@@ -27,8 +28,8 @@ const BenefitPageRules = ({ benefitId, validatedStatus }) => {
     return (
         <VBox
             sx={{
-                gap: theme.spacing(2),
-                backgroundColor: theme.palette.white.main,
+                gap: 2,
+                backgroundColor: 'white.main',
                 padding: '32px',
                 borderRadius: theme.shape.borderRadius,
             }}
