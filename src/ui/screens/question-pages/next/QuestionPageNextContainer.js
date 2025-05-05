@@ -12,17 +12,11 @@ import {
 import useQuestionNavigationHandlers from "../hooks/useQuestionNavigationHandlers";
 import useSetupQuestionPage from "../hooks/useSetupQuestionPage";
 import QuestionPageNext from "./QuestionPageNext";
-import useRenderWhyLogger from '@/ui/shared-hooks/useRenderWhyLogger';
-import useRunPrioritizedQuestions from '@/ui/shared-hooks/useRunPrioritizedQuestions';
-
 
 const QuestionPageNextContainer = () => {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const [profileFieldUpdateError, setProfileFieldUpdateError] = useState(null);
-    const updateCounter = useQuestionsUpdate((s) => s.updateCounter);
-    const runPrioritizedQuestions = useRunPrioritizedQuestions();
-
 
     const profileQuestions = useQuestionsStore((s) => s.questions);
     const metadata = useMetadataStore((s) => s.metadata);
@@ -73,31 +67,6 @@ const QuestionPageNextContainer = () => {
     ), [questionsStack, stackCounter, profileQuestions]);
 
     const isLoading = questionsAreLoading || !currentQuestion;
-
-    useRenderWhyLogger(
-        'QuestionPageNextContainer',
-        {
-        runPrioritizedQuestions,
-          updateCounter,
-          profileQuestions,
-          metadata,
-          validationReport,
-          questionsAreLoading,
-          questionsStack,
-          stackCounter,
-          addQuestionToStack,
-          setStackCounter,
-          profileFieldRetrievalError,
-          profileFieldUpdateError,
-          currentQuestionId: currentQuestion?.id,
-          value,
-          isLoading,
-          eligibleRPs,
-          questionsCount,
-          handleAddClick,
-          handleBackClick,
-        }
-      );
 
     return (
         <QuestionPageNext

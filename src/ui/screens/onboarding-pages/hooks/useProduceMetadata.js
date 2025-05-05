@@ -2,25 +2,25 @@ import { useEffect, useRef } from "react";
 import { useMetadataStore } from "@/ui/storage/zustand";
 import useFetchMetadata from "@/ui/shared-hooks/useFetchMetadata";
 
-const useProduceMetadata = () => {
-  const metadata = useMetadataStore((state) => state.metadata);
-  const fetchMetadata = useFetchMetadata();
-  const isRunningRef = useRef(false);
+const useProduceMetadata = (language) => {
+    const fetchMetadata = useFetchMetadata();
+    const metadata = useMetadataStore((state) => state.metadata);
+    const isRunningRef = useRef(false);
 
-  useEffect(() => {
-    const produceMetadata = async () => {
-      if (isRunningRef.current || metadata.rp) return;
-      isRunningRef.current = true;
+    useEffect(() => {
+        const produceMetadata = async () => {
+            if (isRunningRef.current || metadata[language]?.rp) return;
+            isRunningRef.current = true;
 
-      await fetchMetadata();
+            await fetchMetadata();
 
-      isRunningRef.current = false;
-    };
+            isRunningRef.current = false;
+        };
 
-    produceMetadata();
-  }, [metadata.rp, fetchMetadata]);
+        produceMetadata();
+    }, [metadata, fetchMetadata, language]);
 
-  return metadata;
+    return metadata[language] || null;
 };
 
 export default useProduceMetadata;

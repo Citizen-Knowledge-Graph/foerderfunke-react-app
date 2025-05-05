@@ -17,7 +17,7 @@ const OnboardingWelcomeOverviewContainer = () => {
 
     const selectedBenefit = useSelectedBenefitStore((state) => state.selectedBenefit);
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
-    const metadata = useProduceMetadata();
+    const metadata = useProduceMetadata(language);
     const numberOfBenefits = useNumberOfBenefits(selectedTopics, metadata);
     const { rpTitle, topicRps } = useProduceOverviewTitles(metadata, selectedTopics, selectedBenefit);
     const isLoading = !metadata?.rp || isLoadingJointStatus;

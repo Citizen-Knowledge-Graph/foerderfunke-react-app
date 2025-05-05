@@ -65,8 +65,15 @@ const validationManager = {
 
         // fetch metadata
         let metadata = {
-            df: await extractDatafieldsMetadata(dataFieldsString, "en"),
-            rp: await extractRequirementProfilesMetadata(Object.values(requirementProfiles), "en"),
+            "en": {
+                df: await extractDatafieldsMetadata(dataFieldsString, "en"),
+                rp: await extractRequirementProfilesMetadata(Object.values(requirementProfiles), "en"),
+            },
+            "de": {
+                df: await extractDatafieldsMetadata(dataFieldsString, "de"),
+                rp: await extractRequirementProfilesMetadata(Object.values(requirementProfiles), "de"),
+
+            }
         };
 
         return metadata;
