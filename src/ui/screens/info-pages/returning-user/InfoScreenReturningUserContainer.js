@@ -5,6 +5,7 @@ import dayjs from "dayjs";
 import { convertUserProfileToTurtle } from "@foerderfunke/matching-engine/src/profile-conversion";
 import {
   questionsStackStore,
+  useSelectedBenefitStore,
   useSelectedTopicsStore,
   useValidationReportStore,
 } from "../../../storage/zustand";
@@ -37,6 +38,7 @@ const InfoScreenReturningUserContainer = () => {
     userManager.deleteUser();
     useValidationReportStore.getState().clear();
     useSelectedTopicsStore.getState().clear();
+    useSelectedBenefitStore.getState().clear();
     questionsStackStore.getState().resetQuestionsStack();
     updateUserId(null);
   };

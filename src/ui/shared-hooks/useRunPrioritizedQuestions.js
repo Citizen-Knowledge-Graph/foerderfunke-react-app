@@ -20,10 +20,9 @@ const useRunPrioritizedQuestions = () => {
         if (!userId || (!selectedTopics && !selectedBenefit)) return;
 
         setQuestionsAreLoading(true);
-
         const questionsResponse = await questionsManager.fetchPrioritizedQuestions(
             userId,
-            selectedBenefit ? [] : selectedTopics.map((topic) => topic.id),
+            selectedTopics.map((topic) => topic.id),
             selectedBenefit,
             language
         );
