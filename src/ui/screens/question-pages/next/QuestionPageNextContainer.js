@@ -7,11 +7,14 @@ import {
     questionsStackStore,
     useQuestionsStore,
     useValidationReportStore,
+    useSelectedTopicsStore,
+    useSelectedBenefitStore
 } from "@/ui/storage/zustand";
 import useQuestionNavigationHandlers from "../hooks/useQuestionNavigationHandlers";
 import useSetupQuestionPage from "../hooks/useSetupQuestionPage";
 import QuestionPageNext from "./QuestionPageNext";
 import useAccessMetadata from '@/ui/storage/useAccessMetadata';
+import useRenderWhyLogger from '@/ui/shared-hooks/useRenderWhyLogger';
 
 const QuestionPageNextContainer = () => {
     const { t } = useTranslation();
@@ -28,6 +31,10 @@ const QuestionPageNextContainer = () => {
         stackCounter,
         setStackCounter
     } = questionsStackStore();
+
+    const topicIds = useSelectedTopicsStore((s) => s.selectedTopics);
+    const selectedBenefit = useSelectedBenefitStore((s) => s.selectedBenefit);
+    const updateCounter = useQuestionsUpdate((s) => s.updateCounter);
 
     const {
         currentQuestion,
@@ -51,6 +58,22 @@ const QuestionPageNextContainer = () => {
         questionsStack,
         navigate
     });
+
+    useRenderWhyLogger(
+        'QuestionPageNextContainer',
+        {
+            topicIds,
+            selectedBenefit,
+            profileQuestions,
+            updateCounter,
+            questionsStack,
+            stackCounter,
+            currentQuestion,
+            value,
+            profileFieldRetrievalError,
+            profileFieldUpdateError,
+            metadata
+        });
 
     // Some props for the UI
     const eligibleRPs = useMemo(() => {

@@ -4,16 +4,19 @@ import QuestionPageNextContainer from './next/QuestionPageNextContainer';
 import useProduceNextQuestion from './hooks/useProduceNextQuestion';
 
 const QuestionPageRouter = () => {
-    const profileQuestions = useProduceNextQuestion();
+    const {profileQuestions, questionsAreLoading } = useProduceNextQuestion();
     const [completed, setCompleted] = useState(false);
+    console.log("Profile questions:", completed);
 
     useEffect(() => {
         if (profileQuestions?.prioritizedMissingDataFields?.fields?.length === 0) {
             setCompleted(true);
+        } else {
+            setCompleted(false);
         }
     }, [profileQuestions]);
 
-    if (completed) {
+    if (completed && !questionsAreLoading) {
         return <QuestionPageCompleted />;
     }
 

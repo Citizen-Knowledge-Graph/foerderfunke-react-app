@@ -1,6 +1,6 @@
 import {useMemo} from 'react';
 import userManager from "@/core/managers/userManager";
-import {convertUserValueRaw, expand} from "@/core/utilities/rdfParsing";
+import {convertUserValueRaw, expand} from "@/core/utils/rdfParsing";
 import useTranslation from "@/ui/language/useTranslation";
 import { formatEuro } from '@/ui/utils/currencyUtils';
 import useAccessMetadata from '@/ui/storage/useAccessMetadata';

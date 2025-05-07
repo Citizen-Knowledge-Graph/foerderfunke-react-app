@@ -1,4 +1,4 @@
-import { expand, getChoiceLabel, convertUserValueRaw } from "../../core/utilities/rdfParsing";
+import { expand, getChoiceLabel, convertUserValueRaw } from "../../core/utils/rdfParsing";
 
 describe('expand', () => {
     it('should expand ff URIs', () => {

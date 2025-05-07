@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { buildEligibilityReports } from "@/core/utilities/buildEligibilityReports";
+import { buildEligibilityReports } from "@/core/utils/buildEligibilityReports";
 
 const useEligibilityData = (validationReport, metadata, hydrationData, language) => {
     return useMemo(() => {

@@ -3,7 +3,7 @@ import { Typography, IconButton, Collapse } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useUserStore, useValidationReportStore } from "@/ui/storage/zustand";
 import userManager from "@/core/managers/userManager";
-import { buildRulesOutput } from "@/core/utilities/ruleParsing";
+import { buildRulesOutput } from "@/core/utils/ruleParsing";
 import BenefitPageRuleEntry from "./BenefitPageRuleEntry";
 import useTranslation from "@/ui/language/useTranslation";
 import useFetchData from "@/ui/shared-hooks/useFetchData";
