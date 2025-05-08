@@ -3,8 +3,13 @@ import { useCachingService } from '@/core/services/cachingService';
 
 const resourceService = {
   async fetchResource(filePath) {
-    const response = await axiosClient.get(filePath);
-    return response.data;
+    try {
+      const response = await axiosClient.get(filePath);
+      return response.data;
+    } catch (error) {
+      console.error(`Error fetching resource from path: ${filePath}`, error.message);
+      throw error;
+    }
   },
 
   async fetchResourceWithCache(filePath) {
