@@ -2,8 +2,10 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import userManager from "@/core/managers/userManager";
 import { useUserExistsStatus, UserStatus } from "./hooks/useUserExistsStatus";
+import useInitialiseMatchingEngine from "./hooks/useInitialiseMatchingEngine";
 
 const InfoPageRouter = () => {
+    useInitialiseMatchingEngine();
     const userStatus = useUserExistsStatus(userManager);
     const navigate = useNavigate();
   

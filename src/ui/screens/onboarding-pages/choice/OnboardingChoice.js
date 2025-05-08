@@ -6,8 +6,10 @@ import useTranslation from "@/ui/language/useTranslation";
 import { Link } from "react-router-dom";
 import { HBox, VBox } from '@/ui/shared-components/LayoutBoxes';
 import useJointValidationStatus from "@/ui/shared-hooks/useJointValidationStatus";
+import useFetchQuizReport from "../hooks/useFetchQuizReport";
 
 const OnboardingChoice = () => {
+    useFetchQuizReport();
     const { t } = useTranslation();
     const { isLoadingJointStatus } = useJointValidationStatus();
 
