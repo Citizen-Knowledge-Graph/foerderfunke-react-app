@@ -1306,5 +1306,78 @@
         ]
       }
     }
+  },
+  "https://foerderfunke.org/default#ausbildungsgeld": {
+    "id": "ff:ausbildungsgeld",
+    "status": "beta",
+    "category": "social_benefit",
+    "title": {
+      "de": "Ausbildungsgeld",
+      "en": "Training Allowance"
+    },
+    "description": {
+      "de": "Menschen mit Behinderungen können zur Sicherung des Lebensunterhaltes Ausbildungsgeld erhalten, wenn sie an bestimmten Bildungsmaßnahmen teilnehmen. (Quelle: §§ 122 bis 126 SGB III)",
+      "en": "People with disabilities can receive a training allowance to cover their living expenses if they participate in specific educational programs. (Source: §§ 122 to 126 SGB III)"
+    },
+    "application_process": {
+      "de": {
+        "title": "Der Antrag für das Ausbildungsgeld ist bei der Bundesagentur für Arbeit zu stellen. Weitere Informationen finden Sie auf der Website der Bundesagentur.",
+        "links": [
+          {
+            "title": "Informationen zum Antragsverfahren bei der Bundesagentur für Arbeit",
+            "url": "https://www.arbeitsagentur.de/datei/erlaeuterung-ausbildungsgeld_ba047268.pdf"
+          }
+        ]
+      },
+      "en": {
+        "title": "The application for the Training Allowance must be submitted to the Federal Employment Agency. More information can be found on the agency's website.",
+        "links": [
+          {
+            "title": "Information on the application process at the Federal Employment Agency",
+            "url": "https://www.arbeitsagentur.de/datei/erlaeuterung-ausbildungsgeld_ba047268.pdf"
+          }
+        ]
+      }
+    },
+    "legal_basis": {
+      "de": {
+        "title": "Rechtsgrundlage des Ausbildungsgeldes:",
+        "links": [
+          {
+            "title": "§§ 122 bis 126 SGB III",
+            "url": "https://www.gesetze-im-internet.de/sgb_3/__122.html"
+          }
+        ]
+      },
+      "en": {
+        "title": "Legal basis of the Training Allowance:",
+        "links": [
+          {
+            "title": "§§ 122 to 126 SGB III",
+            "url": "https://www.gesetze-im-internet.de/sgb_3/__122.html"
+          }
+        ]
+      }
+    },
+    "further_information": {
+      "de": {
+        "title": "Weitere Informationen zum Ausbildungsgeld:",
+        "links": [
+          {
+            "title": "Weitere Informationen auf betanet.de",
+            "url": "https://www.betanet.de/behinderung-ausbildungsgeld.html"
+          }
+        ]
+      },
+      "en": {
+        "title": "Further information about the Training Allowance:",
+        "links": [
+          {
+            "title": "More information on betanet.de",
+            "url": "https://www.betanet.de/behinderung-ausbildungsgeld.html"
+          }
+        ]
+      }
+    }
   }
 }

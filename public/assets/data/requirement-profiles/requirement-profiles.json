@@ -68,15 +68,19 @@
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/forschungszulage.ttl",
-      "rpUri": "https://foerderfunke.org/default#forschungszulage"      
+      "rpUri": "https://foerderfunke.org/default#forschungszulage"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/bundesfoerderung-effiziente-gebaeude.ttl",
-      "rpUri": "https://foerderfunke.org/default#bundesfoerderung-effiziente-gebaeude"      
+      "rpUri": "https://foerderfunke.org/default#bundesfoerderung-effiziente-gebaeude"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/wolfenbuettel-stiftung.ttl",
-      "rpUri": "https://foerderfunke.org/default#wolfenbuettel-stiftung"      
-    }    
+      "rpUri": "https://foerderfunke.org/default#wolfenbuettel-stiftung"
+    },
+    {
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/ausbildungsgeld.ttl",
+      "rpUri": "https://foerderfunke.org/default#ausbildungsgeld"
+    }   
   ]
 }
