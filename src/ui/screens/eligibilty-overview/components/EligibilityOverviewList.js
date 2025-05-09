@@ -1,9 +1,8 @@
 import React from 'react';
 import { Typography } from '@mui/material';
-import { VBox } from '../../../shared-components/LayoutBoxes';
+import { VBox } from '@/ui/shared-components/LayoutBoxes';
+import useTranslation from "@/ui/language/useTranslation";
 import EligibilityOverviewItem from "./EligibilityOverviewItem";
-import useTranslation from "../../../language/useTranslation";
-import theme from '../../../../theme';
 
 const EligibilityOverviewList = ({ items, eligible, iconPath }) => {
     const { t } = useTranslation();
@@ -21,11 +20,11 @@ const EligibilityOverviewList = ({ items, eligible, iconPath }) => {
     })();        
 
     return (
-        <VBox sx={{ gap: theme.spacing(2) }}>
+        <VBox sx={{ gap: 2 }}>
             <Typography variant="h6">
                 {headerText}
             </Typography>
-            <VBox sx={{ gap: theme.spacing(2) }}>
+            <VBox sx={{ gap: 2 }}>
                 {items.map((item, index) => (
                     <EligibilityOverviewItem key={index} item={item} eligible={eligible} iconPath={iconPath}/>
                 ))}
