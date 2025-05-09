@@ -81,6 +81,10 @@
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/ausbildungsgeld.ttl",
       "rpUri": "https://foerderfunke.org/default#ausbildungsgeld"
-    }   
+    },
+    {
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/wolfenbuettel-gastronomische-aussenmoeblierung.ttl",
+      "rpUri": "https://foerderfunke.org/default#wolfenbuettel-gastronomische-aussenmoeblierung"
+    }     
   ]
 }
