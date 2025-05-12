@@ -60,7 +60,7 @@ const LandingPageMissionDesktop = ({ isDesktop }) => {
                         alt="logo"
                         style={{
                             width: "523px",
-                            marginRight: "-300px"
+                            marginRight: "-75px"
                         }}
                     />
                 </VBox>
