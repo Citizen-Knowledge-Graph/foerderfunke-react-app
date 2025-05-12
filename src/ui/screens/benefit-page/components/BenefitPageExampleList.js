@@ -3,8 +3,8 @@ import { Typography } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Collapse from "@mui/material/Collapse";
-import { HBox, VBox } from "../../../shared-components/LayoutBoxes";
-import theme from '../../../../theme';
+import { HBox, VBox } from "@/ui/shared-components/LayoutBoxes";
+import theme from '@/theme';
 
 const BenefitPageExampleList = ({ listTitle, data }) => {
     const [showAdditionalSupport, setShowAdditionalSupport] = useState(false);
@@ -12,8 +12,8 @@ const BenefitPageExampleList = ({ listTitle, data }) => {
     return (
         <VBox
             sx={{
-                gap: theme.spacing(2),
-                backgroundColor: theme.palette.white.main,
+                gap: 2,
+                backgroundColor: 'white.main',
                 padding: '32px',
                 borderRadius: theme.shape.borderRadius,
             }}
@@ -34,7 +34,7 @@ const BenefitPageExampleList = ({ listTitle, data }) => {
             </HBox>
             {
                 showAdditionalSupport && (
-                    <Collapse in={showAdditionalSupport} sx={{ marginTop: theme.spacing(1) }}>
+                    <Collapse in={showAdditionalSupport} sx={{ marginTop: 1 }}>
                         <VBox sx={{ gap: 4, maxWidth: '800px' }}>
                             <Typography variant="body1">{data.title}</Typography>
                             {

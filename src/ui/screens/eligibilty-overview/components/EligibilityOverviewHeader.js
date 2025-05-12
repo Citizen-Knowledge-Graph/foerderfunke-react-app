@@ -20,7 +20,7 @@ const EligibilityOverviewHeader = ({ iconPaths }) => {
                 <HBox sx={{ alignItems: 'center' }}>
                     <Button sx={{
                         gap: 1,
-                        padding: '0',
+                        padding: '1',
                         backgroundColor: 'transparent',
                         color: 'black.ligth',
                         '&:hover': {

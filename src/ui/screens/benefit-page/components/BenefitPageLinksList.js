@@ -3,10 +3,10 @@ import { Button, Typography } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Collapse from "@mui/material/Collapse";
-import { HBox, VBox } from "../../../shared-components/LayoutBoxes";
-import theme from '../../../../theme';
+import { HBox, VBox } from "@/ui/shared-components/LayoutBoxes";
+import theme from '@/theme';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import featureFlags from "../../../../featureFlags";
+import featureFlags from "@/featureFlags";
 import { runSparqlSelectQueryOnRdfString } from "@foerderfunke/matching-engine/src/utils";
 import resourceService from "@/core/services/resourceService";
 import haversine from "haversine-distance"
@@ -63,8 +63,8 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
     return (
         <VBox
             sx={{
-                gap: theme.spacing(2),
-                backgroundColor: theme.palette.white.main,
+                gap: 2,
+                backgroundColor: "white.main",
                 padding: '32px',
                 borderRadius: theme.shape.borderRadius,
             }}>
@@ -83,7 +83,7 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
             </HBox>
             {
                 showAdditionalSupport && (
-                    <Collapse in={showAdditionalSupport} sx={{ marginTop: theme.spacing(1) }}>
+                    <Collapse in={showAdditionalSupport} sx={{ marginTop: 1 }}>
                         <VBox sx={{ gap: 4, maxWidth: '800px' }}>
                             <Typography variant="body1">{data.title}</Typography>
                             {
@@ -93,7 +93,7 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
                                             data.links.map((link, index) => (
                                                 <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
                                                     <Button variant="text" sx={{
-                                                        padding: 0, color: 'pink.main', textDecoration: 'underline',
+                                                        padding: 1, color: 'pink.main', textDecoration: 'underline',
                                                         '&:hover': {
                                                             backgroundColor: 'transparent',
                                                             color: 'black.main',

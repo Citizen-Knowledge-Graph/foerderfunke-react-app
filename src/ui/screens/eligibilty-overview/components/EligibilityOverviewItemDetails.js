@@ -4,7 +4,7 @@ import { Button, Typography } from '@mui/material';
 import { HBox, VBox } from '../../../shared-components/LayoutBoxes';
 import useTranslation from "../../../language/useTranslation";
 import { useSelectedBenefitStore, useSelectedTopicsStore } from "../../../storage/zustand";
-import theme from '../../../../theme';
+import theme from '@/theme';
 
 const EligibilityOverviewItemDetails = ({ item, eligible }) => {
     const { t } = useTranslation();
@@ -18,15 +18,15 @@ const EligibilityOverviewItemDetails = ({ item, eligible }) => {
                     {item.description}
                 </Typography>
             </HBox>
-            <HBox sx={{ gap: theme.spacing(2), flexWrap: 'wrap' }}>
+            <HBox sx={{ gap: 2, flexWrap: 'wrap' }}>
                 <Button
                     variant="text"
                     sx={{
                         color: 'pink.main',
-                        padding: '0',
+                        padding: 1,
                         '&:hover': {
                             backgroundColor: 'transparent',
-                            color: theme.palette.black.main,
+                            color: 'black.main',
                         }
                     }}
                     component={Link}
@@ -44,7 +44,7 @@ const EligibilityOverviewItemDetails = ({ item, eligible }) => {
                         }}
                         sx={{
                             color: 'blue.main',
-                            padding: '0',
+                            padding: 1,
                             '&:hover': {
                                 backgroundColor: 'transparent',
                                 color: theme.palette.black.main,
