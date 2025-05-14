@@ -1306,5 +1306,284 @@
         ]
       }
     }
+  },
+  "https://foerderfunke.org/default#ausbildungsgeld": {
+    "id": "ff:ausbildungsgeld",
+    "status": "beta",
+    "category": "social_benefit",
+    "title": {
+      "de": "Ausbildungsgeld",
+      "en": "Training Allowance"
+    },
+    "description": {
+      "de": "Menschen mit Behinderungen können zur Sicherung des Lebensunterhaltes Ausbildungsgeld erhalten, wenn sie an bestimmten Bildungsmaßnahmen teilnehmen. (Quelle: §§ 122 bis 126 SGB III)",
+      "en": "People with disabilities can receive a training allowance to cover their living expenses if they participate in specific educational programs. (Source: §§ 122 to 126 SGB III)"
+    },
+    "application_process": {
+      "de": {
+        "title": "Der Antrag für das Ausbildungsgeld ist bei der Bundesagentur für Arbeit zu stellen. Weitere Informationen finden Sie auf der Website der Bundesagentur.",
+        "links": [
+          {
+            "title": "Informationen zum Antragsverfahren bei der Bundesagentur für Arbeit",
+            "url": "https://www.arbeitsagentur.de/datei/erlaeuterung-ausbildungsgeld_ba047268.pdf"
+          }
+        ]
+      },
+      "en": {
+        "title": "The application for the Training Allowance must be submitted to the Federal Employment Agency. More information can be found on the agency's website.",
+        "links": [
+          {
+            "title": "Information on the application process at the Federal Employment Agency",
+            "url": "https://www.arbeitsagentur.de/datei/erlaeuterung-ausbildungsgeld_ba047268.pdf"
+          }
+        ]
+      }
+    },
+    "legal_basis": {
+      "de": {
+        "title": "Rechtsgrundlage des Ausbildungsgeldes:",
+        "links": [
+          {
+            "title": "§§ 122 bis 126 SGB III",
+            "url": "https://www.gesetze-im-internet.de/sgb_3/__122.html"
+          }
+        ]
+      },
+      "en": {
+        "title": "Legal basis of the Training Allowance:",
+        "links": [
+          {
+            "title": "§§ 122 to 126 SGB III",
+            "url": "https://www.gesetze-im-internet.de/sgb_3/__122.html"
+          }
+        ]
+      }
+    },
+    "further_information": {
+      "de": {
+        "title": "Weitere Informationen zum Ausbildungsgeld:",
+        "links": [
+          {
+            "title": "Weitere Informationen auf betanet.de",
+            "url": "https://www.betanet.de/behinderung-ausbildungsgeld.html"
+          }
+        ]
+      },
+      "en": {
+        "title": "Further information about the Training Allowance:",
+        "links": [
+          {
+            "title": "More information on betanet.de",
+            "url": "https://www.betanet.de/behinderung-ausbildungsgeld.html"
+          }
+        ]
+      }
+    }
+  },
+  "https://foerderfunke.org/default#wolfenbuettel-gastronomische-aussenmoeblierung": {
+    "id": "ff:wolfenbuettel-gastronomische-aussenmoeblierung",
+    "status": "beta",
+    "category": "business",
+    "title": {
+      "de": "Förderung gastronomischer Außenmöblierung in Wolfenbüttel",
+      "en": "Funding for Gastronomic Outdoor Furniture in Wolfenbüttel"
+    },
+    "description": {
+      "de": "Die Förderung gastronomischer Außenmöblierung unterstützt Betriebe in Wolfenbüttel bei der Anschaffung von wetterfesten und nachhaltigen Außenmöbeln für den gastronomischen Bereich.",
+      "en": "The funding for gastronomic outdoor furniture supports businesses in Wolfenbüttel in acquiring weather-resistant and sustainable outdoor furniture for gastronomy."
+    },
+    "application_process": {
+      "de": {
+        "title": "Der Antrag ist an das Büro der Bürgermeister:in oder die Wirtschaftsförderung der Stadt Wolfenbüttel zu richten. Es wird empfohlen im Vorfeld einer Bewerbung Kontakt mit der Stadtverwaltung aufzunehmen.",
+        "links": [
+          {
+            "title": "E-Mail-Adress der Wirtschaftsförderung",
+            "url": "mailto:wirtschaftsfoerderung@wolfenbuettel.de."
+          }
+        ]
+      },
+      "en": {
+        "title": "Applications should be addressed to the office of the mayor or the economic development department of the City of Wolfenbüttel. It is recommended to contact the city administration before applying.",
+        "links": [
+          {
+            "title": "Email address of the Economic Development Department",
+            "url": "mailto:wirtschaftsfoerderung@wolfenbuettel.de."
+          }
+        ]
+      }
+    },
+    "funding_conditions": {
+      "de": {
+        "title": "Die Förderung beinhaltet die folgenden Möglichkeiten:",
+        "details": [
+          "Der Höchstbetrag einer Förderung beträgt je Betrieb 5.000,00 €",
+          "Die Höchstquote für die Förderung von Investitionsmaßnahmen beträgt maximal 50% der nachweisbaren, förderfähigen Ausgaben des Zuwendungsempfängers.",
+          "Die Förderung wird als nicht rückzahlbarer Zuschuss der Stadt Wolfenbüttel im Rahmen einer einmaligen Anteilsfinanzierung gewährt.",
+          "Die Zweckbindung der Förderung beträgt 2 Jahre"
+        ]
+      },
+      "en": {
+        "title": "Funding is subject to the following conditions:",
+        "details": [
+          "The maximum amount of funding per business is €5,000.00",
+          "The maximum funding rate for investment measures is 50% of the verifiable eligible expenses of the grant recipient.",
+          "Funding is provided as a non-repayable grant from the City of Wolfenbüttel as part of a one-time co-financing.",
+          "The funding is tied to its purpose for 2 years."
+        ]
+      }
+    },
+    "examples": {
+      "de": {
+        "title": "Folgende Beispiele veranschaulichen die Fördermöglichkeiten:",
+        "examples": [
+          {
+            "title": "Anschaffung wetterfester Außenmöbel für ein Café",
+            "text": "Ein Café in der Innenstadt beantragt eine Förderung für die Anschaffung neuer wetterfester und nachhaltiger Außenmöbel im Wert von 10.000 €. Durch die Förderung der gastronomischen Außenmöblierung werden 5.000 € der Investitionskosten bezuschusst."
+          },
+          {
+            "title": "Erweiterung der Außenbestuhlung für ein Restaurant",
+            "text": "Ein Restaurant in Wolfenbüttel möchte seine Außenbestuhlung vergrößern. Für die wetterfesten Stühle und Tische entstehen Kosten von 15.000 €. Die Förderung deckt davon 5.000 €, da alle Kriterien erfüllt werden."
+          }
+        ]
+      },
+      "en": {
+        "title": "The following examples illustrate the funding possibilities:",
+        "examples": [
+          {
+            "title": "Acquisition of weatherproof outdoor furniture for a café",
+            "text": "A café in the city center applies for funding to acquire new weatherproof and sustainable outdoor furniture worth €10,000. Through the funding for gastronomic outdoor furniture, €5,000 of the investment costs are subsidized."
+          },
+          {
+            "title": "Expansion of outdoor seating for a restaurant",
+            "text": "A restaurant in Wolfenbüttel wants to expand its outdoor seating area. For the weatherproof chairs and tables, costs of €15,000 arise. The funding covers €7,500 of it, as all criteria are met."
+          }
+        ]
+      }
+    },
+    "further_information": {
+      "de": {
+        "title": "Weitere Informationen zur Förderung finden Sie in der Satzung:",
+        "links": [
+          {
+            "title": "Satzung zur Förderung der gastronomischen Außenmöblierung",
+            "url": "https://www.wolfenbuettel.de/loadDocument.phtml?FID=3413.8485.1&Ext=PDF"
+          }
+        ]
+      },
+      "en": {
+        "title": "Further information on the funding can be found in the statute:",
+        "links": [
+          {
+            "title": "Statute for the Promotion of Gastronomic Outdoor Furniture",
+            "url": "https://www.wolfenbuettel.de/loadDocument.phtml?FID=3413.8485.1&Ext=PDF"
+          }
+        ]
+      }
+    }
+  },
+  "https://foerderfunke.org/default#wolfenbuettel-ansiedlung": {
+    "id": "ff:wolfenbuettel-ansiedlung",
+    "status": "beta",
+    "category": "business",
+    "title": {
+      "de": "Förderung der Ansiedlung von Einzelhandelsunternehmen und Gastronomiebetrieben in Wolfenbüttel",
+      "en": "Funding for the Establishment of Retail and Gastronomy Businesses in Wolfenbüttel"
+    },
+    "description": {
+      "de": "Die Stadt Wolfenbüttel unterstützt die Ansiedlung von Einzelhandelsunternehmen und Gastronomiebetrieben in der Innenstadt mit finanziellen Zuschüssen zur Existenzgründung, Modernisierung oder Erweiterung.",
+      "en": "The city of Wolfenbüttel supports the establishment of retail and gastronomy businesses in the city center with financial grants for business start-ups, modernization, or expansion."
+    },
+    "application_process": {
+      "de": {
+        "title": "Der Antrag ist bei der Wirtschaftsförderung der Stadt Wolfenbüttel zu stellen. Es wird empfohlen, vor der Antragsstellung eine Beratung bei der Wirtschaftsförderung in Anspruch zu nehmen.",
+        "links": [
+          {
+            "title": "E-Mail-Adresse der Wirtschaftsförderung",
+            "url": "mailto:wirtschaftsfoerderung@wolfenbuettel.de"
+          }
+        ]
+      },
+      "en": {
+        "title": "Applications must be submitted to the Economic Development Office of the City of Wolfenbüttel. It is recommended to seek advice from the Economic Development Office before applying.",
+        "links": [
+          {
+            "title": "Email address of the Economic Development Office",
+            "url": "mailto:wirtschaftsfoerderung@wolfenbuettel.de"
+          }
+        ]
+      }
+    },
+    "funding_conditions": {
+      "de": {
+        "title": "Die Förderung beinhaltet die folgenden Möglichkeiten:",
+        "details": [
+          "Die Förderung kann bis zu 25% der nachweisbaren Investitionskosten abdecken",
+          "Der Höchstbetrag der Förderung beträgt 10.000,00 €",
+          "Gefördert werden Existenzgründungen, Existenzsicherung, Modernisierung und Ausbau im Einzelhandel und der Gastronomie",
+          "Der Standort muss in der Fußgängerzone oder der inneren Okerumflut liegen",
+          "Die Zweckbindung der Förderung beträgt 3 Jahre",
+          "Eine regelmäßige Erfolgskontrolle durch die Stadt Wolfenbüttel ist verpflichtend"
+        ]
+      },
+      "en": {
+        "title": "Funding is subject to the following conditions:",
+        "details": [
+          "Funding can cover up to 25% of verifiable investment costs",
+          "The maximum amount of funding is €10,000.00",
+          "Funding is available for business start-ups, business stabilization, modernization, and expansion in retail and gastronomy",
+          "The business must be located in the pedestrian zone or the inner Okerumflut",
+          "The funding is tied to its purpose for 3 years",
+          "Regular performance monitoring by the City of Wolfenbüttel is required"
+        ]
+      }
+    },
+    "examples": {
+      "de": {
+        "title": "Folgende Beispiele veranschaulichen die Fördermöglichkeiten:",
+        "examples": [
+          {
+            "title": "Modernisierung eines Einzelhandelsgeschäfts in der Fußgängerzone",
+            "text": "Ein Modegeschäft in der Fußgängerzone möchte seine Ladenfläche modernisieren. Die geplanten Investitionskosten betragen 20.000 €. Durch das Ansiedlungsprogramm wird ein Viertel der Kosten, also 5.000 €, bezuschusst."
+          },
+          {
+            "title": "Neueröffnung eines Cafés in der inneren Okerumflut",
+            "text": "Ein neues Café plant die Eröffnung in der inneren Okerumflut. Für Einrichtung und Ausstattung fallen Kosten von 10.000 € an. Die Förderung deckt davon 2.500 € ab, da alle Kriterien erfüllt werden."
+          }
+        ]
+      },
+      "en": {
+        "title": "The following examples illustrate the funding possibilities:",
+        "examples": [
+          {
+            "title": "Modernization of a retail store in the pedestrian zone",
+            "text": "A fashion store in the pedestrian zone wants to modernize its retail space. The planned investment costs amount to €20,000. The establishment program subsidizes a quarter of the costs, i.e., €5,000."
+          },
+          {
+            "title": "Opening of a new café in the inner Okerumflut",
+            "text": "A new café plans to open in the inner Okerumflut. The costs for furnishing and equipment amount to €10,000. The funding covers €2,500 of this, as all criteria are met."
+          }
+        ]
+      }
+    },
+    "further_information": {
+      "de": {
+        "title": "Weitere Informationen zur Förderung finden Sie in der Satzung:",
+        "links": [
+          {
+            "title": "Satzung zur Förderung der Einzelhandels- und Gastronomiebetriebe",
+            "url": "https://www.wolfenbuettel.de/loadDocument.phtml?FID=2093.1241.1&Ext=PDF"
+          }
+        ]
+      },
+      "en": {
+        "title": "Further information on the funding can be found in the statute:",
+        "links": [
+          {
+            "title": "Statute for the Promotion of Retail and Gastronomy Businesses",
+            "url": "https://www.wolfenbuettel.de/loadDocument.phtml?FID=2093.1241.1&Ext=PDF"
+          }
+        ]
+      }
+    }
   }
 }
