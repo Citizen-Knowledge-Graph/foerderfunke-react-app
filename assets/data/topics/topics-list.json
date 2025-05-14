@@ -78,5 +78,21 @@
       "en": "Innovation & Research",
       "de": "Innovation & Forschung"
     }
+  },
+  {
+    "id": "ff:wolfenbuettel-ansiedlung",
+    "category": "business",
+    "title": {
+      "en": "Self-Employment & Startups",
+      "de": "Selbständigkeit & Gründung"
+    }
+  },
+  {
+    "id": "ff:wolfenbuettel-gastronomische-aussenmoeblierung",
+    "category": "business",
+    "title": {
+      "en": "Self-Employment & Startups",
+      "de": "Selbständigkeit & Gründung"
+    }
   }
 ]
