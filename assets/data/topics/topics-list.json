@@ -80,19 +80,11 @@
     }
   },
   {
-    "id": "ff:wolfenbuettel-ansiedlung",
+    "id": "ff:gewerbe-foerderung",
     "category": "business",
     "title": {
-      "en": "Self-Employment & Startups",
-      "de": "Selbständigkeit & Gründung"
-    }
-  },
-  {
-    "id": "ff:wolfenbuettel-gastronomische-aussenmoeblierung",
-    "category": "business",
-    "title": {
-      "en": "Self-Employment & Startups",
-      "de": "Selbständigkeit & Gründung"
+      "de": "Gastronomie & Gewerbe",
+      "en": "Gastronomy & Trade"
     }
   }
 ]
