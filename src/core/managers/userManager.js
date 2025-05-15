@@ -87,11 +87,7 @@ const userManager = {
     },
 
     retrieveUserData(entityId="ff:quick-check-user") {
-        const userProfile = localStorageService.getItem(entityId);
-        if (!userProfile) {
-            throw new Error(`No user found with ID: ${entityId}`);
-        }
-        return userProfile;
+        return localStorageService.getItem(entityId);
     },
 
     retrieveUserIds() {

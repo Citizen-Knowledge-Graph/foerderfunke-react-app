@@ -1,7 +1,7 @@
 import {RuleType} from "@foerderfunke/matching-engine/src/prematch";
 import {convertUserValueRaw, expand, getChoiceLabel} from "./rdfParsing";
 import {ValidationResult} from "@foerderfunke/matching-engine";
-import {formatEuro} from "../../ui/utils/currencyUtils";
+import {formatEuro} from "@/ui/utils/currencyUtils";
 
 const trim = (str) => {
     return str.substring(0, str.length - 2);
@@ -71,7 +71,7 @@ export const buildRulesOutput = (rulesData, metadata, benefitReport, userProfile
     const elements = [];
 
     let materializedOutputs = {};
-    if (Object.keys(benefitReport).length > 0 && benefitReport.materializationReport.rounds.length > 0) {
+    if (benefitReport && Object.keys(benefitReport).length > 0 && benefitReport?.materializationReport?.rounds.length > 0) {
         let matRounds = benefitReport.materializationReport.rounds;
         for (let obj of Object.values(matRounds[0])) {
             materializedOutputs[obj.output] = obj;
@@ -95,13 +95,13 @@ export const buildRulesOutput = (rulesData, metadata, benefitReport, userProfile
         let validity = "unknown"; // "valid", "invalid", "missing"
         if (dfObj) {
             dfObj.uri = dfUri;
-            userValue = showUserValue(dfObj, userProfile, materializedOutputs, metadata, t);
+            userValue = userProfile ? showUserValue(dfObj, userProfile, materializedOutputs, metadata, t) : null
 
-            if (benefitReport.result === ValidationResult.ELIGIBLE) {
+            if (benefitReport?.result === ValidationResult.ELIGIBLE) {
                 validity = "valid";
-            } else if (benefitReport.missingUserInput.find(missing => missing.dfUri === dfObj.uri)) {
+            } else if (benefitReport?.missingUserInput?.find(missing => missing.dfUri === dfObj.uri)) {
                 validity = "missing";
-            } else if (benefitReport.violations.find(violation => violation.path === dfObj.uri)) {
+            } else if (benefitReport?.violations?.find(violation => violation.path === dfObj.uri)) {
                 validity = "invalid";
             } else if (userValue !== "-") {
                 validity = "valid";

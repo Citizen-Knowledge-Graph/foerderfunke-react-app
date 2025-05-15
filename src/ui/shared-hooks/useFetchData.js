@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import resourceService from '../../core/services/resourceService';
+import resourceService from '@/core/services/resourceService';
 
 const useFetchData = (filePath) => {
     const [data, setData] = useState(null);
@@ -7,7 +7,7 @@ const useFetchData = (filePath) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const fetchedData = await resourceService.fetchResource(filePath);
+                const fetchedData = await resourceService.fetchResourceWithCache(filePath);
                 setData(fetchedData);
             } catch (err) {
                 console.error('Failed to fetch data:', err);

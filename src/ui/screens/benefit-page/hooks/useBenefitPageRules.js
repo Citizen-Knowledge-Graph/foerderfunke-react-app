@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { transformRulesFromRequirementProfile } from "@foerderfunke/matching-engine/src/prematch";
-import resourceService from "../../../../core/services/resourceService";
+import resourceService from "@/core/services/resourceService";
 
 const useBenefitPageRules = (benefitId, validationConfig, validationReport) => {
     const [rulesData, setRulesData] = useState({});
@@ -21,7 +21,7 @@ const useBenefitPageRules = (benefitId, validationConfig, validationReport) => {
             const rules = await transformRulesFromRequirementProfile(rpTurtleStr);
 
             setRulesData(rules);
-            setBenefitReport(validationReport.reports.find(report => report.rpUri === rpUri));
+            setBenefitReport(validationReport?.reports?.find(report => report.rpUri === rpUri));
         };
 
         fetchRulesData();

@@ -10,19 +10,19 @@ const usePopulateMetadata = () => {
     const isRunningRef = useRef(false);
 
     useEffect(() => {
-        const produceMetadata = async () => {
-            if (isRunningRef.current || metadata[language]?.rp) return;
-            isRunningRef.current = true;
+        if (!metadata[language]?.rp && !isRunningRef.current) {
+            const produceMetadata = async () => {
+                isRunningRef.current = true;
+                await fetchMetadata();
+                isRunningRef.current = false;
+            };
 
-            await fetchMetadata();
-
-            isRunningRef.current = false;
-        };
-
-        produceMetadata();
+            produceMetadata();
+        }
     }, [metadata, fetchMetadata, language]);
 
     return metadata[language] || null;
 };
 
 export default usePopulateMetadata;
+

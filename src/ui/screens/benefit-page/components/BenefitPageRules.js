@@ -4,13 +4,13 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useUserStore, useValidationReportStore } from "@/ui/storage/zustand";
 import userManager from "@/core/managers/userManager";
 import { buildRulesOutput } from "@/core/utils/ruleParsing";
-import BenefitPageRuleEntry from "./BenefitPageRuleEntry";
 import useTranslation from "@/ui/language/useTranslation";
 import useFetchData from "@/ui/shared-hooks/useFetchData";
-import useBenefitPageRules from "../hooks/useBenefitPageRules";
 import { VBox, HBox } from "@/ui/shared-components/LayoutBoxes";
 import theme from "@/theme";
 import useAccessMetadata from "@/ui/storage/useAccessMetadata";
+import useBenefitPageRules from "../hooks/useBenefitPageRules";
+import BenefitPageRuleEntry from "./BenefitPageRuleEntry";
 
 const BenefitPageRules = ({ benefitId, validatedStatus }) => {
     const { t } = useTranslation();
@@ -50,7 +50,7 @@ const BenefitPageRules = ({ benefitId, validatedStatus }) => {
             </HBox>
             {
                 showRules && (
-                    <Collapse in={showRules} sx={{ marginTop: theme.spacing(1) }}>
+                    <Collapse in={showRules} sx={{ marginTop: 1 }}>
                         <VBox gap={1}>
                             {rules &&
                                 rules.map((rule, index) => (

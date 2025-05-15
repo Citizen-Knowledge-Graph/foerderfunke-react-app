@@ -1,7 +1,10 @@
 import { useMemo } from 'react';
 import { ValidationResult } from '@foerderfunke/matching-engine';
+import { useValidationReportStore } from '@/ui/storage/zustand';
 
-const useIsMissingDataBenefit = (id, validationReport) => {
+const useIsMissingDataBenefit = (id) => {
+    const validationReport = useValidationReportStore((state) => state.validationReport);
+    
     return useMemo(() => {
         if (!validationReport) return false;
 

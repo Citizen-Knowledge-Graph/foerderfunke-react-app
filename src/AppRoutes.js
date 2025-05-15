@@ -5,7 +5,7 @@ import InfoPageRouter from '@/ui/screens/info-pages/InfoPageRouter';
 import OnboardingChoice from '@/ui/screens/onboarding-pages/choice/OnboardingChoice';
 import OnboardingWelcomeOverviewContainer from '@/ui/screens/onboarding-pages/overview/OnboardingWelcomeOverviewContainer';
 import EligibilityOverviewScreenContainer from '@/ui/screens/eligibilty-overview/EligibilityOverviewScreenContainer';
-import BenefitPageScreen from '@/ui/screens/benefit-page/BenefitPageScreen';
+import BenefitPageScreenContainer from '@/ui/screens/benefit-page/BenefitPageScreenContainer';
 import ProfileScreen from '@/ui/screens/profile-screen/ProfileScreen';
 import ActivityLogScreen from '@/ui/screens/activity-log/ActivityLogScreen';
 import ResolveUriScreen from '@/ui/screens/resolve-uri/ResolveUriScreen';
@@ -25,7 +25,7 @@ const AppRoutes = () => (
         <Route path="/onboarding-welcome" element={<OnboardingWelcomeOverviewContainer/>}/>
         <Route path="/onboarding-welcome/:benefitMode" element={<OnboardingWelcomeOverviewContainer/>}/>
         <Route path="/eligibility-overview" element={<EligibilityOverviewScreenContainer/>}/>
-        <Route path="/benefit-page/:id" element={<BenefitPageScreen/>}/>
+        <Route path="/benefit-page/:id" element={<BenefitPageScreenContainer/>}/>
         <Route path="/profile-overview" element={<ProfileScreen/>}/>
         <Route path="/activity-log" element={<ActivityLogScreen/>}/>
         <Route path="/default" element={<ResolveUriScreen/>}/>
