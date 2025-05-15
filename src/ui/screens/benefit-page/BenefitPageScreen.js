@@ -29,7 +29,7 @@ const BenefitPageScreen = () => {
 
     const isDesktop = useStore((state) => state.isDesktop);
     const validationReport = useValidationReportStore((state) => state.validationReport);
-    const metadata = useAccessMetadata
+    const metadata = useAccessMetadata();
 
     const hydrationData = useFetchData('assets/data/requirement-profiles/requirement-profiles-hydration.json')
     const benefitPageData = useFetchBenefitPageData(id, hydrationData, language);
