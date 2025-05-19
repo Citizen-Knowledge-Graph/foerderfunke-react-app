@@ -27,14 +27,12 @@ export const useInitialiseApplication = () => {
 
             // 🔄 **Check Initialization State*
             if (initialisationState) {
-                console.log("⚠️ Application already initialized. Skipping.");
                 setIsLoading(false);
                 return;
             }
 
             // 🔄 **Avoid Re-initialization:**
             if (initializedRef.current || isInitializingRef.current) {
-                console.log("⚠️ Initialization already running. Skipping.");
                 return;
             }
 

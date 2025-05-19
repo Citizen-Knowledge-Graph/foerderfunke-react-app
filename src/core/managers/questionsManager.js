@@ -6,7 +6,7 @@ import { useCachingService } from "@/core/services/cachingService";
 import { createDeepCacheKey } from "@/core/utils/createDeepCacheKey";
 
 const questionsManager = {
-  async fetchPrioritizedQuestions(userId, topicIds, benefitId, language = "en") {
+  async fetchPrioritizedQuestions(userId, topicIds, benefitId, language) {
     const cacheStore = useCachingService.getState();
 
     // Get the active user profile
@@ -37,7 +37,7 @@ const questionsManager = {
         ? "https://foerderfunke.org/default#" + id.split(":")[1]
         : id;
 
-    const cacheKey = createDeepCacheKey(topicIds, benefitId, userProfile, expand);
+    const cacheKey = createDeepCacheKey(topicIds, benefitId, userProfile, language, expand);
     const cachedResult = cacheStore.getResource(cacheKey);
     if (cachedResult) return cachedResult;
 

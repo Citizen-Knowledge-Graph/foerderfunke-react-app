@@ -1,11 +1,12 @@
 import stringify from "fast-json-stable-stringify";
 import _ from "lodash";
 
-export const createDeepCacheKey = (topicIds, benefitId, userProfile, expand) => {
+export const createDeepCacheKey = (topicIds, benefitId, userProfile, language, expand) => {
     const normalizedKeyData = {
       topicIds: _.sortBy(topicIds),
       benefitId: benefitId ? expand(benefitId) : null,
       userProfile: _.cloneDeep(userProfile),
+      language: language,
     };
   
     const deeplySortedKeyData = _.cloneDeepWith(normalizedKeyData, (val) => {
