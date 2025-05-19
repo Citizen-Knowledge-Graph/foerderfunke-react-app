@@ -1,20 +1,20 @@
-import { useContext, useCallback } from "react";
+import { useCallback } from "react";
 import {
     useQuestionsStore,
     useSelectedBenefitStore,
     useSelectedTopicsStore,
     useUserStore,
 } from "@/ui/storage/zustand";
-import { LanguageContext } from "@/ui/language/LanguageContext";
 import questionsManager from "@/core/managers/questionsManager";
 import { useQuestionsUpdate } from "@/ui/storage/updates";
+import { useLanguageStore } from "@/ui/storage/useLanguageStore";
 
 const useRunPrioritizedQuestions = () => {
     const userId = useUserStore((state) => state.activeUserId);
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
     const selectedBenefit = useSelectedBenefitStore((state) => state.selectedBenefit);
     const setQuestionsAreLoading = useQuestionsUpdate((state) => state.setQuestionsAreLoading);
-    const { language } = useContext(LanguageContext);
+    const language = useLanguageStore((state) => state.language);
 
     const runPrioritizedQuestions = useCallback(async () => {
         if (!userId || (!selectedTopics && !selectedBenefit)) return;

@@ -1,5 +1,5 @@
 import React from 'react';
-import useFetchData from "@/ui/shared-hooks/useFetchData";
+import useFetchData from "@/ui/shared-hooks/utility/useFetchResource";
 import useTopicSelectionHandlers from "../hooks/useTopicSelectionHandlers";
 import useTranslation from "@/ui/language/useTranslation";
 import OnboardingWelcomeTopics from './OnboardingWelcomeTopics';

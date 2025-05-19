@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Layout from "../../shared-components/Layout";
-import AppScreenWrapper from "../../shared-components/AppScreenWrapper";
+import AppScreenWrapper from "../../shared-components/app-screen-wrapper/AppScreenWrapper";
 import {useStore} from "../../shared-components/ViewportUpdater";
 import {useLocation} from "react-router-dom";
 import resourceService from "../../../core/services/resourceService";

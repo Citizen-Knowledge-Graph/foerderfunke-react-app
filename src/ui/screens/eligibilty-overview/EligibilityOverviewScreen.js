@@ -1,11 +1,10 @@
 import React from 'react';
 import { CircularProgress } from "@mui/material";
 import Layout from "@/ui/shared-components/Layout";
-import AppScreenWrapper from "@/ui/shared-components/AppScreenWrapper";
+import AppScreenWrapperContainer from "@/ui/shared-components/app-screen-wrapper/AppScreenWrapperContainer";
 import { VBox } from '@/ui/shared-components/LayoutBoxes';
 import EligibilityOverviewHeader from "./components/EligibilityOverviewHeader";
 import EligibilityOverviewSection from "./components/EligibilityOverviewSection";
-
 
 const EligibilityOverviewScreen = ({
     t,
@@ -16,7 +15,7 @@ const EligibilityOverviewScreen = ({
 
     return (
         <Layout isApp={true} logo={true}>
-            <AppScreenWrapper isLoading={validationIsLoading} back={true}>
+            <AppScreenWrapperContainer isLoading={validationIsLoading} back={true}>
                 <VBox sx={{ gap: { xs: 4, md: 8 } }} >
                     <EligibilityOverviewHeader iconPaths={iconPaths} />
                     {
@@ -47,7 +46,7 @@ const EligibilityOverviewScreen = ({
                             <VBox sx={{ alignItems: "center" }}><CircularProgress /></VBox>
                     }
                 </VBox>
-            </AppScreenWrapper>
+            </AppScreenWrapperContainer>
         </Layout >
     );
 };

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import resourceService from '@/core/services/resourceService';
 
-const useFetchData = (filePath) => {
+const useFetchResource = (filePath) => {
     const [data, setData] = useState(null);
 
     useEffect(() => {
@@ -22,4 +22,4 @@ const useFetchData = (filePath) => {
     return data;
 };
 
-export default useFetchData;
+export default useFetchResource;

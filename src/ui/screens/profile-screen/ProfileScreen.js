@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from "../../shared-components/Layout";
-import AppScreenWrapper from "../../shared-components/AppScreenWrapper";
+import AppScreenWrapper from "../../shared-components/app-screen-wrapper/AppScreenWrapper";
 import { useStore } from "../../shared-components/ViewportUpdater";
 import { Typography } from "@mui/material";
 import ProfileDataList from "./components/ProfileDataList";

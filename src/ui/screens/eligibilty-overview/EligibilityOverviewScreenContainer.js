@@ -1,16 +1,16 @@
-import React, { useContext } from 'react';
-import { LanguageContext } from "@/ui/language/LanguageContext";
+import React from 'react';
 import { useValidationUpdate } from "@/ui/storage/updates";
-import useFetchData from "@/ui/shared-hooks/useFetchData";
+import useFetchData from "@/ui/shared-hooks/utility/useFetchResource";
 import useTranslation from "@/ui/language/useTranslation";
 import EligibilityOverviewScreen from './EligibilityOverviewScreen';
 import useEligibilityData from "./hooks/useEligibilityData";
 import useProduceValidationReport from './hooks/useProduceValidationReport';
 import usePopulateMetadata from '../onboarding-pages/hooks/usePopulateMetadata';
+import { useLanguageStore } from '@/ui/storage/useLanguageStore';
 
 const EligibilityOverviewScreenContainer = () => {
     const { t } = useTranslation();
-    const { language } = useContext(LanguageContext);
+    const language = useLanguageStore((state) => state.language);
     
     const validationIsLoading = useValidationUpdate((state) => state.validationIsLoading);
     const hydrationData = useFetchData('assets/data/requirement-profiles/requirement-profiles-hydration.json');

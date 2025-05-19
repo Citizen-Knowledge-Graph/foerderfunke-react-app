@@ -6,13 +6,13 @@ import ViewportUpdater from './ui/shared-components/ViewportUpdater';
 import ScrollToTop from './ScrollToTop';
 import Handle404Redirect from './Handle404Redirect';
 import AppRoutes from './AppRoutes';
-import { LanguageProvider } from './ui/language/LanguageContext';
 import AppGlobalState from './AppGlobalState';
 import theme from './theme';
+import { AppInitialisationProvider } from './AppInitialisationProvider';
 
 const App = () => {
     return (
-        <LanguageProvider>
+        <AppInitialisationProvider>
             <ThemeProvider theme={theme}>
                 <ViewportUpdater />
                 <AppGlobalState />
@@ -22,7 +22,7 @@ const App = () => {
                     <AppRoutes />
                 </Router>
             </ThemeProvider>
-        </LanguageProvider>
+        </AppInitialisationProvider>
     );
 };
 

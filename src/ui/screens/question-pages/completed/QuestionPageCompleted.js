@@ -4,7 +4,7 @@ import ProfileDataList from "@/ui/screens/profile-screen/components/ProfileDataL
 import useTranslation from "@/ui/language/useTranslation";
 import { VBox, HBox } from "@/ui/shared-components/LayoutBoxes";
 import Layout from "@/ui/shared-components/Layout";
-import AppScreenWrapper from "@/ui/shared-components/AppScreenWrapper";
+import AppScreenWrapper from "@/ui/shared-components/app-screen-wrapper/AppScreenWrapper";
 import { useStore } from "@/ui/shared-components/ViewportUpdater";
 import RegularButton from '@/ui/shared-components/RegularButton';
 

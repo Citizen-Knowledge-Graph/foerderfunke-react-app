@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from "@/ui/shared-components/Layout";
-import AppScreenWrapper from "@/ui/shared-components/AppScreenWrapper";
+import AppScreenWrapper from "@/ui/shared-components/app-screen-wrapper/AppScreenWrapper";
 import QuestionPageHeader from '../components/QuestionPageHeader';
 import { VBox } from "@/ui/shared-components/LayoutBoxes";
 import QuestionPageQuestionsCount from '../components/QuestionPageQuestionsCount';

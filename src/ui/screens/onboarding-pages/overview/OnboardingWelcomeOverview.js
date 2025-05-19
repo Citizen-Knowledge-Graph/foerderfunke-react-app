@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography } from '@mui/material';
 import Layout from "@/ui/shared-components/Layout";
-import AppScreenWrapper from "@/ui/shared-components/AppScreenWrapper";
+import AppScreenWrapper from "@/ui/shared-components/app-screen-wrapper/AppScreenWrapper";
 import { VBox, HBox } from "@/ui/shared-components/LayoutBoxes";
 import theme from "@/theme";
 import RegularButton from '@/ui/shared-components/RegularButton';

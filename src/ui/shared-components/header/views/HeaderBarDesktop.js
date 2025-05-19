@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { LanguageContext } from "@/ui/language/LanguageContext";
+import React, { useEffect, useState } from 'react';
 import useTranslation from "@/ui/language/useTranslation";
 import { Link } from "react-router-dom";
 import { HBox } from '@/ui/shared-components/LayoutBoxes';
@@ -8,9 +7,11 @@ import AntSwitch from '@/ui/shared-components/AntSwitch';
 import LandingPageHollowButtonDesktop from '@/ui/screens/landing-page/components/LandingPageButtonDesktop';
 import theme from '@/theme';
 import RegularButton from '@/ui/shared-components/RegularButton';
+import { useLanguageStore } from '@/ui/storage/useLanguageStore';
 
 const HeaderBarDesktop = ({ isApp }) => {
-    const { language, setLanguage } = useContext(LanguageContext);
+    const language = useLanguageStore((state) => state.language);
+    const setLanguage = useLanguageStore((state) => state.setLanguage);
     const { t } = useTranslation();
     const isEnglish = language === "en";
 

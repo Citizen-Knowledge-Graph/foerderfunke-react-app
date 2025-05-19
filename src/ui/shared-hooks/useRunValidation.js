@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import {
     useMetadataStore,
     useUserStore,
@@ -6,12 +5,12 @@ import {
 } from "@/ui/storage/zustand";
 import validationManager from "@/core/managers/validationManager";
 import { useValidationUpdate } from "@/ui/storage/updates";
-import { LanguageContext } from "@/ui/language/LanguageContext";
+import { useLanguageStore } from "@/ui/storage/useLanguageStore";
 
 const useRunValidation = () => {
     const userId = useUserStore((state) => state.activeUserId);
     const setValidationIsLoading = useValidationUpdate.getState().setValidationIsLoading;
-    const { language } = useContext(LanguageContext);
+    const language = useLanguageStore((state) => state.language);
 
     const runValidation = async () => {
         if (!userId) return;

@@ -1,9 +1,8 @@
-import { useContext } from "react";
-import { LanguageContext } from "@/ui/language/LanguageContext";
 import { useMetadataStore } from "@/ui/storage/zustand";
+import { useLanguageStore } from "./useLanguageStore";
 
 const useAccessMetadata = () => {
-    const { language } = useContext(LanguageContext);
+    const language = useLanguageStore((state) => state.language);
     const metadata = useMetadataStore((state) => state.metadata);
 
     return metadata[language] || null;

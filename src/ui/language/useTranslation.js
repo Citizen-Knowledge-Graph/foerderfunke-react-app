@@ -1,9 +1,9 @@
-import { useContext, useCallback } from 'react';
-import { LanguageContext } from './LanguageContext';
+import { useCallback } from 'react';
+import { useLanguageStore } from '@/ui/storage/useLanguageStore';
 import translations from './translations';
 
 function useTranslation() {
-  const { language } = useContext(LanguageContext);
+  const language = useLanguageStore((state) => state.language);
 
   const t = useCallback((key, kwargs = {}) => {
     let value = translations[language] || translations['en'];

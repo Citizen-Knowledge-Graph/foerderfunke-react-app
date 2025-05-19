@@ -1,23 +1,20 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import userManager from "@/core/managers/userManager";
-import { useUserExistsStatus, UserStatus } from "./hooks/useUserExistsStatus";
+import React from 'react';
+import { Navigate } from 'react-router-dom';
+import { useUserExistsStatus } from './hooks/useUserExistsStatus';
 
 const InfoPageRouter = () => {
-    const userStatus = useUserExistsStatus(userManager);
-    const navigate = useNavigate();
-  
-    useEffect(() => {
-      if (userStatus === UserStatus.USER_EXISTS) {
-        navigate("/returning-user");
+  const userExists = useUserExistsStatus();
+
+  // once we know, render a <Navigate> to the right path
+  return (
+    <Navigate
+      to={userExists
+        ? "/returning-user"
+        : "/privacy-info"
       }
-  
-      if (userStatus === UserStatus.USER_DOES_NOT_EXIST) {
-        navigate("/privacy-info");
-      }
-    }, [userStatus, navigate]);
-  
-    return null;
-  };
-  
+      replace
+    />
+  );
+};
+
 export default InfoPageRouter;

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Typography, Button } from '@mui/material';
 import Layout from '@/ui/shared-components/Layout';
-import AppScreenWrapper from "@/ui/shared-components/AppScreenWrapper";
+import AppScreenWrapperContainer from "@/ui/shared-components/app-screen-wrapper/AppScreenWrapperContainer";
 import useTranslation from "@/ui/language/useTranslation";
 import { Link } from "react-router-dom";
 import { HBox, VBox } from '@/ui/shared-components/LayoutBoxes';
-import useJointValidationStatus from "@/ui/shared-hooks/useJointValidationStatus";
+import useJointValidationStatus from "@/ui/shared-hooks/utility/useJointValidationStatus";
 
 const OnboardingChoice = () => {
     const { t } = useTranslation();
@@ -13,7 +13,7 @@ const OnboardingChoice = () => {
 
     return (
         <Layout isApp={true}>
-            <AppScreenWrapper isLoading={isLoadingJointStatus} backTarget={'/user-routing'}>
+            <AppScreenWrapperContainer isLoading={isLoadingJointStatus} backTarget={'/user-routing'}>
                 <VBox sx={{ gap: { xs: 4, md: 8 } }}>
                     <HBox sx={{ maxWidth: '800px' }}>
                         <Typography variant="h1">
@@ -74,7 +74,7 @@ const OnboardingChoice = () => {
                         </HBox>
                     </HBox>
                 </VBox>
-            </AppScreenWrapper>
+            </AppScreenWrapperContainer>
         </Layout >
     );
 };

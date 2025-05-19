@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from "@/ui/shared-components/Layout";
-import AppScreenWrapper from "@/ui/shared-components/AppScreenWrapper";
 import { Box, Typography } from "@mui/material";
 import theme from '@/theme';
 import { VBox } from '@/ui/shared-components/LayoutBoxes';
@@ -10,6 +9,7 @@ import BenefitPageLinksList from './components/BenefitPageLinksList';
 import BenefitPageExampleList from './components/BenefitPageExampleList';
 import BenefitPageRules from "./components/BenefitPageRules";
 import BenefitPageHeader from "./components/BenefitPageHeader";
+import AppScreenWrapperContainer from '@/ui/shared-components/app-screen-wrapper/AppScreenWrapperContainer';
 
 const BenefitPageScreen = ({
     t,
@@ -22,7 +22,7 @@ const BenefitPageScreen = ({
 
     return (
         <Layout isApp={true} logo={false} back="Back">
-            <AppScreenWrapper isLoading={isLoading} backTarget={'/eligibility-overview'}>
+            <AppScreenWrapperContainer isLoading={isLoading} backTarget={'/eligibility-overview'}>
                 <VBox sx={{ gap: { xs: 4, md: 8 } }}>
                     <BenefitPageHeader id={id} benefit={benefitPageData} validatedStatus={validatedStatus} categoryTitles={categoryTitles} />
                     <Box gap={2} sx={{
@@ -80,7 +80,7 @@ const BenefitPageScreen = ({
                         }
                     </Box>
                 </VBox>
-            </AppScreenWrapper>
+            </AppScreenWrapperContainer>
         </Layout>
     );
 };

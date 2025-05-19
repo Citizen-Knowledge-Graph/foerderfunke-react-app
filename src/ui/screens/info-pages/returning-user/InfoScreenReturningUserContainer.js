@@ -1,6 +1,4 @@
 import React from "react";
-import useTranslation from "../../../language/useTranslation";
-import userManager from "../../../../core/managers/userManager";
 import dayjs from "dayjs";
 import { convertUserProfileToTurtle } from "@foerderfunke/matching-engine/src/profile-conversion";
 import {
@@ -8,10 +6,12 @@ import {
   useSelectedBenefitStore,
   useSelectedTopicsStore,
   useValidationReportStore,
-} from "../../../storage/zustand";
-import { useUserStore } from "../../../storage/zustand";
+} from "@/ui/storage/zustand";
+import useTranslation from "@/ui/language/useTranslation";
+import userManager from "@/core/managers/userManager";
+import { useUserStore } from "@/ui/storage/zustand";
 import InfoScreenReturningUser from "./InfoScreenReturningUser";
-import useJointValidationStatus from "@/ui/shared-hooks/useJointValidationStatus";
+import useJointValidationStatus from "@/ui/shared-hooks/utility/useJointValidationStatus";
 
 const InfoScreenReturningUserContainer = () => {
   const { t } = useTranslation();

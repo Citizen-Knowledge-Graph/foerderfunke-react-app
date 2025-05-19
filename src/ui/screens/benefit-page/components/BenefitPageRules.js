@@ -5,7 +5,7 @@ import { useUserStore, useValidationReportStore } from "@/ui/storage/zustand";
 import userManager from "@/core/managers/userManager";
 import { buildRulesOutput } from "@/core/utils/ruleParsing";
 import useTranslation from "@/ui/language/useTranslation";
-import useFetchData from "@/ui/shared-hooks/useFetchData";
+import useFetchData from "@/ui/shared-hooks/utility/useFetchResource";
 import { VBox, HBox } from "@/ui/shared-components/LayoutBoxes";
 import theme from "@/theme";
 import useAccessMetadata from "@/ui/storage/useAccessMetadata";

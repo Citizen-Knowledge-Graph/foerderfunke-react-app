@@ -1,21 +1,24 @@
-import { useEffect, useState } from "react";
+import userManager from "@/core/managers/userManager";
 
 export const UserStatus = {
-  USER_EXISTS: "USER_EXISTS",
-  USER_DOES_NOT_EXIST: "USER_DOES_NOT_EXIST",
+  EXISTS:           "USER_EXISTS",
+  DOES_NOT_EXIST:  "USER_DOES_NOT_EXIST",
 };
 
-export const useUserExistsStatus = (userManager) => {
-  const [userStatus, setUserStatus] = useState(null);
+const ALLOWED_ROOT_KEYS = ["@id", "@type"];
 
-  useEffect(() => {
-    const userIds = userManager.retrieveUserIds();
-    if (userIds.length === 0) {
-      setUserStatus(UserStatus.USER_DOES_NOT_EXIST);
-    } else {
-      setUserStatus(UserStatus.USER_EXISTS);
-    }
-  }, [userManager]);
+function hasExtraRootKeys(obj) {
+  return Object
+    .keys(obj)
+    .some(key => !ALLOWED_ROOT_KEYS.includes(key));
+}
 
-  return userStatus;
-};
+export function useUserExistsStatus(id = "ff:quick-check-user") {
+  const profile = userManager.retrieveUserData(id);
+
+  if (!profile) {
+    return false;
+  }
+
+  return hasExtraRootKeys(profile);
+}

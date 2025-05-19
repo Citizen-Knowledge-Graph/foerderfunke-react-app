@@ -1,9 +1,9 @@
-import React, { useState, useContext } from 'react';
-import { LanguageContext } from "@/ui/language/LanguageContext";
+import React, { useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import { IconButton } from '@mui/material';
 import { Link } from 'react-router-dom';
 import LogoBar from "@/ui/shared-components/LogoBar";
+import { useLanguageStore } from '@/ui/storage/useLanguageStore';
 import useTranslation from "@/ui/language/useTranslation";
 import { HBox, VBox } from "@/ui/shared-components/LayoutBoxes";
 import LandingPageHollowButtonMobile from '@/ui/screens/landing-page/components/LandingPageButtonMobile';
@@ -12,7 +12,8 @@ import LandingPageButton from '@/ui/screens/landing-page/sections/top-section/co
 
 const HeaderBarMobile = ({ isApp }) => {
     const [showDropdown, setShowDropdown] = useState(false);
-    const { language, setLanguage } = useContext(LanguageContext);
+    const language = useLanguageStore((state) => state.language);
+    const setLanguage = useLanguageStore((state) => state.setLanguage);
     const { t } = useTranslation();
     const isEnglish = language === "en";
     const color = isApp ? 'white.main' : 'black.main';

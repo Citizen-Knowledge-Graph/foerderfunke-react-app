@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Typography, Button } from '@mui/material';
 import { HBox } from "@/ui/shared-components/LayoutBoxes";
-import { LanguageContext } from "@/ui/language/LanguageContext";
-import theme from "../../../../theme";
+import theme from "@/theme";
+import { useLanguageStore } from '@/ui/storage/useLanguageStore';
 
 const ClickableTopicBox = ({ topic, onClick }) => {
-    const { language } = useContext(LanguageContext);
+    const language = useLanguageStore((state) => state.language);
 
     return (
         <HBox>

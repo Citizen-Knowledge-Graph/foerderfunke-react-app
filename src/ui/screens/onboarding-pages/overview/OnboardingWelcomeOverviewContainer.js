@@ -1,19 +1,20 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useParams } from "react-router-dom";
 import useTranslation from "@/ui/language/useTranslation";
-import { LanguageContext } from "@/ui/language/LanguageContext";
 import { useSelectedBenefitStore, useSelectedTopicsStore } from "@/ui/storage/zustand";
-import useJointValidationStatus from "@/ui/shared-hooks/useJointValidationStatus";
+import useJointValidationStatus from "@/ui/shared-hooks/utility/useJointValidationStatus";
+import { useLanguageStore } from "@/ui/storage/useLanguageStore";
 import OnboardingWelcomeOverview from './OnboardingWelcomeOverview';
 import useNumberOfBenefits from "../hooks/useNumberOfBenefits";
 import usePopulateMetadata from '../hooks/usePopulateMetadata';
 import useProduceOverviewTitles from "../hooks/useProduceOverviewTitles";
 
+
 const OnboardingWelcomeOverviewContainer = () => {
     const { benefitMode } = useParams();
     const { t } = useTranslation();
     const { isLoadingJointStatus } = useJointValidationStatus();
-    const { language } = useContext(LanguageContext);
+    const language = useLanguageStore((state) => state.language);
 
     const selectedBenefit = useSelectedBenefitStore((state) => state.selectedBenefit);
     const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);

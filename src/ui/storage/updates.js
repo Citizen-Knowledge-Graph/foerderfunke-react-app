@@ -1,6 +1,13 @@
 import {create} from 'zustand';
 
-export const useValidationUpdate = create((set, get) => ({
+export const useInitialisationState = create((set) => ({
+    initialisationState: false,
+    setInitialisationState: (state) => {
+        set({initialisationState: state});
+    }
+}));
+
+export const useValidationUpdate = create((set) => ({
     updateCounter: -1,
     triggerValidationUpdate: () => {
         console.log('STATE UPDATE: We are triggering a validation run');

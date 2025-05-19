@@ -1,9 +1,9 @@
 import React, { useLayoutEffect, useRef } from "react";
-import { VBox } from "./LayoutBoxes";
-import Loading from "./Loading";
-import { useStore } from "./ViewportUpdater";
+import { VBox } from "../LayoutBoxes";
+import Loading from "../Loading";
+import { useStore } from "../ViewportUpdater";
 import theme from "@/theme";
-import AppScreenNavigation from "./AppScreenNavigation";
+import AppScreenNavigation from "../AppScreenNavigation";
 
 const AppScreenWrapper = ({ children, isLoading, scrollKey, backTarget }) => {
     const wrapperRef = useRef(null);

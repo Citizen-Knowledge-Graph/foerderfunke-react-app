@@ -4,14 +4,14 @@ import { Button, Typography } from "@mui/material";
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Layout from "@/ui/shared-components/Layout";
-import AppScreenWrapper from "@/ui/shared-components/AppScreenWrapper";
+import AppScreenWrapperContainer from "@/ui/shared-components/app-screen-wrapper/AppScreenWrapperContainer";
 import { VBox, HBox } from "@/ui/shared-components/LayoutBoxes";
 
 
 const InfoScreenReturningUser = ({ t, isLoading, exportProfile, continueWithExisting, deleteExistingProfile }) => {
     return (
     <Layout isApp={true} logo={false}>
-      <AppScreenWrapper isLoading={isLoading} home={true} backTarget={-1}>
+      <AppScreenWrapperContainer isLoading={isLoading} home={true} backTarget={-1}>
         <VBox sx={{ gap: 8 }}>
           <Typography variant="h1">{t('app.welcomeBack.header')}</Typography>
           <Typography variant="body1">{t("app.welcomeBack.text")}</Typography>
@@ -85,7 +85,7 @@ const InfoScreenReturningUser = ({ t, isLoading, exportProfile, continueWithExis
             </Button>
           </HBox>
         </VBox>
-      </AppScreenWrapper>
+      </AppScreenWrapperContainer>
     </Layout>
   );
 };

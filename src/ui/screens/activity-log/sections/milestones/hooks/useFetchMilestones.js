@@ -1,9 +1,8 @@
-import { useContext } from "react";
-import { LanguageContext } from "../../../../../language/LanguageContext";
 import { milestonesList } from "../content/milestonesList";
+import { useLanguageStore } from "@/ui/storage/useLanguageStore";
 
 const useFetchMilestones = () => {
-    const { language } = useContext(LanguageContext);
+    const language = useLanguageStore
     return {
         upcoming: milestonesList[language]?.comingUp || [],
         past: milestonesList[language]?.past || [],

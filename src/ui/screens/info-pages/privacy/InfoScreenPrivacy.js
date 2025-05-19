@@ -4,14 +4,14 @@ import FileDownloadIcon from "@mui/icons-material/FileDownload";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Layout from "@/ui/shared-components/Layout";
 import { VBox, HBox } from "@/ui/shared-components/LayoutBoxes";
-import AppScreenWrapper from "@/ui/shared-components/AppScreenWrapper";
+import AppScreenWrapperContainer from "@/ui/shared-components/app-screen-wrapper/AppScreenWrapperContainer";
 import theme from "@/theme";
 import RegularButton from "@/ui/shared-components/RegularButton";
 
-const InfoScreenPrivacy = ({t, isDesktop, privacyBox, initialiseNewUser}) => {
+const InfoScreenPrivacy = ({t, isDesktop, privacyBox}) => {
     return (
         <Layout isApp={true} logo={false}>
-            <AppScreenWrapper back={true} backTarget={'/'} isLoading={false}>
+            <AppScreenWrapperContainer back={true} backTarget={'/'} isLoading={false}>
                 <VBox sx={{ gap: { xs: 4, md: 8 } }}>
                     {
                         !isDesktop ? (
@@ -62,7 +62,6 @@ const InfoScreenPrivacy = ({t, isDesktop, privacyBox, initialiseNewUser}) => {
                             <RegularButton 
                                 variant={'blueContained'} 
                                 text={'app.privacySite.button'} 
-                                onClick={initialiseNewUser} 
                                 link={'/onboarding-choice'} 
                             />
                         </VBox>
@@ -79,7 +78,7 @@ const InfoScreenPrivacy = ({t, isDesktop, privacyBox, initialiseNewUser}) => {
                         }
                     </HBox>
                 </VBox>
-            </AppScreenWrapper>
+            </AppScreenWrapperContainer>
         </Layout >
     );
 }
