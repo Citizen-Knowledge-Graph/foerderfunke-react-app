@@ -1,12 +1,11 @@
 import React from 'react';
 import { Checkbox, FormControlLabel, Typography, Box } from '@mui/material';
 import Layout from "@/ui/shared-components/Layout";
-import AppScreenWrapper from "@/ui/shared-components/app-screen-wrapper/AppScreenWrapper";
+import AppScreenWrapperContainer from "@/ui/shared-components/app-screen-wrapper/AppScreenWrapperContainer";
 import { VBox, HBox } from "@/ui/shared-components/LayoutBoxes";
 import RegularButton from '@/ui/shared-components/RegularButton';
 import TimeIcon from '../components/TimeIcon';
 import ClickableTopicBox from "../components/ClickableTopicBox";
-
 
 const OnboardingWelcomeTopics = ({
     t,
@@ -19,7 +18,7 @@ const OnboardingWelcomeTopics = ({
 
     return (
         <Layout isApp={true} logo={false}>
-            <AppScreenWrapper back={true} backTarget={'/onboarding-choice'}>
+            <AppScreenWrapperContainer back={true} backTarget={'/onboarding-choice'}>
                 <VBox sx={{ gap: { xs: 4, md: 8 } }}>
                     <VBox>
                         <Typography variant="h1">
@@ -95,7 +94,7 @@ const OnboardingWelcomeTopics = ({
                         link={'/onboarding-welcome'} 
                     />
                 </VBox>
-            </AppScreenWrapper>
+            </AppScreenWrapperContainer>
         </Layout >
     );
 }

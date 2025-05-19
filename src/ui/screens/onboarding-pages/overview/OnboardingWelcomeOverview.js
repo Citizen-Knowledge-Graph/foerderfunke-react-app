@@ -1,12 +1,12 @@
 import React from 'react';
 import { Typography } from '@mui/material';
 import Layout from "@/ui/shared-components/Layout";
-import AppScreenWrapper from "@/ui/shared-components/app-screen-wrapper/AppScreenWrapper";
 import { VBox, HBox } from "@/ui/shared-components/LayoutBoxes";
 import theme from "@/theme";
 import RegularButton from '@/ui/shared-components/RegularButton';
 import TimeIcon from '../components/TimeIcon';
 import BenefitsIcon from '../components/BenefitsIcon';
+import AppScreenWrapperContainer from '@/ui/shared-components/app-screen-wrapper/AppScreenWrapperContainer';
 
 const OnboardingWelcomeOverviewView = ({
     t,
@@ -20,7 +20,7 @@ const OnboardingWelcomeOverviewView = ({
 
     return (
         <Layout isApp={true} logo={false}>
-            <AppScreenWrapper isLoading={isLoading} back={true} backTarget={'/onboarding-welcome-topics'}>
+            <AppScreenWrapperContainer isLoading={isLoading} back={true} backTarget={'/onboarding-welcome-topics'}>
                 <VBox sx={{ gap: { xs: 4, md: 8 } }}>
                     <VBox>
                         <Typography variant="h1">
@@ -87,7 +87,7 @@ const OnboardingWelcomeOverviewView = ({
                         link={'/questions'}
                     />
                 </VBox>
-            </AppScreenWrapper>
+            </AppScreenWrapperContainer>
         </Layout>
     );
 };

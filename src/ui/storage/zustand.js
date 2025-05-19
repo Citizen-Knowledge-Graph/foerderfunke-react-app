@@ -69,8 +69,7 @@ export const useSelectedBenefitStore = create((set) => ({
 export const useQuestionsStore = create((set) => ({
     questions: {},
     updateQuestions: (newQuestions) => {
-        console.log('STATE UPDATE: We are updating the questions');
-        set((state) => ({questions: newQuestions}));
+        set(() => ({questions: newQuestions}));
     }
 }));
 
@@ -78,7 +77,6 @@ export const questionsStackStore = create((set) => ({
     questionsStack: [],
     stackCounter: 0,
     addQuestionToStack: (newQuestion) => {
-        console.log('STATE UPDATE: We are adding a question to the stack: ' + newQuestion.datafield);
         set((state) => ({
             questionsStack: state.questionsStack.some(question => question.datafield === newQuestion.datafield)
                 ? state.questionsStack
@@ -86,11 +84,9 @@ export const questionsStackStore = create((set) => ({
         }));
     },
     resetQuestionsStack: () => {
-        console.log('STATE UPDATE: We are clearing the questions stack');
         set({questionsStack: [], stackCounter: 0});
     },
     setStackCounter: (newCounter) => {
-        console.log('STATE UPDATE: We are setting the stack counter');
         set({stackCounter: newCounter});
     }
 }));

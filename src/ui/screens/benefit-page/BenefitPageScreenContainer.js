@@ -16,7 +16,7 @@ const BenefitPageScreenContainer = () => {
     const categoryTitles = useBuildCategoryTitles(id, language);
     const validatedStatus = useIsMissingDataBenefit(id);
 
-    const isLoading = !benefitPageData || !categoryTitles || !validatedStatus;
+    const isLoading = !benefitPageData || !categoryTitles
 
     return (
         <BenefitPageScreen

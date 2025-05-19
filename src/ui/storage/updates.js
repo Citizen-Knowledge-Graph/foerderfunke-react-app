@@ -22,7 +22,6 @@ export const useValidationUpdate = create((set) => ({
 export const useQuestionsUpdate = create((set) => ({
     updateCounter: 0,
     triggerQuestionsUpdate: () => {
-        console.log('STATE UPDATE: We are triggering a questions run');
         set((state) => ({updateCounter: (state.updateCounter + 1) % 1000}));
     },
     questionsAreLoading: false,

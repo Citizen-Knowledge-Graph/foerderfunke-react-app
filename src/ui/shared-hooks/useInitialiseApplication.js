@@ -1,6 +1,6 @@
 // hooks/useInitialiseApplication.ts
 import { useEffect, useState, useRef } from 'react';
-import { useMetadataStore, useValidationReportStore } from "@/ui/storage/zustand";
+import { useMetadataStore, useUserStore, useValidationReportStore } from "@/ui/storage/zustand";
 import { useLanguageStore } from "@/ui/storage/useLanguageStore";
 import { useInitialisationState } from '@/ui/storage/updates';
 import validationManager from "@/core/managers/validationManager";
@@ -10,6 +10,7 @@ export const useInitialiseApplication = () => {
     const [isLoading, setIsLoading] = useState(true);
     const setInitialisationState = useInitialisationState((state) => state.setInitialisationState);
     const initialisationState = useInitialisationState((state) => state.initialisationState);
+    const updateUserId = useUserStore((state) => state.updateUserId);
 
     // 🔐 **Initialization Mutex and Status Tracking**
     const initializedRef = useRef(false); // Tracks if initialized has been triggered
@@ -68,6 +69,7 @@ export const useInitialiseApplication = () => {
                 } else {
                     userManager.initialiseNewUser(fixedUserId);
                 }
+                updateUserId(fixedUserId);
             } catch (error) {
                 console.error(`Failed to initialize User Profile: ${error.message}`);
             }

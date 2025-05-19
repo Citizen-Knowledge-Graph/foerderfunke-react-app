@@ -19,7 +19,7 @@ const QuestionPageNextContainer = () => {
     const [profileFieldUpdateError, setProfileFieldUpdateError] = useState(null);
 
     const profileQuestions = useQuestionsStore((s) => s.questions);
-    const metadata = useAccessMetadata
+    const metadata = useAccessMetadata();
     const validationReport = useValidationReportStore((s) => s.validationReport);
     const questionsAreLoading = useQuestionsUpdate((s) => s.questionsAreLoading);
     const {
