@@ -1,4 +1,3 @@
-// hooks/useInitialiseApplication.ts
 import { useEffect, useState, useRef } from 'react';
 import { useMetadataStore, useUserStore, useValidationReportStore } from "@/ui/storage/zustand";
 import { useLanguageStore } from "@/ui/storage/useLanguageStore";
@@ -64,9 +63,7 @@ export const useInitialiseApplication = () => {
             try {
                 // 🔹 **Initialize User Profile**
                 const userProfile = userManager.retrieveUserData(fixedUserId);
-                if (userProfile) {
-                    console.log(`User profile found.`);
-                } else {
+                if (!userProfile) {
                     userManager.initialiseNewUser(fixedUserId);
                 }
                 updateUserId(fixedUserId);
@@ -99,7 +96,7 @@ export const useInitialiseApplication = () => {
         };
 
         initializeAppState();
-    }, [metadataStore, validationReportStore, language, setInitialisationState, initialisationState]);
+    }, [metadataStore, validationReportStore, language, setInitialisationState, initialisationState, updateUserId]);
 
     return isLoading;
 };

@@ -63,7 +63,9 @@ const BenefitPageHeader = ({ id, benefit, validatedStatus, categoryTitles }) => 
                                         sx={(theme) => ({
                                             padding: '8px 12px',
                                             borderRadius: theme.shape.borderRadius,
-                                            border: `1px solid ${'black.light'}`,
+                                            borderColor: 'black.light',
+                                            borderWidth: '1px',
+                                            borderStyle: 'solid'
                                         })}
                                     >
                                         <Typography variant="body2" sx={{ color: 'black.light' }}>

@@ -1,5 +1,4 @@
 import {
-    useMetadataStore,
     useUserStore,
     useValidationReportStore,
 } from "@/ui/storage/zustand";
@@ -15,10 +14,9 @@ const useRunValidation = () => {
     const runValidation = async () => {
         if (!userId) return;
         setValidationIsLoading(true);
-        const validationReports = await validationManager.runValidation(userId, language);
-        if (validationReports) {
-            useValidationReportStore.getState().updateValidationReport(validationReports[0]);
-            useMetadataStore.getState().updateMetadata(validationReports[1]);
+        const validationReport = await validationManager.runValidation(userId, language);
+        if (validationReport) {
+            useValidationReportStore.getState().updateValidationReport(validationReport);
         }
         setValidationIsLoading(false);
     };

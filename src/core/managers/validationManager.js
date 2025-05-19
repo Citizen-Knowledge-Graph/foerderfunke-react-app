@@ -41,13 +41,7 @@ const validationManager = {
         // add user profile to the report
         validateAllReport['userProfile'] = userProfile;
 
-        // fetch metadata
-        let metadata = {
-            df: await extractDatafieldsMetadata(dataFieldsString, language),
-            rp: await extractRequirementProfilesMetadata(Object.values(requirementProfiles), language),
-        };
-
-        return [validateAllReport, metadata];
+        return validateAllReport;
     },
     async fetchMetadata() {
         // load validation config

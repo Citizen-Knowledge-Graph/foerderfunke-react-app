@@ -9,18 +9,12 @@ import {
 } from "@/ui/storage/zustand";
 import useTranslation from "@/ui/language/useTranslation";
 import userManager from "@/core/managers/userManager";
-import { useUserStore } from "@/ui/storage/zustand";
 import InfoScreenReturningUser from "./InfoScreenReturningUser";
 import useJointValidationStatus from "@/ui/shared-hooks/utility/useJointValidationStatus";
 
 const InfoScreenReturningUserContainer = () => {
   const { t } = useTranslation();
   const { isLoadingJointStatus } = useJointValidationStatus();
-  const updateUserId = useUserStore((state) => state.updateUserId);
-
-  const continueWithExisting = () => {
-    updateUserId("ff:quick-check-user")
-  };
 
   const exportProfile = async () => {
     const userProfile = userManager.retrieveUserData();
@@ -35,12 +29,11 @@ const InfoScreenReturningUserContainer = () => {
   };
 
   const deleteExistingProfile = () => {
-    userManager.deleteUser();
+    userManager.initialiseNewUser();
     useValidationReportStore.getState().clear();
     useSelectedTopicsStore.getState().clear();
     useSelectedBenefitStore.getState().clear();
     questionsStackStore.getState().resetQuestionsStack();
-    updateUserId(null);
   };
 
   return (
@@ -48,7 +41,6 @@ const InfoScreenReturningUserContainer = () => {
       isLoading={isLoadingJointStatus}
       t={t}
       exportProfile={exportProfile}
-      continueWithExisting={continueWithExisting}
       deleteExistingProfile={deleteExistingProfile}
     />
   );

@@ -8,7 +8,7 @@ import AppScreenWrapperContainer from "@/ui/shared-components/app-screen-wrapper
 import { VBox, HBox } from "@/ui/shared-components/LayoutBoxes";
 
 
-const InfoScreenReturningUser = ({ t, isLoading, exportProfile, continueWithExisting, deleteExistingProfile }) => {
+const InfoScreenReturningUser = ({ t, isLoading, exportProfile, deleteExistingProfile }) => {
     return (
     <Layout isApp={true} logo={false}>
       <AppScreenWrapperContainer isLoading={isLoading} home={true} backTarget={-1}>
@@ -24,7 +24,6 @@ const InfoScreenReturningUser = ({ t, isLoading, exportProfile, continueWithExis
                   boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
                   '&:hover': { backgroundColor: 'yellow.main' },
                 }}
-                onClick={continueWithExisting}
                 component={Link}
                 to={'/onboarding-choice'}
               >
