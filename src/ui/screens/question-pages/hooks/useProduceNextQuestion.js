@@ -12,7 +12,6 @@ const useProduceNextQuestion = () => {
     const runPrioritizedQuestions = useRunPrioritizedQuestions();
 
     useEffect(() => {
-        console.log("useProduceNextQuestion: ");
         const produceNextQuestion = async () => {
             await runPrioritizedQuestions();
         }
