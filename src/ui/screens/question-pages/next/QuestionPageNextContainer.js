@@ -68,6 +68,8 @@ const QuestionPageNextContainer = () => {
 
     const isLoading = questionsAreLoading || !currentQuestion;
 
+    console.log('current question', currentQuestion);
+
     return (
         <QuestionPageNext
             t={t}
