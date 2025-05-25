@@ -42,6 +42,8 @@ const questionsManager = {
     if (cachedResult) return cachedResult;
 
     console.log('datafieldsString', dataFieldsString);
+    console.log("Requirement profile keys:", Object.keys(requirementProfiles));
+    console.log("Requirement profile contents:", requirementProfiles);
 
     const missingQuestions = await getPrioritizedMissingDataFieldsJson(
       topicIds,
