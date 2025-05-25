@@ -27,6 +27,8 @@ const useRunPrioritizedQuestions = () => {
             language
         );
 
+        console.log("Fetched prioritized questions:", questionsResponse);
+
         useQuestionsStore.getState().updateQuestions(questionsResponse);
         setQuestionsAreLoading(false);
     }, [userId, selectedTopics, selectedBenefit, language, setQuestionsAreLoading]);
