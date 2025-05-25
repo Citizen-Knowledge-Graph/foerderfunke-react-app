@@ -41,6 +41,8 @@ const questionsManager = {
     const cachedResult = cacheStore.getResource(cacheKey);
     if (cachedResult) return cachedResult;
 
+    console.log('datafieldsString', dataFieldsString);
+
     const missingQuestions = await getPrioritizedMissingDataFieldsJson(
       topicIds,
       benefitId ? [expand(benefitId)] : [],
@@ -50,6 +52,8 @@ const questionsManager = {
       materializationString,
       language
     );
+
+    console.log("Top Level - Fetched prioritized questions:", missingQuestions);
 
     cacheStore.setResource(cacheKey, missingQuestions);
     return missingQuestions;
