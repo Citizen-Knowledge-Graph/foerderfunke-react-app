@@ -41,8 +41,6 @@ const questionsManager = {
     const cachedResult = cacheStore.getResource(cacheKey);
     if (cachedResult) return cachedResult;
 
-    console.log("🔍 dataFieldsString length:", dataFieldsString.length);
-
     const missingQuestions = await getPrioritizedMissingDataFieldsJson(
       topicIds,
       benefitId ? [expand(benefitId)] : [],
