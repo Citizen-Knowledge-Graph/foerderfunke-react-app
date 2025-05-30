@@ -213,7 +213,8 @@ const translations = {
                     inferredFrom: "inferred from your answer to",
                     yes: "yes",
                     no: "no",
-                    unknown: "unknown"
+                    unknown: "unknown",
+                    orRule: "Or-Rule"
                 },
                 moreInfo: "More information available here"
             }
@@ -463,7 +464,8 @@ const translations = {
                     inferredFrom: "abgeleitet von deiner Antwort auf",
                     yes: "ja",
                     no: "nein",
-                    unknown: "unbekannt"
+                    unknown: "unbekannt",
+                    orRule: "Oder-Regel"
                 },
                 moreInfo: "Weitere Informationen sind hier verfügbar"
             }

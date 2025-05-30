@@ -3,6 +3,7 @@ import { useMetadataStore, useUserStore, useValidationReportStore } from "@/ui/s
 import { useLanguageStore } from "@/ui/storage/useLanguageStore";
 import { useInitialisationState } from '@/ui/storage/updates';
 import validationManager from "@/core/managers/validationManager";
+import matchingEngineManager from "@/core/managers/matchingEngineManagar";
 import userManager from "@/core/managers/userManager";
 
 export const useInitialiseApplication = () => {
@@ -43,22 +44,6 @@ export const useInitialiseApplication = () => {
             console.log("🟢 Application Initialization started.");
 
             try {
-                // 🔹 **Initialize Metadata**
-                if (Object.keys(metadataStore.metadata).length === 0) {
-                    const fetchedMetadata = await validationManager.fetchMetadata();
-                    if (fetchedMetadata) {
-                        metadataStore.updateMetadata(fetchedMetadata);
-                    } else {
-                        metadataStore.updateMetadata({});
-                    }
-                } else {
-                    console.log(`Metadata already initialised.`);
-                }
-            } catch (error) {
-                console.error(`Failed to initialize Metadata: ${error.message}`);
-            }
-
-            try {
                 // 🔹 **Initialize User Profile**
                 const userProfile = userManager.retrieveUserData(fixedUserId);
                 if (!userProfile) {
@@ -70,19 +55,35 @@ export const useInitialiseApplication = () => {
             }
 
             try {
-                // 🔹 **Initialize Validation Report**
-                if (Object.keys(validationReportStore.validationReport).length === 0) {
-                    const report = await validationManager.runValidation(fixedUserId, language);
-                    if (report) {
-                        validationReportStore.updateValidationReport(report);
-                    } else {
-                        console.warn("Validation Report could not be created. Fallback applied.");
-                        validationReportStore.updateValidationReport({ report: "empty" });
-                    }
+                // 🔹 **Initialize Matching Engine**
+                await matchingEngineManager.initialiseMatchingEngine();
+            } catch (err) {
+                console.error("Error initializing Matching Engine:", err);
+            }
+
+
+            let metadata = "empty";
+            try {
+                const newMetadata = await matchingEngineManager.fetchMetadata(language);
+                if (newMetadata) {
+                    metadata = newMetadata;
                 }
             } catch (error) {
-                console.error(`Failed to initialize Validation Report: ${error.message}`);
-                validationReportStore.updateValidationReport({ report: "empty" }); // fallback
+                console.error(`Failed to fetch Metadata: ${error.message}`);
+            } finally {
+                metadataStore.updateMetadata(metadata);
+            }
+
+            let validationReport = "empty";
+            try {
+                const newValidationReport = await matchingEngineManager.fetchValidationReport(fixedUserId, language);
+                if (newValidationReport) {
+                    validationReport = newValidationReport;
+                }
+            } catch (error) {
+                console.error(`Failed to fetch validation report: ${error.message}`);
+            } finally {
+                validationReportStore.updateValidationReport(validationReport);
             }
 
             console.log("✅ Application Initialization complete.");

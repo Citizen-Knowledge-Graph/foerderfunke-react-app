@@ -1,9 +1,9 @@
 import { useIsAppInitializing } from '@/AppInitialisationProvider';
 import AppScreenWrapper from './AppScreenWrapper';
 
-const AppScreenWrapperContainer = ({ children, isLoading, scrollKey, backTarget }) => {
+const AppScreenWrapperContainer = ({ children, isLoading=false, scrollKey, backTarget }) => {
   const initLoading = useIsAppInitializing();
-  const appIsLoading = initLoading || isLoading;
+  const appIsLoading = initLoading.loading || isLoading;
 
   return (
     <AppScreenWrapper
