@@ -14,6 +14,7 @@ import QuestionPageNext from "./QuestionPageNext";
 import useAccessMetadata from '@/ui/storage/useAccessMetadata';
 
 const QuestionPageNextContainer = () => {
+    console.log('QuestionPageNextContainer rendered');
     const { t } = useTranslation();
     const navigate = useNavigate();
     const [profileFieldUpdateError, setProfileFieldUpdateError] = useState(null);
@@ -67,6 +68,8 @@ const QuestionPageNextContainer = () => {
     ), [questionsStack, stackCounter, profileQuestions]);
 
     const isLoading = questionsAreLoading || !currentQuestion;
+
+    console.log('we are here')
 
     return (
         <QuestionPageNext
