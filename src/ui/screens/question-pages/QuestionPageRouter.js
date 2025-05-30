@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import QuestionPageCompleted from './completed/QuestionPageCompleted';
 import QuestionPageNextContainer from './next/QuestionPageNextContainer';
-import useProduceNextQuestion from './hooks/useProduceNextQuestion';
+import { useQuestionsStore } from '@/ui/storage/zustand';
+import { useQuestionsUpdate } from '@/ui/storage/updates';
 
 const QuestionPageRouter = () => {
-    const {profileQuestions, questionsAreLoading } = useProduceNextQuestion();
+    const profileQuestions = useQuestionsStore((s) => s.questions);
+    const questionsAreLoading = useQuestionsUpdate((s) => s.questionsAreLoading);
     const [completed, setCompleted] = useState(false);
 
     useEffect(() => {
