@@ -27,6 +27,9 @@ const matchingEngineManager = {
             const materializationString = await resourceService.fetchResourceWithCache(
                 validationConfig["materialization"]
             );
+            const consistencyString = await resourceService.fetchResourceWithCache(
+                validationConfig["consistency"]
+            );
 
             const requirementProfiles = [];
             for (const { fileUrl } of validationConfig["queries"]) {
@@ -36,14 +39,48 @@ const matchingEngineManager = {
             const matchingEngine = new MatchingEngine(
                 dataFieldsString,
                 materializationString,
+                consistencyString,
                 requirementProfiles
             );
 
+            // Initialize the matching engine
+            await matchingEngine.init();
+
             this.matchingEngineInstance = matchingEngine;
+            console.log("Matching Engine initialized successfully.");
             return matchingEngine;
         })();
 
         return this.initialisationPromise;
+    },
+
+    async fetchMetadata(language = "en") {
+        const matchingEngine = await this.initialiseMatchingEngine();
+
+        // Fetch metadata from the matching engine
+        const metadata = matchingEngine.metadata || {};  
+        return metadata;
+    },
+
+    async fetchValidationReport(userId, language = "en") {
+        const matchingEngine = await this.initialiseMatchingEngine();
+
+        const validationConfig = await resourceService.fetchResourceWithCache(
+            "assets/data/requirement-profiles/requirement-profiles.json"
+        );
+
+        const userProfile = userManager.retrieveUserData(userId);
+        const userProfileTurtle = await convertUserProfileToTurtle(userProfile);
+        const requirementProfiles = validationConfig["queries"].map(({ rpUri }) => rpUri);
+
+        const fullReportJsonLd = await matchingEngine.matching(
+            userProfileTurtle,
+            requirementProfiles,
+            MATCHING_MODE.FULL,
+            FORMAT.JSON_LD,
+            true
+        );
+        return fullReportJsonLd;
     },
 
     async fetchQuizReport(userId, requirementProfiles) {

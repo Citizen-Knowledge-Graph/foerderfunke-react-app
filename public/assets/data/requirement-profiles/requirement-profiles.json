@@ -1,6 +1,7 @@
 {
   "datafields": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/datafields.ttl",
   "materialization": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/materialization.ttl",
+  "consistency": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/consistency.ttl",
   "queries": [
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/01-hilfe-zum-lebensunterhalt.ttl",

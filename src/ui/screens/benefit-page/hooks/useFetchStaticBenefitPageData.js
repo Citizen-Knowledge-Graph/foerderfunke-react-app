@@ -11,18 +11,12 @@ const useFetchStaticBenefitPageData = (id, language) => {
     'assets/data/requirement-profiles/requirement-profiles-hydration.json'
   );
 
-  const rpUri = useMemo(() => {
-    if (!id || !id.includes(':')) return null;
-    const fragment = id.split(':')[1];
-    return `https://foerderfunke.org/default#${fragment}`;
-  }, [id]);
-
   const benefitPageData = useMemo(() => {
-    if (!hydrationData || !rpUri) {
+    if (!hydrationData || !id) {
       return null;
     }
 
-    const resource = hydrationData[rpUri] || {};
+    const resource = hydrationData[id] || {};
     return {
       title:              getField(resource, `title.${language}`, 'Unknown Title'),
       leikaId:            getField(resource, 'leika_id',       'Unknown Id'),
@@ -36,7 +30,7 @@ const useFetchStaticBenefitPageData = (id, language) => {
       legalBasis:         getField(resource, `legal_basis.${language}`,        {}),
       furtherInformation: getField(resource, `further_information.${language}`, []),
     };
-  }, [hydrationData, rpUri, language]);
+  }, [hydrationData, id, language]);
 
   return benefitPageData;
 };

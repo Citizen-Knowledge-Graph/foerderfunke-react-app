@@ -1,27 +1,24 @@
 import React, { useState } from "react";
 import { Typography, IconButton, Collapse } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { useUserStore, useValidationReportStore } from "@/ui/storage/zustand";
-import userManager from "@/core/managers/userManager";
+import { useValidationReportStore } from "@/ui/storage/zustand";
+import { useMetadataStore } from "@/ui/storage/zustand";
 import { buildRulesOutput } from "@/core/utils/ruleParsing";
 import useTranslation from "@/ui/language/useTranslation";
 import useFetchData from "@/ui/shared-hooks/utility/useFetchResource";
 import { VBox, HBox } from "@/ui/shared-components/LayoutBoxes";
 import theme from "@/theme";
-import useAccessMetadata from "@/ui/storage/useAccessMetadata";
 import useBenefitPageRules from "../hooks/useBenefitPageRules";
 import BenefitPageRuleEntry from "./BenefitPageRuleEntry";
 
 const BenefitPageRules = ({ benefitId, validatedStatus }) => {
     const { t } = useTranslation();
-    const metadata = useAccessMetadata();
+    const metadata = useMetadataStore((state) => state.metadata);
     const validationReport = useValidationReportStore((state) => state.validationReport);
-    const activeUser = useUserStore((state) => state.activeUserId);
-    const userProfile = userManager.retrieveUserData(activeUser);
 
     const validationConfig = useFetchData("assets/data/requirement-profiles/requirement-profiles.json");
-    const { rulesData, benefitReport } = useBenefitPageRules(benefitId, validationConfig, validationReport);
-    const rules = buildRulesOutput(rulesData, metadata, benefitReport, userProfile, t);
+    const { rulesData } = useBenefitPageRules(benefitId, validationConfig, validationReport);
+    const rules = buildRulesOutput(rulesData, metadata, t);
 
     const [showRules, setShowRules] = useState(false);
 
