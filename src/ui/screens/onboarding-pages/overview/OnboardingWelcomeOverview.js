@@ -14,9 +14,10 @@ const OnboardingWelcomeOverviewView = ({
     language,
     isLoading,
     numberOfBenefits,
-    rpTitle,
+    benefitTitle,
     topicRps,
 }) => {
+
 
     return (
         <Layout isApp={true} logo={false}>
@@ -56,28 +57,36 @@ const OnboardingWelcomeOverviewView = ({
                                     backgroundColor: 'white.main',
                                 }}>
                                     <Typography variant="h2" sx={{ fontWeight: '400' }}>
-                                        {rpTitle}
+                                        {benefitTitle}
                                     </Typography>
                                 </HBox>
                             </VBox>
                         ) : (
                             <VBox sx={{ gap: 2 }}>
-                                {
-                                    topicRps.map(({ topic, rps }, index) => (
-                                        <HBox
-                                            key={index}
-                                            sx={{
-                                                padding: { xs: '20px', md: 4 },
-                                                borderRadius: theme.shape.borderRadius,
-                                                backgroundColor: 'white.main',
-                                            }}>
-                                            <VBox sx={{ gap: 2 }}>
-                                                <Typography variant="h2">{language === "de" ? topic.title.de : topic.title.en}</Typography>
-                                                <ul>{rps.map((rp, i) => <li key={i}><Typography>{rp.title}</Typography></li>)}</ul>
-                                            </VBox>
-                                        </HBox>
-                                    ))
-                                }
+                                {topicRps.map(({ topic, rps }, index) => (
+                                    <HBox
+                                        key={index}
+                                        sx={{
+                                            padding: { xs: '20px', md: 4 },
+                                            borderRadius: theme.shape.borderRadius,
+                                            backgroundColor: 'white.main',
+                                        }}>
+                                        <VBox sx={{ gap: 2 }}>
+                                            <Typography variant="h2">
+                                                {language === "de" ? topic.title.de : topic.title.en}
+                                            </Typography>
+                                            <ul>
+                                                {rps.map((rpTitle, i) => (
+                                                    <li key={i}>
+                                                        <Typography>
+                                                            {rpTitle}
+                                                        </Typography>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </VBox>
+                                    </HBox>
+                                ))}
                             </VBox>
                         )}
                     </VBox>
