@@ -3,6 +3,7 @@ import { FORMAT, MATCHING_MODE } from "@foerderfunke/matching-engine/src/new/que
 import resourceService from "@/core/services/resourceService";
 import userManager from "@/core/managers/userManager";
 import { convertUserProfileToTurtle } from "@foerderfunke/matching-engine/src/profile-conversion";
+import { expand } from "@foerderfunke/sem-ops-utils";
 
 const matchingEngineManager = {
     matchingEngineInstance: null,
@@ -54,7 +55,9 @@ const matchingEngineManager = {
     },
 
     async fetchValidationReport(userId, language = "en") {
-        const engine = await this.initMatchingEngine(language);
+        if (!this.matchingEngineInstance) {
+            await this.initMatchingEngine(language);
+        }
 
         const validationConfig = await resourceService.fetchResourceWithCache(
             "assets/data/requirement-profiles/requirement-profiles.json"
@@ -64,7 +67,7 @@ const matchingEngineManager = {
         const userProfileTurtle = await convertUserProfileToTurtle(userProfile);
         const requirementProfiles = validationConfig["queries"].map(({ rpUri }) => rpUri);
 
-        const report = await engine.matching(
+        const report = await this.matchingEngineInstance.matching(
             userProfileTurtle,
             requirementProfiles,
             MATCHING_MODE.FULL,
@@ -76,14 +79,15 @@ const matchingEngineManager = {
     },
 
     async fetchQuizReport(userId, requirementProfiles, language = "en") {
-        const engine = await this.initMatchingEngine(language);
-
+        if (!this.matchingEngineInstance) {
+            await this.initMatchingEngine(language);
+        }
         const userProfile = userManager.retrieveUserData(userId);
         const userProfileTurtle = await convertUserProfileToTurtle(userProfile);
 
-        return engine.matching(
+        return this.matchingEngineInstance.matching(
             userProfileTurtle,
-            requirementProfiles,
+            requirementProfiles.map(rp => expand(rp)),
             MATCHING_MODE.QUIZ,
             FORMAT.JSON_LD,
             true
