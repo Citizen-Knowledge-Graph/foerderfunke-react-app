@@ -67,9 +67,16 @@ export const useSelectedBenefitStore = create((set) => ({
 }));
 
 export const useQuestionsStore = create((set) => ({
-    questions: {},
-    updateQuestions: (newQuestions) => {
-        set(() => ({questions: newQuestions}));
+    questionsReport: {},
+    updateQuestions: (newQuestionsReport) => {
+        set(() => ({questionsReport: newQuestionsReport}));
+    }
+}));
+
+export const useQuizReportStore = create((set) => ({
+    quizReport: {},
+    updateQuizReport: (newQuizReport) => {
+        set(() => ({quizReport: newQuizReport}));
     }
 }));
 
@@ -78,7 +85,7 @@ export const questionsStackStore = create((set) => ({
     stackCounter: 0,
     addQuestionToStack: (newQuestion) => {
         set((state) => ({
-            questionsStack: state.questionsStack.some(question => question.datafield === newQuestion.datafield)
+            questionsStack: state.questionsStack.some(question => question?.datafield === newQuestion?.datafield)
                 ? state.questionsStack
                 : [...state.questionsStack, newQuestion]
         }));

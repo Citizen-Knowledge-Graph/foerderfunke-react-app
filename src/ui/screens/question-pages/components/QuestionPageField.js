@@ -21,9 +21,9 @@ const QuestionPageField = ({
         <VBox sx={{ gap: 4 }}>
             <VBox sx={{ maxWidth: '800px' }}>
                 <Typography variant='h2' sx={{ fontWeight: '400' }}>
-                    {currentQuestion.question}
+                    {currentQuestion?.['schema:question']?.['@value']}
                 </Typography>
-                {currentQuestion.comment.length > 0 && (
+                {currentQuestion?.['rdfs:comment']?.['@value']?.length > 0 && (
                     <HBox sx={{ alignItems: 'center' }}>
                         <Typography variant='body2'>
                             {t('app.questions.showComment')}
@@ -44,7 +44,7 @@ const QuestionPageField = ({
                     isVisible && (
                         <Collapse in={isVisible}>
                             <Typography variant='body2' sx={{ marginTop: 1 }}>
-                                {currentQuestion.comment}
+                                {currentQuestion?.['rdfs:comment']?.['@value']}
                             </Typography>
                         </Collapse>
                     )

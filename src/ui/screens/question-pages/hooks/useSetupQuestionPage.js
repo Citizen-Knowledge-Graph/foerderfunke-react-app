@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import userManager from '@/core/managers/userManager';
-import { useUserStore } from '@/ui/storage/zustand';
+import { useUserStore, useMetadataStore } from '@/ui/storage/zustand';
+import buildCurrentQuestion from '@/core/utils/buildCurrentQuestion';
 
 const useSetupQuestionPage = (
-    profileQuestions,
+    quizReport,
     questionsStack,
     stackCounter,
     addQuestionToStack,
@@ -13,9 +14,11 @@ const useSetupQuestionPage = (
     const [currentQuestion, setCurrentQuestion] = useState(null);
     const [value, setValue] = useState(null);
     const [profileFieldRetrievalError, setProfileFieldRetrievalError] = useState(null);
+    const metadata = useMetadataStore((state) => state.metadata);
 
     useEffect(() => {
-        if (!profileQuestions?.prioritizedMissingDataFields?.fields?.length) return;
+        const quizReportQuestionId = quizReport?.['ff:hasMostMissedDatafield']?.['rdf:predicate']?.['@id'];
+        if (!quizReportQuestionId) return;
         if (!questionsStack?.length && stackCounter > 0) return;
 
         const setupCurrentQuestion = async () => {
@@ -24,19 +27,18 @@ const useSetupQuestionPage = (
             if (stackCounter > 0) {
                 nextQuestion = questionsStack[questionsStack.length - 1 - stackCounter];
             } else {
-                const firstQuestion = profileQuestions.prioritizedMissingDataFields.fields[0];
-                const isSame = currentQuestion?.datafield === firstQuestion?.datafield;
-                const alreadyInStack = questionsStack.some(q => q.datafield === firstQuestion?.datafield);
+                const isSame = currentQuestion?.['@id'] === quizReportQuestionId;
+                const alreadyInStack = questionsStack.some(q => q?.id === quizReportQuestionId);
 
                 if (!isSame) {
-                    nextQuestion = firstQuestion;
+                    nextQuestion = buildCurrentQuestion(quizReportQuestionId, metadata);
                     if (!alreadyInStack) {
-                        addQuestionToStack(firstQuestion);
+                        addQuestionToStack(nextQuestion);
                     }
                 }
             }
 
-            if (nextQuestion && currentQuestion?.datafield !== nextQuestion?.datafield) {
+            if (nextQuestion && currentQuestion?.['@id'] !== nextQuestion?.['@id']) {
                 setCurrentQuestion(nextQuestion);
                 setProfileFieldUpdateError(null);
             }
@@ -46,7 +48,7 @@ const useSetupQuestionPage = (
                 let fieldData = null;
                 try {
                     const activeUserId = useUserStore.getState().activeUserId;
-                    fieldData = userManager.retrieveUserField(activeUserId, questionToFetch.datafield);
+                    fieldData = userManager.retrieveUserField(activeUserId, questionToFetch?.['@id']);
                 } catch (err) {
                     console.error('Error fetching profile field', err);
                     setProfileFieldRetrievalError(err);
@@ -58,13 +60,14 @@ const useSetupQuestionPage = (
 
         setupCurrentQuestion();
     }, [
-        profileQuestions,
+        quizReport,
         questionsStack,
         stackCounter,
         currentQuestion,
         addQuestionToStack,
         profileFieldUpdateError,
-        setProfileFieldUpdateError
+        setProfileFieldUpdateError,
+        metadata
     ]);
 
     return {

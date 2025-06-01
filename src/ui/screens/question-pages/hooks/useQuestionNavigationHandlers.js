@@ -12,7 +12,7 @@ const useQuestionNavigationHandlers = ({
     navigate
 }) => {
     const triggerQuestionsUpdate = useQuestionsUpdate((s) => s.triggerQuestionsUpdate);
-    const validateValue = useInputValidation(currentQuestion?.datatype);
+    const validateValue = useInputValidation(currentQuestion?.['ff:datatype']?.['@id']);
     const addProfileData = useAddProfileField(currentQuestion);
 
     const handleAddClick = useCallback(async (value) => {

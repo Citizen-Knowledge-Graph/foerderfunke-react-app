@@ -1,17 +1,17 @@
 import React, { useMemo } from 'react';
 import { Checkbox, FormControlLabel, FormGroup, FormLabel, Typography } from '@mui/material';
-import useTranslation from "../../../../language/useTranslation";
+import useTranslation from "@/ui/language/useTranslation";
 
 const ProfileInputMultiSelection = ({ value, setValue, currentField, error }) => {
     const { t } = useTranslation();
 
     const choices = useMemo(() => {
         const map = {};
-        currentField.choices.forEach((choice) => {
-            map[choice.value] = choice.label;
+        currentField?.['ff:hasAnswerOption']?.forEach((choice) => {
+            map[choice?.['@id']] = choice?.['rdfs:label']?.['@value'];
         });
         return map;
-    }, [currentField.choices]);
+    }, [currentField]);
 
     const handleChange = (event) => {
         const selectedValue = event.target.name;
@@ -25,6 +25,8 @@ const ProfileInputMultiSelection = ({ value, setValue, currentField, error }) =>
             setValue(value.filter((item) => item !== selectedValue));
         }
     };
+
+    console.log('choices: ', choices);  
 
     return (
         <>

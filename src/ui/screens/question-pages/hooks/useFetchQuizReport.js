@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import matchingEngineManager from "@/core/managers/matchingEngineManagar";
 import {
   useUserStore,
+  useQuizReportStore,
   useSelectedTopicsStore,
   useSelectedBenefitStore,
   useMetadataStore
@@ -21,17 +22,21 @@ const useFetchQuizReport = () => {
   const metadata = useMetadataStore((state) => state.metadata);
   const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
   const selectedBenefit = useSelectedBenefitStore((state) => state.selectedBenefit);
+  const updateQuizReport = useQuizReportStore((state) => state.updateQuizReport);
   const language = useLanguageStore((state) => state.language);
 
   useEffect(() => {
     const fetchQuizReport = async () => {
-      if (!userId || (!selectedTopics?.length && !selectedBenefit)) return;
+      if (!userId) return;
 
       const rps = Object.values(metadata?.['ff:hasRP'] || {});
       const uniqueRpIds = new Set();
 
+      const hasSelectedTopics = Array.isArray(selectedTopics) && selectedTopics.length > 0;
+      const hasSelectedBenefit = selectedBenefit?.["@id"];
+
       // Add RP IDs based on selected topics
-      if (selectedTopics?.length) {
+      if (hasSelectedTopics) {
         for (const topic of selectedTopics) {
           const topicId = topic.id;
           for (const rp of rps) {
@@ -45,33 +50,36 @@ const useFetchQuizReport = () => {
       }
 
       // Add selected benefit if it's defined
-      if (selectedBenefit?.["@id"]) {
+      if (hasSelectedBenefit) {
         uniqueRpIds.add(selectedBenefit["@id"]);
+      }
+
+      // If both selectedTopics and selectedBenefit are empty/null, add all RPs
+      if (!hasSelectedTopics && !hasSelectedBenefit) {
+        for (const rp of rps) {
+          if (rp?.["@id"]) {
+            uniqueRpIds.add(rp["@id"]);
+          }
+        }
       }
 
       const rpUris = Array.from(uniqueRpIds);
       if (rpUris.length === 0) return;
 
-      console.log("Producing quiz report for user:", userId);
-      console.log("Selected Topics:", selectedTopics);
-      console.log("Selected Benefit:", selectedBenefit);
-      console.log("Unique RP URIs:", rpUris);
-
       try {
         setLoading(true);
         const quizReport = await matchingEngineManager.fetchQuizReport(userId, rpUris, language);
-        console.log("Quiz Report:", quizReport);
+        updateQuizReport(quizReport);
       } catch (err) {
         console.error("Error producing quiz report:", err);
         setError(err);
       } finally {
-        console.log("Quiz report fetch completed.");
         setLoading(false);
       }
     };
 
     fetchQuizReport();
-  }, [userId, selectedTopics, selectedBenefit, metadata, language]);
+  }, [userId, selectedTopics, selectedBenefit, metadata, language, updateQuizReport]);
 
   return { loading, error };
 };
