@@ -14,8 +14,8 @@ const OnboardingChoice = () => {
     return (
         <Layout isApp={true}>
             <AppScreenWrapperContainer isLoading={isLoadingJointStatus} backTarget={'/user-routing'}>
-                <VBox sx={{ gap: { xs: 4, md: 8 } }}>
-                    <HBox sx={{ maxWidth: '800px' }}>
+                <VBox sx={{ gap: { xs: 4, md: 8, maxWidth: '800px' } }}>
+                    <HBox>
                         <Typography variant="h1">
                             {t('app.discoverChoice.header')}
                         </Typography>
@@ -50,29 +50,29 @@ const OnboardingChoice = () => {
                                 </HBox>
                             </Button>
                         </HBox>
-                        <HBox>
-                            <Button
-                                sx={{
-                                    height: '100%',
-                                    padding: "32px 32px",
-                                    boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
-                                    '&:hover': {
-                                        backgroundColor: 'yellow.main',
-                                    },
-                                }}
-                                component={Link}
-                                to={"/eligibility-overview"}
-                            >
-                                <HBox sx={{ alignItems: 'center' }}>
-                                    <VBox sx={{ alignItems: 'flex-start' }}>
-                                        <Typography variant="h6">
-                                            {t('app.discoverChoice.browseAll')}
-                                        </Typography>
-                                    </VBox>
-                                </HBox>
-                            </Button>
-                        </HBox>
                     </HBox>
+                    <Button
+                        variant="text"
+                        sx={{
+                            color: 'blue.main',
+                            backgroundColor: 'transparent',
+                            padding: 1,
+                            '&:hover': {
+                                backgroundColor: 'transparent',
+                                color: 'black.main',
+                            }
+                        }}
+                        component={Link}
+                        to={"/eligibility-overview"}>
+                        <VBox sx={{ gap: 1 }}>
+                            <Typography variant="body1" sx={{ color: 'inherit', fontWeight: 'bold', textDecoration: 'underline' }}>
+                                {t('app.discoverChoice.browseAll')}
+                            </Typography>
+                            <Typography variant="body2" sx={{ color: 'inherit' }}>
+                                {t('app.discoverChoice.browseInfo')}
+                            </Typography>
+                        </VBox>
+                    </Button>
                 </VBox>
             </AppScreenWrapperContainer>
         </Layout >

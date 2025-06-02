@@ -121,6 +121,7 @@ const translations = {
                 quickCheck: "Quick eligibility check",
                 quickCheckComment: "Based on up to 10 benefits",
                 browseAll: "Browse all benefits",
+                browseInfo: "Here you can view the catalog to get an overview of the available programs.",
             },
             topicSelection: {
                 header: "Quick eligibility check",
@@ -370,7 +371,7 @@ const translations = {
                 quickCheckComment: "Basierend auf bis zu 10 Leistungen",
                 quickCheckInfo: "Der Schnellcheck ist eine schnelle Methode, um deinen Anspruchsstatus zu überprüfen. Es dauert nur wenige Minuten.",
                 browseAll: "Alle Leistungen durchsuchen",
-                browseInfo: "Beim Durchsuchen erhältst du einen Überblick über die im Katalog verfügbaren Programme. Für eine detaillierte Anspruchsüberprüfung musst du jedoch einzeln vorgehen."
+                browseInfo: "Hier kannst du den Katalog ansehen, um einen Überblick über die verfügbaren Programme zu erhalten.",
             },
             topicSelection: {
                 header: "Schneller Anspruchscheck",
