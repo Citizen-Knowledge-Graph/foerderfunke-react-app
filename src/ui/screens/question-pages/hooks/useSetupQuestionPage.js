@@ -35,6 +35,10 @@ const useSetupQuestionPage = (
                     if (!alreadyInStack) {
                         addQuestionToStack(nextQuestion);
                     }
+                } else {
+                    console.warn('Current question is already the most missed datafield, no need to update.');
+                    console.log('Current question:', currentQuestion);
+                    console.log('Quiz report question ID:', quizReportQuestionId);
                 }
             }
 
@@ -49,6 +53,7 @@ const useSetupQuestionPage = (
                 try {
                     const activeUserId = useUserStore.getState().activeUserId;
                     fieldData = userManager.retrieveUserField(activeUserId, questionToFetch?.['@id']);
+                    console.log('Retrieved field data:', fieldData);
                 } catch (err) {
                     console.error('Error fetching profile field', err);
                     setProfileFieldRetrievalError(err);

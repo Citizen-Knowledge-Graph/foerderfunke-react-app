@@ -7,6 +7,7 @@ import {
   useSelectedBenefitStore,
   useMetadataStore
 } from "@/ui/storage/zustand";
+import { useQuestionsUpdate } from "@/ui/storage/updates";
 import { useLanguageStore } from "@/ui/storage/useLanguageStore";
 
 const normalizeToArray = (value) => {
@@ -22,6 +23,7 @@ const useFetchQuizReport = () => {
   const metadata = useMetadataStore((state) => state.metadata);
   const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
   const selectedBenefit = useSelectedBenefitStore((state) => state.selectedBenefit);
+  const updateCounter = useQuestionsUpdate((state) => state.updateCounter);
   const updateQuizReport = useQuizReportStore((state) => state.updateQuizReport);
   const language = useLanguageStore((state) => state.language);
 
@@ -69,6 +71,7 @@ const useFetchQuizReport = () => {
       try {
         setLoading(true);
         const quizReport = await matchingEngineManager.fetchQuizReport(userId, rpUris, language);
+        console.log("Fetched quiz report:", quizReport);
         updateQuizReport(quizReport);
       } catch (err) {
         console.error("Error producing quiz report:", err);
@@ -79,7 +82,7 @@ const useFetchQuizReport = () => {
     };
 
     fetchQuizReport();
-  }, [userId, selectedTopics, selectedBenefit, metadata, language, updateQuizReport]);
+  }, [userId, selectedTopics, selectedBenefit, metadata, language, updateQuizReport, updateCounter]);
 
   return { loading, error };
 };

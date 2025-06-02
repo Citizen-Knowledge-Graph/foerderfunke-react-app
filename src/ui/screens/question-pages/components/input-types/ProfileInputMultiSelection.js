@@ -25,9 +25,7 @@ const ProfileInputMultiSelection = ({ value, setValue, currentField, error }) =>
             setValue(value.filter((item) => item !== selectedValue));
         }
     };
-
-    console.log('choices: ', choices);  
-
+    
     return (
         <>
             <FormGroup>

@@ -19,8 +19,6 @@ const QuestionPageNext = ({
     handleBackClick
 }) => {
     
-    console.log('current question: ', currentQuestion);
-
     return (
         <Layout isApp={true} logo={false}>
             <AppScreenWrapper isLoading={isLoading} scrollKey={currentQuestion} backTarget={'/onboarding-welcome'} >
