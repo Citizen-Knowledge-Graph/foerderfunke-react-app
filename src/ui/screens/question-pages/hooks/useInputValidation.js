@@ -2,7 +2,6 @@ import { useCallback } from 'react';
 import dayjs from 'dayjs';
 
 const useInputValidation = (expectedType) => {
-  console.log('useInputValidation called with expectedType:', expectedType);
   return useCallback((value) => {
     return new Promise((resolve, reject) => {
       switch (expectedType) {

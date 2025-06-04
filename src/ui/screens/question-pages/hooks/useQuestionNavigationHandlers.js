@@ -22,7 +22,7 @@ const useQuestionNavigationHandlers = ({
             if (stackCounter > 0) {
                 setStackCounter(stackCounter - 1);
             }
-            triggerQuestionsUpdate()
+            triggerQuestionsUpdate();
         } catch (err) {
             console.error('Error handling add click:', err);
             setProfileFieldUpdateError(err);

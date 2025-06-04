@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import { useMetadataStore, useUserStore, useValidationReportStore } from "@/ui/storage/zustand";
 import { useLanguageStore } from "@/ui/storage/useLanguageStore";
 import { useInitialisationState } from '@/ui/storage/updates';
-import matchingEngineManager from "@/core/managers/matchingEngineManagar";
+import matchingEngineManager from "@/core/managers/matchingEngineManager";
 import userManager from "@/core/managers/userManager";
 
 export const useInitialiseApplication = () => {

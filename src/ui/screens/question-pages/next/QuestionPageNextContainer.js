@@ -2,7 +2,6 @@ import React, { useState, useMemo } from 'react';
 import { useNavigate } from "react-router-dom";
 import { useQuestionsUpdate } from "@/ui/storage/updates";
 import useTranslation from "@/ui/language/useTranslation";
-import { ValidationResult } from "@foerderfunke/matching-engine";
 import {
     questionsStackStore,
     useMetadataStore,
@@ -12,7 +11,6 @@ import {
 import useQuestionNavigationHandlers from "../hooks/useQuestionNavigationHandlers";
 import useSetupQuestionPage from "../hooks/useSetupQuestionPage";
 import QuestionPageNext from "./QuestionPageNext";
-import useAccessMetadata from '@/ui/storage/useAccessMetadata';
 
 const QuestionPageNextContainer = () => {
     const { t } = useTranslation();
@@ -73,7 +71,7 @@ const QuestionPageNextContainer = () => {
     }, [validationReport, metadata]);
 
     const questionsCount = useMemo(() => (
-        [questionsStack.length - stackCounter, questionsStack?.length + quizReport?.['ff:hasNumberOfMissingDatafields']?.['@value']]
+        [questionsStack.length - stackCounter, questionsStack?.length + Number(quizReport?.['ff:hasNumberOfMissingDatafields']?.['@value'])]
     ), [questionsStack, stackCounter, quizReport]);
 
     const isLoading = questionsAreLoading || !currentQuestion;

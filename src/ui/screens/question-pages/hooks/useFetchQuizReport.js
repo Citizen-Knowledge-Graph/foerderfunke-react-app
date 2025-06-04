@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import matchingEngineManager from "@/core/managers/matchingEngineManagar";
+import matchingEngineManager from "@/core/managers/matchingEngineManager";
 import {
   useUserStore,
   useQuizReportStore,
@@ -16,6 +16,7 @@ const normalizeToArray = (value) => {
 };
 
 const useFetchQuizReport = () => {
+  const [quizReport, setQuizReport] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -71,7 +72,7 @@ const useFetchQuizReport = () => {
       try {
         setLoading(true);
         const quizReport = await matchingEngineManager.fetchQuizReport(userId, rpUris, language);
-        console.log("Fetched quiz report:", quizReport);
+        setQuizReport(quizReport);
         updateQuizReport(quizReport);
       } catch (err) {
         console.error("Error producing quiz report:", err);
@@ -79,12 +80,12 @@ const useFetchQuizReport = () => {
       } finally {
         setLoading(false);
       }
-    };
+  };
 
-    fetchQuizReport();
-  }, [userId, selectedTopics, selectedBenefit, metadata, language, updateQuizReport, updateCounter]);
+  fetchQuizReport();
+}, [userId, selectedTopics, selectedBenefit, metadata, language, updateQuizReport, updateCounter]);
 
-  return { loading, error };
+return { quizReport, loading, error };
 };
 
 export default useFetchQuizReport;
