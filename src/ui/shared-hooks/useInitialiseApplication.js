@@ -92,7 +92,7 @@ export const useInitialiseApplication = () => {
         if (initialisationState) {
             reinitLanguage();
         }
-    }, [language, initialisationState]);
+    }, [language, initialisationState, metadataStore, validationReportStore]);
 
     return isLoading;
 };

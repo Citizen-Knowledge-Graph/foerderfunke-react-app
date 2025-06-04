@@ -5,7 +5,7 @@ import { useQuestionsUpdate } from '@/ui/storage/updates';
 import useFetchQuizReport from './hooks/useFetchQuizReport';
 
 const QuestionPageRouter = () => {
-    const { quizReport, loading, error } = useFetchQuizReport();
+    const { quizReport } = useFetchQuizReport();
     const questionsAreLoading = useQuestionsUpdate((s) => s.questionsAreLoading);
     const [completed, setCompleted] = useState(false);
     
@@ -16,9 +16,6 @@ const QuestionPageRouter = () => {
             setCompleted(false);
         }
     }, [quizReport]);
-
-    console.log('Quiz Report:', quizReport);
-    console.log('Completed:', completed);
 
     if (completed && !questionsAreLoading) {
         return <QuestionPageCompleted />;
