@@ -6,9 +6,10 @@ import EligibilityOverviewList from "./EligibilityOverviewList";
 
 const EligibilityOverviewSection = ({ category, eligibilitySection, iconPaths }) => {
     const eligibleBenefitsComplete = eligibilitySection['ff:eligible']?.final || [];
+    const eligibleBenefitsPreliminary = eligibilitySection['ff:eligible']?.preliminary || [];
     const ineligibleBenefits = eligibilitySection['ff:ineligible'] || []
     const undeterminableBenefits = eligibilitySection['ff:missingData'] || []
-    const { eligible, ineligible, missing } = iconPaths;
+    const { eligible, preliminaryEligible, ineligible, missing } = iconPaths;
 
     return (
         <VBox sx={{ 
@@ -26,7 +27,9 @@ const EligibilityOverviewSection = ({ category, eligibilitySection, iconPaths })
                 }}
             >
                 {eligibleBenefitsComplete.length > 0 &&
-                    <EligibilityOverviewList items={eligibleBenefitsComplete} eligible={'eligible'} iconPath={eligible} />}                  
+                    <EligibilityOverviewList items={eligibleBenefitsComplete} eligible={'eligible'} iconPath={eligible} />}       
+                {eligibleBenefitsPreliminary.length > 0 &&
+                    <EligibilityOverviewList items={eligibleBenefitsPreliminary} eligible={'preliminary-eligible'} iconPath={preliminaryEligible} />}                                   
                 {ineligibleBenefits.length > 0 &&
                     <EligibilityOverviewList items={ineligibleBenefits} eligible={'non-eligible'} iconPath={ineligible} />}
                 {undeterminableBenefits.length > 0 &&

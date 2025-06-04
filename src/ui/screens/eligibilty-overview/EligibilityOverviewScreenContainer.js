@@ -23,8 +23,6 @@ const EligibilityOverviewScreenContainer = () => {
         missing: `${process.env.PUBLIC_URL}/assets/images/application/icon-image-missing.svg`,
     }), []);
 
-    console.log("Eligibility Data:", eligibilityData);
-
     return (
         <EligibilityOverviewScreen
             t={t}

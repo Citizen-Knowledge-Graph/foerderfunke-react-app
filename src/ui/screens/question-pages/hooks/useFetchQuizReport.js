@@ -36,7 +36,7 @@ const useFetchQuizReport = () => {
       const uniqueRpIds = new Set();
 
       const hasSelectedTopics = Array.isArray(selectedTopics) && selectedTopics.length > 0;
-      const hasSelectedBenefit = selectedBenefit?.["@id"];
+      const hasSelectedBenefit = Boolean(selectedBenefit);
 
       // Add RP IDs based on selected topics
       if (hasSelectedTopics) {
@@ -54,7 +54,7 @@ const useFetchQuizReport = () => {
 
       // Add selected benefit if it's defined
       if (hasSelectedBenefit) {
-        uniqueRpIds.add(selectedBenefit["@id"]);
+        uniqueRpIds.add(selectedBenefit);
       }
 
       // If both selectedTopics and selectedBenefit are empty/null, add all RPs
