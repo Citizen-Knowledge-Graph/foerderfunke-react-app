@@ -4,14 +4,15 @@ import useTranslation from "@/ui/language/useTranslation";
 import EligibilityOverviewScreen from './EligibilityOverviewScreen';
 import useEligibilityData from "./hooks/useEligibilityData";
 import { useLanguageStore } from '@/ui/storage/useLanguageStore';
-import { useMetadataStore, useValidationReportStore } from '@/ui/storage/zustand';
+import { useMetadataStore } from '@/ui/storage/zustand';
+import useProduceValidationReport from './hooks/useProduceValidationReport';
 
 const EligibilityOverviewScreenContainer = () => {
     const { t } = useTranslation();
     const language = useLanguageStore((state) => state.language);
 
     const hydrationData = useFetchData('assets/data/requirement-profiles/requirement-profiles-hydration.json');
-    const validationReport = useValidationReportStore((state) => state.validationReport);
+    const {validationReport} = useProduceValidationReport();
     const metadata = useMetadataStore((state) => state.metadata);
     const eligibilityData = useEligibilityData(validationReport, metadata, hydrationData, language);
     
@@ -21,6 +22,8 @@ const EligibilityOverviewScreenContainer = () => {
         ineligible: `${process.env.PUBLIC_URL}/assets/images/application/icon-image-ineligible.svg`,
         missing: `${process.env.PUBLIC_URL}/assets/images/application/icon-image-missing.svg`,
     }), []);
+
+    console.log("Eligibility Data:", eligibilityData);
 
     return (
         <EligibilityOverviewScreen

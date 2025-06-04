@@ -17,7 +17,7 @@ const useUserProfileData = () => {
                 const dfObj = metadata["ff:hasDF"]?.find(df => df["@id"] === key);
                 const dfLabel = dfObj?.["rdfs:label"]?.["@value"];
                 let dfValue = convertUserValueRaw(value, dfObj, t);
-                dfValue = dfObj.datafield === "ff:vermoegen" ? formatEuro(dfValue) : dfValue;
+                dfValue = dfObj?.['@id'] === "ff:vermoegen" ? formatEuro(dfValue) : dfValue;
                 return {
                     label: dfLabel,
                     value: dfValue

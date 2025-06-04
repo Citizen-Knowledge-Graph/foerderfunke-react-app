@@ -1,13 +1,12 @@
 import React from "react";
 import { Typography } from "@mui/material";
-import { ValidationResult } from "@foerderfunke/matching-engine";
 import { VBox } from "@/ui/shared-components/LayoutBoxes";
 import theme from "@/theme";
 import EligibilityOverviewList from "./EligibilityOverviewList";
 
 const EligibilityOverviewSection = ({ category, eligibilitySection, iconPaths }) => {
-    const eligibleBenefitsComplete = eligibilitySection[ValidationResult.ELIGIBLE]?.final || [];
-    const ineligibleBenefits = eligibilitySection[ValidationResult.INELIGIBLE] || []
+    const eligibleBenefitsComplete = eligibilitySection['ff:eligible']?.final || [];
+    const ineligibleBenefits = eligibilitySection['ff:ineligible'] || []
     const undeterminableBenefits = eligibilitySection['ff:missingData'] || []
     const { eligible, ineligible, missing } = iconPaths;
 

@@ -1,42 +1,53 @@
-import { useEffect, useRef } from "react";
-import { isEqual } from "lodash";
-import useRunValidation from "@/ui/shared-hooks/useRunValidation";
-import userManager from "@/core/managers/userManager";
+import { useState, useEffect } from 'react';
+import { useLanguageStore } from "@/ui/storage/useLanguageStore";
+import matchingEngineManager from "@/core/managers/matchingEngineManager";
+import { useInitialisationState } from '@/ui/storage/updates';
 import { useValidationReportStore } from "@/ui/storage/zustand";
-import { useInitialisationState, useValidationUpdate } from "@/ui/storage/updates";
 
 const useProduceValidationReport = () => {
-  const validationIsLoading = useValidationUpdate((state) => state.validationIsLoading);
-  const validationReport = useValidationReportStore((state) => state.validationReport);
-  const initialisationState = useInitialisationState((state) => state.initialisationState);
-  const runValidation = useRunValidation();
+  const [isLoading, setIsLoading] = useState(false);
 
-  const isRunningRef = useRef(false);
+  const initialisationState = useInitialisationState(
+    (state) => state.initialisationState
+  );
+  const language = useLanguageStore((state) => state.language);
+
+  const updateValidationReport = useValidationReportStore(
+    (state) => state.updateValidationReport
+  );
+  const validationReport = useValidationReportStore(
+    (state) => state.validationReport
+  );
+
+  const fixedUserId = "ff:quick-check-user";
 
   useEffect(() => {
-    const shouldRun = () => {
-      if (validationIsLoading || isRunningRef.current || !initialisationState) return false;
-      if (!validationReport?.reports || !validationReport?.userProfile) return true;
+    if (!initialisationState) {
+      console.warn(
+        "Application is not initialized. Cannot fetch validation report."
+      );
+      return;
+    }
 
-      const validatedUserProfile = validationReport.userProfile;
-      const currentUserProfile = userManager.retrieveUserData();
-      return !isEqual(validatedUserProfile, currentUserProfile);
-    };
-
-    const produceValidationReport = async () => {
-      if (!shouldRun()) {
-        return;
+    const fetchingValidationReport = async () => {
+      setIsLoading(true);
+      try {
+        const report = await matchingEngineManager.fetchValidationReport(
+          fixedUserId,
+          language
+        );
+        updateValidationReport(report || "empty");
+      } catch (error) {
+        console.error("Fetching report failed:", error);
+      } finally {
+        setIsLoading(false);
       }
-
-      isRunningRef.current = true;
-      await runValidation();
-      isRunningRef.current = false;
     };
 
-    produceValidationReport();
-  }, [validationReport, validationIsLoading, runValidation, initialisationState]);
+    fetchingValidationReport();
+  }, [initialisationState, language, updateValidationReport]);
 
-  return validationReport;
+  return { isLoading, validationReport };
 };
 
 export default useProduceValidationReport;
