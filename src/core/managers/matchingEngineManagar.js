@@ -86,6 +86,8 @@ const matchingEngineManager = {
         const userProfileTurtle = await convertUserProfileToTurtle(userProfile);
 
         console.log("Fetching quiz report for user:", userProfile);
+        console.log("Requirement profiles:", requirementProfiles.map(rp => expand(rp)));
+
         return this.matchingEngineInstance.matching(
             userProfileTurtle,
             requirementProfiles.map(rp => expand(rp)),
