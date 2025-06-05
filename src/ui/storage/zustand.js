@@ -85,7 +85,7 @@ export const questionsStackStore = create((set) => ({
     stackCounter: 0,
     addQuestionToStack: (newQuestion) => {
         set((state) => ({
-            questionsStack: state.questionsStack.some(question => question?.datafield === newQuestion?.datafield)
+            questionsStack: state.questionsStack.some(question => question?.['@id'] === newQuestion?.['@id'])
                 ? state.questionsStack
                 : [...state.questionsStack, newQuestion]
         }));

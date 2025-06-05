@@ -32,7 +32,7 @@ const useQuestionNavigationHandlers = ({
     const handleBackClick = useCallback(() => {
         if (stackCounter === questionsStack.length - 1) {
             navigate(-1);
-        } else {
+        } else {;
             setStackCounter(stackCounter + 1);
         }
     }, [stackCounter, questionsStack, navigate, setStackCounter]);
