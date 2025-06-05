@@ -7,6 +7,13 @@ export const useInitialisationState = create((set) => ({
     }
 }));
 
+export const useApplicationLoadingState = create((set) => ({
+    applicationIsLoading: false,
+    setApplicationIsLoading: (isLoading) => {
+        set({applicationIsLoading: isLoading});
+    }
+}));
+
 export const useValidationUpdate = create((set) => ({
     updateCounter: -1,
     triggerValidationUpdate: () => {

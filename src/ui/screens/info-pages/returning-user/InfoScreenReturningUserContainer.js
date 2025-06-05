@@ -4,13 +4,11 @@ import { convertUserProfileToTurtle } from "@foerderfunke/matching-engine/src/pr
 import useTranslation from "@/ui/language/useTranslation";
 import userManager from "@/core/managers/userManager";
 import InfoScreenReturningUser from "./InfoScreenReturningUser";
-import useJointValidationStatus from "@/ui/shared-hooks/utility/useJointValidationStatus";
 import useResetUserProfile from "../hooks/useResetUserProfile";
 
 const InfoScreenReturningUserContainer = () => {
   const { t } = useTranslation();
-  const { isLoadingJointStatus } = useJointValidationStatus();
-  const { resetUserProfile } = useResetUserProfile();
+  const { applicationIsLoading, resetUserProfile } = useResetUserProfile();
 
 
   const exportProfile = async () => {
@@ -27,7 +25,7 @@ const InfoScreenReturningUserContainer = () => {
 
   return (
     <InfoScreenReturningUser
-      isLoading={isLoadingJointStatus}
+      isLoading={applicationIsLoading}
       t={t}
       exportProfile={exportProfile}
       deleteExistingProfile={resetUserProfile}

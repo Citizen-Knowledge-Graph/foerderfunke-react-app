@@ -1,14 +1,15 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useMetadataStore, useUserStore, useValidationReportStore } from "@/ui/storage/zustand";
 import { useLanguageStore } from "@/ui/storage/useLanguageStore";
-import { useInitialisationState } from '@/ui/storage/updates';
+import { useApplicationLoadingState, useInitialisationState } from '@/ui/storage/updates';
 import matchingEngineManager from "@/core/managers/matchingEngineManager";
 import userManager from "@/core/managers/userManager";
 
 export const useInitialiseApplication = () => {
-    const [isLoading, setIsLoading] = useState(true);
     const setInitialisationState = useInitialisationState((state) => state.setInitialisationState);
     const initialisationState = useInitialisationState((state) => state.initialisationState);
+    const setApplicationIsLoading = useApplicationLoadingState((state) => state.setApplicationIsLoading);
+    const applicationIsLoading = useApplicationLoadingState((state) => state.applicationIsLoading);
     const updateUserId = useUserStore((state) => state.updateUserId);
 
     const initializedRef = useRef(false);
@@ -27,7 +28,7 @@ export const useInitialiseApplication = () => {
 
             initializedRef.current = true;
             isInitializingRef.current = true;
-            setIsLoading(true);
+            setApplicationIsLoading(true);
 
             try {
                 // Initialize user
@@ -54,14 +55,15 @@ export const useInitialiseApplication = () => {
                 console.error("App init error:", error);
             } finally {
                 isInitializingRef.current = false;
-                setIsLoading(false);
+                setApplicationIsLoading(false);
             }
         };
 
         initializeAppState();
     }, [
-        setInitialisationState,
         initialisationState,
+        setInitialisationState,
+        setApplicationIsLoading,
         updateUserId,
         metadataStore,
         validationReportStore,
@@ -94,5 +96,5 @@ export const useInitialiseApplication = () => {
         }
     }, [language, initialisationState, metadataStore, validationReportStore]);
 
-    return isLoading;
+    return applicationIsLoading;
 };

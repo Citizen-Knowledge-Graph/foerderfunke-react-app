@@ -1,9 +1,9 @@
-// useResetUserProfile.tsx
-import { useState, useRef, useCallback } from 'react';
+import { useRef, useCallback } from 'react';
 import { useLanguageStore } from "@/ui/storage/useLanguageStore";
 import matchingEngineManager from "@/core/managers/matchingEngineManager";
 import userManager from "@/core/managers/userManager";
 import { useInitialisationState } from '@/ui/storage/updates';
+import { useApplicationLoadingState } from '@/ui/storage/updates';
 import {
     useUserStore,
     questionsStackStore,
@@ -13,8 +13,9 @@ import {
 } from "@/ui/storage/zustand";
 
 const useResetUserProfile = () => {
-    const [isLoading, setIsLoading] = useState(false);
     const updateUserId = useUserStore((state) => state.updateUserId);
+    const setApplicationIsLoading = useApplicationLoadingState((state) => state.setApplicationIsLoading);
+    const applicationIsLoading = useApplicationLoadingState((state) => state.applicationIsLoading);
 
     const initialisationState = useInitialisationState((state) => state.initialisationState);
     const isResettingRef = useRef(false);
@@ -31,7 +32,7 @@ const useResetUserProfile = () => {
         if (isResettingRef.current) return;
 
         isResettingRef.current = true;
-        setIsLoading(true);
+        setApplicationIsLoading(true);
 
         try {
             // 1) Reset user profile
@@ -50,16 +51,17 @@ const useResetUserProfile = () => {
             console.error("User reset error:", error);
         } finally {
             isResettingRef.current = false;
-            setIsLoading(false);
+            setApplicationIsLoading(false);
         }
     }, [
         initialisationState,
         updateUserId,
         validationReportStore,
-        language
+        language,
+        setApplicationIsLoading,
     ]);
 
-    return { isLoading, resetUserProfile };
+    return { applicationIsLoading, resetUserProfile };
 };
 
 export default useResetUserProfile;
