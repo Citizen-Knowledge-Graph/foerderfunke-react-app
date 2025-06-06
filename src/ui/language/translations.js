@@ -92,7 +92,7 @@ const translations = {
             loading: {
                 initialising: "Initialising FörderFunke",
                 resettingUserProfile: "Resetting user profile",
-                producingQuizReport: "Loading next question",
+                producingQuizReport: "",
                 producingValidationReport: "Checking your eligibility",
             },
             nav: {
@@ -345,7 +345,7 @@ const translations = {
             loading: {
                 initialising: "FörderFunke wird initialisiert",
                 resettingUserProfile: "Das Profil wird zurückgesetzt",
-                producingQuizReport: "Die nächste Frage wird geladen",
+                producingQuizReport: "",
                 producingValidationReport: "Dein Anspruchscheck wird durchgeführt",
             },
             nav: {
