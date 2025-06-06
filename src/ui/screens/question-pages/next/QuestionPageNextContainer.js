@@ -1,6 +1,5 @@
 import React, { useState, useMemo } from 'react';
 import { useNavigate } from "react-router-dom";
-import { useQuestionsUpdate } from "@/ui/storage/updates";
 import useTranslation from "@/ui/language/useTranslation";
 import {
     questionsStackStore,

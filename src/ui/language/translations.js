@@ -1,5 +1,3 @@
-import { initial } from "lodash";
-
 const translations = {
     en: {
         home: {
