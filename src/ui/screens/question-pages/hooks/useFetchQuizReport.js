@@ -90,7 +90,16 @@ const useFetchQuizReport = () => {
     };
 
     fetchQuizReport();
-  }, [userId, selectedTopics, selectedBenefit, metadata, language, updateQuizReport, updateCounter]);
+  }, [
+    userId,
+    metadata,
+    selectedTopics,
+    selectedBenefit,
+    updateCounter,
+    updateQuizReport,
+    language,
+    setApplicationIsLoading
+  ]);
 
   return { quizReport, error };
 };
