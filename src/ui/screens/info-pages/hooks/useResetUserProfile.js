@@ -32,7 +32,10 @@ const useResetUserProfile = () => {
         if (isResettingRef.current) return;
 
         isResettingRef.current = true;
-        setApplicationIsLoading(true);
+        setApplicationIsLoading({
+            applicationIsLoading: true,
+            loadingMessage: "Resetting user profile..."
+        });
 
         try {
             // 1) Reset user profile
@@ -51,7 +54,10 @@ const useResetUserProfile = () => {
             console.error("User reset error:", error);
         } finally {
             isResettingRef.current = false;
-            setApplicationIsLoading(false);
+            setApplicationIsLoading({
+                applicationIsLoading: false,
+                loadingMessage: ""
+            });
         }
     }, [
         initialisationState,

@@ -32,7 +32,10 @@ const useProduceValidationReport = () => {
         }
 
         const fetchingValidationReport = async () => {
-            setApplicationIsLoading(true);
+            setApplicationIsLoading({
+                applicationIsLoading: true,
+                loadingMessage: "Producing validation report..."
+            });
             try {
                 const report = await matchingEngineManager.fetchValidationReport(
                     fixedUserId,
@@ -42,7 +45,10 @@ const useProduceValidationReport = () => {
             } catch (error) {
                 console.error("Fetching report failed:", error);
             } finally {
-                setApplicationIsLoading(false);
+                setApplicationIsLoading({
+                    applicationIsLoading: false,
+                    loadingMessage: ""
+                });
             }
         };
 

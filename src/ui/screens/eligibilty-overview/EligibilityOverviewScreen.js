@@ -10,16 +10,15 @@ const EligibilityOverviewScreen = ({
     t,
     iconPaths,
     eligibilityData,
-    validationIsLoading,
 }) => {
 
     return (
         <Layout isApp={true} logo={true}>
-            <AppScreenWrapperContainer isLoading={validationIsLoading} back={true}>
+            <AppScreenWrapperContainer back={true}>
                 <VBox sx={{ gap: { xs: 4, md: 8 } }} >
                     <EligibilityOverviewHeader iconPaths={iconPaths} />
                     {
-                        eligibilityData && !validationIsLoading ? (
+                        eligibilityData ? (
                             <>
                                 {
                                     eligibilityData["social_benefit"] && (

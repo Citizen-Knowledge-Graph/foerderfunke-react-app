@@ -28,7 +28,10 @@ export const useInitialiseApplication = () => {
 
             initializedRef.current = true;
             isInitializingRef.current = true;
-            setApplicationIsLoading(true);
+            setApplicationIsLoading({
+                applicationIsLoading: true,
+                loadingMessage: "Initializing application"
+            });
 
             try {
                 // Initialize user
@@ -55,7 +58,10 @@ export const useInitialiseApplication = () => {
                 console.error("App init error:", error);
             } finally {
                 isInitializingRef.current = false;
-                setApplicationIsLoading(false);
+                setApplicationIsLoading({
+                    applicationIsLoading: false,
+                    loadingMessage: ""
+                });
             }
         };
 

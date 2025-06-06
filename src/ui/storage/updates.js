@@ -8,7 +8,10 @@ export const useInitialisationState = create((set) => ({
 }));
 
 export const useApplicationLoadingState = create((set) => ({
-    applicationIsLoading: false,
+    applicationIsLoading: {
+        isloading: false,
+        message: '',
+    },
     setApplicationIsLoading: (isLoading) => {
         set({applicationIsLoading: isLoading});
     }

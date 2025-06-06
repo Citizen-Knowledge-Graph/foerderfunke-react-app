@@ -20,7 +20,6 @@ const QuestionPageNextContainer = () => {
     const quizReport = useQuizReportStore((s) => s.quizReport);
     const metadata = useMetadataStore((s) => s.metadata);
     const validationReport = useValidationReportStore((s) => s.validationReport);
-    const questionsAreLoading = useQuestionsUpdate((s) => s.questionsAreLoading);
     const {
         questionsStack,
         addQuestionToStack,
@@ -74,12 +73,9 @@ const QuestionPageNextContainer = () => {
         [questionsStack.length - stackCounter, questionsStack?.length + Number(quizReport?.['ff:hasNumberOfMissingDatafields']?.['@value'])]
     ), [questionsStack, stackCounter, quizReport]);
 
-    const isLoading = questionsAreLoading || !currentQuestion;
-
     return (
         <QuestionPageNext
             t={t}
-            isLoading={isLoading}
             currentQuestion={currentQuestion}
             value={value}
             setValue={setValue}

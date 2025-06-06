@@ -9,6 +9,7 @@ import {
 } from "@/ui/storage/zustand";
 import { useQuestionsUpdate } from "@/ui/storage/updates";
 import { useLanguageStore } from "@/ui/storage/useLanguageStore";
+import { useApplicationLoadingState } from "@/ui/storage/updates";
 
 const normalizeToArray = (value) => {
   if (!value) return [];
@@ -17,7 +18,6 @@ const normalizeToArray = (value) => {
 
 const useFetchQuizReport = () => {
   const [quizReport, setQuizReport] = useState(null);
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const userId = useUserStore((state) => state.activeUserId);
@@ -27,6 +27,7 @@ const useFetchQuizReport = () => {
   const updateCounter = useQuestionsUpdate((state) => state.updateCounter);
   const updateQuizReport = useQuizReportStore((state) => state.updateQuizReport);
   const language = useLanguageStore((state) => state.language);
+  const setApplicationIsLoading = useApplicationLoadingState((state) => state.setApplicationIsLoading);
 
   useEffect(() => {
     const fetchQuizReport = async () => {
@@ -70,7 +71,10 @@ const useFetchQuizReport = () => {
       if (rpUris.length === 0) return;
 
       try {
-        setLoading(true);
+        setApplicationIsLoading({
+          applicationIsLoading: true,
+          loadingMessage: "Fetching next question"
+        });
         const quizReport = await matchingEngineManager.fetchQuizReport(userId, rpUris, language);
         setQuizReport(quizReport);
         updateQuizReport(quizReport);
@@ -78,14 +82,17 @@ const useFetchQuizReport = () => {
         console.error("Error producing quiz report:", err);
         setError(err);
       } finally {
-        setLoading(false);
+        setApplicationIsLoading({
+          applicationIsLoading: false,
+          loadingMessage: ""
+        });
       }
-  };
+    };
 
-  fetchQuizReport();
-}, [userId, selectedTopics, selectedBenefit, metadata, language, updateQuizReport, updateCounter]);
+    fetchQuizReport();
+  }, [userId, selectedTopics, selectedBenefit, metadata, language, updateQuizReport, updateCounter]);
 
-return { quizReport, loading, error };
+  return { quizReport, error };
 };
 
 export default useFetchQuizReport;

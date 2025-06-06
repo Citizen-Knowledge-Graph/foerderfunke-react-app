@@ -8,7 +8,7 @@ const ProfileInputText = ({value, setValue, error}) => {
                 variant="outlined"
                 label="Value"
                 onChange={(e) => setValue(e.target.value)}
-                value={value}
+                value={value || ''}
                 fullWidth
             />
             {error ? (
