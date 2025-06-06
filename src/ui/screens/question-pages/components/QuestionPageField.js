@@ -5,7 +5,7 @@ import ProfileSectionInputSwitch from "./input-types/ProfileSectionInputSwitch";
 import { ExpandMore } from '@mui/icons-material';
 import IconButton from '@mui/material/IconButton';
 import theme from "@/theme";
-import RegularButton from '@/ui/shared-components/RegularButton';
+import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 
 const QuestionPageField = ({
     t,

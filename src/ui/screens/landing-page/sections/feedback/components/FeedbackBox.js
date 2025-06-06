@@ -5,7 +5,7 @@ import useFeedbackHandler from "../hooks/useFeedbackHandler";
 import useTranslation from "@/ui/language/useTranslation";
 import EmailIcon from "@mui/icons-material/Email";
 import theme from "@/theme";
-import RegularButton from "@/ui/shared-components/RegularButton";
+import RegularButton from "@/ui/shared-components/buttons/RegularButton";
 
 const FeedbackBox = ({ isDesktop }) => {
     const { t } = useTranslation();

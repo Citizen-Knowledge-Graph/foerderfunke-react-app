@@ -6,7 +6,7 @@ import Layout from "@/ui/shared-components/Layout";
 import { VBox, HBox } from "@/ui/shared-components/LayoutBoxes";
 import AppScreenWrapperContainer from "@/ui/shared-components/app-screen-wrapper/AppScreenWrapperContainer";
 import theme from "@/theme";
-import RegularButton from "@/ui/shared-components/RegularButton";
+import RegularButton from "@/ui/shared-components/buttons/RegularButton";
 
 const InfoScreenPrivacy = ({t, isDesktop, privacyBox}) => {
     return (

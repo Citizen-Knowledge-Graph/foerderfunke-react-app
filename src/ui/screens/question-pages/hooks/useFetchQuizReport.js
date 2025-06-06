@@ -73,7 +73,7 @@ const useFetchQuizReport = () => {
       try {
         setApplicationIsLoading({
           applicationIsLoading: true,
-          loadingMessage: "app.loading.producingQuizReport"
+          loadingMessage: ""
         });
         const quizReport = await matchingEngineManager.fetchQuizReport(userId, rpUris, language);
         setQuizReport(quizReport);

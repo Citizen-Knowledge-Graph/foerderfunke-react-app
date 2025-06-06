@@ -9,7 +9,7 @@ export const useInitialisationState = create((set) => ({
 
 export const useApplicationLoadingState = create((set) => ({
     applicationIsLoading: {
-        isloading: false,
+        applica: false,
         message: '',
     },
     setApplicationIsLoading: (isLoading) => {

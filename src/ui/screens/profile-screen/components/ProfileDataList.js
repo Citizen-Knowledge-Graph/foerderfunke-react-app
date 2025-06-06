@@ -3,7 +3,7 @@ import { VBox, HBox } from "@/ui/shared-components/LayoutBoxes";
 import { Typography } from "@mui/material";
 import useTranslation from "@/ui/language/useTranslation";
 import theme from "@/theme";
-import RegularButton from '@/ui/shared-components/RegularButton';
+import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 import useUserProfileData from "../hooks/useUserProfileData";
 
 

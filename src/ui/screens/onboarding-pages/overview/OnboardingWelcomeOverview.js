@@ -3,7 +3,7 @@ import { Typography } from '@mui/material';
 import Layout from "@/ui/shared-components/Layout";
 import { VBox, HBox } from "@/ui/shared-components/LayoutBoxes";
 import theme from "@/theme";
-import RegularButton from '@/ui/shared-components/RegularButton';
+import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 import TimeIcon from '../components/TimeIcon';
 import BenefitsIcon from '../components/BenefitsIcon';
 import AppScreenWrapperContainer from '@/ui/shared-components/app-screen-wrapper/AppScreenWrapperContainer';

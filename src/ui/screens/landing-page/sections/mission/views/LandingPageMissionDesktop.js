@@ -3,7 +3,7 @@ import { Typography } from "@mui/material";
 import useTranslation from "@/ui/language/useTranslation";
 import { HBox, VBox } from "@/ui/shared-components/LayoutBoxes";
 import theme from "@/theme";
-import RegularButton from "@/ui/shared-components/RegularButton";
+import RegularButton from "@/ui/shared-components/buttons/RegularButton";
 
 const LandingPageMissionDesktop = ({ isDesktop }) => {
     const { t } = useTranslation();

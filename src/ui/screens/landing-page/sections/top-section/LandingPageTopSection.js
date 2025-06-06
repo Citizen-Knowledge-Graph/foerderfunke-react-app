@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useStore } from "@/ui/shared-components/ViewportUpdater";
 import { HBox, VBox } from "@/ui/shared-components/LayoutBoxes";
-import RegularButton from "@/ui/shared-components/RegularButton";
+import RegularButton from "@/ui/shared-components/buttons/RegularButton";
 import LandingPageSectionWrapper from "../../components/LandingPageSectionWrapper";
 import LandingPageTopSectionShared from "./components/LandingPageTopSectionShared";
 

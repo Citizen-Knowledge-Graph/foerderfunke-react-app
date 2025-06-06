@@ -5,7 +5,7 @@ import { Typography } from "@mui/material";
 import theme from "@/theme";
 import { SupporterCardNGI, SupporterCardPF } from "./components/LandingPageSupporters";
 import useTranslation from "@/ui/language/useTranslation";
-import RegularButton from "@/ui/shared-components/RegularButton";
+import RegularButton from "@/ui/shared-components/buttons/RegularButton";
 
 const LandingPageFunding = ({ isDesktop }) => {
     const { t } = useTranslation();

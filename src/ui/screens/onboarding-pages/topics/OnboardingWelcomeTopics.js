@@ -3,7 +3,7 @@ import { Checkbox, FormControlLabel, Typography, Box } from '@mui/material';
 import Layout from "@/ui/shared-components/Layout";
 import AppScreenWrapperContainer from "@/ui/shared-components/app-screen-wrapper/AppScreenWrapperContainer";
 import { VBox, HBox } from "@/ui/shared-components/LayoutBoxes";
-import RegularButton from '@/ui/shared-components/RegularButton';
+import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 import TimeIcon from '../components/TimeIcon';
 import ClickableTopicBox from "../components/ClickableTopicBox";
 

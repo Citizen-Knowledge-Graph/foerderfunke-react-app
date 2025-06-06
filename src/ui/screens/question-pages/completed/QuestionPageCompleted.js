@@ -6,7 +6,7 @@ import { VBox, HBox } from "@/ui/shared-components/LayoutBoxes";
 import Layout from "@/ui/shared-components/Layout";
 import AppScreenWrapper from "@/ui/shared-components/app-screen-wrapper/AppScreenWrapper";
 import { useStore } from "@/ui/shared-components/ViewportUpdater";
-import RegularButton from '@/ui/shared-components/RegularButton';
+import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 
 const QuestionPageCompleted = () => {
     const { t } = useTranslation();

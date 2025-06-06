@@ -6,7 +6,7 @@ import LogoBar from '@/ui/shared-components/LogoBar';
 import AntSwitch from '@/ui/shared-components/AntSwitch';
 import LandingPageHollowButtonDesktop from '@/ui/screens/landing-page/components/LandingPageButtonDesktop';
 import theme from '@/theme';
-import RegularButton from '@/ui/shared-components/RegularButton';
+import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 import { useLanguageStore } from '@/ui/storage/useLanguageStore';
 
 const HeaderBarDesktop = ({ isApp }) => {

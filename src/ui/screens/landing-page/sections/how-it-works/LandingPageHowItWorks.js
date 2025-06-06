@@ -10,7 +10,7 @@ import LandingPageSectionWrapper from "../../components/LandingPageSectionWrappe
 import LandingPageInfoCard from "./components/LandingPageInfoCard";
 import { VBox, HBox } from "@/ui/shared-components/LayoutBoxes";
 import { useStore } from "@/ui/shared-components/ViewportUpdater";
-import RegularButton from "@/ui/shared-components/RegularButton";
+import RegularButton from "@/ui/shared-components/buttons/RegularButton";
 
 const LandingPageHowItWorks = () => {
     const { t } = useTranslation();
