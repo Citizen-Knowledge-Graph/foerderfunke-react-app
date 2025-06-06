@@ -13,7 +13,6 @@ import AppScreenWrapperContainer from '@/ui/shared-components/app-screen-wrapper
 
 const BenefitPageScreen = ({
     t,
-    isLoading,
     id,
     benefitPageData,
     validatedStatus,
@@ -22,7 +21,7 @@ const BenefitPageScreen = ({
 
     return (
         <Layout isApp={true} logo={false} back="Back">
-            <AppScreenWrapperContainer isLoading={isLoading} backTarget={'/eligibility-overview'}>
+            <AppScreenWrapperContainer backTarget={'/eligibility-overview'}>
                 <VBox sx={{ gap: { xs: 4, md: 8 } }}>
                     <BenefitPageHeader id={id} benefit={benefitPageData} validatedStatus={validatedStatus} categoryTitles={categoryTitles} />
                     <Box gap={2} sx={{

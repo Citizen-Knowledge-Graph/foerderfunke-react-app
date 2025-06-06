@@ -15,13 +15,10 @@ const BenefitPageScreenContainer = () => {
     const benefitPageData = useFetchStaticBenefitPageData(id, language);
     const categoryTitles = useBuildCategoryTitles(id, language);
     const validatedStatus = useValidatedStatus(id);
-
-    const isLoading = !benefitPageData || !categoryTitles
-
+    
     return (
         <BenefitPageScreen
             t={t}
-            isLoading={isLoading}
             id={id}
             benefitPageData={benefitPageData}
             validatedStatus={validatedStatus}

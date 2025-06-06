@@ -18,13 +18,13 @@ const BenefitPageHeader = ({ id, benefit, validatedStatus, categoryTitles }) => 
         <HBox sx={{ justifyContent: 'space-between', gap: 4, flexWrap: 'wrap' }}>
             <VBox sx={{ gap: 2 }}>
                 <Typography variant="h1">
-                    {benefit.title}
+                    {benefit?.title}
                 </Typography>
                 <VBox sx={{ gap: 2 }}>
                     <VBox sx={{ gap: 1 }}>
                         <HBox sx={{ gap: 1, alignItems: 'center' }}>
                             <Typography variant="body2" sx={{ color: 'black.light' }}>
-                                LeiKa-Id: {benefit.leikaId}
+                                LeiKa-Id: {benefit?.leikaId}
                             </Typography>
                             <IconButton
                                 sx={{
@@ -50,7 +50,7 @@ const BenefitPageHeader = ({ id, benefit, validatedStatus, categoryTitles }) => 
                             </Typography>
                         )}
                     </VBox>
-                    {categoryTitles.length > 0 && (
+                    {categoryTitles?.length > 0 && (
                         <Box sx={{
                             display: "flex",
                             flexDirection: "column",
