@@ -34,7 +34,7 @@ const useResetUserProfile = () => {
         isResettingRef.current = true;
         setApplicationIsLoading({
             applicationIsLoading: true,
-            loadingMessage: "Resetting user profile..."
+            loadingMessage: "app.loading.resettingUserProfile"
         });
 
         try {

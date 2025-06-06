@@ -1,3 +1,5 @@
+import { initial } from "lodash";
+
 const translations = {
     en: {
         home: {
@@ -90,7 +92,10 @@ const translations = {
         },
         app: {
             loading: {
-                header: "Validating your benefits",
+                initialising: "Initialising FörderFunke",
+                resettingUserProfile: "Resetting user profile",
+                producingQuizReport: "Loading next question",
+                producingValidationReport: "Checking your eligibility",
             },
             nav: {
                 backBtn: "Back",
@@ -340,7 +345,10 @@ const translations = {
         },
         app: {
             loading: {
-                header: "Wir prüfen Deine Leistungen",
+                initialising: "FörderFunke wird initialisiert",
+                resettingUserProfile: "Das Profil wird zurückgesetzt",
+                producingQuizReport: "Die nächste Frage wird geladen",
+                producingValidationReport: "Dein Anspruchscheck wird durchgeführt",
             },
             nav: {
                 backBtn: "Zurück",

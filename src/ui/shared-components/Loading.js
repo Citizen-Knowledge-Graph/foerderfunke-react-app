@@ -19,7 +19,7 @@ const Loading = ({message}) => {
         <VBox alignItems="center" justifyContent="center" sx={{ gap: 4, minHeight: '50vh' }}>
             <CircularProgress size={32} sx={{ color: 'pink.main' }} />
             <Typography variant="h2" sx={{ fontWeight: '400', display: 'flex', alignItems: 'center' }}>
-                {message}
+                {t(message)}
                 <HBox component="span" sx={{ display: 'inline-block', width: '1.5em', textAlign: 'left' }}>
                     {' '}{dots}
                 </HBox>
