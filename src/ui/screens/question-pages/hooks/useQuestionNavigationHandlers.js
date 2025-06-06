@@ -12,8 +12,8 @@ const useQuestionNavigationHandlers = ({
     navigate
 }) => {
     const triggerQuestionsUpdate = useQuestionsUpdate((s) => s.triggerQuestionsUpdate);
-    const validateValue = useInputValidation(currentQuestion?.datatype);
-    const addProfileData = useAddProfileField(currentQuestion);
+    const validateValue = useInputValidation(currentQuestion?.['ff:datatype']?.['@id']);
+    const addProfileData = useAddProfileField(currentQuestion?.['@id']);
 
     const handleAddClick = useCallback(async (value) => {
         try {
@@ -22,7 +22,7 @@ const useQuestionNavigationHandlers = ({
             if (stackCounter > 0) {
                 setStackCounter(stackCounter - 1);
             }
-            triggerQuestionsUpdate()
+            triggerQuestionsUpdate();
         } catch (err) {
             console.error('Error handling add click:', err);
             setProfileFieldUpdateError(err);
@@ -32,7 +32,7 @@ const useQuestionNavigationHandlers = ({
     const handleBackClick = useCallback(() => {
         if (stackCounter === questionsStack.length - 1) {
             navigate(-1);
-        } else {
+        } else {;
             setStackCounter(stackCounter + 1);
         }
     }, [stackCounter, questionsStack, navigate, setStackCounter]);

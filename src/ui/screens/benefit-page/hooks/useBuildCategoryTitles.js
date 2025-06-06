@@ -7,26 +7,23 @@ const useBuildCategoryTitles = (id, language) => {
     const topicsData = useFetchData('assets/data/topics/topics-list.json');
 
     const rpMetaData = useMemo(() => {
-        const metadataByLanguage = metadata[language];
+        if (!metadata || !id) return null;
+        return metadata['ff:hasRP']?.find(rp => rp['@id'] === id) || null;
+    }, [metadata, id]);
 
-        if (!metadataByLanguage || !id) return null;
-
-        const rpUri = id?.includes(":") ? `https://foerderfunke.org/default#${id.split(":")[1]}` : null;
-
-        return metadataByLanguage.rp?.[rpUri] || null;
-    }, [id, metadata, language]);
+    const categories = useMemo(() => {
+        const raw = rpMetaData?.["ff:category"];
+        const normalized = Array.isArray(raw) ? raw : raw ? [raw] : [];
+        return normalized.map(category => category?.["@id"]);
+      }, [rpMetaData]);
 
     return useMemo(() => {
-        if (!rpMetaData?.categories || !topicsData) return null;
-
-        return rpMetaData.categories.map((categoryUri) => {
-            const topicId = categoryUri.startsWith("https")
-                ? `ff:${categoryUri.split("#")[1]}`
-                : categoryUri;
-            const topic = topicsData.find((topic) => topic.id === topicId);
+        if (categories.length === 0 || !topicsData) return null;
+        return categories.map((categoryUri) => {
+            const topic = topicsData.find((topic) => topic.id === categoryUri);
             return topic ? topic.title[language] : '';
         });
-    }, [rpMetaData?.categories, topicsData, language]);
+    }, [categories, topicsData, language]);
 };
 
 export default useBuildCategoryTitles;

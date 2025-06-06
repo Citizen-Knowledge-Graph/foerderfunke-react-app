@@ -2,26 +2,24 @@ import React, { useState, useMemo } from 'react';
 import { useNavigate } from "react-router-dom";
 import { useQuestionsUpdate } from "@/ui/storage/updates";
 import useTranslation from "@/ui/language/useTranslation";
-import { ValidationResult } from "@foerderfunke/matching-engine";
 import {
     questionsStackStore,
-    useQuestionsStore,
+    useMetadataStore,
+    useQuizReportStore,
     useValidationReportStore
 } from "@/ui/storage/zustand";
 import useQuestionNavigationHandlers from "../hooks/useQuestionNavigationHandlers";
 import useSetupQuestionPage from "../hooks/useSetupQuestionPage";
 import QuestionPageNext from "./QuestionPageNext";
-import useAccessMetadata from '@/ui/storage/useAccessMetadata';
 
 const QuestionPageNextContainer = () => {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const [profileFieldUpdateError, setProfileFieldUpdateError] = useState(null);
 
-    const profileQuestions = useQuestionsStore((s) => s.questions);
-    const metadata = useAccessMetadata();
+    const quizReport = useQuizReportStore((s) => s.quizReport);
+    const metadata = useMetadataStore((s) => s.metadata);
     const validationReport = useValidationReportStore((s) => s.validationReport);
-    const questionsAreLoading = useQuestionsUpdate((s) => s.questionsAreLoading);
     const {
         questionsStack,
         addQuestionToStack,
@@ -35,7 +33,7 @@ const QuestionPageNextContainer = () => {
         setValue,
         profileFieldRetrievalError,
     } = useSetupQuestionPage(
-        profileQuestions,
+        quizReport,
         questionsStack,
         stackCounter,
         addQuestionToStack,
@@ -54,24 +52,30 @@ const QuestionPageNextContainer = () => {
 
     // Some props for the UI
     const eligibleRPs = useMemo(() => {
-        if (!validationReport?.reports || !metadata?.rp) return [];
+        if (!validationReport?.reports || !metadata?.['ff:hasRP']) return [];
 
-        return validationReport.reports
-            .filter(r => r.result === ValidationResult.ELIGIBLE)
-            .map(r => metadata.rp[r.rpUri]?.title)
+        const eligibleIds = validationReport?.['ff:hasEvaluatedRequirementProfile']
+            ?.filter(r => r?.['ff:hasEligibilityStatus']?.['@id'] === 'ff:eligible')
+            ?.map(r => r?.['ff:hasRpUri']?.['@id']);
+
+        if (!eligibleIds?.length) return [];
+
+        const titles = eligibleIds
+            .map(id => metadata['ff:hasRP']?.find(rp => rp?.['@id'] === id))
+            .filter(Boolean)
+            .map(rp => rp?.['ff:title']?.['@value'])
             .filter(Boolean);
-    }, [validationReport?.reports, metadata?.rp]);
+
+        return titles;
+    }, [validationReport, metadata]);
 
     const questionsCount = useMemo(() => (
-        [questionsStack.length - stackCounter, questionsStack?.length + profileQuestions?.prioritizedMissingDataFields?.fields?.length]
-    ), [questionsStack, stackCounter, profileQuestions]);
-
-    const isLoading = questionsAreLoading || !currentQuestion;
+        [questionsStack.length - stackCounter, questionsStack?.length + Number(quizReport?.['ff:hasNumberOfMissingDatafields']?.['@value'])]
+    ), [questionsStack, stackCounter, quizReport]);
 
     return (
         <QuestionPageNext
             t={t}
-            isLoading={isLoading}
             currentQuestion={currentQuestion}
             value={value}
             setValue={setValue}

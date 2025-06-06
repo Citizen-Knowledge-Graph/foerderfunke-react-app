@@ -5,7 +5,6 @@ import { ThemeProvider } from '@mui/material/styles';
 import ViewportUpdater from './ui/shared-components/ViewportUpdater';
 import ScrollToTop from './ScrollToTop';
 import AppRoutes from './AppRoutes';
-import AppGlobalState from './AppGlobalState';
 import theme from './theme';
 import { AppInitialisationProvider } from './AppInitialisationProvider';
 
@@ -14,7 +13,6 @@ const App = () => {
         <AppInitialisationProvider>
             <ThemeProvider theme={theme}>
                 <ViewportUpdater />
-                <AppGlobalState />
                 <Router basename={process.env.PUBLIC_URL}>
                     <ScrollToTop />
                     <AppRoutes />

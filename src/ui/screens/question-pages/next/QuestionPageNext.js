@@ -8,7 +8,6 @@ import QuestionPageField from '../components/QuestionPageField';
 
 const QuestionPageNext = ({
     t,
-    isLoading,
     eligibleRPs,
     questionsCount,
     currentQuestion,
@@ -21,7 +20,7 @@ const QuestionPageNext = ({
     
     return (
         <Layout isApp={true} logo={false}>
-            <AppScreenWrapper isLoading={isLoading} scrollKey={currentQuestion} backTarget={'/onboarding-welcome'} >
+            <AppScreenWrapper scrollKey={currentQuestion} backTarget={'/onboarding-welcome'} >
                 <VBox sx={{ gap: 2 }}>
                     <QuestionPageHeader t={t} eligibleRPs={eligibleRPs} />
                     <QuestionPageQuestionsCount

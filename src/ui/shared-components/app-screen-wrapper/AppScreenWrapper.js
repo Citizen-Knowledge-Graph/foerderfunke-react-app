@@ -4,11 +4,13 @@ import Loading from "../Loading";
 import { useStore } from "../ViewportUpdater";
 import theme from "@/theme";
 import AppScreenNavigation from "../AppScreenNavigation";
+import { useApplicationLoadingState } from "@/ui/storage/updates";
 
-const AppScreenWrapper = ({ children, isLoading, scrollKey, backTarget }) => {
+const AppScreenWrapper = ({ children, scrollKey, backTarget }) => {
     const wrapperRef = useRef(null);
     const isDesktop = useStore((state) => state.isDesktop);
     const hasScrolled = useRef(false);
+    const applicationIsLoading = useApplicationLoadingState((state) => state.applicationIsLoading);
 
     useLayoutEffect(() => {
         if (!wrapperRef.current) return;
@@ -60,8 +62,8 @@ const AppScreenWrapper = ({ children, isLoading, scrollKey, backTarget }) => {
                     },
                 }}
             >
-                {isLoading ? (
-                    <Loading />
+                {applicationIsLoading.applicationIsLoading ? (
+                    <Loading message={applicationIsLoading?.loadingMessage} />
                 ) : (
                     <VBox
                         sx={{

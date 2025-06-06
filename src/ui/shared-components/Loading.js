@@ -3,7 +3,7 @@ import { CircularProgress, Typography } from '@mui/material';
 import { VBox, HBox } from './LayoutBoxes';
 import useTranslation from '@/ui/language/useTranslation';
 
-const Loading = () => {
+const Loading = ({message}) => {
     const { t } = useTranslation();
     const [dots, setDots] = useState('');
 
@@ -19,7 +19,7 @@ const Loading = () => {
         <VBox alignItems="center" justifyContent="center" sx={{ gap: 4, minHeight: '50vh' }}>
             <CircularProgress size={32} sx={{ color: 'pink.main' }} />
             <Typography variant="h2" sx={{ fontWeight: '400', display: 'flex', alignItems: 'center' }}>
-                {t('app.loading.header')}
+                {t(message)}
                 <HBox component="span" sx={{ display: 'inline-block', width: '1.5em', textAlign: 'left' }}>
                     {' '}{dots}
                 </HBox>

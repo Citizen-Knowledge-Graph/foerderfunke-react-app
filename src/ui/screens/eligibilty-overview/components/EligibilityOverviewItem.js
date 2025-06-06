@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import EligibilityOverviewItemDetails from "./EligibilityOverviewItemDetails";
 import { Add, Remove } from "@mui/icons-material";
 import { IconButton, Typography, Box } from '@mui/material';
-import { HBox, VBox } from '../../../shared-components/LayoutBoxes';
+import { HBox, VBox } from '@/ui/shared-components/LayoutBoxes';
+import EligibilityOverviewItemDetails from "./EligibilityOverviewItemDetails";
 
 const EligibilityOverviewItem = ({ item, eligible, iconPath }) => {
     const [showDescription, setShowDescription] = useState(false);
@@ -17,7 +17,7 @@ const EligibilityOverviewItem = ({ item, eligible, iconPath }) => {
     return (
         <VBox sx={{ marginBottom: marginBottom }}>
             <HBox sx={{ alignItems: "center", width: '100%' }}>
-                <img src={iconPath} alt="logo" style={{ width: "20px" }} />
+                <img src={iconPath} alt="logo" style={{ width: "14px" }} />
                 <HBox sx={{ width: '100%' }}>
                     <HBox sx={{ alignItems: 'center', gap:1, flexWrap: 'wrap' }}>
                         <Typography variant='h2' sx={{ color: color, fontWeight: '400', wordBreak: 'break-word' }} onClick={toggleDescription}>

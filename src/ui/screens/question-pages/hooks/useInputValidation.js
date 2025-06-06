@@ -6,23 +6,23 @@ const useInputValidation = (expectedType) => {
     return new Promise((resolve, reject) => {
       switch (expectedType) {
         case 'string':
-        case 'selection':
+        case 'ff:selection':
           if (typeof value !== 'string') reject('Expected string.');
           break;
-        case 'selection-multiple':
+        case 'ff:selection_multiple':
           if (!Array.isArray(value) || value.length === 0) {
             reject('Expected a non-empty array.');
           } else if (!value.every(item => typeof item === 'string')) {
             reject('Expected all array items to be strings.');
           }
           break;
-        case 'integer':
+        case 'xsd:integer':
           if (isNaN(value)) reject('Expected number.');
           break;
-        case 'boolean':
+        case 'xsd:boolean':
           if (value !== true && value !== false) reject('Expected boolean.');
           break;
-        case 'date':
+        case 'xsd:date':
           if (!dayjs(value).isValid()) reject('Expected valid date.');
           break;
         case 'class':

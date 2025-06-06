@@ -1,3 +1,5 @@
+import { initial } from "lodash";
+
 const translations = {
     en: {
         home: {
@@ -90,7 +92,10 @@ const translations = {
         },
         app: {
             loading: {
-                header: "Validating your benefits",
+                initialising: "Initialising FörderFunke",
+                resettingUserProfile: "Resetting user profile",
+                producingQuizReport: "Loading next question",
+                producingValidationReport: "Checking your eligibility",
             },
             nav: {
                 backBtn: "Back",
@@ -213,7 +218,8 @@ const translations = {
                     inferredFrom: "inferred from your answer to",
                     yes: "yes",
                     no: "no",
-                    unknown: "unknown"
+                    unknown: "unknown",
+                    orRule: "Or-Rule"
                 },
                 moreInfo: "More information available here"
             }
@@ -339,7 +345,10 @@ const translations = {
         },
         app: {
             loading: {
-                header: "Wir prüfen Deine Leistungen",
+                initialising: "FörderFunke wird initialisiert",
+                resettingUserProfile: "Das Profil wird zurückgesetzt",
+                producingQuizReport: "Die nächste Frage wird geladen",
+                producingValidationReport: "Dein Anspruchscheck wird durchgeführt",
             },
             nav: {
                 backBtn: "Zurück",
@@ -463,7 +472,8 @@ const translations = {
                     inferredFrom: "abgeleitet von deiner Antwort auf",
                     yes: "ja",
                     no: "nein",
-                    unknown: "unbekannt"
+                    unknown: "unbekannt",
+                    orRule: "Oder-Regel"
                 },
                 moreInfo: "Weitere Informationen sind hier verfügbar"
             }

@@ -1,15 +1,14 @@
 import React from "react";
 import { Typography } from "@mui/material";
-import { ValidationResult } from "@foerderfunke/matching-engine";
 import { VBox } from "@/ui/shared-components/LayoutBoxes";
 import theme from "@/theme";
 import EligibilityOverviewList from "./EligibilityOverviewList";
 
 const EligibilityOverviewSection = ({ category, eligibilitySection, iconPaths }) => {
-    const eligibleBenefitsComplete = eligibilitySection[ValidationResult.ELIGIBLE]?.final || [];
-    const eligibleBenefitsPreliminary = eligibilitySection[ValidationResult.ELIGIBLE]?.preliminary || [];
-    const ineligibleBenefits = eligibilitySection[ValidationResult.INELIGIBLE] || []
-    const undeterminableBenefits = eligibilitySection[ValidationResult.UNDETERMINABLE] || []
+    const eligibleBenefitsComplete = eligibilitySection['ff:eligible']?.final || [];
+    const eligibleBenefitsPreliminary = eligibilitySection['ff:eligible']?.preliminary || [];
+    const ineligibleBenefits = eligibilitySection['ff:ineligible'] || []
+    const undeterminableBenefits = eligibilitySection['ff:missingData'] || []
     const { eligible, preliminaryEligible, ineligible, missing } = iconPaths;
 
     return (
@@ -28,9 +27,9 @@ const EligibilityOverviewSection = ({ category, eligibilitySection, iconPaths })
                 }}
             >
                 {eligibleBenefitsComplete.length > 0 &&
-                    <EligibilityOverviewList items={eligibleBenefitsComplete} eligible={'eligible'} iconPath={eligible} />}
+                    <EligibilityOverviewList items={eligibleBenefitsComplete} eligible={'eligible'} iconPath={eligible} />}       
                 {eligibleBenefitsPreliminary.length > 0 &&
-                    <EligibilityOverviewList items={eligibleBenefitsPreliminary} eligible={'preliminary-eligible'} iconPath={preliminaryEligible} />}                    
+                    <EligibilityOverviewList items={eligibleBenefitsPreliminary} eligible={'preliminary-eligible'} iconPath={preliminaryEligible} />}                                   
                 {ineligibleBenefits.length > 0 &&
                     <EligibilityOverviewList items={ineligibleBenefits} eligible={'non-eligible'} iconPath={ineligible} />}
                 {undeterminableBenefits.length > 0 &&

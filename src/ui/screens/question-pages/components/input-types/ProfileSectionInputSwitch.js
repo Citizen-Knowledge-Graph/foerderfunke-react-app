@@ -6,31 +6,31 @@ import ProfileInputBoolean from "./ProfileInputBoolean";
 import ProfileInputMultiSelection from "./ProfileInputMultiSelection";
 
 const ProfileSectionInputSwitch = ({ t, value, setValue, currentField, error }) => {
-    switch (currentField.datatype) {
-        case 'selection':
+    switch (currentField?.['ff:datatype']?.['@id']) {
+        case 'ff:selection':
             return <ProfileInputSelection
                 value={value}
                 setValue={setValue}
                 currentField={currentField}
                 error={error} />;
-        case 'selection-multiple':
+        case 'ff:selection_multiple':
             return <ProfileInputMultiSelection
                 value={value}
                 setValue={setValue}
                 currentField={currentField}
                 error={error} />;
-        case 'date':
+        case 'xsd:date':
             return <ProfileInputDate
                 t={t}
                 value={value}
                 setValue={setValue}
                 error={error} />;
-        case 'boolean':
+        case 'xsd:boolean':
             return <ProfileInputBoolean
                 value={value}
                 setValue={setValue}
                 error={error} />;
-        case 'integer':
+        case 'xsd:integer':
             return <ProfileInputInteger
                 value={value}
                 setValue={setValue}

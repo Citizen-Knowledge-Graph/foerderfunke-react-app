@@ -15,10 +15,10 @@ const ProfileInputSelection = ({ value, setValue, currentField, error }) => {
                 sx={{ gap: 2 }}
             >
                 {
-                    currentField.choices.map((choice, i) => (
+                    currentField?.['ff:hasAnswerOption'].map((choice, i) => (
                         <FormControlLabel
                             key={i}
-                            value={choice.value}
+                            value={choice?.['@id']}
                             control={
                                 <Radio 
                                     sx={{
@@ -27,7 +27,7 @@ const ProfileInputSelection = ({ value, setValue, currentField, error }) => {
                                     }} 
                                 />
                             }
-                            label={choice.label}
+                            label={choice?.['rdfs:label']?.['@value']}
                         />
                     ))
                 }

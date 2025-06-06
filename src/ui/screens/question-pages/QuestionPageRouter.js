@@ -1,19 +1,21 @@
 import { useEffect, useState } from 'react';
 import QuestionPageCompleted from './completed/QuestionPageCompleted';
 import QuestionPageNextContainer from './next/QuestionPageNextContainer';
-import useProduceNextQuestion from './hooks/useProduceNextQuestion';
+import { useQuestionsUpdate } from '@/ui/storage/updates';
+import useFetchQuizReport from './hooks/useFetchQuizReport';
 
 const QuestionPageRouter = () => {
-    const {profileQuestions, questionsAreLoading } = useProduceNextQuestion();
+    const { quizReport } = useFetchQuizReport();
+    const questionsAreLoading = useQuestionsUpdate((s) => s.questionsAreLoading);
     const [completed, setCompleted] = useState(false);
-
+    
     useEffect(() => {
-        if (profileQuestions?.prioritizedMissingDataFields?.fields?.length === 0) {
+        if (Number(quizReport?.['ff:hasNumberOfMissingDatafields']?.['@value']) === 0) {
             setCompleted(true);
         } else {
             setCompleted(false);
         }
-    }, [profileQuestions]);
+    }, [quizReport]);
 
     if (completed && !questionsAreLoading) {
         return <QuestionPageCompleted />;

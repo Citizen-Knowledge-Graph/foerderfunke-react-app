@@ -1,21 +1,21 @@
 import React, { useMemo } from 'react';
-import { useValidationUpdate } from "@/ui/storage/updates";
 import useFetchData from "@/ui/shared-hooks/utility/useFetchResource";
 import useTranslation from "@/ui/language/useTranslation";
 import EligibilityOverviewScreen from './EligibilityOverviewScreen';
 import useEligibilityData from "./hooks/useEligibilityData";
-import useProduceValidationReport from './hooks/useProduceValidationReport';
 import { useLanguageStore } from '@/ui/storage/useLanguageStore';
+import { useMetadataStore } from '@/ui/storage/zustand';
+import useProduceValidationReport from './hooks/useProduceValidationReport';
 
 const EligibilityOverviewScreenContainer = () => {
     const { t } = useTranslation();
     const language = useLanguageStore((state) => state.language);
 
-    const validationIsLoading = useValidationUpdate((state) => state.validationIsLoading);
     const hydrationData = useFetchData('assets/data/requirement-profiles/requirement-profiles-hydration.json');
-    const validationReport = useProduceValidationReport();
-    const eligibilityData = useEligibilityData(validationReport, hydrationData, language);
-
+    const {validationReport} = useProduceValidationReport();
+    const metadata = useMetadataStore((state) => state.metadata);
+    const eligibilityData = useEligibilityData(validationReport, metadata, hydrationData, language);
+    
     const iconPaths = useMemo(() => ({
         eligible: `${process.env.PUBLIC_URL}/assets/images/application/icon-image-eligible.svg`,
         preliminaryEligible: `${process.env.PUBLIC_URL}/assets/images/application/icon-image-preliminary-eligible.svg`,
@@ -28,7 +28,6 @@ const EligibilityOverviewScreenContainer = () => {
             t={t}
             iconPaths={iconPaths}
             eligibilityData={eligibilityData}
-            validationIsLoading={validationIsLoading}
         />
     );
 };
