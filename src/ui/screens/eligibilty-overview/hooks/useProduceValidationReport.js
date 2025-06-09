@@ -34,7 +34,7 @@ const useProduceValidationReport = () => {
         const fetchingValidationReport = async () => {
             setApplicationIsLoading({
                 applicationIsLoading: true,
-                loadingMessage: "Producing validation report..."
+                loadingMessage: "app.loading.producingValidationReport"
             });
             try {
                 const report = await matchingEngineManager.fetchValidationReport(

@@ -30,7 +30,7 @@ export const useInitialiseApplication = () => {
             isInitializingRef.current = true;
             setApplicationIsLoading({
                 applicationIsLoading: true,
-                loadingMessage: "Initializing application"
+                loadingMessage: "app.loading.initialising"
             });
 
             try {

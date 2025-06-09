@@ -92,6 +92,21 @@ const matchingEngineManager = {
             FORMAT.JSON_LD,
             true
         );
+    },
+
+    async fetchDetailedMatchingReport(userId, requirementProfile, language = "en") {
+        if (!this.matchingEngineInstance) {
+            await this.initMatchingEngine(language);
+        }
+        
+        const userProfile = userManager.retrieveUserData(userId);
+        const userProfileTurtle = await convertUserProfileToTurtle(userProfile);
+        const expandedRp = expand(requirementProfile);
+
+        return this.matchingEngineInstance.detailedSingleRequirementProfileValidation(
+            userProfileTurtle,
+            expandedRp
+        );
     }
 };
 

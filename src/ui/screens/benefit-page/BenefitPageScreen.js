@@ -10,13 +10,16 @@ import BenefitPageExampleList from './components/BenefitPageExampleList';
 import BenefitPageRules from "./components/BenefitPageRules";
 import BenefitPageHeader from "./components/BenefitPageHeader";
 import AppScreenWrapperContainer from '@/ui/shared-components/app-screen-wrapper/AppScreenWrapperContainer';
+import ReactFlow, { Background, Controls } from 'reactflow';
+import 'reactflow/dist/style.css';
 
 const BenefitPageScreen = ({
     t,
     id,
     benefitPageData,
     validatedStatus,
-    categoryTitles
+    categoryTitles,
+    flowGraph
 }) => {
 
     return (
@@ -29,6 +32,13 @@ const BenefitPageScreen = ({
                         flexDirection: "column",
                         width: '100%'
                     }}>
+                        <div style={{ width: '100%', height: '100vh', background: '#fff' }}>
+                            <ReactFlow nodes={flowGraph?.nodes} edges={flowGraph?.edges} fitView>
+                                <Background color="#eee" gap={16} />
+                                <Controls />
+                            </ReactFlow>
+                        </div>
+
                         <VBox
                             sx={{
                                 backgroundColor: 'white.main',
