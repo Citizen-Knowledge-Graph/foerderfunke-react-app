@@ -35,13 +35,6 @@ const BenefitPageScreenContainer = () => {
         fetchMatchingReport();
     }, [id, activeUserId, language]);
 
-    const flowGraph = useMemo(() => {
-        if (matchingGraph) {
-            console.log("Building flow graph for matchingGraph:", matchingGraph);
-            return buildFlow(matchingGraph.root);
-        }
-    }, [matchingGraph]);
-
     return (
         <BenefitPageScreen
             t={t}
@@ -49,7 +42,7 @@ const BenefitPageScreenContainer = () => {
             benefitPageData={benefitPageData}
             validatedStatus={validatedStatus}
             categoryTitles={categoryTitles}
-            flowGraph={flowGraph}
+            matchingGraph={matchingGraph}
         />
     );
 };
