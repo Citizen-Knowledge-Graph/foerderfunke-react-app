@@ -1,13 +1,11 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-import { Button, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import { HBox, VBox } from '../../../shared-components/LayoutBoxes';
-import useTranslation from "../../../language/useTranslation";
-import { useSelectedBenefitStore, useSelectedTopicsStore } from "../../../storage/zustand";
+import { useSelectedBenefitStore, useSelectedTopicsStore } from "@/ui/storage/zustand";
 import theme from '@/theme';
+import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 
 const EligibilityOverviewItemDetails = ({ item, eligible }) => {
-    const { t } = useTranslation();
     const setSelectedBenefit = useSelectedBenefitStore((state) => state.setSelectedBenefit);
     const clearSelectedTopics = useSelectedTopicsStore((state) => state.clear);
 
@@ -19,43 +17,23 @@ const EligibilityOverviewItemDetails = ({ item, eligible }) => {
                 </Typography>
             </HBox>
             <HBox sx={{ gap: 2, flexWrap: 'wrap' }}>
-                <Button
-                    variant="text"
-                    sx={{
-                        color: 'pink.main',
-                        padding: 1,
-                        '&:hover': {
-                            backgroundColor: 'transparent',
-                            color: 'black.main',
-                        }
-                    }}
-                    component={Link}
-                    to={`/benefit-page/${item.id}`}>
-                    <Typography variant="body1" sx={{ color: 'inherit', fontWeight: 'bold', textDecoration: 'underline' }}>
-                        {t('app.browseAll.learnMoreBtn')}
-                    </Typography>
-                </Button>
+                <RegularButton
+                        variant={'blackOutlined'}
+                        text={'app.browseAll.learnMoreBtn'}
+                        link={`/benefit-page/${item.id}`}
+                        size='small'
+                    />
                 {eligible === 'indeterminate' &&
-                    <Button
-                        variant="text"
+                    <RegularButton
+                        variant={'blueHollow'}
                         onClick={() => {
                             clearSelectedTopics()
                             setSelectedBenefit(item.id);
                         }}
-                        sx={{
-                            color: 'blue.main',
-                            padding: 1,
-                            '&:hover': {
-                                backgroundColor: 'transparent',
-                                color: theme.palette.black.main,
-                            }
-                        }}
-                        component={Link}
-                        to={`/onboarding-welcome/${item.id}`}>
-                        <Typography variant="body1" sx={{ color: 'inherit', fontWeight: 'bold', textDecoration: 'underline' }}>
-                            {t('app.browseAll.checkElBtn')}
-                        </Typography>
-                    </Button>
+                        text={'app.browseAll.checkElBtn'}
+                        link={`/onboarding-welcome/${item.id}`}
+                        size='small'
+                    />
                 }
             </HBox>
         </VBox>
