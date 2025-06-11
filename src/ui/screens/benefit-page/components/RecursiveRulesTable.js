@@ -13,7 +13,7 @@ function renderNode(
     t
 ) {
     if (!node) return null;
-    const nodeType = node.constructor?.name;
+    const nodeType = node.constructor?.nodeType;
 
     // ROOT → skip wrapper, first AND skip label
     if (nodeType === 'NodeROOT') {
@@ -29,9 +29,9 @@ function renderNode(
     // AND / OR group
     if (nodeType === 'NodeAND' || nodeType === 'NodeOR') {
         const children = node.children || [];
-        const dataFields = children.filter(c => c.constructor?.name === 'NodeDATAFIELD' && c.children?.length > 0);
-        const andGroups = children.filter(c => c.constructor?.name === 'NodeAND');
-        const orGroups = children.filter(c => c.constructor?.name === 'NodeOR');
+        const dataFields = children.filter(c => c.constructor?.nodeType === 'NodeDATAFIELD' && c.children?.length > 0);
+        const andGroups = children.filter(c => c.constructor?.nodeType === 'NodeAND');
+        const orGroups = children.filter(c => c.constructor?.nodeType === 'NodeOR');
 
         if (dataFields.length + andGroups.length + orGroups.length === 0) {
             return null;
@@ -84,8 +84,8 @@ function renderNode(
     if (nodeType === 'NodeDATAFIELD') {
         const raw = node.children || [];
         const rules = raw.filter(c =>
-            c.constructor?.name === 'NodeRULE' ||
-            c.constructor?.name === 'NodeNOT'
+            c.constructor?.nodeType === 'NodeRULE' ||
+            c.constructor?.nodeType === 'NodeNOT'
         );
         if (rules.length === 0) return null;
 

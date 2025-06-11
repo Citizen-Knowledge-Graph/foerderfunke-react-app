@@ -16,7 +16,7 @@ export default function buildFlow(graphRoot) {
 
   // 1) Traverse & collect, skipping MinCount RULEs
   function traverse(node, depth = 0, parentId = null) {
-    const typeName = node.constructor?.name;
+    const typeName = node.constructor?.nodeType;
 
     // ─── FILTER OUT MinCountConstraintComponent RULEs ───
     if (
@@ -66,14 +66,14 @@ export default function buildFlow(graphRoot) {
 
     // determine label
     let label;
-    if (node.constructor?.name === 'NodeRULE') {
+    if (node.constructor?.nodeType === 'NodeRULE') {
       const compType = node.type || '<constraint>';
       const val = Array.isArray(node.value) ? node.value.join(', ') : node.value;
       label = `${compType}: ${val}`;
     } else {
-      label = typeLabelMap[node.constructor?.name]
+      label = typeLabelMap[node.constructor?.nodeType]
            ?? node.path
-           ?? node.constructor?.name
+           ?? node.constructor?.nodeType
            ?? 'node';
     }
 
