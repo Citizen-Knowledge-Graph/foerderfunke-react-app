@@ -7,7 +7,6 @@ import BenefitPageInfoList from './components/BenefitPageInfoList';
 import BenefitPageRequiredDocuments from './components/BenefitPageRequiredDocuments';
 import BenefitPageLinksList from './components/BenefitPageLinksList';
 import BenefitPageExampleList from './components/BenefitPageExampleList';
-import BenefitPageRules from "./components/BenefitPageRules";
 import BenefitPageHeader from "./components/BenefitPageHeader";
 import AppScreenWrapperContainer from '@/ui/shared-components/app-screen-wrapper/AppScreenWrapperContainer';
 import RecursiveRulesTable from './components/RecursiveRulesTable';
@@ -31,7 +30,6 @@ const BenefitPageScreen = ({
                         flexDirection: "column",
                         width: '100%'
                     }}>
-                        <RecursiveRulesTable graphRoot={matchingGraph?.root} />
                         <VBox
                             sx={{
                                 backgroundColor: 'white.main',
@@ -44,7 +42,6 @@ const BenefitPageScreen = ({
                                 <Typography sx={{ marginTop: 1 }} variant="body1">{benefitPageData?.description || t('app.noData')}</Typography>
                             </VBox>
                         </VBox>
-                        <BenefitPageRules benefitId={id} validatedStatus={validatedStatus} />
                         {
                             benefitPageData?.examples.title && (
                                 <BenefitPageExampleList listTitle={t('app.benefitPage.examples')} data={benefitPageData?.examples} />
@@ -80,6 +77,8 @@ const BenefitPageScreen = ({
                                 <BenefitPageLinksList listTitle={t('app.benefitPage.furtherInformation')} data={benefitPageData?.furtherInformation} />
                             )
                         }
+                        <RecursiveRulesTable graphRoot={matchingGraph?.root} t={t} />
+
                     </Box>
                 </VBox>
             </AppScreenWrapperContainer>

@@ -103,6 +103,8 @@ const matchingEngineManager = {
         const userProfileTurtle = await convertUserProfileToTurtle(userProfile);
         const expandedRp = expand(requirementProfile);
 
+        console.log("Fetching detailed matching report for user:", userId, "with RP:", expandedRp);
+
         return this.matchingEngineInstance.detailedSingleRequirementProfileValidation(
             userProfileTurtle,
             expandedRp

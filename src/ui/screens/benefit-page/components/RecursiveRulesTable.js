@@ -2,147 +2,178 @@ import React from 'react';
 import { Typography, Box } from '@mui/material';
 import { VBox } from '@/ui/shared-components/LayoutBoxes';
 import theme from '@/theme';
-import {
-  InConstraint,
-  MaxExclusiveConstraint,
-  MinInclusiveConstraint
-} from './RuleTypes';
+import { RuleSwitch } from './RuleTypes';
+import { useMetadataStore } from '@/ui/storage/zustand';
 
-const typeLabelMap = {
-  NodeROOT: 'Requirements',
-  NodeAND:  'AND',
-  NodeOR:   'OR',
-};
+function renderNode(
+    node,
+    parentField = {},
+    metadata,
+    isNegated = false,
+    t
+) {
+    if (!node) return null;
+    const nodeType = node.constructor?.name;
 
-function renderNode(node, skipAndWrapper = false, parentField = '') {
-  if (!node) return null;
-  const t = node.constructor?.name;
+    // ROOT → skip wrapper, first AND skip label
+    if (nodeType === 'NodeROOT') {
+        return renderNode(node.children?.[0], '', metadata, false, t);
+    }
 
-  if (t === 'NodeROOT') {
-    return renderNode(node.children?.[0], true, '');
-  }
+    // NOT → flip negation on child
+    if (nodeType === 'NodeNOT') {
+        const child = node.children?.[0];
+        return renderNode(child, parentField, metadata, !isNegated, t);
+    }
 
-  if (t === 'NodeDATAFIELD') {
-    const rules = (node.children || []).filter(
-      c => c.constructor?.name === 'NodeRULE' &&
-           c.type !== 'sh:MinCountConstraintComponent'
-    );
-    if (rules.length === 0) return null;
+    // AND / OR group
+    if (nodeType === 'NodeAND' || nodeType === 'NodeOR') {
+        const children = node.children || [];
+        const dataFields = children.filter(c => c.constructor?.name === 'NodeDATAFIELD' && c.children?.length > 0);
+        const andGroups = children.filter(c => c.constructor?.name === 'NodeAND');
+        const orGroups = children.filter(c => c.constructor?.name === 'NodeOR');
 
-    return (
-      <VBox
-        gap={1}
-        sx={{
-          border: '1px solid',
-          borderColor: 'black.light',
-          padding: 2,
-          borderRadius: theme.shape.borderRadius,
-        }}
-      >
-        <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-          {node.path}
-        </Typography>
-        {rules.map((rule, i) => (
-          <VBox key={i} sx={{ pl: 2 }}>
-            {renderNode(rule, false, node.path)}
-          </VBox>
-        ))}
-      </VBox>
-    );
-  }
+        if (dataFields.length + andGroups.length + orGroups.length === 0) {
+            return null;
+        }
 
-  if (t === 'NodeNOT') {
-    return null;
-  }
+        const mappedLabel = {
+            'NodeAND': t('app.benefitPage.rulesTable.andConditions'),
+            'NodeOR': t('app.benefitPage.rulesTable.orConditions'),
+        }
 
-  if (t === 'NodeRULE') {
-    if (node.type === 'sh:MinCountConstraintComponent') return null;
-
-    switch (node.type) {
-      case 'sh:MinInclusiveConstraintComponent':
-        return <MinInclusiveConstraint field={parentField} value={node.value} />;
-      case 'sh:MaxExclusiveConstraintComponent':
-        return <MaxExclusiveConstraint field={parentField} value={node.value} />;
-      case 'sh:InConstraintComponent':
-        return <InConstraint field={parentField} value={node.value} />;
-      default: {
-        const valStr =
-          typeof node.value === 'boolean'
-            ? node.value.toString()
-            : Array.isArray(node.value)
-            ? node.value.join(', ')
-            : node.value == null
-            ? '<no value>'
-            : node.value;
         return (
-          <Typography>
-            {parentField} needs to satisfy {node.type.replace('sh:', '')} — {valStr}
-          </Typography>
+            <VBox
+                sx={{
+                    position: 'relative',
+                    pl: 2,
+                    '&::before': {
+                        content: '""',
+                        position: 'absolute',
+                        top: '0rem',
+                        bottom: 0,
+                        left: 0,
+                        borderLeft: '2px dashed #ccc',
+                    },
+                }}
+            >
+                <Typography variant="h6">
+                    {mappedLabel[nodeType]}
+                </Typography>
+
+                {dataFields.map((df, i) => (
+                    <Box key={i} sx={{ mb: 1 }}>
+                        {renderNode(df, parentField, metadata, isNegated, t)}
+                    </Box>
+                ))}
+                {andGroups.map((grp, i) => (
+                    <Box key={i} sx={{ mb: 1 }}>
+                        {renderNode(grp, parentField, metadata, isNegated, t)}
+                    </Box>
+                ))}
+                {orGroups.map((grp, i) => (
+                    <Box key={i}>
+                        {renderNode(grp, parentField, metadata, isNegated, t)}
+                    </Box>
+                ))}
+            </VBox>
         );
-      }
-    }
-  }
-
-  if (t === 'NodeAND' || t === 'NodeOR') {
-    const children = node.children || [];
-
-    const dataFields = children.filter(c =>
-      c.constructor?.name === 'NodeDATAFIELD' &&
-      (c.children || []).some(
-        r => r.constructor?.name === 'NodeRULE' &&
-             r.type !== 'sh:MinCountConstraintComponent'
-      )
-    );
-    const andGroups = children.filter(c => c.constructor?.name === 'NodeAND');
-    const orGroups  = children.filter(c => c.constructor?.name === 'NodeOR');
-
-    if (dataFields.length + andGroups.length + orGroups.length === 0) {
-      return null;
     }
 
-    const label = skipAndWrapper && t === 'NodeAND'
-      ? null
-      : typeLabelMap[t];
+    // DATAFIELD → include RULE|NOT, drop MinCount
+    if (nodeType === 'NodeDATAFIELD') {
+        const raw = node.children || [];
+        const rules = raw.filter(c =>
+            c.constructor?.name === 'NodeRULE' ||
+            c.constructor?.name === 'NodeNOT'
+        );
+        if (rules.length === 0) return null;
 
-    return (
-      <VBox gap={2}>
-        {label && <Typography variant="body1">{label}</Typography>}
+        const fieldName = node.path;
+        const meta = metadata?.find(f => f?.['@id'] === fieldName) || {};
+        const fieldLabel = meta['rdfs:label']?.['@value'] || fieldName;
+        const fieldQuestion = meta['schema:question']?.['@value'] || '';
 
-        {dataFields.map((df, i) => (
-          <Box key={`df-${i}`} sx={{ pl: 2 }}>
-            {renderNode(df, false, parentField)}
-          </Box>
-        ))}
+        parentField = {
+            fieldLabel,
+            fieldId: fieldName,
+        }
 
-        {andGroups.map((grp, i) => (
-          <Box key={`and-${i}`} sx={{ pl: 2 }}>
-            {renderNode(grp, false, parentField)}
-          </Box>
-        ))}
+        const bg =
+            node.status === 'ok' ? 'secondary.light' :
+                node.status === 'violation' ? 'error.light' :
+                    'white.dark';
 
-        {orGroups.map((grp, i) => (
-          <Box key={`or-${i}`} sx={{ pl: 2 }}>
-            {renderNode(grp, false, parentField)}
-          </Box>
-        ))}
-      </VBox>
-    );
-  }
+        return (
+            <VBox
+                gap={2}
+                sx={{
+                    backgroundColor: bg,
+                    padding: 2,
+                    borderRadius: theme.shape.borderRadius,
+                    boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
+                }}
+            >
+                <VBox gap={1}>
+                    <Typography variant="body2">{fieldLabel}</Typography>
+                    <VBox gap={0}>
+                        <Typography variant="body2">{t('app.benefitPage.rulesTable.datafieldQuestion')}</Typography>
+                        <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                            {fieldQuestion}
+                        </Typography>
+                    </VBox>
+                </VBox>
+                {rules.map((r, i) => (
+                    <VBox key={i}>
+                        {renderNode(
+                            r,
+                            parentField,
+                            metadata,
+                            isNegated,
+                            t
+                        )}
+                    </VBox>
+                ))}
+            </VBox>
+        );
+    }
 
-  return null;
+    // RULE → delegate to RuleTypes
+    if (nodeType === 'NodeRULE') {
+        const dfMetadata = metadata?.find(f => f?.['@id'] === parentField.fieldId)
+        return (<RuleSwitch
+            node={node}
+            parentField={parentField}
+            negate={isNegated}
+            dfMetadata={dfMetadata}
+            t={t}
+        />)
+    }
+
+    return null;
 }
 
-export default function RecursiveRulesTable({ graphRoot }) {
-  if (!graphRoot) return null;
-  return (
-    <VBox
-      sx={{
-        backgroundColor: 'white.main',
-        padding: '32px',
-        borderRadius: theme.shape.borderRadius,
-      }}
-    >
-      {renderNode(graphRoot)}
-    </VBox>
-  );
+export default function RecursiveRulesTable({ graphRoot, t }) {
+    const metadata = useMetadataStore(state => state.metadata);
+    if (!graphRoot) return null;
+    return (
+        <VBox
+            sx={{
+                gap: 4,
+                backgroundColor: 'white.main',
+                padding: '32px',
+                borderRadius: theme.shape.borderRadius,
+            }}
+        >
+            <VBox>
+                <Typography variant="h2" sx={{ fontWeight: '400', wordBreak: "break-word" }}>
+                    {t("app.benefitPage.rulesTable.header")}
+                </Typography>
+                <Typography variant="body1" sx={{ marginTop: 1 }}>
+                    {t("app.benefitPage.rulesTable.description")}
+                </Typography>
+            </VBox>
+            {renderNode(graphRoot, '', metadata?.['ff:hasDF'], false, t)}
+        </VBox>
+    );
 }
