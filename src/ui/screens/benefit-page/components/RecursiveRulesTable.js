@@ -102,7 +102,8 @@ function renderNode(
         const bg =
             node.status === 'ok' ? 'secondary.light' :
                 node.status === 'violation' ? 'error.light' :
-                    'white.dark';
+                    'white.main';
+        const border = node.status === 'missing' ? '1px solid #ccc' : '';
 
         return (
             <VBox
@@ -110,6 +111,7 @@ function renderNode(
                 sx={{
                     backgroundColor: bg,
                     padding: 2,
+                    border: border,
                     borderRadius: theme.shape.borderRadius,
                     boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
                 }}

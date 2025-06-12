@@ -21,8 +21,8 @@ const useBuildCategoryTitles = (id, language) => {
         if (categories.length === 0 || !topicsData) return null;
         return categories.map((categoryUri) => {
             const topic = topicsData.find((topic) => topic.id === categoryUri);
-            return topic ? topic.title[language] : '';
-        });
+            return topic ? topic.title[language] : false;
+        }).filter(Boolean);
     }, [categories, topicsData, language]);
 };
 

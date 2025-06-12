@@ -25,7 +25,7 @@ const OnboardingChoice = () => {
                                 {t('app.discoverChoice.text')}
                             </Typography>
                         </HBox>
-                        <HBox sx={{ width: '506px' }}>
+                        <HBox sx={{ maxWidth: '506px' }}>
                             <TileButton
                                 variant={'yellowContained'}
                                 title={'app.discoverChoice.quickCheck'}
@@ -48,9 +48,6 @@ const OnboardingChoice = () => {
                             size='small'
                         />
                     </VBox>
-                    <HBox sx={{ width: '506px' }}>
-
-                    </HBox>
                 </VBox>
             </AppScreenWrapperContainer>
         </Layout >
