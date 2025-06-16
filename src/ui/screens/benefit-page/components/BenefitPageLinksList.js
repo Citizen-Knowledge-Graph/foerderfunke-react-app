@@ -91,21 +91,31 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
                                     <VBox gap={1}>
                                         {
                                             data.links.map((link, index) => (
-                                                <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-                                                    <Button variant="text" sx={{
-                                                        padding: 1, color: 'pink.main', textDecoration: 'underline',
+                                                <Button
+                                                    component="a"
+                                                    href={link.url}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    variant="text"
+                                                    disableRipple
+                                                    disableFocusRipple
+                                                    onMouseUp={e => e.currentTarget.blur()}
+                                                    sx={{
+                                                        padding: 1,
+                                                        color: 'pink.main',
+                                                        textDecoration: 'underline',
                                                         '&:hover': {
                                                             backgroundColor: 'transparent',
                                                             color: 'black.main',
                                                             textDecoration: 'underline',
-                                                        }
-                                                    }}>
-                                                        <HBox sx={{ alignItems: 'center' }} >
-                                                            <OpenInNewIcon sx={{ fontSize: '20px' }} />
-                                                            <Typography sx={{ color: "inherit" }} variant="body1">{link.title}</Typography>
-                                                        </HBox>
-                                                    </Button>
-                                                </a>
+                                                        },
+                                                    }}
+                                                >
+                                                    <HBox sx={{ alignItems: 'center' }} >
+                                                        <OpenInNewIcon sx={{ fontSize: '20px' }} />
+                                                        <Typography sx={{ color: "inherit" }} variant="body1">{link.title}</Typography>
+                                                    </HBox>
+                                                </Button>
                                             ))
                                         }
                                     </VBox>
@@ -129,13 +139,13 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
                                                 findNearestCounselingCentres()
                                             }}
                                             >Find nearest counseling centres</a>
-                                        :
+                                            :
                                             <div>
                                                 <ul>
                                                     {nearestCounselingCenters.map((cc, index) => (
                                                         <li key={index} style={{ marginBottom: '1rem' }}>
-                                                            <small style={{ color: "gray"}}>{cc.distance} km</small> <strong>{cc.title}</strong>
-                                                            <br/>
+                                                            <small style={{ color: "gray" }}>{cc.distance} km</small> <strong>{cc.title}</strong>
+                                                            <br />
                                                             <small><a href={buildOsmUrl(cc)} target="_blank" rel="noopener noreferrer">{cc.address}</a></small>
                                                         </li>
                                                     ))}
@@ -146,11 +156,11 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
                                     </>
                                     :
                                     <span>
-                                      {/* eslint-disable jsx-a11y/anchor-is-valid */}
-                                      <a href="#" onClick={(e) => {
-                                          e.preventDefault()
-                                          convertAddressToCoordinates()
-                                      }}>Click here</a> to convert your address to coordinates using nominatim.org
+                                        {/* eslint-disable jsx-a11y/anchor-is-valid */}
+                                        <a href="#" onClick={(e) => {
+                                            e.preventDefault()
+                                            convertAddressToCoordinates()
+                                        }}>Click here</a> to convert your address to coordinates using nominatim.org
                                     </span>
                                 }
                             </VBox>

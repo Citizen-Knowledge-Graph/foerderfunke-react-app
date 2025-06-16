@@ -10,7 +10,10 @@ const ClickableTopicBox = ({ topic, onClick }) => {
     return (
         <HBox>
             <Button
-                onClick={() => onClick(topic)}
+                onClick={(e) => {
+                    onClick(topic);
+                    e.currentTarget.blur()
+                }}
                 sx={{
                     flex: 1,
                     justifyContent: 'center',
