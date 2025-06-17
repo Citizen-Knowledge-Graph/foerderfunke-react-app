@@ -20,6 +20,10 @@ function renderNode(
         return renderNode(node.children?.[0], '', metadata, false, t);
     }
 
+    if (nodeType === 'NodeCLASS') {
+        return renderNode(node.children?.[0], '', metadata, false, t);
+    }
+
     // NOT → flip negation on child
     if (nodeType === 'NodeNOT') {
         const child = node.children?.[0];
