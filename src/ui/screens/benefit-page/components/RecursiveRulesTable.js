@@ -1,84 +1,104 @@
-import React from 'react';
-import { Typography, Box } from '@mui/material';
-import { VBox } from '@/ui/shared-components/LayoutBoxes';
+import React, { useState } from 'react';
 import theme from '@/theme';
 import { RuleSwitch } from './RuleTypes';
 import { useMetadataStore } from '@/ui/storage/zustand';
+import { Typography, IconButton, Collapse, Box } from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import { HBox, VBox } from '@/ui/shared-components/LayoutBoxes';
+import { useStore } from "@/ui/shared-components/ViewportUpdater";
+
+function CollapsibleGroup({ label, children, status }) {
+    const isDesktop = useStore((state) => state.isDesktop);
+    const [open, setOpen] = useState(false);
+
+    const bg =
+        status === 'ok' ? 'secondary.light' :
+            status === 'violation' ? 'error.light' :
+                'white.main';
+
+    return (
+        <VBox
+            gap={2}
+            sx={{
+                backgroundColor: open ? 'transparent' : bg,
+                border: '1px solid #ccc',
+                padding: isDesktop ? 1 : 0.125,
+                borderRadius: theme.shape.borderRadius,
+                boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
+            }}
+        >
+            <Box display="flex" alignItems="center" justifyContent="space-between">
+                <HBox sx={{ padding: 2, justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+                    <Typography variant="body1">{label}</Typography>
+                    <IconButton size="small" onClick={() => setOpen(prev => !prev)}>
+                        {open ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+                    </IconButton>
+                </HBox>
+            </Box>
+            {
+                open && (
+                    <Collapse in={open}>
+                        <VBox>
+                            {children}
+                        </VBox>
+                    </Collapse>
+                )
+            }
+        </VBox>
+    );
+}
 
 function renderNode(
     node,
     parentField = {},
     metadata,
+    t,
     isNegated = false,
-    t
+    groupType = null,
 ) {
     if (!node) return null;
     const nodeType = node.constructor?.nodeType;
 
-    // ROOT → skip wrapper, first AND skip label
-    if (nodeType === 'NodeROOT') {
-        return renderNode(node.children?.[0], '', metadata, false, t);
-    }
-
-    if (nodeType === 'NodeCLASS') {
-        return renderNode(node.children?.[0], '', metadata, false, t);
-    }
-
     // NOT → flip negation on child
     if (nodeType === 'NodeNOT') {
         const child = node.children?.[0];
-        return renderNode(child, parentField, metadata, !isNegated, t);
+        return renderNode(child, parentField, metadata, t, !isNegated);
     }
 
     // AND / OR group
-    if (nodeType === 'NodeAND' || nodeType === 'NodeOR') {
+    if (['NodeROOT', 'NodeCLASS', 'NodeAND', 'NodeOR'].includes(nodeType)) {
         const children = node.children || [];
         const dataFields = children.filter(c => c.constructor?.nodeType === 'NodeDATAFIELD' && c.children?.length > 0);
         const andGroups = children.filter(c => c.constructor?.nodeType === 'NodeAND');
         const orGroups = children.filter(c => c.constructor?.nodeType === 'NodeOR');
+        const classGroups = children.filter(c => c.constructor?.nodeType === 'NodeCLASS');
 
-        if (dataFields.length + andGroups.length + orGroups.length === 0) {
+        if (dataFields.length + andGroups.length + orGroups.length + classGroups.length === 0) {
             return null;
         }
 
-        const mappedLabel = {
-            'NodeAND': t('app.benefitPage.rulesTable.andConditions'),
-            'NodeOR': t('app.benefitPage.rulesTable.orConditions'),
-        }
-
         return (
-            <VBox
-                sx={{
-                    position: 'relative',
-                    pl: 2,
-                    '&::before': {
-                        content: '""',
-                        position: 'absolute',
-                        top: '0rem',
-                        bottom: 0,
-                        left: 0,
-                        borderLeft: '2px dashed #ccc',
-                    },
-                }}
-            >
-                <Typography variant="h6">
-                    {mappedLabel[nodeType]}
-                </Typography>
-
+            <VBox>
                 {dataFields.map((df, i) => (
-                    <Box key={i} sx={{ mb: 1 }}>
-                        {renderNode(df, parentField, metadata, isNegated, t)}
-                    </Box>
+                    <VBox key={i} sx={{ mb: 1 }}>
+                        {renderNode(df, parentField, metadata, t, isNegated)}
+                    </VBox>
+                ))}
+                {classGroups.map((grp, i) => (
+                    <VBox key={i} sx={{ mb: 1 }}>
+                        {renderNode(grp, parentField, metadata, t, isNegated, 'NodeCLASS')}
+                    </VBox>
                 ))}
                 {andGroups.map((grp, i) => (
-                    <Box key={i} sx={{ mb: 1 }}>
-                        {renderNode(grp, parentField, metadata, isNegated, t)}
-                    </Box>
+                    <CollapsibleGroup key={i} label={t('app.benefitPage.rulesTable.andConditions')} status={grp.status}>
+                        {renderNode(grp, parentField, metadata, t, isNegated, 'NodeAND')}
+                    </CollapsibleGroup>
                 ))}
                 {orGroups.map((grp, i) => (
-                    <Box key={i}>
-                        {renderNode(grp, parentField, metadata, isNegated, t)}
-                    </Box>
+                    <CollapsibleGroup key={i} label={t('app.benefitPage.rulesTable.orConditions')} status={grp.status}>
+                        {renderNode(grp, parentField, metadata, t, isNegated, 'NodeOR')}
+                    </CollapsibleGroup>
                 ))}
             </VBox>
         );
@@ -135,8 +155,8 @@ function renderNode(
                             r,
                             parentField,
                             metadata,
-                            isNegated,
-                            t
+                            t,
+                            isNegated
                         )}
                     </VBox>
                 ))}
@@ -162,6 +182,7 @@ function renderNode(
 export default function RecursiveRulesTable({ graphRoot, t }) {
     const metadata = useMetadataStore(state => state.metadata);
     if (!graphRoot) return null;
+
     return (
         <VBox
             sx={{
@@ -171,15 +192,34 @@ export default function RecursiveRulesTable({ graphRoot, t }) {
                 borderRadius: theme.shape.borderRadius,
             }}
         >
-            <VBox>
+            <VBox sx={{ gap: 2 }}>
                 <Typography variant="h2" sx={{ fontWeight: '400', wordBreak: "break-word" }}>
                     {t("app.benefitPage.rulesTable.header")}
                 </Typography>
-                <Typography variant="body1" sx={{ marginTop: 1 }}>
+                <Typography variant="body1">
                     {t("app.benefitPage.rulesTable.description")}
                 </Typography>
+                <Typography variant="body1">
+                    {t("app.benefitPage.rulesTable.explanationRules")}
+                </Typography>
+                <VBox>
+                    <Typography variant="body1" sx={{ fontWeight: 'bold'}}>
+                        {t("app.benefitPage.rulesTable.andExplanationTitle")}
+                    </Typography>
+                    <Typography variant="body1">
+                        {t("app.benefitPage.rulesTable.andExplanationText")}
+                    </Typography>
+                </VBox>
+                <VBox>
+                    <Typography variant="body1" sx={{ fontWeight: 'bold'}}>
+                        {t("app.benefitPage.rulesTable.orExplanationTitle")}
+                    </Typography>
+                    <Typography variant="body1">
+                        {t("app.benefitPage.rulesTable.orExplanationText")}
+                    </Typography>
+                </VBox>
             </VBox>
-            {renderNode(graphRoot, '', metadata?.['ff:hasDF'], false, t)}
+            {renderNode(graphRoot, '', metadata?.['ff:hasDF'], t)}
         </VBox>
     );
 }
