@@ -31,7 +31,7 @@ const LandingPageFooterDesktop = () => {
             <HBox justifyContent={'center'} alignItems={'center'}>
                 <HBox sx={{ width: '506px', justifyContent: 'center' }}>
                     <RegularButton link='/impressum' variant='pinkContained' text='Impressum' size='small' />
-                    <RegularButton variant='pinkContained' text='Datenschutz' size='small' />
+                    <RegularButton link='/data-protection' variant='pinkContained' text='Datenschutz' size='small' />
                 </HBox>
             </HBox>
         </VBox>

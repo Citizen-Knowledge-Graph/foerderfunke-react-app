@@ -29,7 +29,7 @@ const LandingPageFooterMobile = () => {
             </VBox>
             <VBox>
                 <RegularButton link='/impressum' variant='pinkContained' text='Impressum' size='small' />
-                <RegularButton variant='pinkContained' text='Datenschutz' size='small' />
+                <RegularButton link='/data-protection' variant='pinkContained' text='Datenschutz' size='small' />
             </VBox>
         </VBox>
     );

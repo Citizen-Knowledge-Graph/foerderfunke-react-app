@@ -96,6 +96,18 @@ const translations = {
                     court: 'Register court',
                     number: 'Registration number',
                     vatID: 'VAT ID',
+                },
+                dataProtection: {
+                    title: "Data Protection",
+                    introduction: "Protecting personal data is very important to us. Therefore, we do not use extensive tracking or cookies. Below you will find detailed explanations of different aspects of our website.",
+                    responsible: "Responsible",
+                    eligibilityCheck: "Eligibility Check",
+                    eligibilityCheckInformation: "The eligibility check is performed exclusively locally in your browser. No personal data is transmitted to our servers. Your answers are stored only locally and not shared with third parties. The eligibility check is based on the data you provide and the conditions for social benefits that we make publicly available.",
+                    hostingInformation: "Our website is hosted via GitHub Pages, a service provided by GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. GitHub does not store any personal server log files such as IP addresses when accessing our pages. For more information, see: https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement",
+                    feedback: "Feedback Form",
+                    feedbackInformation: "Our website contains an anonymous feedback form. The content entered there is transmitted to our server without additional personal information. The processing is done solely to improve our offering in accordance with Art. 6 para. 1 lit. f DSGVO (legitimate interest). IP addresses or other personal data are not stored. The data is not shared with third parties. The form is operated via Amazon Web Services EMEA SARL (AWS), 38 avenue John F. Kennedy, L-1855 Luxembourg, within the EU. There is a data processing agreement with AWS in accordance with Art. 28 DSGVO.",
+                    webanalytics: "Web Analytics with Plausible",
+                    webanalyticsInformation: "We use Plausible Analytics, a privacy-friendly web analytics service, to analyze the usage of our website. Plausible does not store any personal data and does not use cookies. The data is anonymized and aggregated, so no conclusions can be drawn about individual users. For more information, see: https://plausible.io/data-policy",
                 }
             }
         },
@@ -363,6 +375,18 @@ const translations = {
                     court: 'Registergericht',
                     number: 'Registernummer',
                     vatID: 'Umsatzsteuer-ID',
+                },
+                dataProtection: {
+                    title: "Datenschutz",
+                    introduction: "Der Schutz personenbezogenen Daten ist uns sehr wichtig. Deshalb verzichten wir auf umfangreiches Tracking und den Einsatz von Cookies. Im Folgenden finden Sie detaillierte Erklärung zu unterschiedlichen Aspekten unserer Website.",
+                    responsible: "Verantwortlich",
+                    eligibilityCheck: "Anspruchscheck",
+                    eligibilityCheckInformation: "Der Anspruchscheck wird ausschließlich lokal in deinem Browser durchgeführt. Es werden keine personenbezogenen Daten an unsere Server übermittelt. Deine Antworten werden nur lokal gespeichert und nicht an Dritte weitergegeben. Der Anspruchscheck basiert auf den von dir eingegebenen Daten und den Bedingungen für Sozialleistungen, die wir öffentlich zugänglich machen.",
+                    hostingInformation: "Unsere Website wird über GitHub Pages gehostet, einen Dienst der GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. GitHub speichert beim Aufruf unserer Seiten keine personenbezogenen Server-Logfiles wie IP-Adressen. Weitere Informationen finden Sie unter:https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement",
+                    feedback: "Feedback-Formular",
+                    feedbackInformation: "Unsere Website enthält ein anonymes Feedback-Formular. Die dort eingegebenen Inhalte werden ohne zusätzliche personenbezogene Angaben an unseren Server übermittelt. Die Verarbeitung erfolgt ausschließlich zur Verbesserung unseres Angebots gemäß Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse). IP-Adressen oder andere personenbezogene Daten werden nicht gespeichert. Die Daten werden nicht an Dritte weitergegeben. Das Formular wird über Amazon Web Services EMEA SARL (AWS), 38 avenue John F. Kennedy, L-1855 Luxemburg, innerhalb der EU betrieben. Es besteht ein Auftragsverarbeitungsvertrag mit AWS gemäß Art. 28 DSGVO.",
+                    webanalytics: "Webanalyse mit Plausible",
+                    webanalyticsInformation: "Wir verwenden Plausible Analytics, einen datenschutzfreundlichen Webanalysedienst, um die Nutzung unserer Website zu analysieren. Plausible speichert keine personenbezogenen Daten und verwendet keine Cookies. Die Daten werden anonymisiert und aggregiert, sodass keine Rückschlüsse auf individuelle Nutzer:innen möglich sind. Weitere Informationen finden Sie unter: https://plausible.io/data-policy",
                 }
             }
         },

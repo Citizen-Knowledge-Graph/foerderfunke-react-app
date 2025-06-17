@@ -14,6 +14,7 @@ import InfoScreenReturningUserContainer from '@/ui/screens/info-pages/returning-
 import InfoScreenPrivacyContainer from '@/ui/screens/info-pages/privacy/InfoScreenPrivacyContainer';
 import QuestionPageRouter from '@/ui/screens/question-pages/QuestionPageRouter';
 import ImpressumPage from './ui/screens/legal/ImpressumPage';
+import DataProtection from './ui/screens/legal/DataProtection';
 
 const AppRoutes = () => (
     <Routes>
@@ -32,6 +33,7 @@ const AppRoutes = () => (
         <Route path="/default" element={<ResolveUriScreen/>}/>
         <Route path="/questions" element={<QuestionPageRouter/>}/>
         <Route path="/impressum" element={<ImpressumPage/>}/>
+        <Route path="/data-protection" element={<DataProtection/>}/>
     </Routes>
 );
 
