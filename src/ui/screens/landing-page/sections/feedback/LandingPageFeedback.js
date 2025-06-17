@@ -2,9 +2,8 @@ import React from "react";
 import { Typography } from "@mui/material";
 import LandingPageSectionWrapper from "../../components/LandingPageSectionWrapper";
 import FeedbackBox from "./components/FeedbackBox";
-import useTranslation from "../../../../language/useTranslation";
-import { VBox } from "../../../../shared-components/LayoutBoxes";
-import theme from "../../../../../theme";
+import useTranslation from "@/ui/language/useTranslation";
+import { VBox } from "@/ui/shared-components/LayoutBoxes";
 
 const LandingPageFeedback = ({ isDesktop }) => {
     const { t } = useTranslation();
@@ -14,7 +13,7 @@ const LandingPageFeedback = ({ isDesktop }) => {
             <VBox sx={{ alignItems: 'center' }}>
                 <VBox sx={{ 
                     maxWidth: "1118px", 
-                    gap: isDesktop ? theme.spacing(10) : theme.spacing(6) 
+                    gap: isDesktop ? 10 : 6
                 }}>
                     <Typography variant="h1">
                         Feedback

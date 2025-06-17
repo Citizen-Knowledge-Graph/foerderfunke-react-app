@@ -46,7 +46,7 @@ const RegularButton = ({
         : {})}
       onClick={onClick || undefined}
     >
-      {t(text)}
+      {t(text) || text}
     </Button>
   );
 };

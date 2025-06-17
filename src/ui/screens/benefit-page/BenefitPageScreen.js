@@ -78,7 +78,6 @@ const BenefitPageScreen = ({
                             )
                         }
                         <RecursiveRulesTable graphRoot={matchingGraph?.root} t={t} />
-
                     </Box>
                 </VBox>
             </AppScreenWrapperContainer>

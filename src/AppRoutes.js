@@ -13,6 +13,7 @@ import OnboardingWelcomeTopicsContainer from "@/ui/screens/onboarding-pages/topi
 import InfoScreenReturningUserContainer from '@/ui/screens/info-pages/returning-user/InfoScreenReturningUserContainer';
 import InfoScreenPrivacyContainer from '@/ui/screens/info-pages/privacy/InfoScreenPrivacyContainer';
 import QuestionPageRouter from '@/ui/screens/question-pages/QuestionPageRouter';
+import ImpressumPage from './ui/screens/legal/ImpressumPage';
 
 const AppRoutes = () => (
     <Routes>
@@ -30,6 +31,7 @@ const AppRoutes = () => (
         <Route path="/activity-log" element={<ActivityLogScreen/>}/>
         <Route path="/default" element={<ResolveUriScreen/>}/>
         <Route path="/questions" element={<QuestionPageRouter/>}/>
+        <Route path="/impressum" element={<ImpressumPage/>}/>
     </Routes>
 );
 

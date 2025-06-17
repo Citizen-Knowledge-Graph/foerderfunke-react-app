@@ -1,6 +1,6 @@
 import React from "react";
-import {VBox} from "../../../shared-components/LayoutBoxes";
-import {useStore} from "../../../shared-components/ViewportUpdater";
+import {VBox} from "@/ui/shared-components/LayoutBoxes";
+import {useStore} from "@/ui/shared-components/ViewportUpdater";
 
 const LandingPageSectionWrapper = ({backgroundColor= null, children, fullWidth = false}) => {
     const isDesktop = useStore((state) => state.isDesktop);

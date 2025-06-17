@@ -87,6 +87,17 @@ const translations = {
                 disclaimerTitleNGI: "Disclaimer",
                 disclaimerNGI: "Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or European Commission. Neither the European Union nor the granting authority can be held responsible for them. Funded within the framework of the NGI Search project under grant agreement No 101069364.",
             },
+            legal: {
+                impressum: {
+                    declaration5TMG: "Information in accordance with § 5 TMG",
+                    representedBy: "Represented by",
+                    registered: "Registration",
+                    responsible: "Responsible for the content in accordance with § 55 Abs. 2 RStV",
+                    court: 'Register court',
+                    number: 'Registration number',
+                    vatID: 'VAT ID',
+                }
+            }
         },
         app: {
             loading: {
@@ -342,6 +353,17 @@ const translations = {
                 textNGI: "Wir sind Teil des laufenden Open Calls des NGI Search Incubators. Wir erhalten Fördermittel und zusätzliche Unterstützung, um FörderFunke weiterzuentwickeln.",
                 disclaimerTitleNGI: "Hinweis",
                 disclaimerNGI: "Finanziert durch die Europäische Union. Die geäußerten Ansichten und Meinungen stammen jedoch ausschließlich von den Autor:innen und spiegeln nicht unbedingt die Ansichten der Europäischen Union oder der Europäischen Kommission wider. Weder die Europäische Union noch die Bewilligungsbehörde können dafür verantwortlich gemacht werden. Finanziert im Rahmen des NGI Search Projekts unter der Fördernummer Nr. 101069364."
+            },
+            legal: {
+                impressum: {
+                    declaration5TMG: "Angaben gemäß § 5 TMG",
+                    representedBy: "Vertreten durch",
+                    registered: "Eintragung",
+                    responsible: "Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV",
+                    court: 'Registergericht',
+                    number: 'Registernummer',
+                    vatID: 'Umsatzsteuer-ID',
+                }
             }
         },
         app: {

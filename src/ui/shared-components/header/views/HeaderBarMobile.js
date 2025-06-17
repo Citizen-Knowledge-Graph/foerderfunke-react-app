@@ -51,7 +51,6 @@ const HeaderBarMobile = ({ isApp }) => {
                         <VBox sx={{ gap: 2, alignItems: 'center' }}>
                             <LandingPageHollowButtonMobile isApp={isApp} setShowDropdown={setShowDropdown} text={t('home.menu.improve')} to='/#feedback' />
                             <LandingPageHollowButtonMobile isApp={isApp} setShowDropdown={setShowDropdown} text={t('home.menu.aboutUs')} to={"/#about-us"} />
-                            <LandingPageHollowButtonMobile isApp={isApp} setShowDropdown={setShowDropdown} text={t('home.menu.activityLog')} to={'/activity-log'} />
                         </VBox>
                         <LandingPageButton />
                         <HBox alignItems="center" gap={1}>

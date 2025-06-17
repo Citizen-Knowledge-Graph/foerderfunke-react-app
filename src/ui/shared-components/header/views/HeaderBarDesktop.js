@@ -51,7 +51,6 @@ const HeaderBarDesktop = ({ isApp }) => {
                         /> : null}
                     <LandingPageHollowButtonDesktop isApp={isApp} text={t('home.menu.improve')} to={'/#feedback'} />
                     <LandingPageHollowButtonDesktop isApp={isApp} text={t('home.menu.aboutUs')} to={"/#about-us"} />
-                    <LandingPageHollowButtonDesktop isApp={isApp} text={t('home.menu.activityLog')} to={'/activity-log'} />
                     <HBox alignItems="center" gap={1} sx={{ color: isApp ? 'white' : 'black' }}>
                         <span style={{ color: isApp ? 'white' : 'black' }}>DE</span>
                         <AntSwitch
