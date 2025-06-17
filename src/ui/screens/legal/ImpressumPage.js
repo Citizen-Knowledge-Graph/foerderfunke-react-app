@@ -45,10 +45,10 @@ const ImpressumPage = () => {
                         </Typography>
                         <VBox sx={{ gap: 0 }}>
                             <Typography variant="body1">
-                                Benjamin Degenhart (Geschäftsführerin)
+                                Benjamin Degenhart ({t('home.legal.impressum.director')})
                             </Typography>
                             <Typography variant="body1">
-                                Ben Gläser (Geschäftsführerin)
+                                Ben Gläser ({t('home.legal.impressum.director')})
                             </Typography>
                         </VBox>
                     </VBox>
