@@ -90,6 +90,10 @@
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/wolfenbuettel-ansiedlung.ttl",
       "rpUri": "https://foerderfunke.org/default#wolfenbuettel-ansiedlung"
-    }   
+    },
+    {
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/uebergangsgeld.ttl",
+      "rpUri": "https://foerderfunke.org/default#uebergangsgeld"
+    }      
   ]
 }

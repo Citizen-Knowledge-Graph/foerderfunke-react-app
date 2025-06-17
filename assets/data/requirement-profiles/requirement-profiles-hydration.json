@@ -1585,5 +1585,186 @@
         ]
       }
     }
+  },
+  "ff:uebergangsgeld": {
+    "id": "ff:uebergangsgeld",
+    "status": "beta",
+    "category": "social_benefit",
+    "title": {
+      "de": "Übergangsgeld - Bundesagentur für Arbeit",
+      "en": "Transitional Allowance - Federal Employment Agency"
+    },
+    "description": {
+      "de": "Das Übergangsgeld dient zur Sicherung des Lebensunterhalts während einer Maßnahme zur beruflichen Rehabilitation und wird von der Bundesagentur für Arbeit gewährt.",
+      "en": "The transitional allowance supports livelihood during vocational rehabilitation measures and is provided by the Federal Employment Agency."
+    },
+    "application_process": {
+      "de": {
+        "title": "Vereinbaren Sie einen Termin bei Ihrer Agentur für Arbeit. In diesem Beratungsgespräch klären Sie gemeinsam mit Ihrer Berater:in Ihre Voraussetzungen und die passenden Maßnahmen. Anschließend erhalten Sie die nötigen Formulare und Hinweise zu erforderlichen Nachweisen – diese können Sie auch online ausfüllen und hochladen. Abschließend erhalten Sie einen schriftlichen Bescheid über die Bewilligung.",
+        "links": [
+          {
+            "title": "Dienststellensuche",
+            "url": "https://web.arbeitsagentur.de/portal/metasuche/suche/dienststellen"
+          }
+        ]
+      },
+      "en": {
+        "title": "First, schedule an appointment with your local Employment Agency. In this consultation, you will discuss your eligibility and suitable rehabilitation measures with your advisor. You will then receive the necessary forms and information on required documents, which can also be filled out and uploaded online. Finally, you will receive a written notice of approval.",
+        "links": [
+          {
+            "title": "Office finder",
+            "url": "https://web.arbeitsagentur.de/portal/metasuche/suche/dienststellen"
+          }
+        ]
+      }
+    },
+    "funding_conditions": {
+      "de": {
+        "title": "Der Leistungsumfang umfasst:",
+        "details": [
+          "Übergangsgeld als Lohnersatzleistung: in der Regel ca. 68 % Ihres letzten Nettogehalts (bzw. ca. 75 % bei Kindergeldberechtigung).",
+          "Übernahme der Sozialversicherungsbeiträge (Kranken-, Pflege-, Renten-, Arbeitslosen- und Unfallversicherung) während der Maßnahme.",
+          "Monatliche Zahlung nachträglich für die gesamte Dauer der Reha-Maßnahme.",
+          "Weiterzahlung bei krankheitsbedingter Unterbrechung bis zu 6 Wochen oder bei anerkannten wichtigen Gründen (z. B. Geburt, Umzug)."
+        ]
+      },
+      "en": {
+        "title": "The support package includes:",
+        "details": [
+          "Wage replacement benefit: typically about 68% of your last net income (or about 75% if you have a child eligible for child benefit).",
+          "Coverage of social insurance contributions (health, nursing care, pension, unemployment, and accident) during the program.",
+          "Monthly payments in arrears for the entire duration of the rehabilitation measure.",
+          "Continued payments for up to 6 weeks if you must interrupt for health reasons, or longer for other approved important reasons (e.g., childbirth, relocation)."
+        ]
+      }
+    },
+    "legal_basis": {
+      "de": {
+        "title": "Die gesetzlichen Grundlagen für das Übergangsgeld finden sich in folgenden Vorschriften:",
+        "links": [
+          {
+            "title": "§ 66 SGB IX – Zuständigkeit der Rehabilitationsträger",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__66.html"
+          },
+          {
+            "title": "§ 67 SGB IX – Berechnung des Regelentgelts",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__67.html"
+          },
+          {
+            "title": "§ 68 SGB IX – Berechnungsgrundlage in Sonderfällen",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__68.html"
+          },
+          {
+            "title": "§ 69 SGB IX – Kontinuität der Bemessungsgrundlage",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__69.html"
+          },
+          {
+            "title": "§ 70 SGB IX – Anpassung der Entgeltersatzleistungen",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__70.html"
+          },
+          {
+            "title": "§ 71 SGB IX – Weiterzahlung der Leistungen",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__71.html"
+          },
+          {
+            "title": "§ 72 SGB IX – Einkommensanrechnung",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__72.html"
+          },
+          {
+            "title": "§ 118 SGB III – Übergangsgeld als besondere Leistung der Arbeitsförderung",
+            "url": "https://www.gesetze-im-internet.de/sgb_3/__118.html"
+          },
+          {
+            "title": "§ 119 SGB III – Vermittlungsziel und Rehabilitationsmaßnahmen",
+            "url": "https://www.gesetze-im-internet.de/sgb_3/__119.html"
+          },
+          {
+            "title": "§ 120 SGB III – Vorbeschäftigungszeit für das Übergangsgeld",
+            "url": "https://www.gesetze-im-internet.de/sgb_3/__120.html"
+          },
+          {
+            "title": "§ 121 SGB III – Besondere Formen der Förderung",
+            "url": "https://www.gesetze-im-internet.de/sgb_3/__121.html"
+          }
+        ]
+      },
+      "en": {
+        "title": "The legal bases for transitional allowance are set out in the following provisions:",
+        "links": [
+          {
+            "title": "Section 66 SGB IX – Responsibility of rehabilitation providers",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__66.html"
+          },
+          {
+            "title": "Section 67 SGB IX – Calculation of the standard benefit",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__67.html"
+          },
+          {
+            "title": "Section 68 SGB IX – Calculation basis in special cases",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__68.html"
+          },
+          {
+            "title": "Section 69 SGB IX – Continuity of the calculation basis",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__69.html"
+          },
+          {
+            "title": "Section 70 SGB IX – Adjustment of wage replacement benefits",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__70.html"
+          },
+          {
+            "title": "Section 71 SGB IX – Continuation of payments",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__71.html"
+          },
+          {
+            "title": "Section 72 SGB IX – Income offsetting",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__72.html"
+          },
+          {
+            "title": "Section 118 SGB III – Transitional allowance as a special labour-promotion benefit",
+            "url": "https://www.gesetze-im-internet.de/sgb_3/__118.html"
+          },
+          {
+            "title": "Section 119 SGB III – Placement objective and rehabilitation measures",
+            "url": "https://www.gesetze-im-internet.de/sgb_3/__119.html"
+          },
+          {
+            "title": "Section 120 SGB III – Prior employment period for transitional allowance",
+            "url": "https://www.gesetze-im-internet.de/sgb_3/__120.html"
+          },
+          {
+            "title": "Section 121 SGB III – Special forms of support",
+            "url": "https://www.gesetze-im-internet.de/sgb_3/__121.html"
+          }
+        ]
+      }
+    },
+    "examples": {
+      "de": {
+        "title": "Beispielhafte Szenarien für eine Förderung:",
+        "examples": [
+          {
+            "title": "Teilzeitmaßnahme in einer beruflichen Reha-Einrichtung",
+            "text": "Ein Rehabilitand mit Behinderung hatte zuletzt ein Netto-Einkommen von 1.800 € pro Monat. Im Rahmen einer Teilzeitmaßnahme (50 % Arbeitszeit) erhält er Übergangsgeld in Höhe von ca. 1.224 € monatlich (68 % des letzten Nettoeinkommens). Bei Kindergeldberechtigung steigt dieser Betrag auf etwa 1.350 € (75 %). Diese Beträge dienen nur zur Veranschaulichung; die tatsächliche Höhe wird individuell berechnet."
+          },
+          {
+            "title": "Berufsrückkehr nach Familienpflege",
+            "text": "Eine Berufsrückkehrerin mit Behinderung beginnt eine einjährige berufliche Weiterbildung. Da sie innerhalb der letzten 12 Monate vor Maßnahmebeginn einen anerkannten Berufsabschluss erworben hat, entfällt die Vorbeschäftigungszeit. Bei einem letzten Nettogehalt von 2.000 € würde sie rund 1.360 € (68 %) bzw. 1.500 € (75 % mit Kind) Übergangsgeld erhalten. Illustrative Werte, tatsächliche Ansprüche können abweichen."
+          }
+        ]
+      },
+      "en": {
+        "title": "Example scenarios for funding:",
+        "examples": [
+          {
+            "title": "Part-time measure at a vocational rehabilitation facility",
+            "text": "A person with a disability previously earned a net salary of €1,800 per month. During a part-time program (50% working hours), they might receive about €1,224 per month as transitional allowance (68% of last net income). With an eligible child, this could increase to around €1,350 (75%). Figures are illustrative; actual amounts vary."
+          },
+          {
+            "title": "Return to work after caregiving",
+            "text": "A returning professional with a disability enrolls in a one-year training course. Having completed a recognized vocational qualification within the last 12 months, the prior-employment requirement is waived. On a last net salary of €2,000, they would receive approximately €1,360 (68%) or €1,500 (75% with a child). For illustration only; individual calculations apply."
+          }
+        ]
+      }
+    }
   }
 }
