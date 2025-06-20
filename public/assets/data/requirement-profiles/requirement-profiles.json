@@ -94,6 +94,10 @@
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/uebergangsgeld.ttl",
       "rpUri": "https://foerderfunke.org/default#uebergangsgeld"
-    }      
+    },
+    {
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/kurzzeitige-arbeitsverhinderung.ttl",
+      "rpUri": "https://foerderfunke.org/default#kurzzeitige-arbeitsverhinderung"
+    }            
   ]
 }

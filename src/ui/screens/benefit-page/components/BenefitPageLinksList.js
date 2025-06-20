@@ -92,6 +92,7 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
                                         {
                                             data.links.map((link, index) => (
                                                 <Button
+                                                    key={index}
                                                     component="a"
                                                     href={link.url}
                                                     target="_blank"
