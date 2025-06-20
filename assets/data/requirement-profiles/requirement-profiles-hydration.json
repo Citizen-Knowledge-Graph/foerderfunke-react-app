@@ -1766,5 +1766,128 @@
         ]
       }
     }
+  },
+  "ff:kurzzeitige-arbeitsverhinderung": {
+    "id": "ff:kurzzeitige-arbeitsverhinderung",
+    "status": "beta",
+    "category": "social_benefit",
+    "title": {
+      "de": "Kurzzeitige Arbeitsverhinderung für akute Pflege",
+      "en": "Short-Term Work Interruption for Acute Care"
+    },
+    "description": {
+      "de": "In einer unerwartet eintretenden Pflegesituation können Beschäftigte bis zu zehn Arbeitstage der Arbeit fernbleiben, um für einen pflegebedürftigen nahen Angehörigen die Versorgung zu organisieren oder selbst sicherzustellen. Die Freistellung ist grundsätzlich unbezahlt; zur Einkommenssicherung kann Pflegeunterstützungsgeld beantragt werden.",
+      "en": "When an unexpected need for care arises, employees may take up to ten working days off to organise or provide care for a dependent close relative. The leave is generally unpaid; a care support allowance can be claimed to compensate lost earnings."
+    },
+    "application_process": {
+      "de": {
+        "title": "Grundsätzlich gibt es keinen formellen Antrag, um die kurzzeitige Pflegezeit zu beantragen. Beschäftigte müssen jedoch ihren Arbeitgeber unverzüglich über die Inanspruchnahme informieren und die Gründe darlegen. Unter Umständen ist ein ärztliches Attest erforderlich, um die Notwendigkeit der Pflege zu belegen.",
+        "links": [
+          {
+            "title": "Informationen & Online-Leitfaden „Hilfe in akuten Pflegesituationen“",
+            "url": "https://www.wege-zur-pflege.de/wege-zur-pflege/pflegende-angehoerige/hilfe-in-akuten-pflegesituationen"
+          },
+          {
+            "title": "Musterformular Ärztliche Bescheinigung",
+            "url": "https://www.wege-zur-pflege.de/resource/blob/252860/9a70cf71780ca2d7e0a4c891c93dd5de/aerztliche-bescheinigung-kurzzeitige-arbeitsverhinderung-data.pdf"
+          }
+        ]
+      },
+      "en": {
+        "title": "There is generally no formal application to request short-term care leave. However, employees must promptly inform their employer about the need for leave and provide reasons. In some cases, a medical certificate may be required to substantiate the need for care.",
+        "links": [
+          {
+            "title": "Information & Online Guide 'Help in Acute Care Situations'",
+            "url": "https://www.wege-zur-pflege.de/wege-zur-pflege/pflegende-angehoerige/hilfe-in-akuten-pflegesituationen"
+          },
+          {
+            "title": "Sample Form Medical Certificate",
+            "url": "https://www.wege-zur-pflege.de/resource/blob/252860/9a70cf71780ca2d7e0a4c891c93dd5de/aerztliche-bescheinigung-kurzzeitige-arbeitsverhinderung-data.pdf"
+          }
+        ]
+      }
+    },
+    "funding_conditions": {
+      "de": {
+        "title": "Leistungsumfang & Voraussetzungen:",
+        "details": [
+          "Freistellung bis zu 10 Arbeitstage pro akuter Pflegesituation (§ 2 Abs. 1 PflegeZG).",
+          "Keine Ankündigungsfrist; Verhinderung und Dauer müssen dem Arbeitgeber unverzüglich mitgeteilt werden.",
+          "Auf Verlangen Vorlage einer ärztlichen Bescheinigung, die Pflegebedürftigkeit (mind. Pflegegrad 1) und Erforderlichkeit bestätigt.",
+          "Geltung für alle Arbeitgebergrößen; während der Freistellung besteht besonderer Kündigungsschutz.",
+          "Pflegeunterstützungsgeld: 90 % des ausgefallenen Nettoarbeitsentgelts, 100 % bei beitragspflichtigen Einmalzahlungen (max. 70 % der BBG); Anspruch nur bei fehlender Entgeltfortzahlung.",
+          "Anspruch pro pflegebedürftiger Person kalenderjährlich auf 10 Arbeitstage begrenzt; Angehörige können Tage aufteilen.",
+          "Nutzung auch für im Ausland lebende Angehörige möglich, sofern diese in der deutschen Pflegeversicherung versichert sind."
+        ]
+      },
+      "en": {
+        "title": "Scope & requirements:",
+        "details": [
+          "Leave of up to 10 working days per acute care event (Sec. 2 (1) Care Leave Act).",
+          "No notice period; employee must inform the employer immediately about absence and expected duration.",
+          "Medical certificate (need for care of at least Care Level 1 and necessity of employee’s involvement) on request.",
+          "Applies to employers of any size; special protection against dismissal during leave.",
+          "Care support allowance: 90 % of lost net pay, or 100 % if subject to recent lump-sum earnings (capped at 70 % of the contribution assessment ceiling); payable only if no wage continuation is due.",
+          "Entitlement limited to 10 working days per care recipient per calendar year; family members may share the days.",
+          "Can be used for relatives abroad if they are insured in the German long-term-care scheme."
+        ]
+      }
+    },
+    "legal_basis": {
+      "de": {
+        "title": "Gesetzliche Grundlagen:",
+        "links": [
+          {
+            "title": "§ 2 Pflegezeitgesetz – Kurzzeitige Arbeitsverhinderung",
+            "url": "https://www.gesetze-im-internet.de/pflegezg/__2.html"
+          },
+          {
+            "title": "§ 44a Abs. 3 SGB XI – Pflegeunterstützungsgeld",
+            "url": "https://www.gesetze-im-internet.de/sgb_11/__44a.html"
+          }
+        ]
+      },
+      "en": {
+        "title": "Legal basis:",
+        "links": [
+          {
+            "title": "Section 2 Care Leave Act (German)",
+            "url": "https://www.gesetze-im-internet.de/pflegezg/__2.html"
+          },
+          {
+            "title": "Section 44a (3) SGB XI – Care support allowance (German)",
+            "url": "https://www.gesetze-im-internet.de/sgb_11/__44a.html"
+          }
+        ]
+      }
+    },
+    "examples": {
+      "de": {
+        "title": "Beispielszenarien:",
+        "examples": [
+          {
+            "title": "Hüftbruch der Mutter",
+            "text": "Nach dem Oberschenkelhalsbruch seiner Mutter beantragt ein Angestellter sieben Arbeitstage, um Reha-Platz und häusliche Pflege zu organisieren; er erhält Pflegeunterstützungsgeld von der Pflegekasse."
+          },
+          {
+            "title": "Pflege im Ausland",
+            "text": "Eine Arbeitnehmerin reist kurzfristig nach Spanien, um ihren dort lebenden Vater (bei deutscher Pflegekasse versichert) nach einem Schlaganfall zu versorgen; sie nutzt fünf Tage Kurzzeitige Arbeitsverhinderung und Pflegeunterstützungsgeld."
+          }
+        ]
+      },
+      "en": {
+        "title": "Example scenarios:",
+        "examples": [
+          {
+            "title": "Mother’s hip fracture",
+            "text": "After his mother’s hip fracture, an employee takes seven working days to arrange rehabilitation and home care; the health-insurance fund pays care support allowance."
+          },
+          {
+            "title": "Care abroad",
+            "text": "An employee travels to Spain to organise care for her father (insured in the German care system) after a stroke; she claims five days of short-term care leave and the allowance."
+          }
+        ]
+      }
+    }
   }
 }
