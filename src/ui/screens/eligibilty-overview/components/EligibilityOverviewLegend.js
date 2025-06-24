@@ -1,8 +1,8 @@
 import React from 'react';
 import { Typography } from '@mui/material';
-import { HBox, VBox } from '../../../shared-components/LayoutBoxes';
-import useTranslation from "../../../language/useTranslation";
-import theme from '../../../../theme';
+import { HBox, VBox } from '@/ui/shared-components/LayoutBoxes';
+import useTranslation from "@/ui/language/useTranslation";
+import theme from '@/ui/theme';
 
 const EligibilityOverviewLegend = ({iconPaths}) => {
     const { t } = useTranslation();

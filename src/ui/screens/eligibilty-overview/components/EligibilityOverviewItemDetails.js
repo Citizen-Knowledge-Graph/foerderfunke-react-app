@@ -1,8 +1,7 @@
 import React from 'react';
 import { Typography } from '@mui/material';
-import { HBox, VBox } from '../../../shared-components/LayoutBoxes';
+import { HBox, VBox } from '@/ui/shared-components/LayoutBoxes';
 import { useSelectedBenefitStore, useSelectedTopicsStore } from "@/ui/storage/zustand";
-import theme from '@/theme';
 import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 
 const EligibilityOverviewItemDetails = ({ item, eligible }) => {
@@ -10,8 +9,8 @@ const EligibilityOverviewItemDetails = ({ item, eligible }) => {
     const clearSelectedTopics = useSelectedTopicsStore((state) => state.clear);
 
     return (
-        <VBox sx={{ gap: theme.spacing(2) }}>
-            <HBox sx={{ maxWidth: '800px' }}>
+        <VBox sx={{ gap: 4 }}>
+            <HBox sx={{ width: '50%' }}>
                 <Typography variant="body1">
                     {item.description}
                 </Typography>

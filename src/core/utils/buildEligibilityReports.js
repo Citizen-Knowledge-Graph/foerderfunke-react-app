@@ -7,6 +7,9 @@ export const buildEligibilityReports = (validationReport, metadata, hydrationDat
         };
     }
 
+    console.log("Validation Report:", validationReport);
+    console.log("Metadata:", metadata);
+
     const reports = validationReport['ff:hasEvaluatedRequirementProfile'] || [];   
     const allReports = reports.map(report => {
         const rpUri = report['ff:hasRpUri']?.['@id'] || null;    
