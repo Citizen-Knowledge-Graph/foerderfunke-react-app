@@ -7,12 +7,9 @@ export const buildEligibilityReports = (validationReport, metadata, hydrationDat
         };
     }
 
-    console.log("Validation Report:", validationReport);
-    console.log("Metadata:", metadata);
-
-    const reports = validationReport['ff:hasEvaluatedRequirementProfile'] || [];   
+    const reports = validationReport['ff:hasEvaluatedRequirementProfile'] || [];
     const allReports = reports.map(report => {
-        const rpUri = report['ff:hasRpUri']?.['@id'] || null;    
+        const rpUri = report['ff:hasRpUri']?.['@id'] || null;
         const result = report['ff:hasEligibilityStatus']?.['@id'] || null;
 
         // hydration data
@@ -30,9 +27,35 @@ export const buildEligibilityReports = (validationReport, metadata, hydrationDat
         // metadata
         const rpMetadata = metadata['ff:hasRP']?.find(rp => rp['@id'] === rpUri)
         const validationStage = rpMetadata?.['ff:validationStage']?.['@id'] || 'Unknown Validation Stage';
+        const associatedLaw = rpMetadata?.['ff:legalBasis'];
+        const providingAgency = rpMetadata?.['ff:providingAgency']?.['@id'];
+        const administrativeLevel = rpMetadata?.['ff:administrativeLevel']?.['@id'];
 
-        return { uri: rpUri, result, id, title, category, description, status, requiredDocuments, additionalSupport, legalBasis, furtherInformation, validationStage };
-    });    
+        const rawCategories = rpMetadata?.['ff:category'];
+        const categoriesArray = rawCategories
+            ? (Array.isArray(rawCategories) ? rawCategories : [rawCategories])
+            : [];
+        const benefitCategories = categoriesArray.map(cat => cat['@id']).filter(Boolean);
+
+        return {
+            uri: rpUri,
+            result,
+            id,
+            title,
+            category,
+            description,
+            status,
+            requiredDocuments,
+            additionalSupport,
+            legalBasis,
+            furtherInformation,
+            validationStage,
+            associatedLaw,
+            providingAgency,
+            administrativeLevel,
+            benefitCategories
+        };
+    });
 
     const eligibilityStatus = allReports.reduce((acc, report) => {
         const { category, result } = report;
@@ -52,7 +75,7 @@ export const buildEligibilityReports = (validationReport, metadata, hydrationDat
 
             if (report.validationStage === "ff:preliminary-validation") {
                 acc[category][result].preliminary.push(report);
-            }        
+            }
         } else {
             if (!acc[category][result]) {
                 acc[category][result] = [];

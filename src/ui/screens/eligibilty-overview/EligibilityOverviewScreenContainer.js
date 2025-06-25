@@ -16,6 +16,8 @@ const EligibilityOverviewScreenContainer = () => {
     const metadata = useMetadataStore((state) => state.metadata);
     const eligibilityData = useEligibilityData(validationReport, metadata, hydrationData, language);
     
+    console.log("eligibilityData", eligibilityData);
+
     const iconPaths = useMemo(() => ({
         eligible: `${process.env.PUBLIC_URL}/assets/images/application/icon-image-eligible.svg`,
         preliminaryEligible: `${process.env.PUBLIC_URL}/assets/images/application/icon-image-preliminary-eligible.svg`,
