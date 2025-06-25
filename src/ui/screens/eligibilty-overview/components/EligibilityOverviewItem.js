@@ -32,7 +32,7 @@ const EligibilityOverviewItem = ({ item, eligible }) => {
             >
                 <HBox
                     sx={{
-                        flex: '1 1 0%',
+                        flex: '3 1 0%',
                         alignItems: 'flex-start',
                         gap: 1
                     }}
@@ -49,25 +49,25 @@ const EligibilityOverviewItem = ({ item, eligible }) => {
                         <Typography variant="body1">
                             {item.description}
                         </Typography>
-                        <HBox sx={{ gap: 1, flexWrap: 'wrap' }}>
+                        {/* <HBox sx={{ gap: 1, flexWrap: 'wrap' }}>
                             <HBox sx={{ backgroundColor: 'green.main', padding: '6px 10px', borderRadius: theme.shape.borderRadius }}>
                                 <Typography variant="body1">
                                     Sie haben womöglich Anspruch!
                                 </Typography>
                             </HBox>
-                        </HBox>
+                        </HBox> */}
                     </VBox>
                 </HBox>
                 <HBox
                     sx={{
                         display: 'flex',
-                        flex: '1 1 0%',
+                        flex: '2 1 0%',
                         justifyContent: 'flex-end',
                     }}
                 >
                     <VBox
                         sx={{
-                            gap: 8,
+                            gap: 4,
                             justifyContent: 'space-between',
                             alignItems: 'flex-end',
                         }}
