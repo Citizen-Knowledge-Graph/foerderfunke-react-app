@@ -26,7 +26,7 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
 
     const findNearestCounselingCentres = async () => {
         const RADIUS = 10; // km
-        let query = `
+        /*let query = `
             PREFIX ff: <https://foerderfunke.org/default#>
             SELECT * WHERE {
                 ?cc a ff:CounselingCentre ;
@@ -35,6 +35,7 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
                     ff:hasAddress ?address .
             }`
         const turtle = await resourceService.fetchResource("https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/resources/sozialberatungsstellen_caritas.ttl");
+        */
         let rows = [] // await runSparqlSelectQueryOnRdfString(query, turtle); TODO
         let nearby = [];
         for (let row of rows) {
