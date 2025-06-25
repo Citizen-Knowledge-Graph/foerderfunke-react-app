@@ -1,0 +1,67 @@
+{
+  "id": "quick-check-profile",
+  "title": "About you",
+  "fields": [
+    {
+      "datafield": "ff:age",
+      "title": "Wie alt bist Du?",
+      "datatype": "integer"
+    },
+    {
+      "datafield": "ff:hasGender",
+      "title": "What is your gender?",
+      "datatype": "selection",
+      "choices": [
+        "weiblich",
+        "männlich",
+        "divers",
+        "keine Angabe"
+      ]
+    },
+    {
+      "datafield": "ff:paysRentCold",
+      "title": "How much rent do you pay?",
+      "datatype": "integer"
+    },
+    {
+      "datafield": "ff:hasLivingArea",
+      "title": "How many square meters do you have?",
+      "datatype": "integer"
+    },
+    {
+      "datafield": "ff:hasResidence",
+      "title": "Where do you live",
+      "datatype": "string"
+    },
+    {
+      "datafield": "ff:parentingSetup",
+      "title": "What is your parenting setup?",
+      "datatype": "selection",
+      "choices": [
+        "ff:Alleinerziehend",
+        "ff:Elternpaar"
+      ]
+    },
+    {
+      "datafield": "ff:receivesWohngeld",
+      "title": "How much if any wohngeld do you receive?",
+      "datatype": "integer"
+    },
+    {
+      "datafield": "ff:hasIncomeBrutto",
+      "title": "What is your income before taxes?",
+      "datatype": "integer"
+    },
+    {
+      "datafield": "ff:hasIncomeNetto",
+      "title": "What is your income after taxes?",
+      "datatype": "integer"
+    },
+    {
+      "datafield": "ff:hasChild",
+      "title": "Do you want to add information on your children?",
+      "datatype": "class",
+      "objectClass": "ff:Child"
+    }
+  ]
+}

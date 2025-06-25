@@ -1,0 +1,16 @@
+{
+  "id": "job",
+  "title": "Job",
+  "fields": [
+    {
+      "datafield": "ff:hasEmployment",
+      "title": "Where are you employed?",
+      "datatype": "string"
+    },
+    {
+      "datafield": "ff:hasEmploymentType",
+      "title": "What is your employment type?",
+      "datatype": "string"
+    }
+  ]
+}
