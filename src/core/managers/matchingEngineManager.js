@@ -1,5 +1,5 @@
-import { MatchingEngine } from "@foerderfunke/matching-engine/src/new/MatchingEngine";
-import { FORMAT, MATCHING_MODE } from "@foerderfunke/matching-engine/src/new/queries.js";
+import { MatchingEngine } from "@foerderfunke/matching-engine/src/MatchingEngine";
+import { FORMAT, MATCHING_MODE } from "@foerderfunke/matching-engine/src/queries.js";
 import resourceService from "@/core/services/resourceService";
 import userManager from "@/core/managers/userManager";
 import { convertUserProfileToTurtle } from "@foerderfunke/matching-engine/src/profile-conversion";

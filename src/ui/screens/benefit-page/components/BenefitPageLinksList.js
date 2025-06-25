@@ -7,7 +7,6 @@ import { HBox, VBox } from "@/ui/shared-components/LayoutBoxes";
 import theme from '@/theme';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import featureFlags from "@/featureFlags";
-import { runSparqlSelectQueryOnRdfString } from "@foerderfunke/matching-engine/src/utils";
 import resourceService from "@/core/services/resourceService";
 import haversine from "haversine-distance"
 
@@ -36,7 +35,7 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
                     ff:hasAddress ?address .
             }`
         const turtle = await resourceService.fetchResource("https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/resources/sozialberatungsstellen_caritas.ttl");
-        let rows = await runSparqlSelectQueryOnRdfString(query, turtle);
+        let rows = [] // await runSparqlSelectQueryOnRdfString(query, turtle); TODO
         let nearby = [];
         for (let row of rows) {
             let coords = row.coordinates.split("/").map(Number);
