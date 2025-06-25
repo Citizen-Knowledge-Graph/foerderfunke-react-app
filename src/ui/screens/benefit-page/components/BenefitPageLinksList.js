@@ -7,7 +7,6 @@ import { HBox, VBox } from "@/ui/shared-components/LayoutBoxes";
 import theme from '@/theme';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import featureFlags from "@/featureFlags";
-import resourceService from "@/core/services/resourceService";
 import haversine from "haversine-distance"
 
 const BenefitPageLinksList = ({ listTitle, data }) => {
