@@ -25,13 +25,15 @@ const EligibilityOverviewItem = ({ item, eligible }) => {
         >
             <HBox
                 sx={{
+                    display: 'flex',
+                    flex: '1 1 auto',
                     width: '100%',
                     justifyContent: 'flex-start',
                 }}
             >
                 <HBox
                     sx={{
-                        flex: '5 1 0%',
+                        flex: '3 1 0%',
                         alignItems: 'flex-start',
                         gap: 1
                     }}
@@ -48,19 +50,61 @@ const EligibilityOverviewItem = ({ item, eligible }) => {
                         <Typography variant="body1">
                             {item.description}
                         </Typography>
+                        {/* <HBox sx={{ gap: 1, flexWrap: 'wrap' }}>
+                            <HBox sx={{ backgroundColor: 'green.main', padding: '6px 10px', borderRadius: theme.shape.borderRadius }}>
+                                <Typography variant="body1">
+                                    Sie haben womöglich Anspruch!
+                                </Typography>
+                            </HBox>
+                        </HBox> */}
                     </VBox>
                 </HBox>
-                <HBox sx={{
-                    flex: '1 1 auto',
-                    gap: 2,
-                    flexWrap: 'wrap',
-                    justifyContent: 'flex-end'
-                }}>
+                <HBox
+                    sx={{
+                        display: 'flex',
+                        flex: '2 1 0%',
+                        justifyContent: 'flex-end',
+                    }}
+                >
                     <VBox
-                        sx={{ alignItems: 'flex-end', gap: 1, flexWrap: 'wrap' }}
+                        sx={{
+                            gap: 4,
+                            justifyContent: 'space-between',
+                            alignItems: 'flex-end',
+                        }}
                     >
-                        {eligible === 'indeterminate' &&
-                            <HBox>
+                        <HBox sx={{ justifyContent: 'flex-end', flexWrap: 'wrap', gap: 1 }}>
+                            {
+                                item.administrativeLevel && (
+                                    <EligibilityOverTag tag={item.administrativeLevel} tagType={'administrativeLevel'} />
+                                )
+                            }
+                            {
+                                item.associatedLaw && (
+                                    <EligibilityOverTag tag={item.associatedLaw} tagType={'associatedLaw'} />
+                                )
+                            }
+                            {
+                                item.providingAgency && (
+                                    <EligibilityOverTag tag={item.providingAgency} tagType={'providingAgency'} />
+                                )
+                            }
+                            {
+                                item.benefitCategories.length > 0 && (
+                                    item.benefitCategories.map((category, index) => (
+                                        <EligibilityOverTag key={index} tag={category} tagType={'benefitCategory'} />
+                                    ))
+                                )
+                            }
+                        </HBox>
+                        <HBox sx={{ gap: 2, flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+                            <RegularButton
+                                variant={'blueHollow'}
+                                text={'app.browseAll.learnMoreBtn'}
+                                link={`/benefit-page/${item.id}`}
+                                size='small'
+                            />
+                            {eligible === 'indeterminate' &&
                                 <RegularButton
                                     variant={'pinkContained'}
                                     onClick={() => {
@@ -71,54 +115,10 @@ const EligibilityOverviewItem = ({ item, eligible }) => {
                                     link={`/onboarding-welcome/${item.id}`}
                                     size='small'
                                 />
-                            </HBox>
-                        }
-                        <HBox>
-                            <RegularButton
-                                variant={'blueHollow'}
-                                text={'app.browseAll.learnMoreBtn'}
-                                link={`/benefit-page/${item.id}`}
-                                size='small'
-                            />
+                            }
                         </HBox>
-
                     </VBox>
                 </HBox>
-            </HBox>
-            <HBox>
-                <VBox
-                    sx={{
-                        gap: 4,
-                        justifyContent: 'space-between',
-                        alignItems: 'flex-end',
-                    }}
-                >
-                    <HBox sx={{ flexWrap: 'wrap', gap: 1 }}>
-                        {
-                            item.administrativeLevel && (
-                                <EligibilityOverTag tag={item.administrativeLevel} tagType={'administrativeLevel'} />
-                            )
-                        }
-                        {
-                            item.associatedLaw && (
-                                <EligibilityOverTag tag={item.associatedLaw} tagType={'associatedLaw'} />
-                            )
-                        }
-                        {
-                            item.providingAgency && (
-                                <EligibilityOverTag tag={item.providingAgency} tagType={'providingAgency'} />
-                            )
-                        }
-                        {
-                            item.benefitCategories.length > 0 && (
-                                item.benefitCategories.map((category, index) => (
-                                    <EligibilityOverTag key={index} tag={category} tagType={'benefitCategory'} />
-                                ))
-                            )
-                        }
-                    </HBox>
-
-                </VBox>
             </HBox>
         </VBox>
     );

@@ -14,10 +14,8 @@ const EligibilityOverviewScreenContainer = () => {
     const hydrationData = useFetchData('assets/data/requirement-profiles/requirement-profiles-hydration.json');
     const {validationReport} = useProduceValidationReport();
     const metadata = useMetadataStore((state) => state.metadata);
-    const eligibilityData = useEligibilityData(validationReport, metadata, hydrationData, language);
+    const { eligibilityData, filterSet } = useEligibilityData(validationReport, metadata, hydrationData, language);
     
-    console.log("eligibilityData", eligibilityData);
-
     const iconPaths = useMemo(() => ({
         eligible: `${process.env.PUBLIC_URL}/assets/images/application/icon-image-eligible.svg`,
         preliminaryEligible: `${process.env.PUBLIC_URL}/assets/images/application/icon-image-preliminary-eligible.svg`,
@@ -30,6 +28,7 @@ const EligibilityOverviewScreenContainer = () => {
             t={t}
             iconPaths={iconPaths}
             eligibilityData={eligibilityData}
+            filterSet={filterSet}
         />
     );
 };
