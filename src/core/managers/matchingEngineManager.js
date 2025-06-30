@@ -20,6 +20,7 @@ const matchingEngineManager = {
             );
 
             const dataFieldsString = await resourceService.fetchResourceWithCache(validationConfig["datafields"]);
+            const definitionsString = await resourceService.fetchResourceWithCache(validationConfig["definitions"]);
             const materializationString = await resourceService.fetchResourceWithCache(validationConfig["materialization"]);
             const consistencyString = await resourceService.fetchResourceWithCache(validationConfig["consistency"]);
 
@@ -30,6 +31,7 @@ const matchingEngineManager = {
 
             const engine = new MatchingEngine(
                 dataFieldsString,
+                definitionsString,
                 materializationString,
                 consistencyString,
                 requirementProfiles
