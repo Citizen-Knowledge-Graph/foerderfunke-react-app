@@ -86,7 +86,6 @@ const matchingEngineManager = {
         }
         const userProfile = userManager.retrieveUserData(userId);
         const userProfileTurtle = await convertUserProfileToTurtle(userProfile);
-
         return this.matchingEngineInstance.matching(
             userProfileTurtle,
             requirementProfiles.map(rp => expand(rp)),

@@ -4,17 +4,26 @@ import { FormControl, Typography } from '@mui/material';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import dayjs from 'dayjs';
+import 'dayjs/locale/en-gb';
 
 const ProfileInputDate = ({ t, value, setValue, error }) => {
 
+    const handleChange = (newValue) => {
+        if (newValue && dayjs.isDayjs(newValue)) {
+          setValue(newValue.format('YYYY-MM-DD'));
+        } else {
+          setValue(null);
+        }
+      };
+
     return (
         <>
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="en-gb">
                 <FormControl>
                     <DatePicker
                         label={t('app.datafields.pickBday')}
-                        value={value ? dayjs(value) : null}
-                        onChange={(newValue) => setValue(newValue)}
+                        value={value ? dayjs(value, 'YYYY-MM-DD') : null}
+                        onChange={handleChange}
                         sx={{
                             '& .MuiInputLabel-root.Mui-focused': {
                                 color: 'blue.main',
