@@ -8,7 +8,6 @@ import {
 } from '@mui/material';
 import { VBox, HBox } from '@/ui/shared-components/LayoutBoxes';
 import theme from '@/theme';
-import EligibilityOverTag from './EligibilityOverviewTag';
 
 const EligibilityOverviewFilter = ({ filterSet }) => {
     const [selected, setSelected] = useState('');
@@ -17,9 +16,6 @@ const EligibilityOverviewFilter = ({ filterSet }) => {
         const val = event.target.value;
         setSelected(val);
     };
-
-    console.log('filter set in', filterSet);
-
     const options = ['test1', 'test2', 'test3'];
 
     return (
@@ -44,8 +40,13 @@ const EligibilityOverviewFilter = ({ filterSet }) => {
                         onChange={handleChange}
                         label="Benefit Category"
                     >
-                        {filterSet?.benefitCategories?.map((opt, index) => (
-                            <EligibilityOverTag key={index} tag={opt} tagType={'administrativeLevel'} />
+                        <MenuItem value="">
+                            <em>None</em>
+                        </MenuItem>
+                        {filterSet?.benefitCategories?.map((opt) => (
+                            <MenuItem key={opt} value={opt}>
+                                {opt}
+                            </MenuItem>
                         ))}
                     </Select>
                 </FormControl>
@@ -57,11 +58,17 @@ const EligibilityOverviewFilter = ({ filterSet }) => {
                         onChange={handleChange}
                         label="Administrative Level"
                     >
-                        {filterSet?.administrativeLevel?.map((opt, index) => (
-                            <EligibilityOverTag key={index} tag={opt} tagType={'administrativeLevel'} />
+                        <MenuItem value="">
+                            <em>None</em>
+                        </MenuItem>
+                        {filterSet?.administrativeLevel?.map((opt) => (
+                            <MenuItem key={opt} value={opt}>
+                                {opt}
+                            </MenuItem>
                         ))}
                     </Select>
                 </FormControl>
+
                 <FormControl size="small" sx={{ minWidth: 200 }}>
                     <InputLabel id="filter-select-label">Providing Agency</InputLabel>
                     <Select
@@ -70,8 +77,13 @@ const EligibilityOverviewFilter = ({ filterSet }) => {
                         onChange={handleChange}
                         label="Providing Agency"
                     >
-                        {filterSet?.administrativeLevel?.map((opt, index) => (
-                            <EligibilityOverTag key={index} tag={opt} tagType={'administrativeLevel'} />
+                        <MenuItem value="">
+                            <em>None</em>
+                        </MenuItem>
+                        {filterSet?.providingAgency?.map((opt) => (
+                            <MenuItem key={opt} value={opt}>
+                                {opt}
+                            </MenuItem>
                         ))}
                     </Select>
                 </FormControl>
@@ -83,8 +95,13 @@ const EligibilityOverviewFilter = ({ filterSet }) => {
                         onChange={handleChange}
                         label="Associated Law"
                     >
-                        {filterSet?.administrativeLevel?.map((opt, index) => (
-                            <EligibilityOverTag key={index} tag={opt} tagType={'administrativeLevel'} />
+                        <MenuItem value="">
+                            <em>None</em>
+                        </MenuItem>
+                        {filterSet?.associatedLaw?.map((opt) => (
+                            <MenuItem key={opt} value={opt}>
+                                {opt}
+                            </MenuItem>
                         ))}
                     </Select>
                 </FormControl>

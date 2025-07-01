@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Typography } from '@mui/material';
 import { HBox } from '@/ui/shared-components/LayoutBoxes';
@@ -14,7 +15,7 @@ const EligibilityOverTag = ({ tag, tagType }) => {
             tagStyle = theme.palette.pink.main;
             break;
         case 'providingAgency':
-            tagStyle = theme.palette.black.light ;
+            tagStyle = theme.palette.blue.main ;
             break;
         case 'benefitCategory':
             tagStyle = theme.palette.blue.main;

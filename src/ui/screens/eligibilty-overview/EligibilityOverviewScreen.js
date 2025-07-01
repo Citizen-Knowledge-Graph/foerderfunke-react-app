@@ -11,7 +11,9 @@ const EligibilityOverviewScreen = ({
     t,
     iconPaths,
     eligibilityData,
-    filterSet
+    filterSet,
+    filters,
+    setFilters,
 }) => {
 
     return (
@@ -20,7 +22,7 @@ const EligibilityOverviewScreen = ({
                 <VBox sx={{ gap: { xs: 4, md: 8 } }} >
                     <EligibilityOverviewHeader iconPaths={iconPaths} />
                     <VBox sx={{gap: { xs: 2, md: 4 } }}>
-                        <EligibilityOverviewFilter filterSet={filterSet} />
+                        <EligibilityOverviewFilter filterSet={filterSet} setFilters={setFilters} />
                         {
                             eligibilityData ? (
                                 <>
@@ -31,6 +33,7 @@ const EligibilityOverviewScreen = ({
                                                 color={'yellow.main'}
                                                 category={t('app.topicSelection.socialBenefitsTitle')}
                                                 eligibilitySection={eligibilityData["social_benefit"]}
+                                                filters={filters}
                                             />
                                         )
                                     }
@@ -41,6 +44,7 @@ const EligibilityOverviewScreen = ({
                                                 color={'custom.colorDeepTealTransparent'}
                                                 category={t('app.topicSelection.businessTitle')}
                                                 eligibilitySection={eligibilityData["business"]}
+                                                filters={filters}
                                             />
                                         )
                                     }

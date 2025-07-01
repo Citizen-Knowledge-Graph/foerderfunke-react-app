@@ -8,15 +8,16 @@ export const buildEligibilityReports = (validationReport, metadata, hydrationDat
     }
 
     const reports = validationReport['ff:hasEvaluatedRequirementProfile'] || [];
-    const hasBC = metadata['ff:hasBC'] || [];
-    const bcDict = hasBC.reduce((acc, cat) => {
-        const id = cat['@id'];
+    const hasDefinition = metadata['ff:hasDefinition'] || [];
+    const bcDict = hasDefinition.reduce((acc, cat) => {
+        const t = cat['@type'] || '';
+        if (t !== 'ff:BenefitCategory') return acc;
+      
+        const id    = cat['@id'];
         const label = cat['rdfs:label']?.['@value'] || '';
         acc[id] = label;
         return acc;
-    }, {});
-
-    console.log('metadata', metadata);
+      }, {});
 
     const allReports = reports.map(report => {
         const rpUri = report['ff:hasRpUri']?.['@id'] || null;
@@ -44,9 +45,7 @@ export const buildEligibilityReports = (validationReport, metadata, hydrationDat
         const categoriesArray = rawCategories
             ? (Array.isArray(rawCategories) ? rawCategories : [rawCategories])
             : [];
-        console.log('categoriesArray', categoriesArray);
         const benefitCategories = categoriesArray.map(cat => bcDict[cat['@id']]).filter(Boolean);
-        console.log('benefitCategories', benefitCategories);
 
         return {
             uri: rpUri,
