@@ -22,7 +22,8 @@ const EligibilityOverviewScreen = ({
                 <VBox sx={{ gap: { xs: 4, md: 8 } }} >
                     <EligibilityOverviewHeader iconPaths={iconPaths} />
                     <VBox sx={{ gap: { xs: 2, md: 4 } }}>
-                        <EligibilityOverviewFilter 
+                        <EligibilityOverviewFilter
+                            t={t}
                             filterOptions={filterOptions}
                             filters={filters}
                             onChangeFilters={onChangeFilters}

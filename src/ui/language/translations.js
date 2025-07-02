@@ -1,3 +1,5 @@
+import { filter } from "lodash";
+
 const translations = {
     en: {
         home: {
@@ -212,6 +214,13 @@ const translations = {
                     probableNotEligible: "Probable ineligibility",
                     notEnoughData: "Not enough data for assessment",
                     beta: "Some benefits are still in beta, meaning they are not fully tested and may contain errors."
+                },
+                filter: {
+                    title: "Filter",
+                    benefitCategories: "Benefit category",
+                    administrativeLevels: "Administrative level",
+                    providingAgencies: "Providing agency",
+                    associatedLaws: "Associated law",
                 }
             },
             profile: {
@@ -498,6 +507,13 @@ const translations = {
                     probableNotEligible: "Wahrscheinlich besteht kein Anspruch",
                     notEnoughData: "Nicht genügend Angaben für eine Einschätzung",
                     beta: "Eininge Leistungen sind noch in der Beta-Phase, d.h. sie sind noch nicht vollständig getestet und können Fehler enthalten."
+                },
+                filter: {
+                    title: "Filter",
+                    benefitCategories: "Leistungskategorie",
+                    administrativeLevels: "Verwaltungsebene",
+                    providingAgencies: "Zuständige Behörde",
+                    associatedLaws: "Zugehöriges Gesetz",
                 }
             },
             profile: {

@@ -19,7 +19,7 @@ const FILTER_KEYS = [
     { key: 'associatedLaws', label: 'Associated Law' },
 ]
 
-const EligibilityOverviewFilter = ({ filterOptions, filters, onChangeFilters }) => {
+const EligibilityOverviewFilter = ({ t, filterOptions, filters, onChangeFilters }) => {
     const handleChange = (key) => (event) => {
         onChangeFilters(prev => ({
             ...prev,
@@ -48,19 +48,19 @@ const EligibilityOverviewFilter = ({ filterOptions, filters, onChangeFilters }) 
         >
             <VBox sx={{ gap: 2 }}>
                 <Typography variant="h4" sx={{ color: 'blue.main', fontWeight: '400' }}>
-                    Filter
+                    {t('app.browseAll.filter.title')}
                 </Typography>
-                <HBox sx={{ flex: 1, justifyContent: 'space-between', gap: 4, flexWrap: 'wrap' }}>
+                <HBox sx={{ gap: 4, flexWrap: 'wrap' }}>
                     {FILTER_KEYS.map(({ key, label }) => (
                         <FormControl key={key} size="small" sx={{ minWidth: 200 }}>
-                            <InputLabel id={`${key}-label`}>{label}</InputLabel>
+                            <InputLabel id={`${key}-label`}>{t(`app.browseAll.filter.${key}`)}</InputLabel>
                             <Select
                                 labelId={`${key}-label`}
                                 multiple
                                 value={filters[key]}
                                 onChange={handleChange(key)}
                                 label={label}
-                                renderValue={() => label}
+                                renderValue={() => t(`app.browseAll.filter.${key}`)}
                             >
                                 {filterOptions[key].map(item => (
                                     <MenuItem key={item.id} value={item.id}>
