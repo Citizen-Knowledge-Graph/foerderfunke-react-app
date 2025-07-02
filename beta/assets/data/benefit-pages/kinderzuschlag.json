@@ -1,0 +1,17 @@
+{
+  "title": "Kinderzuschlag",
+  "subtitle": "Kinderzuschlag ist eine finanzielle Unterstützung für Familien mit Kindern.",
+  "what": "Kinderzuschlag ist eine finanzielle Unterstützung für Familien mit Kindern.",
+  "who": "Eltern, die in Deutschland leben und Kinder haben.",
+  "requirements": [
+    "Dokument 1",
+    "Dokument 2",
+    "Dokument 3"
+  ],
+  "contact": {
+    "name": "Familienkasse",
+    "phone": "0800 4 5555 30",
+    "email": "email@email.de",
+    "website": "www.familienkasse.de"
+  }
+}

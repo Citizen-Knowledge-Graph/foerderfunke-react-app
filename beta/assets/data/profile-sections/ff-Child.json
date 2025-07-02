@@ -1,0 +1,33 @@
+{
+  "id": "ff:Child",
+  "title": "Child",
+  "fields": [
+    {
+      "datafield": "ff:age",
+      "title": "How old is the child?",
+      "datatype": "integer"
+    },
+    {
+      "datafield": "ff:hasMaritalStatus",
+      "title": "What is your child's marital status?",
+      "datatype": "selection",
+      "choices": [
+        "LD",
+        "VH",
+        "VW",
+        "GS",
+        "EA",
+        "LP",
+        "LV",
+        "LA",
+        "LE",
+        "NB"
+      ]
+    },
+    {
+      "datafield": "ff:receiveKindergeld",
+      "title": "How much if any Kindergeld do you receive?",
+      "datatype": "string"
+    }
+  ]
+}
