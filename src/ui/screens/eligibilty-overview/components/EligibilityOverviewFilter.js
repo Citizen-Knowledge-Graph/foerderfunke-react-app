@@ -1,111 +1,94 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
     Typography,
     FormControl,
     InputLabel,
     Select,
     MenuItem,
-} from '@mui/material';
+    Checkbox,
+    ListItemText,
+} from '@mui/material'
 import { VBox, HBox } from '@/ui/shared-components/LayoutBoxes';
+import EligibilityOverviewTag from './EligibilityOverviewTag';
 import theme from '@/theme';
 
-const EligibilityOverviewFilter = ({ filterSet }) => {
-    const [selected, setSelected] = useState('');
+const FILTER_KEYS = [
+    { key: 'benefitCategories', label: 'Benefit Category' },
+    { key: 'administrativeLevels', label: 'Administrative Level' },
+    { key: 'providingAgencies', label: 'Providing Agency' },
+    { key: 'associatedLaws', label: 'Associated Law' },
+]
 
-    const handleChange = (event) => {
-        const val = event.target.value;
-        setSelected(val);
-    };
-    const options = ['test1', 'test2', 'test3'];
+const EligibilityOverviewFilter = ({ filterOptions, filters, onChangeFilters }) => {
+    const handleChange = (key) => (event) => {
+        onChangeFilters(prev => ({
+            ...prev,
+            [key]: event.target.value,
+        }))
+    }
+
+    const groupedSelected = Object.entries(filters).reduce((acc, [key, selectedIds]) => {
+        const labels = (filterOptions[key] || [])
+            .filter(opt => selectedIds.includes(opt.id))
+            .map(opt => opt.label);
+        if (labels.length) {
+            acc[key] = labels;
+        }
+        return acc;
+    }, {});
 
     return (
         <VBox
             sx={{
-                gap: 2,
+                gap: 4,
                 backgroundColor: 'white.main',
                 padding: '32px',
                 borderRadius: theme.shape.borderRadius,
             }}
         >
-            <HBox sx={{ alignItems: 'center', gap: 2, flexWrap: 'wrap' }}>
-                <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-                    Filter by:
+            <VBox sx={{ gap: 2 }}>
+                <Typography variant="h4" sx={{ color: 'blue.main', fontWeight: '400' }}>
+                    Filter
                 </Typography>
+                <HBox sx={{ flex: 1, justifyContent: 'space-between', gap: 4, flexWrap: 'wrap' }}>
+                    {FILTER_KEYS.map(({ key, label }) => (
+                        <FormControl key={key} size="small" sx={{ minWidth: 200 }}>
+                            <InputLabel id={`${key}-label`}>{label}</InputLabel>
+                            <Select
+                                labelId={`${key}-label`}
+                                multiple
+                                value={filters[key]}
+                                onChange={handleChange(key)}
+                                label={label}
+                                renderValue={() => label}
+                            >
+                                {filterOptions[key].map(item => (
+                                    <MenuItem key={item.id} value={item.id}>
+                                        <Checkbox checked={filters[key].includes(item.id)} />
+                                        <ListItemText primary={item.label} />
+                                    </MenuItem>
+                                ))}
+                            </Select>
+                        </FormControl>
+                    ))}
+                </HBox>
+            </VBox>
 
-                <FormControl size="small" sx={{ minWidth: 200 }}>
-                    <InputLabel id="filter-select-label">Benefit Category</InputLabel>
-                    <Select
-                        labelId="filter-select-label"
-                        value={selected}
-                        onChange={handleChange}
-                        label="Benefit Category"
-                    >
-                        <MenuItem value="">
-                            <em>None</em>
-                        </MenuItem>
-                        {filterSet?.benefitCategories?.map((opt) => (
-                            <MenuItem key={opt} value={opt}>
-                                {opt}
-                            </MenuItem>
+            {
+                Object.entries(groupedSelected).length > 0 && (
+                    <HBox> {
+                        Object.entries(groupedSelected).map(([category, labels]) => (
+                            labels.map((label, index) => (
+                                <EligibilityOverviewTag
+                                    key={`${category}-${index}`}
+                                    tag={label}
+                                    tagType={category}
+                                />
+                            ))
                         ))}
-                    </Select>
-                </FormControl>
-                <FormControl size="small" sx={{ minWidth: 200 }}>
-                    <InputLabel id="filter-select-label">Administrative Level</InputLabel>
-                    <Select
-                        labelId="filter-select-label"
-                        value={selected}
-                        onChange={handleChange}
-                        label="Administrative Level"
-                    >
-                        <MenuItem value="">
-                            <em>None</em>
-                        </MenuItem>
-                        {filterSet?.administrativeLevel?.map((opt) => (
-                            <MenuItem key={opt} value={opt}>
-                                {opt}
-                            </MenuItem>
-                        ))}
-                    </Select>
-                </FormControl>
-
-                <FormControl size="small" sx={{ minWidth: 200 }}>
-                    <InputLabel id="filter-select-label">Providing Agency</InputLabel>
-                    <Select
-                        labelId="filter-select-label"
-                        value={selected}
-                        onChange={handleChange}
-                        label="Providing Agency"
-                    >
-                        <MenuItem value="">
-                            <em>None</em>
-                        </MenuItem>
-                        {filterSet?.providingAgency?.map((opt) => (
-                            <MenuItem key={opt} value={opt}>
-                                {opt}
-                            </MenuItem>
-                        ))}
-                    </Select>
-                </FormControl>
-                <FormControl size="small" sx={{ minWidth: 200 }}>
-                    <InputLabel id="filter-select-label">Associated Law</InputLabel>
-                    <Select
-                        labelId="filter-select-label"
-                        value={selected}
-                        onChange={handleChange}
-                        label="Associated Law"
-                    >
-                        <MenuItem value="">
-                            <em>None</em>
-                        </MenuItem>
-                        {filterSet?.associatedLaw?.map((opt) => (
-                            <MenuItem key={opt} value={opt}>
-                                {opt}
-                            </MenuItem>
-                        ))}
-                    </Select>
-                </FormControl>
-            </HBox>
+                    </HBox>
+                )
+            }
         </VBox>
     );
 };

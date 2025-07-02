@@ -8,16 +8,16 @@ const EligibilityOverTag = ({ tag, tagType }) => {
 
     let tagStyle;
     switch (tagType) {
-        case 'administrativeLevel':
+        case 'administrativeLevels':
             tagStyle = theme.palette.green.main ;
             break;
-        case 'associatedLaw':
+        case 'associatedLaws':
             tagStyle = theme.palette.pink.main;
             break;
-        case 'providingAgency':
-            tagStyle = theme.palette.blue.main ;
+        case 'providingAgencies':
+            tagStyle = theme.palette.red.main ;
             break;
-        case 'benefitCategory':
+        case 'benefitCategories':
             tagStyle = theme.palette.blue.main;
             break;
         default:

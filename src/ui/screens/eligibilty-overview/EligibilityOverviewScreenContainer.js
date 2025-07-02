@@ -6,42 +6,23 @@ import useEligibilityData from "./hooks/useEligibilityData";
 import { useLanguageStore } from '@/ui/storage/useLanguageStore';
 import { useMetadataStore } from '@/ui/storage/zustand';
 import useProduceValidationReport from './hooks/useProduceValidationReport';
+import useFilterEligibilityData from './hooks/useFilterEligibilityData';
 
 const EligibilityOverviewScreenContainer = () => {
     const { t } = useTranslation();
     const language = useLanguageStore((state) => state.language);
     const [filters, setFilters] = useState({
-        providingAgency: ['ff:sozialamt']
+        providingAgencies: [],
+        associatedLaws: [],
+        benefitCategories: [],
+        administrativeLevels: []
     });
 
     const hydrationData = useFetchData('assets/data/requirement-profiles/requirement-profiles-hydration.json');
     const { validationReport } = useProduceValidationReport();
     const metadata = useMetadataStore((state) => state.metadata);
-    const { eligibilityData, filterSet } = useEligibilityData(validationReport, metadata, hydrationData, language);
-    const filteredEligibilityData = useMemo(() => {
-        if (!eligibilityData || Object.entries(filters).length === 0) {
-            return null;
-        }
-
-        const filtered = Object.fromEntries(
-            Object.entries(eligibilityData).map(([category, eligibilityCategory]) => {
-                const filteredCategory = Object.fromEntries(
-                    Object.entries(eligibilityCategory).map(([key, items]) => {
-                        const kept = items.filter(item =>
-                            filters.providingAgency.includes(item.providingAgency)
-                        );
-                        return [key, kept];
-                    })
-                );
-                return [category, filteredCategory];
-            })
-        );
-
-        console.log(filtered);
-        return filtered;
-    }, [eligibilityData, filters]);
-
-    console.log('Filtered Eligibility Data:', filteredEligibilityData);
+    const { eligibilityData, filterOptions } = useEligibilityData(validationReport, metadata, hydrationData, language);
+    const filteredEligibilityData = useFilterEligibilityData(eligibilityData, filters);
 
     const iconPaths = useMemo(() => ({
         eligible: `${process.env.PUBLIC_URL}/assets/images/application/icon-image-eligible.svg`,
@@ -55,9 +36,9 @@ const EligibilityOverviewScreenContainer = () => {
             t={t}
             iconPaths={iconPaths}
             eligibilityData={filteredEligibilityData}
-            filterSet={filterSet}
+            filterOptions={filterOptions}
             filters={filters}
-            setFilters={setFilters}
+            onChangeFilters={setFilters}
         />
     );
 };

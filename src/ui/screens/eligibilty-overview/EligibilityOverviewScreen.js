@@ -11,9 +11,9 @@ const EligibilityOverviewScreen = ({
     t,
     iconPaths,
     eligibilityData,
-    filterSet,
+    filterOptions,
     filters,
-    setFilters,
+    onChangeFilters,
 }) => {
 
     return (
@@ -21,30 +21,30 @@ const EligibilityOverviewScreen = ({
             <AppScreenWrapperContainer back={true}>
                 <VBox sx={{ gap: { xs: 4, md: 8 } }} >
                     <EligibilityOverviewHeader iconPaths={iconPaths} />
-                    <VBox sx={{gap: { xs: 2, md: 4 } }}>
-                        <EligibilityOverviewFilter filterSet={filterSet} setFilters={setFilters} />
+                    <VBox sx={{ gap: { xs: 2, md: 4 } }}>
+                        <EligibilityOverviewFilter 
+                            filterOptions={filterOptions}
+                            filters={filters}
+                            onChangeFilters={onChangeFilters}
+                        />
                         {
                             eligibilityData ? (
                                 <>
                                     {
                                         eligibilityData["social_benefit"] && (
                                             <EligibilityOverviewSection
-                                                iconPaths={iconPaths}
-                                                color={'yellow.main'}
                                                 category={t('app.topicSelection.socialBenefitsTitle')}
                                                 eligibilitySection={eligibilityData["social_benefit"]}
-                                                filters={filters}
+                                                iconPaths={iconPaths}
                                             />
                                         )
                                     }
                                     {
                                         eligibilityData["business"] && (
                                             <EligibilityOverviewSection
-                                                iconPaths={iconPaths}
-                                                color={'custom.colorDeepTealTransparent'}
                                                 category={t('app.topicSelection.businessTitle')}
                                                 eligibilitySection={eligibilityData["business"]}
-                                                filters={filters}
+                                                iconPaths={iconPaths}
                                             />
                                         )
                                     }

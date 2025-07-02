@@ -4,7 +4,14 @@ import { HBox, VBox } from '@/ui/shared-components/LayoutBoxes';
 import theme from '@/theme';
 import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 import { useSelectedBenefitStore, useSelectedTopicsStore } from "@/ui/storage/zustand";
-import EligibilityOverTag from './EligibilityOverviewTag';
+import EligibilityOverviewTag from './EligibilityOverviewTag';
+
+const filterKeys = [
+    'benefitCategories',
+    'administrativeLevels',
+    'associatedLaws',
+    'providingAgencies'
+];
 
 const EligibilityOverviewItem = ({ item, eligible }) => {
     const color = eligible === 'indeterminate' ? 'black.light' : 'black.main';
@@ -95,27 +102,14 @@ const EligibilityOverviewItem = ({ item, eligible }) => {
                 >
                     <HBox sx={{ flexWrap: 'wrap', gap: 1 }}>
                         {
-                            item.administrativeLevel && (
-                                <EligibilityOverTag tag={item.administrativeLevel} tagType={'administrativeLevel'} />
+                            filterKeys.flatMap(key => (
+                                item[key] && (
+                                    item[key].map(tag => (
+                                        <EligibilityOverviewTag key={tag.id} tag={tag.label} tagType={key} />
+                                    ))
+                                )
                             )
-                        }
-                        {
-                            item.associatedLaw && (
-                                <EligibilityOverTag tag={item.associatedLaw} tagType={'associatedLaw'} />
-                            )
-                        }
-                        {
-                            item.providingAgency && (
-                                <EligibilityOverTag tag={item.providingAgency} tagType={'providingAgency'} />
-                            )
-                        }
-                        {
-                            item.benefitCategories.length > 0 && (
-                                item.benefitCategories.map((category, index) => (
-                                    <EligibilityOverTag key={index} tag={category} tagType={'benefitCategory'} />
-                                ))
-                            )
-                        }
+                        )}
                     </HBox>
 
                 </VBox>
