@@ -9,7 +9,6 @@ import EligibilityOverviewFilter from './components/EligibilityOverviewFilter';
 
 const EligibilityOverviewScreen = ({
     t,
-    iconPaths,
     eligibilityData,
     filterOptions,
     filters,
@@ -20,7 +19,7 @@ const EligibilityOverviewScreen = ({
         <Layout isApp={true} logo={true}>
             <AppScreenWrapperContainer back={true}>
                 <VBox sx={{ gap: { xs: 4, md: 8 } }} >
-                    <EligibilityOverviewHeader iconPaths={iconPaths} />
+                    <EligibilityOverviewHeader />
                     <VBox sx={{ gap: { xs: 2, md: 4 } }}>
                         <EligibilityOverviewFilter
                             t={t}
@@ -34,18 +33,18 @@ const EligibilityOverviewScreen = ({
                                     {
                                         eligibilityData["social_benefit"] && (
                                             <EligibilityOverviewSection
+                                                t={t}
                                                 category={t('app.topicSelection.socialBenefitsTitle')}
                                                 eligibilitySection={eligibilityData["social_benefit"]}
-                                                iconPaths={iconPaths}
                                             />
                                         )
                                     }
                                     {
                                         eligibilityData["business"] && (
                                             <EligibilityOverviewSection
+                                                t={t}
                                                 category={t('app.topicSelection.businessTitle')}
                                                 eligibilitySection={eligibilityData["business"]}
-                                                iconPaths={iconPaths}
                                             />
                                         )
                                     }

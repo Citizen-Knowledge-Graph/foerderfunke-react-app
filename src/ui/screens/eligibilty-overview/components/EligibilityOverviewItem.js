@@ -1,10 +1,11 @@
 import React from 'react';
-import { Typography } from '@mui/material';
+import { Divider, Typography } from '@mui/material';
 import { HBox, VBox } from '@/ui/shared-components/LayoutBoxes';
 import theme from '@/theme';
 import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 import { useSelectedBenefitStore, useSelectedTopicsStore } from "@/ui/storage/zustand";
 import EligibilityOverviewTag from './EligibilityOverviewTag';
+import EligibilityOverviewBanner from './EligibilityOverviewBanner';
 
 const filterKeys = [
     'benefitCategories',
@@ -13,7 +14,7 @@ const filterKeys = [
     'providingAgencies'
 ];
 
-const EligibilityOverviewItem = ({ item, eligible }) => {
+const EligibilityOverviewItem = ({ t, item, eligible }) => {
     const color = eligible === 'indeterminate' ? 'black.light' : 'black.main';
     const setSelectedBenefit = useSelectedBenefitStore((state) => state.setSelectedBenefit);
     const clearSelectedTopics = useSelectedTopicsStore((state) => state.clear);
@@ -23,7 +24,7 @@ const EligibilityOverviewItem = ({ item, eligible }) => {
             sx={{
                 display: 'flex',
                 flexDirection: 'column',
-                gap: 4,
+                gap: 2,
                 border: `1px solid ${theme.palette.white.dark}`,
                 boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
                 padding: 2,
@@ -88,32 +89,32 @@ const EligibilityOverviewItem = ({ item, eligible }) => {
                                 size='small'
                             />
                         </HBox>
-
                     </VBox>
                 </HBox>
             </HBox>
-            <HBox>
-                <VBox
-                    sx={{
-                        gap: 4,
-                        justifyContent: 'space-between',
-                        alignItems: 'flex-end',
-                    }}
-                >
-                    <HBox sx={{ flexWrap: 'wrap', gap: 1 }}>
-                        {
-                            filterKeys.flatMap(key => (
-                                item[key] && (
-                                    item[key].map(tag => (
-                                        <EligibilityOverviewTag key={tag.id} tag={tag.label} tagType={key} />
-                                    ))
-                                )
+            <VBox sx={{ gap: 2 }}>
+                <HBox sx={{ flexWrap: 'wrap', gap: 1 }}>
+                    {
+                        filterKeys.flatMap(key => (
+                            item[key] && (
+                                item[key].map(tag => (
+                                    <EligibilityOverviewTag key={tag.id} tag={tag.label} tagType={key} />
+                                ))
                             )
+                        )
                         )}
-                    </HBox>
-
-                </VBox>
-            </HBox>
+                </HBox>
+                {
+                    eligible !== 'indeterminate' && (
+                        <>
+                            <Divider sx={{ color: 'dark.light', borderStyle: 'dashed' }} />
+                            <HBox>
+                                <EligibilityOverviewBanner t={t} eligible={eligible} />
+                            </HBox>
+                        </>
+                    )
+                }
+            </VBox>
         </VBox>
     );
 };

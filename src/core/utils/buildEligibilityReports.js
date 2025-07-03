@@ -142,24 +142,11 @@ export const buildEligibilityReports = (validationReport, metadata, hydrationDat
             acc[category] = {};
         }
 
-        if (result === "ff:eligible") {
-            if (!acc[category][result]) {
-                acc[category][result] = { preliminary: [], final: [] };
-            }
-
-            if (report.validationStage === "ff:complete-validation") {
-                acc[category][result].final.push(report);
-            }
-
-            if (report.validationStage === "ff:preliminary-validation") {
-                acc[category][result].preliminary.push(report);
-            }
-        } else {
-            if (!acc[category][result]) {
-                acc[category][result] = [];
-            }
-            acc[category][result].push(report);
+        if (!acc[category][result]) {
+            acc[category][result] = [];
         }
+
+        acc[category][result].push(report);
 
         return acc;
     }, {});

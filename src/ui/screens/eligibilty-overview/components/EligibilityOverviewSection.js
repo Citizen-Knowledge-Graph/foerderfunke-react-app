@@ -4,12 +4,10 @@ import { VBox } from "@/ui/shared-components/LayoutBoxes";
 import theme from "@/theme";
 import EligibilityOverviewList from "./EligibilityOverviewList";
 
-const EligibilityOverviewSection = ({ category, eligibilitySection, iconPaths }) => {
-    const eligibleBenefitsComplete = eligibilitySection['ff:eligible']?.final || [];
-    const eligibleBenefitsPreliminary = eligibilitySection['ff:eligible']?.preliminary || [];
+const EligibilityOverviewSection = ({ t, category, eligibilitySection }) => {
+    const eligibleBenefitsComplete = eligibilitySection['ff:eligible'] || [];
     const ineligibleBenefits = eligibilitySection['ff:ineligible'] || []
     const undeterminableBenefits = eligibilitySection['ff:missingData'] || []
-    const { eligible, preliminaryEligible, ineligible, missing } = iconPaths;
 
     return (
         <VBox sx={{ 
@@ -27,13 +25,11 @@ const EligibilityOverviewSection = ({ category, eligibilitySection, iconPaths })
                 }}
             >
                 {eligibleBenefitsComplete.length > 0 &&
-                    <EligibilityOverviewList items={eligibleBenefitsComplete} eligible={'eligible'} iconPath={eligible} />}       
-                {eligibleBenefitsPreliminary.length > 0 &&
-                    <EligibilityOverviewList items={eligibleBenefitsPreliminary} eligible={'preliminary-eligible'} iconPath={preliminaryEligible} />}                                   
+                    <EligibilityOverviewList t={t} items={eligibleBenefitsComplete} eligible={'eligible'} />}                                      
                 {ineligibleBenefits.length > 0 &&
-                    <EligibilityOverviewList items={ineligibleBenefits} eligible={'non-eligible'} iconPath={ineligible} />}
+                    <EligibilityOverviewList t={t} items={ineligibleBenefits} eligible={'non-eligible'} />}
                 {undeterminableBenefits.length > 0 &&
-                    <EligibilityOverviewList items={undeterminableBenefits} eligible={'indeterminate'} iconPath={missing} />}
+                    <EligibilityOverviewList t={t} items={undeterminableBenefits} eligible={'indeterminate'} />}
             </VBox>
         </VBox >
     );

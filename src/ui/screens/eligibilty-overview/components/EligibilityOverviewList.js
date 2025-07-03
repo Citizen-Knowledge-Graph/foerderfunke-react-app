@@ -1,11 +1,9 @@
 import React from 'react';
 import { Typography } from '@mui/material';
 import { VBox } from '@/ui/shared-components/LayoutBoxes';
-import useTranslation from "@/ui/language/useTranslation";
 import EligibilityOverviewItem from "./EligibilityOverviewItem";
 
-const EligibilityOverviewList = ({ items, eligible, iconPath }) => {
-    const { t } = useTranslation();
+const EligibilityOverviewList = ({ t, items, eligible, iconPath }) => {
     const headerText = (() => {
         switch (eligible) {
             case 'eligible':
@@ -26,7 +24,7 @@ const EligibilityOverviewList = ({ items, eligible, iconPath }) => {
             </Typography>
             <VBox sx={{ gap: 2 }}>
                 {items.map((item, index) => (
-                    <EligibilityOverviewItem key={index} item={item} eligible={eligible} iconPath={iconPath}/>
+                    <EligibilityOverviewItem t={t} key={index} item={item} eligible={eligible} iconPath={iconPath}/>
                 ))}
             </VBox>
         </VBox>

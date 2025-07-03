@@ -1,5 +1,3 @@
-import { filter } from "lodash";
-
 const translations = {
     en: {
         home: {
@@ -221,6 +219,10 @@ const translations = {
                     administrativeLevels: "Administrative level",
                     providingAgencies: "Providing agency",
                     associatedLaws: "Associated law",
+                },
+                item: {
+                    eligible: "You are likely eligible",
+                    notEligible: "You are likely not eligible",
                 }
             },
             profile: {
@@ -514,6 +516,10 @@ const translations = {
                     administrativeLevels: "Verwaltungsebene",
                     providingAgencies: "Zuständige Behörde",
                     associatedLaws: "Zugehöriges Gesetz",
+                },
+                item: {
+                    eligible: "Sie haben womöglich Anspruch",
+                    notEligible: "Sie haben voraussichtlich keinen Anspruch",
                 }
             },
             profile: {

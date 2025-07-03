@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import useFetchData from "@/ui/shared-hooks/utility/useFetchResource";
 import useTranslation from "@/ui/language/useTranslation";
 import EligibilityOverviewScreen from './EligibilityOverviewScreen';
@@ -24,17 +24,9 @@ const EligibilityOverviewScreenContainer = () => {
     const { eligibilityData, filterOptions } = useEligibilityData(validationReport, metadata, hydrationData, language);
     const filteredEligibilityData = useFilterEligibilityData(eligibilityData, filters);
 
-    const iconPaths = useMemo(() => ({
-        eligible: `${process.env.PUBLIC_URL}/assets/images/application/icon-image-eligible.svg`,
-        preliminaryEligible: `${process.env.PUBLIC_URL}/assets/images/application/icon-image-preliminary-eligible.svg`,
-        ineligible: `${process.env.PUBLIC_URL}/assets/images/application/icon-image-ineligible.svg`,
-        missing: `${process.env.PUBLIC_URL}/assets/images/application/icon-image-missing.svg`,
-    }), []);
-
     return (
         <EligibilityOverviewScreen
             t={t}
-            iconPaths={iconPaths}
             eligibilityData={filteredEligibilityData}
             filterOptions={filterOptions}
             filters={filters}
