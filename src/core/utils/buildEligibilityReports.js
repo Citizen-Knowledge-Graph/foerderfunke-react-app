@@ -7,9 +7,17 @@ export const buildEligibilityReports = (validationReport, metadata, hydrationDat
         };
     }
 
-    const reports = validationReport['ff:hasEvaluatedRequirementProfile'] || [];   
+    const reports = validationReport['ff:hasEvaluatedRequirementProfile'] || [];
+    const hasDefinition = metadata['ff:hasDefinition'] || [];
+    const defDict = hasDefinition.reduce((acc, cat) => {
+        const id = cat['@id'];
+        const label = cat['rdfs:label']?.['@value'] || '';
+        acc[id] = label;
+        return acc;
+    }, {});
+
     const allReports = reports.map(report => {
-        const rpUri = report['ff:hasRpUri']?.['@id'] || null;    
+        const rpUri = report['ff:hasRpUri']?.['@id'] || null;
         const result = report['ff:hasEligibilityStatus']?.['@id'] || null;
 
         // hydration data
@@ -27,38 +35,121 @@ export const buildEligibilityReports = (validationReport, metadata, hydrationDat
         // metadata
         const rpMetadata = metadata['ff:hasRP']?.find(rp => rp['@id'] === rpUri)
         const validationStage = rpMetadata?.['ff:validationStage']?.['@id'] || 'Unknown Validation Stage';
+        
+        // administrative level
+        const rawLevels = rpMetadata?.['ff:administrativeLevel'];
+        const administrativeLevels = rawLevels
+            ? (Array.isArray(rawLevels) ? rawLevels : [rawLevels])
+                .map(level => ({
+                    id: level['@id'],
+                    label: defDict[level['@id']] || ''
+                }))
+            : [];
 
-        return { uri: rpUri, result, id, title, category, description, status, requiredDocuments, additionalSupport, legalBasis, furtherInformation, validationStage };
-    });    
+        // associated law
+        const rawLaw = rpMetadata?.['ff:legalBasis'];
+        const associatedLaws = rawLaw
+            ? (Array.isArray(rawLaw) ? rawLaw : [rawLaw])
+                .map(law => ({
+                    id: law['@id'],
+                    label: defDict[law['@id']] || ''
+                }))
+            : [];
 
-    const eligibilityStatus = allReports.reduce((acc, report) => {
+        // providing agency
+        const rawAgencies = rpMetadata?.['ff:providingAgency'];
+        const providingAgencies = rawAgencies
+            ? (Array.isArray(rawAgencies) ? rawAgencies : [rawAgencies])
+            .map(agency => ({
+                id: agency['@id'],
+                label: defDict[agency['@id']] || ''
+            }))
+            : [];
+
+        
+        // benefit categories
+        const rawCategories = rpMetadata?.['ff:category'];
+        const benefitCategories = rawCategories
+            ? (Array.isArray(rawCategories) ? rawCategories : [rawCategories])
+                .map(cat => ({
+                    id: cat['@id'],
+                    label: defDict[cat['@id']] || ''
+                }))
+            : [];
+
+        return {
+            uri: rpUri,
+            result,
+            id,
+            title,
+            category,
+            description,
+            status,
+            requiredDocuments,
+            additionalSupport,
+            legalBasis,
+            furtherInformation,
+            validationStage,
+            associatedLaws,
+            providingAgencies,
+            administrativeLevels,
+            benefitCategories
+        };
+    });
+
+    const filterOptions = {
+        associatedLaws: Array.from(
+            new Map(
+                allReports
+                    .flatMap(r => r.associatedLaws || [])
+                    .filter(Boolean)
+                    .map(cat => [cat.id, cat])
+            ).values()
+        ),
+
+        providingAgencies: Array.from(
+            new Map(
+                allReports
+                    .flatMap(r => r.providingAgencies || [])
+                    .filter(Boolean)
+                    .map(cat => [cat.id, cat])
+            ).values()
+        ),
+
+        administrativeLevels: Array.from(
+            new Map(
+                allReports
+                    .flatMap(r => r.administrativeLevels || [])
+                    .filter(Boolean)
+                    .map(cat => [cat.id, cat])
+            ).values()
+        ),
+
+        benefitCategories: Array.from(
+            new Map(
+                allReports
+                    .flatMap(r => r.benefitCategories || [])
+                    .filter(Boolean)
+                    .map(cat => [cat.id, cat])
+            ).values()
+        ),
+    };
+
+    const eligibilityData = allReports.reduce((acc, report) => {
         const { category, result } = report;
 
         if (!acc[category]) {
             acc[category] = {};
         }
 
-        if (result === "ff:eligible") {
-            if (!acc[category][result]) {
-                acc[category][result] = { preliminary: [], final: [] };
-            }
-
-            if (report.validationStage === "ff:complete-validation") {
-                acc[category][result].final.push(report);
-            }
-
-            if (report.validationStage === "ff:preliminary-validation") {
-                acc[category][result].preliminary.push(report);
-            }        
-        } else {
-            if (!acc[category][result]) {
-                acc[category][result] = [];
-            }
-            acc[category][result].push(report);
+        if (!acc[category][result]) {
+            acc[category][result] = [];
         }
+
+        acc[category][result].push(report);
 
         return acc;
     }, {});
 
-    return eligibilityStatus;
+    return { eligibilityData, filterOptions };
 };

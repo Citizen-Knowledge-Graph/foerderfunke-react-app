@@ -1,7 +1,7 @@
 import React from "react";
-import { useStore } from "../../shared-components/ViewportUpdater";
-import { VBox } from "../../shared-components/LayoutBoxes";
-import Layout from "../../shared-components/Layout";
+import { useStore } from "@/ui/shared-components/ViewportUpdater";
+import { VBox } from "@/ui/shared-components/LayoutBoxes";
+import Layout from "@/ui/shared-components/Layout";
 import LandingPageHowItWorks from "./sections/how-it-works/LandingPageHowItWorks";
 import LandingPagePrinciples from "./sections/principles/LandingPagePrinciples";
 import LandingPageTeam from "./sections/team/LandingPageTeam";

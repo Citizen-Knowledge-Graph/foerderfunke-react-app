@@ -6,9 +6,9 @@ import buttonStyles from "./ButtonStyles";
 
 const sizeStyles = {
   small: {
-    padding: "9px 16px",
+    padding: "8px 12px",
     fontSize: "14px",
-    borderRadius: "10px",
+    borderRadius: 4,
   },
   medium: {
     padding: "12px 20px",

@@ -27,7 +27,7 @@ const OnboardingChoice = () => {
                         </HBox>
                         <HBox sx={{ maxWidth: '506px' }}>
                             <TileButton
-                                variant={'yellowContained'}
+                                variant={'whiteNoBorderYellow'}
                                 title={'app.discoverChoice.quickCheck'}
                                 subtitle='app.discoverChoice.quickCheckComment'
                                 link={"/onboarding-welcome-topics"}
