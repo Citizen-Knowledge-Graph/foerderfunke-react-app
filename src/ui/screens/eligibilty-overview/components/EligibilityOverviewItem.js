@@ -70,8 +70,8 @@ const EligibilityOverviewItem = ({ t, item, eligible }) => {
                                     <EligibilityOverviewTag key={tag.id} tag={tag.label} tagType={key} />
                                 ))
                             )
-                        )
-                        )}
+                        ))
+                    }
                 </HBox>
                 <Divider sx={{ color: 'dark.light', borderStyle: 'dashed' }} />
                 <HBox sx={{ flexWrap: 'wrap', gap: 2, alignItems: 'center' }}>
@@ -83,7 +83,6 @@ const EligibilityOverviewItem = ({ t, item, eligible }) => {
                         )
                     }
                     {eligible === 'indeterminate' &&
-
                         <RegularButton
                             variant={'pinkContained'}
                             onClick={() => {
@@ -103,7 +102,6 @@ const EligibilityOverviewItem = ({ t, item, eligible }) => {
                         size='small'
                     />
                 </HBox>
-
             </VBox>
         </VBox>
     );

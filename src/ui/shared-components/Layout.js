@@ -5,7 +5,7 @@ import {useStore} from "./ViewportUpdater";
 
 const Layout = ({children, isApp = false, logo = true, back = null, gap = 2}) => {
     const isDesktop = useStore((state) => state.isDesktop);
-    const backgroundColor = isApp ? 'blue.dark' : 'transparent';
+    const backgroundColor = isApp ? 'blue.dark' : 'white.main';
     const minHeight = isApp ? '100vh' : 'auto';    
 
     return (
