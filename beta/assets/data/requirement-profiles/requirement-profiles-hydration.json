@@ -1,0 +1,1893 @@
+{
+  "ff:hilfe-zum-lebensunterhalt": {
+    "id": "ff:hilfe-zum-lebensunterhalt",
+    "category": "social_benefit",
+    "status": "production",
+    "title": {
+      "de": "Hilfe zum Lebensunterhalt",
+      "en": "Cost-of-living assistance"
+    },
+    "description": {
+      "de": "Die „Hilfe zum Lebensunterhalt“ unterstützt Menschen, die vorübergehend nicht oder nur wenig arbeiten können und keinen Anspruch auf andere Sozialleistungen haben, bei der Deckung von Grundbedürfnissen wie Essen, Kleidung und Miete.",
+      "en": "The 'Hilfe zum Lebensunterhalt' (cost-of-living assistance) supports people who are temporarily unable to work or can only work a little and do not have access to other social benefits. It helps cover basic needs such as food, clothing, and rent."
+    }
+  },
+  "ff:kindergeld": {
+    "id": "ff:kindergeld",
+    "category": "social_benefit",
+    "status": "production",
+    "title": {
+      "de": "Kindergeld",
+      "en": "Child benefit"
+    },
+    "description": {
+      "de": "Alle Eltern, die in Deutschland leben bzw. arbeiten,  können für Ihre Kinder Kindergeld bekommen. Das Kindergeld wird unabhängig vom Einkommen der Eltern ausgezahlt. Das Kindergeld beträgt 250€ pro Monat pro Kind (Stand 2025). Kindergeld erhält man grundsätzlich bis das Kind 18 Jahre alt ist. In manchen Fällen (z.B. Ausbdildung oder Arbeitssuche) kann Kingergeld aber auch länger bezogen werden. Kindergeld muss beantragt werden, dies geht bis zu 6 Monate rückwirkend.",
+      "en": "All parents living or working in Germany are entitled to child benefit for their children. Child benefit is paid regardless of the parents' income. Child benefit amounts to 250€ per month per child (as of 2025). Child benefit is generally paid until the child is 18 years old. In some cases (e.g. education or job search), child benefit can be received for a longer period. Child benefit must be applied for, this can be done up to 6 months retroactively."
+    },
+    "application_process": {
+      "de": {
+        "title": "Kindergeld kann über die Seite der Bundesagentur für Arbeit online beantragt werden. Dieser muss dann an die regional zuständige Familienkasse gesendet werden. Kindergeld für Kinder ab 18 Jahren muss gesondert beantragt werden, da entsprechende Nachweise zur Situation gefordert werden.",
+        "links": [
+          {
+            "title": "Online Antrag",
+            "url": "http://arbeitsagentur.de/familie-und-kinder/infos-rund-um-kindergeld/kindergeld-anspruch-hoehe-dauer"
+          },
+          {
+            "title": "Informationen und Antrag zum Ausdrucken",
+            "url": "https://www.arbeitsagentur.de/familie-und-kinder/infos-rund-um-kindergeld"
+          },
+          {
+            "title": "Kindergeld für Kinder ab 18 Jahren",
+            "url": "https://www.arbeitsagentur.de/familie-und-kinder/infos-rund-um-kindergeld/kindergeld-ab-18-jahren"
+          }
+        ]
+      },
+      "en": {
+        "title": "Child benefit can be applied for online via the Federal Employment Agency website. You can find information about child benefit and the official application form for printing here. This must then be sent to the regionally responsible family benefits office. You can find this here. Child benefit for children over 18 years of age must be applied for separately, as corresponding proof of the situation is required. You can find information and the application form here.",
+        "links": [
+          {
+            "title": "Online application",
+            "url": "http://arbeitsagentur.de/familie-und-kinder/infos-rund-um-kindergeld/kindergeld-anspruch-hoehe-dauer"
+          },
+          {
+            "title": "Information and application for printing",
+            "url": "https://www.arbeitsagentur.de/familie-und-kinder/infos-rund-um-kindergeld"
+          },
+          {
+            "title": "Child benefit for children over 18 years",
+            "url": "https://www.arbeitsagentur.de/familie-und-kinder/infos-rund-um-kindergeld/kindergeld-ab-18-jahren"
+          }
+        ]
+      }
+    },
+    "required_documents": {
+      "de": [
+        "Steuerliche Identifikationsnummer des Kindes",
+        "Geburtsurkunde des Kindes",
+        "Gegebenenfalls Nachweis zum Aufenthaltstitel der antragstellenden Person",
+        "Gegebenenfalls Nachweis über die Schulausbildung oder Ausbildung des Kindes",
+        "Gegebenenfalls Nachweis über die Behinderung des Kindes (falls zutreffend)"
+      ],
+      "en": [
+        "Tax identification number of the child",
+        "Birth certificate of the child",
+        "Proof of the residence permit of the applicant",
+        "Proof of the child's school education or training",
+        "Proof of the child's disability (if applicable)"
+      ]
+    },
+    "additional_support": {
+      "de": {
+        "title": "Für mehr Informationen und Fragen zur Antragsstellung, Anspruch, etc. wendest du dich am besten an deine lokale Familienkasse.",
+        "links": [
+          {
+            "title": "Familienkassen in Deutschland",
+            "url": "https://web.arbeitsagentur.de/portal/metasuche/suche/dienststellen?in=familienkassen"
+          }
+        ]
+      },
+      "en": {
+        "title": "For more information and questions about the application process, entitlement, etc., please contact your local family benefits office.",
+        "links": [
+          {
+            "title": "Family benefits offices in Germany",
+            "url": "https://web.arbeitsagentur.de/portal/metasuche/suche/dienststellen?in=familienkassen"
+          }
+        ]
+      }
+    },
+    "legal_basis": {
+      "de": {
+        "title": "Die Gesetzesgrundlage für das Kindergeld findet sich im Einkommensteuergesetz und im Bundeskindergeldgesetz.",
+        "links": [
+          {
+            "title": "Einkommensteuergesetz",
+            "url": "https://www.gesetze-im-internet.de/estg/BJNR010050934.html#BJNR010050934BJNG023403140"
+          },
+          {
+            "title": "Bundeskindergeldgesetz",
+            "url": "https://www.gesetze-im-internet.de/bkgg_1996/BJNR137800995.html"
+          }
+        ]
+      },
+      "en": {
+        "title": "The legal basis for child benefit can be found in the Income Tax Act and the Federal Child Benefit Act.",
+        "links": [
+          {
+            "title": "Income Tax Act",
+            "url": "https://www.gesetze-im-internet.de/estg/BJNR010050934.html#BJNR010050934BJNG023403140"
+          },
+          {
+            "title": "Federal Child Benefit Act",
+            "url": "https://www.gesetze-im-internet.de/bkgg_1996/BJNR137800995.html"
+          }
+        ]
+      }
+    },
+    "further_information": {
+      "de": {
+        "title": "Hier finden Sie weitere Informationen zum Kindergeld:",
+        "links": [
+          {
+            "title": "Offizielles Merkblatt zum Kindergeld",
+            "url": "https://sozialplattform.de/content/sites/default/files/2022-09/Merkblatt.pdf"
+          },
+          {
+            "title": "Sozialplattform.",
+            "url": "https://sozialplattform.de/inhalt/kindergeld"
+          }
+        ]
+      },
+      "en": {
+        "title": "You can find more information about child benefit on the following websites:",
+        "links": [
+          {
+            "title": "Official information sheet on child benefit",
+            "url": "https://sozialplattform.de/content/sites/default/files/2022-09/Merkblatt.pdf"
+          },
+          {
+            "title": "Sozialplattform",
+            "url": "https://sozialplattform.de/inhalt/kindergeld"
+          }
+        ]
+      }
+    }
+  },
+  "ff:kinderzuschlag": {
+    "id": "ff:kinderzuschlag",
+    "category": "social_benefit",
+    "status": "production",
+    "title": {
+      "de": "Kinderzuschlag",
+      "en": "Child allowance"
+    },
+    "description": {
+      "de": "Den Kinderzuschlag (kurz: KiZ) können Eltern bekommen, deren Einkommen für den eigenen Lebensunterhalt reicht, aber nicht oder nur knapp ausreicht, um auch für den gesamten Bedarf Ihrer Familie aufzukommen. Voraussetzung ist, dass Sie schon Kindergeld beziehen. Der Kinderzuschlag wird immer für sechs Monate am Stück bewilligt.",
+      "en": "Child allowance (KiZ) is a benefit for parents whose income is sufficient to cover their own living expenses, but not enough to cover the entire needs of their family. The child allowance is always granted for six months at a time."
+    },
+    "application_process": {
+      "de": {
+        "title": "Den Kinderzuschlag können Sie online auf der Seite der Bundesagentur für Arbeit beantragen. Den Papierantrag gibt es auch zum Ausdrucken. Dieser muss dann an die regional zuständige Familienkasse gesendet werden.",
+        "links": [
+          {
+            "title": "Online Antrag",
+            "url": "https://web.arbeitsagentur.de/kiz/ui/start"
+          },
+          {
+            "title": "Antrag zum Ausdrucken",
+            "url": "https://www.arbeitsagentur.de/familie-und-kinder/downloads-familie-und-kinder"
+          },
+          {
+            "title": "Familienkassen in Deutschland",
+            "url": "https://web.arbeitsagentur.de/portal/metasuche/suche/dienststellen?in=familienkassen"
+          }
+        ]
+      },
+      "en": {
+        "title": "You can apply for the child allowance online on the Federal Employment Agency website. The paper application form is also available for printing. This must then be sent to the regionally responsible family benefits office.",
+        "links": [
+          {
+            "title": "Online application",
+            "url": "https://web.arbeitsagentur.de/kiz/ui/start"
+          },
+          {
+            "title": "Application for printing",
+            "url": "https://www.arbeitsagentur.de/familie-und-kinder/downloads-familie-und-kinder"
+          },
+          {
+            "title": "Family benefits offices in Germany",
+            "url": "https://web.arbeitsagentur.de/portal/metasuche/suche/dienststellen?in=familienkassen"
+          }
+        ]
+      }
+    },
+    "required_documents": {
+      "de": [
+        "Einkommensnachweise der letzten sechs Monate",
+        "Mietvertrag oder Mietbescheinigung",
+        "Nachweise über das Einkommen des Partners oder der Partnerin",
+        "Nachweise über das Einkommen der Kinder"
+      ],
+      "en": [
+        "Income statements for the last six months",
+        "Rental agreement or rental certificate",
+        "Proof of income of the partner",
+        "Proof of income of the children"
+      ]
+    },
+    "additional_support": {
+      "de": {
+        "title": "Für mehr Informationen und Fragen zur Antragsstellung, Anspruch, etc. wendest du dich am besten an deine lokale Familienkasse.",
+        "links": [
+          {
+            "title": "Familienkassen in Deutschland",
+            "url": "https://web.arbeitsagentur.de/portal/metasuche/suche/dienststellen?in=familienkassen"
+          }
+        ]
+      },
+      "en": {
+        "title": "For more information and questions about the application process, entitlement, etc., please contact your local family benefits office.",
+        "links": [
+          {
+            "title": "Family benefits offices in Germany",
+            "url": "https://web.arbeitsagentur.de/portal/metasuche/suche/dienststellen?in=familienkassen"
+          }
+        ]
+      }
+    },
+    "legal_basis": {
+      "de": {
+        "title": "Die Gesetzesgrundlage für den Kinderzuschlag findet sich im Bundeskindergeldgesetz.",
+        "links": [
+          {
+            "title": "Bundeskindergeldgesetz",
+            "url": "https://www.gesetze-im-internet.de/bkgg_1996/BJNR137800995.html"
+          }
+        ]
+      },
+      "en": {
+        "title": "The legal basis for the child allowance can be found in the Federal Child Benefit Act.",
+        "links": [
+          {
+            "title": "Federal Child Benefit Act",
+            "url": "https://www.gesetze-im-internet.de/bkgg_1996/BJNR137800995.html"
+          }
+        ]
+      }
+    },
+    "further_information": {
+      "de": {
+        "title": "Hier finden Sie weitere Informationen zum Kinderzuschlag:",
+        "links": [
+          {
+            "title": "Familienportal des Bundes",
+            "url": "https://familienportal.de/familienportal/familienleistungen/kinderzuschlag"
+          },
+          {
+            "title": "Sozialplattform.",
+            "url": "https://sozialplattform.de/inhalt/kinderzuschlag"
+          }
+        ]
+      },
+      "en": {
+        "title": "You can find more information about the child allowance on the following websites:",
+        "links": [
+          {
+            "title": "Federal Family Portal",
+            "url": "https://familienportal.de/familienportal/familienleistungen/kinderzuschlag"
+          },
+          {
+            "title": "Sozialplattform",
+            "url": "https://sozialplattform.de/inhalt/kinderzuschlag"
+          }
+        ]
+      }
+    }
+  },
+  "ff:bafoeg": {
+    "id": "ff:bafoeg",
+    "category": "social_benefit",
+    "status": "production",
+    "title": {
+      "de": "BAföG",
+      "en": "BAföG"
+    },
+    "description": {
+      "de": "Mit dem Bundesausbildungsförderungsgesetz (BAföG) werden junge Menschen finanziell bei der Schulausbildung und dem Studium unterstützt. Es gibt zwei Arten von BAföG: das Schüler-BAföG und das Studenten-BAföG. Schülerinnen und Schüler sowie Studierende können einen Zuschuss oder ein zinsloses Darlehen erhalten. Die Höhe der Förderung ist von den Lebensumständen der Antragstellerinnen und Antragsteller abhängig.",
+      "en": "Are you looking to study or complete your secondary school education and require financial support? Then BAföG is just what you need. Keep reading to find out all the details about Germany’s student support scheme and how to apply for BAföG."
+    }
+  },
+  "ff:buergergeld": {
+    "id": "ff:buergergeld",
+    "category": "social_benefit",
+    "status": "production",
+    "title": {
+      "de": "Bürgergeld",
+      "en": "Citizen's benefit"
+    },
+    "description": {
+      "de": "Das Bürgergeld (vorher ALG II) ist Teil der sogenannten Grundsicherung für Arbeitsuchende. Bürgergeld wird oft im Anschluss an das Arbeitslosengeld gezahlt, wenn weiterhin Unterstützung notwendig ist. Bürgergeld erhalten auch Personen, die noch nie gearbeitet oder ein geringes Einkommen haben. Für das Bürgergeld sind die Jobcenter zuständig.",
+      "en": "If you are not currently employed and are not entitled to unemployment benefit, you may be entitled to unemployment benefit II. This also applies if you earn so little that you cannot meet your living costs."
+    }
+  },
+  "ff:arbeitslosengeld": {
+    "id": "ff:arbeitslosengeld",
+    "category": "social_benefit",
+    "status": "production",
+    "title": {
+      "de": "Arbeitslosengeld",
+      "en": "Unemployment benefit"
+    },
+    "description": {
+      "de": "Das Arbeitslosengeld (ALG) sichert Sie sozial ab, wenn Sie Ihre Arbeit oder Ihren Ausbildungsplatz verlieren. Es ersetzt einen Teil Ihres fehlenden Einkommens, damit Sie weiterhin Ihren Lebensunterhalt bestreiten können. Sie haben Anspruch auf diese Leistung, wenn Sie vor Ihrer Arbeitslosigkeit eine bestimmte Zeit pflichtversichert oder freiwillig versichert waren und monatlich Versicherungsbeiträge gezahlt haben.",
+      "en": "Unemployment benefit, or ALG (from the German word Arbeitslosengeld), provides a social safety net in case you lose your job or training position. It replaces part of your missing income so that you can continue to pay your bills."
+    }
+  },
+  "ff:berufsausbildungsbeihilfe-bab": {
+    "id": "ff:berufsausbildungsbeihilfe-bab",
+    "category": "social_benefit",
+    "status": "production",
+    "title": {
+      "de": "Berufsausbildungsbeihilfe (BAB)",
+      "en": "Vocational training allowance (BAB)"
+    },
+    "description": {
+      "de": "Berufsausbildungsbeihilfe (BAB) ist ein finanzieller Zuschuss für junge Menschen in ihrer ersten Berufsausbildung. Sie hilft zum Beispiel dabei, Miete, Lebensmittel oder Fahrtkosten zu bezahlen.",
+      "en": "Vocational training allowance, or Berufsausbildungsbeihilfe (BAB), is a form of financial assistance for young people who are in vocational training for the first time. It helps them pay for things like rent, food or transport costs."
+    }
+  },
+  "ff:wohngeld": {
+    "id": "ff:wohngeld",
+    "category": "social_benefit",
+    "status": "production",
+    "leika_id": "99107023037000",
+    "title": {
+      "de": "Wohngeld",
+      "en": "Housing benefit"
+    },
+    "description": {
+      "de": "Wohngeld ist eine Leistung für Menschen mit geringem Einkommen, die ihren Lebensunterhalt bzw. ihren alltäglichen Bedarf und die Miete/Wohnkosten nicht vollständig alleine stemmen können. Wohngeld wird als Zuschuss zur Miete oder zu den Kosten selbst genutzten Wohneigentums gezahlt und richtet sich nach dem eigenen Einkommen, der Miete/Wohnkosten sowie der Wohnregion.",
+      "en": "Housing benefit is a benefit for people with low incomes who cannot fully cover their living expenses, daily needs, and rent/housing costs on their own. Housing allowance is granted as a subsidy for rent or the costs of owner-occupied housing and is determined based on one’s income, rent/housing costs, and the residential region."
+    },
+    "application_process": {
+      "de": {
+        "title": "Wohngeld kann bei der zuständigen Wohngeldbehörde beantragt werden. Die Antragsformulare können online heruntergeladen oder direkt bei der Behörde abgeholt werden.",
+        "links": []
+      },
+      "en": {
+        "title": "Housing benefit can be applied for at the responsible housing benefit authority.",
+        "links": []
+      }
+    },
+    "required_documents": {
+      "de": [
+        "Mietvertrag oder Mietbescheinigung",
+        "Lohn- oder Gehaltsnachweise der letzten sechs Monate",
+        "Bescheide über etwaiges anderes Einkommen (z.B. Rente, BAföG, Elterngeld, Unterhalt)",
+        "Gegebenenfalls Kontoauszüge der letzten drei Monate"
+      ],
+      "en": [
+        "Rental agreement or rental certificate",
+        "Pay slips for the last six months",
+        "Notices of any other income (e.g. pension, BAföG, parental allowance, maintenance)",
+        "Possibly bank statements for the last three months"
+      ]
+    },
+    "additional_support": {
+      "de": {
+        "title": "Für mehr Informationen und Fragen zur Antragsstellung, Anspruch, etc. wenden Sie sich an Ihre lokale Wohngeldbehörde. Einen ersten Eindruck über die Mögliche Wohngeldhöhe bietet der offizielle Wohngeld-Rechner des Bundesministerium für Wohnen, Stadtentwicklung und Bauwesen.",
+        "links": [
+          {
+            "title": "Wohngeldrechner 2023",
+            "url": "https://www.bmwsb.bund.de/Webs/BMWSB/DE/themen/stadt-wohnen/wohnraumfoerderung/wohngeld/wohngeldrechner-2023-artikel.html"
+          }
+        ]
+      },
+      "en": {
+        "title": "For more information and questions about the application process, entitlement, etc., please contact your local housing benefit authority. The official housing benefit calculator of the Federal Ministry of Housing, Urban Development and Construction provides a first impression of the possible housing benefit amount.",
+        "links": [
+          {
+            "title": "Housing benefit calculator 2023",
+            "url": "https://www.bmwsb.bund.de/Webs/BMWSB/DE/themen/stadt-wohnen/wohnraumfoerderung/wohngeld/wohngeldrechner-2023-artikel.html"
+          }
+        ]
+      }
+    },
+    "legal_basis": {
+      "de": {
+        "title": "Die Gesetzesgrundlage für das Wohngeld findet sich im Wohngeldgesetz.",
+        "links": [
+          {
+            "title": "Wohngeldgesetz",
+            "url": "https://www.gesetze-im-internet"
+          }
+        ]
+      },
+      "en": {
+        "title": "The legal basis for housing benefit can be found in the Housing Benefit Act.",
+        "links": [
+          {
+            "title": "Housing Benefit Act",
+            "url": "https://www.gesetze-im-internet"
+          }
+        ]
+      }
+    },
+    "further_information": {
+      "de": {
+        "title": "Hier finden Sie weitere Informationen zum Wohngeld:",
+        "links": [
+          {
+            "title": "Offiziellen Seite des Bundesministerium für Wohnen, Stadtentwicklung und Bauwesen.",
+            "url": "https://www.bmwsb.bund.de/SharedDocs/faqs/Webs/BMWSB/DE/wohnen/wohngeld/wohngeld-faq-liste.html"
+          },
+          {
+            "title": "Soziaplattform.",
+            "url": "https://sozialplattform.de/wohngeld"
+          }
+        ]
+      },
+      "en": {
+        "title": "You can find more information about housing benefit on the following websites:",
+        "links": [
+          {
+            "title": "Federal Ministry of Housing, Urban Development and Construction",
+            "url": "https://www.bmwsb.bund.de/SharedDocs/faqs/Webs/BMWSB/DE/wohnen/wohngeld/wohngeld-faq-liste.html"
+          },
+          {
+            "title": "Soziaplattform",
+            "url": "https://sozialplattform.de/wohngeld"
+          }
+        ]
+      }
+    }
+  },
+  "ff:grundsicherung-im-alter-und-bei-erwerbsminderung": {
+    "id": "ff:grundsicherung-im-alter-und-bei-erwerbsminderung",
+    "category": "social_benefit",
+    "status": "production",
+    "title": {
+      "de": "Grundsicherung im Alter und bei Erwerbsminderung",
+      "en": "Basic welfare for the elderly and people with reduced earnings capacity"
+    },
+    "description": {
+      "de": "Sie sind im Rentenalter, aber Ihr Geld reicht nicht aus, um Ihren Lebensunterhalt zu bezahlen? Oder sind Sie zwar noch jünger, können aber aus gesundheitlichen Gründen dauerhaft nicht arbeiten? Dann können Sie die finanzielle „Grundsicherung im Alter und bei Erwerbsminderung“ beantragen.",
+      "en": "Are you receiving your pension but don’t have enough money to get by? Or are you younger but unable to work for health-related reasons? If so, you may be entitled to claim basic financial welfare for the elderly and people with reduced earnings capacity."
+    }
+  },
+  "ff:bildung-und-teilhabe-bei-bezug-von-buergergeld": {
+    "id": "ff:bildung-und-teilhabe-bei-bezug-von-buergergeld",
+    "category": "social_benefit",
+    "status": "production",
+    "title": {
+      "de": "Bildung und Teilhabe - bei Bezug von Bürgergeld",
+      "en": "Education and participation - with citizen's benefit"
+    },
+    "description": {
+      "de": "In Deutschland sollen Kinder, Jugendliche und junge Erwachsene die gleichen Chancen haben. Wichtige Voraussetzungen für Chancengleichheit sind Bildung und die Teilnahme am sozialen und kulturellen Leben. Deswegen fördert der Staat Leistungen zur Bildung und Teilhabe, auch Bildungs- und Teilhabepaket genannt.",
+      "en": "In Germany, children, teens and young adults are supposed to have equal opportunities. Education and participation in social and cultural activities are important factors in ensuring equal opportunity. For this reason, the state provides benefits to support education and participation. This is also known as the education and participation package."
+    }
+  },
+  "ff:exist-gruendungsstipendium": {
+    "id": "ff:exist-gruendungsstipendium",
+    "category": "business",
+    "status": "beta",
+    "title": {
+      "de": "EXIST-Gründungsstipendium",
+      "en": "EXIST start-up grant"
+    },
+    "description": {
+      "de": "Das EXIST-Gründerstipendium unterstützt Studierende, Absolventinnen und Absolventen sowie Wissenschaftlerinnen und Wissenschaftler, die ihre Gründungsidee umsetzen möchten. Das Stipendium ermöglicht es, sich voll und ganz auf die Gründung zu konzentrieren und die ersten Schritte in die Selbstständigkeit zu gehen.",
+      "en": "The EXIST start-up grant supports students, graduates and researchers who want to implement their start-up idea. The grant allows them to focus entirely on their start-up and take the first steps towards self-employment."
+    }
+  },
+  "ff:ibb-gruendungsbonus": {
+    "id": "ff:ibb-gruendungsbonus",
+    "category": "business",
+    "status": "beta",
+    "title": {
+      "de": "IBB-Gründungsbonus",
+      "en": "IBB start-up bonus"
+    },
+    "description": {
+      "de": "Der IBB-Gründungsbonus ist eine finanzielle Unterstützung für Gründerinnen und Gründer in Berlin. Der Bonus hilft dabei, die ersten Schritte in die Selbstständigkeit zu gehen und das eigene Unternehmen aufzubauen.",
+      "en": "The IBB start-up bonus is financial support for start-ups in Berlin. The bonus helps them take the first steps towards self-employment and build their own business."
+    }
+  },
+  "ff:ibb-altersgerecht-wohnen": {
+    "id": "ff:ibb-altersgerecht-wohnen",
+    "category": "business",
+    "status": "beta",
+    "title": {
+      "de": "IBB Altersgerecht Wohnen",
+      "en": "IBB age-appropriate living"
+    },
+    "description": {
+      "de": "Das Förderprogramm 'IBB Altersgerecht Wohnen' unterstützt Vermieter:innen und Investor:innen bei der Finanzierung von Modernisierungsmaßnahmen zur Barrierereduzierung, Erhöhung des Wohnkomforts und Einbruchschutz in Berlin. Ziel ist es, altersgerechtes Wohnen zu fördern und die Lebensqualität in Wohngebäuden zu verbessern.",
+      "en": "The 'IBB Altersgerecht Wohnen' funding program supports landlords and investors in financing modernization measures for barrier reduction, increased living comfort, and burglary protection in Berlin. The goal is to promote age-appropriate living and improve the quality of life in residential buildings."
+    },
+    "application_process": {
+      "de": {
+        "title": "Die Förderung kann über die IBB beantragt werden. Der Antrag muss vor Beginn der Maßnahmen gestellt werden. Detaillierte Informationen zur Antragstellung sind auf der Website der IBB verfügbar.",
+        "links": [
+          {
+            "title": "IBB Altersgerecht Wohnen",
+            "url": "https://ibb.de/altersgerecht-wohnen"
+          }
+        ]
+      },
+      "en": {
+        "title": "The funding can be applied for through IBB. The application must be submitted before the start of the measures. Detailed information on the application process is available on the IBB website.",
+        "links": [
+          {
+            "title": "IBB Age-Appropriate Housing",
+            "url": "https://ibb.de/altersgerecht-wohnen"
+          }
+        ]
+      }
+    },
+    "required_documents": {
+      "de": [
+        "Ausgefülltes Antragsformular",
+        "Nachweise zur geplanten Baumaßnahme (z. B. Kostenvoranschläge, Baupläne)",
+        "Eigentumsnachweis oder Nachweis über die Vermietung",
+        "Bonitätsnachweise"
+      ],
+      "en": [
+        "Completed application form",
+        "Proof of planned construction measures (e.g., cost estimates, building plans)",
+        "Proof of ownership or rental documentation",
+        "Creditworthiness documentation"
+      ]
+    },
+    "additional_support": {
+      "de": {
+        "title": "Für weitere Informationen und Beratung können Sie sich an die IBB-Kundenbetreuung wenden.",
+        "links": [
+          {
+            "title": "Kontakt zur IBB",
+            "url": "mailto:immobilien@ibb.de"
+          }
+        ]
+      },
+      "en": {
+        "title": "For further information and advice, you can contact the IBB customer service.",
+        "links": [
+          {
+            "title": "Contact IBB",
+            "url": "mailto:immobilien@ibb.de"
+          }
+        ]
+      }
+    },
+    "legal_basis": {
+      "de": {
+        "title": "Die Förderung basiert auf den Richtlinien der KfW Bankengruppe und der IBB.",
+        "links": [
+          {
+            "title": "Förderbedingungen der IBB",
+            "url": "https://ibb.de/altersgerecht-wohnen"
+          }
+        ]
+      },
+      "en": {
+        "title": "The funding is based on the guidelines of the KfW Banking Group and IBB.",
+        "links": [
+          {
+            "title": "IBB Funding Conditions",
+            "url": "https://ibb.de/altersgerecht-wohnen"
+          }
+        ]
+      }
+    },
+    "further_information": {
+      "de": {
+        "title": "Hier finden Sie weitere Informationen zur Förderung altersgerechten Wohnens:",
+        "links": [
+          {
+            "title": "IBB Altersgerecht Wohnen",
+            "url": "https://ibb.de/altersgerecht-wohnen"
+          }
+        ]
+      },
+      "en": {
+        "title": "Here you can find more information about age-appropriate housing support:",
+        "links": [
+          {
+            "title": "IBB Age-Appropriate Housing",
+            "url": "https://ibb.de/altersgerecht-wohnen"
+          }
+        ]
+      }
+    }
+  },
+  "ff:ifb-gruendung-nachfolge": {
+    "id": "ff:ifb-gruendung-nachfolge",
+    "category": "business",
+    "status": "beta",
+    "title": {
+      "de": "Hamburg-Kredit Gründung und Nachfolge III 2025",
+      "en": "Hamburg-Kredit Start-up and Succession III 2025"
+    },
+    "description": {
+      "de": "Der Hamburg-Kredit Gründung und Nachfolge III 2025 unterstützt Existenzgründungen und Unternehmensnachfolgen in Hamburg durch langfristige Finanzierung von Investitionen und Betriebsmitteln. Das Programm bietet günstige Darlehenskonditionen und Zuschüsse für förderfähige Unternehmen.",
+      "en": "The Hamburg-Kredit Start-up and Succession III 2025 supports business start-ups and successions in Hamburg through long-term financing of investments and working capital. The program offers favorable loan conditions and grants for eligible businesses."
+    },
+    "application_process": {
+      "de": {
+        "title": "Der Antrag auf Förderung erfolgt über die Hamburgische Investitions- und Förderbank (IFB). Anträge müssen vor Beginn der Investition gestellt werden. Weitere Details zur Antragstellung finden Sie auf der IFB-Website.",
+        "links": [
+          {
+            "title": "Antragstellung IFB",
+            "url": "https://www.ifbhh.de/programme/gruender-und-unternehmen/gruenden-und-nachfolgen/unternehmen-gruenden/hamburg-kredit-gruendung-und-nachfolge"
+          }
+        ]
+      },
+      "en": {
+        "title": "The funding application is submitted via the Hamburgische Investitions- und Förderbank (IFB). Applications must be submitted before the investment begins. Further details on the application process can be found on the IFB website.",
+        "links": [
+          {
+            "title": "IFB Application",
+            "url": "https://www.ifbhh.de/programme/gruender-und-unternehmen/gruenden-und-nachfolgen/unternehmen-gruenden/hamburg-kredit-gruendung-und-nachfolge"
+          }
+        ]
+      }
+    },
+    "required_documents": {
+      "de": [
+        "Vollständig ausgefülltes Antragsformular",
+        "Businessplan mit Finanzierungsplan",
+        "Bonitätsnachweise und wirtschaftliche Unterlagen des Unternehmens",
+        "Nachweis über den Unternehmenssitz in Hamburg"
+      ],
+      "en": [
+        "Fully completed application form",
+        "Business plan with financing plan",
+        "Creditworthiness certificates and financial documents of the company",
+        "Proof of company headquarters in Hamburg"
+      ]
+    },
+    "funding_conditions": {
+      "de": {
+        "title": "Die Förderkonditionen des Hamburg-Kredit Gründung und Nachfolge III 2025 umfassen folgende Punkte:",
+        "details": [
+          "Darlehensbetrag: Mindestens 25.000 Euro, maximal 1.000.000 Euro.",
+          "Zinssatz: Der Zinssatz ist für die gesamte Laufzeit festgelegt und wird durch die IFB Hamburg kommuniziert.",
+          "Laufzeit: Maximal 10 Jahre, mit einer tilgungsfreien Anlaufzeit von bis zu zwei Jahren.",
+          "Sicherheiten: Die IFB kann bankübliche Sicherheiten verlangen, je nach wirtschaftlicher Situation des Unternehmens.",
+          "Förderfähige Kosten: Finanzierung von Investitionen, Betriebsmitteln und immateriellen Wirtschaftsgütern.",
+          "Zuschuss: Zusätzlich zum Darlehen kann unter bestimmten Bedingungen ein nicht rückzahlbarer Zuschuss von bis zu 5.000 Euro gewährt werden."
+        ]
+      },
+      "en": {
+        "title": "The funding conditions of the Hamburg-Kredit Start-up and Succession III 2025 include the following:",
+        "details": [
+          "Loan amount: Minimum 25,000 euros, maximum 1,000,000 euros.",
+          "Interest rate: The interest rate is fixed for the entire term and communicated by IFB Hamburg.",
+          "Term: Maximum 10 years, with a repayment-free start-up period of up to two years.",
+          "Collateral: IFB may require standard banking collateral, depending on the company's financial situation.",
+          "Eligible costs: Financing of investments, working capital, and intangible assets.",
+          "Grant: In addition to the loan, a non-repayable grant of up to 5,000 euros may be provided under certain conditions."
+        ]
+      }
+    },
+    "legal_basis": {
+      "de": {
+        "title": "Die Förderung basiert auf den Richtlinien der Hamburgischen Investitions- und Förderbank sowie EU-Vorgaben zur KMU-Förderung.",
+        "links": [
+          {
+            "title": "Förderbedingungen IFB",
+            "url": "https://www.ifbhh.de"
+          },
+          {
+            "title": "KMU-Definition der EU",
+            "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:32003H0361"
+          }
+        ]
+      },
+      "en": {
+        "title": "The funding is based on the guidelines of the Hamburgische Investitions- und Förderbank and EU regulations for SME funding.",
+        "links": [
+          {
+            "title": "IFB Funding Conditions",
+            "url": "https://www.ifbhh.de"
+          },
+          {
+            "title": "EU SME Definition",
+            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32003H0361"
+          }
+        ]
+      }
+    },
+    "further_information": {
+      "de": {
+        "title": "Hier finden Sie weitere Informationen zur IFB-Förderung:",
+        "links": [
+          {
+            "title": "Hamburg-Kredit Gründung und Nachfolge",
+            "url": "https://www.ifbhh.de/programme/gruender-und-unternehmen/gruenden-und-nachfolgen/unternehmen-gruenden/hamburg-kredit-gruendung-und-nachfolge"
+          }
+        ]
+      },
+      "en": {
+        "title": "Here you can find more information about IFB funding:",
+        "links": [
+          {
+            "title": "Hamburg-Kredit Start-up and Succession",
+            "url": "https://www.ifbhh.de/programme/gruender-und-unternehmen/gruenden-und-nachfolgen/unternehmen-gruenden/hamburg-kredit-gruendung-und-nachfolge"
+          }
+        ]
+      }
+    }
+  },
+  "ff:ifb-inno-founder": {
+    "id": "ff:ifb-inno-founder",
+    "category": "business",
+    "status": "beta",
+    "title": {
+      "de": "InnoFounder - Förderprogramm für innovative und wissensbasierte Gründungsvorhaben",
+      "en": "InnoFounder - Funding Program for Innovative and Knowledge-Based Startups"
+    },
+    "description": {
+      "de": "InnoFounder unterstützt innovative Startups in Hamburg mit einem nicht rückzahlbaren Zuschuss für Lebensunterhalt und Gründungskosten.",
+      "en": "InnoFounder supports innovative startups in Hamburg with a non-repayable grant for living expenses and startup costs."
+    },
+    "application_process": {
+      "de": {
+        "title": "Die Antragstellung erfolgt über die IFB Innovationsstarter GmbH. Anträge müssen vor Beginn des Vorhabens eingereicht werden. Weitere Details sind auf der IFB-Website zu finden.",
+        "links": [
+          {
+            "title": "Antragstellung IFB",
+            "url": "https://innovationsstarter.com/innofounder/"
+          }
+        ]
+      },
+      "en": {
+        "title": "Applications are submitted via IFB Innovationsstarter GmbH. Applications must be submitted before the project begins. Further details can be found on the IFB website.",
+        "links": [
+          {
+            "title": "IFB Application",
+            "url": "https://innovationsstarter.com/innofounder/"
+          }
+        ]
+      }
+    },
+    "required_documents": {
+      "de": [
+        "Vollständig ausgefülltes Antragsformular",
+        "Projektskizze mit Geschäftsmodell und Finanzierungsplan",
+        "Lebensläufe der Gründungspersonen",
+        "De-Minimis-Erklärung",
+        "Nachweis des Wohnsitzes oder Unternehmenssitzes in Hamburg"
+      ],
+      "en": [
+        "Fully completed application form",
+        "Project outline with business model and financial plan",
+        "CVs of the founders",
+        "De-minimis declaration",
+        "Proof of residence or company headquarters in Hamburg"
+      ]
+    },
+    "funding_conditions": {
+      "de": {
+        "title": "Die Förderkonditionen umfassen folgende Punkte:",
+        "details": [
+          "Förderbetrag: Bis zu 2.500 €/Monat pro Gründerperson für maximal 18 Monate.",
+          "Maximalförderung: 75.000 € für Teams, 45.000 € für Einzelgründer.",
+          "Arbeitseinsatz: Volle Förderung bei 100 % Arbeitseinsatz, anteilige Kürzung bei weniger Einsatz."
+        ]
+      },
+      "en": {
+        "title": "The funding conditions include the following:",
+        "details": [
+          "Funding amount: Up to €2,500/month per founder for a maximum of 18 months.",
+          "Maximum funding: €75,000 for teams, €45,000 for solo founders.",
+          "Work effort: Full funding at 100% work commitment, proportional reduction for lower commitment."
+        ]
+      }
+    },
+    "legal_basis": {
+      "de": {
+        "title": "Rechtsgrundlagen der Förderung:",
+        "links": [
+          {
+            "title": "IFB-Förderbedingungen",
+            "url": "https://www.ifbhh.de/api/services/document/594"
+          },
+          {
+            "title": "De-Minimis-Verordnung EU",
+            "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=OJ:L_202302831"
+          }
+        ]
+      },
+      "en": {
+        "title": "Legal basis of the funding:",
+        "links": [
+          {
+            "title": "IFB Funding Conditions",
+            "url": "https://www.ifbhh.de/api/services/document/594"
+          },
+          {
+            "title": "EU De-Minimis Regulation",
+            "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=OJ:L_202302831"
+          }
+        ]
+      }
+    },
+    "further_information": {
+      "de": {
+        "title": "Weitere Informationen zur InnoFounder-Förderung:",
+        "links": [
+          {
+            "title": "IFB Innovationsstarter GmbH",
+            "url": "https://www.innovationsstarter.com"
+          }
+        ]
+      },
+      "en": {
+        "title": "Further information on InnoFounder funding:",
+        "links": [
+          {
+            "title": "IFB Innovationsstarter GmbH",
+            "url": "https://www.innovationsstarter.com"
+          }
+        ]
+      }
+    }
+  },
+  "ff:ilb-kredit-gruendung": {
+    "id": "ff:ilb-kredit-gruendung",
+    "category": "business",
+    "status": "beta",
+    "title": {
+      "de": "Brandenburg-Kredit Gründung",
+      "en": "Brandenburg Start-up Credit"
+    },
+    "description": {
+      "de": "Der Brandenburg-Kredit Gründung unterstützt junge Unternehmen in Brandenburg mit zinsgünstigen Krediten für Investitionen und Betriebsmittel.",
+      "en": "The Brandenburg Start-up Credit supports young businesses in Brandenburg with low-interest loans for investments and working capital."
+    },
+    "application_process": {
+      "de": {
+        "title": "Die Antragstellung erfolgt über die Investitionsbank des Landes Brandenburg (ILB). Weitere Details sind auf der ILB-Website zu finden.",
+        "links": [
+          {
+            "title": "Antragstellung ILB",
+            "url": "https://www.ilb.de/de/wirtschaft/darlehen/brandenburg-kredit-gruendung/"
+          }
+        ]
+      },
+      "en": {
+        "title": "Applications are submitted via the Investitionsbank des Landes Brandenburg (ILB). Further details can be found on the ILB website.",
+        "links": [
+          {
+            "title": "ILB Application",
+            "url": "https://www.ilb.de/de/wirtschaft/darlehen/brandenburg-kredit-gruendung/"
+          }
+        ]
+      }
+    },
+    "required_documents": {
+      "de": [
+        "Vollständig ausgefülltes Antragsformular",
+        "Businessplan mit Finanzierungsplan",
+        "Bonitätsnachweise und wirtschaftliche Unterlagen des Unternehmens",
+        "Nachweis der Geschäftstätigkeit in Brandenburg"
+      ],
+      "en": [
+        "Fully completed application form",
+        "Business plan with financing plan",
+        "Creditworthiness certificates and financial documents of the company",
+        "Proof of business activity in Brandenburg"
+      ]
+    },
+    "funding_conditions": {
+      "de": {
+        "title": "Die Förderkonditionen umfassen folgende Punkte:",
+        "details": [
+          "Darlehensbetrag: Bis zu 100 % der förderfähigen Kosten, maximal 25 Mio. EUR.",
+          "Zinsbindung: Maximal 10 Jahre.",
+          "Laufzeit: Bis zu 20 Jahre, mit tilgungsfreien Anlaufzeiten von bis zu 3 Jahren.",
+          "Förderfähige Kosten: Investitionen, Betriebsmittel, Warenlager, Unternehmensübernahmen."
+        ]
+      },
+      "en": {
+        "title": "The funding conditions include the following:",
+        "details": [
+          "Loan amount: Up to 100% of eligible costs, maximum €25 million.",
+          "Interest rate fixed for up to 10 years.",
+          "Term: Up to 20 years, with repayment-free periods of up to 3 years.",
+          "Eligible costs: Investments, working capital, inventory, business takeovers."
+        ]
+      }
+    },
+    "legal_basis": {
+      "de": {
+        "title": "Rechtsgrundlagen der Förderung:",
+        "links": [
+          {
+            "title": "ILB-Förderbedingungen",
+            "url": "https://www.ilb.de/de/pdf/merkblatt_57921.pdf"
+          },
+          {
+            "title": "De-Minimis-Verordnung EU",
+            "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:32003H0361"
+          }
+        ]
+      },
+      "en": {
+        "title": "Legal basis of the funding:",
+        "links": [
+          {
+            "title": "ILB Funding Conditions",
+            "url": "https://www.ilb.de/de/pdf/merkblatt_57921.pdf"
+          },
+          {
+            "title": "EU De-Minimis Regulation",
+            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32003H0361"
+          }
+        ]
+      }
+    },
+    "further_information": {
+      "de": {
+        "title": "Weitere Informationen zur ILB-Förderung:",
+        "links": [
+          {
+            "title": "Investitionsbank des Landes Brandenburg",
+            "url": "https://www.ilb.de/de/wirtschaft/darlehen/brandenburg-kredit-gruendung/"
+          }
+        ]
+      },
+      "en": {
+        "title": "Further information on ILB funding:",
+        "links": [
+          {
+            "title": "Investitionsbank des Landes Brandenburg",
+            "url": "https://www.ilb.de/de/wirtschaft/darlehen/brandenburg-kredit-gruendung/"
+          }
+        ]
+      }
+    }
+  },
+  "ff:forschungszulage": {
+    "id": "ff:forschungszulage",
+    "category": "business",
+    "status": "beta",
+    "title": {
+      "de": "Forschungszulage",
+      "en": "Research Allowance"
+    },
+    "description": {
+      "de": "Steuerpflichtige Unternehmen in Deutschland können eine Forschungszulage für förderfähige Aufwendungen in Grundlagenforschung, industrieller Forschung und experimenteller Entwicklung erhalten.",
+      "en": "Tax-liable companies in Germany may claim a research allowance for eligible expenses related to basic research, industrial research, and experimental development."
+    },
+    "application_process": {
+      "de": {
+        "title": "Die Antragstellung erfolgt zweistufig über das BSFZ-Portal (Bescheinigungsverfahren) und das zuständige Finanzamt (Geltendmachung). Weitere Informationen sind beim Bundesministerium der Finanzen erhältlich.",
+        "links": [
+          {
+            "title": "BSFZ Portal zur Forschungszulage",
+            "url": "https://www.bescheinigung-forschungszulage.de/"
+          },
+          {
+            "title": "BMF Informationen zur Forschungszulage",
+            "url": "https://www.bundesfinanzministerium.de"
+          }
+        ]
+      },
+      "en": {
+        "title": "The application process consists of two steps: certification via the BSFZ portal and claiming via the local tax office. More information is available from the Federal Ministry of Finance.",
+        "links": [
+          {
+            "title": "BSFZ Research Allowance Portal",
+            "url": "https://www.bescheinigung-forschungszulage.de/"
+          },
+          {
+            "title": "Federal Ministry of Finance",
+            "url": "https://www.bundesfinanzministerium.de"
+          }
+        ]
+      }
+    },
+    "required_documents": {
+      "de": [
+        "Antrag auf Forschungszulage beim Finanzamt",
+        "Nachweise über förderfähige Aufwendungen (z. B. Lohnkosten, Vertragsunterlagen)"
+      ],
+      "en": [
+        "Research allowance application submitted to the tax office",
+        "Evidence of eligible expenses (e.g., personnel costs, contract documents)"
+      ]
+    },
+    "funding_conditions": {
+      "de": {
+        "title": "Förderkonditionen der Forschungszulage:",
+        "details": [
+          "Förderfähige Aufwendungen: Löhne und Gehälter für F&E-Personal, Auftragsforschung, Eigenleistungen.",
+          "Fördersatz: 25 % der förderfähigen Aufwendungen, 35 % für KMUs.",
+          "Maximale Bemessungsgrundlage: 10 Millionen Euro."
+        ]
+      },
+      "en": {
+        "title": "Funding conditions of the Research Allowance:",
+        "details": [
+          "Eligible costs: wages and salaries for R&D personnel, contract research, in-house development.",
+          "Funding rate: 25% of eligible costs, 35% for SMEs.",
+          "Maximum basis of assessment: €10 million."
+        ]
+      }
+    },
+    "legal_basis": {
+      "de": {
+        "title": "Rechtsgrundlagen der Förderung:",
+        "links": [
+          {
+            "title": "Forschungszulagengesetz (FZulG)",
+            "url": "https://www.gesetze-im-internet.de/fzulg/FZulG.pdf"
+          },
+          {
+            "title": "De-Minimis-Verordnung EU",
+            "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:32003H0361"
+          }
+        ]
+      },
+      "en": {
+        "title": "Legal basis of the funding:",
+        "links": [
+          {
+            "title": "Research Allowance Act (FZulG)",
+            "url": "https://www.gesetze-im-internet.de/fzulg/FZulG.pdf"
+          },
+          {
+            "title": "EU De-Minimis Regulation",
+            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32003H0361"
+          }
+        ]
+      }
+    },
+    "further_information": {
+      "de": {
+        "title": "Weitere Informationen zur Forschungszulage:",
+        "links": [
+          {
+            "title": "BSFZ Website",
+            "url": "https://www.bescheinigung-forschungszulage.de/"
+          },
+          {
+            "title": "Bundesfinanzministerium",
+            "url": "https://www.bundesfinanzministerium.de"
+          }
+        ]
+      },
+      "en": {
+        "title": "Further information on the Research Allowance:",
+        "links": [
+          {
+            "title": "BSFZ Website",
+            "url": "https://www.bescheinigung-forschungszulage.de/"
+          },
+          {
+            "title": "Federal Ministry of Finance",
+            "url": "https://www.bundesfinanzministerium.de"
+          }
+        ]
+      }
+    }
+  },
+  "ff:bundesfoerderung-effiziente-gebaeude": {
+    "id": "ff:bundesfoerderung-effiziente-gebaeude",
+    "category": "business",
+    "status": "beta",
+    "title": {
+      "de": "Bundesförderung für effiziente Gebäude – Einzelmaßnahmen: Sanieren",
+      "en": "Federal Funding for Efficient Buildings – Individual Measures: Renovation"
+    },
+    "description": {
+      "de": "Die BEG EM Sanierung fördert Maßnahmen zur Verbesserung der Energieeffizienz und des Anteils erneuerbarer Energien bei bestehenden Gebäuden durch Zuschüsse oder Kredite. Die Förderung kann entweder über das Bundesamt für Wirtschaft und Ausfuhrkontrolle (BAFA) oder über die KFW abgewickelt werden.",
+      "en": "The BEG EM Renovation program supports measures to improve energy efficiency and the share of renewable energies in existing buildings through grants or loans. Funding can be processed either through the Federal Office for Economic Affairs and Export Control (BAFA) or through KfW."
+    },
+    "examples": {
+      "de": {
+        "title": "Folgende Beispiel veranschaulichen die Fördermöglichkeiten:",
+        "examples": [
+          {
+            "title": "Sanierung einer selbstgenutzten Wohneinheit",
+            "text": "Ein:e selbstnutzende:r Eigentümer:in erhält bei förderfähigen Kosten von 30.000 € einen Zuschuss von 21.000 €, wenn der maximale Fördersatz von 70 % erreicht wird – durch Kombination der Grundförderung (30 %), dem Klimageschwindigkeitsbonus (20 %, für den frühzeitigen Austausch einer fossilen Heizung) und dem Einkommensbonus (20 %, bei einem zu versteuernden Haushaltseinkommen unter 40.000 €)."
+          },
+          {
+            "title": "Heizungstausch in einem Mehrfamilienhaus mit 10 Wohneinheiten",
+            "text": "Bei einem Mehrfamilienhaus mit 10 Wohneinheiten beträgt die Höchstgrenze der förderfähigen Ausgaben für den Heizungstausch 137.000 € (30.000 € für die erste Wohneinheit, je 15.000 € für die zweite bis sechste und je 8.000 € ab der siebten), was bei der Grundförderung von 30 % (für Vermietende oder Unternehmen ohne Boni) einem Investitionszuschuss von 41.100 € entspricht."
+          }
+        ]
+      },
+      "en": {
+        "title": "The following examples illustrate the funding possibilities:",
+        "examples": [
+          {
+            "title": "Renovation of a self-occupied residential unit",
+            "text": "A self-occupying owner receives a grant of €21,000 for eligible costs of €30,000 if the maximum funding rate of 70% is reached – through a combination of the basic grant (30%), the climate speed bonus (20%, for the early replacement of a fossil heating system), and the income bonus (20%, for a taxable household income below €40,000)."
+          },
+          {
+            "title": "Heating system replacement in a multi-family house with 10 residential units",
+            "text": "For a multi-family house with 10 residential units, the maximum limit of eligible expenses for heating system replacement is €137,000 (€30,000 for the first residential unit, €15,000 each for the second to sixth, and €8,000 each from the seventh), which corresponds to an investment grant of €41,100 with the basic grant of 30% (for landlords or companies without bonuses)."
+          }
+        ]
+      }
+    },
+    "application_process": {
+      "de": {
+        "title": "Die Antragstellung erfolgt vor Vorhabensbeginn über über die Website des Bundesamt für Wirtschaft und Ausfuhrkontrolle (BAFA) oder über einen Finanzierungspartner bei einem Kredit. Details zur BEG-Richtlinie finden Sie auf der BAFA-Website.",
+        "links": [
+          {
+            "title": "BEG Antragstellung – BAFA",
+            "url": "https://www.bafa.de/DE/Energie/Effiziente_Gebaeude/Informationen_fuer_Antragstellende/informationen_fuer_antragstellende_node.html"
+          }
+        ]
+      },
+      "en": {
+        "title": "Applications must be submitted before the start of the project via the Federal Office for Economic Affairs and Export Control (BAFA) website or through a financing partner for a loan. Details on the BEG guideline can be found on the BAFA website.",
+        "links": [
+          {
+            "title": "BEG Antragstellung – BAFA",
+            "url": "https://www.bafa.de/DE/Energie/Effiziente_Gebaeude/Informationen_fuer_Antragstellende/informationen_fuer_antragstellende_node.html"
+          }
+        ]
+      }
+    },
+    "required_documents": {
+      "de": [
+        "Nachweis über den Standort des Gebäudes in Deutschland",
+        "Bestätigung zum Antrag (BzA) durch eine Energieeffizienz-Expertin bzw. einen -Experten",
+        "Technischer Projektplan mit Nachweis über Einhaltung der technischen Mindestanforderungen",
+        "Kostenschätzung für förderfähige Maßnahmen"
+      ],
+      "en": [
+        "Proof of building location in Germany",
+        "Confirmation of application (BzA) by a certified energy efficiency expert",
+        "Technical project plan confirming compliance with minimum technical requirements",
+        "Cost estimate for eligible measures"
+      ]
+    },
+    "funding_conditions": {
+      "de": {
+        "title": "Förderkonditionen der BEG EM – Sanieren:",
+        "details": [
+          "Zuschuss oder Kredit über die KfW möglich",
+          "Förderhöhe abhängig vom Maßnahmentyp und Einhaltung der Effizienzanforderungen",
+          "Zuschüsse für Fachplanung und Baubegleitung separat förderfähig"
+        ]
+      },
+      "en": {
+        "title": "Funding conditions of BEG EM – Renovation:",
+        "details": [
+          "Grant or loan available via KfW",
+          "Amount of funding depends on measure type and compliance with efficiency standards",
+          "Grants for planning and construction supervision are separately eligible"
+        ]
+      }
+    },
+    "legal_basis": {
+      "de": {
+        "title": "Rechtsgrundlagen der Förderung:",
+        "links": [
+          {
+            "title": "Förderrichtlinie des Bundesministeriums für Wirtschaft und Klimaschutz",
+            "url": "https://www.bundesanzeiger.de/pub/publication/TevdpcR9NeEp7m7RhbJ/content/TevdpcR9NeEp7m7RhbJ/BAnz%20AT%2029.12.2023%20B1.pdf"
+          }
+        ]
+      },
+      "en": {
+        "title": "Legal basis of the funding:",
+        "links": [
+          {
+            "title": "Funding guidelines of the Federal Ministry for Economic Affairs and Climate Protection",
+            "url": "https://www.bundesanzeiger.de/pub/publication/TevdpcR9NeEp7m7RhbJ/content/TevdpcR9NeEp7m7RhbJ/BAnz%20AT%2029.12.2023%20B1.pdf"
+          }
+        ]
+      }
+    },
+    "further_information": {
+      "de": {
+        "title": "Allgemeine Informationen zur Antragstellung finden Sie in den folgenden Webseiten:",
+        "links": [
+          {
+            "title": "BAFA Merkblatt zur Antragstellung",
+            "url": "https://www.bafa.de/SharedDocs/Downloads/DE/Energie/beg_merkblatt_allgemein_antragstellung.pdf?__blob=publicationFile&v=9"
+          },
+          {
+            "title": "KfW Arbeitshilfe für Produkte der BEG",
+            "url": "https://www.kfw.de/partner/KfW-Partnerportal/Architekten-Bauingenieure-Energieberater/Arbeitshilfen-Service/Arbeitshilfen-Pr%C3%A4sentationen/Arbeitshilfen-BEG/index.jsp?redirect=360896"
+          }
+        ]
+      },
+      "en": {
+        "title": "General information on the application process can be found on the following websites:",
+        "links": [
+          {
+            "title": "BAFA Information Sheet on Application",
+            "url": "https://www.bafa.de/SharedDocs/Downloads/DE/Energie/beg_merkblatt_allgemein_antragstellung.pdf?__blob=publicationFile&v=9"
+          },
+          {
+            "title": "KfW Guide for BEG Products",
+            "url": "https://www.kfw.de/partner/KfW-Partnerportal/Architekten-Bauingenieure-Energieberater/Arbeitshilfen-Service/Arbeitshilfen-Pr%C3%A4sentationen/Arbeitshilfen-BEG/index.jsp?redirect=360896"
+          }
+        ]
+      }
+    }
+  },
+  "ff:wolfenbuettel-stiftung": {
+    "id": "ff:wolfenbuettel-stiftung",
+    "status": "beta",
+    "category": "social_benefit",
+    "title": {
+      "de": "Wolfenbüttel-Stiftung",
+      "en": "Wolfenbüttel Foundation"
+    },
+    "description": {
+      "de": "Die Wolfenbüttel-Stiftung unterstützt bedürftige Kinder, hilfsbedürftige ältere Menschen sowie soziale Projekte in der Stadt Wolfenbüttel. Die Förderung erfolgt in der Regel als einmalige Zuwendung ohne Rechtsanspruch.",
+      "en": "The Wolfenbüttel Foundation supports needy children, elderly people in need, and social projects within the city of Wolfenbüttel. Funding is typically provided as a one-time grant without legal entitlement."
+    },
+    "application_process": {
+      "de": {
+        "title": "Der Antrag ist schriftlich bei der Stadt Wolfenbüttel zu stellen. Die Entscheidung über die Förderung trifft der Stiftungsvorstand.",
+        "links": [
+          {
+            "title": "Informationen und Online-Antrag",
+            "url": "https://www.wolfenbuettel.de/index.php?ModID=7&FID=2672.9007.1&object=tx%7C2672.9007.1"
+          }
+        ]
+      },
+      "en": {
+        "title": "Applications must be submitted in writing to the City of Wolfenbüttel. The foundation board decides on funding approval.",
+        "links": [
+          {
+            "title": "Information and Online Application",
+            "url": "https://www.wolfenbuettel.de/index.php?ModID=7&FID=2672.9007.1&object=tx%7C2672.9007.1"
+          }
+        ]
+      }
+    },
+    "required_documents": {
+      "de": [
+        "Vollständiger Name, Adresse und Telefonnummer für Rückfragen",
+        "Angabe der Bankverbindung",
+        "Nachweis der Bedürftigkeit",
+        "Begründung des Antrags",
+        "Zeitpunkt der benötigten Förderung (bei Projekten)",
+        "Genaue Angabe zur gewünschten Fördersumme"
+      ],
+      "en": [
+        "Full name, address and phone number for inquiries",
+        "Bank account details",
+        "Proof of financial need",
+        "Justification for the application",
+        "Requested date of funding (for projects)",
+        "Exact amount of requested funding"
+      ]
+    },
+    "funding_conditions": {
+      "de": {
+        "title": "Die Förderung erfolgt unter folgenden Bedingungen:",
+        "details": [
+          "Kein Rechtsanspruch auf Förderung",
+          "Mittel müssen zweckgebunden verwendet werden",
+          "Verwendungsnachweis muss innerhalb von 3 Monaten erbracht werden",
+          "Förderung ist einmalig und bevorzugt wechselnde Empfänger:innen"
+        ]
+      },
+      "en": {
+        "title": "Funding is subject to the following conditions:",
+        "details": [
+          "No legal entitlement to funding",
+          "Funds must be used according to the purpose stated",
+          "Proof of use must be provided within 3 months",
+          "Funding is one-time and prioritizes changing recipients"
+        ]
+      }
+    },
+    "further_information": {
+      "de": {
+        "title": "Weitere Informationen zur Stiftung:",
+        "links": [
+          {
+            "title": "Wolfenbüttel-Stiftung auf wolfenbuettel.de",
+            "url": "https://www.wolfenbuettel.de/index.php?ModID=7&FID=2672.9007.1&object=tx%7C2672.9007.1"
+          }
+        ]
+      },
+      "en": {
+        "title": "Further information about the foundation:",
+        "links": [
+          {
+            "title": "Wolfenbüttel Foundation on wolfenbuettel.de",
+            "url": "https://www.wolfenbuettel.de/index.php?ModID=7&FID=2672.9007.1&object=tx%7C2672.9007.1"
+          }
+        ]
+      }
+    }
+  },
+  "ff:ausbildungsgeld": {
+    "id": "ff:ausbildungsgeld",
+    "status": "beta",
+    "category": "social_benefit",
+    "title": {
+      "de": "Ausbildungsgeld",
+      "en": "Training Allowance"
+    },
+    "description": {
+      "de": "Menschen mit Behinderungen können zur Sicherung des Lebensunterhaltes Ausbildungsgeld erhalten, wenn sie an bestimmten Bildungsmaßnahmen teilnehmen. (Quelle: §§ 122 bis 126 SGB III)",
+      "en": "People with disabilities can receive a training allowance to cover their living expenses if they participate in specific educational programs. (Source: §§ 122 to 126 SGB III)"
+    },
+    "application_process": {
+      "de": {
+        "title": "Der Antrag für das Ausbildungsgeld ist bei der Bundesagentur für Arbeit zu stellen. Weitere Informationen finden Sie auf der Website der Bundesagentur.",
+        "links": [
+          {
+            "title": "Informationen zum Antragsverfahren bei der Bundesagentur für Arbeit",
+            "url": "https://www.arbeitsagentur.de/datei/erlaeuterung-ausbildungsgeld_ba047268.pdf"
+          }
+        ]
+      },
+      "en": {
+        "title": "The application for the Training Allowance must be submitted to the Federal Employment Agency. More information can be found on the agency's website.",
+        "links": [
+          {
+            "title": "Information on the application process at the Federal Employment Agency",
+            "url": "https://www.arbeitsagentur.de/datei/erlaeuterung-ausbildungsgeld_ba047268.pdf"
+          }
+        ]
+      }
+    },
+    "legal_basis": {
+      "de": {
+        "title": "Rechtsgrundlage des Ausbildungsgeldes:",
+        "links": [
+          {
+            "title": "§§ 122 bis 126 SGB III",
+            "url": "https://www.gesetze-im-internet.de/sgb_3/__122.html"
+          }
+        ]
+      },
+      "en": {
+        "title": "Legal basis of the Training Allowance:",
+        "links": [
+          {
+            "title": "§§ 122 to 126 SGB III",
+            "url": "https://www.gesetze-im-internet.de/sgb_3/__122.html"
+          }
+        ]
+      }
+    },
+    "further_information": {
+      "de": {
+        "title": "Weitere Informationen zum Ausbildungsgeld:",
+        "links": [
+          {
+            "title": "Weitere Informationen auf betanet.de",
+            "url": "https://www.betanet.de/behinderung-ausbildungsgeld.html"
+          }
+        ]
+      },
+      "en": {
+        "title": "Further information about the Training Allowance:",
+        "links": [
+          {
+            "title": "More information on betanet.de",
+            "url": "https://www.betanet.de/behinderung-ausbildungsgeld.html"
+          }
+        ]
+      }
+    }
+  },
+  "ff:wolfenbuettel-gastronomische-aussenmoeblierung": {
+    "id": "ff:wolfenbuettel-gastronomische-aussenmoeblierung",
+    "status": "beta",
+    "category": "business",
+    "title": {
+      "de": "Förderung gastronomischer Außenmöblierung in Wolfenbüttel",
+      "en": "Funding for Gastronomic Outdoor Furniture in Wolfenbüttel"
+    },
+    "description": {
+      "de": "Die Förderung gastronomischer Außenmöblierung unterstützt Betriebe in Wolfenbüttel bei der Anschaffung von wetterfesten und nachhaltigen Außenmöbeln für den gastronomischen Bereich.",
+      "en": "The funding for gastronomic outdoor furniture supports businesses in Wolfenbüttel in acquiring weather-resistant and sustainable outdoor furniture for gastronomy."
+    },
+    "application_process": {
+      "de": {
+        "title": "Der Antrag ist an das Büro der Bürgermeister:in oder die Wirtschaftsförderung der Stadt Wolfenbüttel zu richten. Es wird empfohlen im Vorfeld einer Bewerbung Kontakt mit der Stadtverwaltung aufzunehmen.",
+        "links": [
+          {
+            "title": "E-Mail-Adress der Wirtschaftsförderung",
+            "url": "mailto:wirtschaftsfoerderung@wolfenbuettel.de."
+          }
+        ]
+      },
+      "en": {
+        "title": "Applications should be addressed to the office of the mayor or the economic development department of the City of Wolfenbüttel. It is recommended to contact the city administration before applying.",
+        "links": [
+          {
+            "title": "Email address of the Economic Development Department",
+            "url": "mailto:wirtschaftsfoerderung@wolfenbuettel.de."
+          }
+        ]
+      }
+    },
+    "funding_conditions": {
+      "de": {
+        "title": "Die Förderung beinhaltet die folgenden Möglichkeiten:",
+        "details": [
+          "Der Höchstbetrag einer Förderung beträgt je Betrieb 5.000,00 €",
+          "Die Höchstquote für die Förderung von Investitionsmaßnahmen beträgt maximal 50% der nachweisbaren, förderfähigen Ausgaben des Zuwendungsempfängers.",
+          "Die Förderung wird als nicht rückzahlbarer Zuschuss der Stadt Wolfenbüttel im Rahmen einer einmaligen Anteilsfinanzierung gewährt.",
+          "Die Zweckbindung der Förderung beträgt 2 Jahre"
+        ]
+      },
+      "en": {
+        "title": "Funding is subject to the following conditions:",
+        "details": [
+          "The maximum amount of funding per business is €5,000.00",
+          "The maximum funding rate for investment measures is 50% of the verifiable eligible expenses of the grant recipient.",
+          "Funding is provided as a non-repayable grant from the City of Wolfenbüttel as part of a one-time co-financing.",
+          "The funding is tied to its purpose for 2 years."
+        ]
+      }
+    },
+    "examples": {
+      "de": {
+        "title": "Folgende Beispiele veranschaulichen die Fördermöglichkeiten:",
+        "examples": [
+          {
+            "title": "Anschaffung wetterfester Außenmöbel für ein Café",
+            "text": "Ein Café in der Innenstadt beantragt eine Förderung für die Anschaffung neuer wetterfester und nachhaltiger Außenmöbel im Wert von 10.000 €. Durch die Förderung der gastronomischen Außenmöblierung werden 5.000 € der Investitionskosten bezuschusst."
+          },
+          {
+            "title": "Erweiterung der Außenbestuhlung für ein Restaurant",
+            "text": "Ein Restaurant in Wolfenbüttel möchte seine Außenbestuhlung vergrößern. Für die wetterfesten Stühle und Tische entstehen Kosten von 15.000 €. Die Förderung deckt davon 5.000 €, da alle Kriterien erfüllt werden."
+          }
+        ]
+      },
+      "en": {
+        "title": "The following examples illustrate the funding possibilities:",
+        "examples": [
+          {
+            "title": "Acquisition of weatherproof outdoor furniture for a café",
+            "text": "A café in the city center applies for funding to acquire new weatherproof and sustainable outdoor furniture worth €10,000. Through the funding for gastronomic outdoor furniture, €5,000 of the investment costs are subsidized."
+          },
+          {
+            "title": "Expansion of outdoor seating for a restaurant",
+            "text": "A restaurant in Wolfenbüttel wants to expand its outdoor seating area. For the weatherproof chairs and tables, costs of €15,000 arise. The funding covers €7,500 of it, as all criteria are met."
+          }
+        ]
+      }
+    },
+    "further_information": {
+      "de": {
+        "title": "Weitere Informationen zur Förderung finden Sie in der Satzung:",
+        "links": [
+          {
+            "title": "Satzung zur Förderung der gastronomischen Außenmöblierung",
+            "url": "https://www.wolfenbuettel.de/loadDocument.phtml?FID=3413.8485.1&Ext=PDF"
+          }
+        ]
+      },
+      "en": {
+        "title": "Further information on the funding can be found in the statute:",
+        "links": [
+          {
+            "title": "Statute for the Promotion of Gastronomic Outdoor Furniture",
+            "url": "https://www.wolfenbuettel.de/loadDocument.phtml?FID=3413.8485.1&Ext=PDF"
+          }
+        ]
+      }
+    }
+  },
+  "ff:wolfenbuettel-ansiedlung": {
+    "id": "ff:wolfenbuettel-ansiedlung",
+    "status": "beta",
+    "category": "business",
+    "title": {
+      "de": "Förderung der Ansiedlung von Einzelhandelsunternehmen und Gastronomiebetrieben in Wolfenbüttel",
+      "en": "Funding for the Establishment of Retail and Gastronomy Businesses in Wolfenbüttel"
+    },
+    "description": {
+      "de": "Die Stadt Wolfenbüttel unterstützt die Ansiedlung von Einzelhandelsunternehmen und Gastronomiebetrieben in der Innenstadt mit finanziellen Zuschüssen zur Existenzgründung, Modernisierung oder Erweiterung.",
+      "en": "The city of Wolfenbüttel supports the establishment of retail and gastronomy businesses in the city center with financial grants for business start-ups, modernization, or expansion."
+    },
+    "application_process": {
+      "de": {
+        "title": "Der Antrag ist bei der Wirtschaftsförderung der Stadt Wolfenbüttel zu stellen. Es wird empfohlen, vor der Antragsstellung eine Beratung bei der Wirtschaftsförderung in Anspruch zu nehmen.",
+        "links": [
+          {
+            "title": "E-Mail-Adresse der Wirtschaftsförderung",
+            "url": "mailto:wirtschaftsfoerderung@wolfenbuettel.de"
+          }
+        ]
+      },
+      "en": {
+        "title": "Applications must be submitted to the Economic Development Office of the City of Wolfenbüttel. It is recommended to seek advice from the Economic Development Office before applying.",
+        "links": [
+          {
+            "title": "Email address of the Economic Development Office",
+            "url": "mailto:wirtschaftsfoerderung@wolfenbuettel.de"
+          }
+        ]
+      }
+    },
+    "funding_conditions": {
+      "de": {
+        "title": "Die Förderung beinhaltet die folgenden Möglichkeiten:",
+        "details": [
+          "Die Förderung kann bis zu 25% der nachweisbaren Investitionskosten abdecken",
+          "Der Höchstbetrag der Förderung beträgt 10.000,00 €",
+          "Gefördert werden Existenzgründungen, Existenzsicherung, Modernisierung und Ausbau im Einzelhandel und der Gastronomie",
+          "Der Standort muss in der Fußgängerzone oder der inneren Okerumflut liegen",
+          "Die Zweckbindung der Förderung beträgt 3 Jahre",
+          "Eine regelmäßige Erfolgskontrolle durch die Stadt Wolfenbüttel ist verpflichtend"
+        ]
+      },
+      "en": {
+        "title": "Funding is subject to the following conditions:",
+        "details": [
+          "Funding can cover up to 25% of verifiable investment costs",
+          "The maximum amount of funding is €10,000.00",
+          "Funding is available for business start-ups, business stabilization, modernization, and expansion in retail and gastronomy",
+          "The business must be located in the pedestrian zone or the inner Okerumflut",
+          "The funding is tied to its purpose for 3 years",
+          "Regular performance monitoring by the City of Wolfenbüttel is required"
+        ]
+      }
+    },
+    "examples": {
+      "de": {
+        "title": "Folgende Beispiele veranschaulichen die Fördermöglichkeiten:",
+        "examples": [
+          {
+            "title": "Modernisierung eines Einzelhandelsgeschäfts in der Fußgängerzone",
+            "text": "Ein Modegeschäft in der Fußgängerzone möchte seine Ladenfläche modernisieren. Die geplanten Investitionskosten betragen 20.000 €. Durch das Ansiedlungsprogramm wird ein Viertel der Kosten, also 5.000 €, bezuschusst."
+          },
+          {
+            "title": "Neueröffnung eines Cafés in der inneren Okerumflut",
+            "text": "Ein neues Café plant die Eröffnung in der inneren Okerumflut. Für Einrichtung und Ausstattung fallen Kosten von 10.000 € an. Die Förderung deckt davon 2.500 € ab, da alle Kriterien erfüllt werden."
+          }
+        ]
+      },
+      "en": {
+        "title": "The following examples illustrate the funding possibilities:",
+        "examples": [
+          {
+            "title": "Modernization of a retail store in the pedestrian zone",
+            "text": "A fashion store in the pedestrian zone wants to modernize its retail space. The planned investment costs amount to €20,000. The establishment program subsidizes a quarter of the costs, i.e., €5,000."
+          },
+          {
+            "title": "Opening of a new café in the inner Okerumflut",
+            "text": "A new café plans to open in the inner Okerumflut. The costs for furnishing and equipment amount to €10,000. The funding covers €2,500 of this, as all criteria are met."
+          }
+        ]
+      }
+    },
+    "further_information": {
+      "de": {
+        "title": "Weitere Informationen zur Förderung finden Sie in der Satzung:",
+        "links": [
+          {
+            "title": "Satzung zur Förderung der Einzelhandels- und Gastronomiebetriebe",
+            "url": "https://www.wolfenbuettel.de/loadDocument.phtml?FID=2093.1241.1&Ext=PDF"
+          }
+        ]
+      },
+      "en": {
+        "title": "Further information on the funding can be found in the statute:",
+        "links": [
+          {
+            "title": "Statute for the Promotion of Retail and Gastronomy Businesses",
+            "url": "https://www.wolfenbuettel.de/loadDocument.phtml?FID=2093.1241.1&Ext=PDF"
+          }
+        ]
+      }
+    }
+  },
+  "ff:uebergangsgeld": {
+    "id": "ff:uebergangsgeld",
+    "status": "beta",
+    "category": "social_benefit",
+    "title": {
+      "de": "Übergangsgeld - Bundesagentur für Arbeit",
+      "en": "Transitional Allowance - Federal Employment Agency"
+    },
+    "description": {
+      "de": "Das Übergangsgeld dient zur Sicherung des Lebensunterhalts während einer Maßnahme zur beruflichen Rehabilitation und wird von der Bundesagentur für Arbeit gewährt.",
+      "en": "The transitional allowance supports livelihood during vocational rehabilitation measures and is provided by the Federal Employment Agency."
+    },
+    "application_process": {
+      "de": {
+        "title": "Vereinbaren Sie einen Termin bei Ihrer Agentur für Arbeit. In diesem Beratungsgespräch klären Sie gemeinsam mit Ihrer Berater:in Ihre Voraussetzungen und die passenden Maßnahmen. Anschließend erhalten Sie die nötigen Formulare und Hinweise zu erforderlichen Nachweisen – diese können Sie auch online ausfüllen und hochladen. Abschließend erhalten Sie einen schriftlichen Bescheid über die Bewilligung.",
+        "links": [
+          {
+            "title": "Dienststellensuche",
+            "url": "https://web.arbeitsagentur.de/portal/metasuche/suche/dienststellen"
+          }
+        ]
+      },
+      "en": {
+        "title": "First, schedule an appointment with your local Employment Agency. In this consultation, you will discuss your eligibility and suitable rehabilitation measures with your advisor. You will then receive the necessary forms and information on required documents, which can also be filled out and uploaded online. Finally, you will receive a written notice of approval.",
+        "links": [
+          {
+            "title": "Office finder",
+            "url": "https://web.arbeitsagentur.de/portal/metasuche/suche/dienststellen"
+          }
+        ]
+      }
+    },
+    "funding_conditions": {
+      "de": {
+        "title": "Der Leistungsumfang umfasst:",
+        "details": [
+          "Übergangsgeld als Lohnersatzleistung: in der Regel ca. 68 % Ihres letzten Nettogehalts (bzw. ca. 75 % bei Kindergeldberechtigung).",
+          "Übernahme der Sozialversicherungsbeiträge (Kranken-, Pflege-, Renten-, Arbeitslosen- und Unfallversicherung) während der Maßnahme.",
+          "Monatliche Zahlung nachträglich für die gesamte Dauer der Reha-Maßnahme.",
+          "Weiterzahlung bei krankheitsbedingter Unterbrechung bis zu 6 Wochen oder bei anerkannten wichtigen Gründen (z. B. Geburt, Umzug)."
+        ]
+      },
+      "en": {
+        "title": "The support package includes:",
+        "details": [
+          "Wage replacement benefit: typically about 68% of your last net income (or about 75% if you have a child eligible for child benefit).",
+          "Coverage of social insurance contributions (health, nursing care, pension, unemployment, and accident) during the program.",
+          "Monthly payments in arrears for the entire duration of the rehabilitation measure.",
+          "Continued payments for up to 6 weeks if you must interrupt for health reasons, or longer for other approved important reasons (e.g., childbirth, relocation)."
+        ]
+      }
+    },
+    "legal_basis": {
+      "de": {
+        "title": "Die gesetzlichen Grundlagen für das Übergangsgeld finden sich in folgenden Vorschriften:",
+        "links": [
+          {
+            "title": "§ 66 SGB IX – Zuständigkeit der Rehabilitationsträger",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__66.html"
+          },
+          {
+            "title": "§ 67 SGB IX – Berechnung des Regelentgelts",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__67.html"
+          },
+          {
+            "title": "§ 68 SGB IX – Berechnungsgrundlage in Sonderfällen",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__68.html"
+          },
+          {
+            "title": "§ 69 SGB IX – Kontinuität der Bemessungsgrundlage",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__69.html"
+          },
+          {
+            "title": "§ 70 SGB IX – Anpassung der Entgeltersatzleistungen",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__70.html"
+          },
+          {
+            "title": "§ 71 SGB IX – Weiterzahlung der Leistungen",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__71.html"
+          },
+          {
+            "title": "§ 72 SGB IX – Einkommensanrechnung",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__72.html"
+          },
+          {
+            "title": "§ 118 SGB III – Übergangsgeld als besondere Leistung der Arbeitsförderung",
+            "url": "https://www.gesetze-im-internet.de/sgb_3/__118.html"
+          },
+          {
+            "title": "§ 119 SGB III – Vermittlungsziel und Rehabilitationsmaßnahmen",
+            "url": "https://www.gesetze-im-internet.de/sgb_3/__119.html"
+          },
+          {
+            "title": "§ 120 SGB III – Vorbeschäftigungszeit für das Übergangsgeld",
+            "url": "https://www.gesetze-im-internet.de/sgb_3/__120.html"
+          },
+          {
+            "title": "§ 121 SGB III – Besondere Formen der Förderung",
+            "url": "https://www.gesetze-im-internet.de/sgb_3/__121.html"
+          }
+        ]
+      },
+      "en": {
+        "title": "The legal bases for transitional allowance are set out in the following provisions:",
+        "links": [
+          {
+            "title": "Section 66 SGB IX – Responsibility of rehabilitation providers",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__66.html"
+          },
+          {
+            "title": "Section 67 SGB IX – Calculation of the standard benefit",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__67.html"
+          },
+          {
+            "title": "Section 68 SGB IX – Calculation basis in special cases",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__68.html"
+          },
+          {
+            "title": "Section 69 SGB IX – Continuity of the calculation basis",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__69.html"
+          },
+          {
+            "title": "Section 70 SGB IX – Adjustment of wage replacement benefits",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__70.html"
+          },
+          {
+            "title": "Section 71 SGB IX – Continuation of payments",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__71.html"
+          },
+          {
+            "title": "Section 72 SGB IX – Income offsetting",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__72.html"
+          },
+          {
+            "title": "Section 118 SGB III – Transitional allowance as a special labour-promotion benefit",
+            "url": "https://www.gesetze-im-internet.de/sgb_3/__118.html"
+          },
+          {
+            "title": "Section 119 SGB III – Placement objective and rehabilitation measures",
+            "url": "https://www.gesetze-im-internet.de/sgb_3/__119.html"
+          },
+          {
+            "title": "Section 120 SGB III – Prior employment period for transitional allowance",
+            "url": "https://www.gesetze-im-internet.de/sgb_3/__120.html"
+          },
+          {
+            "title": "Section 121 SGB III – Special forms of support",
+            "url": "https://www.gesetze-im-internet.de/sgb_3/__121.html"
+          }
+        ]
+      }
+    },
+    "examples": {
+      "de": {
+        "title": "Beispielhafte Szenarien für eine Förderung:",
+        "examples": [
+          {
+            "title": "Teilzeitmaßnahme in einer beruflichen Reha-Einrichtung",
+            "text": "Ein Rehabilitand mit Behinderung hatte zuletzt ein Netto-Einkommen von 1.800 € pro Monat. Im Rahmen einer Teilzeitmaßnahme (50 % Arbeitszeit) erhält er Übergangsgeld in Höhe von ca. 1.224 € monatlich (68 % des letzten Nettoeinkommens). Bei Kindergeldberechtigung steigt dieser Betrag auf etwa 1.350 € (75 %). Diese Beträge dienen nur zur Veranschaulichung; die tatsächliche Höhe wird individuell berechnet."
+          },
+          {
+            "title": "Berufsrückkehr nach Familienpflege",
+            "text": "Eine Berufsrückkehrerin mit Behinderung beginnt eine einjährige berufliche Weiterbildung. Da sie innerhalb der letzten 12 Monate vor Maßnahmebeginn einen anerkannten Berufsabschluss erworben hat, entfällt die Vorbeschäftigungszeit. Bei einem letzten Nettogehalt von 2.000 € würde sie rund 1.360 € (68 %) bzw. 1.500 € (75 % mit Kind) Übergangsgeld erhalten. Illustrative Werte, tatsächliche Ansprüche können abweichen."
+          }
+        ]
+      },
+      "en": {
+        "title": "Example scenarios for funding:",
+        "examples": [
+          {
+            "title": "Part-time measure at a vocational rehabilitation facility",
+            "text": "A person with a disability previously earned a net salary of €1,800 per month. During a part-time program (50% working hours), they might receive about €1,224 per month as transitional allowance (68% of last net income). With an eligible child, this could increase to around €1,350 (75%). Figures are illustrative; actual amounts vary."
+          },
+          {
+            "title": "Return to work after caregiving",
+            "text": "A returning professional with a disability enrolls in a one-year training course. Having completed a recognized vocational qualification within the last 12 months, the prior-employment requirement is waived. On a last net salary of €2,000, they would receive approximately €1,360 (68%) or €1,500 (75% with a child). For illustration only; individual calculations apply."
+          }
+        ]
+      }
+    }
+  },
+  "ff:kurzzeitige-arbeitsverhinderung": {
+    "id": "ff:kurzzeitige-arbeitsverhinderung",
+    "status": "beta",
+    "category": "social_benefit",
+    "title": {
+      "de": "Kurzzeitige Arbeitsverhinderung für akute Pflege",
+      "en": "Short-Term Work Interruption for Acute Care"
+    },
+    "description": {
+      "de": "In einer unerwartet eintretenden Pflegesituation können Beschäftigte bis zu zehn Arbeitstage der Arbeit fernbleiben, um für einen pflegebedürftigen nahen Angehörigen die Versorgung zu organisieren oder selbst sicherzustellen. Die Freistellung ist grundsätzlich unbezahlt; zur Einkommenssicherung kann Pflegeunterstützungsgeld beantragt werden.",
+      "en": "When an unexpected need for care arises, employees may take up to ten working days off to organise or provide care for a dependent close relative. The leave is generally unpaid; a care support allowance can be claimed to compensate lost earnings."
+    },
+    "application_process": {
+      "de": {
+        "title": "Grundsätzlich gibt es keinen formellen Antrag, um die kurzzeitige Pflegezeit zu beantragen. Beschäftigte müssen jedoch ihren Arbeitgeber unverzüglich über die Inanspruchnahme informieren und die Gründe darlegen. Unter Umständen ist ein ärztliches Attest erforderlich, um die Notwendigkeit der Pflege zu belegen.",
+        "links": [
+          {
+            "title": "Informationen & Online-Leitfaden „Hilfe in akuten Pflegesituationen“",
+            "url": "https://www.wege-zur-pflege.de/wege-zur-pflege/pflegende-angehoerige/hilfe-in-akuten-pflegesituationen"
+          },
+          {
+            "title": "Musterformular Ärztliche Bescheinigung",
+            "url": "https://www.wege-zur-pflege.de/resource/blob/252860/9a70cf71780ca2d7e0a4c891c93dd5de/aerztliche-bescheinigung-kurzzeitige-arbeitsverhinderung-data.pdf"
+          }
+        ]
+      },
+      "en": {
+        "title": "There is generally no formal application to request short-term care leave. However, employees must promptly inform their employer about the need for leave and provide reasons. In some cases, a medical certificate may be required to substantiate the need for care.",
+        "links": [
+          {
+            "title": "Information & Online Guide 'Help in Acute Care Situations'",
+            "url": "https://www.wege-zur-pflege.de/wege-zur-pflege/pflegende-angehoerige/hilfe-in-akuten-pflegesituationen"
+          },
+          {
+            "title": "Sample Form Medical Certificate",
+            "url": "https://www.wege-zur-pflege.de/resource/blob/252860/9a70cf71780ca2d7e0a4c891c93dd5de/aerztliche-bescheinigung-kurzzeitige-arbeitsverhinderung-data.pdf"
+          }
+        ]
+      }
+    },
+    "funding_conditions": {
+      "de": {
+        "title": "Leistungsumfang & Voraussetzungen:",
+        "details": [
+          "Freistellung bis zu 10 Arbeitstage pro akuter Pflegesituation (§ 2 Abs. 1 PflegeZG).",
+          "Keine Ankündigungsfrist; Verhinderung und Dauer müssen dem Arbeitgeber unverzüglich mitgeteilt werden.",
+          "Auf Verlangen Vorlage einer ärztlichen Bescheinigung, die Pflegebedürftigkeit (mind. Pflegegrad 1) und Erforderlichkeit bestätigt.",
+          "Geltung für alle Arbeitgebergrößen; während der Freistellung besteht besonderer Kündigungsschutz.",
+          "Pflegeunterstützungsgeld: 90 % des ausgefallenen Nettoarbeitsentgelts, 100 % bei beitragspflichtigen Einmalzahlungen (max. 70 % der BBG); Anspruch nur bei fehlender Entgeltfortzahlung.",
+          "Anspruch pro pflegebedürftiger Person kalenderjährlich auf 10 Arbeitstage begrenzt; Angehörige können Tage aufteilen.",
+          "Nutzung auch für im Ausland lebende Angehörige möglich, sofern diese in der deutschen Pflegeversicherung versichert sind."
+        ]
+      },
+      "en": {
+        "title": "Scope & requirements:",
+        "details": [
+          "Leave of up to 10 working days per acute care event (Sec. 2 (1) Care Leave Act).",
+          "No notice period; employee must inform the employer immediately about absence and expected duration.",
+          "Medical certificate (need for care of at least Care Level 1 and necessity of employee’s involvement) on request.",
+          "Applies to employers of any size; special protection against dismissal during leave.",
+          "Care support allowance: 90 % of lost net pay, or 100 % if subject to recent lump-sum earnings (capped at 70 % of the contribution assessment ceiling); payable only if no wage continuation is due.",
+          "Entitlement limited to 10 working days per care recipient per calendar year; family members may share the days.",
+          "Can be used for relatives abroad if they are insured in the German long-term-care scheme."
+        ]
+      }
+    },
+    "legal_basis": {
+      "de": {
+        "title": "Gesetzliche Grundlagen:",
+        "links": [
+          {
+            "title": "§ 2 Pflegezeitgesetz – Kurzzeitige Arbeitsverhinderung",
+            "url": "https://www.gesetze-im-internet.de/pflegezg/__2.html"
+          },
+          {
+            "title": "§ 44a Abs. 3 SGB XI – Pflegeunterstützungsgeld",
+            "url": "https://www.gesetze-im-internet.de/sgb_11/__44a.html"
+          }
+        ]
+      },
+      "en": {
+        "title": "Legal basis:",
+        "links": [
+          {
+            "title": "Section 2 Care Leave Act (German)",
+            "url": "https://www.gesetze-im-internet.de/pflegezg/__2.html"
+          },
+          {
+            "title": "Section 44a (3) SGB XI – Care support allowance (German)",
+            "url": "https://www.gesetze-im-internet.de/sgb_11/__44a.html"
+          }
+        ]
+      }
+    },
+    "examples": {
+      "de": {
+        "title": "Beispielszenarien:",
+        "examples": [
+          {
+            "title": "Hüftbruch der Mutter",
+            "text": "Nach dem Oberschenkelhalsbruch seiner Mutter beantragt ein Angestellter sieben Arbeitstage, um Reha-Platz und häusliche Pflege zu organisieren; er erhält Pflegeunterstützungsgeld von der Pflegekasse."
+          },
+          {
+            "title": "Pflege im Ausland",
+            "text": "Eine Arbeitnehmerin reist kurzfristig nach Spanien, um ihren dort lebenden Vater (bei deutscher Pflegekasse versichert) nach einem Schlaganfall zu versorgen; sie nutzt fünf Tage Kurzzeitige Arbeitsverhinderung und Pflegeunterstützungsgeld."
+          }
+        ]
+      },
+      "en": {
+        "title": "Example scenarios:",
+        "examples": [
+          {
+            "title": "Mother’s hip fracture",
+            "text": "After his mother’s hip fracture, an employee takes seven working days to arrange rehabilitation and home care; the health-insurance fund pays care support allowance."
+          },
+          {
+            "title": "Care abroad",
+            "text": "An employee travels to Spain to organise care for her father (insured in the German care system) after a stroke; she claims five days of short-term care leave and the allowance."
+          }
+        ]
+      }
+    }
+  }
+}
