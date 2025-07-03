@@ -13,6 +13,7 @@ const FeedbackBox = ({ isDesktop }) => {
     const {
         feedbackText,
         setFeedbackText,
+        success,
         error,
         submitFeedback,
     } = useFeedbackHandler();
@@ -20,7 +21,7 @@ const FeedbackBox = ({ isDesktop }) => {
     return (
         <VBox
             sx={{
-                gap: theme.spacing(8),
+                gap: 4,
                 width: '100%',
                 border: isDesktop ? `1px solid ${theme.palette.black.light}` : null,
                 borderRadius: theme.shape.borderRadius,
@@ -29,7 +30,7 @@ const FeedbackBox = ({ isDesktop }) => {
             }}>
             <VBox sx={{
                 alignItems: isDesktop ? 'flex-start' : 'flex-end',
-                gap: theme.spacing(4),
+                gap: 4,
             }}>
                 <Typography variant="h4" sx={{ fontWeight: 400 }}>
                     {t('home.feedback.writePrompt')}
@@ -56,9 +57,14 @@ const FeedbackBox = ({ isDesktop }) => {
                     onClick={submitFeedback}  
                 />
             </VBox>
+            {(success) && (
+                <Typography color="success.main">
+                    {t('home.feedback.successMessage')}
+                </Typography>
+            )}
             {error && (
                 <Typography color="error">
-                    {error}  {/* Error message displayed here */}
+                    {error}
                 </Typography>
             )}
             <HBox sx={{
@@ -75,7 +81,7 @@ const FeedbackBox = ({ isDesktop }) => {
                 <HBox sx={{ flex: 2, alignItems: "center", justifyContent: "flex-end" }}>
                     <EmailIcon />
                     <Link href={`mailto:info@foerderfunke.org`}
-                        sx={{ textDecoration: 'underline', color: theme.palette.black.main }}>
+                        sx={{ textDecoration: 'underline', color: 'black.main' }}>
                         info@foerderfunke.org
                     </Link>
                 </HBox>

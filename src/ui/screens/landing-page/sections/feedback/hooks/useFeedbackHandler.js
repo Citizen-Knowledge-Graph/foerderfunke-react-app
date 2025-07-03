@@ -2,15 +2,12 @@ import { useState } from "react";
 
 const useFeedbackHandler = () => {
     const [feedbackText, setFeedbackText] = useState("");
-    const [feedbackValue, setFeedbackValue] = useState(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [success, setSuccess] = useState(false);
     const [error, setError] = useState(null);
 
     const submitFeedback = async () => {
-        const body = {
-            feedback_value: feedbackValue,
-            feedback_text: feedbackText,
-        };
+        const body = { feedback_text: feedbackText };
 
         try {
             setIsSubmitting(true);
@@ -25,13 +22,11 @@ const useFeedbackHandler = () => {
                 body: JSON.stringify(body),
             });
 
-            // Check if response status is not 200
             if (response.status !== 200) {
                 throw new Error(`Request failed with status ${response.status}`);
             }
 
-            const result = await response.json();
-            console.log("Response:", result);
+            setSuccess(true);
         } catch (err) {
             console.error("Error sending feedback:", err);
             setError("Failed to submit feedback: " + err.message);
@@ -43,8 +38,8 @@ const useFeedbackHandler = () => {
     return {
         feedbackText,
         setFeedbackText,
-        setFeedbackValue,
         isSubmitting,
+        success,
         error,
         submitFeedback,
     };

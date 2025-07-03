@@ -64,7 +64,8 @@ const translations = {
                 placeholder: "Enter your text",
                 submitting: "Submitting...",
                 submitBtn: "Submit",
-                messagePrompt: "Or send us an email. We will get back to you as quickly as we can!"
+                messagePrompt: "Or send us an email. We will get back to you as quickly as we can!",
+                successMessage: "Thank you for your feedback!",
             },
             principles: {
                 header: "And this is how it works",
@@ -360,7 +361,8 @@ const translations = {
                 placeholder: "Gib deinen Text ein",
                 submitting: "Wird gesendet...",
                 submitBtn: "Absenden",
-                messagePrompt: "Oder schick uns eine Nachricht. Wir melden uns so schnell wie möglich zurück!"
+                messagePrompt: "Oder schick uns eine Nachricht. Wir melden uns so schnell wie möglich zurück!",
+                successMessage: "Vielen Dank für dein Feedback!",
             },
             principles: {
                 header: "Und so funktioniert's",
