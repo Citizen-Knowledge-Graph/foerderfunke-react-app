@@ -45,50 +45,19 @@ const EligibilityOverviewItem = ({ t, item, eligible }) => {
                     }}
                 >
                     <VBox sx={{ gap: 2 }}>
-                        <Typography variant='h2' sx={{ color: color, fontWeight: '400', wordBreak: 'break-word' }}>
-                            {item.title}
-                        </Typography>
-                        {item.status === "beta" && (
-                            <Typography variant='body1' sx={{ color: 'blue.main' }}>
-                                Beta
+                        <HBox sx={{ alignItems: 'flex-end', gap: 2, flexWrap: 'wrap' }}>
+                            <Typography variant='h2' sx={{ color: color, fontWeight: '400', wordBreak: 'break-word' }}>
+                                {item.title}
                             </Typography>
-                        )}
-                        <Typography variant="body1">
+                            {item.status === "beta" && (
+                                <Typography variant='body1' sx={{ color: 'blue.main' }}>
+                                    Beta
+                                </Typography>
+                            )}
+                        </HBox>
+                        <Typography variant="body1" sx={{ wordBreak: 'break-word' }}>
                             {item.description}
                         </Typography>
-                    </VBox>
-                </HBox>
-                <HBox sx={{
-                    flex: '1 1 auto',
-                    gap: 2,
-                    flexWrap: 'wrap',
-                    justifyContent: 'flex-end'
-                }}>
-                    <VBox
-                        sx={{ alignItems: 'flex-end', gap: 1, flexWrap: 'wrap' }}
-                    >
-                        {eligible === 'indeterminate' &&
-                            <HBox>
-                                <RegularButton
-                                    variant={'pinkContained'}
-                                    onClick={() => {
-                                        clearSelectedTopics()
-                                        setSelectedBenefit(item.id);
-                                    }}
-                                    text={'app.browseAll.checkElBtn'}
-                                    link={`/onboarding-welcome/${item.id}`}
-                                    size='small'
-                                />
-                            </HBox>
-                        }
-                        <HBox>
-                            <RegularButton
-                                variant={'blueHollow'}
-                                text={'app.browseAll.learnMoreBtn'}
-                                link={`/benefit-page/${item.id}`}
-                                size='small'
-                            />
-                        </HBox>
                     </VBox>
                 </HBox>
             </HBox>
@@ -104,16 +73,37 @@ const EligibilityOverviewItem = ({ t, item, eligible }) => {
                         )
                         )}
                 </HBox>
-                {
-                    eligible !== 'indeterminate' && (
-                        <>
-                            <Divider sx={{ color: 'dark.light', borderStyle: 'dashed' }} />
+                <Divider sx={{ color: 'dark.light', borderStyle: 'dashed' }} />
+                <HBox sx={{ flexWrap: 'wrap', gap: 2, alignItems: 'center' }}>
+                    {
+                        eligible !== 'indeterminate' && (
                             <HBox>
                                 <EligibilityOverviewBanner t={t} eligible={eligible} />
                             </HBox>
-                        </>
-                    )
-                }
+                        )
+                    }
+                    {eligible === 'indeterminate' &&
+
+                        <RegularButton
+                            variant={'pinkContained'}
+                            onClick={() => {
+                                clearSelectedTopics()
+                                setSelectedBenefit(item.id);
+                            }}
+                            text={'app.browseAll.checkElBtn'}
+                            link={`/onboarding-welcome/${item.id}`}
+                            size='small'
+                        />
+
+                    }
+                    <RegularButton
+                        variant={'blueHollow'}
+                        text={'app.browseAll.learnMoreBtn'}
+                        link={`/benefit-page/${item.id}`}
+                        size='small'
+                    />
+                </HBox>
+
             </VBox>
         </VBox>
     );

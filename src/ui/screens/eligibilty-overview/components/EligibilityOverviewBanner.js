@@ -33,8 +33,9 @@ const EligibilityOverviewBanner = ({ t, eligible }) => {
     return (
         <HBox sx={{
             backgroundColor: eligibilityBannerType.backgroundColor,
-            padding: '6px 10px',
+            padding: "8px 12px",
             borderRadius: theme.shape.borderRadius,
+            alignItems: 'center',
         }}>
             <Typography>{t(eligibilityBannerType.text)}</Typography>
         </HBox>
