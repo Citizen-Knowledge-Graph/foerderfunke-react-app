@@ -46,7 +46,7 @@ const EligibilityOverviewFilter = ({ t, filterOptions, filters, onChangeFilters 
                 borderRadius: theme.shape.borderRadius,
             }}
         >
-            <VBox sx={{ gap: 2 }}>
+            <HBox sx={{ gap: 4, alignItems: 'center', flexWrap: 'wrap', justifyContent: 'space-between' }}>
                 <Typography variant="h4" sx={{ color: 'blue.main', fontWeight: '400' }}>
                     {t('app.browseAll.filter.title')}
                 </Typography>
@@ -72,8 +72,7 @@ const EligibilityOverviewFilter = ({ t, filterOptions, filters, onChangeFilters 
                         </FormControl>
                     ))}
                 </HBox>
-            </VBox>
-
+            </HBox>
             {
                 Object.entries(groupedSelected).length > 0 && (
                     <HBox> {
