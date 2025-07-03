@@ -57,7 +57,7 @@ const FeedbackBox = ({ isDesktop }) => {
                     onClick={submitFeedback}  
                 />
             </VBox>
-            {(success) && (
+            {success && (
                 <Typography color="success.main">
                     {t('home.feedback.successMessage')}
                 </Typography>

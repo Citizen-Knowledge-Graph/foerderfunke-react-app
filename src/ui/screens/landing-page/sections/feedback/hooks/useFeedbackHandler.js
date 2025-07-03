@@ -13,7 +13,7 @@ const useFeedbackHandler = () => {
             setIsSubmitting(true);
             setError(null); // Clear previous errors
 
-            const response = await fetch("https://f6g96htf6f.execute-api.eu-north-1.amazonaws.com/staging/feedback-handler", {
+            const response = await fetch("https://igts6w8tsh.execute-api.eu-central-1.amazonaws.com/prod/feedback-handler", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
