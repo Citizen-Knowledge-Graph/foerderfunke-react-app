@@ -6,6 +6,7 @@ import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 import { useSelectedBenefitStore, useSelectedTopicsStore } from "@/ui/storage/zustand";
 import EligibilityOverviewTag from './EligibilityOverviewTag';
 import EligibilityOverviewBanner from './EligibilityOverviewBanner';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 const filterKeys = [
     'benefitCategories',
@@ -84,7 +85,7 @@ const EligibilityOverviewItem = ({ t, item, eligible }) => {
                     }
                     {eligible === 'indeterminate' &&
                         <RegularButton
-                            variant={'pinkContained'}
+                            variant={'blueHollow'}
                             onClick={() => {
                                 clearSelectedTopics()
                                 setSelectedBenefit(item.id);
@@ -92,14 +93,16 @@ const EligibilityOverviewItem = ({ t, item, eligible }) => {
                             text={'app.browseAll.checkElBtn'}
                             link={`/onboarding-welcome/${item.id}`}
                             size='small'
+                            endIcon={<ChevronRightIcon sx={{ fontSize: '16px' }} />}                
                         />
 
                     }
                     <RegularButton
-                        variant={'blueHollow'}
+                        variant={'blackOutlined'}
                         text={'app.browseAll.learnMoreBtn'}
                         link={`/benefit-page/${item.id}`}
                         size='small'
+                        endIcon={<ChevronRightIcon sx={{ fontSize: '16px' }} />}
                     />
                 </HBox>
             </VBox>

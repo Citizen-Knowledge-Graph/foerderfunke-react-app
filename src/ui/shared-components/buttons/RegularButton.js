@@ -26,6 +26,8 @@ const RegularButton = ({
   link = null,
   onClick = null,
   size = "medium",
+  startIcon = null,
+  endIcon = null
 }) => {
   const { t } = useTranslation();
   const chosenSizeStyles = sizeStyles[size] || sizeStyles.medium;
@@ -34,6 +36,8 @@ const RegularButton = ({
   return (
     <Button
       variant="contained"
+      startIcon={startIcon}
+      endIcon={endIcon}
       sx={{
         ...chosenSizeStyles,
         ...chosenVariantStyles,
