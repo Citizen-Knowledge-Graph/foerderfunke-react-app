@@ -45,6 +45,11 @@ const FeedbackBox = ({ isDesktop }) => {
                     InputProps={{
                         disableUnderline: true,
                     }}
+                    InputLabelProps={{
+                        style: {
+                          color: theme.palette.black.light,
+                        }
+                      }}
                     minRows={3}
                     style={{
                         overflow: 'auto',
