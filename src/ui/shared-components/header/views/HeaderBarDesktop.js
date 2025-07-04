@@ -49,6 +49,7 @@ const HeaderBarDesktop = ({ isApp }) => {
                             variant={'blackOutlined'} 
                             link='/user-routing' 
                         /> : null}
+                    <LandingPageHollowButtonDesktop isApp={isApp} text={t('home.menu.catalog')} to={'/eligibility-overview'} />
                     <LandingPageHollowButtonDesktop isApp={isApp} text={t('home.menu.improve')} to={'/#feedback'} />
                     <LandingPageHollowButtonDesktop isApp={isApp} text={t('home.menu.aboutUs')} to={"/#about-us"} />
                     <HBox alignItems="center" gap={1} sx={{ color: isApp ? 'white' : 'black' }}>

@@ -11,7 +11,8 @@ const translations = {
                 aboutUs: "Team",
                 improve: "Help us improve",
                 collaborate: "Collaborate",
-                activityLog: "Activity log"
+                activityLog: "Activity log",
+                catalog: "Catalog",
             },
             hero: {
                 headerShard1: "Discover ",
@@ -315,7 +316,8 @@ const translations = {
                 aboutUs: "Team",
                 improve: "Feedback",
                 collaborate: "Zusammenarbeit",
-                activityLog: "Aktivitäten"
+                activityLog: "Aktivitäten",
+                catalog: "Katalog",
             },
             hero: {
                 headerShard1: "Entdecke ",
