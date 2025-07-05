@@ -3,7 +3,8 @@ const defaultFlags = {
     newCollaborationSection: true,
     newLanguageToggle: true,
     newActivityLog: true,
-    showNearestCounselingCentre: false
+    showNearestCounselingCentre: false,
+    showMermaidRuleGraph: false,
 };
 
 const getFeatureFlag = (flag) => {
@@ -17,6 +18,7 @@ const featureFlags = {
     newLanguageToggle: getFeatureFlag('newLanguageToggle'),
     newActivityLog: getFeatureFlag('newActivityLog'),
     showNearestCounselingCentre: getFeatureFlag('showNearestCounselingCentre'),
+    showMermaidRuleGraph: getFeatureFlag('showMermaidRuleGraph'),
 };
 
 export const setFeatureFlag = (flag, value) => {

@@ -10,6 +10,8 @@ import BenefitPageExampleList from './components/BenefitPageExampleList';
 import BenefitPageHeader from "./components/BenefitPageHeader";
 import AppScreenWrapperContainer from '@/ui/shared-components/app-screen-wrapper/AppScreenWrapperContainer';
 import RecursiveRulesTable from './components/RecursiveRulesTable';
+import featureFlags from "@/featureFlags";
+import MermaidRulesGraph from "@/ui/screens/benefit-page/components/MermaidRulesGraph";
 
 const BenefitPageScreen = ({
     t,
@@ -78,6 +80,9 @@ const BenefitPageScreen = ({
                             )
                         }
                         <RecursiveRulesTable graphRoot={matchingGraph?.root} t={t} />
+                        {featureFlags.showMermaidRuleGraph &&
+                            <MermaidRulesGraph graphRoot={matchingGraph?.root} t={t} />
+                        }
                     </Box>
                 </VBox>
             </AppScreenWrapperContainer>
