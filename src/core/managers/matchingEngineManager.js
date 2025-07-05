@@ -95,7 +95,7 @@ const matchingEngineManager = {
         );
     },
 
-    async fetchDetailedMatchingReport(userId, requirementProfile, language = "en") {
+    async fetchEvaluationGraph(userId, requirementProfile, language = "en") {
         if (!this.matchingEngineInstance) {
             await this.initMatchingEngine(language);
         }
@@ -104,7 +104,7 @@ const matchingEngineManager = {
         const userProfileTurtle = await convertUserProfileToTurtle(userProfile);
         const expandedRp = expand(requirementProfile);
 
-        return this.matchingEngineInstance.detailedSingleRequirementProfileValidation(
+        return this.matchingEngineInstance.buildEvaluationGraph(
             userProfileTurtle,
             expandedRp
         );

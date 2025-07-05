@@ -3,9 +3,9 @@ import theme from '@/theme';
 import { VBox } from '@/ui/shared-components/LayoutBoxes';
 import { Typography } from "@mui/material";
 
-export default function MermaidRulesGraph({ graphRoot, t }) {
+export default function MermaidRulesGraph({ rootNodes, t }) {
     // const metadata = useMetadataStore(state => state.metadata);
-    // if (!graphRoot) return null;
+    // if (!rootNodes) return null;
 
     return (
         <VBox

@@ -24,7 +24,8 @@ const BenefitPageScreenContainer = () => {
         const fetchMatchingReport = async () => {
             if (id && activeUserId) {
                 try {
-                    const matchingGraph = await matchingEngineManager.fetchDetailedMatchingReport(activeUserId, id, language);
+                    const matchingGraph = await matchingEngineManager.fetchEvaluationGraph(activeUserId, id, language);
+                    // console.log("matchingGraph", matchingGraph);
                     setMatchingGraph(matchingGraph);
                 } catch (error) {
                     console.error("Error fetching matching report:", error);

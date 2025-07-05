@@ -79,9 +79,9 @@ const BenefitPageScreen = ({
                                 <BenefitPageLinksList listTitle={t('app.benefitPage.furtherInformation')} data={benefitPageData?.furtherInformation} />
                             )
                         }
-                        <RecursiveRulesTable graphRoot={matchingGraph?.root} t={t} />
+                        <RecursiveRulesTable rootNodes={matchingGraph?.rootNodes} t={t} />
                         {featureFlags.showMermaidRuleGraph &&
-                            <MermaidRulesGraph graphRoot={matchingGraph?.root} t={t} />
+                            <MermaidRulesGraph rootNodes={matchingGraph?.rootNodes} t={t} />
                         }
                     </Box>
                 </VBox>

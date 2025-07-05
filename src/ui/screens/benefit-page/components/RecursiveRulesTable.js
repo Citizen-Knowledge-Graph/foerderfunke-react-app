@@ -58,23 +58,22 @@ function renderNode(
     groupType = null,
 ) {
     if (!node) return null;
-    const nodeType = node.constructor?.nodeType;
+    const nodeType = node.type;
 
     // NOT → flip negation on child
-    if (nodeType === 'NodeNOT') {
+    if (nodeType === 'sh:not') {
         const child = node.children?.[0];
         return renderNode(child, parentField, metadata, t, !isNegated);
     }
 
     // AND / OR group
-    if (['NodeROOT', 'NodeCLASS', 'NodeAND', 'NodeOR'].includes(nodeType)) {
+    if (['root', 'sh:and', 'sh:or'].includes(nodeType)) {
         const children = node.children || [];
-        const dataFields = children.filter(c => c.constructor?.nodeType === 'NodeDATAFIELD' && c.children?.length > 0);
-        const andGroups = children.filter(c => c.constructor?.nodeType === 'NodeAND');
-        const orGroups = children.filter(c => c.constructor?.nodeType === 'NodeOR');
-        const classGroups = children.filter(c => c.constructor?.nodeType === 'NodeCLASS');
+        const dataFields = children.filter(c => c.type === 'datafield' && c.children?.length > 0);
+        const andGroups = children.filter(c => c.type === 'sh:and');
+        const orGroups = children.filter(c => c.type === 'sh:or');
 
-        if (dataFields.length + andGroups.length + orGroups.length + classGroups.length === 0) {
+        if (dataFields.length + andGroups.length + orGroups.length === 0) {
             return null;
         }
 
@@ -85,19 +84,14 @@ function renderNode(
                         {renderNode(df, parentField, metadata, t, isNegated)}
                     </VBox>
                 ))}
-                {classGroups.map((grp, i) => (
-                    <VBox key={i} sx={{ mb: 1 }}>
-                        {renderNode(grp, parentField, metadata, t, isNegated, 'NodeCLASS')}
-                    </VBox>
-                ))}
                 {andGroups.map((grp, i) => (
                     <CollapsibleGroup key={i} label={t('app.benefitPage.rulesTable.andConditions')} status={grp.status}>
-                        {renderNode(grp, parentField, metadata, t, isNegated, 'NodeAND')}
+                        {renderNode(grp, parentField, metadata, t, isNegated, 'sh:and')}
                     </CollapsibleGroup>
                 ))}
                 {orGroups.map((grp, i) => (
                     <CollapsibleGroup key={i} label={t('app.benefitPage.rulesTable.orConditions')} status={grp.status}>
-                        {renderNode(grp, parentField, metadata, t, isNegated, 'NodeOR')}
+                        {renderNode(grp, parentField, metadata, t, isNegated, 'sh:or')}
                     </CollapsibleGroup>
                 ))}
             </VBox>
@@ -105,11 +99,11 @@ function renderNode(
     }
 
     // DATAFIELD → include RULE|NOT, drop MinCount
-    if (nodeType === 'NodeDATAFIELD') {
+    if (nodeType === 'datafield') {
         const raw = node.children || [];
         const rules = raw.filter(c =>
-            c.constructor?.nodeType === 'NodeRULE' ||
-            c.constructor?.nodeType === 'NodeNOT'
+            c.type === 'rule' ||
+            c.type === 'sh:not'
         );
         if (rules.length === 0) return null;
 
@@ -124,10 +118,10 @@ function renderNode(
         }
 
         const bg =
-            node.status === 'ok' ? 'secondary.light' :
-                node.status === 'violation' ? 'error.light' :
+            node.eval.status === 'ok' ? 'secondary.light' :
+                node.eval.status === 'violation' ? 'error.light' :
                     'white.main';
-        const border = node.status === 'missing' ? '1px solid #ccc' : '';
+        const border = node.eval.status === 'missing' ? '1px solid #ccc' : '';
 
         return (
             <VBox
@@ -165,7 +159,7 @@ function renderNode(
     }
 
     // RULE → delegate to RuleTypes
-    if (nodeType === 'NodeRULE') {
+    if (nodeType === 'rule') {
         const dfMetadata = metadata?.find(f => f?.['@id'] === parentField.fieldId)
         return (<RuleSwitch
             node={node}
@@ -179,9 +173,9 @@ function renderNode(
     return null;
 }
 
-export default function RecursiveRulesTable({ graphRoot, t }) {
+export default function RecursiveRulesTable({ rootNodes, t }) {
     const metadata = useMetadataStore(state => state.metadata);
-    if (!graphRoot) return null;
+    if (!rootNodes) return null;
 
     return (
         <VBox
@@ -219,7 +213,14 @@ export default function RecursiveRulesTable({ graphRoot, t }) {
                     </Typography>
                 </VBox>
             </VBox>
-            {renderNode(graphRoot, '', metadata?.['ff:hasDF'], t)}
+            {
+                rootNodes.map(node => (
+                    <VBox key={node.class}>
+                        {renderNode(node, '', metadata?.['ff:hasDF'], t)}
+                    </VBox>
+                ))
+                /* TODO: separators in between */
+            }
         </VBox>
     );
 }
