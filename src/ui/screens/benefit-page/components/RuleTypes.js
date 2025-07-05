@@ -123,7 +123,7 @@ const constraintMap = {
 };
 
 export const RuleSwitch = ({ node, parentField, dfMetadata, negate, t }) => {
-  const missing = node?.shaclEval?.status === 'missing';
+  const missing = node?.eval?.status === 'missing';
   const Comp = constraintMap[node?.type];
 
   if (Comp) {
@@ -138,7 +138,7 @@ export const RuleSwitch = ({ node, parentField, dfMetadata, negate, t }) => {
         />
         {!missing && (
           <ActualValue
-            actual={node.shaclEval?.actualValue}
+            actual={node.eval?.actualValue}
             dfMetadata={dfMetadata}
             t={t}
           />
