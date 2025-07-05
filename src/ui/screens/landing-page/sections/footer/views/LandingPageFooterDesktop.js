@@ -6,8 +6,10 @@ import LogoBar from "@/ui/shared-components/LogoBar";
 import GitHubLink from "@/ui/shared-components/GitHubLink";
 import FeatureToggle from "../components/FeatureToggle";
 import RegularButton from "@/ui/shared-components/buttons/RegularButton";
+import useTranslation from "@/ui/language/useTranslation";
 
 const LandingPageFooterDesktop = () => {
+    const { t } = useTranslation();
 
     return (
         <VBox sx={{
@@ -30,8 +32,8 @@ const LandingPageFooterDesktop = () => {
             </HBox>
             <HBox justifyContent={'center'} alignItems={'center'}>
                 <HBox sx={{ width: '506px', justifyContent: 'center' }}>
-                    <RegularButton link='/impressum' variant='pinkContained' text='Impressum' size='small' />
-                    <RegularButton link='/data-protection' variant='pinkContained' text='Datenschutz' size='small' />
+                    <RegularButton link='/impressum' variant='pinkContained' text={t("home.legal.impressum.title")} size='small' />
+                    <RegularButton link='/data-protection' variant='pinkContained' text={t("home.legal.dataProtection.title")} size='small' />
                 </HBox>
             </HBox>
         </VBox>

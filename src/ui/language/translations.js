@@ -91,6 +91,7 @@ const translations = {
             },
             legal: {
                 impressum: {
+                    title: "Imprint",
                     declaration5TMG: "Information in accordance with § 5 TMG",
                     representedBy: "Represented by",
                     registered: "Registration",
@@ -389,6 +390,7 @@ const translations = {
             },
             legal: {
                 impressum: {
+                    title: "Impressum",
                     declaration5TMG: "Angaben gemäß § 5 TMG",
                     representedBy: "Vertreten durch",
                     registered: "Eintragung",
