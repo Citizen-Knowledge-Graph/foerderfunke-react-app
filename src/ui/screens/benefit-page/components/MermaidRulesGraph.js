@@ -1,11 +1,10 @@
 import React from 'react';
 import theme from '@/theme';
-import { useMetadataStore } from '@/ui/storage/zustand';
 import { VBox } from '@/ui/shared-components/LayoutBoxes';
 import { Typography } from "@mui/material";
 
 export default function MermaidRulesGraph({ graphRoot, t }) {
-    const metadata = useMetadataStore(state => state.metadata);
+    // const metadata = useMetadataStore(state => state.metadata);
     // if (!graphRoot) return null;
 
     return (
