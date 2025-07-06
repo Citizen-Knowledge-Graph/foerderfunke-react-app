@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import theme from '@/theme';
 import { VBox } from '@/ui/shared-components/LayoutBoxes';
 import { Typography } from "@mui/material";
 
-export default function MermaidRulesGraph({ rootNodes, t }) {
-    // const metadata = useMetadataStore(state => state.metadata);
-    // if (!rootNodes) return null;
+export default function MermaidRulesGraph({ evalGraph, t }) {
+
+    useEffect(() => {
+        if (!evalGraph) return;
+        const mermaidDef = evalGraph.toMermaid();
+        // TODO
+    }, [evalGraph]);
 
     return (
         <VBox
