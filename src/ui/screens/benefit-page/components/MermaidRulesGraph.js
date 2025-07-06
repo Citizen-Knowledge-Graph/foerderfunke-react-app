@@ -1,14 +1,24 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import theme from '@/theme';
 import { VBox } from '@/ui/shared-components/LayoutBoxes';
 import { Typography } from "@mui/material";
+import mermaid from "mermaid";
 
 export default function MermaidRulesGraph({ evalGraph, t }) {
+    const [svgContent, setSvgContent] = useState("");
 
     useEffect(() => {
         if (!evalGraph) return;
         const mermaidDef = evalGraph.toMermaid();
-        // TODO
+        mermaid.initialize();
+        try {
+            mermaid.parse(mermaidDef);
+        } catch (parseError) {
+            console.error("Mermaid syntax error:", parseError);
+        }
+        mermaid.render(`rulesGraph${Date.now()}`, mermaidDef)
+            .then(({ svg }) => setSvgContent(svg))
+            .catch((error) => console.error("Mermaid render error:", error));
     }, [evalGraph]);
 
     return (
@@ -24,8 +34,8 @@ export default function MermaidRulesGraph({ evalGraph, t }) {
                 <Typography variant="h2" sx={{ fontWeight: '400', wordBreak: "break-word" }}>
                     Rules Graph
                 </Typography>
-                <Typography variant="body1">
-                    TODO
+                <Typography variant="body1" component="div">
+                    <div dangerouslySetInnerHTML={{ __html: svgContent }} />
                 </Typography>
             </VBox>
         </VBox>
