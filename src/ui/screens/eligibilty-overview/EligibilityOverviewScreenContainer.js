@@ -11,12 +11,7 @@ import useFilterEligibilityData from './hooks/useFilterEligibilityData';
 const EligibilityOverviewScreenContainer = () => {
     const { t } = useTranslation();
     const language = useLanguageStore((state) => state.language);
-    const [filters, setFilters] = useState({
-        providingAgencies: [],
-        associatedLaws: [],
-        benefitCategories: [],
-        administrativeLevels: []
-    });
+    const [filters, setFilters] = useState({});
 
     const hydrationData = useFetchData('assets/data/requirement-profiles/requirement-profiles-hydration.json');
     const { validationReport } = useProduceValidationReport();

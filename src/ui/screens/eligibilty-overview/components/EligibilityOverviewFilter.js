@@ -12,13 +12,6 @@ import { VBox, HBox } from '@/ui/shared-components/LayoutBoxes';
 import EligibilityOverviewTag from './EligibilityOverviewTag';
 import theme from '@/theme';
 
-const FILTER_KEYS = [
-    { key: 'benefitCategories', label: 'Benefit Category' },
-    { key: 'administrativeLevels', label: 'Administrative Level' },
-    { key: 'providingAgencies', label: 'Providing Agency' },
-    { key: 'associatedLaws', label: 'Associated Law' },
-]
-
 const EligibilityOverviewFilter = ({ t, filterOptions, filters, onChangeFilters }) => {
     const handleChange = (key) => (event) => {
         onChangeFilters(prev => ({
@@ -51,26 +44,27 @@ const EligibilityOverviewFilter = ({ t, filterOptions, filters, onChangeFilters 
                     {t('app.browseAll.filter.title')}
                 </Typography>
                 <HBox sx={{ gap: 4, flexWrap: 'wrap' }}>
-                    {FILTER_KEYS.map(({ key, label }) => (
-                        <FormControl key={key} size="small" sx={{ minWidth: 200 }}>
-                            <InputLabel id={`${key}-label`}>{t(`app.browseAll.filter.${key}`)}</InputLabel>
-                            <Select
-                                labelId={`${key}-label`}
-                                multiple
-                                value={filters[key]}
-                                onChange={handleChange(key)}
-                                label={label}
-                                renderValue={() => t(`app.browseAll.filter.${key}`)}
-                            >
-                                {filterOptions[key].map(item => (
-                                    <MenuItem key={item.id} value={item.id}>
-                                        <Checkbox checked={filters[key].includes(item.id)} />
-                                        <ListItemText primary={item.label} />
-                                    </MenuItem>
-                                ))}
-                            </Select>
-                        </FormControl>
-                    ))}
+                    {Object.keys(filterOptions).length > 0 && (
+                        Object.keys(filterOptions).map((key, index) => (
+                            <FormControl key={index} size="small" sx={{ minWidth: 200 }}>
+                                <InputLabel id={`${key}-label`}>{t(`app.browseAll.filter.${key}`)}</InputLabel>
+                                <Select
+                                    labelId={`${key}-label`}
+                                    multiple
+                                    value={filters[key] || []}
+                                    onChange={handleChange(key)}
+                                    label={t(`app.browseAll.filter.${key}`)}
+                                    renderValue={() => t(`app.browseAll.filter.${key}`)}
+                                >
+                                    {filterOptions[key].map(item => (
+                                        <MenuItem key={item.id} value={item.id}>
+                                            <Checkbox checked={!!filters[key]?.includes(item.id)} />                                            <ListItemText primary={item.label} />
+                                        </MenuItem>
+                                    ))}
+                                </Select>
+                            </FormControl>
+                        ))
+                    )}
                 </HBox>
             </HBox>
             {
