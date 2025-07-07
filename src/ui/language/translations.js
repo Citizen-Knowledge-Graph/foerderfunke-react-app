@@ -92,11 +92,11 @@ const translations = {
             legal: {
                 impressum: {
                     title: "Imprint",
-                    declaration5TMG: "Information in accordance with § 5 TMG",
+                    declaration5DDG: "Information in accordance with § 5 DDG",
                     representedBy: "Represented by",
                     registered: "Registration",
                     director: "Managing Director",
-                    responsible: "Responsible for the content in accordance with § 55 Abs. 2 RStV",
+                    responsible: "Responsible in accordance with § 18 Abs. 2 MStV",
                     court: 'Register court',
                     number: 'Registration number',
                     vatID: 'VAT ID',
@@ -391,11 +391,11 @@ const translations = {
             legal: {
                 impressum: {
                     title: "Impressum",
-                    declaration5TMG: "Angaben gemäß § 5 TMG",
+                    declaration5TMG: "Angaben gemäß § 5 DDG",
                     representedBy: "Vertreten durch",
                     registered: "Eintragung",
                     director: "Geschäftsführer",
-                    responsible: "Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV",
+                    responsible: "Verantwortlich i. S. d. § 18 Abs. 2 MStV",
                     court: 'Registergericht',
                     number: 'Registernummer',
                     vatID: 'Umsatzsteuer-ID',
