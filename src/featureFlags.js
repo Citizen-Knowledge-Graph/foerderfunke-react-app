@@ -1,8 +1,4 @@
 const defaultFlags = {
-    newFeedbackSection: true,
-    newCollaborationSection: true,
-    newLanguageToggle: true,
-    newActivityLog: true,
     showNearestCounselingCentre: false,
     showMermaidRuleGraph: false,
 };
@@ -13,10 +9,6 @@ const getFeatureFlag = (flag) => {
 };
 
 const featureFlags = {
-    newFeedbackSection: getFeatureFlag('newFeedbackSection'),
-    newCollaborationSection: getFeatureFlag('newCollaborationSection'),
-    newLanguageToggle: getFeatureFlag('newLanguageToggle'),
-    newActivityLog: getFeatureFlag('newActivityLog'),
     showNearestCounselingCentre: getFeatureFlag('showNearestCounselingCentre'),
     showMermaidRuleGraph: getFeatureFlag('showMermaidRuleGraph'),
 };
