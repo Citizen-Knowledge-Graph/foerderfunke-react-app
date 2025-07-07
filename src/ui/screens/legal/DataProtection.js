@@ -20,6 +20,11 @@ const DataProtection = () => {
                     <Typography variant="h1">
                         {t('home.legal.dataProtection.title')}
                     </Typography>
+                    <Typography variant="h2">
+                        Informationen über die Verarbeitung Ihrer Daten gemäß Art. 13 der
+                        Datenschutz-Grundverordnung (DS-GVO)
+                    </Typography>
+
                     <Typography variant="body1">
                         {t('home.legal.dataProtection.introduction')}
                     </Typography>
@@ -73,6 +78,75 @@ const DataProtection = () => {
                         <Typography variant="body1">
                             {t('home.legal.dataProtection.webanalyticsInformation')}
                         </Typography>
+                    </VBox>
+                    <VBox sx={{ gap: 1 }}>
+                        <Typography variant="h6">
+                            {t('home.legal.dataProtection.userRightsTitle')}
+                        </Typography>
+                        <VBox sx={{ gap: 0 }}>
+                            <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                                {t('home.legal.dataProtection.userRightToDisclosureTitle')}
+                            </Typography>
+                            <Typography variant="body1">
+                                {t('home.legal.dataProtection.userRightToDisclosureText')}
+                            </Typography>
+                        </VBox>
+                        <VBox sx={{ gap: 0 }}>
+                            <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                                {t('home.legal.dataProtection.userRightToObjectTitle')}
+                            </Typography>
+                            <Typography variant="body1">
+                                {t('home.legal.dataProtection.userRightToObjectText')}
+                            </Typography>
+                        </VBox>
+                        <VBox sx={{ gap: 0 }}>
+                            <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                                {t('home.legal.dataProtection.userRightToRectificationTitle')}
+                            </Typography>
+                            <Typography variant="body1">
+                                {t('home.legal.dataProtection.userRightToRectificationText')}
+                            </Typography>
+                        </VBox>
+                        <VBox sx={{ gap: 0 }}>
+                            <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                                {t('home.legal.dataProtection.userRightToErasureTitle')}
+                            </Typography>
+                            <Typography variant="body1">
+                                {t('home.legal.dataProtection.userRightToErasureText')}
+                            </Typography>
+                        </VBox>
+                        <VBox sx={{ gap: 0 }}>
+                            <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                                {t('home.legal.dataProtection.userRightToLimitedProcessingTitle')}
+                            </Typography>
+                            <Typography variant="body1">
+                                {t('home.legal.dataProtection.userRightToLimitedProcessingText')}
+                            </Typography>
+                        </VBox>
+                        <VBox sx={{ gap: 0 }}>
+                            <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                                {t('home.legal.dataProtection.userRightToComplainTitle')}
+                            </Typography>
+                            <Typography variant="body1">
+                                {t('home.legal.dataProtection.userRightToComplainText')}
+                            </Typography>
+                        </VBox>
+                        <VBox sx={{ gap: 0 }}>
+                            <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                                {t('home.legal.dataProtection.userRightToDataPortablityTitle')}
+                            </Typography>
+                            <Typography variant="body1">
+                                {t('home.legal.dataProtection.userRightToDataPortablityText')}
+                            </Typography>
+                        </VBox>
+                        <VBox sx={{ gap: 0 }}>
+                            <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                                {t('home.legal.dataProtection.userRightToObject21Title')}
+                            </Typography>
+                            <Typography variant="body1">
+                                {t('home.legal.dataProtection.userRightToObject21Text')}
+                            </Typography>
+                        </VBox>                         
                     </VBox>
                 </VBox>
             </LandingPageSectionWrapper >
