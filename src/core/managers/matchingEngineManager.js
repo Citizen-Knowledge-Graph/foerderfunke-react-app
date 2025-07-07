@@ -4,6 +4,7 @@ import resourceService from "@/core/services/resourceService";
 import userManager from "@/core/managers/userManager";
 import { convertUserProfileToTurtle } from "@foerderfunke/matching-engine/src/profile-conversion";
 import { expand } from "@foerderfunke/sem-ops-utils";
+import featureFlags from "@/featureFlags";
 
 const matchingEngineManager = {
     matchingEngineInstance: null,
@@ -25,7 +26,8 @@ const matchingEngineManager = {
             const consistencyString = await resourceService.fetchResourceWithCache(validationConfig["consistency"]);
 
             const requirementProfiles = [];
-            for (const { fileUrl } of validationConfig["queries"]) {
+            for (const { fileUrl, behindFeatureFlag } of validationConfig["queries"]) {
+                if (behindFeatureFlag && !featureFlags[behindFeatureFlag]) continue;
                 requirementProfiles.push(await resourceService.fetchResourceWithCache(fileUrl));
             }
 
@@ -67,7 +69,11 @@ const matchingEngineManager = {
 
         const userProfile = userManager.retrieveUserData(userId);
         const userProfileTurtle = await convertUserProfileToTurtle(userProfile);
-        const requirementProfiles = validationConfig["queries"].map(({ rpUri }) => rpUri);
+        const requirementProfiles = [];
+        for (const { rpUri, behindFeatureFlag } of validationConfig["queries"]) {
+            if (behindFeatureFlag && !featureFlags[behindFeatureFlag]) continue;
+            requirementProfiles.push(rpUri);
+        }
 
         const report = await this.matchingEngineInstance.matching(
             userProfileTurtle,
