@@ -25,7 +25,6 @@ const BenefitPageScreenContainer = () => {
             if (id && activeUserId) {
                 try {
                     const matchingGraph = await matchingEngineManager.fetchEvaluationGraph(activeUserId, id, language);
-                    // console.log("matchingGraph", matchingGraph);
                     setMatchingGraph(matchingGraph);
                 } catch (error) {
                     console.error("Error fetching matching report:", error);
@@ -34,6 +33,8 @@ const BenefitPageScreenContainer = () => {
         }
         fetchMatchingReport();
     }, [id, activeUserId, language]);
+
+    console.log("BenefitPageScreenContainer - benefitPageData:", matchingGraph);
 
     return (
         <BenefitPageScreen

@@ -60,6 +60,8 @@ function renderNode(
     if (!node) return null;
     const nodeType = node.type;
 
+    console.log('renderNode', node);
+
     // NOT → flip negation on child
     if (nodeType === 'sh:not') {
         const child = node.children?.[0];
