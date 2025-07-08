@@ -1,5 +1,5 @@
 let pathname = encodeURIComponent(window.location.pathname);
-let search   = encodeURIComponent(window.location.search);
+let search   = encodeURI(window.location.search);   
 let hash     = encodeURIComponent(window.location.hash);
 
 window.location.replace(
