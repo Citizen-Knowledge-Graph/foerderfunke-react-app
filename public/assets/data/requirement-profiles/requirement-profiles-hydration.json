@@ -284,6 +284,19 @@
       }
     }
   },
+  "ff:kinderzuschlag-v2": {
+    "id": "ff:kinderzuschlag-v2",
+    "category": "social_benefit",
+    "status": "beta",
+    "title": {
+      "de": "Kinderzuschlag v2",
+      "en": "Child allowance v2"
+    },
+    "description": {
+      "de": "dev",
+      "en": "dev"
+    }
+  },
   "ff:bafoeg": {
     "id": "ff:bafoeg",
     "category": "social_benefit",
