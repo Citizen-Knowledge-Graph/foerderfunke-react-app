@@ -9,7 +9,7 @@ const ActualValue = ({ actual, dfMetadata, t }) => {
     case 'xsd:boolean':
       answer = actual === 'true' ? t('app.benefitPage.rulesTable.yes') :
         actual === 'false' ? t('app.benefitPage.rulesTable.no') :
-        'not provided';
+          'not provided';
       break;
     case 'ff:selection':
       answer = actual ? dfMetadata?.['ff:hasAnswerOption']?.find(ao => expand(ao?.['@id']) === actual)?.['rdfs:label']?.['@value'] : 'not provided';
@@ -39,14 +39,14 @@ const ActualValue = ({ actual, dfMetadata, t }) => {
   );
 };
 
-export const MinInclusiveConstraint = ({ node, negate = false, t }) => {
+export const MinInclusiveConstraint = ({ node, t }) => {
   return (
     <VBox>
       <Typography variant="body2">
         {t('app.benefitPage.rulesTable.responseMustBeGreaterThanOrEqualTo')}
       </Typography>
       <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-        {node.value}
+        {node?.rule?.value}
       </Typography>
     </VBox>
   );
@@ -59,22 +59,22 @@ export const MaxExclusiveConstraint = ({ node, t }) => {
         {t('app.benefitPage.rulesTable.responseMustBeLessThan')}
       </Typography>
       <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-        {node.value}
+        {node?.rule?.value}
       </Typography>
     </VBox>
   );
 };
 
 export const InConstraint = ({ node, dfMetadata, negate = false, t }) => {
-  const vals = Array.isArray(node.value) ? node.value : [];
+  const vals = Array.isArray(node?.rule?.values) ? node?.rule?.values : [];
 
   const labels = (Array.isArray(vals) ? vals : []).map(v => {
     const opt = dfMetadata?.['ff:hasAnswerOption']?.find(f => f?.['@id'] === v);
     if (opt) {
       return opt['rdfs:label']?.['@value'];
     }
-    if (v === true) return t('app.benefitPage.rulesTable.yes');
-    if (v === false) return t('app.benefitPage.rulesTable.no');
+    if (v === 'true') return t('app.benefitPage.rulesTable.yes');
+    if (v === 'false') return t('app.benefitPage.rulesTable.no');
     return String(v);
   }).filter(Boolean);
 
@@ -117,14 +117,18 @@ export const InConstraint = ({ node, dfMetadata, negate = false, t }) => {
 };
 
 const constraintMap = {
-  'sh:MinInclusiveConstraintComponent': MinInclusiveConstraint,
-  'sh:MaxExclusiveConstraintComponent': MaxExclusiveConstraint,
-  'sh:InConstraintComponent': InConstraint,
+  'sh:minInclusive': MinInclusiveConstraint,
+  'sh:maxExclusive': MaxExclusiveConstraint,
+  'sh:in': InConstraint,
 };
 
 export const RuleSwitch = ({ node, parentField, dfMetadata, negate, t }) => {
   const missing = node?.eval?.status === 'missing';
-  const Comp = constraintMap[node?.type];
+  const Comp = constraintMap[node?.rule?.type];
+
+  console.log('RuleSwitch', {
+    node
+  });
 
   if (Comp) {
     return (
