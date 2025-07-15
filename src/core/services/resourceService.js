@@ -3,6 +3,10 @@ import { useCachingService } from '@/core/services/cachingService';
 
 const resourceService = {
   async fetchResource(filePath) {
+    // console.log("fetchResource", filePath);
+    if (process.env.REACT_APP_LOCAL) {
+      // TODO
+    }
     try {
       const response = await axiosClient.get(filePath);
       return response.data;
