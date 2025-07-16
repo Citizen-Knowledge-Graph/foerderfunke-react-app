@@ -2,6 +2,7 @@ const { existsSync } = require("fs");
 const simpleGit = require("simple-git");
 const path = require("path");
 
+// for local development: npm run local
 (async () => {
     const repoUrl = "https://github.com/Citizen-Knowledge-Graph/knowledge-base";
     const repoDir = path.resolve(__dirname, "..", "public", "knowledge-base");

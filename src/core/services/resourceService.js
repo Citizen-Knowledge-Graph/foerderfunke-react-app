@@ -13,7 +13,7 @@ const resourceService = {
   },
 
   async fetchResourceWithCache(filePath) {
-    // if the local dev run flat is set, we don't cache and pull the turtle files from the local public/knowledge-base repo clone
+    // if the local dev run flag is set: don't cache and pull the turtle files from public/knowledge-base
     if (process.env.REACT_APP_LOCAL && filePath.toLowerCase().endsWith(".ttl")) {
       const marker = "/knowledge-base/main/";
       const idx = filePath.indexOf(marker);
