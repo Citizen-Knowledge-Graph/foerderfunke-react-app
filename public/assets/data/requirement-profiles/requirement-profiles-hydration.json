@@ -1902,5 +1902,18 @@
         ]
       }
     }
+  },
+  "ff:schwerbehindertenausweis": {
+    "id": "ff:schwerbehindertenausweis",
+    "status": "beta",
+    "category": "social_benefit",
+    "title": {
+      "de": "Schwerbehindertenausweis",
+      "en": "Severe Disability ID Card"
+    },
+    "description": {
+      "de": "Der Schwerbehindertenausweis ist der amtliche Nachweis Ihrer Schwerbehinderteneigenschaft und eröffnet Zugang zu gesetzlichen Nachteilsausgleichen wie Steuervergünstigungen, zusätzlichem Urlaub oder besonderem Kündigungsschutz. Enthält er Merkzeichen, können damit weitere Vergünstigungen wie kostenreduziertes Fahren oder Parkerleichterungen verbunden sein.",
+      "en": "The Severe Disability ID Card is the official proof of your severe disability status and provides access to legal compensatory benefits such as tax reductions, additional vacation days, or special protection against dismissal. If it contains special marks, it may also entitle you to further benefits like reduced travel costs or parking concessions."
+    }
   }
 }

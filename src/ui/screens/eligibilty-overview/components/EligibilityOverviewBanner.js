@@ -3,8 +3,6 @@ import { HBox } from "@/ui/shared-components/LayoutBoxes";
 import theme from "@/theme";
 
 const EligibilityOverviewBanner = ({ t, eligible }) => {
-    console.log("EligibilityOverviewBanner", eligible);
-
     const eligibilityBannerType = (() => {
         switch (eligible) {
             case 'eligible':

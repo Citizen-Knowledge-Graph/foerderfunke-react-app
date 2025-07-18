@@ -22,7 +22,7 @@ const ImpressumPage = () => {
                     </Typography>
                     <VBox sx={{ gap: 1 }}>
                         <Typography variant="h6">
-                            {t('home.legal.impressum.declaration5TMG')}
+                            {t('home.legal.impressum.declaration5DDG')}
                         </Typography>
                         <VBox sx={{ gap: 0 }}>
                             <Typography variant="body1">
