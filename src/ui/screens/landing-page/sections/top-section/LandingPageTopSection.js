@@ -4,8 +4,9 @@ import { HBox, VBox } from "@/ui/shared-components/LayoutBoxes";
 import RegularButton from "@/ui/shared-components/buttons/RegularButton";
 import LandingPageSectionWrapper from "../../components/LandingPageSectionWrapper";
 import LandingPageTopSectionShared from "./components/LandingPageTopSectionShared";
+import featureFlags from "@/featureFlags";
 
-const LandingPageTopSection = () => {
+const LandingPageTopSection = ({ runway }) => {
     const isDesktop = useStore((state) => state.isDesktop);
     const [loaded, setLoaded] = useState(false);
     const starWoman = `${process.env.PUBLIC_URL}/assets/images/landing-page/star_woman.png`;
@@ -18,6 +19,17 @@ const LandingPageTopSection = () => {
                     <VBox sx={{ width: "50%", alignItems: "center" }}>
                         <VBox sx={{ maxWidth: "600px", gap: 8 }}>
                             <LandingPageTopSectionShared />
+                            {runway === "bielefeld" && featureFlags.runwaysActive && (
+                                <>
+                                    <div>
+                                        Willkommen beim Pilotprojekt Bielefeld!
+                                        <br/>
+                                        Gebt uns gerne Feedback. TODO: dedicated Email address?
+                                        <br/>
+                                        TODO: Link zum Katalog mit Vorauswahl & Anspruch prüfen für Vorauswahl
+                                    </div>
+                                </>
+                            )}
                             <RegularButton variant={'yellowContained'} link='/user-routing' />
                         </VBox>
                     </VBox>

@@ -23,7 +23,7 @@ const LandingPage = ({ runway }) => {
         <Layout>
             <VBox sx={{ width: '100%' }}>
                 <VBox>
-                    <LandingPageTopSection isDesktop={isDesktop} />
+                    <LandingPageTopSection isDesktop={isDesktop} runway={runway} />
                 </VBox>
                 <VBox>
                     <LandingPageFact isDesktop={isDesktop} />
