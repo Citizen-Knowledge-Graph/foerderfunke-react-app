@@ -34,6 +34,8 @@ const AppRoutes = () => (
         <Route path="/questions" element={<QuestionPageRouter/>}/>
         <Route path="/impressum" element={<ImpressumPage/>}/>
         <Route path="/data-protection" element={<DataProtection/>}/>
+        <Route path="/bielefeld" element={<LandingPage runway="bielefeld" />}/>
+        <Route path="/bielefunke" element={<LandingPage runway="bielefeld" />}/>
     </Routes>
 );
 

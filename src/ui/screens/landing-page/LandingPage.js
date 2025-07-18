@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useStore } from "@/ui/shared-components/ViewportUpdater";
 import { VBox } from "@/ui/shared-components/LayoutBoxes";
 import Layout from "@/ui/shared-components/Layout";
@@ -12,8 +12,12 @@ import LandingPageFeedback from "./sections/feedback/LandingPageFeedback";
 import LandingPageFunding from "./sections/funding/LandingPageFunding";
 import LandingPageMission from "./sections/mission/LandingPageMission";
 
-const LandingPage = () => {
+const LandingPage = ({ runway }) => {
     const isDesktop = useStore((state) => state.isDesktop);
+
+    useEffect(() => {
+        console.log("runway:", runway);
+    }, [runway]);
 
     return (
         <Layout>
