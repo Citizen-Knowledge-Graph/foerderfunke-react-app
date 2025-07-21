@@ -38,6 +38,7 @@ const useSetupQuestionPage = (
                 }
             }
 
+            console.log("we are here 4: ", nextQuestion, "current question: ", currentQuestion);
             if (nextQuestion && currentQuestion?.['@id'] !== nextQuestion?.['@id']) {
                 setCurrentQuestion(nextQuestion);
                 setProfileFieldUpdateError(null);
