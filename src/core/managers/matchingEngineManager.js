@@ -20,24 +20,23 @@ const matchingEngineManager = {
                 "assets/data/requirement-profiles/requirement-profiles.json"
             );
 
-            const dataFieldsString = await resourceService.fetchResourceWithCache(validationConfig["datafields"]);
+            const datafieldsString = await resourceService.fetchResourceWithCache(validationConfig["datafields"]);
+            const datafieldsBielefeldString = await resourceService.fetchResourceWithCache(validationConfig["datafields-bielefeld"]);
             const definitionsString = await resourceService.fetchResourceWithCache(validationConfig["definitions"]);
             const materializationString = await resourceService.fetchResourceWithCache(validationConfig["materialization"]);
             const consistencyString = await resourceService.fetchResourceWithCache(validationConfig["consistency"]);
 
-            const requirementProfiles = [];
+            const engine = new MatchingEngine();
+            engine.addDatafieldsTurtle(datafieldsString)
+            engine.addDatafieldsTurtle(datafieldsBielefeldString)
+            engine.addDefinitionsTurtle(definitionsString);
+            engine.addMaterializationTurtle(materializationString);
+            engine.addConsistencyTurtle(consistencyString);
+
             for (const { fileUrl, behindFeatureFlag } of validationConfig["queries"]) {
                 if (behindFeatureFlag && !featureFlags[behindFeatureFlag]) continue;
-                requirementProfiles.push(await resourceService.fetchResourceWithCache(fileUrl));
+                engine.addRequirementProfileTurtle(await resourceService.fetchResourceWithCache(fileUrl));
             }
-
-            const engine = new MatchingEngine(
-                dataFieldsString,
-                definitionsString,
-                materializationString,
-                consistencyString,
-                requirementProfiles
-            );
 
             this.matchingEngineInstance = engine;
             console.log("Matching Engine constructed.");
