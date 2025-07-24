@@ -5,7 +5,7 @@ export const UserStatus = {
   DOES_NOT_EXIST:  "USER_DOES_NOT_EXIST",
 };
 
-const ALLOWED_ROOT_KEYS = ["@id", "@type"];
+const ALLOWED_ROOT_KEYS = ["@context", "@id", "@type"];
 
 function hasExtraRootKeys(obj) {
   return Object

@@ -1,8 +1,28 @@
 const userService = {
-    updateOrAddField(data, value, dataField) {
+    updateOrAddField(data, value, dataField, context) {
         try {
-            data[dataField] = value;
+            if (!data["@context"]) {
+                data["@context"] = {};
+            }
+
+            const [prefix] = dataField.split(":");
+            if (prefix && !(prefix in data["@context"])) {
+                if (context[prefix]) {
+                    data["@context"][prefix] = context[prefix];
+                } else {
+                    throw new Error(`Prefix "${prefix}" not found in provided context`);
+                }
+            }
+
+            if (!Array.isArray(data[dataField])) {
+                data[dataField] = data[dataField] == null
+                    ? []
+                    : [data[dataField]];
+            }
+            data[dataField].push(value);
+
             return true;
+            
         } catch (err) {
             console.error("Failed to update or add field:", err);
             return false;

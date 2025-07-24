@@ -126,10 +126,6 @@ export const RuleSwitch = ({ node, parentField, dfMetadata, negate, t }) => {
   const missing = node?.eval?.status === 'missing';
   const Comp = constraintMap[node?.rule?.type];
 
-  console.log('RuleSwitch', {
-    node
-  });
-
   if (Comp) {
     return (
       <VBox gap={1}>

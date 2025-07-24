@@ -2,18 +2,26 @@ import localStorageService from '../services/localStorageService';
 import userService from '../services/userService';
 
 const userManager = {
-    initialiseNewUser(userId="ff:quick-check-user", userType="ff:Citizen") {
-        const userObject = { "@id": userId, "@type": userType };
+    initialiseNewUser(userId = "ff:quick-check-user", userType = "ff:Citizen") {
+        const userObject = {
+            "@context": {
+                ff: "https://foerderfunke.org/default#",
+                xsd: "http://www.w3.org/2001/XMLSchema#"
+            },
+            "@id": userId,
+            "@type": [userType]
+        };
+
         localStorageService.setItem(userId, userObject);
 
-        const userIds = localStorageService.getItem('userIds') || [];
+        const userIds = localStorageService.getItem("userIds") || [];
         if (!userIds.includes(userId)) {
             userIds.push(userId);
-            localStorageService.setItem('userIds', userIds);
+            localStorageService.setItem("userIds", userIds);
         }
     },
 
-    deleteUser(userId="ff:quick-check-user") {
+    deleteUser(userId = "ff:quick-check-user") {
         const userProfile = userManager.retrieveUserData(userId);
 
         if (!userProfile) {
@@ -82,7 +90,7 @@ const userManager = {
         localStorageService.setItem('userIds', Array.from(userIds));
     },
 
-    retrieveUserData(entityId="ff:quick-check-user") {
+    retrieveUserData(entityId = "ff:quick-check-user") {
         return localStorageService.getItem(entityId);
     },
 

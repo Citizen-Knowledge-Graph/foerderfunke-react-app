@@ -5,6 +5,7 @@ import userManager from "@/core/managers/userManager";
 import { convertUserProfileToTurtle } from "@foerderfunke/matching-engine/src/profile-conversion";
 import { expand } from "@foerderfunke/sem-ops-utils";
 import featureFlags from "@/featureFlags";
+import jsonLdToTurtle from "@/core/utils/jsonLdToTurtle";
 
 const matchingEngineManager = {
     matchingEngineInstance: null,
@@ -67,7 +68,7 @@ const matchingEngineManager = {
         );
 
         const userProfile = userManager.retrieveUserData(userId);
-        const userProfileTurtle = await convertUserProfileToTurtle(userProfile);
+        const userProfileTurtle = await jsonLdToTurtle(userProfile);
         const requirementProfiles = [];
         for (const { rpUri, behindFeatureFlag } of validationConfig["queries"]) {
             if (behindFeatureFlag && !featureFlags[behindFeatureFlag]) continue;
@@ -90,7 +91,9 @@ const matchingEngineManager = {
             await this.initMatchingEngine(language);
         }
         const userProfile = userManager.retrieveUserData(userId);
-        const userProfileTurtle = await convertUserProfileToTurtle(userProfile);
+        const userProfileTurtle = await jsonLdToTurtle(userProfile);
+        console.log("User Profile Turtle:", userProfileTurtle);
+        //const userProfileTurtle = await convertUserProfileToTurtle(userProfile);
         return this.matchingEngineInstance.matching(
             userProfileTurtle,
             requirementProfiles.map(rp => expand(rp)),

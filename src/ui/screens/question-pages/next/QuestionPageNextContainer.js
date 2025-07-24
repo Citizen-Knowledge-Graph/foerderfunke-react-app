@@ -72,6 +72,9 @@ const QuestionPageNextContainer = () => {
         [questionsStack.length - stackCounter, questionsStack?.length + Number(quizReport?.['ff:hasNumberOfMissingDatafields']?.['@value'])]
     ), [questionsStack, stackCounter, quizReport]);
 
+    console.log('quizReport', quizReport);
+    console.log('currentQuestion', currentQuestion);
+
     return (
         <QuestionPageNext
             t={t}
