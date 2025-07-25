@@ -17,10 +17,6 @@ export default function MermaidRulesGraph({ evalGraph, t }) {
 
     useEffect(() => {
         if (!evalGraph) return;
-        renderMermaid();
-    }, [evalGraph, graphTypeEval, printLabels, orientationVertical]);
-
-    const renderMermaid = () => {
         const me = matchingEngineManager.matchingEngineInstance;
         const mermaidDef = graphToMermaid(
             graphTypeEval ? evalGraph.ruleGraph : evalGraph,
@@ -34,7 +30,7 @@ export default function MermaidRulesGraph({ evalGraph, t }) {
         mermaid.render(`rulesGraph${Date.now()}`, mermaidDef)
             .then(({ svg }) => setSvgContent(svg))
             .catch((error) => console.error("Mermaid render error:", error));
-    };
+    }, [evalGraph, graphTypeEval, printLabels, orientationVertical]);
 
     return (
         <VBox
