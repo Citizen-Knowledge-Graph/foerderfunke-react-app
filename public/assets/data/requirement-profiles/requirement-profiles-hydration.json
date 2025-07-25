@@ -1928,5 +1928,18 @@
       "de": "Die Rente wegen voller Erwerbsminderung wird gewährt, wenn Sie aufgrund gesundheitlicher Einschränkungen nicht mehr in der Lage sind, mindestens drei Stunden täglich zu arbeiten. Sie erhalten eine monatliche Rente, die auf Ihren bisherigen Beiträgen zur Rentenversicherung basiert.",
       "en": "The pension for full disability is granted if you are unable to work at least three hours a day due to health limitations. You receive a monthly pension based on your previous contributions to the pension insurance."
     }
+  },
+  "ff:erwerbsminderungsrente-teilweise": {
+    "id": "ff:erwerbsminderungsrente-teilweise",
+    "status": "beta",
+    "category": "social_benefit",
+    "title": {
+      "de": "Rente wegen teilweiser Erwerbsminderung",
+      "en": "Pension for Partial Disability"
+    },
+    "description": {
+      "de": "Die Rente wegen teilweiser Erwerbsminderung wird gewährt, wenn Sie aufgrund gesundheitlicher Einschränkungen nicht mehr in der Lage sind, mindestens sechs Stunden täglich zu arbeiten. Sie erhalten eine monatliche Rente, die auf Ihren bisherigen Beiträgen zur Rentenversicherung basiert.",
+      "en": "The pension for partial disability is granted if you are unable to work at least six hours a day due to health limitations. You receive a monthly pension based on your previous contributions to the pension insurance."
+    }
   }
 }

@@ -113,6 +113,10 @@
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/bielefeld/shacl/erwerbsminderungsrente-voll.ttl",
       "rpUri": "https://foerderfunke.org/default#erwerbsminderungsrente-voll"
+    },
+    {
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/bielefeld/shacl/erwerbsminderungsrente-teilweise.ttl",
+      "rpUri": "https://foerderfunke.org/default#erwerbsminderungsrente-teilweise"
     }
   ]
 }
