@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Divider, Typography } from '@mui/material';
 import { HBox, VBox } from '@/ui/shared-components/LayoutBoxes';
 import theme from '@/theme';
@@ -7,6 +7,8 @@ import { useSelectedBenefitStore, useSelectedTopicsStore } from "@/ui/storage/zu
 import EligibilityOverviewTag from './EligibilityOverviewTag';
 import EligibilityOverviewBanner from './EligibilityOverviewBanner';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 
 const filterKeys = [
     'benefitCategories',
@@ -16,6 +18,7 @@ const filterKeys = [
 ];
 
 const EligibilityOverviewItem = ({ t, item, eligible }) => {
+    const [isVisible, setIsVisible] = useState(false);
     const color = eligible === 'indeterminate' ? 'black.light' : 'black.main';
     const setSelectedBenefit = useSelectedBenefitStore((state) => state.setSelectedBenefit);
     const clearSelectedTopics = useSelectedTopicsStore((state) => state.clear);
@@ -45,35 +48,55 @@ const EligibilityOverviewItem = ({ t, item, eligible }) => {
                         gap: 1
                     }}
                 >
-                    <VBox sx={{ gap: 2 }}>
-                        <HBox sx={{ alignItems: 'flex-end', gap: 2, flexWrap: 'wrap' }}>
-                            <Typography variant='h2' sx={{ color: color, fontWeight: '400', wordBreak: 'break-word' }}>
-                                {item.title}
-                            </Typography>
-                            {item.status === "beta" && (
-                                <Typography variant='body1' sx={{ color: 'blue.main' }}>
-                                    Beta
+                    <VBox sx={{ gap: 2, width: '100%' }}>
+                        <HBox sx={{ alignItems: 'flex-end', gap: 2, flexWrap: 'wrap', width: '100%' }}>
+                            <HBox sx={{ alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+                                <HBox sx={{ alignItems: 'center', gap: 2, flexWrap: 'wrap' }}>
+                                    <Typography variant='h2' sx={{ color: color, fontWeight: '400', wordBreak: 'break-word' }}>
+                                        {item.title}
+                                    </Typography>
+                                    {item.status === "beta" && (
+                                        <Typography variant='body1' sx={{ color: 'blue.main' }}>
+                                            Beta
+                                        </Typography>
+                                    )}
+                                </HBox>
+                                {
+                                    !isVisible ? (
+                                        <AddIcon
+                                            sx={{ fontSize: '24px' }}
+                                            onClick={() => setIsVisible(true)}
+                                        />
+                                    ) : (
+                                        <RemoveIcon
+                                            sx={{ fontSize: '24px' }}
+                                            onClick={() => setIsVisible(false)}
+                                        />)
+                                }
+                            </HBox>
+                            {isVisible && (
+                                <Typography variant="body1" sx={{ wordBreak: 'break-word' }}>
+                                    {item.description}
                                 </Typography>
                             )}
                         </HBox>
-                        <Typography variant="body1" sx={{ wordBreak: 'break-word' }}>
-                            {item.description}
-                        </Typography>
                     </VBox>
                 </HBox>
             </HBox>
             <VBox sx={{ gap: 2 }}>
-                <HBox sx={{ flexWrap: 'wrap', gap: 1 }}>
-                    {
-                        filterKeys.flatMap(key => (
-                            item[key] && (
-                                item[key].map(tag => (
-                                    <EligibilityOverviewTag key={tag.id} tag={tag.label} tagType={key} />
-                                ))
-                            )
-                        ))
-                    }
-                </HBox>
+                {isVisible && (
+                    <HBox sx={{ flexWrap: 'wrap', gap: 1 }}>
+                        {
+                            filterKeys.flatMap(key => (
+                                item[key] && (
+                                    item[key].map(tag => (
+                                        <EligibilityOverviewTag key={tag.id} tag={tag.label} tagType={key} />
+                                    ))
+                                )
+                            ))
+                        }
+                    </HBox>
+                )}
                 <Divider sx={{ color: 'dark.light', borderStyle: 'dashed' }} />
                 <HBox sx={{ flexWrap: 'wrap', gap: 2, alignItems: 'center' }}>
                     {
@@ -93,7 +116,7 @@ const EligibilityOverviewItem = ({ t, item, eligible }) => {
                             text={'app.browseAll.checkElBtn'}
                             link={`/onboarding-welcome/${item.id}`}
                             size='small'
-                            endIcon={<ChevronRightIcon sx={{ fontSize: '16px' }} />}                
+                            endIcon={<ChevronRightIcon sx={{ fontSize: '16px' }} />}
                         />
 
                     }

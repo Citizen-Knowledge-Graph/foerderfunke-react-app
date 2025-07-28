@@ -5,6 +5,11 @@ import useTranslation from "@/ui/language/useTranslation";
 import buttonStyles from "./ButtonStyles";
 
 const sizeStyles = {
+  xsmall: {
+    padding: "4px 8px",
+    fontSize: "12px",
+    borderRadius: 4,
+  },
   small: {
     padding: "8px 12px",
     fontSize: "14px",
