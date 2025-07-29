@@ -1,5 +1,5 @@
 import { MatchingEngine } from "@foerderfunke/matching-engine/src/MatchingEngine";
-import { FORMAT, MATCHING_MODE } from "@foerderfunke/matching-engine/src/queries.js";
+import { FORMAT } from "@foerderfunke/matching-engine/src/queries.js";
 import resourceService from "@/core/services/resourceService";
 import userManager from "@/core/managers/userManager";
 import { convertUserProfileToTurtle } from "@foerderfunke/matching-engine/src/profile-conversion";
@@ -77,9 +77,7 @@ const matchingEngineManager = {
         const report = await this.matchingEngineInstance.matching(
             userProfileTurtle,
             requirementProfiles,
-            MATCHING_MODE.FULL,
-            FORMAT.JSON_LD,
-            true
+            FORMAT.JSON_LD
         );
 
         return report;
@@ -94,9 +92,7 @@ const matchingEngineManager = {
         return this.matchingEngineInstance.matching(
             userProfileTurtle,
             requirementProfiles.map(rp => expand(rp)),
-            MATCHING_MODE.QUIZ,
-            FORMAT.JSON_LD,
-            true
+            FORMAT.JSON_LD
         );
     },
 
