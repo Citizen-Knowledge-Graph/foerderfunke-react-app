@@ -1941,5 +1941,18 @@
       "de": "Die Rente wegen teilweiser Erwerbsminderung wird gewährt, wenn Sie aufgrund gesundheitlicher Einschränkungen nicht mehr in der Lage sind, mindestens sechs Stunden täglich zu arbeiten. Sie erhalten eine monatliche Rente, die auf Ihren bisherigen Beiträgen zur Rentenversicherung basiert.",
       "en": "The pension for partial disability is granted if you are unable to work at least six hours a day due to health limitations. You receive a monthly pension based on your previous contributions to the pension insurance."
     }
+  },
+  "ff:substitutionstherapie-regulaer": {
+    "id": "ff:substitutionstherapie-regulaer",
+    "status": "beta",
+    "category": "social_benefit",
+    "title": {
+      "de": "Substitutionstherapie",
+      "en": "Substitution Therapy"
+    },
+    "description": {
+      "de": "Die Substitutionstherapie ist eine medizinische Behandlung für Menschen mit einer Opioidabhängigkeit. Sie dient der Linderung von Entzugserscheinungen und der Stabilisierung des Gesundheitszustands. Die Kosten werden in der Regel von den Krankenkassen übernommen.",
+      "en": "Substitution therapy is a medical treatment for people with opioid addiction. It helps alleviate withdrawal symptoms and stabilise health conditions. Costs are usually covered by health insurance."
+    }
   }
 }
