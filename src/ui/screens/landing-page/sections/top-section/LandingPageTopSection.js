@@ -5,6 +5,8 @@ import RegularButton from "@/ui/shared-components/buttons/RegularButton";
 import LandingPageSectionWrapper from "../../components/LandingPageSectionWrapper";
 import LandingPageTopSectionShared from "./components/LandingPageTopSectionShared";
 import featureFlags from "@/featureFlags";
+import { Typography } from "@mui/material";
+import { Link } from 'react-router-dom';
 
 const LandingPageTopSection = ({ runway }) => {
     const isDesktop = useStore((state) => state.isDesktop);
@@ -21,13 +23,12 @@ const LandingPageTopSection = ({ runway }) => {
                             <LandingPageTopSectionShared />
                             {runway === "bielefunke" && featureFlags.bielefunke && (
                                 <>
-                                    <div>
-                                        Willkommen beim Pilotprojekt Bielefeld!
-                                        <br/>
-                                        Gebt uns gerne Feedback. TODO: dedicated Email address?
-                                        <br/>
-                                        TODO: Link zum Katalog mit Vorauswahl & Anspruch prüfen für Vorauswahl
-                                    </div>
+                                    <Typography variant="h2">Willkommen beim Pilotprojekt Bielefeld!</Typography>
+                                    <Typography variant="body1" sx={{ textAlign: 'left' }}>
+                                        Gebt uns gerne Feedback: (dedicated email address?)
+                                        <br/><br/>
+                                        Siehe <Link to={"/eligibility-overview"}>hier</Link> die Leistungen die wir im Rahmen des Pilotprojekts bis jetzt eingepflegt haben.
+                                    </Typography>
                                 </>
                             )}
                             <RegularButton variant={'yellowContained'} link='/user-routing' />
