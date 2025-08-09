@@ -6,6 +6,8 @@ import { VBox } from '@/ui/shared-components/LayoutBoxes';
 import EligibilityOverviewHeader from "./components/EligibilityOverviewHeader";
 import EligibilityOverviewSection from "./components/EligibilityOverviewSection";
 import EligibilityOverviewFilter from './components/EligibilityOverviewFilter';
+import RegularButton from "@/ui/shared-components/buttons/RegularButton";
+import featureFlags from "@/featureFlags";
 
 const EligibilityOverviewScreen = ({
     t,
@@ -14,6 +16,11 @@ const EligibilityOverviewScreen = ({
     filters,
     onChangeFilters,
 }) => {
+
+    const atLeastOneWithMissingData = () => {
+        return eligibilityData.business?.['ff:missingData']?.length > 0 ||
+            eligibilityData.social_benefit?.['ff:missingData']?.length > 0;
+    };
 
     return (
         <Layout isApp={true} logo={true}>
@@ -27,6 +34,9 @@ const EligibilityOverviewScreen = ({
                             filters={filters}
                             onChangeFilters={onChangeFilters}
                         />
+                        {featureFlags.bielefunke && atLeastOneWithMissingData() &&
+                            <RegularButton text={"Noch offene Ansprüche prüfen"} variant={'yellowContained'} link='/user-routing' />
+                        }
                         {
                             eligibilityData ? (
                                 <>
