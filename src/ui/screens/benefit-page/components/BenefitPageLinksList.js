@@ -6,13 +6,13 @@ import Collapse from "@mui/material/Collapse";
 import { HBox, VBox } from "@/ui/shared-components/LayoutBoxes";
 import theme from '@/theme';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import featureFlags from "@/featureFlags";
 import haversine from "haversine-distance"
 
 const BenefitPageLinksList = ({ listTitle, data }) => {
     const [showAdditionalSupport, setShowAdditionalSupport] = useState(false);
     const [userCoordinates, setUserCoordinates] = useState(null);
     const [nearestCounselingCenters, setNearestCounselingCenters] = useState([]);
+    const showNearestCounselingCentre = false;
 
     const convertAddressToCoordinates = async () => {
         const address = prompt("Enter your address:");
@@ -122,7 +122,7 @@ const BenefitPageLinksList = ({ listTitle, data }) => {
                                 )
                             }
                         </VBox>
-                        {featureFlags.showNearestCounselingCentre &&
+                        {showNearestCounselingCentre &&
                             <VBox sx={{ gap: 4, maxWidth: '800px' }}>
                                 <Typography variant="h3" sx={{ fontWeight: '600', wordBreak: "break-word", paddingTop: '32px' }}>
                                     Finde die nächste Caritas-Sozialberatungsstelle

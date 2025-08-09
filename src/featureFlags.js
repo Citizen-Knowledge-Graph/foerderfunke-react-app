@@ -1,7 +1,6 @@
 const defaultFlags = {
-    showNearestCounselingCentre: false,
     showMermaidRuleGraph: false,
-    runwaysActive: false
+    bielefunke: false
 };
 
 const getFeatureFlag = (flag) => {
@@ -10,9 +9,8 @@ const getFeatureFlag = (flag) => {
 };
 
 const featureFlags = {
-    showNearestCounselingCentre: getFeatureFlag('showNearestCounselingCentre'),
     showMermaidRuleGraph: getFeatureFlag('showMermaidRuleGraph'),
-    runwaysActive: getFeatureFlag('runwaysActive')
+    bielefunke: getFeatureFlag('bielefunke')
 };
 
 export const setFeatureFlag = (flag, value) => {
