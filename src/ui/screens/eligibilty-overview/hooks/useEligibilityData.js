@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import featureFlags from "@/featureFlags";
 
 const useEligibilityData = (validationReport, metadata, hydrationData, language) => {
   return useMemo(() => {
@@ -69,6 +70,15 @@ const useEligibilityData = (validationReport, metadata, hydrationData, language)
           }))
         : [];
 
+        // tags
+        const rawTags = rpMetadata?.['ff:tag'];
+        const tags = rawTags
+            ? (Array.isArray(rawTags) ? rawTags : [rawTags])
+                .map(tag => ({
+                    id: tag['@id'],
+                    label: defDict[tag['@id']] || ''
+                }))
+            : [];
 
       // benefit categories
       const rawCategories = rpMetadata?.['ff:category'];
@@ -95,6 +105,7 @@ const useEligibilityData = (validationReport, metadata, hydrationData, language)
         validationStage,
         associatedLaws,
         providingAgencies,
+        tags,
         administrativeLevels,
         benefitCategories
       };
@@ -137,6 +148,17 @@ const useEligibilityData = (validationReport, metadata, hydrationData, language)
         ).values()
       ),
     };
+
+    if (featureFlags.bielefunke) {
+      filterOptions.tags = Array.from(
+        new Map(
+          allReports
+            .flatMap(r => r.tags || [])
+            .filter(Boolean)
+            .map(cat => [cat.id, cat])
+          ).values()
+        )
+    }
 
     const eligibilityData = allReports.reduce((acc, report) => {
       const { category, result } = report;

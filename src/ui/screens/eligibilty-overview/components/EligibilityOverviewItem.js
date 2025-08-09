@@ -14,7 +14,8 @@ const filterKeys = [
     'benefitCategories',
     'administrativeLevels',
     'associatedLaws',
-    'providingAgencies'
+    'providingAgencies',
+    'tags'
 ];
 
 const EligibilityOverviewItem = ({ t, item, eligible }) => {

@@ -8,7 +8,8 @@ const useFilterEligibilityData = (eligibilityData, filters) => {
                 'providingAgencies',
                 'associatedLaws',
                 'benefitCategories',
-                'administrativeLevels'
+                'administrativeLevels',
+                'tags'
             ];
     
             const passesAllFilters = item => {

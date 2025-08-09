@@ -240,6 +240,7 @@ const translations = {
                     administrativeLevels: "Administrative level",
                     providingAgencies: "Providing agency",
                     associatedLaws: "Associated law",
+                    tags: "Tag",
                 },
                 item: {
                     eligible: "You are likely eligible",
@@ -557,6 +558,7 @@ const translations = {
                     administrativeLevels: "Verwaltungsebene",
                     providingAgencies: "Zuständige Behörde",
                     associatedLaws: "Zugehöriges Gesetz",
+                    tags: "Schlagwort",
                 },
                 item: {
                     eligible: "Sie haben womöglich Anspruch",

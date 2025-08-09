@@ -27,7 +27,7 @@ const LandingPageTopSection = ({ runway }) => {
                                     <Typography variant="body1" sx={{ textAlign: 'left' }}>
                                         Gebt uns gerne Feedback: (dedicated email address?)
                                         <br/><br/>
-                                        Siehe <Link to={"/eligibility-overview"}>hier</Link> die Leistungen die wir im Rahmen des Pilotprojekts bis jetzt eingepflegt haben.
+                                        <Link to="/eligibility-overview?tags=ff%3Abielefunke">hier</Link> die Leistungen die wir im Rahmen des Pilotprojekts bis jetzt eingepflegt haben.
                                     </Typography>
                                 </>
                             )}
