@@ -19,7 +19,7 @@ const LandingPageTopSection = ({ runway }) => {
                     <VBox sx={{ width: "50%", alignItems: "center" }}>
                         <VBox sx={{ maxWidth: "600px", gap: 8 }}>
                             <LandingPageTopSectionShared />
-                            {runway === "bielefeld" && featureFlags.runwaysActive && (
+                            {runway === "bielefunke" && featureFlags.bielefunke && (
                                 <>
                                     <div>
                                         Willkommen beim Pilotprojekt Bielefeld!
