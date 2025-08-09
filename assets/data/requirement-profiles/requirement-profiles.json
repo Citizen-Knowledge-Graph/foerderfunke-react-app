@@ -125,6 +125,11 @@
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/bielefeld/shacl/substitutionstherapie-regulaer.ttl",
       "rpUri": "https://foerderfunke.org/default#substitutionstherapie-regulaer",
       "behindFeatureFlag": "bielefunke"
+    },
+    {
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/bielefeld/shacl/substitutionstherapie-diamorphin.ttl",
+      "rpUri": "https://foerderfunke.org/default#substitutionstherapie-diamorphin",
+      "behindFeatureFlag": "bielefunke"
     }
   ]
 }
