@@ -117,6 +117,10 @@
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/bielefeld/shacl/erwerbsminderungsrente-teilweise.ttl",
       "rpUri": "https://foerderfunke.org/default#erwerbsminderungsrente-teilweise"
+    },
+    {
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/bielefeld/shacl/substitutionstherapie-regulaer.ttl",
+      "rpUri": "https://foerderfunke.org/default#substitutionstherapie-regulaer"
     }
   ]
 }
