@@ -108,19 +108,23 @@
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/bielefeld/shacl/schwerbehindertenausweis.ttl",
-      "rpUri": "https://foerderfunke.org/default#schwerbehindertenausweis"
+      "rpUri": "https://foerderfunke.org/default#schwerbehindertenausweis",
+      "behindFeatureFlag": "bielefunke"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/bielefeld/shacl/erwerbsminderungsrente-voll.ttl",
-      "rpUri": "https://foerderfunke.org/default#erwerbsminderungsrente-voll"
+      "rpUri": "https://foerderfunke.org/default#erwerbsminderungsrente-voll",
+      "behindFeatureFlag": "bielefunke"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/bielefeld/shacl/erwerbsminderungsrente-teilweise.ttl",
-      "rpUri": "https://foerderfunke.org/default#erwerbsminderungsrente-teilweise"
+      "rpUri": "https://foerderfunke.org/default#erwerbsminderungsrente-teilweise",
+      "behindFeatureFlag": "bielefunke"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/bielefeld/shacl/substitutionstherapie-regulaer.ttl",
-      "rpUri": "https://foerderfunke.org/default#substitutionstherapie-regulaer"
+      "rpUri": "https://foerderfunke.org/default#substitutionstherapie-regulaer",
+      "behindFeatureFlag": "bielefunke"
     }
   ]
 }
