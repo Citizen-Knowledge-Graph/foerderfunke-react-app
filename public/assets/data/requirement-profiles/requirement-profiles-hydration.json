@@ -1954,5 +1954,18 @@
       "de": "Die Substitutionstherapie ist eine medizinische Behandlung für Menschen mit einer Opioidabhängigkeit. Sie dient der Linderung von Entzugserscheinungen und der Stabilisierung des Gesundheitszustands. Die Kosten werden in der Regel von den Krankenkassen übernommen.",
       "en": "Substitution therapy is a medical treatment for people with opioid addiction. It helps alleviate withdrawal symptoms and stabilise health conditions. Costs are usually covered by health insurance."
     }
+  },
+  "ff:substitutionstherapie-diamorphin": {
+    "id": "ff:substitutionstherapie-diamorphin",
+    "status": "beta",
+    "category": "social_benefit",
+    "title": {
+      "de": "Substitutionstherapie mit Diamorphin",
+      "en": "Substitution Therapy with Diamorphine"
+    },
+    "description": {
+      "de": "Die Substitutionstherapie mit Diamorphin ist eine spezielle Form der Behandlung für Menschen mit schwerer Opioidabhängigkeit. Sie wird in kontrollierten medizinischen Einrichtungen durchgeführt und soll die Lebensqualität der Betroffenen verbessern. Die Kosten werden von den Krankenkassen übernommen.",
+      "en": "Diamorphine substitution therapy is a specific treatment for people with severe opioid addiction. It is conducted in controlled medical facilities and aims to improve the quality of life for those affected. Costs are covered by health insurance."
+    }
   }
 }
