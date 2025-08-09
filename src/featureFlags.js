@@ -1,5 +1,4 @@
 const defaultFlags = {
-    showNearestCounselingCentre: false,
     showMermaidRuleGraph: false,
     runwaysActive: false
 };
@@ -10,7 +9,6 @@ const getFeatureFlag = (flag) => {
 };
 
 const featureFlags = {
-    showNearestCounselingCentre: getFeatureFlag('showNearestCounselingCentre'),
     showMermaidRuleGraph: getFeatureFlag('showMermaidRuleGraph'),
     runwaysActive: getFeatureFlag('runwaysActive')
 };
