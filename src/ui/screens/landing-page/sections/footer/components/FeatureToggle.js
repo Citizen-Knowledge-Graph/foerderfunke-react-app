@@ -40,7 +40,7 @@ const FeatureToggle = () => {
 
     return (
         <>
-            <IconButton onClick={handleDialogOpen}>
+            <IconButton onClick={handleDialogOpen} sx={{ p: 0, alignSelf: 'flex-start' }}>
                 <SettingsIcon />
             </IconButton>
 

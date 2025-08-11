@@ -7,6 +7,7 @@ import GitHubLink from "@/ui/shared-components/GitHubLink";
 import theme from "@/theme";
 import RegularButton from "@/ui/shared-components/buttons/RegularButton";
 import useTranslation from "@/ui/language/useTranslation";
+import FeatureToggle from "@/ui/screens/landing-page/sections/footer/components/FeatureToggle";
 
 const LandingPageFooterMobile = () => {
     const { t } = useTranslation();
@@ -27,6 +28,7 @@ const LandingPageFooterMobile = () => {
                     <EmailLink email={'info@foerderfunke.org'} />
                     <LinkedInLink linkedin={'https://www.linkedin.com/company/foerderfunke'} />
                     <GitHubLink href={"https://github.com/Citizen-Knowledge-Graph"} />
+                    <FeatureToggle />
                 </VBox>
             </VBox>
             <VBox>
