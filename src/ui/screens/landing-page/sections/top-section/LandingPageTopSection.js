@@ -17,19 +17,25 @@ const LandingPageTopSection = ({ runway }) => {
     return (
         <LandingPageSectionWrapper>
             {isDesktop ? (
-                <HBox justifyContent="space-between" alignItems="center">
+                <HBox justifyContent="space-between" alignItems="flex-start">
                     <VBox sx={{ width: "50%", alignItems: "center" }}>
-                        <VBox sx={{ maxWidth: "600px", gap: 8 }}>
+                        <VBox sx={{ maxWidth: "600px", gap: 4 }}>
                             <LandingPageTopSectionShared />
                             {runway === "bielefunke" && featureFlags.bielefunke && (
-                                <>
+                                <VBox
+                                    sx={(theme) => ({
+                                        padding: 4,
+                                        backgroundColor: `${theme.palette.white.dark}40`,
+                                        borderRadius: theme.shape.borderRadius,
+                                    })}
+                                >
                                     <Typography variant="h2">Willkommen beim Pilotprojekt Bielefeld!</Typography>
                                     <Typography variant="body1" sx={{ textAlign: 'left' }}>
                                         Gebt uns gerne Feedback: (dedicated email address?)
-                                        <br/><br/>
+                                        <br /><br />
                                         <Link to="/eligibility-overview?tags=ff%3Abielefunke">hier</Link> die Leistungen die wir im Rahmen des Pilotprojekts bis jetzt eingepflegt haben.
                                     </Typography>
-                                </>
+                                </VBox>
                             )}
                             <RegularButton variant={'yellowContained'} link='/user-routing' />
                         </VBox>
