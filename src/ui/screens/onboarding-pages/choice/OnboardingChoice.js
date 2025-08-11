@@ -6,9 +6,11 @@ import useTranslation from "@/ui/language/useTranslation";
 import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 import TileButton from '@/ui/shared-components/buttons/TileButton';
 import { HBox, VBox } from '@/ui/shared-components/LayoutBoxes';
+import { useSelectedBenefitsStore } from "@/ui/storage/zustand";
 
 const OnboardingChoice = () => {
     const { t } = useTranslation();
+    const clearSelectedBenefits = useSelectedBenefitsStore((state) => state.clear);
 
     return (
         <Layout isApp={true}>
@@ -31,6 +33,7 @@ const OnboardingChoice = () => {
                                 title={'app.discoverChoice.quickCheck'}
                                 subtitle='app.discoverChoice.quickCheckComment'
                                 link={"/onboarding-welcome-topics"}
+                                onClick={clearSelectedBenefits}
                             />
                         </HBox>
                     </VBox>

@@ -8,6 +8,7 @@ import EligibilityOverviewSection from "./components/EligibilityOverviewSection"
 import EligibilityOverviewFilter from './components/EligibilityOverviewFilter';
 import RegularButton from "@/ui/shared-components/buttons/RegularButton";
 import featureFlags from "@/featureFlags";
+import { useSelectedBenefitsStore } from "@/ui/storage/zustand";
 
 const EligibilityOverviewScreen = ({
     t,
@@ -16,11 +17,23 @@ const EligibilityOverviewScreen = ({
     filters,
     onChangeFilters,
 }) => {
+    const setSelectedBenefits = useSelectedBenefitsStore((state) => state.setSelectedBenefits);
 
     const atLeastOneWithMissingData = () => {
         return eligibilityData.business?.['ff:missingData']?.length > 0 ||
             eligibilityData.social_benefit?.['ff:missingData']?.length > 0;
     };
+
+    const doSetSelectedBenefits = () => {
+        const ids = [];
+        const collect = (section) => {
+            if (!section?.['ff:missingData']) return;
+            section['ff:missingData'].forEach(item => ids.push(item.uri));
+        };
+        collect(eligibilityData.social_benefit);
+        collect(eligibilityData.business);
+        setSelectedBenefits(ids);
+    }
 
     return (
         <Layout isApp={true} logo={true}>
@@ -35,7 +48,12 @@ const EligibilityOverviewScreen = ({
                             onChangeFilters={onChangeFilters}
                         />
                         {featureFlags.bielefunke && atLeastOneWithMissingData() &&
-                            <RegularButton text={"Noch offene Ansprüche prüfen"} variant={'yellowContained'} link='/user-routing' />
+                            <RegularButton
+                                text={"Noch offene Ansprüche prüfen"}
+                                variant={'yellowContained'}
+                                link='/onboarding-welcome'
+                                onClick={doSetSelectedBenefits}
+                            />
                         }
                         {
                             eligibilityData ? (
