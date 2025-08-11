@@ -1967,5 +1967,18 @@
       "de": "Die Substitutionstherapie mit Diamorphin ist eine spezielle Form der Behandlung für Menschen mit schwerer Opioidabhängigkeit. Sie wird in kontrollierten medizinischen Einrichtungen durchgeführt und soll die Lebensqualität der Betroffenen verbessern. Die Kosten werden von den Krankenkassen übernommen.",
       "en": "Diamorphine substitution therapy is a specific treatment for people with severe opioid addiction. It is conducted in controlled medical facilities and aims to improve the quality of life for those affected. Costs are covered by health insurance."
     }
+  },
+  "ff:arbeitsassistenz": {
+    "id": "ff:arbeitsassistenz",
+    "status": "beta",
+    "category": "social_benefit",
+    "title": {
+      "de": "Arbeitsassistenz",
+      "en": "Work Assistance"
+    },
+    "description": {
+      "de": "Arbeitsassistenz unterstützt Menschen mit Behinderungen bei der Ausübung ihrer beruflichen Tätigkeit. Sie umfasst individuelle Hilfen, die auf die Bedürfnisse des Einzelnen abgestimmt sind, um eine gleichberechtigte Teilhabe am Arbeitsleben zu ermöglichen.",
+      "en": "Work assistance supports people with disabilities in performing their professional activities. It includes individual aids tailored to the needs of the individual to enable equal participation in working life."
+    }
   }
 }
