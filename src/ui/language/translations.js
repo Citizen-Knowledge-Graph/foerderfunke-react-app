@@ -184,8 +184,8 @@ const translations = {
             topicsChosen: {
                 topicsTitle: "Selected topics",
                 topicsText: "Based on your chosen topics we will provide you with a list of benefits you may be eligible for.",
-                benefitTitle: "Selected benefit",
-                benefitText: "Based on your chosen benefit we will ask you the questions necessary to determine your eligibility.",
+                benefitsTitle: "Selected benefits",
+                benefitsText: "Based on your chosen benefits we will ask you the questions necessary to determine your eligibilities.",
                 noChoiceTitle: "You have not selected any topics. The quick check will be applied to all topics.",
                 discoverBtn: "Discover your benefits",
             },
@@ -502,8 +502,8 @@ const translations = {
             topicsChosen: {
                 topicsTitle: "Ausgewählte Themen",
                 topicsText: "Basierend auf deinen ausgewählten Themen stellen wir dir eine Liste von Leistungen zur Verfügung, für die du möglicherweise infrage kommst.",
-                benefitTitle: "Ausgewählte Leistung",
-                benefitText: "Basierend auf deiner ausgewählten Leistung stellen wir dir die notwendigen Fragen, um deine Anspruchsberechtigung zu ermitteln.",
+                benefitsTitle: "Ausgewählte Leistungen",
+                benefitsText: "Basierend auf deinen ausgewählten Leistungen stellen wir dir die notwendigen Fragen, um deine Anspruchsberechtigungen zu ermitteln.",
                 noChoiceTitle: "Du hast keine Themen ausgewählt. Der Schnellcheck wird auf alle Themen angewendet.",
                 discoverBtn: "Entdecke deine Leistungen",
             },

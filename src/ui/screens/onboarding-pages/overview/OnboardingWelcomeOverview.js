@@ -43,10 +43,10 @@ const OnboardingWelcomeOverviewView = ({
                                 : (
                                     <>
                                         <Typography variant="h2" sx={{ color: 'pink.main', fontWeight: '500' }}>
-                                            {isBenefitMode() ? t('app.topicsChosen.benefitTitle') : t('app.topicsChosen.topicsTitle')}
+                                            {isBenefitMode() ? t('app.topicsChosen.benefitsTitle') : t('app.topicsChosen.topicsTitle')}
                                         </Typography>
                                         <Typography variant="body1">
-                                            {isBenefitMode() ? t('app.topicsChosen.benefitText') : t('app.topicsChosen.topicsText')}
+                                            {isBenefitMode() ? t('app.topicsChosen.benefitsText') : t('app.topicsChosen.topicsText')}
                                         </Typography>
                                     </>)}
                     </VBox>
@@ -58,11 +58,13 @@ const OnboardingWelcomeOverviewView = ({
                                     borderRadius: theme.shape.borderRadius,
                                     backgroundColor: 'white.main',
                                 }}>
-                                    {benefitTitles.map((title, idx) => (
-                                        <Typography key={idx} variant="h2" sx={{ fontWeight: '400' }}>
-                                            {title}
-                                        </Typography>
-                                    ))}
+                                    <VBox>
+                                        {benefitTitles.map((title, idx) => (
+                                            <Typography key={idx} variant="h2" sx={{ fontWeight: '400' }}>
+                                                {title}
+                                            </Typography>
+                                        ))}
+                                    </VBox>
                                 </HBox>
                             </VBox>
                         ) : (

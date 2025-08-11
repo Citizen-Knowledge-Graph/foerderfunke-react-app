@@ -92,7 +92,7 @@ const BenefitPageHeader = ({ id, benefit, validatedStatus, categoryTitles }) => 
                                 }
                             }}
                             component={Link}
-                            to={'/onboarding-welcome/'}
+                            to={'/onboarding-welcome'}
                             onClick={() => {
                                 setSelectedBenefits([id]);
                                 clearSelectedTopics()

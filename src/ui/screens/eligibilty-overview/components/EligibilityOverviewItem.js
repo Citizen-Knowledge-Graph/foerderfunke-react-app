@@ -115,7 +115,7 @@ const EligibilityOverviewItem = ({ t, item, eligible }) => {
                                 setSelectedBenefits([item.id]);
                             }}
                             text={'app.browseAll.checkElBtn'}
-                            link={`/onboarding-welcome/`}
+                            link={`/onboarding-welcome`}
                             size='small'
                             endIcon={<ChevronRightIcon sx={{ fontSize: '16px' }} />}
                         />
