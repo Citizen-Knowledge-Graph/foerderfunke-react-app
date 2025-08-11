@@ -10,14 +10,16 @@ import AppScreenWrapperContainer from '@/ui/shared-components/app-screen-wrapper
 
 const OnboardingWelcomeOverviewView = ({
     t,
-    benefitMode,
     language,
     isLoading,
     numberOfBenefits,
-    benefitTitle,
+    benefitTitles,
     topicRps,
 }) => {
 
+    const isBenefitMode = () => { // true = by benefits, false = by topic
+        return benefitTitles && benefitTitles.length > 0;
+    }
 
     return (
         <Layout isApp={true} logo={false}>
@@ -29,36 +31,38 @@ const OnboardingWelcomeOverviewView = ({
                         </Typography>
                         <HBox sx={{ gap: 4, alignItems: 'center', flexWrap: 'wrap' }}>
                             <TimeIcon />
-                            {!benefitMode && numberOfBenefits > 0 && <BenefitsIcon numberOfBenefits={numberOfBenefits} />}
+                            {!isBenefitMode() && numberOfBenefits > 0 && <BenefitsIcon numberOfBenefits={numberOfBenefits} />}
                         </HBox>
                     </VBox>
                     <VBox sx={{ maxWidth: '800px' }}>
                         {
-                            !benefitMode && numberOfBenefits === 0 ? (
+                            !isBenefitMode() && numberOfBenefits === 0 ? (
                                 <Typography variant="h2" sx={{ color: 'pink.main', fontWeight: '500' }}>
                                     {t('app.topicsChosen.noChoiceTitle')}
                                 </Typography>)
                                 : (
                                     <>
                                         <Typography variant="h2" sx={{ color: 'pink.main', fontWeight: '500' }}>
-                                            {benefitMode ? t('app.topicsChosen.benefitTitle') : t('app.topicsChosen.topicsTitle')}
+                                            {isBenefitMode() ? t('app.topicsChosen.benefitTitle') : t('app.topicsChosen.topicsTitle')}
                                         </Typography>
                                         <Typography variant="body1">
-                                            {benefitMode ? t('app.topicsChosen.benefitText') : t('app.topicsChosen.topicsText')}
+                                            {isBenefitMode() ? t('app.topicsChosen.benefitText') : t('app.topicsChosen.topicsText')}
                                         </Typography>
                                     </>)}
                     </VBox>
                     <VBox sx={{ gap: 4 }}>
-                        {benefitMode ? (
+                        {isBenefitMode() ? (
                             <VBox alignItems={'flex-start'}>
                                 <HBox sx={{
                                     padding: { xs: '20px', md: 4 },
                                     borderRadius: theme.shape.borderRadius,
                                     backgroundColor: 'white.main',
                                 }}>
-                                    <Typography variant="h2" sx={{ fontWeight: '400' }}>
-                                        {benefitTitle}
-                                    </Typography>
+                                    {benefitTitles.map((title, idx) => (
+                                        <Typography key={idx} variant="h2" sx={{ fontWeight: '400' }}>
+                                            {title}
+                                        </Typography>
+                                    ))}
                                 </HBox>
                             </VBox>
                         ) : (

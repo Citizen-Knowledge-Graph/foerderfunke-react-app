@@ -7,7 +7,7 @@ import { useApplicationLoadingState } from '@/ui/storage/updates';
 import {
     useUserStore,
     questionsStackStore,
-    useSelectedBenefitStore,
+    useSelectedBenefitsStore,
     useSelectedTopicsStore,
     useValidationReportStore,
 } from "@/ui/storage/zustand";
@@ -44,7 +44,7 @@ const useResetUserProfile = () => {
 
             // 2) Clear selected topics/benefits
             useSelectedTopicsStore.getState().clear();
-            useSelectedBenefitStore.getState().clear();
+            useSelectedBenefitsStore.getState().clear();
             questionsStackStore.getState().resetQuestionsStack();
 
             // 3) Fetch & update validation report

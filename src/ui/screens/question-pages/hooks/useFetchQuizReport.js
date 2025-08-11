@@ -4,7 +4,7 @@ import {
   useUserStore,
   useQuizReportStore,
   useSelectedTopicsStore,
-  useSelectedBenefitStore,
+  useSelectedBenefitsStore,
   useMetadataStore
 } from "@/ui/storage/zustand";
 import { useQuestionsUpdate } from "@/ui/storage/updates";
@@ -23,7 +23,7 @@ const useFetchQuizReport = () => {
   const userId = useUserStore((state) => state.activeUserId);
   const metadata = useMetadataStore((state) => state.metadata);
   const selectedTopics = useSelectedTopicsStore((state) => state.selectedTopics);
-  const selectedBenefit = useSelectedBenefitStore((state) => state.selectedBenefit);
+  const selectedBenefits = useSelectedBenefitsStore((state) => state.selectedBenefits);
   const updateCounter = useQuestionsUpdate((state) => state.updateCounter);
   const updateQuizReport = useQuizReportStore((state) => state.updateQuizReport);
   const language = useLanguageStore((state) => state.language);
@@ -37,7 +37,7 @@ const useFetchQuizReport = () => {
       const uniqueRpIds = new Set();
 
       const hasSelectedTopics = Array.isArray(selectedTopics) && selectedTopics.length > 0;
-      const hasSelectedBenefit = Boolean(selectedBenefit);
+      const hasSelectedBenefits = Array.isArray(selectedBenefits) && selectedBenefits.length > 0;
 
       // Add RP IDs based on selected topics
       if (hasSelectedTopics) {
@@ -53,13 +53,13 @@ const useFetchQuizReport = () => {
         }
       }
 
-      // Add selected benefit if it's defined
-      if (hasSelectedBenefit) {
-        uniqueRpIds.add(selectedBenefit);
+      // Add selected benefits if they are defined
+      if (hasSelectedBenefits) {
+          selectedBenefits.forEach(id => uniqueRpIds.add(id));
       }
 
-      // If both selectedTopics and selectedBenefit are empty/null, add all RPs
-      if (!hasSelectedTopics && !hasSelectedBenefit) {
+      // If both selectedTopics and selectedBenefits are empty/null, add all RPs
+      if (!hasSelectedTopics && !hasSelectedBenefits) {
         for (const rp of rps) {
           if (rp?.["@id"]) {
             uniqueRpIds.add(rp["@id"]);
@@ -94,7 +94,7 @@ const useFetchQuizReport = () => {
     userId,
     metadata,
     selectedTopics,
-    selectedBenefit,
+    selectedBenefits,
     updateCounter,
     updateQuizReport,
     language,

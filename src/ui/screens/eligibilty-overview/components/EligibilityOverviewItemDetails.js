@@ -1,11 +1,11 @@
 import React from 'react';
 import { Typography } from '@mui/material';
 import { HBox, VBox } from '@/ui/shared-components/LayoutBoxes';
-import { useSelectedBenefitStore, useSelectedTopicsStore } from "@/ui/storage/zustand";
+import { useSelectedBenefitsStore, useSelectedTopicsStore } from "@/ui/storage/zustand";
 import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 
 const EligibilityOverviewItemDetails = ({ item, eligible }) => {
-    const setSelectedBenefit = useSelectedBenefitStore((state) => state.setSelectedBenefit);
+    const setSelectedBenefits = useSelectedBenefitsStore((state) => state.setSelectedBenefits);
     const clearSelectedTopics = useSelectedTopicsStore((state) => state.clear);
 
     return (
@@ -27,10 +27,10 @@ const EligibilityOverviewItemDetails = ({ item, eligible }) => {
                         variant={'blueHollow'}
                         onClick={() => {
                             clearSelectedTopics()
-                            setSelectedBenefit(item.id);
+                            setSelectedBenefits([item.id]);
                         }}
                         text={'app.browseAll.checkElBtn'}
-                        link={`/onboarding-welcome/${item.id}`}
+                        link={`/onboarding-welcome/`}
                         size='small'
                     />
                 }

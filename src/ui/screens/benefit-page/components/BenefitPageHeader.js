@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button, IconButton, Typography, Box } from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { HBox, VBox } from "@/ui/shared-components/LayoutBoxes";
-import { useSelectedBenefitStore, useSelectedTopicsStore } from "@/ui/storage/zustand";
+import { useSelectedBenefitsStore, useSelectedTopicsStore } from "@/ui/storage/zustand";
 import useTranslation from "@/ui/language/useTranslation";
 import theme from "@/theme";
 
@@ -11,7 +11,7 @@ const BenefitPageHeader = ({ id, benefit, validatedStatus, categoryTitles }) => 
     const { t } = useTranslation();
     const [leiKaInfo, setLeiKaInfo] = useState(false);
 
-    const setSelectedBenefit = useSelectedBenefitStore((state) => state.setSelectedBenefit);
+    const setSelectedBenefits = useSelectedBenefitsStore((state) => state.setSelectedBenefits);
     const clearSelectedTopics = useSelectedTopicsStore((state) => state.clear);
 
     return (
@@ -92,9 +92,9 @@ const BenefitPageHeader = ({ id, benefit, validatedStatus, categoryTitles }) => 
                                 }
                             }}
                             component={Link}
-                            to={`/onboarding-welcome/${id}`}
+                            to={'/onboarding-welcome/'}
                             onClick={() => {
-                                setSelectedBenefit(id);
+                                setSelectedBenefits([id]);
                                 clearSelectedTopics()
                             }}
                         >

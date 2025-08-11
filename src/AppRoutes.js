@@ -25,7 +25,6 @@ const AppRoutes = () => (
         <Route path="/onboarding-choice" element={<OnboardingChoice/>}/>
         <Route path="/onboarding-welcome-topics" element={<OnboardingWelcomeTopicsContainer/>}/>
         <Route path="/onboarding-welcome" element={<OnboardingWelcomeOverviewContainer/>}/>
-        <Route path="/onboarding-welcome/:benefitMode" element={<OnboardingWelcomeOverviewContainer/>}/>
         <Route path="/eligibility-overview" element={<EligibilityOverviewScreenContainer/>}/>
         <Route path="/benefit-page/:id" element={<BenefitPageScreenContainer/>}/>
         <Route path="/profile-overview" element={<ProfileScreen/>}/>

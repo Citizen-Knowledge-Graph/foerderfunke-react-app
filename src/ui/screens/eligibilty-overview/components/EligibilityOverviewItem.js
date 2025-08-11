@@ -3,7 +3,7 @@ import { Divider, Typography } from '@mui/material';
 import { HBox, VBox } from '@/ui/shared-components/LayoutBoxes';
 import theme from '@/theme';
 import RegularButton from '@/ui/shared-components/buttons/RegularButton';
-import { useSelectedBenefitStore, useSelectedTopicsStore } from "@/ui/storage/zustand";
+import { useSelectedBenefitsStore, useSelectedTopicsStore } from "@/ui/storage/zustand";
 import EligibilityOverviewTag from './EligibilityOverviewTag';
 import EligibilityOverviewBanner from './EligibilityOverviewBanner';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
@@ -21,7 +21,7 @@ const filterKeys = [
 const EligibilityOverviewItem = ({ t, item, eligible }) => {
     const [isVisible, setIsVisible] = useState(false);
     const color = eligible === 'indeterminate' ? 'black.light' : 'black.main';
-    const setSelectedBenefit = useSelectedBenefitStore((state) => state.setSelectedBenefit);
+    const setSelectedBenefits = useSelectedBenefitsStore((state) => state.setSelectedBenefits);
     const clearSelectedTopics = useSelectedTopicsStore((state) => state.clear);
 
     return (
@@ -112,10 +112,10 @@ const EligibilityOverviewItem = ({ t, item, eligible }) => {
                             variant={'blueHollow'}
                             onClick={() => {
                                 clearSelectedTopics()
-                                setSelectedBenefit(item.id);
+                                setSelectedBenefits([item.id]);
                             }}
                             text={'app.browseAll.checkElBtn'}
-                            link={`/onboarding-welcome/${item.id}`}
+                            link={`/onboarding-welcome/`}
                             size='small'
                             endIcon={<ChevronRightIcon sx={{ fontSize: '16px' }} />}
                         />
