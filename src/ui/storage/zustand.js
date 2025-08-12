@@ -98,3 +98,14 @@ export const questionsStackStore = create((set) => ({
     }
 }));
 
+export const useSelectedFiltersStore = create((set) => ({
+    selectedFilters: {},
+    setSelectedFilters(newSelectedFilters) {
+        console.log('STATE UPDATE: We are setting the selected filters');
+        set({selectedFilters: newSelectedFilters});
+    },
+    clear: () => {
+        console.log('STATE UPDATE: We are clearing the selected filters');
+        set({selectedFilters: {}});
+    }
+}));

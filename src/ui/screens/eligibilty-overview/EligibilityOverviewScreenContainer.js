@@ -5,7 +5,7 @@ import useTranslation from "@/ui/language/useTranslation";
 import EligibilityOverviewScreen from './EligibilityOverviewScreen';
 import useEligibilityData from "./hooks/useEligibilityData";
 import { useLanguageStore } from '@/ui/storage/useLanguageStore';
-import { useMetadataStore } from '@/ui/storage/zustand';
+import { useMetadataStore, useSelectedFiltersStore } from '@/ui/storage/zustand';
 import useProduceValidationReport from './hooks/useProduceValidationReport';
 import useFilterEligibilityData from './hooks/useFilterEligibilityData';
 import { useInitialiseFilters, useFilterChangeHandler } from './hooks/useBuildFilterSetup';
@@ -14,13 +14,14 @@ const EligibilityOverviewScreenContainer = () => {
     const { t } = useTranslation();
     const language = useLanguageStore((state) => state.language);
     const [searchParams, setSearchParams] = useSearchParams();
+    const { selectedFilters, setSelectedFilters } = useSelectedFiltersStore();
 
     const hydrationData = useFetchData('assets/data/requirement-profiles/requirement-profiles-hydration.json');
     const { validationReport } = useProduceValidationReport();
     const metadata = useMetadataStore((state) => state.metadata);
     const { eligibilityData, filterOptions } = useEligibilityData(validationReport, metadata, hydrationData, language);
-    const filters = useInitialiseFilters(filterOptions, searchParams);
-    const handleChangeFilters = useFilterChangeHandler({ filters, setSearchParams });
+    const filters = useInitialiseFilters(filterOptions, searchParams, selectedFilters, setSearchParams);
+    const handleChangeFilters = useFilterChangeHandler({ filters, setSearchParams, setSelectedFilters });
     const filteredEligibilityData = useFilterEligibilityData(eligibilityData, filters);
 
     return (
