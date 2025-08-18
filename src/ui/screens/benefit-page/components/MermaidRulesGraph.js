@@ -48,9 +48,9 @@ export default function MermaidRulesGraph({ evalGraph, t }) {
                 <HBox gap={4} alignItems="center">
                     <HBox gap={1} alignItems="center">
                         <strong>Type:</strong>
-                        <span>Rule</span>
-                        <AntSwitch checked={graphTypeEval} onChange={(e) => setGraphTypeEval(e.target.checked)} color="white"/>
                         <span>Evaluation</span>
+                        <AntSwitch checked={graphTypeEval} onChange={(e) => setGraphTypeEval(e.target.checked)} color="white"/>
+                        <span>Rule</span>
                     </HBox>
                     <HBox gap={1} alignItems="center">
                         <strong>Orientation:</strong>
