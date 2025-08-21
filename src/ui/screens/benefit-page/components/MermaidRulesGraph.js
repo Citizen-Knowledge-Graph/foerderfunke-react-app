@@ -45,7 +45,7 @@ export default function MermaidRulesGraph({ evalGraph, t }) {
                 <Typography variant="h2" sx={{ fontWeight: '400', wordBreak: "break-word" }}>
                     Rules Graph
                 </Typography>
-                <HBox gap={4} alignItems="center">
+                <HBox gap={4} alignItems="center" sx={{ flexWrap: 'wrap' }}>
                     <HBox gap={1} alignItems="center">
                         <strong>Type:</strong>
                         <span>Evaluation</span>
@@ -68,7 +68,7 @@ export default function MermaidRulesGraph({ evalGraph, t }) {
                         variant={'blackOutlined'}
                         text={"Export"}
                         onClick={() => alert("TODO")}
-                        size='small'
+                        size='xsmall'
                     />
                 </HBox>
                 <Typography variant="body1" component="div">
