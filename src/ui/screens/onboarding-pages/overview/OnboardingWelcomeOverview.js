@@ -17,9 +17,7 @@ const OnboardingWelcomeOverviewView = ({
     topicRps,
 }) => {
 
-    const isBenefitMode = () => { // true = by benefits, false = by topic
-        return benefitTitles && benefitTitles.length > 0;
-    }
+    const isBenefitMode = benefitTitles?.length > 0;
 
     return (
         <Layout isApp={true} logo={false}>
@@ -31,27 +29,27 @@ const OnboardingWelcomeOverviewView = ({
                         </Typography>
                         <HBox sx={{ gap: 4, alignItems: 'center', flexWrap: 'wrap' }}>
                             <TimeIcon />
-                            {!isBenefitMode() && numberOfBenefits > 0 && <BenefitsIcon numberOfBenefits={numberOfBenefits} />}
+                            {!isBenefitMode && numberOfBenefits > 0 && <BenefitsIcon numberOfBenefits={numberOfBenefits} />}
                         </HBox>
                     </VBox>
                     <VBox sx={{ maxWidth: '800px' }}>
                         {
-                            !isBenefitMode() && numberOfBenefits === 0 ? (
+                            !isBenefitMode && numberOfBenefits === 0 ? (
                                 <Typography variant="h2" sx={{ color: 'pink.main', fontWeight: '500' }}>
                                     {t('app.topicsChosen.noChoiceTitle')}
                                 </Typography>)
                                 : (
                                     <>
                                         <Typography variant="h2" sx={{ color: 'pink.main', fontWeight: '500' }}>
-                                            {isBenefitMode() ? t('app.topicsChosen.benefitsTitle') : t('app.topicsChosen.topicsTitle')}
+                                            {isBenefitMode ? t('app.topicsChosen.benefitsTitle') : t('app.topicsChosen.topicsTitle')}
                                         </Typography>
                                         <Typography variant="body1">
-                                            {isBenefitMode() ? t('app.topicsChosen.benefitsText') : t('app.topicsChosen.topicsText')}
+                                            {isBenefitMode ? t('app.topicsChosen.benefitsText') : t('app.topicsChosen.topicsText')}
                                         </Typography>
                                     </>)}
                     </VBox>
                     <VBox sx={{ gap: 4 }}>
-                        {isBenefitMode() ? (
+                        {isBenefitMode ? (
                             <VBox alignItems={'flex-start'}>
                                 <HBox sx={{
                                     padding: { xs: '20px', md: 4 },
@@ -59,11 +57,15 @@ const OnboardingWelcomeOverviewView = ({
                                     backgroundColor: 'white.main',
                                 }}>
                                     <VBox>
-                                        {benefitTitles.map((title, idx) => (
-                                            <Typography key={idx} variant="h2" sx={{ fontWeight: '400' }}>
-                                                {title}
-                                            </Typography>
-                                        ))}
+                                        <ul>
+                                            {benefitTitles.map((title, idx) => (
+                                                <li key={idx}>
+                                                    <Typography variant="body1" sx={{ fontWeight: '400' }}>
+                                                        {title}
+                                                    </Typography>
+                                                </li>
+                                            ))}
+                                        </ul>
                                     </VBox>
                                 </HBox>
                             </VBox>
