@@ -57,43 +57,28 @@ const matchingEngineManager = {
         return engine.metadata || {};
     },
 
-    async fetchValidationReport(userId, language = "en") {
+    // fetchValidationReport and fetchQuizReport could probably be unified further to only expose fetchMatchingReport() TODO
+    async fetchMatchingReport(userId, rps, lang = "en") {
         if (!this.matchingEngineInstance) {
-            await this.initMatchingEngine(language);
+            await this.initMatchingEngine(lang);
         }
-
-        const validationConfig = await resourceService.fetchResourceWithCache(
-            "assets/data/requirement-profiles/requirement-profiles.json"
-        );
-
         const userProfile = userManager.retrieveUserData(userId);
         const userProfileTurtle = await convertUserProfileToTurtle(userProfile);
+        return this.matchingEngineInstance.matching(userProfileTurtle, rps, FORMAT.JSON_LD);
+    },
+
+    async fetchValidationReport(userId, language = "en") {
+        const validationConfig = await resourceService.fetchResourceWithCache("assets/data/requirement-profiles/requirement-profiles.json");
         const requirementProfiles = [];
         for (const { rpUri, behindFeatureFlag } of validationConfig["queries"]) {
             if (behindFeatureFlag && !featureFlags[behindFeatureFlag]) continue;
             requirementProfiles.push(rpUri);
         }
-
-        const report = await this.matchingEngineInstance.matching(
-            userProfileTurtle,
-            requirementProfiles,
-            FORMAT.JSON_LD
-        );
-
-        return report;
+        return await this.fetchMatchingReport(userId, requirementProfiles, language);
     },
 
     async fetchQuizReport(userId, requirementProfiles, language = "en") {
-        if (!this.matchingEngineInstance) {
-            await this.initMatchingEngine(language);
-        }
-        const userProfile = userManager.retrieveUserData(userId);
-        const userProfileTurtle = await convertUserProfileToTurtle(userProfile);
-        return this.matchingEngineInstance.matching(
-            userProfileTurtle,
-            requirementProfiles.map(rp => expand(rp)),
-            FORMAT.JSON_LD
-        );
+        return await this.fetchMatchingReport(userId, requirementProfiles.map(rp => expand(rp)), language);
     },
 
     async fetchEvaluationGraph(userId, requirementProfile, language = "en") {
