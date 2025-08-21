@@ -4,6 +4,7 @@ import { useLanguageStore } from "@/ui/storage/useLanguageStore";
 import { useApplicationLoadingState, useInitialisationState } from '@/ui/storage/updates';
 import matchingEngineManager from "@/core/managers/matchingEngineManager";
 import userManager from "@/core/managers/userManager";
+import profileManager from "@/core/managers/profileManager";
 
 export const useInitialiseApplication = () => {
     const setInitialisationState = useInitialisationState((state) => state.setInitialisationState);
@@ -20,7 +21,7 @@ export const useInitialiseApplication = () => {
     const validationReportStore = useValidationReportStore();
     const language = useLanguageStore((state) => state.language);
 
-    const fixedUserId = "ff:quick-check-user";
+    const fixedUserId = "ff:quick-check-user"; // change to ff:citizen1 when switching to ProfileManager TODO
 
     useEffect(() => {
         const initializeAppState = async () => {
@@ -39,17 +40,23 @@ export const useInitialiseApplication = () => {
                 if (!userProfile) userManager.initialiseNewUser(fixedUserId);
                 updateUserId(fixedUserId);
 
+                // Construct and init profile manager
+                await profileManager.constructProfileManagerOnce()
+                // await profileManager.initProfileManager(fixedUserId)
+                // updateUserId(fixedUserId);
+
                 // Construct engine once (does not call .init)
                 await matchingEngineManager.constructMatchingEngineOnce();
 
                 // Call init(language) once after construction
-                lastInitializedLang.current = language; // ✅ prevent duplicate init
+                lastInitializedLang.current = language; // prevent duplicate init
                 await matchingEngineManager.initMatchingEngine(language);
 
                 // Fetch metadata and report
                 const metadata = await matchingEngineManager.fetchMetadata(language);
                 metadataStore.updateMetadata(metadata || "empty");
 
+                // It this necessary initially or only later? TODO
                 const report = await matchingEngineManager.fetchValidationReport(fixedUserId, language);
                 validationReportStore.updateValidationReport(report || "empty");
 
