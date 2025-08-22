@@ -4,7 +4,6 @@ import { useLanguageStore } from "@/ui/storage/useLanguageStore";
 import { useApplicationLoadingState, useInitialisationState } from '@/ui/storage/updates';
 import matchingEngineManager from "@/core/managers/matchingEngineManager";
 import userManager from "@/core/managers/userManager";
-import profileManager from "@/core/managers/profileManager";
 
 export const useInitialiseApplication = () => {
     const setInitialisationState = useInitialisationState((state) => state.setInitialisationState);
@@ -41,7 +40,7 @@ export const useInitialiseApplication = () => {
                 updateUserId(fixedUserId);
 
                 // Construct and init profile manager
-                await profileManager.constructProfileManagerOnce()
+                // await profileManager.constructProfileManagerOnce()
                 // await profileManager.initProfileManager(fixedUserId)
                 // updateUserId(fixedUserId);
 
