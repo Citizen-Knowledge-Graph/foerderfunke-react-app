@@ -1954,7 +1954,8 @@
       "de": "In der Suchtmedizin ist die Substitutionstherapie eine Behandlung, bei der heroinabhängige Menschen ein ärztlich verordnetes Ersatzopioid wie Methadon oder Buprenorphin erhalten. Ziel der Behandlung ist es, den Konsum von Heroin zu verhindern, bzw. zu verringern.",
       "de-einfach": "In der Suchtmedizin gibt es die Substitutionstherapie.\nDas heißt, Menschen, die von Heroin abhängig sind, bekommen ein anderes Medikament.\nDas Medikament ersetzt das Heroin.\nDas Medikament ist zum Beispiel Methadon oder Buprenorphin.\nDie Menschen bekommen das Medikament von einem Arzt.",
       "en": "Substitution therapy is a medical treatment for people with opioid addiction. It helps alleviate withdrawal symptoms and stabilise health conditions. Costs are usually covered by health insurance."
-    }
+    },
+    "markdown": ":::de\n# 1. Was ist Substitutionstherapie und Zielsetzung\n## 1.1 Kurzbeschreibung\n_Allgemeine Sprache_: …  \n_Einfache Sprache_: …  \n_Leichte Sprache_: …\n\n## 1.2 Ziele *(optional)*\n- Chancengleichheit …\n- Stabilisierung der Gesundheit …\n\n# 2. Leistungsinhalte\n## 2.1 Leistungsgegenstände\n- Assistenzkraft …\n- Medikamentengabe …\n:::\n\n:::en\n# 1. What is substitution therapy and its goals\n## 1.1 Short description\n_General language_: …  \n_Easy language_: …  \n_Plain language_: …\n\n## 1.2 Goals *(optional)*\n- Equal opportunities …\n- Stabilization of health …\n\n# 2. Benefit contents\n## 2.1 Covered items\n- Support staff …\n- Medication provision …\n:::"
   },
   "ff:substitutionstherapie-diamorphin": {
     "id": "ff:substitutionstherapie-diamorphin",

@@ -29,6 +29,7 @@ const useFetchStaticBenefitPageData = (id, language) => {
       additionalSupport:  getField(resource, `additional_support.${language}`, {}),
       legalBasis:         getField(resource, `legal_basis.${language}`,        {}),
       furtherInformation: getField(resource, `further_information.${language}`, []),
+      markdown:           getField(resource, `markdown`, []),
     };
   }, [hydrationData, id, language]);
 

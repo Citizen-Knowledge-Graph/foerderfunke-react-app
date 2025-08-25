@@ -12,6 +12,9 @@ import AppScreenWrapperContainer from '@/ui/shared-components/app-screen-wrapper
 import RecursiveRulesTable from './components/RecursiveRulesTable';
 import featureFlags from "@/featureFlags";
 import MermaidRulesGraph from "@/ui/screens/benefit-page/components/MermaidRulesGraph";
+import ReactMarkdown from "react-markdown";
+import remarkDirective from "remark-directive";
+import { useLanguageStore } from "@/ui/storage/useLanguageStore";
 
 const BenefitPageScreen = ({
     t,
@@ -21,6 +24,16 @@ const BenefitPageScreen = ({
     categoryTitles,
     matchingGraph
 }) => {
+    const language = useLanguageStore((state) => state.language);
+
+    function extractLocaleBlock(md) {
+        if (typeof md !== 'string') return md;
+        const re = new RegExp(`:::${language}\\s*\\n([\\s\\S]*?)\\n:::`, 'm');
+        const match = md.match(re);
+        return match ? match[1] : md;
+    }
+
+    const filteredMarkdown = extractLocaleBlock(benefitPageData?.markdown);
 
     return (
         <Layout isApp={true} logo={false} back="Back">
@@ -78,6 +91,18 @@ const BenefitPageScreen = ({
                             benefitPageData?.furtherInformation.title && (
                                 <BenefitPageLinksList listTitle={t('app.benefitPage.furtherInformation')} data={benefitPageData?.furtherInformation} />
                             )
+                        }
+                        {
+                          benefitPageData?.markdown && (
+                            <VBox sx={{ backgroundColor: 'white.main', padding: '32px', borderRadius: theme.shape.borderRadius }}>
+                                <ReactMarkdown remarkPlugins={[
+                                        remarkDirective,
+                                    ]}
+                                >
+                                    {filteredMarkdown}
+                                </ReactMarkdown>
+                            </VBox>
+                          )
                         }
                         <RecursiveRulesTable rootNodes={matchingGraph?.rootNodes} t={t} />
                         {featureFlags.showMermaidRuleGraph &&
