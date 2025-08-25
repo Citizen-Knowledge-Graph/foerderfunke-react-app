@@ -41,7 +41,7 @@ const BenefitPageScreen = ({
                         >
                             <VBox sx={{ gap: 2, maxWidth: '800px' }}>
                                 <Typography variant="h2" sx={{ fontWeight: '400' }}>{t('app.benefitPage.whatIsIt')}{benefitPageData?.title}</Typography>
-                                <Typography sx={{ marginTop: 1 }} variant="body1">{benefitPageData?.description || t('app.noData')}</Typography>
+                                <Typography sx={{ marginTop: 1, whiteSpace: 'pre-line' }} variant="body1">{benefitPageData?.description || t('app.noData')}</Typography>
                             </VBox>
                         </VBox>
                         {
