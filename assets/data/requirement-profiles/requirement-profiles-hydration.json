@@ -1980,5 +1980,18 @@
       "de": "Arbeitsassistenz unterstützt Menschen mit Behinderungen bei der Ausübung ihrer beruflichen Tätigkeit. Sie umfasst individuelle Hilfen, die auf die Bedürfnisse des Einzelnen abgestimmt sind, um eine gleichberechtigte Teilhabe am Arbeitsleben zu ermöglichen.",
       "en": "Work assistance supports people with disabilities in performing their professional activities. It includes individual aids tailored to the needs of the individual to enable equal participation in working life."
     }
+  },
+  "ff:allgemeine-krankenversicherungspflicht": {
+    "id": "ff:allgemeine-krankenversicherungspflicht",
+    "status": "beta",
+    "category": "social_benefit",
+    "title": {
+      "de": "Allgemeine Krankenversicherungspflicht",
+      "en": "General Health Insurance Obligation"
+    },
+    "description": {
+      "de": "In Deutschland besteht eine allgemeine Krankenversicherungspflicht: Jeder mit Wohnsitz oder gewöhnlichem Aufenthalt muss versichert sein, entweder in der gesetzlichen (GKV) oder der privaten Krankenversicherung (PKV). Welche Absicherung gilt, hängt von der Lebenssituation ab; bei Unklarheiten hilft die Clearingstelle weiter.",
+      "en": "In Germany, there is a general obligation to have health insurance: Everyone with a residence or habitual abode must be insured, either in the statutory (GKV) or private health insurance (PKV). The applicable coverage depends on the life situation; if in doubt, the clearing office can assist."
+    }
   }
 }
