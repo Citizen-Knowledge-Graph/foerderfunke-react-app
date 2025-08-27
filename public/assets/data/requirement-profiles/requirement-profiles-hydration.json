@@ -7,7 +7,7 @@
       "de": "Hilfe zum Lebensunterhalt",
       "en": "Cost-of-living assistance"
     },
-    "description": {
+    "teaser": {
       "de": "Die „Hilfe zum Lebensunterhalt“ unterstützt Menschen, die vorübergehend nicht oder nur wenig arbeiten können und keinen Anspruch auf andere Sozialleistungen haben, bei der Deckung von Grundbedürfnissen wie Essen, Kleidung und Miete.",
       "en": "The 'Hilfe zum Lebensunterhalt' (cost-of-living assistance) supports people who are temporarily unable to work or can only work a little and do not have access to other social benefits. It helps cover basic needs such as food, clothing, and rent."
     }
@@ -20,7 +20,7 @@
       "de": "Kindergeld",
       "en": "Child benefit"
     },
-    "description": {
+    "teaser": {
       "de": "Alle Eltern, die in Deutschland leben bzw. arbeiten,  können für Ihre Kinder Kindergeld bekommen. Das Kindergeld wird unabhängig vom Einkommen der Eltern ausgezahlt. Das Kindergeld beträgt 250€ pro Monat pro Kind (Stand 2025). Kindergeld erhält man grundsätzlich bis das Kind 18 Jahre alt ist. In manchen Fällen (z.B. Ausbdildung oder Arbeitssuche) kann Kingergeld aber auch länger bezogen werden. Kindergeld muss beantragt werden, dies geht bis zu 6 Monate rückwirkend.",
       "en": "All parents living or working in Germany are entitled to child benefit for their children. Child benefit is paid regardless of the parents' income. Child benefit amounts to 250€ per month per child (as of 2025). Child benefit is generally paid until the child is 18 years old. In some cases (e.g. education or job search), child benefit can be received for a longer period. Child benefit must be applied for, this can be done up to 6 months retroactively."
     },
@@ -161,7 +161,7 @@
       "de": "Kinderzuschlag",
       "en": "Child allowance"
     },
-    "description": {
+    "teaser": {
       "de": "Den Kinderzuschlag (kurz: KiZ) können Eltern bekommen, deren Einkommen für den eigenen Lebensunterhalt reicht, aber nicht oder nur knapp ausreicht, um auch für den gesamten Bedarf Ihrer Familie aufzukommen. Voraussetzung ist, dass Sie schon Kindergeld beziehen. Der Kinderzuschlag wird immer für sechs Monate am Stück bewilligt.",
       "en": "Child allowance (KiZ) is a benefit for parents whose income is sufficient to cover their own living expenses, but not enough to cover the entire needs of their family. The child allowance is always granted for six months at a time."
     },
@@ -292,7 +292,7 @@
       "de": "Kinderzuschlag v2",
       "en": "Child allowance v2"
     },
-    "description": {
+    "teaser": {
       "de": "dev",
       "en": "dev"
     }
@@ -305,7 +305,7 @@
       "de": "BAföG",
       "en": "BAföG"
     },
-    "description": {
+    "teaser": {
       "de": "Mit dem Bundesausbildungsförderungsgesetz (BAföG) werden junge Menschen finanziell bei der Schulausbildung und dem Studium unterstützt. Es gibt zwei Arten von BAföG: das Schüler-BAföG und das Studenten-BAföG. Schülerinnen und Schüler sowie Studierende können einen Zuschuss oder ein zinsloses Darlehen erhalten. Die Höhe der Förderung ist von den Lebensumständen der Antragstellerinnen und Antragsteller abhängig.",
       "en": "Are you looking to study or complete your secondary school education and require financial support? Then BAföG is just what you need. Keep reading to find out all the details about Germany’s student support scheme and how to apply for BAföG."
     }
@@ -318,7 +318,7 @@
       "de": "Bürgergeld",
       "en": "Citizen's benefit"
     },
-    "description": {
+    "teaser": {
       "de": "Das Bürgergeld (vorher ALG II) ist Teil der sogenannten Grundsicherung für Arbeitsuchende. Bürgergeld wird oft im Anschluss an das Arbeitslosengeld gezahlt, wenn weiterhin Unterstützung notwendig ist. Bürgergeld erhalten auch Personen, die noch nie gearbeitet oder ein geringes Einkommen haben. Für das Bürgergeld sind die Jobcenter zuständig.",
       "en": "If you are not currently employed and are not entitled to unemployment benefit, you may be entitled to unemployment benefit II. This also applies if you earn so little that you cannot meet your living costs."
     }
@@ -331,7 +331,7 @@
       "de": "Arbeitslosengeld",
       "en": "Unemployment benefit"
     },
-    "description": {
+    "teaser": {
       "de": "Das Arbeitslosengeld (ALG) sichert Sie sozial ab, wenn Sie Ihre Arbeit oder Ihren Ausbildungsplatz verlieren. Es ersetzt einen Teil Ihres fehlenden Einkommens, damit Sie weiterhin Ihren Lebensunterhalt bestreiten können. Sie haben Anspruch auf diese Leistung, wenn Sie vor Ihrer Arbeitslosigkeit eine bestimmte Zeit pflichtversichert oder freiwillig versichert waren und monatlich Versicherungsbeiträge gezahlt haben.",
       "en": "Unemployment benefit, or ALG (from the German word Arbeitslosengeld), provides a social safety net in case you lose your job or training position. It replaces part of your missing income so that you can continue to pay your bills."
     }
@@ -344,7 +344,7 @@
       "de": "Berufsausbildungsbeihilfe (BAB)",
       "en": "Vocational training allowance (BAB)"
     },
-    "description": {
+    "teaser": {
       "de": "Berufsausbildungsbeihilfe (BAB) ist ein finanzieller Zuschuss für junge Menschen in ihrer ersten Berufsausbildung. Sie hilft zum Beispiel dabei, Miete, Lebensmittel oder Fahrtkosten zu bezahlen.",
       "en": "Vocational training allowance, or Berufsausbildungsbeihilfe (BAB), is a form of financial assistance for young people who are in vocational training for the first time. It helps them pay for things like rent, food or transport costs."
     }
@@ -358,7 +358,7 @@
       "de": "Wohngeld",
       "en": "Housing benefit"
     },
-    "description": {
+    "teaser": {
       "de": "Wohngeld ist eine Leistung für Menschen mit geringem Einkommen, die ihren Lebensunterhalt bzw. ihren alltäglichen Bedarf und die Miete/Wohnkosten nicht vollständig alleine stemmen können. Wohngeld wird als Zuschuss zur Miete oder zu den Kosten selbst genutzten Wohneigentums gezahlt und richtet sich nach dem eigenen Einkommen, der Miete/Wohnkosten sowie der Wohnregion.",
       "en": "Housing benefit is a benefit for people with low incomes who cannot fully cover their living expenses, daily needs, and rent/housing costs on their own. Housing allowance is granted as a subsidy for rent or the costs of owner-occupied housing and is determined based on one’s income, rent/housing costs, and the residential region."
     },
@@ -463,7 +463,7 @@
       "de": "Grundsicherung im Alter und bei Erwerbsminderung",
       "en": "Basic welfare for the elderly and people with reduced earnings capacity"
     },
-    "description": {
+    "teaser": {
       "de": "Sie sind im Rentenalter, aber Ihr Geld reicht nicht aus, um Ihren Lebensunterhalt zu bezahlen? Oder sind Sie zwar noch jünger, können aber aus gesundheitlichen Gründen dauerhaft nicht arbeiten? Dann können Sie die finanzielle „Grundsicherung im Alter und bei Erwerbsminderung“ beantragen.",
       "en": "Are you receiving your pension but don’t have enough money to get by? Or are you younger but unable to work for health-related reasons? If so, you may be entitled to claim basic financial welfare for the elderly and people with reduced earnings capacity."
     }
@@ -476,7 +476,7 @@
       "de": "Bildung und Teilhabe - bei Bezug von Bürgergeld",
       "en": "Education and participation - with citizen's benefit"
     },
-    "description": {
+    "teaser": {
       "de": "In Deutschland sollen Kinder, Jugendliche und junge Erwachsene die gleichen Chancen haben. Wichtige Voraussetzungen für Chancengleichheit sind Bildung und die Teilnahme am sozialen und kulturellen Leben. Deswegen fördert der Staat Leistungen zur Bildung und Teilhabe, auch Bildungs- und Teilhabepaket genannt.",
       "en": "In Germany, children, teens and young adults are supposed to have equal opportunities. Education and participation in social and cultural activities are important factors in ensuring equal opportunity. For this reason, the state provides benefits to support education and participation. This is also known as the education and participation package."
     }
@@ -489,7 +489,7 @@
       "de": "EXIST-Gründungsstipendium",
       "en": "EXIST start-up grant"
     },
-    "description": {
+    "teaser": {
       "de": "Das EXIST-Gründerstipendium unterstützt Studierende, Absolventinnen und Absolventen sowie Wissenschaftlerinnen und Wissenschaftler, die ihre Gründungsidee umsetzen möchten. Das Stipendium ermöglicht es, sich voll und ganz auf die Gründung zu konzentrieren und die ersten Schritte in die Selbstständigkeit zu gehen.",
       "en": "The EXIST start-up grant supports students, graduates and researchers who want to implement their start-up idea. The grant allows them to focus entirely on their start-up and take the first steps towards self-employment."
     }
@@ -502,7 +502,7 @@
       "de": "IBB-Gründungsbonus",
       "en": "IBB start-up bonus"
     },
-    "description": {
+    "teaser": {
       "de": "Der IBB-Gründungsbonus ist eine finanzielle Unterstützung für Gründerinnen und Gründer in Berlin. Der Bonus hilft dabei, die ersten Schritte in die Selbstständigkeit zu gehen und das eigene Unternehmen aufzubauen.",
       "en": "The IBB start-up bonus is financial support for start-ups in Berlin. The bonus helps them take the first steps towards self-employment and build their own business."
     }
@@ -515,7 +515,7 @@
       "de": "IBB Altersgerecht Wohnen",
       "en": "IBB age-appropriate living"
     },
-    "description": {
+    "teaser": {
       "de": "Das Förderprogramm 'IBB Altersgerecht Wohnen' unterstützt Vermieter:innen und Investor:innen bei der Finanzierung von Modernisierungsmaßnahmen zur Barrierereduzierung, Erhöhung des Wohnkomforts und Einbruchschutz in Berlin. Ziel ist es, altersgerechtes Wohnen zu fördern und die Lebensqualität in Wohngebäuden zu verbessern.",
       "en": "The 'IBB Altersgerecht Wohnen' funding program supports landlords and investors in financing modernization measures for barrier reduction, increased living comfort, and burglary protection in Berlin. The goal is to promote age-appropriate living and improve the quality of life in residential buildings."
     },
@@ -622,7 +622,7 @@
       "de": "Hamburg-Kredit Gründung und Nachfolge III 2025",
       "en": "Hamburg-Kredit Start-up and Succession III 2025"
     },
-    "description": {
+    "teaser": {
       "de": "Der Hamburg-Kredit Gründung und Nachfolge III 2025 unterstützt Existenzgründungen und Unternehmensnachfolgen in Hamburg durch langfristige Finanzierung von Investitionen und Betriebsmitteln. Das Programm bietet günstige Darlehenskonditionen und Zuschüsse für förderfähige Unternehmen.",
       "en": "The Hamburg-Kredit Start-up and Succession III 2025 supports business start-ups and successions in Hamburg through long-term financing of investments and working capital. The program offers favorable loan conditions and grants for eligible businesses."
     },
@@ -741,7 +741,7 @@
       "de": "InnoFounder - Förderprogramm für innovative und wissensbasierte Gründungsvorhaben",
       "en": "InnoFounder - Funding Program for Innovative and Knowledge-Based Startups"
     },
-    "description": {
+    "teaser": {
       "de": "InnoFounder unterstützt innovative Startups in Hamburg mit einem nicht rückzahlbaren Zuschuss für Lebensunterhalt und Gründungskosten.",
       "en": "InnoFounder supports innovative startups in Hamburg with a non-repayable grant for living expenses and startup costs."
     },
@@ -856,7 +856,7 @@
       "de": "Brandenburg-Kredit Gründung",
       "en": "Brandenburg Start-up Credit"
     },
-    "description": {
+    "teaser": {
       "de": "Der Brandenburg-Kredit Gründung unterstützt junge Unternehmen in Brandenburg mit zinsgünstigen Krediten für Investitionen und Betriebsmittel.",
       "en": "The Brandenburg Start-up Credit supports young businesses in Brandenburg with low-interest loans for investments and working capital."
     },
@@ -971,7 +971,7 @@
       "de": "Forschungszulage",
       "en": "Research Allowance"
     },
-    "description": {
+    "teaser": {
       "de": "Steuerpflichtige Unternehmen in Deutschland können eine Forschungszulage für förderfähige Aufwendungen in Grundlagenforschung, industrieller Forschung und experimenteller Entwicklung erhalten.",
       "en": "Tax-liable companies in Germany may claim a research allowance for eligible expenses related to basic research, industrial research, and experimental development."
     },
@@ -1096,7 +1096,7 @@
       "de": "Bundesförderung für effiziente Gebäude – Einzelmaßnahmen: Sanieren",
       "en": "Federal Funding for Efficient Buildings – Individual Measures: Renovation"
     },
-    "description": {
+    "teaser": {
       "de": "Die BEG EM Sanierung fördert Maßnahmen zur Verbesserung der Energieeffizienz und des Anteils erneuerbarer Energien bei bestehenden Gebäuden durch Zuschüsse oder Kredite. Die Förderung kann entweder über das Bundesamt für Wirtschaft und Ausfuhrkontrolle (BAFA) oder über die KFW abgewickelt werden.",
       "en": "The BEG EM Renovation program supports measures to improve energy efficiency and the share of renewable energies in existing buildings through grants or loans. Funding can be processed either through the Federal Office for Economic Affairs and Export Control (BAFA) or through KfW."
     },
@@ -1237,7 +1237,7 @@
       "de": "Wolfenbüttel-Stiftung",
       "en": "Wolfenbüttel Foundation"
     },
-    "description": {
+    "teaser": {
       "de": "Die Wolfenbüttel-Stiftung unterstützt bedürftige Kinder, hilfsbedürftige ältere Menschen sowie soziale Projekte in der Stadt Wolfenbüttel. Die Förderung erfolgt in der Regel als einmalige Zuwendung ohne Rechtsanspruch.",
       "en": "The Wolfenbüttel Foundation supports needy children, elderly people in need, and social projects within the city of Wolfenbüttel. Funding is typically provided as a one-time grant without legal entitlement."
     },
@@ -1328,7 +1328,7 @@
       "de": "Ausbildungsgeld",
       "en": "Training Allowance"
     },
-    "description": {
+    "teaser": {
       "de": "Menschen mit Behinderungen können zur Sicherung des Lebensunterhaltes Ausbildungsgeld erhalten, wenn sie an bestimmten Bildungsmaßnahmen teilnehmen. (Quelle: §§ 122 bis 126 SGB III)",
       "en": "People with disabilities can receive a training allowance to cover their living expenses if they participate in specific educational programs. (Source: §§ 122 to 126 SGB III)"
     },
@@ -1401,7 +1401,7 @@
       "de": "Förderung gastronomischer Außenmöblierung in Wolfenbüttel",
       "en": "Funding for Gastronomic Outdoor Furniture in Wolfenbüttel"
     },
-    "description": {
+    "teaser": {
       "de": "Die Förderung gastronomischer Außenmöblierung unterstützt Betriebe in Wolfenbüttel bei der Anschaffung von wetterfesten und nachhaltigen Außenmöbeln für den gastronomischen Bereich.",
       "en": "The funding for gastronomic outdoor furniture supports businesses in Wolfenbüttel in acquiring weather-resistant and sustainable outdoor furniture for gastronomy."
     },
@@ -1502,7 +1502,7 @@
       "de": "Förderung der Ansiedlung von Einzelhandelsunternehmen und Gastronomiebetrieben in Wolfenbüttel",
       "en": "Funding for the Establishment of Retail and Gastronomy Businesses in Wolfenbüttel"
     },
-    "description": {
+    "teaser": {
       "de": "Die Stadt Wolfenbüttel unterstützt die Ansiedlung von Einzelhandelsunternehmen und Gastronomiebetrieben in der Innenstadt mit finanziellen Zuschüssen zur Existenzgründung, Modernisierung oder Erweiterung.",
       "en": "The city of Wolfenbüttel supports the establishment of retail and gastronomy businesses in the city center with financial grants for business start-ups, modernization, or expansion."
     },
@@ -1607,7 +1607,7 @@
       "de": "Übergangsgeld - Bundesagentur für Arbeit",
       "en": "Transitional Allowance - Federal Employment Agency"
     },
-    "description": {
+    "teaser": {
       "de": "Das Übergangsgeld dient zur Sicherung des Lebensunterhalts während einer Maßnahme zur beruflichen Rehabilitation und wird von der Bundesagentur für Arbeit gewährt.",
       "en": "The transitional allowance supports livelihood during vocational rehabilitation measures and is provided by the Federal Employment Agency."
     },
@@ -1788,7 +1788,7 @@
       "de": "Kurzzeitige Arbeitsverhinderung für akute Pflege",
       "en": "Short-Term Work Interruption for Acute Care"
     },
-    "description": {
+    "teaser": {
       "de": "In einer unerwartet eintretenden Pflegesituation können Beschäftigte bis zu zehn Arbeitstage der Arbeit fernbleiben, um für einen pflegebedürftigen nahen Angehörigen die Versorgung zu organisieren oder selbst sicherzustellen. Die Freistellung ist grundsätzlich unbezahlt; zur Einkommenssicherung kann Pflegeunterstützungsgeld beantragt werden.",
       "en": "When an unexpected need for care arises, employees may take up to ten working days off to organise or provide care for a dependent close relative. The leave is generally unpaid; a care support allowance can be claimed to compensate lost earnings."
     },
@@ -1911,9 +1911,65 @@
       "de": "Schwerbehindertenausweis",
       "en": "Severe Disability ID Card"
     },
-    "description": {
-      "de": "Der Schwerbehindertenausweis ist der amtliche Nachweis Ihrer Schwerbehinderteneigenschaft und eröffnet Zugang zu gesetzlichen Nachteilsausgleichen wie Steuervergünstigungen, zusätzlichem Urlaub oder besonderem Kündigungsschutz. Enthält er Merkzeichen, können damit weitere Vergünstigungen wie kostenreduziertes Fahren oder Parkerleichterungen verbunden sein.",
-      "en": "The Severe Disability ID Card is the official proof of your severe disability status and provides access to legal compensatory benefits such as tax reductions, additional vacation days, or special protection against dismissal. If it contains special marks, it may also entitle you to further benefits like reduced travel costs or parking concessions."
+    "teaser": {
+      "de": "Ein Schwerbehindertenausweis zeigt eine anerkannte Behinderung ab 50 Grad und eröffnet im Alltag viele Vorteile, von günstigeren Fahrkarten und Steuerermäßigungen bis hin zu Sonderparkrechten und ermäßigtem Eintritt.",
+      "de_es": "Ein Schwerbehindertenausweis zeigt, dass jemand eine schwere Behinderung hat. Mit ihm bekommt man Vorteile im Alltag, zum Beispiel billigere Fahrkarten, weniger Steuern fürs Auto, besondere Parkrechte oder günstigeren Eintritt.",
+      "en": "A Severe Disability ID Card indicates a recognized disability of 50 degrees or more and provides many benefits in everyday life, from discounted tickets and tax reductions to special parking rights and reduced admission fees."
+    },
+    "descriptionMD": {
+      "de": "Ein Schwerbehindertenausweis ist ein amtlicher Nachweis über eine anerkannte Behinderung von mindestens 50 Grad. Er wird vor allem im Alltag genutzt, um bestimmte Nachteilsausgleiche in Anspruch zu nehmen – zum Beispiel Vergünstigungen im öffentlichen Nah- und Fernverkehr, Steuerermäßigungen bei der Kfz-Steuer, Sonderparkrechte oder Ermäßigungen beim Eintritt in Museen und Schwimmbäder.",
+      "de_es": "Ein Schwerbehindertenausweis ist ein offizielles Dokument. Er zeigt, dass eine Person eine anerkannte Behinderung mit einem Grad von mindestens 50 hat. Mit dem Ausweis kann man im Alltag Vorteile nutzen, zum Beispiel billigere Fahrkarten im Nah- und Fernverkehr, weniger Kfz-Steuer, besondere Parkrechte oder ermäßigten Eintritt in Museen und Schwimmbäder.",
+      "en": "A Severe Disability ID Card is an official document that certifies a recognized disability of at least 50 degrees. It is primarily used in everyday life to access certain compensations for disadvantages, such as discounts on public transportation, tax reductions on vehicle taxes, special parking rights, or reduced admission fees to museums and swimming pools."
+    },
+    "goals": {
+      "de": "Der Schwerbehindertenausweis soll Menschen mit einer anerkannten Behinderung den Zugang zu Nachteilsausgleichen erleichtern und ihre Teilhabe am gesellschaftlichen Leben sichern.",
+      "de_es": "Der Schwerbehindertenausweis soll Menschen mit Behinderung helfen, ihre besonderen Rechte einfacher zu nutzen und besser am Leben in der Gesellschaft teilzunehmen.",
+      "en": "The Severe Disability ID Card aims to facilitate access to compensations for disadvantages for people with recognized disabilities and to ensure their participation in social life."
+    },
+    "benefit_scope": {
+      "de": "Der Schwerbehindertenausweis dient als offizieller Nachweis, um verschiedene Nachteilsausgleiche in Anspruch zu nehmen. Welche konkreten Vorteile genutzt werden können, hängt immer vom Grad der Behinderung und den im Ausweis eingetragenen Merkzeichen ab.  \n- **Mobilität**: Vergünstigungen oder Freifahrten im öffentlichen Nahverkehr, kostenlose Mitnahme einer Begleitperson oder eines Hundes, Parkerleichterungen sowie Befreiungen oder Ermäßigungen bei der Kfz-Steuer, Ermäßigungen bei der Deutschen Bahn.\n\n- **Arbeit**: Fünf Tage Zusatzurlaub pro Jahr, besonderer Kündigungsschutz, Vorteile bei Bewerbungen im öffentlichen Dienst, Unterstützung durch das Integrationsamt bei der Arbeitsplatzgestaltung.\n- **Steuern**: Anspruch auf den Behinderten-Pauschbetrag, Absetzbarkeit von Fahrtkosten oder außergewöhnlichen Belastungen, weitere Steuervergünstigungen.\n- **Soziale Teilhabe**: Ermäßigungen oder kostenloser Eintritt in Museen, Theater, Schwimmbäder und andere Einrichtungen, Ermäßigungen beim Rundfunkbeitrag und bei Telekommunikationskosten, erleichterter Anspruch auf Hilfsmittel.\n- **Rente**: Möglichkeit eines vorgezogenen Renteneintritts für schwerbehinderte Menschen sowie Zugang zu bestimmten Rehabilitationsmaßnahmen.",
+      "de_es": "Ein Schwerbehinderten-Ausweis ist ein offizieller Ausweis. Er zeigt: Ein Mensch hat eine Behinderung. Mit dem Ausweis kann man viele Vorteile bekommen. Welche Vorteile das sind, hängt von der Stärke der Behinderung ab. Das steht im Ausweis. Dort gibt es auch Merk-Zeichen.\n- **Mobilität**: Mit Bus und Bahn fährt man billiger oder umsonst. Eine Begleit-Person oder ein Hund darf oft kostenlos mitfahren. Man darf auf besonderen Park-Plätzen parken. Für das Auto zahlt man weniger Steuer. Auch bei der Deutschen Bahn gibt es Ermäßigungen.\n- **Arbeit**: Man bekommt 5 Tage Zusatz-Urlaub im Jahr. Man hat besonderen Schutz, wenn man gekündigt werden soll. Man kann Vorteile bei Bewerbungen im öffentlichen Dienst haben. Man kann Hilfe vom Integrations-Amt für den Arbeits-Platz bekommen.\n- **Steuern**: Man kann einen Behinderten-Pausch-Betrag bekommen. Man kann auch Kosten für Fahrten oder besondere Ausgaben von der Steuer abziehen.\n- **Freizeit und Teilhabe**: Man zahlt weniger oder gar nichts für Museen, Theater, Schwimmbäder oder andere Einrichtungen. Man zahlt weniger für den Rundfunk-Beitrag. Auch Telefon und Internet können billiger sein. Man kann Hilfs-Mittel leichter bekommen.\n- **Rente**: Menschen mit Schwerbehinderten-Ausweis können früher in Rente gehen. Sie können auch leichter eine Reha bekommen.",
+      "en": "The Severe Disability ID Card serves as official proof to access various compensations for disadvantages. The specific benefits available depend on the degree of disability and the special markings recorded on the card.\n- **Mobility**: Discounts or free rides on public transportation, free accompaniment by a companion or a service dog, parking privileges, exemptions or reductions in vehicle tax, discounts with Deutsche Bahn.\n\n- **Employment**: Five additional vacation days per year, special protection against dismissal, advantages when applying for public service jobs, support from the Integration Office for workplace accommodations.\n- **Taxes**: Entitlement to a disability lump-sum allowance, deductibility of travel expenses or extraordinary burdens, other tax benefits.\n- **Social Participation**: Discounts or free admission to museums, theaters, swimming pools, and other facilities, reductions in broadcasting fees and telecommunications costs, easier access to assistive devices.\n- **Pension**: Possibility of early retirement for severely disabled individuals and access to certain rehabilitation measures."
+    },
+    "examplesMD": {
+      "de": "**Öffentlicher Nahverkehr**  \nHerr Kaya ist 58 Jahre alt und hat einen Schwerbehindertenausweis mit dem Merkzeichen „G“. Damit kann er beim Versorgungsamt ein Beiblatt mit Wertmarke beantragen. Die Wertmarke kostet ihn 91 Euro im Jahr. Mit dieser Marke darf er in Berlin alle Busse und Bahnen im Nahverkehr ohne weitere Fahrkarten nutzen. Würde er Bürgergeld oder Sozialhilfe bekommen, müsste er die 91 Euro nicht zahlen. Dann wäre der Nahverkehr für ihn tatsächlich kostenlos.\n\n**Freizeit**  \nFrau Müller ist 45 Jahre alt und hat einen Schwerbehindertenausweis mit dem Merkzeichen „B“. Als sie mit einer Freundin ein Museum besucht, zeigt sie den Ausweis an der Kasse. Sie selbst erhält ermäßigten Eintritt, und ihre Begleitperson darf kostenlos mit hinein.",
+      "de_es": "**Öffentlicher Nahverkehr**  \nHerr Kaya ist 58 Jahre alt und hat einen Schwerbehindertenausweis mit dem Merkzeichen „G“. Er beantragt beim Amt eine Wertmarke. Die Wertmarke kostet 91 Euro im Jahr. Damit kann er in Berlin alle Busse und Bahnen ohne zusätzliche Fahrkarte nutzen. Wenn er Bürgergeld oder Sozialhilfe bekäme, müsste er die 91 Euro nicht zahlen. Dann könnte er wirklich kostenlos fahren.\n\n**Freizeit**  \nFrau Müller ist 45 Jahre alt und hat einen Schwerbehindertenausweis mit dem Merkzeichen „B“. Sie besucht mit einer Freundin ein Museum. An der Kasse zeigt sie den Ausweis. Dadurch bekommt sie selbst ermäßigten Eintritt, und ihre Begleitperson darf kostenlos mitkommen.",
+      "en": "**Public Transport**  \nMr. Kaya is 58 years old and has a Severe Disability ID Card with the marking 'G'. He applies for a supplementary sheet with a value stamp at the welfare office. The stamp costs him 91 euros per year. With this stamp, he can use all buses and trains in Berlin's local public transport without additional tickets. If he were receiving citizen's income or social assistance, he would not have to pay the 91 euros. Then public transport would actually be free for him.\n\n**Leisure**  \nMs. Müller is 45 years old and has a Severe Disability ID Card with the marking 'B'. When she visits a museum with a friend, she shows her card at the ticket counter. She receives a reduced admission fee, and her companion is allowed to enter for free."
+    },
+    "contactMD": {
+      "de": "**Sozialamt Bielefeld**  \nNiederwall 23  \n33602 Bielefeld  \nTel. +49 521 51-0  \nFax +49 521 51-3436  \nsozialamt@bielefeld.de",
+      "de_es": "**Sozialamt Bielefeld**  \nNiederwall 23  \n33602 Bielefeld  \nTel. +49 521 51-0  \nFax +49 521 51-3436  \nsozialamt@bielefeld.de",
+      "en": "**Sozialamt Bielefeld**  \nNiederwall 23  \n33602 Bielefeld  \nTel. +49 521 51-0  \nFax +49 521 51-3436  \nsozialamt@bielefeld.de"
+    },
+    "howMD": {
+      "de": "Den Schwerbehindertenausweis kannst du in Bielefeld entweder persönlich beim Sozialamt beantragen oder die Unterlagen per Post einreichen. Dafür reicht ein formloser Antrag, du kannst aber auch das offizielle Formular nutzen, das beim Amt oder online erhältlich ist.",
+      "de_es": "Den Schwerbehindertenausweis kannst du in Bielefeld direkt beim Sozialamt beantragen. Du kannst dafür persönlich hingehen oder die Unterlagen per Post schicken. Ein einfacher Antrag reicht aus, aber es gibt auch ein offizielles Formular, das du beim Amt oder im Internet findest.",
+      "en": "You can apply for the Severe Disability ID Card in Bielefeld either in person at the Social Welfare Office or by submitting the documents by mail. A simple informal application is sufficient, but you can also use the official form available at the office or online."
+    },
+    "documentsMD": {
+      "de": "- [Antragsformular](https://service.bielefeld.de/detail/-/vr-bis-detail/dokument/768278/download?_19_WAR_vrportlet_priv_r_p_action=vr-bis-detail-dienstleistung-show)\n\n- aktuelles farbiges Lichtbild (nur für Personen über 10 Jahre)\n- wenn vorhanden: Kopien ärztlicher Gutachten (in deutscher Sprache)  \n- Benennung evtl. behandelnder Ärztinnen und Ärzte  \n- Bei einer Antragstellung durch eine andere Person ist deren Ausweisdokument (Personalausweis, Reisepass) vorzulegen. Eine Vollmacht für diese Person ist nicht erforderlich.",
+      "de_es": "- [Antragsformular ausfüllen](https://service.bielefeld.de/detail/-/vr-bis-detail/dokument/768278/download?_19_WAR_vrportlet_priv_r_p_action=vr-bis-detail-dienstleistung-show)\n\n- Aktuelles Passfoto (nur für Personen ab 10 Jahren)\n- Wenn vorhanden: Kopien von ärztlichen Gutachten (auf Deutsch)\n- Namen und Adressen von behandelnden Ärztinnen und Ärzten angeben\n- Wenn jemand anderes den Antrag stellt: diese Person muss ihren Personalausweis oder Reisepass vorlegen. Eine Vollmacht ist dafür nicht nötig.",
+      "en": "- Fill out the [application form](https://service.bielefeld.de/detail/-/vr-bis-detail/dokument/768278/download?_19_WAR_vrportlet_priv_r_p_action=vr-bis-detail-dienstleistung-show)\n\n- Recent passport photo (only for persons over 10 years old)\n- If available: copies of medical reports (in German)\n- Provide names and addresses of treating doctors\n- If someone else is submitting the application: that person must present their ID card or passport. A power of attorney is not required."
+    },
+    "processMD": {
+      "de": "1. **Antrag stellen**\n   - Persönlich, schriftlich oder online beim zuständigen Amt.\n   - Abgabe des Formulars + Foto + evtl. ärztliche Unterlagen.\n\n2. **Prüfung durch das Amt**\n   - Das Amt fordert, falls nötig, weitere ärztliche Unterlagen direkt bei den behandelnden Ärzt:innen oder Krankenhäusern an (mit Einwilligung der Antragstellenden).\n   - Falls die Informationen nicht reichen: medizinisches Gutachten durch eine/n unabhängige/n ärztliche/n Gutachter:in.\n\n3. **Feststellung des Grades der Behinderung (GdB)**\n   - Die Behörde wertet alle medizinischen Unterlagen aus und legt den GdB fest.\n   - Wenn GdB ≥ 50: Ausstellung eines Schwerbehindertenausweises.\n   - Wenn GdB < 50: Feststellungsbescheid ohne Ausweis.\n\n4. **Bescheid & ggf. Ausweis**\n   - Zustellung des schriftlichen Bescheids (mit Begründung).\n   - Bei Anerkennung → zusätzlich Ausstellung und Zusendung des Ausweises.",
+      "de_es": "1. **Amt für soziale Leistungen – Sozialamt**\n   - Zuständig für Antragstellung, Verfahrens-Informationen und Ausstellung des Ausweises bzw. Feststellung des GdB.\n   - Adresse: Niederwall 23, 33602 Bielefeld\n   - Telefon: +49 521 51-0\n   - Telefax: +49 521 51-6197\n   - E-Mail: [sozialamt@bielefeld.de](mailto:sozialamt@bielefeld.de)\n   - Website: https://www.bielefeld.de/node/6053\n\n2. **EUTB Café 3b**\n   - Adresse: Feilenstraße 3, 33602 Bielefeld\n   - Telefon: +49 521 98628568\n   - Fax: +49 521 96784313\n   - E-Mail: info-eutb@cafe3b.de\n   - Website: https://www.teilhabeberatung.de/beratung/cafe-3b-eutb-bielefeld\n\n3. **Sozialverband VdK Kreisverband Bielefeld**\n   - Hilft insbesondere bei Anträgen, Widerspruchsverfahren und sozialrechtlichen Fragen – rechtliche Beratung nach Termin.\n   - Adresse: Stieghorster Straße 60, 33605 Bielefeld\n   - Telefon: +49 521 60609 (Terminvereinbarung erforderlich)\n   - Fax: +49 521 61071\n   - E-Mail: [bielefeld@vdk.de](mailto:bielefeld@vdk.de)\n   - Website: https://nrw.vdk.de/vor-ort/kv-bielefeld/",
+      "en": "1. **Submit Application**\n   - You can submit the application in person, in writing, or online at the responsible office.\n   - This includes the completed form, a photo, and possibly medical documents.\n\n2. **Review by the Office**\n   - The office may request additional documents from doctors or hospitals if necessary (with the applicant's consent).\n   - If the information is insufficient, the office commissions a medical report from an independent doctor.\n\n3. **Determination of Degree of Disability (GdB)**\n   - The authority evaluates all documents and determines the GdB.\n   - If the GdB is 50 or higher, a Severe Disability ID Card is issued.\n   - If it is below 50, only a determination notice without a card is issued.\n\n4. **Notice & ID Card**\n   - You will receive a written notice with justification.\n   - If a severe disability is recognized, the ID card will be sent to you."
+    },
+    "deadlinesMD": {
+      "de": "Für den Schwerbehindertenausweis selbst gibt es keine feste Abgabefrist. Du kannst den Antrag jederzeit stellen, sobald du meinst, dass eine Schwerbehinderung vorliegt.",
+      "de_es": "Für den Schwerbehindertenausweis gibt es keine feste Frist. Du kannst den Antrag immer stellen, sobald du denkst, dass du eine Schwerbehinderung hast.",
+      "en": "There is no fixed deadline for applying for the Severe Disability ID Card. You can submit the application at any time once you believe you have a severe disability."
+    },
+    "additionalSupportMD": {
+      "de": "**Amt für soziale Leistungen -Sozialamt-**  \nZuständig für Antragstellung, Verfahrens-Informationen und Ausstellung des Ausweises bzw. Feststellung des GdB.  \n\nAdresse: Niederwall 23, 33602 Bielefeld  \nTelefon: +49 521 51-0  \nTelefax: +49 521 51-6197  \nE-Mail: [sozialamt@bielefeld.de](mailto:sozialamt@bielefeld.de)  \nWebsite: https://www.bielefeld.de/node/6053  \n&nbsp;\n\n**EUTB Café 3b**  \nAdresse: Feilenstraße 3, 33602 Bielefeld  \nTelefon: +49 521 98628568  \nFax: +49 521 96784313  \nE-Mail: info-eutb@cafe3b.de  \nWebsite: https://www.teilhabeberatung.de/beratung/cafe-3b-eutb-bielefeld  \n&nbsp;\n\n**Sozialverband VdK Kreisverband Bielefeld**  \nHilft insbesondere bei Anträgen, Widerspruchsverfahren und sozialrechtlichen Fragen – rechtliche Beratung nach Termin.  \n\nAdresse: Stieghorster Straße 60, 33605 Bielefeld  \nTelefon: +49 521 60609 (Terminvereinbarung erforderlich)  \nFax: +49 521 61071  \nE-Mail: [bielefeld@vdk.de](mailto:bielefeld@vdk.de)  \nWebsite: https://nrw.vdk.de/vor-ort/kv-bielefeld/",
+      "de_es": "**Amt für soziale Leistungen -Sozialamt-**  \nZuständig für Antragstellung, Verfahrens-Informationen und Ausstellung des Ausweises bzw. Feststellung des GdB.  \n\nAdresse: Niederwall 23, 33602 Bielefeld  \nTelefon: +49 521 51-0  \nTelefax: +49 521 51-6197  \nE-Mail: [sozialamt@bielefeld.de](mailto:sozialamt@bielefeld.de)  \nWebsite: https://www.bielefeld.de/node/6053  \n&nbsp;\n\n**EUTB Café 3b**  \nAdresse: Feilenstraße 3, 33602 Bielefeld  \nTelefon: +49 521 98628568  \nFax: +49 521 96784313  \nE-Mail: info-eutb@cafe3b.de  \nWebsite: https://www.teilhabeberatung.de/beratung/cafe-3b-eutb-bielefeld  \n&nbsp;\n\n**Sozialverband VdK Kreisverband Bielefeld**  \nHilft insbesondere bei Anträgen, Widerspruchsverfahren und sozialrechtlichen Fragen – rechtliche Beratung nach Termin.  \n\nAdresse: Stieghorster Straße 60, 33605 Bielefeld  \nTelefon: +49 521 60609 (Terminvereinbarung erforderlich)  \nFax: +49 521 61071  \nE-Mail: [bielefeld@vdk.de](mailto:bielefeld@vdk.de)  \nWebsite: https://nrw.vdk.de/vor-ort/kv-bielefeld/",
+      "en": "**Office for Social Services – Social Welfare Office**  \nResponsible for applications, procedural information, issuing the disability ID card, and determining the degree of disability (GdB).  \n\nAddress: Niederwall 23, 33602 Bielefeld  \nPhone: +49 521 51-0  \nFax: +49 521 51-6197  \nE-Mail: [sozialamt@bielefeld.de](mailto:sozialamt@bielefeld.de)  \nWebsite: https://www.bielefeld.de/node/6053  \n&nbsp;\n\n**EUTB Café 3b**  \nAddress: Feilenstraße 3, 33602 Bielefeld  \nPhone: +49 521 98628568  \nFax: +49 521 96784313  \nE-Mail: info-eutb@cafe3b.de  \nWebsite: https://www.teilhabeberatung.de/beratung/cafe-3b-eutb-bielefeld  \n&nbsp;\n\n**Social Association VdK District Association Bielefeld**  \nProvides assistance especially with applications, appeal procedures, and social law issues – legal advice by appointment.  \n\nAddress: Stieghorster Straße 60, 33605 Bielefeld  \nPhone: +49 521 60609 (appointment required)  \nFax: +49 521 61071  \nE-Mail: [bielefeld@vdk.de](mailto:bielefeld@vdk.de)  \nWebsite: https://nrw.vdk.de/vor-ort/kv-bielefeld/"
+    },
+    "legalBasisMD": {
+      "de": "**§ 2 SGB IX**  \nDefiniert, wann jemand behindert oder schwerbehindert ist, und legt fest, dass eine Schwerbehinderung ab einem Grad der Behinderung von 50 vorliegt.\n\n**§ 152 SGB IX**  \nRegelt, wie der Grad der Behinderung festgestellt wird und dass ab einem Grad von 50 auf Antrag ein Schwerbehindertenausweis ausgestellt wird.\n\n**Versorgungsmedizin-Verordnung (VersMedV)**  \nLegt die medizinischen Grundsätze fest, nach denen der Grad der Behinderung bewertet wird.\n\n**Schwerbehindertenausweisverordnung (SchwbAwV)**  \nBestimmt die Form, die Eintragungen und die Gültigkeit des Schwerbehindertenausweises.",
+      "de_es": "**§ 2 SGB IX**  \nHier steht: Ab wann ein Mensch als behindert oder schwerbehindert gilt. Ab einem Grad der Behinderung von 50 gilt man als schwerbehindert.\n\n**§ 152 SGB IX**  \nHier steht: Wie der Grad der Behinderung geprüft wird. Ab einem Grad von 50 kann man einen Schwerbehindertenausweis bekommen.\n\n**Versorgungsmedizin-Verordnung (VersMedV)**  \nHier stehen die medizinischen Regeln, wie der Grad der Behinderung bewertet wird.\n\n**Schwerbehindertenausweisverordnung (SchwbAwV)**  \nHier steht, wie der Ausweis aussieht, was darin steht und wie lange er gültig ist.",
+      "en": "**Section 2 SGB IX**  \nDefines when a person is considered disabled or severely disabled and establishes that a severe disability is recognized at a degree of disability of 50 or more.\n\n**Section 152 SGB IX**  \nRegulates how the degree of disability is determined and states that a Severe Disability ID Card is issued upon request for those with a degree of 50 or more.\n\n**Medical Assessment Regulation (VersMedV)**  \nSets the medical principles for evaluating the degree of disability.\n\n**Severe Disability ID Card Regulation (SchwbAwV)**  \nSpecifies the format, entries, and validity of the Severe Disability ID Card."
     }
   },
   "ff:erwerbsminderungsrente-voll": {
@@ -1924,7 +1980,7 @@
       "de": "Rente wegen voller Erwerbsminderung",
       "en": "Pension for Full Disability"
     },
-    "description": {
+    "teaser": {
       "de": "Die Rente wegen voller Erwerbsminderung wird gewährt, wenn Sie aufgrund gesundheitlicher Einschränkungen nicht mehr in der Lage sind, mindestens drei Stunden täglich zu arbeiten. Sie erhalten eine monatliche Rente, die auf Ihren bisherigen Beiträgen zur Rentenversicherung basiert.",
       "en": "The pension for full disability is granted if you are unable to work at least three hours a day due to health limitations. You receive a monthly pension based on your previous contributions to the pension insurance."
     }
@@ -1937,7 +1993,7 @@
       "de": "Rente wegen teilweiser Erwerbsminderung",
       "en": "Pension for Partial Disability"
     },
-    "description": {
+    "teaser": {
       "de": "Die Rente wegen teilweiser Erwerbsminderung wird gewährt, wenn Sie aufgrund gesundheitlicher Einschränkungen nicht mehr in der Lage sind, mindestens sechs Stunden täglich zu arbeiten. Sie erhalten eine monatliche Rente, die auf Ihren bisherigen Beiträgen zur Rentenversicherung basiert.",
       "en": "The pension for partial disability is granted if you are unable to work at least six hours a day due to health limitations. You receive a monthly pension based on your previous contributions to the pension insurance."
     }
@@ -1950,7 +2006,7 @@
       "de": "Substitutionstherapie",
       "en": "Substitution Therapy"
     },
-    "description": {
+    "teaser": {
       "de": "In der Suchtmedizin ist die Substitutionstherapie eine Behandlung, bei der heroinabhängige Menschen ein ärztlich verordnetes Ersatzopioid wie Methadon oder Buprenorphin erhalten. Ziel der Behandlung ist es, den Konsum von Heroin zu verhindern, bzw. zu verringern.",
       "de-einfach": "In der Suchtmedizin gibt es die Substitutionstherapie.\nDas heißt, Menschen, die von Heroin abhängig sind, bekommen ein anderes Medikament.\nDas Medikament ersetzt das Heroin.\nDas Medikament ist zum Beispiel Methadon oder Buprenorphin.\nDie Menschen bekommen das Medikament von einem Arzt.",
       "en": "Substitution therapy is a medical treatment for people with opioid addiction. It helps alleviate withdrawal symptoms and stabilise health conditions. Costs are usually covered by health insurance."
@@ -1964,7 +2020,7 @@
       "de": "Substitutionstherapie mit Diamorphin",
       "en": "Substitution Therapy with Diamorphine"
     },
-    "description": {
+    "teaser": {
       "de": "Die Substitutionstherapie mit Diamorphin ist eine spezielle Form der Behandlung für Menschen mit schwerer Opioidabhängigkeit. Sie wird in kontrollierten medizinischen Einrichtungen durchgeführt und soll die Lebensqualität der Betroffenen verbessern. Die Kosten werden von den Krankenkassen übernommen.",
       "en": "Diamorphine substitution therapy is a specific treatment for people with severe opioid addiction. It is conducted in controlled medical facilities and aims to improve the quality of life for those affected. Costs are covered by health insurance."
     }
@@ -1977,7 +2033,7 @@
       "de": "Arbeitsassistenz",
       "en": "Work Assistance"
     },
-    "description": {
+    "teaser": {
       "de": "Arbeitsassistenz unterstützt Menschen mit Behinderungen bei der Ausübung ihrer beruflichen Tätigkeit. Sie umfasst individuelle Hilfen, die auf die Bedürfnisse des Einzelnen abgestimmt sind, um eine gleichberechtigte Teilhabe am Arbeitsleben zu ermöglichen.",
       "en": "Work assistance supports people with disabilities in performing their professional activities. It includes individual aids tailored to the needs of the individual to enable equal participation in working life."
     }
@@ -1990,7 +2046,7 @@
       "de": "Allgemeine Krankenversicherungspflicht",
       "en": "General Health Insurance Obligation"
     },
-    "description": {
+    "teaser": {
       "de": "In Deutschland besteht eine allgemeine Krankenversicherungspflicht: Jeder mit Wohnsitz oder gewöhnlichem Aufenthalt muss versichert sein, entweder in der gesetzlichen (GKV) oder der privaten Krankenversicherung (PKV). Welche Absicherung gilt, hängt von der Lebenssituation ab; bei Unklarheiten hilft die Clearingstelle weiter.",
       "en": "In Germany, there is a general obligation to have health insurance: Everyone with a residence or habitual abode must be insured, either in the statutory (GKV) or private health insurance (PKV). The applicable coverage depends on the life situation; if in doubt, the clearing office can assist."
     }
