@@ -1,6 +1,7 @@
 import { useMemo, } from 'react';
 import useFetchData from "@/ui/shared-hooks/utility/useFetchResource";
 import { useMetadataStore } from '@/ui/storage/zustand';
+import { pickLang } from "@/ui/language/useTranslation";
 
 const useBuildCategoryTitles = (id, language) => {
     const metadata = useMetadataStore((state) => state.metadata);
@@ -21,7 +22,7 @@ const useBuildCategoryTitles = (id, language) => {
         if (categories.length === 0 || !topicsData) return null;
         return categories.map((categoryUri) => {
             const topic = topicsData.find((topic) => topic.id === categoryUri);
-            return topic ? topic.title[language] : false;
+            return topic ? pickLang(topic.title, language, null) : false;
         }).filter(Boolean);
     }, [categories, topicsData, language]);
 };

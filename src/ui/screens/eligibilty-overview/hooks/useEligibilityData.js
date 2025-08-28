@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import featureFlags from "@/featureFlags";
+import { pickLang } from "@/ui/language/useTranslation";
 
 const useEligibilityData = (validationReport, metadata, hydrationData, language) => {
   return useMemo(() => {
@@ -27,14 +28,14 @@ const useEligibilityData = (validationReport, metadata, hydrationData, language)
       // hydration data
       const rpHydration = hydrationData?.[rpUri]
       const id = rpHydration?.id || 'Unknown Id';
-      const title = rpHydration?.title?.[language] || 'Unknown Title';
+      const title = pickLang(rpHydration?.title, language, 'Unknown Title');
       const category = rpHydration?.category || 'Unknown Category';
-      const description = rpHydration?.teaser?.[language] || 'Unknown Description';
+      const description = pickLang(rpHydration?.teaser, language, 'Unknown Description');
       const status = rpHydration?.status || 'Unknown Status';
-      const requiredDocuments = rpHydration?.required_documents?.[language] || [];
-      const additionalSupport = rpHydration?.additional_support?.[language] || {};
-      const legalBasis = rpHydration?.legal_basis?.[language] || {};
-      const furtherInformation = rpHydration?.further_information?.[language] || [];
+      const requiredDocuments = pickLang(rpHydration?.required_documents, language, []);
+      const additionalSupport = pickLang(rpHydration?.additional_support, language, {});
+      const legalBasis = pickLang(rpHydration?.legal_basis, language, {});
+      const furtherInformation = pickLang(rpHydration?.further_information, language, []);
 
       // metadata
       const rpMetadata = metadata['ff:hasRP']?.find(rp => rp['@id'] === rpUri)

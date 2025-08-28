@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import useFetchData from '@/ui/shared-hooks/utility/useFetchResource';
+import { pickLang } from "@/ui/language/useTranslation";
 
 const getField = (data, path, fallback) =>
   path
@@ -18,33 +19,33 @@ const useFetchStaticBenefitPageData = (id, language) => {
 
     const resource = hydrationData[id] || {};
     return {
-      title:                getField(resource, `title.${language}`, 'Unknown Title'),
-      leikaId:              getField(resource, 'leika_id',       'Unknown Id'),
-      teaser:               getField(resource, `teaser.${language}`, null),
-      descriptionMD:        getField(resource, `descriptionMD.${language}`,null),
-      goals:                getField(resource, `goals.${language}`, null),
-      benefitScope:         getField(resource, `benefit_scope.${language}`, null),
-      benefitType:          getField(resource, `benefit_type.${language}`, null),
-      examplesMD:           getField(resource, `examplesMD.${language}`, null),
-      contactMD:            getField(resource, `contactMD.${language}`, null),
-      howMD:                getField(resource, `howMD.${language}`, null),
-      documentsMD:          getField(resource, `documentsMD.${language}`, null),
-      processMD:            getField(resource, `processMD.${language}`, null),          
-      deadlinesMD:          getField(resource, `deadlinesMD.${language}`, null),
-      additionalSupportMD:  getField(resource, `additionalSupportMD.${language}`, null),
-      frequentQuestionsMD:  getField(resource, `frequentQuestionsMD.${language}`, null),
-      furtherCommentsMD:    getField(resource, `furtherCommentsMD.${language}`, null),
-      relatedBenefitsMD:    getField(resource, `relatedBenefitsMD.${language}`, null),
-      commonPitfallsMD:     getField(resource, `commonPitfallsMD.${language}`, null),
-      legalBasisMD:         getField(resource, `legalBasisMD.${language}`, null),
-      status:               getField(resource, 'status',         'Unknown Status'),
-      applicationProcess:   getField(resource, `application_process.${language}`, {}),
-      examples:             getField(resource, `examples.${language}`,           {}),
-      fundingConditions:    getField(resource, `funding_conditions.${language}`, {}),
-      requiredDocuments:    getField(resource, `required_documents.${language}`, []),
-      additionalSupport:    getField(resource, `additional_support.${language}`, {}),
-      legalBasis:           getField(resource, `legal_basis.${language}`,        {}),
-      furtherInformation:   getField(resource, `further_information.${language}`, []),
+      title:                pickLang(resource?.title, language, 'Unknown Title'),
+      leikaId:              getField(resource, 'leika_id', 'Unknown Id'),
+      teaser:               pickLang(resource?.teaser, language, null),
+      descriptionMD:        pickLang(resource?.descriptionMD, language, null),
+      goals:                pickLang(resource?.goals, language, null),
+      benefitScope:         pickLang(resource?.benefit_scope, language, null),
+      benefitType:          pickLang(resource?.benefit_type, language, null),
+      examplesMD:           pickLang(resource?.examplesMD, language, null),
+      contactMD:            pickLang(resource?.contactMD, language, null),
+      howMD:                pickLang(resource?.howMD, language, null),
+      documentsMD:          pickLang(resource?.documentsMD, language, null),
+      processMD:            pickLang(resource?.processMD, language, null),
+      deadlinesMD:          pickLang(resource?.deadlinesMD, language, null),
+      additionalSupportMD:  pickLang(resource?.additionalSupportMD, language, null),
+      frequentQuestionsMD:  pickLang(resource?.frequentQuestionsMD, language, null),
+      furtherCommentsMD:    pickLang(resource?.furtherCommentsMD, language, null),
+      relatedBenefitsMD:    pickLang(resource?.relatedBenefitsMD, language, null),
+      commonPitfallsMD:     pickLang(resource?.commonPitfallsMD, language, null),
+      legalBasisMD:         pickLang(resource?.legalBasisMD, language, null),
+      status:               getField(resource, 'status', 'Unknown Status'),
+      applicationProcess:   pickLang(resource?.application_process, language, {}),
+      examples:             pickLang(resource?.examples, language, {}),
+      fundingConditions:    pickLang(resource?.funding_conditions, language, {}),
+      requiredDocuments:    pickLang(resource?.required_documents, language, []),
+      additionalSupport:    pickLang(resource?.additional_support, language, {}),
+      legalBasis:           pickLang(resource?.legal_basis, language, {}),
+      furtherInformation:   pickLang(resource?.further_information, language, []),
     };
   }, [hydrationData, id, language]);
 

@@ -48,6 +48,7 @@ const matchingEngineManager = {
 
     async initMatchingEngine(language = "en") {
         const engine = await this.constructMatchingEngineOnce();
+        if (language.startsWith("de")) language = "de"; // support more languages in matching-engine TODO
         await engine.init(language);
         return engine;
     },

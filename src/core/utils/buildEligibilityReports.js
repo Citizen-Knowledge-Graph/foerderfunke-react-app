@@ -1,3 +1,5 @@
+import { pickLang } from "@/ui/language/useTranslation";
+
 export const buildEligibilityReports = (validationReport, metadata, hydrationData, language) => {
     if (!validationReport) {
         return {
@@ -23,14 +25,14 @@ export const buildEligibilityReports = (validationReport, metadata, hydrationDat
         // hydration data
         const rpHydration = hydrationData?.[rpUri]
         const id = rpHydration?.id || 'Unknown Id';
-        const title = rpHydration?.title?.[language] || 'Unknown Title';
-        const category = rpHydration?.category || 'Unknown Category';
-        const description = rpHydration?.description?.[language] || 'Unknown Description';
-        const status = rpHydration?.status || 'Unknown Status';
-        const requiredDocuments = rpHydration?.required_documents?.[language] || [];
-        const additionalSupport = rpHydration?.additional_support?.[language] || {};
-        const legalBasis = rpHydration?.legal_basis?.[language] || {};
-        const furtherInformation = rpHydration?.further_information?.[language] || [];
+        const title = pickLang(rpHydration?.title, language, 'Unknown Title');
+        const category = pickLang(rpHydration?.category, language, 'Unknown Category');
+        const description = pickLang(rpHydration?.description, language, 'Unknown Description');
+        const status = pickLang(rpHydration?.status, language, 'Unknown Status');
+        const requiredDocuments = pickLang(rpHydration?.required_documents, language, []);
+        const additionalSupport = pickLang(rpHydration?.additional_support, language, {});
+        const legalBasis = pickLang(rpHydration?.legal_basis, language, {});
+        const furtherInformation = pickLang(rpHydration?.further_information, language, []);
 
         // metadata
         const rpMetadata = metadata['ff:hasRP']?.find(rp => rp['@id'] === rpUri)

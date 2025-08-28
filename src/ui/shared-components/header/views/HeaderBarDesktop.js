@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import useTranslation from "@/ui/language/useTranslation";
+import useTranslation, { LANG_OPTIONS } from "@/ui/language/useTranslation";
 import { Link } from "react-router-dom";
 import { HBox } from '@/ui/shared-components/LayoutBoxes';
 import LogoBar from '@/ui/shared-components/LogoBar';
-import AntSwitch from '@/ui/shared-components/AntSwitch';
 import LandingPageHollowButtonDesktop from '@/ui/screens/landing-page/components/LandingPageButtonDesktop';
-import theme from '@/theme';
 import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 import { useLanguageStore } from '@/ui/storage/useLanguageStore';
+import { Select, MenuItem } from "@mui/material";
 
 const HeaderBarDesktop = ({ isApp }) => {
     const language = useLanguageStore((state) => state.language);
     const setLanguage = useLanguageStore((state) => state.setLanguage);
     const { t } = useTranslation();
-    const isEnglish = language === "en";
 
     const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1200);
 
@@ -26,9 +24,9 @@ const HeaderBarDesktop = ({ isApp }) => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    const handleLanguageToggle = (event) => {
-        setLanguage(event.target.checked ? "en" : "de");
-    };
+    const handleLanguageChange = (event) => {
+        setLanguage(event.target.value);
+    }
 
     return (
         <HBox sx={{
@@ -53,14 +51,13 @@ const HeaderBarDesktop = ({ isApp }) => {
                     <LandingPageHollowButtonDesktop isApp={isApp} text={t('home.menu.improve')} to={'/#feedback'} />
                     <LandingPageHollowButtonDesktop isApp={isApp} text={t('home.menu.aboutUs')} to={"/#about-us"} />
                     <HBox alignItems="center" gap={1} sx={{ color: isApp ? 'white' : 'black' }}>
-                        <span style={{ color: isApp ? 'white' : 'black' }}>DE</span>
-                        <AntSwitch
-                            checked={isEnglish}
-                            onChange={handleLanguageToggle}
-                            inputProps={{ 'aria-label': 'language selection' }}
-                            color={isApp ? theme.palette.blue.dark : 'white'}
-                        />
-                        <span style={{ color: isApp ? 'white' : 'black' }}>EN</span>
+                        <Select value={language} onChange={handleLanguageChange}>
+                            {LANG_OPTIONS.map(opt => (
+                                <MenuItem key={opt.code} value={opt.code}>
+                                    {opt.label}
+                                </MenuItem>
+                            ))}
+                        </Select>
                     </HBox>
                 </HBox>
             </HBox>
