@@ -8,7 +8,6 @@ import BenefitPageLinksList from './components/BenefitPageLinksList';
 import BenefitPageExampleList from './components/BenefitPageExampleList';
 import BenefitPageHeader from "./components/BenefitPageHeader";
 import AppScreenWrapperContainer from '@/ui/shared-components/app-screen-wrapper/AppScreenWrapperContainer';
-import RecursiveRulesTable from './components/RecursiveRulesTable';
 import featureFlags from "@/featureFlags";
 import MermaidRulesGraph from "@/ui/screens/benefit-page/components/MermaidRulesGraph";
 import BenefitPageMarkdown from './components/BenefitPageMarkDown';
@@ -37,7 +36,7 @@ const BenefitPageScreen = ({
                     }}>
                         {
                             benefitPageData?.descriptionMD ? (
-                                <BenefitPageMarkdown title={t('app.benefitPage.description')} content={benefitPageData?.descriptionMD} />
+                                <BenefitPageMarkdown title={t('app.benefitPage.description')} content={benefitPageData?.descriptionMD} defaultExpanded={true} />
                             ) : (
                                 benefitPageData?.teaser && (
                                     <VBox
@@ -60,6 +59,11 @@ const BenefitPageScreen = ({
                                 <BenefitPageMarkdown title={t('app.benefitPage.goals')} content={benefitPageData?.goals} />
                             )
                         }
+                        {
+                            benefitPageData?.benefitType && (
+                                <BenefitPageMarkdown title={t('app.benefitPage.benefitType')} content={benefitPageData?.benefitType} />
+                            )
+                        }                        
                         {
                             benefitPageData?.benefitScope && (
                                 <BenefitPageMarkdown title={t('app.benefitPage.benefitScope')} content={benefitPageData?.benefitScope} />
@@ -101,6 +105,26 @@ const BenefitPageScreen = ({
                             )
                         }
                         {
+                            benefitPageData?.frequentQuestionsMD && (
+                                <BenefitPageMarkdown title={t('app.benefitPage.frequentQuestionsMD')} content={benefitPageData?.frequentQuestionsMD} />
+                            )
+                        }
+                        {
+                            benefitPageData?.commonPitfallsMD && (
+                                <BenefitPageMarkdown title={t('app.benefitPage.commonPitfallsMD')} content={benefitPageData?.commonPitfallsMD} />
+                            )
+                        }
+                        {
+                            benefitPageData?.furtherCommentsMD && (
+                                <BenefitPageMarkdown title={t('app.benefitPage.furtherCommentsMD')} content={benefitPageData?.furtherCommentsMD} />
+                            )
+                        }     
+                        {
+                            benefitPageData?.relatedBenefitsMD && (
+                                <BenefitPageMarkdown title={t('app.benefitPage.relatedBenefitsMD')} content={benefitPageData?.relatedBenefitsMD} />
+                            )
+                        }                                                                                             
+                        {
                             benefitPageData?.legalBasisMD && (
                                 <BenefitPageMarkdown title={t('app.benefitPage.legalBasisMD')} content={benefitPageData?.legalBasisMD} />
                             )
@@ -140,7 +164,7 @@ const BenefitPageScreen = ({
                                 <BenefitPageLinksList listTitle={t('app.benefitPage.furtherInformation')} data={benefitPageData?.furtherInformation} />
                             )
                         }
-                        <RecursiveRulesTable rootNodes={matchingGraph?.rootNodes} t={t} />
+                        {/* <RecursiveRulesTable rootNodes={matchingGraph?.rootNodes} t={t} /> */}
                         {featureFlags.showMermaidRuleGraph &&
                             <MermaidRulesGraph evalGraph={matchingGraph} t={t} />
                         }
