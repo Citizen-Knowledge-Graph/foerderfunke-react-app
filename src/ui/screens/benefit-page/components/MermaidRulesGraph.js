@@ -11,9 +11,9 @@ import matchingEngineManager from "@/core/managers/matchingEngineManager";
 export default function MermaidRulesGraph({ evalGraph, t }) {
     // make SVG zoomable TODO
     const [svgContent, setSvgContent] = useState("");
-    const [graphTypeEval, setGraphTypeEval] = useState(false);
-    const [printLabels, setPrintLabels] = useState(false);
-    const [orientationVertical, setOrientationVertical] = useState(true);
+    const [graphTypeEval, setGraphTypeEval] = useState(true);
+    const [printLabels, setPrintLabels] = useState(true);
+    const [orientationVertical, setOrientationVertical] = useState(false);
 
     useEffect(() => {
         if (!evalGraph) return;
