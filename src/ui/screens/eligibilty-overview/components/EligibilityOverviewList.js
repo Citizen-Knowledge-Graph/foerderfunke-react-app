@@ -17,13 +17,17 @@ const EligibilityOverviewList = ({ t, items, eligible, iconPath }) => {
         }
     })();        
 
+    const sortedItems = [...items].sort((a, b) =>
+        a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1
+    );
+
     return (
         <VBox sx={{ gap: 2 }}>
             <Typography variant="h6">
                 {headerText}
             </Typography>
             <VBox sx={{ gap: 2 }}>
-                {items.map((item, index) => (
+                {sortedItems.map((item, index) => (
                     <EligibilityOverviewItem t={t} key={index} item={item} eligible={eligible} iconPath={iconPath}/>
                 ))}
             </VBox>
