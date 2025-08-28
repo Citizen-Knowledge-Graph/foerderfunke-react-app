@@ -66,7 +66,7 @@ const BenefitPageMarkdown = ({ title, content, icon = null, defaultExpanded = fa
                     icon ? (
                       <Box
                         component="li"
-                        sx={{ display: "flex", alignItems: "flex-start", mb: 1.5, listStyle: "none" }}
+                        sx={{ display: "flex", alignItems: "flex-start", mb: 1, listStyle: "none" }}
                       >
                         <Box sx={{ mr: 1, mt: "2px" }}>{icon}</Box>
                         <Typography variant="body1" component="span">
@@ -76,7 +76,7 @@ const BenefitPageMarkdown = ({ title, content, icon = null, defaultExpanded = fa
                     ) : (
                       <Box
                         component="li"
-                        sx={{ display: "flex", alignItems: "flex-start", mb: 1.5 }}
+                        sx={{ display: "flex", alignItems: "flex-start", mb: 1 }}
                       >
                         <li {...props}>
                           <Typography variant="body1" component="span">
