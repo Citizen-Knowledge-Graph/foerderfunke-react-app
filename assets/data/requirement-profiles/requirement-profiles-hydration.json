@@ -2008,12 +2008,12 @@
     },
     "teaser": {
       "de": "In der Suchtmedizin ist die Substitutionstherapie eine Behandlung, bei der heroinabhängige Menschen ein ärztlich verordnetes Ersatzopioid wie Methadon oder Buprenorphin erhalten. Ziel der Behandlung ist es, den Konsum von Heroin zu verhindern, bzw. zu verringern.",
-      "de-einfach": "In der Suchtmedizin gibt es die Substitutionstherapie. Das heißt, Menschen, die von Heroin abhängig sind, bekommen ein anderes Medikament. Das Medikament ersetzt das Heroin. Das Medikament ist zum Beispiel Methadon oder Buprenorphin. Die Menschen bekommen das Medikament von einem Arzt oder einer Ärztin. So sollen die Menschen weniger Heroin nehmen oder gar kein Heroin mehr nehmen.",
+      "de_es": "In der Suchtmedizin gibt es die Substitutionstherapie. Das heißt, Menschen, die von Heroin abhängig sind, bekommen ein anderes Medikament. Das Medikament ersetzt das Heroin. Das Medikament ist zum Beispiel Methadon oder Buprenorphin. Die Menschen bekommen das Medikament von einem Arzt oder einer Ärztin. So sollen die Menschen weniger Heroin nehmen oder gar kein Heroin mehr nehmen.",
       "en": "In addiction medicine, substitution therapy is a treatment where individuals addicted to heroin receive a medically prescribed substitute opioid such as methadone or buprenorphine. The goal of the treatment is to prevent or reduce heroin consumption."
     },
     "descriptionMD": {
       "de": "In der Suchtmedizin ist die Substitutionstherapie eine Behandlung, bei der heroinabhängige Menschen ein ärztlich verordnetes Ersatzopioid wie Methadon oder Buprenorphin erhalten. Ziel der Behandlung ist es, den Konsum von Heroin zu verhindern, bzw. zu verringern.",
-      "de-einfach": "In der Suchtmedizin gibt es die Substitutionstherapie. Das heißt, Menschen, die von Heroin abhängig sind, bekommen ein anderes Medikament. Das Medikament ersetzt das Heroin. Das Medikament ist zum Beispiel Methadon oder Buprenorphin. Die Menschen bekommen das Medikament von einem Arzt oder einer Ärztin. So sollen die Menschen weniger Heroin nehmen oder gar kein Heroin mehr nehmen.",
+      "de_es": "In der Suchtmedizin gibt es die Substitutionstherapie. Das heißt, Menschen, die von Heroin abhängig sind, bekommen ein anderes Medikament. Das Medikament ersetzt das Heroin. Das Medikament ist zum Beispiel Methadon oder Buprenorphin. Die Menschen bekommen das Medikament von einem Arzt oder einer Ärztin. So sollen die Menschen weniger Heroin nehmen oder gar kein Heroin mehr nehmen.",
       "en": "In addiction medicine, substitution therapy is a treatment where individuals addicted to heroin receive a medically prescribed substitute opioid such as methadone or buprenorphine. The goal of the treatment is to prevent or reduce heroin consumption."
     },
     "goals": {
@@ -2097,12 +2097,12 @@
     },
     "teaser": {
       "de": "Eine Therapie mit Diamorphin ist eine Erweiterung der Substitutionstherapie. Sollte eine Substitutionstherapie nicht anschlagen, kann weiterführend mit dem Wirkstoff Diamorphin behandelt werden.",
-      "de-einfach": "Eine Therapie mit Diamorphin ist eine Form der Substitutionstherapie. Wenn die Substitutionstherapie nicht hilft, kann man auch mit Diamorphin behandelt werden.",
+      "de_es": "Eine Therapie mit Diamorphin ist eine Form der Substitutionstherapie. Wenn die Substitutionstherapie nicht hilft, kann man auch mit Diamorphin behandelt werden.",
       "en": "Therapy with diamorphine is an extension of substitution treatment. If substitution treatment is not effective, treatment can be continued with the active substance diamorphine."
     },
     "descriptionMD": {
       "de": "Eine Therapie mit Diamorphin ist eine Erweiterung der Substitutionstherapie. Sollte eine Substitutionstherapie nicht anschlagen, kann weiterführend mit dem Wirkstoff Diamorphin behandelt werden.",
-      "de-einfach": "Eine Therapie mit Diamorphin ist eine Form der Substitutionstherapie. Wenn die Substitutionstherapie nicht hilft, kann man auch mit Diamorphin behandelt werden.",
+      "de_es": "Eine Therapie mit Diamorphin ist eine Form der Substitutionstherapie. Wenn die Substitutionstherapie nicht hilft, kann man auch mit Diamorphin behandelt werden.",
       "en": "Therapy with diamorphine is an extension of substitution treatment. If substitution treatment is not effective, treatment can be continued with the active substance diamorphine."
     },
     "goals": {
@@ -2175,8 +2175,54 @@
       "en": "Work Assistance"
     },
     "teaser": {
-      "de": "Arbeitsassistenz unterstützt Menschen mit Behinderungen bei der Ausübung ihrer beruflichen Tätigkeit. Sie umfasst individuelle Hilfen, die auf die Bedürfnisse des Einzelnen abgestimmt sind, um eine gleichberechtigte Teilhabe am Arbeitsleben zu ermöglichen.",
-      "en": "Work assistance supports people with disabilities in performing their professional activities. It includes individual aids tailored to the needs of the individual to enable equal participation in working life."
+      "de": "Arbeitsassistenz unterstützt Menschen mit Behinderung am Arbeitsplatz. Eine Assistenzkraft übernimmt nur die Tätigkeiten, die selbst nicht möglich sind. Die fachlichen Aufgaben erledigt die Person weiterhin selbst. Ziel ist es, Chancengleichheit im Berufsleben zu schaffen und Arbeitsplätze oder eine selbstständige Tätigkeit zu sichern. Die Kosten für die Assistenz werden übernommen.",
+      "de_es": "Arbeitsassistenz hilft Menschen mit Behinderung am Arbeitsplatz. Eine Assistenzkraft macht nur die Handgriffe, die die Person wegen der Behinderung nicht selbst machen kann. Die eigentliche Arbeit macht die Person selbst. So haben Menschen mit Behinderung die gleichen Chancen im Beruf. Die Kosten für die Assistenz werden übernommen.",
+      "en": "Work assistance supports people with disabilities in the workplace. An assistant only performs tasks that the individual cannot do themselves due to their disability. The person continues to perform their professional duties independently. The goal is to create equal opportunities in professional life and to secure jobs or self-employment. The costs for the assistance are covered."
+    },
+    "descriptionMD": {
+      "de": "Arbeitsassistenz bedeutet, dass Menschen mit Behinderung am Arbeitsplatz Unterstützung durch eine Assistenzkraft erhalten. Diese übernimmt nur die Handgriffe, die aufgrund der Behinderung nicht möglich sind, somit erledigen die eigentlichen fachlichen Aufgaben die Person selbst. Ziel ist es, Chancengleichheit im Berufsleben zu schaffen, sodass Menschen mit Behinderung einen Arbeitsplatz finden, behalten oder auch eine selbstständige Tätigkeit ausüben können. Die Kosten für die notwendige Assistenz werden übernommen.",
+      "de_es": "Menschen mit Behinderung können am Arbeitsplatz Unterstützung bekommen. Das nennt man Arbeitsassistenz. Die Assistenzkraft macht nur die Dinge, die wegen der Behinderung nicht möglich sind. Die Person mit Behinderung macht die eigentlichen Aufgaben selbst. So sollen Menschen mit Behinderung die gleichen Chancen im Beruf haben. Sie sollen einen Arbeitsplatz finden und behalten können. Sie sollen auch selbstständig arbeiten können. Die Kosten für die Assistenz werden übernommen.",
+      "en": "People with disabilities can receive support in the workplace. This is called work assistance. The assistant only performs tasks that are not possible due to the disability. The person with the disability performs the actual tasks themselves. This is to ensure that people with disabilities have equal opportunities in the workplace. They should be able to find and keep a job, as well as work independently. The costs for the assistance are covered."
+    },
+    "goals": {
+      "de": "Ziele sind Chancengleichheit, die Stabilisierung der Gesundheit, die Sicherung des Arbeitsplatzes, die Wiedereingliederung und eine bessere Lebensqualität.",
+      "de_es": "Alle sollen die gleichen Chancen haben. Die Gesundheit soll stabil bleiben. Der Arbeitsplatz soll sicher sein. Man soll wieder in die Gesellschaft kommen. Das Leben soll besser werden.",
+      "en": "The goals are equal opportunities, health stabilization, job security, reintegration, and improved quality of life."
+    },
+    "benefit_type": {
+      "de": "Arbeitsassistenz bedeutet, dass Menschen mit Behinderung am Arbeitsplatz von einer Assistenzkraft unterstützt werden. Die Assistenz übernimmt praktische Handgriffe oder organisatorische Tätigkeiten, die wegen der Behinderung nicht möglich sind. Die fachlichen Aufgaben und Entscheidungen erledigt die Person selbst. So können Menschen mit Behinderung ihre Arbeit vollständig ausüben und ihren Arbeitsplatz sichern oder neue berufliche Chancen wahrnehmen.",
+      "de_es": "Arbeitsassistenz bedeutet: Menschen mit Behinderung bekommen Hilfe am Arbeitsplatz. Eine Assistenzkraft macht die Dinge, die die Person wegen der Behinderung nicht selbst machen kann. Die eigentliche Arbeit und die Entscheidungen macht die Person selbst. So können Menschen mit Behinderung ihren Arbeitsplatz behalten oder neue Arbeit finden.",
+      "en": "Work assistance means that people with disabilities receive support in the workplace from an assistant. The assistant performs practical tasks or organizational activities that are not possible due to the disability. The person themselves handles the professional tasks and decisions. This way, people with disabilities can fully perform their work and secure their jobs or take advantage of new professional opportunities."
+    },
+    "benefit_scope":{
+      "de": "Die Kosten der Arbeitsassistenz werden übernommen, die Leistungen dafür werden je nach individuellen Bedarf festgelegt.",
+      "de_es": "Die Arbeitsassistenz kostet Sie nichts. Sie bekommen die Leistungen, die Sie brauchen.",
+      "en": "The costs of work assistance are covered, and the services are determined based on individual needs."
+    },
+    "examplesMD": {
+      "de": "Julia Brück (27) aus Bonn arbeitet mit Arbeitsassistenz als Kauffrau für Büromanagement bei der Bundeszentrale für politische Bildung. Aufgrund ihrer Cerebralparese und Rollstuhlnutzung unterstützen sie Assistentinnen bei täglichen Handgriffen wie Vorbereitungen zu Hause, Wegen im Büro oder technischen Tätigkeiten. So kann sie sich auf ihre eigentliche Arbeit konzentrieren. Die Auswahl der Assistentinnen trifft sie selbst. Da nicht die gesamte Arbeitszeit abgedeckt ist, muss sie jedoch teils ohne Unterstützung auskommen. Für Julia bedeutet Arbeitsassistenz mehr Selbstständigkeit und die Chance, ihre beruflichen Ziele zu verfolgen.",
+      "de_es": "Julia Brück ist 27 Jahre alt und kommt aus Bonn. Sie arbeitet mit Arbeitsassistenz als Kauffrau für Büromanagement. Ihr Arbeitgeber ist die Bundeszentrale für politische Bildung. Julia Brück hat eine Cerebralparese und sitzt im Rollstuhl. Deshalb helfen ihr Assistentinnen bei täglichen Aufgaben. Zum Beispiel bei Vorbereitungen zu Hause, Wegen im Büro oder technischen Tätigkeiten. So kann sie sich auf ihre eigentliche Arbeit konzentrieren. Sie sucht die Assistentinnen selbst aus. Aber sie hat nicht die ganze Arbeitszeit Unterstützung. Manchmal muss sie ohne Hilfe arbeiten. Für Julia bedeutet Arbeitsassistenz mehr Selbstständigkeit. So kann sie ihre beruflichen Ziele erreichen.",
+      "en": "Julia Brück, 27, from Bonn, works as an office management clerk with work assistance at the Federal Agency for Civic Education. Due to her cerebral palsy and wheelchair use, assistants support her with daily tasks such as preparations at home, navigating the office, or technical activities. This allows her to focus on her actual work. She selects her assistants herself. However, since not all working hours are covered, she sometimes has to manage without support. For Julia, work assistance means more independence and the opportunity to pursue her professional goals."
+    },
+    "contactMD": {
+      "de": "**Landschaftsverband Westfalen-Lippe**  \nAnsprechperson für Bielefeld: Vanessa Schubert  \nGartenstraße 215  \n48147 Münster  \nTel: 0251 591-5164  \nE-Mail: vanessa.schubert@lwl.org  \n[vCard: Visitenkarte herunterladen](https://www.lwl.org/anis/vcard/1206)",
+      "de_es": "**Landschaftsverband Westfalen-Lippe**  \nAnsprechperson für Bielefeld: Vanessa Schubert  \nGartenstraße 215  \n48147 Münster  \nTel: 0251 591-5164  \nE-Mail: vanessa.schubert@lwl.org  \n[vCard: Visitenkarte herunterladen](https://www.lwl.org/anis/vcard/1206)",
+      "en": "**Regional Association of Westphalia-Lippe (LWL)**  \nContact person for Bielefeld: Vanessa Schubert  \nGartenstraße 215  \n48147 Münster  \nTel: +49 251 591-5164  \nE-Mail: vanessa.schubert@lwl.org  \n[vCard: Download contact card](https://www.lwl.org/anis/vcard/1206)"
+    },
+    "documentsMD": {
+      "de": "- Schwerbehindertenausweis\n- Nachweis des Arbeitgebers das die Arbeitsplatzgestaltung nicht ausreichend ist\n- Nachweis der Arbeitsstunden\n- Businessplan [falls notwendig]\n- Bestätigung der Tragfähigkeit [falls notwendig]",
+      "de_es": "- Ein Schwerbehindertenausweis\n- Ein Nachweis vom Arbeitgeber, dass der Arbeitsplatz nicht genug angepasst ist\n- Ein Nachweis über die Arbeitsstunden\n- Ein einfacher Geschäftsplan [nur wenn nötig]\n- Eine Bestätigung, dass der Plan tragfähig ist [nur wenn nötig]",
+      "en": "- A disability ID card\n- Proof from the employer that the workplace is not sufficiently adapted\n- Proof of working hours\n- A simple business plan [if necessary]\n- A confirmation that the plan is viable [if necessary]"
+    },
+    "additionalSupportMD": {
+      "de": "**Landschaftsverband Westfalen-Lippe**  \nAnsprechperson für Bielefeld: Vanessa Schubert  \nGartenstraße 215  \n48147 Münster  \nTel: 0251 591-5164  \nE-Mail: vanessa.schubert@lwl.org  \n[vCard: Visitenkarte herunterladen](https://www.lwl.org/anis/vcard/1206)",
+      "de_es": "**Landschaftsverband Westfalen-Lippe**  \nAnsprechperson für Bielefeld: Vanessa Schubert  \nGartenstraße 215  \n48147 Münster  \nTel: 0251 591-5164  \nE-Mail: vanessa.schubert@lwl.org  \n[vCard: Visitenkarte herunterladen](https://www.lwl.org/anis/vcard/1206)",
+      "en": "**Regional Association of Westphalia-Lippe (LWL)**  \nContact person for Bielefeld: Vanessa Schubert  \nGartenstraße 215  \n48147 Münster  \nTel: +49 251 591-5164  \nE-Mail: vanessa.schubert@lwl.org  \n[vCard: Download contact card](https://www.lwl.org/anis/vcard/1206)"
+    },
+    "legalBasisMD": {
+      "de": "**§ 185 SGB IX – Aufgaben des Integrationsamtes**  \nSchwerbehinderte Menschen haben Anspruch auf die Kostenübernahme einer notwendigen Arbeitsassistenz. Das Integrationsamt zahlt die vollen Kosten aus Mitteln der Ausgleichsabgabe.  \n\n**§ 185 Abs. 9 SGB IX – Genehmigungsfiktion**  \nWenn das Integrationsamt sechs Wochen nach Eingang eines Antrags nicht entschieden hat, gilt die beantragte Leistung als genehmigt. Voraussetzung ist, dass die Leistung im Antrag genau beschrieben wurde.",
+      "de_es": "**§ 185 SGB IX – Arbeitsassistenz**  \nMenschen mit Schwerbehinderung können Hilfe durch eine Assistenz am Arbeitsplatz bekommen. Das Integrationsamt bezahlt die vollen Kosten dafür aus einem speziellen Geldtopf.  \n\n**§ 185 Abs. 9 SGB IX – Antrag**  \nWenn das Integrationsamt nach sechs Wochen nicht über einen Antrag entschieden hat, gilt der Antrag automatisch als genehmigt. Wichtig ist, dass im Antrag genau steht, welche Leistung gewünscht wird.",
+      "en": "**Section 185 SGB IX – Work Assistance**  \nPeople with severe disabilities can receive assistance at the workplace. The Integration Office pays the full costs from a special fund.  \n\n**Section 185 (9) SGB IX – Application**  \nIf the Integration Office has not decided on an application after six weeks, the application is automatically considered approved. It is important that the application clearly states which service is requested."
     }
   },
   "ff:allgemeine-krankenversicherungspflicht": {
