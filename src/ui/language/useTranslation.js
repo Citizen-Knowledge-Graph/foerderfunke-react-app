@@ -1,13 +1,18 @@
 import { useCallback } from 'react';
 import { useLanguageStore } from '@/ui/storage/useLanguageStore';
 import translations from './translations';
+import featureFlags from "@/featureFlags";
 
-export const LANG_OPTIONS = [
+const LANG_OPTIONS_RAW = [
     { code: "de", short: "DE", label: "Deutsch", icon: `${process.env.PUBLIC_URL}/assets/images/country-flags/german.svg`},
     { code: "de_es", short: "DE+E", label: "Einfache Sprache", icon: `${process.env.PUBLIC_URL}/assets/images/country-flags/german.svg` },
     // { code: "de_ls", short: "DE+L", label: "Deutsch (Leichte Sprache)" },
     { code: "en", short: "EN", label: "English", icon: `${process.env.PUBLIC_URL}/assets/images/country-flags/english.svg`},
 ];
+
+export const LANG_OPTIONS = featureFlags.bielefunke
+    ? LANG_OPTIONS_RAW
+    : LANG_OPTIONS_RAW.filter(opt => opt.code !== "de_es");
 
 export const pickLang = (obj, lang, fallback) => {
     if (!obj || typeof obj !== "object") return fallback;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Select, MenuItem, Typography } from "@mui/material";
+import { Select, MenuItem, Typography, Box } from "@mui/material";
 import { HBox } from "@/ui/shared-components/LayoutBoxes";
 import { LANG_OPTIONS } from "@/ui/language/useTranslation";
 import { useLanguageStore } from '@/ui/storage/useLanguageStore';
@@ -40,13 +40,21 @@ const LanguageDropdown = ({ isApp }) => {
                 {LANG_OPTIONS.map((opt) => (
                     <MenuItem key={opt.code} value={opt.code}>
                         <HBox sx={{ gap: 1, alignItems: "center" }}>
-                            <img
-                                src={opt.icon}
-                                alt={opt.label}
-                                width={28}
-                                height={24}
-                                style={{ display: "block", borderRadius: "2px", opacity: 0.75 }}
-                            />
+                            <Box
+                                sx={{
+                                    width: 28,
+                                    borderRadius: "4px",
+                                    overflow: "hidden",
+                                }}
+                            >
+                                <img
+                                    src={opt.icon}
+                                    alt={opt.label}
+                                    width="100%"
+                                    height="100%"
+                                    style={{ display: "block", opacity: 0.75 }}
+                                />
+                            </Box>
                             <Typography variant="body2" sx={{ color: isApp ? "white" : "black" }}>
                                 {opt.label}
                             </Typography>
