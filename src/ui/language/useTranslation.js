@@ -3,10 +3,10 @@ import { useLanguageStore } from '@/ui/storage/useLanguageStore';
 import translations from './translations';
 
 export const LANG_OPTIONS = [
-    { code: "de", short: "DE", label: "Deutsch" },
-    { code: "de_es", short: "DE+E", label: "Deutsch (Einfache Sprache)" },
+    { code: "de", short: "DE", label: "Deutsch", icon: `${process.env.PUBLIC_URL}/assets/images/country-flags/german.svg`},
+    { code: "de_es", short: "DE+E", label: "Einfache Sprache", icon: `${process.env.PUBLIC_URL}/assets/images/country-flags/german.svg` },
     // { code: "de_ls", short: "DE+L", label: "Deutsch (Leichte Sprache)" },
-    { code: "en", short: "EN", label: "English" },
+    { code: "en", short: "EN", label: "English", icon: `${process.env.PUBLIC_URL}/assets/images/country-flags/english.svg`},
 ];
 
 export const pickLang = (obj, lang, fallback) => {

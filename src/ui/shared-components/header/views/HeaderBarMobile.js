@@ -1,24 +1,18 @@
 import React, { useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import { IconButton, MenuItem, Select } from '@mui/material';
+import { IconButton } from '@mui/material';
 import { Link } from 'react-router-dom';
 import LogoBar from "@/ui/shared-components/LogoBar";
-import { useLanguageStore } from '@/ui/storage/useLanguageStore';
-import useTranslation, { LANG_OPTIONS } from "@/ui/language/useTranslation";
+import useTranslation from "@/ui/language/useTranslation";
 import { HBox, VBox } from "@/ui/shared-components/LayoutBoxes";
 import LandingPageHollowButtonMobile from '@/ui/screens/landing-page/components/LandingPageButtonMobile';
 import LandingPageButton from '@/ui/screens/landing-page/sections/top-section/components/LandingPageButton';
+import LanguageDropdown from '../../LanguageDropdown';
 
 const HeaderBarMobile = ({ isApp }) => {
     const [showDropdown, setShowDropdown] = useState(false);
-    const language = useLanguageStore((state) => state.language);
-    const setLanguage = useLanguageStore((state) => state.setLanguage);
     const { t } = useTranslation();
     const color = isApp ? 'white.main' : 'black.main';
-
-    const handleLanguageChange = (event) => {
-        setLanguage(event.target.value);
-    };
 
     return (
         <VBox sx={{
@@ -52,18 +46,7 @@ const HeaderBarMobile = ({ isApp }) => {
                             <LandingPageHollowButtonMobile isApp={isApp} setShowDropdown={setShowDropdown} text={t('home.menu.aboutUs')} to={"/#about-us"} />
                         </VBox>
                         <LandingPageButton />
-                        <HBox alignItems="center" gap={1}>
-                            <Select
-                                value={language}
-                                onChange={handleLanguageChange}
-                            >
-                                {LANG_OPTIONS.map(opt => (
-                                    <MenuItem key={opt.code} value={opt.code}>
-                                        {opt.label}
-                                    </MenuItem>
-                                ))}
-                            </Select>
-                        </HBox>
+                        <LanguageDropdown isApp={isApp} />
                     </VBox>)
             }
         </VBox>
