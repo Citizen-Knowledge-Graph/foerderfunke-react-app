@@ -45,7 +45,7 @@ const LanguageDropdown = ({ isApp }) => {
                                 alt={opt.label}
                                 width={28}
                                 height={24}
-                                style={{ display: "block", borderRadius: "2px" }}
+                                style={{ display: "block", borderRadius: "2px", opacity: 0.75 }}
                             />
                             <Typography variant="body2" sx={{ color: isApp ? "white" : "black" }}>
                                 {opt.label}
