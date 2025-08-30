@@ -28,6 +28,8 @@ const translations = {
                     headerPilot: "Bielefeld Pilot Project",
                     headerShard1: "Discover support programs in Bielefeld",
                     subHeader: "Find support programs for you and your situation in Bielefeld. Answer a few questions and we will show you which programs you might be eligible for.",
+                    pilotButton: "Pilotproject",
+                    regularButton: "Discover all benefits",
                 }
             },
             fact: {
@@ -374,6 +376,8 @@ const translations = {
                     headerPilot: "Pilotprojekt Bielefeld",
                     headerShard1: "Entdecke Deine Hilfe in Bielefeld",
                     subHeader: "Finde Förderprogramme, die zu dir und deiner Situation in Bielefeld passen. Beantworte einfach ein paar Fragen und wir zeigen dir, auf welche Programme du Anspruch haben könntest.",
+                    pilotButton: "Pilotprojekt",
+                    regularButton: "Alle Leistungen prüfen",
                 }
             },  
             fact: {

@@ -3,7 +3,6 @@ import { useStore } from "@/ui/shared-components/ViewportUpdater";
 import { HBox, VBox } from "@/ui/shared-components/LayoutBoxes";
 import RegularButton from "@/ui/shared-components/buttons/RegularButton";
 import LandingPageSectionWrapper from "../../../components/LandingPageSectionWrapper";
-import LandingPageTopSectionShared from "../components/LandingPageTopSectionShared";
 import LandingPageTopSectionSharedVariant from "../components/LandingPageTopSectionSharedVariant";
 
 const LandingPageTopSectionBielefunke = ({ runway }) => {
@@ -20,8 +19,8 @@ const LandingPageTopSectionBielefunke = ({ runway }) => {
                         <VBox sx={{ maxWidth: "600px", gap: 4 }}>
                             <LandingPageTopSectionSharedVariant runway={runway} />
                             <HBox>
-                                <RegularButton text={'Pilotprojekt'} variant={'whiteOutlinedBlue'} link='/user-routing' />
-                                <RegularButton text={'Alle Ansprüche prüfen'} variant={'yellowContained'} link='/user-routing' />
+                                <RegularButton text={'home.hero.bielefeld.pilotButton'} variant={'whiteOutlinedBlue'} link='/eligibility-overview?tags=ff%3Abielefunke' />
+                                <RegularButton text={'home.hero.bielefeld.regularButton'} variant={'yellowContained'} link='/user-routing' />
                             </HBox>
                         </VBox>
                     </VBox>
@@ -76,8 +75,11 @@ const LandingPageTopSectionBielefunke = ({ runway }) => {
                     </VBox>
 
                     <VBox sx={{ gap: "16px" }}>
-                        <LandingPageTopSectionShared />
-                        <RegularButton variant={'yellowContained'} link='/user-routing' />
+                        <LandingPageTopSectionSharedVariant runway={runway} />
+                        <VBox sx={{ gap: 2, width: '100%' }}>
+                            <RegularButton text={'home.hero.bielefeld.pilotButton'} variant={'whiteOutlinedBlue'} link='/eligibility-overview?tags=ff%3Abielefunke' />
+                            <RegularButton text={'home.hero.bielefeld.regularButton'} variant={'yellowContained'} link='/user-routing' />
+                        </VBox>
                     </VBox>
                 </VBox>
             )}
