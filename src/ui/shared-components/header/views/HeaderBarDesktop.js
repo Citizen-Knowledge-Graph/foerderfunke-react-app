@@ -6,8 +6,10 @@ import LogoBar from '@/ui/shared-components/LogoBar';
 import LandingPageHollowButtonDesktop from '@/ui/screens/landing-page/components/LandingPageButtonDesktop';
 import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 import LanguageDropdown from '@/ui/shared-components/LanguageDropdown';
+import { Typography } from '@mui/material';
+import theme from '@/theme';
 
-const HeaderBarDesktop = ({ isApp }) => {
+const HeaderBarDesktop = ({ isApp, runway }) => {
     const { t } = useTranslation();
 
     const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1200);
@@ -29,8 +31,26 @@ const HeaderBarDesktop = ({ isApp }) => {
         }}>
             <HBox alignItems={'center'}>
                 <Link to={"/"} style={{ textDecoration: 'none', color: "black" }}>
-                    <LogoBar size={'large'} isApp={isApp} />
+                    <HBox alignItems={'center'}>
+                        <LogoBar size={'large'} isApp={isApp} />
+                        <HBox
+                            sx={{
+                                alignItems: 'center',
+                                borderLeft: `2px solid ${theme.palette.pink.main}`,
+                                paddingLeft: 2,
+                            }}
+                        >
+                            {
+                                runway === 'bielefunke' && (
+                                    <Typography variant='h2' sx={{ color: "pink.main", fontWeight: '500', marginLeft: '8px' }}>
+                                        Bielefeld
+                                    </Typography>
+                                )
+                            }
+                        </HBox>
+                    </HBox>
                 </Link>
+
             </HBox>
             <HBox justifyContent={'flex-end'} alignItems={'center'}>
                 <HBox gap={5}>

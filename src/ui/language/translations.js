@@ -23,7 +23,12 @@ const translations = {
                 housingBenefit: "Housing benefit",
                 citizensBenefit: "Citizen's benefit",
                 bafög: "Bafög",
-                manyMore: "Many more"
+                manyMore: "Many more",
+                bielefeld: {
+                    headerPilot: "Bielefeld Pilot Project",
+                    headerShard1: "Discover support programs in Bielefeld",
+                    subHeader: "Find support programs for you and your situation in Bielefeld. Answer a few questions and we will show you which programs you might be eligible for.",
+                }
             },
             fact: {
                 subHeader: "unclaimed social benefits per year",
@@ -365,6 +370,11 @@ const translations = {
                 citizensBenefit: "Bürgergeld",
                 bafög: "Bafög",
                 manyMore: "Viele Weitere",
+                bielefeld: {
+                    headerPilot: "Pilotprojekt Bielefeld",
+                    headerShard1: "Entdecke Deine Hilfe in Bielefeld",
+                    subHeader: "Finde Förderprogramme, die zu dir und deiner Situation in Bielefeld passen. Beantworte einfach ein paar Fragen und wir zeigen dir, auf welche Programme du Anspruch haben könntest.",
+                }
             },  
             fact: {
                 subHeader: "nicht in Anspruch genommener Sozialleistungen pro Jahr",

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useStore } from "@/ui/shared-components/ViewportUpdater";
 import { VBox } from "@/ui/shared-components/LayoutBoxes";
 import Layout from "@/ui/shared-components/Layout";
@@ -7,23 +7,30 @@ import LandingPagePrinciples from "./sections/principles/LandingPagePrinciples";
 import LandingPageTeam from "./sections/team/LandingPageTeam";
 import LandingPageFooter from "./sections/footer/LandingPageFooter";
 import LandingPageFact from "./sections/fact/LandingPageFact";
-import LandingPageTopSection from "./sections/top-section/LandingPageTopSection";
 import LandingPageFeedback from "./sections/feedback/LandingPageFeedback";
 import LandingPageFunding from "./sections/funding/LandingPageFunding";
 import LandingPageMission from "./sections/mission/LandingPageMission";
+import LandingPageTopSection from "./sections/top-section/LandingPageTopSection";
+import LandingPageTopSectionBielefunke from "./sections/top-section/variants/LandingPageTopSectionBielefunke";
 
 const LandingPage = ({ runway }) => {
     const isDesktop = useStore((state) => state.isDesktop);
 
-    useEffect(() => {
-        console.log("runway:", runway);
-    }, [runway]);
+    let topSection;
+    switch (runway) {
+        case 'bielefunke':
+            topSection = <LandingPageTopSectionBielefunke isDesktop={isDesktop} />;
+            break;
+        default:
+            topSection = <LandingPageTopSection isDesktop={isDesktop} />;
+            break;
+    };
 
     return (
-        <Layout>
+        <Layout runway={runway}>
             <VBox sx={{ width: '100%' }}>
                 <VBox>
-                    <LandingPageTopSection isDesktop={isDesktop} runway={runway} />
+                    {topSection}
                 </VBox>
                 <VBox>
                     <LandingPageFact isDesktop={isDesktop} />

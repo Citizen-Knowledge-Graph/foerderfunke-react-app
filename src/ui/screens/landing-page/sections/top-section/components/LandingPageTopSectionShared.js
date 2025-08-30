@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { HBox, VBox } from "@/ui/shared-components/LayoutBoxes";
 import useTranslation from "@/ui/language/useTranslation";
 
-const LandingPageTopSectionShared = () => {
+const LandingPageTopSectionShared = ({ runway}) => {
     const { t } = useTranslation();
     const words = t("home.hero.headerBenefits");
     const [currentWordIndex, setCurrentWordIndex] = useState(0);

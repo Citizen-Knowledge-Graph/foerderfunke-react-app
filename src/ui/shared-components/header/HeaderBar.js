@@ -3,7 +3,7 @@ import HeaderBarMobile from "./views/HeaderBarMobile";
 import HeaderBarDesktop from "./views/HeaderBarDesktop";
 import { VBox } from "@/ui/shared-components/LayoutBoxes";
 
-const HeaderBar = ({ isApp, isDesktop }) => {
+const HeaderBar = ({ isApp, isDesktop, runway }) => {
     const backgroundColor = isApp ? 'blue.dark' : 'white.main';
     const sticky = isApp ? "relative" : "sticky";
 
@@ -19,7 +19,7 @@ const HeaderBar = ({ isApp, isDesktop }) => {
                 backgroundColor: backgroundColor
             }}
         >
-            {isDesktop ? <HeaderBarDesktop isApp={isApp} /> : <HeaderBarMobile isApp={isApp} />}
+            {isDesktop ? <HeaderBarDesktop isApp={isApp} runway={runway} /> : <HeaderBarMobile isApp={isApp} runway={runway} />}
         </VBox>
     );
 };

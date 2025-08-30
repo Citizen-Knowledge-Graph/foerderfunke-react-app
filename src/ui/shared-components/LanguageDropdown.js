@@ -22,7 +22,7 @@ const LanguageDropdown = ({ isApp }) => {
                 IconComponent={() => null}
                 sx={{
                     backgroundColor: "white !important",
-                    border: `1px solid ${isApp ? "white" : "black"}`,
+                    border: `1px solid ${isApp ? "white" : "#868B8E"}`,
                     borderRadius: "16px",
                     padding: "10px 12px",
                     color: isApp ? "white" : "black",

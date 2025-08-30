@@ -1,18 +1,18 @@
 import React from 'react';
-import {VBox} from "./LayoutBoxes";
+import { VBox } from "./LayoutBoxes";
 import HeaderBar from "./header/HeaderBar";
-import {useStore} from "./ViewportUpdater";
+import { useStore } from "./ViewportUpdater";
 
-const Layout = ({children, isApp = false, logo = true, back = null, gap = 2}) => {
+const Layout = ({ children, runway = null, isApp = false, gap = 2 }) => {
     const isDesktop = useStore((state) => state.isDesktop);
     const backgroundColor = isApp ? 'blue.dark' : 'white.main';
-    const minHeight = isApp ? '100vh' : 'auto';    
+    const minHeight = isApp ? '100vh' : 'auto';
 
     return (
-        <VBox gap={0} sx={{backgroundColor: backgroundColor, minHeight: minHeight}}>
-            <HeaderBar isApp={isApp} isDesktop={isDesktop} logo={logo} back={back}/>
+        <VBox gap={0} sx={{ backgroundColor: backgroundColor, minHeight: minHeight }}>
+            <HeaderBar isApp={isApp} isDesktop={isDesktop} runway={runway} />
             <VBox data-testid={'layout-container'}>
-                <VBox gap={gap} sx={{ width: '100%'}} data-testid="main-parent container" alignItems={'center'}>
+                <VBox gap={gap} sx={{ width: '100%' }} data-testid="main-parent container" alignItems={'center'}>
                     {children}
                 </VBox>
             </VBox>
