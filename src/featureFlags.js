@@ -1,6 +1,6 @@
 const defaultFlags = {
-    showMermaidRuleGraph: false,
-    bielefunke: false
+    showMermaidRuleGraph: true,
+    bielefunke: true
 };
 
 const getFeatureFlag = (flag) => {
