@@ -166,7 +166,7 @@ const BenefitPageScreen = ({
                         }
                         {/* <RecursiveRulesTable rootNodes={matchingGraph?.rootNodes} t={t} /> */}
                         {featureFlags.showMermaidRuleGraph &&
-                            <MermaidRulesGraph evalGraph={matchingGraph} t={t} />
+                            <MermaidRulesGraph evalGraph={matchingGraph} validatedStatus={validatedStatus} />
                         }
                     </Box>
                 </VBox>

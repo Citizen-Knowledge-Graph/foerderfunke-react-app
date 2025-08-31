@@ -8,10 +8,10 @@ import RegularButton from "@/ui/shared-components/buttons/RegularButton";
 import { graphToMermaid } from "@foerderfunke/matching-engine/src/rule-graph/EvalGraph";
 import matchingEngineManager from "@/core/managers/matchingEngineManager";
 
-export default function MermaidRulesGraph({ evalGraph, t }) {
+export default function MermaidRulesGraph({ evalGraph, validatedStatus }) {
     // make SVG zoomable TODO
     const [svgContent, setSvgContent] = useState("");
-    const [graphTypeEval, setGraphTypeEval] = useState(true);
+    const [graphTypeEval, setGraphTypeEval] = useState(!validatedStatus);
     const [printLabels, setPrintLabels] = useState(true);
     const [orientationVertical, setOrientationVertical] = useState(false);
 

@@ -374,8 +374,8 @@ const translations = {
                 manyMore: "Viele Weitere",
                 bielefeld: {
                     headerPilot: "Pilotprojekt Bielefeld",
-                    headerShard1: "Entdecke Deine Hilfe in Bielefeld",
-                    subHeader: "Finde Förderprogramme, die zu dir und deiner Situation in Bielefeld passen. Beantworte einfach ein paar Fragen und wir zeigen dir, auf welche Programme du Anspruch haben könntest.",
+                    headerShard1: "Entdecke Deine Möglichkeiten in Bielefeld",
+                    subHeader: "Finde Leistungsangebote, die zu dir und deiner Situation in Bielefeld passen. Beantworte einfach ein paar Fragen und wir zeigen dir, auf welche Programme du Anspruch haben könntest.",
                     pilotButton: "Pilotprojekt",
                     regularButton: "Alle Leistungen prüfen",
                 }
