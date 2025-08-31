@@ -7,6 +7,7 @@ import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 import TimeIcon from '../components/TimeIcon';
 import BenefitsIcon from '../components/BenefitsIcon';
 import AppScreenWrapperContainer from '@/ui/shared-components/app-screen-wrapper/AppScreenWrapperContainer';
+import { pickLang } from "@/ui/language/useTranslation";
 
 const OnboardingWelcomeOverviewView = ({
     t,
@@ -81,7 +82,7 @@ const OnboardingWelcomeOverviewView = ({
                                         }}>
                                         <VBox sx={{ gap: 2 }}>
                                             <Typography variant="h2">
-                                                {language === "de" ? topic.title.de : topic.title.en}
+                                                {pickLang(topic.title, language, '')}
                                             </Typography>
                                             <ul>
                                                 {rps.map((rpTitle, i) => (

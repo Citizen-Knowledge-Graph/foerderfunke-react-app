@@ -3,6 +3,7 @@ import { Typography, Button } from '@mui/material';
 import { HBox } from "@/ui/shared-components/LayoutBoxes";
 import theme from "@/theme";
 import { useLanguageStore } from '@/ui/storage/useLanguageStore';
+import { pickLang } from "@/ui/language/useTranslation";
 
 const ClickableTopicBox = ({ topic, onClick }) => {
     const language = useLanguageStore((state) => state.language);
@@ -36,7 +37,7 @@ const ClickableTopicBox = ({ topic, onClick }) => {
                 }}
             >
                 <Typography variant="body1" sx={{ whiteSpace: 'wrap' }}>
-                    {language === "de" ? topic.title.de : topic.title.en}
+                    {pickLang(topic.title, language, '')}
                 </Typography>
             </Button>
         </HBox>
