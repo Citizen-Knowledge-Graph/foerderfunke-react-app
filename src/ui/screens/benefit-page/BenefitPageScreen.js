@@ -63,7 +63,7 @@ const BenefitPageScreen = ({
                             benefitPageData?.benefitType && (
                                 <BenefitPageMarkdown title={t('app.benefitPage.benefitType')} content={benefitPageData?.benefitType} />
                             )
-                        }                        
+                        }
                         {
                             benefitPageData?.benefitScope && (
                                 <BenefitPageMarkdown title={t('app.benefitPage.benefitScope')} content={benefitPageData?.benefitScope} />
@@ -80,6 +80,11 @@ const BenefitPageScreen = ({
                             )
                         }
                         {
+                            benefitPageData?.processMD && (
+                                <BenefitPageMarkdown title={t('app.benefitPage.processMD')} content={benefitPageData?.processMD} />
+                            )
+                        }
+                        {
                             benefitPageData?.contactMD && (
                                 <BenefitPageMarkdown title={t('app.benefitPage.contactMD')} content={benefitPageData?.contactMD} />
                             )
@@ -87,11 +92,6 @@ const BenefitPageScreen = ({
                         {
                             benefitPageData?.documentsMD && (
                                 <BenefitPageMarkdown title={t('app.benefitPage.documentsMD')} content={benefitPageData?.documentsMD} icon={<DescriptionIcon />} />
-                            )
-                        }
-                        {
-                            benefitPageData?.processMD && (
-                                <BenefitPageMarkdown title={t('app.benefitPage.processMD')} content={benefitPageData?.processMD} />
                             )
                         }
                         {
@@ -118,12 +118,12 @@ const BenefitPageScreen = ({
                             benefitPageData?.furtherCommentsMD && (
                                 <BenefitPageMarkdown title={t('app.benefitPage.furtherCommentsMD')} content={benefitPageData?.furtherCommentsMD} />
                             )
-                        }     
+                        }
                         {
                             benefitPageData?.relatedBenefitsMD && (
                                 <BenefitPageMarkdown title={t('app.benefitPage.relatedBenefitsMD')} content={benefitPageData?.relatedBenefitsMD} />
                             )
-                        }                                                                                             
+                        }
                         {
                             benefitPageData?.legalBasisMD && (
                                 <BenefitPageMarkdown title={t('app.benefitPage.legalBasisMD')} content={benefitPageData?.legalBasisMD} />
