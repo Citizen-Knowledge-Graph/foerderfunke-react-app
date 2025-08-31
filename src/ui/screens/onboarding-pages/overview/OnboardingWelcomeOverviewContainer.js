@@ -15,6 +15,7 @@ const OnboardingWelcomeOverviewContainer = () => {
     const metadata = useMetadataStore((state) => state.metadata);
     const topicWithBenefits = useBuildTopicsList(selectedTopics, metadata);
     const benefitTitles = useBuildBenefitsTitles(selectedBenefits, metadata);
+    
 
     return (
         <OnboardingWelcomeOverview
