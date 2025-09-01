@@ -104,7 +104,7 @@
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/03-kinderzuschlag-v2.ttl",
       "rpUri": "https://foerderfunke.org/default#kinderzuschlag-v2",
-      "behindFeatureFlag": "showMermaidRuleGraph"
+      "behindFeatureFlag": "subindividuals"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/bielefeld/shacl/schwerbehindertenausweis.ttl",
