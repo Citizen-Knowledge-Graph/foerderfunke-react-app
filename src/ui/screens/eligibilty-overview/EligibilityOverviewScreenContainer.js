@@ -20,7 +20,7 @@ const EligibilityOverviewScreenContainer = () => {
     const { validationReport } = useProduceValidationReport();
     const metadata = useMetadataStore((state) => state.metadata);
     const { eligibilityData, filterOptions } = useEligibilityData(validationReport, metadata, hydrationData, language);
-    const filters = useInitialiseFilters(filterOptions, searchParams, selectedFilters, setSearchParams);
+    const filters = useInitialiseFilters(filterOptions, searchParams, selectedFilters, setSearchParams, setSelectedFilters);
     const handleChangeFilters = useFilterChangeHandler({ filters, setSearchParams, setSelectedFilters });
     const filteredEligibilityData = useFilterEligibilityData(eligibilityData, filters);
 
