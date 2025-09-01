@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useEffect } from 'react';
 
-export const useInitialiseFilters = (filterOptions, searchParams, selectedFilters = {}, setSearchParams) => {
+export const useInitialiseFilters = (filterOptions, searchParams, selectedFilters = {}, setSearchParams, setSelectedFilters) => {
     const { filters, urlHadParams } = useMemo(() => {
         const f = {};
         let any = false;
@@ -23,6 +23,31 @@ export const useInitialiseFilters = (filterOptions, searchParams, selectedFilter
             setSearchParams(next, { replace: true });
         }
     }, [urlHadParams, selectedFilters, setSearchParams]);
+
+    const areFiltersEqual = (a = {}, b = {}) => {
+        const aKeys = Object.keys(a);
+        const bKeys = Object.keys(b);
+        if (aKeys.length !== bKeys.length) return false;
+        for (const k of aKeys) {
+            const aVals = a[k] || [];
+            const bVals = b[k] || [];
+            if (aVals.length !== bVals.length) return false;
+            for (let i = 0; i < aVals.length; i++) {
+                if (aVals[i] !== bVals[i]) return false;
+            }
+        }
+        return true;
+    };
+
+    // if the URL contained filter params on first load, push them into selected state
+    useEffect(() => {
+        if (urlHadParams) {
+            // only set if different to avoid update loops
+            if (!areFiltersEqual(selectedFilters, filters)) {
+                setSelectedFilters(filters);
+            }
+        }
+    }, [urlHadParams, filters, selectedFilters, setSelectedFilters]);
 
     return filters;
 };
