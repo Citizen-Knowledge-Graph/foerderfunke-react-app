@@ -12,7 +12,7 @@ export const useInitialiseFilters = (filterOptions, searchParams, selectedFilter
             }
         }
         return { filters: any ? f : selectedFilters, urlHadParams: any };
-    }, [filterOptions, searchParams]);
+    }, [filterOptions, searchParams, selectedFilters]);
 
     useEffect(() => {
         if (!urlHadParams && selectedFilters && Object.keys(selectedFilters).length > 0) {
