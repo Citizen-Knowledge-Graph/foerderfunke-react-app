@@ -375,7 +375,7 @@ const translations = {
                 bielefeld: {
                     headerPilot: "Pilotprojekt Bielefeld",
                     headerShard1: "Entdecke Deine Angebote in Bielefeld",
-                    subHeader: "Gemeinsam mit dem Amt für Sozialplanung der Stadt Bielefeld entwickeln wir FörderFunke weiter und passen die Lösung an die Anforderungen der Stadt an. Dabei stehen insbesondere die Bereiche Rehabilitation und Teilhabe sowie Suchterkrankungen im Fokus. Wir freuen uns jederzeit über Feedback.",
+                    subHeader: "Gemeinsam mit dem Büro für Sozialplanung der Stadt Bielefeld entwickeln wir FörderFunke weiter und passen die Lösung an die Anforderungen der Stadt an. Dabei stehen insbesondere die Bereiche Rehabilitation und Teilhabe sowie Suchterkrankungen im Fokus. Wir freuen uns jederzeit über Feedback.",
                     pilotButton: "Zum Pilotprojekt",
                     regularButton: "Alle Leistungen prüfen",
                 }
