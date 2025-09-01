@@ -27,8 +27,8 @@ const translations = {
                 bielefeld: {
                     headerPilot: "Bielefeld Pilot Project",
                     headerShard1: "Discover support programs in Bielefeld",
-                    subHeader: "Find support programs for you and your situation in Bielefeld. Answer a few questions and we will show you which programs you might be eligible for.",
-                    pilotButton: "Pilotproject",
+                    subHeader: "Together with the Office for Social Planning of the City of Bielefeld, we are further developing FörderFunke and adapting the solution to the city's requirements. The focus is particularly on the areas of rehabilitation and participation as well as addiction. We are always happy to receive feedback.",
+                    pilotButton: "Explore the Pilotproject",
                     regularButton: "Discover all benefits",
                 }
             },
@@ -374,9 +374,9 @@ const translations = {
                 manyMore: "Viele Weitere",
                 bielefeld: {
                     headerPilot: "Pilotprojekt Bielefeld",
-                    headerShard1: "Entdecke Deine Möglichkeiten in Bielefeld",
-                    subHeader: "Finde Leistungsangebote, die zu dir und deiner Situation in Bielefeld passen. Beantworte einfach ein paar Fragen und wir zeigen dir, auf welche Programme du Anspruch haben könntest.",
-                    pilotButton: "Pilotprojekt",
+                    headerShard1: "Entdecke Deine Angebote in Bielefeld",
+                    subHeader: "Gemeinsam mit dem Amt für Sozialplanung der Stadt Bielefeld entwickeln wir FörderFunke weiter und passen die Lösung an die Anforderungen der Stadt an. Dabei stehen insbesondere die Bereiche Rehabilitation und Teilhabe sowie Suchterkrankungen im Fokus. Wir freuen uns jederzeit über Feedback.",
+                    pilotButton: "Zum Pilotprojekt",
                     regularButton: "Alle Leistungen prüfen",
                 }
             },  
