@@ -12,6 +12,7 @@ import LandingPageFunding from "./sections/funding/LandingPageFunding";
 import LandingPageMission from "./sections/mission/LandingPageMission";
 import LandingPageTopSection from "./sections/top-section/LandingPageTopSection";
 import LandingPageTopSectionBielefunke from "./sections/top-section/variants/LandingPageTopSectionBielefunke";
+import LandingPageTopSectionWolfenbuettel from "./sections/top-section/variants/LandingPageTopSectionWolfenbuettel";
 
 const LandingPage = ({ runway }) => {
     const isDesktop = useStore((state) => state.isDesktop);
@@ -20,6 +21,9 @@ const LandingPage = ({ runway }) => {
     switch (runway) {
         case 'bielefunke':
             topSection = <LandingPageTopSectionBielefunke isDesktop={isDesktop} />;
+            break;
+        case 'wolfenbuettel':
+            topSection = <LandingPageTopSectionWolfenbuettel isDesktop={isDesktop} />;
             break;
         default:
             topSection = <LandingPageTopSection isDesktop={isDesktop} />;

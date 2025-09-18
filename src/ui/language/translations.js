@@ -30,6 +30,13 @@ const translations = {
                     subHeader: "Together with the Office for Social Planning of the City of Bielefeld, we are further developing FörderFunke and adapting the solution to the city's requirements. The focus is particularly on the areas of rehabilitation and participation as well as addiction. We are always happy to receive feedback.",
                     pilotButton: "Explore the Pilotproject",
                     regularButton: "Discover all benefits",
+                },
+                wolfenbuettel: {
+                    headerPilot: "Wolfenbüttel Pilot Project",
+                    headerShard1: "Discover support programs in Wolfenbüttel",
+                    subHeader: "TODO",
+                    pilotButton: "Explore the Pilotproject",
+                    regularButton: "Discover all benefits",
                 }
             },
             fact: {
@@ -376,6 +383,13 @@ const translations = {
                     headerPilot: "Pilotprojekt Bielefeld",
                     headerShard1: "Entdecke Deine Angebote in Bielefeld",
                     subHeader: "Gemeinsam mit dem Büro für Sozialplanung der Stadt Bielefeld entwickeln wir FörderFunke weiter und passen die Lösung an die Anforderungen der Stadt an. Dabei stehen insbesondere die Bereiche Rehabilitation und Teilhabe sowie Suchterkrankungen im Fokus. Wir freuen uns jederzeit über Feedback.",
+                    pilotButton: "Zum Pilotprojekt",
+                    regularButton: "Alle Leistungen prüfen",
+                },
+                wolfenbuettel: {
+                    headerPilot: "Pilotprojekt Wolfenbüttel",
+                    headerShard1: "Entdecke Deine Angebote in Wolfenbüttel",
+                    subHeader: "TODO",
                     pilotButton: "Zum Pilotprojekt",
                     regularButton: "Alle Leistungen prüfen",
                 }

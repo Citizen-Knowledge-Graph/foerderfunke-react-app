@@ -47,6 +47,13 @@ const HeaderBarDesktop = ({ isApp, runway }) => {
                                     </Typography>
                                 )
                             }
+                            {
+                                runway === 'wolfenbuettel' && (
+                                    <Typography variant='h2' sx={{ color: "pink.main", fontWeight: '500', marginLeft: '8px' }}>
+                                        Wolfenbüttel
+                                    </Typography>
+                                )
+                            }
                         </HBox>
                     </HBox>
                 </Link>

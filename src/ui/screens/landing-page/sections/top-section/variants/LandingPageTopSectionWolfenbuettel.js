@@ -5,10 +5,10 @@ import RegularButton from "@/ui/shared-components/buttons/RegularButton";
 import LandingPageSectionWrapper from "../../../components/LandingPageSectionWrapper";
 import LandingPageTopSectionSharedVariant from "../components/LandingPageTopSectionSharedVariant";
 
-const LandingPageTopSectionBielefunke = ({ runway }) => {
+const LandingPageTopSectionWolfenbuettel = ({ runway }) => {
     const isDesktop = useStore((state) => state.isDesktop);
     const [loaded, setLoaded] = useState(false);
-    const bielefeldImage = `${process.env.PUBLIC_URL}/assets/images/landing-page/bielefeld_image.svg`;
+    const wolfenbuettelImage = `${process.env.PUBLIC_URL}/assets/images/landing-page/bielefeld_image.svg`; // TODO
     const imageSize = isDesktop ? 523 : 328;
 
     return (
@@ -17,10 +17,10 @@ const LandingPageTopSectionBielefunke = ({ runway }) => {
                 <HBox justifyContent="space-between" alignItems="flex-start">
                     <VBox sx={{ width: "50%", alignItems: "center" }}>
                         <VBox sx={{ maxWidth: "600px", gap: 4 }}>
-                            <LandingPageTopSectionSharedVariant runway="bielefeld" />
+                            <LandingPageTopSectionSharedVariant runway="wolfenbuettel" />
                             <HBox>
-                                <RegularButton text={'home.hero.bielefeld.pilotButton'} variant={'whiteOutlinedBlue'} link='/eligibility-overview?tags=ff%3Abielefunke' />
-                                <RegularButton text={'home.hero.bielefeld.regularButton'} variant={'yellowContained'} link='/user-routing' />
+                                <RegularButton text={'home.hero.wolfenbuettel.pilotButton'} variant={'whiteOutlinedBlue'} link='/eligibility-overview?tags=ff%3Awolfenbuettel' />
+                                <RegularButton text={'home.hero.wolfenbuettel.regularButton'} variant={'yellowContained'} link='/user-routing' />
                             </HBox>
                         </VBox>
                     </VBox>
@@ -34,7 +34,7 @@ const LandingPageTopSectionBielefunke = ({ runway }) => {
                             />
                         )}
                         <img
-                            src={bielefeldImage}
+                            src={wolfenbuettelImage}
                             alt="logo"
                             style={{
                                 width: `${imageSize}px`,
@@ -60,7 +60,7 @@ const LandingPageTopSectionBielefunke = ({ runway }) => {
                             />
                         )}
                         <img
-                            src={bielefeldImage}
+                            src={wolfenbuettelImage}
                             alt="logo"
                             style={{
                                 width: `${imageSize}px`,
@@ -75,10 +75,10 @@ const LandingPageTopSectionBielefunke = ({ runway }) => {
                     </VBox>
 
                     <VBox sx={{ gap: "16px" }}>
-                        <LandingPageTopSectionSharedVariant runway="bielefeld" />
+                        <LandingPageTopSectionSharedVariant runway="wolfenbuettel" />
                         <VBox sx={{ gap: 2, width: '100%' }}>
-                            <RegularButton text={'home.hero.bielefeld.pilotButton'} variant={'whiteOutlinedBlue'} link='/eligibility-overview?tags=ff%3Abielefunke' />
-                            <RegularButton text={'home.hero.bielefeld.regularButton'} variant={'yellowContained'} link='/user-routing' />
+                            <RegularButton text={'home.hero.wolfenbuettel.pilotButton'} variant={'whiteOutlinedBlue'} link='/eligibility-overview?tags=ff%3Awolfenbuettel' />
+                            <RegularButton text={'home.hero.wolfenbuettel.regularButton'} variant={'yellowContained'} link='/user-routing' />
                         </VBox>
                     </VBox>
                 </VBox>
@@ -87,4 +87,4 @@ const LandingPageTopSectionBielefunke = ({ runway }) => {
     );
 };
 
-export default LandingPageTopSectionBielefunke;
+export default LandingPageTopSectionWolfenbuettel;

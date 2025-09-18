@@ -35,6 +35,8 @@ const AppRoutes = () => (
         <Route path="/data-protection" element={<DataProtection/>}/>
         <Route path="/bielefeld" element={<LandingPage runway="bielefunke" />}/>
         <Route path="/bielefunke" element={<LandingPage runway="bielefunke" />}/>
+        <Route path="/wolfenbuettel" element={<LandingPage runway="wolfenbuettel" />}/>
+        <Route path="/wolfenbüttel" element={<LandingPage runway="wolfenbuettel" />}/>
     </Routes>
 );
 
