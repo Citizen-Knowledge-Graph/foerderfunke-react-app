@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Divider, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import { HBox, VBox } from '@/ui/shared-components/LayoutBoxes';
 import theme from '@/theme';
 import RegularButton from '@/ui/shared-components/buttons/RegularButton';
@@ -20,7 +20,6 @@ const filterKeys = [
 
 const EligibilityOverviewItem = ({ t, item, eligible }) => {
     const [isVisible, setIsVisible] = useState(false);
-    const color = eligible === 'indeterminate' ? 'black.light' : 'black.main';
     const setSelectedBenefits = useSelectedBenefitsStore((state) => state.setSelectedBenefits);
     const clearSelectedTopics = useSelectedTopicsStore((state) => state.clear);
 
@@ -29,10 +28,10 @@ const EligibilityOverviewItem = ({ t, item, eligible }) => {
             sx={{
                 display: 'flex',
                 flexDirection: 'column',
-                gap: 2,
+                gap: 3,
                 border: `1px solid ${theme.palette.white.dark}`,
                 boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
-                padding: 2,
+                padding: 4,
                 borderRadius: theme.shape.borderRadius,
             }}
         >
@@ -53,7 +52,7 @@ const EligibilityOverviewItem = ({ t, item, eligible }) => {
                         <HBox sx={{ alignItems: 'flex-end', gap: 2, flexWrap: 'wrap', width: '100%' }}>
                             <HBox sx={{ alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
                                 <HBox sx={{ alignItems: 'center', gap: 2, flexWrap: 'wrap' }}>
-                                    <Typography variant='h2' sx={{ color: color, fontWeight: '400', wordBreak: 'break-word' }}>
+                                    <Typography variant='h2' sx={{ fontWeight: '400', wordBreak: 'break-word' }}>
                                         {item.title}
                                     </Typography>
                                     {item.status === "beta" && (
@@ -84,7 +83,7 @@ const EligibilityOverviewItem = ({ t, item, eligible }) => {
                     </VBox>
                 </HBox>
             </HBox>
-            <VBox sx={{ gap: 2 }}>
+            <VBox sx={{ gap: 4, flex: 1 }}>
                 {isVisible && (
                     <HBox sx={{ flexWrap: 'wrap', gap: 1 }}>
                         {
@@ -98,36 +97,52 @@ const EligibilityOverviewItem = ({ t, item, eligible }) => {
                         }
                     </HBox>
                 )}
-                <Divider sx={{ color: 'dark.light', borderStyle: 'dashed' }} />
-                <HBox sx={{ flexWrap: 'wrap', gap: 2, alignItems: 'center' }}>
-                    {
-                        eligible !== 'indeterminate' && (
-                            <HBox>
-                                <EligibilityOverviewBanner t={t} eligible={eligible} />
+                <HBox sx={{
+                    flexWrap: 'wrap',
+                    gap: 2,
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    '& > :only-child': { marginLeft: 'auto' }
+                }}>
+                    <HBox sx={{ gap: 2, alignItems: 'center', flex: 4 }}>
+                        {
+                            eligible !== 'indeterminate' && (
+                                <HBox>
+                                    <EligibilityOverviewBanner t={t} eligible={eligible} />
+                                </HBox>
+                            )
+                        }
+                        {!isVisible && (
+                            <HBox sx={{ flexWrap: 'wrap', gap: 1 }}>
+                                {item.benefitCategories?.map(tag => (
+                                    <EligibilityOverviewTag
+                                        key={tag.id}
+                                        tag={tag.label}
+                                        tagType="benefitCategories"
+                                    />
+                                ))}
                             </HBox>
-                        )
-                    }
-                    {eligible === 'indeterminate' &&
+                        )}
+                    </HBox>
+                    <HBox sx={{ justifyContent: 'flex-end', flexWrap: 'wrap', gap: 2, alignItems: 'center', flex: 3 }}>
                         <RegularButton
-                            variant={'blueHollow'}
-                            onClick={() => {
-                                clearSelectedTopics()
-                                setSelectedBenefits([item.id]);
-                            }}
-                            text={'app.browseAll.checkElBtn'}
-                            link={`/onboarding-welcome`}
-                            size='small'
-                            endIcon={<ChevronRightIcon sx={{ fontSize: '16px' }} />}
+                            variant={'blackOutlined'}
+                            text={'app.browseAll.learnMoreBtn'}
+                            link={`/benefit-page/${item.id}`}
                         />
-
-                    }
-                    <RegularButton
-                        variant={'blackOutlined'}
-                        text={'app.browseAll.learnMoreBtn'}
-                        link={`/benefit-page/${item.id}`}
-                        size='small'
-                        endIcon={<ChevronRightIcon sx={{ fontSize: '16px' }} />}
-                    />
+                        {eligible === 'indeterminate' &&
+                            <RegularButton
+                                variant={'blueHollow'}
+                                onClick={() => {
+                                    clearSelectedTopics()
+                                    setSelectedBenefits([item.id]);
+                                }}
+                                text={'app.browseAll.checkElBtn'}
+                                link={`/onboarding-welcome`}
+                                endIcon={<ChevronRightIcon sx={{ fontSize: '16px' }} />}
+                            />
+                        }
+                    </HBox>
                 </HBox>
             </VBox>
         </VBox>

@@ -30,12 +30,13 @@ const EligibilityOverviewBanner = ({ t, eligible }) => {
 
     return (
         <HBox sx={{
+            height: 'fit-content',
             backgroundColor: eligibilityBannerType.backgroundColor,
-            padding: "8px 12px",
+            padding: "6px 18px",
             borderRadius: theme.shape.borderRadius,
             alignItems: 'center',
         }}>
-            <Typography>{t(eligibilityBannerType.text)}</Typography>
+            <Typography variant="body1" >{t(eligibilityBannerType.text)}</Typography>
         </HBox>
     );
 }

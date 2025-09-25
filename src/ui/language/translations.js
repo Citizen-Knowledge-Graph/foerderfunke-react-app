@@ -238,7 +238,7 @@ const translations = {
                 notEligible: "Not eligible:",
                 missingData: "Missing data:",
                 checkElBtn: "Check eligibility",
-                learnMoreBtn: "Learn more!",
+                learnMoreBtn: "Learn more",
                 legendTitle: "Legend",
                 legendText: "We use a color code to indicate the likelihood of eligibility. See the legend",
                 legend: {
@@ -586,7 +586,7 @@ const translations = {
                 notEligible: "Kein Anspruch:",
                 missingData: "Fehlende Daten:",
                 checkElBtn: "Anspruch prüfen",
-                learnMoreBtn: "Mehr erfahren!",
+                learnMoreBtn: "Zur Detailseite",
                 legendTitle: "Legende",
                 legendText: "Wir verwenden eine Farbkodierung, um die Wahrscheinlichkeit der Anspruchsberechtigung anzuzeigen. Siehe die Legende",
                 legend: {
