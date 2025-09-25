@@ -5,7 +5,7 @@ import RegularButton from "@/ui/shared-components/buttons/RegularButton";
 import LandingPageSectionWrapper from "../../../components/LandingPageSectionWrapper";
 import LandingPageTopSectionSharedVariant from "../components/LandingPageTopSectionSharedVariant";
 
-const LandingPageTopSectionWolfenbuettel = ({ runway }) => {
+const LandingPageTopSectionWolfenbuettel = () => {
     const isDesktop = useStore((state) => state.isDesktop);
     const [loaded, setLoaded] = useState(false);
     const wolfenbuettelImage = `${process.env.PUBLIC_URL}/assets/images/landing-page/wolfenbuettel_image.svg`; // TODO

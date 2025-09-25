@@ -46,7 +46,7 @@ const EligibilityOverviewFilter = ({ t, filterOptions, filters, onChangeFilters 
                 <HBox sx={{ gap: 4, flexWrap: 'wrap' }}>
                     {Object.keys(filterOptions).length > 0 && (
                         Object.keys(filterOptions).map((key, index) => (
-                            <FormControl key={index} size="small" sx={{ minWidth: 200 }}>
+                            <FormControl key={index} sx={{ minWidth: 200}}>
                                 <InputLabel id={`${key}-label`}>{t(`app.browseAll.filter.${key}`)}</InputLabel>
                                 <Select
                                     labelId={`${key}-label`}
@@ -55,6 +55,7 @@ const EligibilityOverviewFilter = ({ t, filterOptions, filters, onChangeFilters 
                                     onChange={handleChange(key)}
                                     label={t(`app.browseAll.filter.${key}`)}
                                     renderValue={() => t(`app.browseAll.filter.${key}`)}
+                                    sx={{ borderRadius: theme.shape.borderRadius }}
                                 >
                                     {filterOptions[key].map(item => (
                                         <MenuItem key={item.id} value={item.id}>
