@@ -34,7 +34,7 @@ const translations = {
                 wolfenbuettel: {
                     headerPilot: "Wolfenbüttel Pilot Project",
                     headerShard1: "Discover support programs in Wolfenbüttel",
-                    subHeader: "TODO",
+                    subHeader: "More information about a pilot project in Wolfenbüttel will be available here soon.",
                     pilotButton: "Explore the Pilotproject",
                     regularButton: "Discover all benefits",
                 }
@@ -389,7 +389,7 @@ const translations = {
                 wolfenbuettel: {
                     headerPilot: "Pilotprojekt Wolfenbüttel",
                     headerShard1: "Entdecke Deine Angebote in Wolfenbüttel",
-                    subHeader: "TODO",
+                    subHeader: "Hier folgen bald weitere Informationen zu einem Pilotprojekt in Wolfenbüttel.",
                     pilotButton: "Zum Pilotprojekt",
                     regularButton: "Alle Leistungen prüfen",
                 }
