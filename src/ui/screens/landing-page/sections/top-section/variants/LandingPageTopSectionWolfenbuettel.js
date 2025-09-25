@@ -8,7 +8,7 @@ import LandingPageTopSectionSharedVariant from "../components/LandingPageTopSect
 const LandingPageTopSectionWolfenbuettel = ({ runway }) => {
     const isDesktop = useStore((state) => state.isDesktop);
     const [loaded, setLoaded] = useState(false);
-    const wolfenbuettelImage = `${process.env.PUBLIC_URL}/assets/images/landing-page/bielefeld_image.svg`; // TODO
+    const wolfenbuettelImage = `${process.env.PUBLIC_URL}/assets/images/landing-page/wolfenbuettel_image.svg`; // TODO
     const imageSize = isDesktop ? 523 : 328;
 
     return (
