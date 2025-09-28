@@ -4,6 +4,7 @@
   "definitions": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/definitions.ttl",
   "materialization": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/materialization.ttl",
   "consistency": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/consistency.ttl",
+  "def": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/build/def.built.ttl",
   "queries": [
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/01-hilfe-zum-lebensunterhalt.ttl",
@@ -46,98 +47,94 @@
       "rpUri": "https://foerderfunke.org/default#bildung-und-teilhabe-bei-bezug-von-buergergeld"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/exist-gruendungsstipendium.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/exist-gruendungsstipendium.ttl",
       "rpUri": "https://foerderfunke.org/default#exist-gruendungsstipendium"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/ibb-gruendungsbonus.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/ibb-gruendungsbonus.ttl",
       "rpUri": "https://foerderfunke.org/default#ibb-gruendungsbonus"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/ibb-altersgerecht-wohnen.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/ibb-altersgerecht-wohnen.ttl",
       "rpUri": "https://foerderfunke.org/default#ibb-altersgerecht-wohnen"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/ifb-gruendung-nachfolge.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/ifb-gruendung-nachfolge.ttl",
       "rpUri": "https://foerderfunke.org/default#ifb-gruendung-nachfolge"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/ifb-inno-founder.ttl",
-      "rpUri": "https://foerderfunke.org/default#ifb-inno-founder"
-    },
-    {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/ilb-kredit-gruendung.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/ilb-kredit-gruendung.ttl",
       "rpUri": "https://foerderfunke.org/default#ilb-kredit-gruendung"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/forschungszulage.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/forschungszulage.ttl",
       "rpUri": "https://foerderfunke.org/default#forschungszulage"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/bundesfoerderung-effiziente-gebaeude.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/bundesfoerderung-effiziente-gebaeude.ttl",
       "rpUri": "https://foerderfunke.org/default#bundesfoerderung-effiziente-gebaeude"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/wolfenbuettel-stiftung.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/wolfenbuettel-stiftung.ttl",
       "rpUri": "https://foerderfunke.org/default#wolfenbuettel-stiftung"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/ausbildungsgeld.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/ausbildungsgeld.ttl",
       "rpUri": "https://foerderfunke.org/default#ausbildungsgeld"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/wolfenbuettel-gastronomische-aussenmoeblierung.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/wolfenbuettel-gastronomische-aussenmoeblierung.ttl",
       "rpUri": "https://foerderfunke.org/default#wolfenbuettel-gastronomische-aussenmoeblierung"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/wolfenbuettel-ansiedlung.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/wolfenbuettel-ansiedlung.ttl",
       "rpUri": "https://foerderfunke.org/default#wolfenbuettel-ansiedlung"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/uebergangsgeld.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/uebergangsgeld.ttl",
       "rpUri": "https://foerderfunke.org/default#uebergangsgeld"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/kurzzeitige-arbeitsverhinderung.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/kurzzeitige-arbeitsverhinderung.ttl",
       "rpUri": "https://foerderfunke.org/default#kurzzeitige-arbeitsverhinderung"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/beta/03-kinderzuschlag-v2.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/03-kinderzuschlag-v2.ttl",
       "rpUri": "https://foerderfunke.org/default#kinderzuschlag-v2",
       "behindFeatureFlag": "subindividuals"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/bielefeld/shacl/schwerbehindertenausweis.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/bielefeld/schwerbehindertenausweis.ttl",
       "rpUri": "https://foerderfunke.org/default#schwerbehindertenausweis",
       "behindFeatureFlag": "bielefunke"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/bielefeld/shacl/erwerbsminderungsrente-voll.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/bielefeld/erwerbsminderungsrente-voll.ttl",
       "rpUri": "https://foerderfunke.org/default#erwerbsminderungsrente-voll",
       "behindFeatureFlag": "bielefunke"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/bielefeld/shacl/erwerbsminderungsrente-teilweise.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/bielefeld/erwerbsminderungsrente-teilweise.ttl",
       "rpUri": "https://foerderfunke.org/default#erwerbsminderungsrente-teilweise",
       "behindFeatureFlag": "bielefunke"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/bielefeld/shacl/substitutionstherapie-regulaer.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/bielefeld/substitutionstherapie-regulaer.ttl",
       "rpUri": "https://foerderfunke.org/default#substitutionstherapie-regulaer",
       "behindFeatureFlag": "bielefunke"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/bielefeld/shacl/substitutionstherapie-diamorphin.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/bielefeld/substitutionstherapie-diamorphin.ttl",
       "rpUri": "https://foerderfunke.org/default#substitutionstherapie-diamorphin",
       "behindFeatureFlag": "bielefunke"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/bielefeld/shacl/arbeitsassistenz.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/bielefeld/arbeitsassistenz.ttl",
       "rpUri": "https://foerderfunke.org/default#arbeitsassistenz",
       "behindFeatureFlag": "bielefunke"
     },
     {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/bielefeld/shacl/allgemeine-krankenversicherungspflicht.ttl",
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/bielefeld/allgemeine-krankenversicherungspflicht.ttl",
       "rpUri": "https://foerderfunke.org/default#allgemeine-krankenversicherungspflicht",
       "behindFeatureFlag": "bielefunke"    
     }
