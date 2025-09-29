@@ -15,6 +15,7 @@ const BenefitPageMarkdown = ({ title, content, icon = null, defaultExpanded = fa
         backgroundColor: 'white.main',
         padding: '32px',
         borderRadius: theme.shape.borderRadius,
+        boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
         gap: 2,
       }}
     >

@@ -46,6 +46,9 @@ const useFetchStaticBenefitPageData = (id, language) => {
       additionalSupport:    pickLang(resource?.additional_support, language, {}),
       legalBasis:           pickLang(resource?.legal_basis, language, {}),
       furtherInformation:   pickLang(resource?.further_information, language, []),
+      brief :               pickLang(resource?.general?.brief, language, null),
+      scope :               pickLang(resource?.general?.scope, language, null),
+      examplesList :        pickLang(resource?.general?.examples, language, null),
     };
   }, [hydrationData, id, language]);
 

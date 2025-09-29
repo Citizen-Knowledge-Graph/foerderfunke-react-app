@@ -2216,6 +2216,38 @@
       "de": "Arbeitsassistenz",
       "en": "Work Assistance"
     },
+    "general": {
+      "brief": {
+        "de": "Arbeitsassistenz unterstützt Menschen mit Behinderung am Arbeitsplatz. Eine Assistenzkraft übernimmt nur die Tätigkeiten, die selbst nicht möglich sind. Die fachlichen Aufgaben erledigt die Person weiterhin selbst. Ziel ist es, Chancengleichheit im Berufsleben zu schaffen und Arbeitsplätze oder eine selbstständige Tätigkeit zu sichern. Die Kosten für die Assistenz werden übernommen.",
+        "de_es": "Arbeitsassistenz hilft Menschen mit Behinderung am Arbeitsplatz. Eine Assistenzkraft macht nur die Handgriffe, die die Person wegen der Behinderung nicht selbst machen kann. Die eigentliche Arbeit macht die Person selbst. So haben Menschen mit Behinderung die gleichen Chancen im Beruf. Die Kosten für die Assistenz werden übernommen.",
+        "en": "Work assistance supports people with disabilities in the workplace. An assistant only performs tasks that the individual cannot do themselves due to their disability. The person continues to perform their professional duties independently. The goal is to create equal opportunities in professional life and to secure jobs or self-employment. The costs for the assistance are covered."
+      },
+      "scope": {
+        "de": "Arbeitsassistenz umfasst die Unterstützung bei Tätigkeiten, die aufgrund der Behinderung nicht selbstständig ausgeführt werden können. Dazu gehören beispielsweise das Erreichen von schwer zugänglichen Bereichen, der Transport von Materialien oder die Unterstützung bei der Kommunikation. Die Assistenzkraft arbeitet eng mit der betreuten Person zusammen, um deren Selbstständigkeit und berufliche Entwicklung zu fördern.",
+        "de_es": "Arbeitsassistenz bedeutet, dass jemand hilft bei Aufgaben, die wegen der Behinderung nicht selbst gemacht werden können. Zum Beispiel: schwer zugängliche Bereiche erreichen, Materialien transportieren oder bei der Kommunikation helfen. Die Assistenzkraft arbeitet eng mit der Person zusammen, damit diese selbstständiger wird und sich beruflich weiterentwickeln kann.",
+        "en": "Work assistance involves support with tasks that cannot be performed independently due to the disability. This includes, for example, accessing hard-to-reach areas, transporting materials, or assisting with communication. The assistant works closely with the person being supported to promote their independence and professional development."
+      },
+      "examples": {
+        "de": [
+          {
+            "title": "Arbeitsassistenz Grafikdesignerin",
+            "description": "#### Arbeitsassistenz bei Julia Brück\n\nJulia Brück (27) aus Berlin ist seit ihrer Geburt auf den Rollstuhl angewiesen und arbeitet heute erfolgreich als Grafikdesignerin.\n\n&nbsp;\n\n### Arbeitsassistenz\n- Ihr Arbeitsassistenz Anna holt Julia jeden Morgen von zu Hause ab und bringt sie zur Arbeitsstelle.\n- Während des Arbeitstags unterstützt sie Julia beim Umgang mit Materialien und sorgt für den Zugang zu schwer erreichbaren Bereichen.\n\n### Zusammenarbeit\n- Julia kann ihre kreativen Aufgaben wie Entwurf und Gestaltung eigenständig erledigen.\n- Anna übernimmt die praktischen Tätigkeiten, die Julia aufgrund ihrer Einschränkung nicht selbst ausführen kann."
+          },
+          {
+            "title": "Arbeitsassistenz Tischler",
+            "description": "#### Arbeitsassistenz bei Markus Lehmann\n\nMarkus Lehmann (35) aus München hat eine Sehbehinderung und arbeitet als Tischler.\n\n&nbsp;\n\n### Arbeitsassistenz\n- Sein Arbeitsassistent Tom unterstützt ihn bei der Orientierung in der Werkstatt und beim sicheren Umgang mit Maschinen, die für Markus aufgrund seiner Sehbehinderung schwer zu bedienen sind.\n- Tom sorgt außerdem dafür, dass Arbeitsanweisungen und Pläne für Markus in zugänglichen Formaten verfügbar sind.\n\n### Zusammenarbeit\n- Markus kann seine handwerklichen Aufgaben wie das Entwerfen und Zusammenbauen von Möbelstücken eigenständig erledigen.\n- Tom übernimmt die organisatorischen und sicherheitsrelevanten Aspekte, die für Markus eine Barriere darstellen würden."
+          }
+        ],
+        "de_es": [
+          "Julia Brück (27) aus Berlin sitzt seit ihrer Geburt im Rollstuhl. Sie arbeitet als Grafikdesignerin in einem kleinen Unternehmen. Ihre Arbeitsassistenz, Anna, hilft ihr, zur Arbeit zu kommen. Anna holt Julia morgens von zu Hause ab und fährt sie zur Arbeit. Während der Arbeit hilft Anna Julia, Materialien zu handhaben und schwer erreichbare Bereiche im Büro zu erreichen. Julia kann ihre kreativen Aufgaben selbst machen, während Anna die praktischen Herausforderungen meistert. Dank der Arbeitsassistenz konnte Julia ihren Arbeitsplatz behalten und ihre beruflichen Fähigkeiten weiterentwickeln.",
+          "Markus Lehmann (35) aus München hat eine Sehbehinderung und arbeitet als Softwareentwickler. Seine Arbeitsassistenz, Tom, hilft ihm, sich im Büro zurechtzufinden und technische Geräte zu bedienen, die für Markus wegen seiner Sehbehinderung schwierig sind. Tom sorgt auch dafür, dass Markus alle notwendigen Informationen in zugänglichen Formaten bekommt. Markus kann seine Programmieraufgaben selbst machen, während Tom die organisatorischen und praktischen Aufgaben übernimmt. Durch die Unterstützung von Tom konnte Markus seine Karriere vorantreiben und bleibt in seinem Beruf erfolgreich."
+        ],
+        "en": [
+          "Julia Brück (27) from Berlin has been reliant on a wheelchair since birth. She works as a graphic designer in a small company. Her work assistant, Anna, helps her get to the workplace by picking her up from home in the morning and driving her to work. During work, Anna assists Julia with handling materials and accessing hard-to-reach areas in the office. Julia can independently complete her creative tasks while Anna manages the practical challenges. Thanks to work assistance, Julia was able to secure her job and further develop her professional skills.",
+          "Markus Lehmann (35) from Munich has a visual impairment and works as a software developer. His work assistant, Tom, supports him in navigating the office and helps him operate technical devices that are difficult for Markus to handle due to his visual impairment. Tom also ensures that Markus receives all necessary information in accessible formats. Markus can independently complete his programming tasks while Tom takes care of the organizational and practical aspects. With Tom's support, Markus has been able to advance his career and remains successful in his profession."
+        ]
+      }
+    },
     "teaser": {
       "de": "Arbeitsassistenz unterstützt Menschen mit Behinderung am Arbeitsplatz. Eine Assistenzkraft übernimmt nur die Tätigkeiten, die selbst nicht möglich sind. Die fachlichen Aufgaben erledigt die Person weiterhin selbst. Ziel ist es, Chancengleichheit im Berufsleben zu schaffen und Arbeitsplätze oder eine selbstständige Tätigkeit zu sichern. Die Kosten für die Assistenz werden übernommen.",
       "de_es": "Arbeitsassistenz hilft Menschen mit Behinderung am Arbeitsplatz. Eine Assistenzkraft macht nur die Handgriffe, die die Person wegen der Behinderung nicht selbst machen kann. Die eigentliche Arbeit macht die Person selbst. So haben Menschen mit Behinderung die gleichen Chancen im Beruf. Die Kosten für die Assistenz werden übernommen.",

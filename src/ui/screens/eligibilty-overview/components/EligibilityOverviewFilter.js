@@ -10,6 +10,7 @@ import {
 } from '@mui/material'
 import { VBox, HBox } from '@/ui/shared-components/LayoutBoxes';
 import EligibilityOverviewTag from './EligibilityOverviewTag';
+import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 import theme from '@/theme';
 
 const EligibilityOverviewFilter = ({ t, filterOptions, filters, onChangeFilters }) => {
@@ -46,7 +47,7 @@ const EligibilityOverviewFilter = ({ t, filterOptions, filters, onChangeFilters 
                 <HBox sx={{ gap: 4, flexWrap: 'wrap' }}>
                     {Object.keys(filterOptions).length > 0 && (
                         Object.keys(filterOptions).map((key, index) => (
-                            <FormControl key={index} sx={{ minWidth: 200}}>
+                            <FormControl key={index} sx={{ minWidth: 200 }}>
                                 <InputLabel id={`${key}-label`}>{t(`app.browseAll.filter.${key}`)}</InputLabel>
                                 <Select
                                     labelId={`${key}-label`}
@@ -83,6 +84,14 @@ const EligibilityOverviewFilter = ({ t, filterOptions, filters, onChangeFilters 
                     </HBox>
                 )
             }
+            <HBox sx={{ justifyContent: 'flex-end' }}>
+                <RegularButton
+                    text={'Clear filters'}
+                    variant={'greyContained'}
+                    onClick={() => onChangeFilters(() => ({}))}
+                    size='xsmall'
+                />
+            </HBox>
         </VBox>
     );
 };

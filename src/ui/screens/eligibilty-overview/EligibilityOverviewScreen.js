@@ -2,7 +2,7 @@ import React from 'react';
 import { CircularProgress, Link } from "@mui/material";
 import Layout from "@/ui/shared-components/Layout";
 import AppScreenWrapperContainer from "@/ui/shared-components/app-screen-wrapper/AppScreenWrapperContainer";
-import { VBox } from '@/ui/shared-components/LayoutBoxes';
+import { HBox, VBox } from '@/ui/shared-components/LayoutBoxes';
 import EligibilityOverviewHeader from "./components/EligibilityOverviewHeader";
 import EligibilityOverviewSection from "./components/EligibilityOverviewSection";
 import EligibilityOverviewFilter from './components/EligibilityOverviewFilter';
@@ -47,19 +47,6 @@ const EligibilityOverviewScreen = ({
                             filters={filters}
                             onChangeFilters={onChangeFilters}
                         />
-                        <Link
-                            component="button"
-                            variant="text"
-                            onClick={() => onChangeFilters(() => ({}))}
-                            sx={{
-                              cursor: "pointer",
-                              color: "grey",
-                              fontSize: "small",
-                              marginLeft: "auto",
-                            }}
-                        >
-                            Clear filters
-                        </Link>
                         {featureFlags.bielefunke && atLeastOneWithMissingData() &&
                             <RegularButton
                                 text={"Noch offene Ansprüche prüfen"}

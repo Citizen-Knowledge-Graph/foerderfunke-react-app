@@ -62,13 +62,12 @@ const BenefitPageHeader = ({ id, benefit, validatedStatus, categoryTitles }) => 
                                         key={index}
                                         sx={(theme) => ({
                                             padding: '8px 12px',
+                                            backgroundColor: 'white.main',
                                             borderRadius: theme.shape.borderRadius,
-                                            borderColor: 'black.light',
-                                            borderWidth: '1px',
-                                            borderStyle: 'solid'
+                                            border: `1px solid ${theme.palette.white.dark}`,
                                         })}
                                     >
-                                        <Typography variant="body2" sx={{ color: 'black.light' }}>
+                                        <Typography variant="body2">
                                             {category}
                                         </Typography>
                                     </Box>
