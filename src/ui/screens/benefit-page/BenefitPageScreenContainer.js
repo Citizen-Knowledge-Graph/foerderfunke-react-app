@@ -8,10 +8,12 @@ import BenefitPageScreen from './BenefitPageScreen';
 import { useLanguageStore } from '@/ui/storage/useLanguageStore';
 import matchingEngineManager from "@/core/managers/matchingEngineManager";
 import { useUserStore } from '@/ui/storage/zustand';
+import { useStore } from "@/ui/shared-components/ViewportUpdater";
 
 const BenefitPageScreenContainer = () => {
     const { id } = useParams();
     const { t } = useTranslation();
+    const isDesktop = useStore((state) => state.isDesktop);
     const [matchingGraph, setMatchingGraph] = useState(null);
     const language = useLanguageStore((state) => state.language);
 
@@ -34,10 +36,13 @@ const BenefitPageScreenContainer = () => {
         fetchMatchingReport();
     }, [id, activeUserId, language]);
 
+    console.log('isDesktop', isDesktop);
+
     return (
         <BenefitPageScreen
             t={t}
             id={id}
+            isDesktop={isDesktop}
             benefitPageData={benefitPageData}
             validatedStatus={validatedStatus}
             categoryTitles={categoryTitles}

@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Typography, Checkbox, FormControlLabel, FormGroup } from "@mui/material";
 import theme from '@/theme';
 import { VBox, HBox } from '@/ui/shared-components/LayoutBoxes';
 import BenefitPageMarkdownElement from './BenefitPageMarkDownElement';
 import BpmnViewer from '@/ui/shared-components/bpmn-viewer/BpmnViewer';
+import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 
-const BenefitPageApplication = ({ benefitPageData, isDesktop }) => {
-  const starWoman = `${process.env.PUBLIC_URL}/assets/images/benefit-pages/paper-folder.svg`;
+const BenefitPageApplication = ({ benefitPageData }) => {
+  const [open, setOpen] = useState(false);
 
   const xml = `
 <?xml version="1.0" encoding="UTF-8"?>
@@ -188,80 +189,87 @@ const BenefitPageApplication = ({ benefitPageData, isDesktop }) => {
       }}
     >
       <VBox sx={{ gap: 4 }}>
-        <HBox gap={1} sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
+        <HBox gap={1} sx={{ flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center' }}>
           <VBox sx={{ maxWidth: 800 }}>
             <Typography variant="h2" sx={{ fontWeight: 500, wordBreak: "break-word" }}>
               Der Antrag
             </Typography>
             <BenefitPageMarkdownElement content={benefitPageData?.brief} />
           </VBox>
-          {
-            isDesktop && (
-              <img src={starWoman} alt="logo" style={{ width: "125px" }} />
-            )
-          }
         </HBox>
-        <VBox
-          sx={{
-            backgroundColor: 'greyTransparent.main',
-            borderTop: `1px solid ${theme.palette.grey.light}`,
-            borderRadius: theme.shape.borderRadius,
-            boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
-            padding: 2,
-            gap: 2,
-          }}
-        >
-          <VBox sx={{ gap: 2 }}>
-            <VBox sx={{ gap: 2, maxWidth: 800 }}>
-              <Typography variant="h2" sx={{ fontWeight: 400, wordBreak: "break-word", color: 'pink.main' }}>
-                Notwendige Dokumente
-              </Typography>
-              <Typography variant="body1" sx={{ wordBreak: "break-word" }}>
-                Diese Dokumente werden in der Regel für die Antragstellung benötigt. Je nach Situation können einzelne Dokumente entfallen oder hinzukommen.
-              </Typography>
-            </VBox>
-            <VBox
-              sx={{
-                backgroundColor: '#fff',
-                p: 4,
-                borderRadius: theme.shape.borderRadius,
-                backgroundImage: 'radial-gradient(#eff1f3 1px, transparent 1.5px)',
-                backgroundSize: '16px 16px',
-                backgroundPosition: '0 0',
-              }}
-            >
-              <FormGroup>
-                <FormControlLabel control={<Checkbox />} label="Longer text: lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor." />
-                <FormControlLabel control={<Checkbox />} label="Longer text: lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor." />
-                <FormControlLabel control={<Checkbox />} label="Longer text: lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor." />
-                <FormControlLabel control={<Checkbox />} label="Longer text: lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor." />
-              </FormGroup>
-            </VBox>
-          </VBox>
-        </VBox>
-        <VBox
-          sx={{
-            backgroundColor: 'greyTransparent.main',
-            borderTop: `1px solid ${theme.palette.grey.light}`,
-            borderRadius: theme.shape.borderRadius,
-            boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
-            padding: 2,
-            gap: 2,
-          }}
-        >
-          <VBox sx={{ gap: 2 }}>
-            <VBox sx={{ maxWidth: 800 }}>
-              <Typography variant="h2" sx={{ fontWeight: 400, wordBreak: "break-word", color: 'pink.main' }}>
-                Antragsprozess
-              </Typography>
-              <Typography variant="body1" sx={{ wordBreak: "break-word" }}>
-                Der folgende Prozess zeigt die typischen Schritte, die bei der Beantragung durchlaufen werden.
-                Je nach Vorteil können einzelne Schritte entfallen oder hinzukommen.
-              </Typography>
-            </VBox>
-            <BpmnViewer xml={xml} />
-          </VBox>
-        </VBox>
+        {
+          open && (
+            <>
+              <VBox
+                sx={{
+                  backgroundColor: 'greyTransparent.main',
+                  borderTop: `1px solid ${theme.palette.grey.light}`,
+                  borderRadius: theme.shape.borderRadius,
+                  boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
+                  padding: 2,
+                  gap: 2,
+                }}
+              >
+                <VBox sx={{ gap: 2 }}>
+                  <VBox sx={{ gap: 2, maxWidth: 800 }}>
+                    <Typography variant="h2" sx={{ fontWeight: 400, wordBreak: "break-word", color: 'pink.main' }}>
+                      Notwendige Dokumente
+                    </Typography>
+                    <Typography variant="body1" sx={{ wordBreak: "break-word" }}>
+                      Diese Dokumente werden in der Regel für die Antragstellung benötigt. Je nach Situation können einzelne Dokumente entfallen oder hinzukommen.
+                    </Typography>
+                  </VBox>
+                  <VBox
+                    sx={{
+                      backgroundColor: '#fff',
+                      p: 4,
+                      borderRadius: theme.shape.borderRadius,
+                      backgroundImage: 'radial-gradient(#eff1f3 1px, transparent 1.5px)',
+                      backgroundSize: '16px 16px',
+                      backgroundPosition: '0 0',
+                    }}
+                  >
+                    <FormGroup>
+                      <FormControlLabel control={<Checkbox />} label="Longer text: lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor." />
+                      <FormControlLabel control={<Checkbox />} label="Longer text: lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor." />
+                      <FormControlLabel control={<Checkbox />} label="Longer text: lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor." />
+                      <FormControlLabel control={<Checkbox />} label="Longer text: lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor." />
+                    </FormGroup>
+                  </VBox>
+                </VBox>
+              </VBox>
+              <VBox
+                sx={{
+                  backgroundColor: 'greyTransparent.main',
+                  borderTop: `1px solid ${theme.palette.grey.light}`,
+                  borderRadius: theme.shape.borderRadius,
+                  boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
+                  padding: 2,
+                  gap: 2,
+                }}
+              >
+                <VBox sx={{ gap: 2 }}>
+                  <VBox sx={{ maxWidth: 800 }}>
+                    <Typography variant="h2" sx={{ fontWeight: 400, wordBreak: "break-word", color: 'pink.main' }}>
+                      Antragsprozess
+                    </Typography>
+                    <Typography variant="body1" sx={{ wordBreak: "break-word" }}>
+                      Der folgende Prozess zeigt die typischen Schritte, die bei der Beantragung durchlaufen werden.
+                      Je nach Vorteil können einzelne Schritte entfallen oder hinzukommen.
+                    </Typography>
+                  </VBox>
+                  <BpmnViewer xml={xml} />
+                </VBox>
+              </VBox>
+            </>
+          )
+        }
+        <RegularButton
+          onClick={() => setOpen(!open)}
+          variant={'blackOutlined'}
+          text={'app.browseAll.learnMoreBtn'}
+          size={'small'}
+        />
       </VBox>
     </VBox>
   );

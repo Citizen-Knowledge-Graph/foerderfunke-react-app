@@ -6,6 +6,7 @@ import mermaid from "mermaid";
 import { graphToMermaid } from "@foerderfunke/matching-engine/src/rule-graph/EvalGraph";
 import matchingEngineManager from "@/core/managers/matchingEngineManager";
 import BenefitPageMarkdownElement from './BenefitPageMarkDownElement';
+import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 
 function enablePanZoom(svg) {
     if (!svg) return () => { };
@@ -70,16 +71,17 @@ mermaid.initialize({
 });
 
 
-export default function MermaidRulesGraph({ evalGraph, validatedStatus, benefitPageData }) {
+export default function MermaidRulesGraph({ evalGraph, benefitPageData }) {
+    const [open, setOpen] = useState(false);
+
     const [svgContent, setSvgContent] = useState("");
-    const graphTypeEval = true; // always use 'graph TD' for rule graphs
-    const printLabels = true; // always print labels
-    const orientationVertical = false; // always horizontal
+    const graphTypeEval = true;
+    const printLabels = true;
+    const orientationVertical = false;
 
     const svgHostRef = useRef(null);
     const cleanupRef = useRef(null);
 
-    // helpers to work with the rendered <svg>
     const getSvg = () => svgHostRef.current?.querySelector("svg") || null;
 
     const ensureViewBox = (svg) => {
@@ -88,7 +90,7 @@ export default function MermaidRulesGraph({ evalGraph, validatedStatus, benefitP
             const bb = svg.getBBox();
             svg.setAttribute("viewBox", `${bb.x} ${bb.y} ${bb.width} ${bb.height}`);
         }
-        return svg.viewBox.baseVal; // live object
+        return svg.viewBox.baseVal;
     };
 
     const zoomBy = (factor) => {
@@ -97,11 +99,10 @@ export default function MermaidRulesGraph({ evalGraph, validatedStatus, benefitP
         const vb = ensureViewBox(svg);
         if (!vb) return;
 
-        // zoom around center of current viewBox
         const cx = vb.x + vb.width / 2;
         const cy = vb.y + vb.height / 2;
 
-        const newW = Math.max(1, vb.width * (1 / factor)); // factor>1 => zoom in
+        const newW = Math.max(1, vb.width * (1 / factor));
         const newH = Math.max(1, vb.height * (1 / factor));
 
         vb.x = cx - newW / 2;
@@ -113,7 +114,7 @@ export default function MermaidRulesGraph({ evalGraph, validatedStatus, benefitP
     const fitWithPadding = (padRatio = 0.05) => {
         const svg = getSvg();
         if (!svg) return;
-        const bb = svg.getBBox(); // diagram bounds in SVG units
+        const bb = svg.getBBox();
         const padX = bb.width * padRatio;
         const padY = bb.height * padRatio;
         svg.setAttribute(
@@ -142,15 +143,11 @@ export default function MermaidRulesGraph({ evalGraph, validatedStatus, benefitP
             .catch((error) => console.error("Mermaid render error:", error));
     }, [evalGraph, graphTypeEval, printLabels, orientationVertical]);
 
-    // after svgContent updates, attach pan+zoom handlers
     useEffect(() => {
-        // clean previous listeners
         cleanupRef.current?.();
 
         const svg = svgHostRef.current?.querySelector('svg');
         if (!svg) return;
-
-        // this is the function you already have (drag to pan, wheel to zoom, dblclick reset)
         cleanupRef.current = enablePanZoom(svg);
 
         return () => cleanupRef.current?.();
@@ -184,54 +181,62 @@ export default function MermaidRulesGraph({ evalGraph, validatedStatus, benefitP
                         <BenefitPageMarkdownElement content={benefitPageData?.brief} />
                     </VBox>
                 </HBox>
-                <div style={{ position: "relative" }}>
-
-                    <VBox
-                        sx={{
-                            backgroundColor: 'greyTransparent.main',
-                            borderTop: `1px solid ${theme.palette.grey.light}`,
-                            borderRadius: theme.shape.borderRadius,
-                            boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
-                            padding: 2,
-                            gap: 2,
-                        }}
-                    >
-                        <Typography variant="body1" component="div">
-                            <div
-                                ref={svgHostRef}
-                                style={{
-                                    backgroundColor: "#fff",
-                                    backgroundImage: "radial-gradient(circle, rgba(0,0,0,0.08) 1px, transparent 1px)",
-                                    backgroundSize: "12px 12px",
-                                    borderRadius: 15,
-                                    padding: 16,
-                                    overflow: "hidden",
-                                    userSelect: "none",
+                {
+                    open && (
+                        <div style={{ position: "relative" }}>
+                            <VBox
+                                sx={{
+                                    backgroundColor: 'greyTransparent.main',
+                                    borderTop: `1px solid ${theme.palette.grey.light}`,
+                                    borderRadius: theme.shape.borderRadius,
+                                    boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
+                                    padding: 2,
+                                    gap: 2,
                                 }}
-                                dangerouslySetInnerHTML={{ __html: svgContent }}
-                            />
-                        </Typography>
-                    </VBox>
-                    {/* overlay controls (bottom-right) */}
-                    <div
-                        style={{
-                            position: "absolute",
-                            right: 24,
-                            bottom: 24,   // 👈 instead of bottom
-                            display: "flex",
-                            gap: 6,
-                            background: "rgba(255,255,255,0.9)",
-                            border: "1px solid #e5e7eb",
-                            borderRadius: 8,
-                            padding: 6,
-                        }}
-                    >
-                        <button onClick={() => zoomBy(1 / 1.2)} style={btnStyle}>-</button>
-                        <button onClick={() => zoomBy(1.2)} style={btnStyle}>+</button>
-                        <button onClick={() => fitWithPadding(0.05)} style={btnStyle}>Fit</button>
-                    </div>
-                </div>
+                            >
+                                <Typography variant="body1" component="div">
+                                    <div
+                                        ref={svgHostRef}
+                                        style={{
+                                            backgroundColor: "#fff",
+                                            backgroundImage: "radial-gradient(circle, rgba(0,0,0,0.08) 1px, transparent 1px)",
+                                            backgroundSize: "12px 12px",
+                                            borderRadius: 15,
+                                            padding: 16,
+                                            overflow: "hidden",
+                                            userSelect: "none",
+                                        }}
+                                        dangerouslySetInnerHTML={{ __html: svgContent }}
+                                    />
+                                </Typography>
+                            </VBox>
+                            <div
+                                style={{
+                                    position: "absolute",
+                                    right: 24,
+                                    bottom: 24,
+                                    display: "flex",
+                                    gap: 6,
+                                    background: "rgba(255,255,255,0.9)",
+                                    border: "1px solid #e5e7eb",
+                                    borderRadius: 8,
+                                    padding: 6,
+                                }}
+                            >
+                                <button onClick={() => zoomBy(1 / 1.2)} style={btnStyle}>-</button>
+                                <button onClick={() => zoomBy(1.2)} style={btnStyle}>+</button>
+                                <button onClick={() => fitWithPadding(0.05)} style={btnStyle}>Fit</button>
+                            </div>
+                        </div>
+                    )
+                }
             </VBox>
+            <RegularButton
+                onClick={() => setOpen(!open)}
+                variant={'blackOutlined'}
+                text={'app.browseAll.learnMoreBtn'}
+                size={'small'}
+            />
         </VBox>
     );
 }
