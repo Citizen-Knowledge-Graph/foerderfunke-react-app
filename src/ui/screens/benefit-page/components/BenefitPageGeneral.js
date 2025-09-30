@@ -5,10 +5,8 @@ import { VBox, HBox } from '@/ui/shared-components/LayoutBoxes';
 import BenefitPageMarkdownElement from './BenefitPageMarkDownElement';
 import BenefitPageExample from './BenefitPageExample';
 
-const BenefitPageGeneral = ({ benefitPageData }) => {
+const BenefitPageGeneral = ({ benefitPageData, isDesktop }) => {
   const starWoman = `${process.env.PUBLIC_URL}/assets/images/benefit-pages/lightbulb.svg`;
-
-  console.log(benefitPageData);
 
   return (
     <VBox
@@ -28,7 +26,11 @@ const BenefitPageGeneral = ({ benefitPageData }) => {
             </Typography>
             <BenefitPageMarkdownElement content={benefitPageData?.brief} />
           </VBox>
-          <img src={starWoman} alt="logo" style={{ width: "125px" }} />
+          {
+            isDesktop && (
+              <img src={starWoman} alt="logo" style={{ width: "125px" }} />
+            )
+          }
         </HBox>
         {
           benefitPageData?.examplesList && benefitPageData?.examplesList.length > 0 && benefitPageData.examplesList.map((example, idx) => (

@@ -3,8 +3,6 @@ import theme from '@/theme';
 import { HBox, VBox } from '@/ui/shared-components/LayoutBoxes';
 import { Typography } from "@mui/material";
 import mermaid from "mermaid";
-import AntSwitch from "@/ui/shared-components/AntSwitch";
-import RegularButton from "@/ui/shared-components/buttons/RegularButton";
 import { graphToMermaid } from "@foerderfunke/matching-engine/src/rule-graph/EvalGraph";
 import matchingEngineManager from "@/core/managers/matchingEngineManager";
 import BenefitPageMarkdownElement from './BenefitPageMarkDownElement';
@@ -74,11 +72,9 @@ mermaid.initialize({
 
 export default function MermaidRulesGraph({ evalGraph, validatedStatus, benefitPageData }) {
     const [svgContent, setSvgContent] = useState("");
-    const [graphTypeEval, setGraphTypeEval] = useState(!validatedStatus);
-    const [printLabels, setPrintLabels] = useState(true);
-    const [orientationVertical, setOrientationVertical] = useState(false);
-
-    const starWoman = `${process.env.PUBLIC_URL}/assets/images/benefit-pages/lightbulb.svg`;
+    const graphTypeEval = true; // always use 'graph TD' for rule graphs
+    const printLabels = true; // always print labels
+    const orientationVertical = false; // always horizontal
 
     const svgHostRef = useRef(null);
     const cleanupRef = useRef(null);
@@ -187,7 +183,6 @@ export default function MermaidRulesGraph({ evalGraph, validatedStatus, benefitP
                         </Typography>
                         <BenefitPageMarkdownElement content={benefitPageData?.brief} />
                     </VBox>
-                    <img src={starWoman} alt="logo" style={{ width: "125px" }} />
                 </HBox>
                 <div style={{ position: "relative" }}>
 
@@ -201,32 +196,6 @@ export default function MermaidRulesGraph({ evalGraph, validatedStatus, benefitP
                             gap: 2,
                         }}
                     >
-                        <HBox gap={4} alignItems="center" sx={{ flexWrap: 'wrap' }}>
-                            <HBox gap={1} alignItems="center">
-                                <strong>Type:</strong>
-                                <span>Evaluation</span>
-                                <AntSwitch checked={graphTypeEval} onChange={(e) => setGraphTypeEval(e.target.checked)} color="white" />
-                                <span>Rule</span>
-                            </HBox>
-                            <HBox gap={1} alignItems="center">
-                                <strong>Orientation:</strong>
-                                <span>Horizontal</span>
-                                <AntSwitch checked={orientationVertical} onChange={(e) => setOrientationVertical(e.target.checked)} color="white" />
-                                <span>Vertical</span>
-                            </HBox>
-                            <HBox gap={1} alignItems="center">
-                                <strong>Datafields:</strong>
-                                <span>URIs</span>
-                                <AntSwitch checked={printLabels} onChange={(e) => setPrintLabels(e.target.checked)} color="white" />
-                                <span>Labels</span>
-                            </HBox>
-                            <RegularButton
-                                variant={'blackOutlined'}
-                                text={"Export"}
-                                onClick={() => alert("TODO")}
-                                size='xsmall'
-                            />
-                        </HBox>
                         <Typography variant="body1" component="div">
                             <div
                                 ref={svgHostRef}
@@ -248,7 +217,7 @@ export default function MermaidRulesGraph({ evalGraph, validatedStatus, benefitP
                         style={{
                             position: "absolute",
                             right: 24,
-                            top: 72,   // 👈 instead of bottom
+                            bottom: 24,   // 👈 instead of bottom
                             display: "flex",
                             gap: 6,
                             background: "rgba(255,255,255,0.9)",

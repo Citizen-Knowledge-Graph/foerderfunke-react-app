@@ -11,13 +11,12 @@ import BenefitPageApplication from './components/BenefitPageApplication';
 const BenefitPageScreen = ({
     t,
     id,
+    isDesktop,
     benefitPageData,
     validatedStatus,
     categoryTitles,
     matchingGraph
 }) => {
-
-    console.log("benefitPageData", benefitPageData);
 
     return (
         <Layout isApp={true} logo={false} back="Back">
@@ -25,10 +24,11 @@ const BenefitPageScreen = ({
                 <VBox sx={{ gap: { xs: 4, md: 8 } }}>
                     <BenefitPageHeader id={id} benefit={benefitPageData} validatedStatus={validatedStatus} categoryTitles={categoryTitles} />
                     <VBox sx={{ gap: { xs: 4, md: 8 } }}>
-                        <BenefitPageGeneral t={t} benefitPageData={benefitPageData} />
-                        <BenefitPageApplication t={t} benefitPageData={benefitPageData} />
+                        <BenefitPageGeneral t={t} isDesktop={isDesktop} benefitPageData={benefitPageData} />
+                        <BenefitPageApplication t={t} isDesktop={isDesktop} benefitPageData={benefitPageData} />
                         {featureFlags.showMermaidRuleGraph &&
                             <MermaidRulesGraph
+                                isDesktop={isDesktop}
                                 evalGraph={matchingGraph}
                                 validatedStatus={validatedStatus}
                                 benefitPageData={benefitPageData}

@@ -5,7 +5,7 @@ import { VBox, HBox } from '@/ui/shared-components/LayoutBoxes';
 import BenefitPageMarkdownElement from './BenefitPageMarkDownElement';
 import BpmnViewer from '@/ui/shared-components/bpmn-viewer/BpmnViewer';
 
-const BenefitPageApplication = ({ benefitPageData }) => {
+const BenefitPageApplication = ({ benefitPageData, isDesktop }) => {
   const starWoman = `${process.env.PUBLIC_URL}/assets/images/benefit-pages/paper-folder.svg`;
 
   const xml = `
@@ -195,7 +195,11 @@ const BenefitPageApplication = ({ benefitPageData }) => {
             </Typography>
             <BenefitPageMarkdownElement content={benefitPageData?.brief} />
           </VBox>
-          <img src={starWoman} alt="logo" style={{ width: "125px" }} />
+          {
+            isDesktop && (
+              <img src={starWoman} alt="logo" style={{ width: "125px" }} />
+            )
+          }
         </HBox>
         <VBox
           sx={{
@@ -223,7 +227,7 @@ const BenefitPageApplication = ({ benefitPageData }) => {
                 borderRadius: theme.shape.borderRadius,
                 backgroundImage: 'radial-gradient(#eff1f3 1px, transparent 1.5px)',
                 backgroundSize: '16px 16px',
-                backgroundPosition: '0 0', 
+                backgroundPosition: '0 0',
               }}
             >
               <FormGroup>
