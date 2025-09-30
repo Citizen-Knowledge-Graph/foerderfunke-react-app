@@ -1,21 +1,13 @@
 import React from 'react';
 import Layout from "@/ui/shared-components/Layout";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { VBox } from '@/ui/shared-components/LayoutBoxes';
-import BenefitPageInfoList from './components/BenefitPageInfoList';
-import BenefitPageRequiredDocuments from './components/BenefitPageRequiredDocuments';
-import BenefitPageLinksList from './components/BenefitPageLinksList';
-import BenefitPageExampleList from './components/BenefitPageExampleList';
 import BenefitPageHeader from "./components/BenefitPageHeader";
 import AppScreenWrapperContainer from '@/ui/shared-components/app-screen-wrapper/AppScreenWrapperContainer';
 import featureFlags from "@/featureFlags";
 import MermaidRulesGraph from "@/ui/screens/benefit-page/components/MermaidRulesGraph";
-import BenefitPageMarkdown from './components/BenefitPageMarkDown';
 import BenefitPageGeneral from './components/BenefitPageGeneral';
 import BenefitPageApplication from './components/BenefitPageApplication';
-import DescriptionIcon from '@mui/icons-material/Description';
-import theme from '@/theme';
-
 
 const BenefitPageScreen = ({
     t,
@@ -39,9 +31,13 @@ const BenefitPageScreen = ({
                         width: '100%'
                     }}>
                         <BenefitPageGeneral t={t} benefitPageData={benefitPageData} />
-                        <BenefitPageApplication t={t} overview={benefitPageData?.overview} />
+                        <BenefitPageApplication t={t} benefitPageData={benefitPageData} />
                         {featureFlags.showMermaidRuleGraph &&
-                            <MermaidRulesGraph evalGraph={matchingGraph} validatedStatus={validatedStatus} />
+                            <MermaidRulesGraph 
+                                evalGraph={matchingGraph} 
+                                validatedStatus={validatedStatus} 
+                                benefitPageData={benefitPageData}
+                            />
                         }
                     </Box>
                 </VBox>

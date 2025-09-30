@@ -1,11 +1,12 @@
 import React from 'react';
 import { Typography } from "@mui/material";
 import theme from '@/theme';
-import { VBox } from '@/ui/shared-components/LayoutBoxes';
+import { VBox, HBox } from '@/ui/shared-components/LayoutBoxes';
 import BenefitPageMarkdownElement from './BenefitPageMarkDownElement';
 import BenefitPageExample from './BenefitPageExample';
 
 const BenefitPageGeneral = ({ benefitPageData }) => {
+  const starWoman = `${process.env.PUBLIC_URL}/assets/images/benefit-pages/lightbulb.svg`;
 
   console.log(benefitPageData);
 
@@ -20,24 +21,20 @@ const BenefitPageGeneral = ({ benefitPageData }) => {
       }}
     >
       <VBox sx={{ gap: 4 }}>
-        <VBox sx={{ maxWidth: 800 }}>
-          <Typography variant="h2" sx={{ fontWeight: 500, wordBreak: "break-word" }}>
-            {benefitPageData?.title}
-          </Typography>
-          <BenefitPageMarkdownElement content={benefitPageData?.brief} />
-        </VBox>
-        <VBox sx={{ maxWidth: 800 }}>
-          <Typography variant="h2" sx={{ fontWeight: 400, wordBreak: "break-word" }}>
-            Was erhalte ich?
-          </Typography>
-          <BenefitPageMarkdownElement content={benefitPageData?.scope} />
-        </VBox>
+        <HBox gap={1} sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
+          <VBox sx={{ maxWidth: 800 }}>
+            <Typography variant="h2" sx={{ fontWeight: 500, wordBreak: "break-word" }}>
+              {benefitPageData?.title}
+            </Typography>
+            <BenefitPageMarkdownElement content={benefitPageData?.brief} />
+          </VBox>
+          <img src={starWoman} alt="logo" style={{ width: "125px" }} />
+        </HBox>
         {
           benefitPageData?.examplesList && benefitPageData?.examplesList.length > 0 && benefitPageData.examplesList.map((example, idx) => (
             <BenefitPageExample key={idx} idx={idx + 1} content={example} />
           ))
         }
-
       </VBox>
     </VBox>
   );

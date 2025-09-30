@@ -1,11 +1,11 @@
 import React from 'react';
-import Layout from "../../shared-components/Layout";
-import AppScreenWrapper from "../../shared-components/app-screen-wrapper/AppScreenWrapper";
-import { useStore } from "../../shared-components/ViewportUpdater";
+import Layout from "@/ui/shared-components/Layout";
+import AppScreenWrapper from "@/ui/shared-components/app-screen-wrapper/AppScreenWrapper";
+import { useStore } from "@/ui/shared-components/ViewportUpdater";
 import { Typography } from "@mui/material";
 import ProfileDataList from "./components/ProfileDataList";
-import useTranslation from "../../language/useTranslation";
-import { HBox, VBox } from "../../shared-components/LayoutBoxes";
+import useTranslation from "@/ui/language/useTranslation";
+import { HBox, VBox } from "@/ui/shared-components/LayoutBoxes";
 
 const ProfileScreen = () => {
     const { t } = useTranslation();
