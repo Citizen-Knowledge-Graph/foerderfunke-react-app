@@ -96,7 +96,7 @@ export default function BpmnViewer({
         const canvas = viewer.get("canvas");
         canvas.resized();
         fitWithPadding(canvas, 0.95);
-      } catch {}
+      } catch { }
     });
     ro.observe(containerRef.current);
 

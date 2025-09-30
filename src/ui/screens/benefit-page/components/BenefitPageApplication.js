@@ -191,7 +191,7 @@ const BenefitPageApplication = ({ benefitPageData }) => {
         <HBox gap={1} sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
           <VBox sx={{ maxWidth: 800 }}>
             <Typography variant="h2" sx={{ fontWeight: 500, wordBreak: "break-word" }}>
-              {benefitPageData?.title}
+              Der Antrag
             </Typography>
             <BenefitPageMarkdownElement content={benefitPageData?.brief} />
           </VBox>

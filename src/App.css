@@ -13,6 +13,12 @@
   }
 }
 
+.djs-container:focus,
+.djs-container *:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
