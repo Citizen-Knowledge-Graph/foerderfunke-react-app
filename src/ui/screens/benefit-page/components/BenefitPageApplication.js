@@ -221,7 +221,7 @@ const BenefitPageApplication = ({ benefitPageData }) => {
                 backgroundColor: '#fff',
                 p: 4,
                 borderRadius: theme.shape.borderRadius,
-                backgroundImage: 'radial-gradient(#eff1f3 1px, transparent 2px)',
+                backgroundImage: 'radial-gradient(#eff1f3 1px, transparent 1.5px)',
                 backgroundSize: '16px 16px',
                 backgroundPosition: '0 0', 
               }}

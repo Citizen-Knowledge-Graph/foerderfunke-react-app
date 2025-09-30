@@ -10,7 +10,6 @@ import matchingEngineManager from "@/core/managers/matchingEngineManager";
 import BenefitPageMarkdownElement from './BenefitPageMarkDownElement';
 
 export default function MermaidRulesGraph({ evalGraph, validatedStatus, benefitPageData }) {
-    // make SVG zoomable TODO
     const [svgContent, setSvgContent] = useState("");
     const [graphTypeEval, setGraphTypeEval] = useState(!validatedStatus);
     const [printLabels, setPrintLabels] = useState(true);
