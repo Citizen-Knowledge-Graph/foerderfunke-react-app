@@ -137,13 +137,13 @@ const translations = {
                     userRightToErasureText: "You have the right to request the erasure of your personal data if the data is no longer necessary for the purposes for which it was collected or otherwise processed, or if you withdraw your consent on which the processing is based and there is no other legal ground for the processing.",
                     userRightToLimitedProcessingTitle: "Right to Limited Processing",
                     userRightToLimitedProcessingText: "You have the right to request the restriction of processing of your personal data if you contest the accuracy of the data, if the processing is unlawful and you oppose the erasure of the data, if we no longer need the data for processing purposes but you require it for the establishment, exercise, or defense of legal claims, or if you have objected to processing pursuant to Article 21(1) DS-GVO pending verification whether our legitimate grounds override yours.",
-                    userRightToComplainTitle: "Right to Complain",  
+                    userRightToComplainTitle: "Right to Complain",
                     userRightToComplainText: "You have the right to lodge a complaint with a supervisory authority if you believe that the processing of your personal data infringes the General Data Protection Regulation (GDPR). The supervisory authority responsible for us is the Berliner Beauftragte für Datenschutz und Informationsfreiheit, Friedrichstr. 219, 10969 Berlin, Germany.",
                     userRightToDataPortablityTitle: "Right to Data Portability",
                     userRightToDataPortablityText: "You have the right to receive your personal data in a structured, commonly used, and machine-readable format. You also have the right to transmit this data to another controller without hindrance from us, provided that the processing is based on consent or a contract and is carried out by automated means.",
                     userRightToObject21Title: "Right to Object under Article 21 DS-GVO",
                     userRightToObject21Text: "You have the right to object at any time to the processing of your personal data based on Article 6(1)(e) or (f) DS-GVO, including profiling based on those provisions. We will no longer process your personal data unless we can demonstrate compelling legitimate grounds for the processing that override your interests, rights, and freedoms, or if the processing serves the assertion, exercise, or defense of legal claims.",
-                    
+
                 }
             }
         },
@@ -278,11 +278,18 @@ const translations = {
                     title: "The application",
                     btn: "Show application process",
                     btnClose: "Close application process",
-                    necessaryDocuments: "Necessary documents",
-                    steps: "Steps",
+                    necessaryDocuments: {
+                        title: "Necessary documents",
+                        text: "Here you can find an overview of the documents you will need to apply for this benefit.",
+                    },
+                    process: {
+                        title: "Process",
+                        text: "Here you can find an overview of the application process for this benefit.",
+                    }
                 },
                 requirements: {
                     title: "Requirements",
+                    description: "In this section you will find an overview of the key requirements that must be met for a potential entitlement.\n\nBelow, you can expand the decision tree to explore each step in more detail. If you have already completed our questionnaire, the decision tree will also show which conditions are fulfilled in your case and which may not be.",
                     btn: "Show requirements",
                     btnClose: "Close requirements",
                     eligible: "You are likely eligible",
@@ -290,6 +297,7 @@ const translations = {
                 },
                 local: {
                     title: "Local information",
+                    description: "Some benefits have local variations. Here you can find information specific to your city or region.",
                     btn: "Show local information",
                     btnClose: "Close local information",
                 },
@@ -390,13 +398,13 @@ const translations = {
                 improve: "Feedback",
                 collaborate: "Zusammenarbeit",
                 activityLog: "Aktivitäten",
-                catalog: "Katalog",
+                catalog: "Katalog"
             },
             hero: {
                 headerShard1: "Entdecke ",
                 headerShard2: "und mehr!",
                 headerBenefits: ["Kindergeld", "Wohngeld", "Bürgergeld"],
-                subHeader: "Finde Sozialleistungen, die zu dir und deiner Situation passen. Beantworte einfach ein paar fragen und wir zeigen dir, auf welche Sozialleistungen du Anspruch haben könntest.",
+                subHeader: "Finden Sie Sozialleistungen, die zu Ihnen und Ihrer Situation passen. Beantworten Sie einfach ein paar Fragen und wir zeigen Ihnen, auf welche Sozialleistungen Sie Anspruch haben könnten.",
                 childAllowance: "Kinderzuschlag",
                 housingBenefit: "Wohngeld",
                 citizensBenefit: "Bürgergeld",
@@ -404,31 +412,31 @@ const translations = {
                 manyMore: "Viele Weitere",
                 bielefeld: {
                     headerPilot: "Pilotprojekt Bielefeld",
-                    headerShard1: "Entdecke Deine Angebote in Bielefeld",
+                    headerShard1: "Entdecken Sie Ihre Angebote in Bielefeld",
                     subHeader: "Gemeinsam mit dem Büro für Sozialplanung der Stadt Bielefeld entwickeln wir FörderFunke weiter und passen die Lösung an die Anforderungen der Stadt an. Dabei stehen insbesondere die Bereiche Rehabilitation und Teilhabe sowie Suchterkrankungen im Fokus. Wir freuen uns jederzeit über Feedback.",
                     pilotButton: "Zum Pilotprojekt",
-                    regularButton: "Alle Leistungen prüfen",
+                    regularButton: "Alle Leistungen prüfen"
                 },
                 wolfenbuettel: {
                     headerPilot: "Pilotprojekt Wolfenbüttel",
-                    headerShard1: "Entdecke Deine Angebote in Wolfenbüttel",
+                    headerShard1: "Entdecken Sie Ihre Angebote in Wolfenbüttel",
                     subHeader: "Hier folgen bald weitere Informationen zu einem Pilotprojekt in Wolfenbüttel.",
                     pilotButton: "Zum Pilotprojekt",
-                    regularButton: "Alle Leistungen prüfen",
+                    regularButton: "Alle Leistungen prüfen"
                 }
-            },  
+            },
             fact: {
                 subHeader: "nicht in Anspruch genommener Sozialleistungen pro Jahr",
-                text: "Mit Förderfunke möchten wir erreichen, dass Sozialleistungen in Deutschland für alle zugänglich und leicht verständlich sind. Wir zeigen dir, auf welche Sozialleistungen du Anspruch haben könntest und wie du sie beantragen kannst."
+                text: "Mit FörderFunke möchten wir erreichen, dass Sozialleistungen in Deutschland für alle zugänglich und leicht verständlich sind. Wir zeigen Ihnen, auf welche Sozialleistungen Sie Anspruch haben könnten und wie Sie sie beantragen können."
             },
             howItWorks: {
                 header: "So geht's",
-                part1Header: "Beantworte ein paar Fragen",
-                part1Text: "Dein Profil wird mit den Voraussetzungen für unterschiedliche Leistungen verglichen.",
-                part2Header: "Entdecke potenzielle Angebote",
-                part2Text: "In der Übersicht erfährst, auf welche Leistungen du Anspruch haben könntest.",
-                part3Header: "Informiere dich zu Leistungen",
-                part3Text: "In der Detailansicht kannst du dich genauer über eine Leistung informieren."
+                part1Header: "Beantworten Sie ein paar Fragen",
+                part1Text: "Ihr Profil wird mit den Voraussetzungen für unterschiedliche Leistungen verglichen.",
+                part2Header: "Entdecken Sie potenzielle Angebote",
+                part2Text: "In der Übersicht erfahren Sie, auf welche Leistungen Sie Anspruch haben könnten.",
+                part3Header: "Informieren Sie sich zu Leistungen",
+                part3Text: "In der Detailansicht können Sie sich genauer über eine Leistung informieren."
             },
             mission: {
                 header: "Unsere Mission: Informationen für alle!",
@@ -439,31 +447,31 @@ const translations = {
             },
             theBasics: {
                 line1: "FörderFunke ist kostenlos nutzbar",
-                line2: "Deine Daten gehören dir! Alle Informationen, die du eingibst, werden nur lokal auf deinem Gerät gespeichert",
+                line2: "Ihre Daten gehören Ihnen! Alle Informationen, die Sie eingeben, werden nur lokal auf Ihrem Gerät gespeichert",
                 line3: "Keine Registrierung, kein Login erforderlich",
-                line4: "Du kannst es auf dem Handy oder Laptop nutzen"
+                line4: "Sie können es auf dem Handy oder Laptop nutzen"
             },
             feedback: {
                 header: "Feedback",
-                text: "Wir freuen uns über dein Feedback! Mit deiner Hilfe können wir FörderFunke noch besser machen, damit jeder die passenden Leistungen schnell und einfach finden kann.",
-                writePrompt: "Wenn du möchtest, kannst du uns hier ein paar Zeilen schreiben.",
-                placeholder: "Gib deinen Text ein",
+                text: "Wir freuen uns über Ihr Feedback! Mit Ihrer Hilfe können wir FörderFunke noch besser machen, damit jeder die passenden Leistungen schnell und einfach finden kann.",
+                writePrompt: "Wenn Sie möchten, können Sie uns hier ein paar Zeilen schreiben.",
+                placeholder: "Geben Sie Ihren Text ein",
                 submitting: "Wird gesendet...",
                 submitBtn: "Absenden",
-                messagePrompt: "Oder schick uns eine Nachricht. Wir melden uns so schnell wie möglich zurück!",
-                successMessage: "Vielen Dank für dein Feedback!",
+                messagePrompt: "Oder schicken Sie uns eine Nachricht. Wir melden uns so schnell wie möglich zurück!",
+                successMessage: "Vielen Dank für Ihr Feedback!"
             },
             principles: {
                 header: "Und so funktioniert's",
                 part1Header: "Privacy by Design",
-                part1Text: "Uns ist wichtig, dass du die Kontrolle über deine Daten behältst. Deshalb bleiben deine Daten ausschließlich auf deinem Endgerät. Sie sind zu keinem Zeitpunkt für uns oder andere einsehbar.",
+                part1Text: "Uns ist wichtig, dass Sie die Kontrolle über Ihre Daten behalten. Deshalb bleiben Ihre Daten ausschließlich auf Ihrem Endgerät. Sie sind zu keinem Zeitpunkt für uns oder andere einsehbar.",
                 part2Header: "Open Source",
-                part2Text: "Unsere Entwicklungsarbeit ist Open Source und wird auf GitHub erfasst. Du kannst unsere letzten fünf Commits hier einsehen oder mehr auf unserer GitHub-Organisationsseite entdecken.",
-                githubHeader: "Du willst es genau wissen?",
+                part2Text: "Unsere Entwicklungsarbeit ist Open Source und wird auf GitHub erfasst. Sie können unsere letzten fünf Commits hier einsehen oder mehr auf unserer GitHub-Organisationsseite entdecken.",
+                githubHeader: "Sie wollen es genau wissen?",
                 githubText: "Die letzten Commits"
             },
             connect: {
-                header: "Das Team",
+                header: "Das Team"
             },
             supportedBy: {
                 header: "Unsere Unterstützung",
@@ -482,16 +490,16 @@ const translations = {
                     registered: "Eintragung",
                     director: "Geschäftsführer",
                     responsible: "Verantwortlich i. S. d. § 18 Abs. 2 MStV",
-                    court: 'Registergericht',
-                    number: 'Registernummer',
-                    vatID: 'Umsatzsteuer-ID',
+                    court: "Registergericht",
+                    number: "Registernummer",
+                    vatID: "Umsatzsteuer-ID"
                 },
                 dataProtection: {
                     title: "Datenschutz",
-                    introduction: "Der Schutz personenbezogenen Daten ist uns sehr wichtig. Deshalb verzichten wir auf umfangreiches Tracking und den Einsatz von Cookies. Im Folgenden findest Du detaillierte Erklärung zu unterschiedlichen Aspekten unserer Website.",
+                    introduction: "Der Schutz personenbezogenen Daten ist uns sehr wichtig. Deshalb verzichten wir auf umfangreiches Tracking und den Einsatz von Cookies. Im Folgenden finden Sie detaillierte Erklärungen zu unterschiedlichen Aspekten unserer Website.",
                     responsible: "Verantwortlich",
                     eligibilityCheck: "Anspruchscheck",
-                    eligibilityCheckInformation: "Der Anspruchscheck wird ausschließlich lokal in deinem Browser durchgeführt. Es werden keine personenbezogenen Daten an unsere Server übermittelt. Deine Antworten werden nur lokal gespeichert und nicht an Dritte weitergegeben. Der Anspruchscheck basiert auf den von dir eingegebenen Daten und den Bedingungen für Sozialleistungen, die wir öffentlich zugänglich machen.",
+                    eligibilityCheckInformation: "Der Anspruchscheck wird ausschließlich lokal in Ihrem Browser durchgeführt. Es werden keine personenbezogenen Daten an unsere Server übermittelt. Ihre Antworten werden nur lokal gespeichert und nicht an Dritte weitergegeben. Der Anspruchscheck basiert auf den von Ihnen eingegebenen Daten und den Bedingungen für Sozialleistungen, die wir öffentlich zugänglich machen.",
                     hostingInformation: "Unsere Website wird über GitHub Pages gehostet, einen Dienst der GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. GitHub speichert beim Aufruf unserer Seiten keine personenbezogenen Server-Logfiles wie IP-Adressen. Weitere Informationen finden Sie unter:https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement",
                     feedback: "Feedback-Formular",
                     feedbackInformation: "Unsere Website enthält ein anonymes Feedback-Formular. Die dort eingegebenen Inhalte werden ohne zusätzliche personenbezogene Angaben an unseren Server übermittelt. Die Verarbeitung erfolgt ausschließlich zur Verbesserung unseres Angebots gemäß Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse). IP-Adressen oder andere personenbezogene Daten werden nicht gespeichert. Die Daten werden nicht an Dritte weitergegeben. Das Formular wird über Amazon Web Services EMEA SARL (AWS), 38 avenue John F. Kennedy, L-1855 Luxemburg, innerhalb der EU betrieben. Es besteht ein Auftragsverarbeitungsvertrag mit AWS gemäß Art. 28 DSGVO.",
@@ -513,7 +521,7 @@ const translations = {
                     userRightToDataPortablityTitle: "Recht auf Datenübertragbarkeit",
                     userRightToDataPortablityText: "Für den Fall, dass die Voraussetzungen des Art. 20 Abs. 1 DS-GVO vorliegen, steht Ihnen das Recht zu, sich Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, an sich oder an Dritte aushändigen zu lassen. Die Erfassung der Daten zur Bereitstellung der Website und die Speicherung der Protokolldateien sind für den Betrieb der Internetseite zwingend erforderlich. Sie beruhen daher nicht auf einer Einwilligung nach Art. 6 Abs. 1 Buchstabe a DS-GVO oder auf einem Vertrag nach Art. 6 Abs. 1 Buchstabe b DS-GVO, sondern sind nach Art. 6 Abs. 1 Buchstabe f DS-GVO gerechtfertigt. Die Voraussetzungen des Art. 20 Abs. 1 DSGVO sind demnach insoweit nicht erfüllt.",
                     userRightToObject21Title: "Recht auf Widerspruch gemäß Art. 21 Abs. 1 DS-GVO",
-                    userRightToObject21Text: "Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung Ihrer personenbezogenen Daten, die aufgrund von Artikel 6 Abs. 1 Buchstabe f DS-GVO erfolgt, Widerspruch einzulegen. Der Verantwortliche verarbeitet die personenbezogenen Daten dann nicht mehr, es sei denn, er kann zwingende schutzwürdige Gründe für die Verarbeitung nachweisen, die die Interessen, Rechte und Freiheiten der betroffenen Person überwiegen, oder die Verarbeitung dient der Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen. Die Erfassung der Daten zur Bereitstellung der Website und die Speicherung der Protokolldateien sind für den Betrieb der Internetseite zwingend erforderlich.",
+                    userRightToObject21Text: "Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung Ihrer personenbezogenen Daten, die aufgrund von Artikel 6 Abs. 1 Buchstabe f DS-GVO erfolgt, Widerspruch einzulegen. Der Verantwortliche verarbeitet die personenbezogenen Daten dann nicht mehr, es sei denn, er kann zwingende schutzwürdige Gründe für die Verarbeitung nachweisen, die die Interessen, Rechte und Freiheiten der betroffenen Person überwiegen, oder die Verarbeitung dient der Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen. Die Erfassung der Daten zur Bereitstellung der Website und die Speicherung der Protokolldateien sind für den Betrieb der Internetseite zwingend erforderlich."
                 }
             }
         },
@@ -522,85 +530,85 @@ const translations = {
                 initialising: "FörderFunke wird initialisiert",
                 resettingUserProfile: "Das Profil wird zurückgesetzt",
                 producingQuizReport: "",
-                producingValidationReport: "Dein Anspruchscheck wird durchgeführt",
+                producingValidationReport: "Ihr Anspruchscheck wird durchgeführt"
             },
             nav: {
                 backBtn: "Zurück",
                 previousQuestion: "Vorherige Frage"
             },
             privacySite: {
-                header: "Lass uns deine Ansprüche prüfen!",
-                subHeader: "Deine Daten werden nur lokal gespeichert",
-                text1: "Nur du solltest Zugriff auf deine persönlichen Daten haben. Deshalb bieten wir keine von uns verwalteten Benutzerkonten an. Alle deine Informationen werden nur lokal in deinem Browser gespeichert.",
-                optionHeader: "Du hast aber einige Optionen:",
-                option1: "Du kannst deine Daten als RDF-Datei exportieren.",
-                option2: "Du kannst sie mit einem Klick aus dem Browser löschen.",
+                header: "Lassen Sie uns Ihre Ansprüche prüfen!",
+                subHeader: "Ihre Daten werden nur lokal gespeichert",
+                text1: "Nur Sie sollten Zugriff auf Ihre persönlichen Daten haben. Deshalb bieten wir keine von uns verwalteten Benutzerkonten an. Alle Ihre Informationen werden nur lokal in Ihrem Browser gespeichert.",
+                optionHeader: "Sie haben aber einige Optionen:",
+                option1: "Sie können Ihre Daten als RDF-Datei exportieren.",
+                option2: "Sie können sie mit einem Klick aus dem Browser löschen.",
                 button: "Los geht's!"
             },
             welcomeBack: {
                 header: "Willkommen zurück!",
-                text: "Wir haben ein Profil im lokalen Speicher deines Browsers gefunden. Möchtest du es weiter nutzen?",
+                text: "Wir haben ein Profil im lokalen Speicher Ihres Browsers gefunden. Möchten Sie es weiter nutzen?",
                 yesBtnTitle: "Ja",
-                yesBtnText: "Du kannst mit deinem Profil weiter erkunden",
+                yesBtnText: "Sie können mit Ihrem Profil weiter erkunden",
                 noBtnTitle: "Nein",
-                noBtnText: "Du wirst die Reise mit einem neuen Profil beginnen",
+                noBtnText: "Sie werden die Reise mit einem neuen Profil beginnen",
                 exportBtn: "Profil exportieren",
-                deleteBtn: "Profil löschen",
+                deleteBtn: "Profil löschen"
             },
             discoverChoice: {
                 header: "Der Quick-Check:",
-                text: "Der Quick-Check ist einfach: Beantworte ein paar Fragen zu dir und deiner Lebenslage und wir zeigen dir, auf welche Sozialleistungen du Anspruch haben könntest.",
-                quickCheck: "Starte den Quick-Check",
-                quickCheckComment: "Beantworte ein paar Fragen, um deine Leistungen zu finden",
-                quickCheckInfo: "Der Schnellcheck ist eine schnelle Methode, um deinen Anspruchsstatus zu überprüfen. Es dauert nur wenige Minuten.",
+                text: "Der Quick-Check ist einfach: Beantworten Sie ein paar Fragen zu sich und Ihrer Lebenslage und wir zeigen Ihnen, auf welche Sozialleistungen Sie Anspruch haben könnten.",
+                quickCheck: "Starten Sie den Quick-Check",
+                quickCheckComment: "Beantworten Sie ein paar Fragen, um Ihre Leistungen zu finden",
+                quickCheckInfo: "Der Schnellcheck ist eine schnelle Methode, um Ihren Anspruchsstatus zu überprüfen. Es dauert nur wenige Minuten.",
                 browseHeader: "Der Katalog",
                 browseAll: "Zum Katalog",
-                browseInfo: "Wenn du möchtest, kannst du auch alle Leistungen in unserem Katalog durchsuchen, um einen Überblick über die verfügbaren Programme zu erhalten.",
+                browseInfo: "Wenn Sie möchten, können Sie auch alle Leistungen in unserem Katalog durchsuchen, um einen Überblick über die verfügbaren Programme zu erhalten."
             },
             topicSelection: {
                 header: "Schneller Anspruchscheck",
                 selectAll: "Alle auswählen",
                 confirmBtn: "Bestätigen",
                 socialBenefitsTitle: "Sozialleistungen",
-                socialBenefitsSubtitle: "Für welche Themen möchtest du Leistungen entdecken?",
+                socialBenefitsSubtitle: "Für welche Themen möchten Sie Leistungen entdecken?",
                 businessTitle: "Gründung und Unternehmensförderung",
-                businessSubtitle: "Möchtest du Förderprogramme für Unternehmen und Startups erkunden?",
+                businessSubtitle: "Möchten Sie Förderprogramme für Unternehmen und Startups erkunden?"
             },
             topicsChosen: {
                 topicsTitle: "Ausgewählte Themen",
-                topicsText: "Basierend auf deinen ausgewählten Themen stellen wir dir eine Liste von Leistungen zur Verfügung, für die du möglicherweise infrage kommst.",
+                topicsText: "Basierend auf Ihren ausgewählten Themen stellen wir Ihnen eine Liste von Leistungen zur Verfügung, für die Sie möglicherweise infrage kommen.",
                 benefitsTitle: "Ausgewählte Leistungen",
-                benefitsText: "Basierend auf deinen ausgewählten Leistungen stellen wir dir die notwendigen Fragen, um deine Anspruchsberechtigungen zu ermitteln.",
-                noChoiceTitle: "Du hast keine Themen ausgewählt. Der Schnellcheck wird auf alle Themen angewendet.",
-                discoverBtn: "Entdecke deine Leistungen",
+                benefitsText: "Basierend auf Ihren ausgewählten Leistungen stellen wir Ihnen die notwendigen Fragen, um Ihre Anspruchsberechtigungen zu ermitteln.",
+                noChoiceTitle: "Sie haben keine Themen ausgewählt. Der Schnellcheck wird auf alle Themen angewendet.",
+                discoverBtn: "Entdecken Sie Ihre Leistungen"
             },
             questions: {
                 progress: "Frage",
-                info: "Wir aktualisieren die Anzahl der Fragen und möglichen Leistungen basierend auf deinen Antworten.",
+                info: "Wir aktualisieren die Anzahl der Fragen und möglichen Leistungen basierend auf Ihren Antworten.",
                 multipleAnswers: "Mehrere Antworten möglich",
                 confirmBtn: "Bestätigen",
                 showComment: "Erklärung anzeigen",
-                unlockedPart1: "Du hast",
+                unlockedPart1: "Sie haben",
                 unlockedPart2Multiple: "Leistungen freigeschaltet",
                 unlockedPart2Single: "Leistung freigeschaltet",
-                unlockedPart3: "basierend auf deinen Antworten.",
+                unlockedPart3: "basierend auf Ihren Antworten."
             },
             datafields: {
-                pickBday: "Wähle dein Geburtsdatum",
+                pickBday: "Wählen Sie Ihr Geburtsdatum",
                 boolYes: "Ja",
-                boolNo: "Nein",
+                boolNo: "Nein"
             },
             qsComplete: {
-                header: "Dein schneller Anspruchscheck ist abgeschlossen",
-                hint: "Du kannst deine Profildaten derzeit nicht bearbeiten. Wenn du Änderungen vornehmen möchtest, kannst du den Entdeckungsprozess neu starten.",
-                discoverBtn: "Entdecke deine Leistungen",
-                restartBtn: "Neu starten"   
+                header: "Ihr schneller Anspruchscheck ist abgeschlossen",
+                hint: "Sie können Ihre Profildaten derzeit nicht bearbeiten. Wenn Sie Änderungen vornehmen möchten, können Sie den Entdeckungsprozess neu starten.",
+                discoverBtn: "Entdecken Sie Ihre Leistungen",
+                restartBtn: "Neu starten"
             },
             browseAll: {
-                header: "Deine potenziellen Leistungen",
+                header: "Ihre potenziellen Leistungen",
                 profileBtn: "lokal gespeichertes Profil",
                 disclaimerTitle: "Unverbindliche Bewertung",
-                disclaimerText: "Die Ergebnisse basieren auf den von dir angegebenen Informationen. Sie sind nicht rechtsverbindlich und sollten als informativ oder beratend betrachtet werden.",
+                disclaimerText: "Die Ergebnisse basieren auf den von Ihnen angegebenen Informationen. Sie sind nicht rechtsverbindlich und sollten als informativ oder beratend betrachtet werden.",
                 info: "Die Ergebnisse sind nicht rechtsverbindlich und sollten als informativ oder beratend betrachtet werden.",
                 preliminaryEligibleTitle: "Vorbehaltlicher Anspruch",
                 preliminaryEligibleText: "Eine abschließende Einschätzung ist für einige Leistungen derzeit nicht möglich. In manchen Fällen sind detaillierte Angaben zu Einkommen und Vermögen erforderlich, um eine genaue Berechnung durchzuführen – dies liegt aktuell außerhalb unserer Anspruchsprüfung, aber wir verlinken hilfreiche Rechner. Zudem unterliegen manche Leistungen neben der formellen Prüfung auch einer inhaltlichen Bewertung, beispielsweise von Projekt- oder Vorhabenbeschreibungen – derzeit bieten wir nur die formelle Prüfung an.",
@@ -617,7 +625,7 @@ const translations = {
                     preliminaryEligible: "Anspruch erfordert weitere Prüfung. Dies kann beispielsweise bedeuten, dass genauere Angaben zu den Einkommensverhältnissen im Antrag erforderlich sind oder die inhaltliche Übereinstimmung einer Projektbeschreibung überprüft wird.",
                     probableNotEligible: "Wahrscheinlich besteht kein Anspruch",
                     notEnoughData: "Nicht genügend Angaben für eine Einschätzung",
-                    beta: "Eininge Leistungen sind noch in der Beta-Phase, d.h. sie sind noch nicht vollständig getestet und können Fehler enthalten."
+                    beta: "Einige Leistungen sind noch in der Beta-Phase, d.h. sie sind noch nicht vollständig getestet und können Fehler enthalten."
                 },
                 filter: {
                     title: "Filter",
@@ -625,41 +633,49 @@ const translations = {
                     administrativeLevels: "Verwaltungsebene",
                     providingAgencies: "Zuständige Behörde",
                     associatedLaws: "Zugehöriges Gesetz",
-                    tags: "Schlagwort",
+                    tags: "Schlagwort"
                 },
                 item: {
                     eligible: "Sie haben womöglich Anspruch",
-                    notEligible: "Sie haben voraussichtlich keinen Anspruch",
+                    notEligible: "Sie haben voraussichtlich keinen Anspruch"
                 }
             },
             profile: {
-                header: "Dein lokal gespeicherters Profil",
-                noInfoYet: "Du hast noch keine Informationen über dich angegeben",
+                header: "Ihr lokal gespeichertes Profil",
+                noInfoYet: "Sie haben noch keine Informationen über sich angegeben"
             },
             benefitPage: {
-                LeiKaInfo: "LeiKa ist ein eindeutiger Identifikator für Leistungen in Deutschland. Er hilft dir, die richtige Leistung für dich zu finden.",
+                LeiKaInfo: "LeiKa ist ein eindeutiger Identifikator für Leistungen in Deutschland. Er hilft Ihnen, die richtige Leistung für sich zu finden.",
                 inTopics: "Erscheint in den folgenden Themen",
                 eligibilityBtn: "Anspruch prüfen",
                 general: {
                     exampleBtn: "Beispiel anzeigen",
-                    exampleBtnClose: "Beispiel schließen",
+                    exampleBtnClose: "Beispiel schließen"
                 },
                 applicationProcess: {
                     title: "Wie stelle ich den Antrag?",
                     btn: "Antragsprozess anzeigen",
                     btnClose: "Antragsprozess schließen",
-                    necessaryDocuments: "Notwendige Dokumente",
-                    steps: "Schritte",
+                    necessaryDocuments: {
+                        title: "Notwendige Dokumente?",
+                        text: "Hier finden Sie eine Übersicht der wichtigsten Dokumente, die Sie für die Antragstellung benötigen."
+                    },
+                    process: {
+                        title: "Der Ablauf",
+                        text: "Hier finden Sie eine Übersicht zum Antragsverfahren für diese Leistung."
+                    }
                 },
                 requirements: {
                     title: "Wer ist anspruchsberechtigt?",
+                    description: "In diesem Bereich sehen Sie eine Übersicht der wichtigsten Voraussetzungen, die erfüllt sein müssen, damit ein möglicher Anspruch besteht.\n\nUnterhalb können Sie den Entscheidungsbaum ausklappen und die einzelnen Schritte genauer nachvollziehen. Wenn Sie bereits unsere Fragestrecke durchlaufen haben, wird im Entscheidungsbaum zusätzlich dargestellt, welche Bedingungen in Ihrem Fall erfüllt sind und welche möglicherweise nicht.",
                     btn: "Anspruchsvoraussetzungen anzeigen",
-                    btnClose: "Anspruchsvoraussetzungen schließen",
+                    btnClose: "Anspruchsvoraussetzungen schließen"
                 },
                 local: {
                     title: "Wo finde ich Unterstützung vor Ort?",
+                    description: "Für Ihre Region stehen ergänzende Informationen und Unterstützungsangebote zur Verfügung.",
                     btn: "Unterstützung vor Ort anzeigen",
-                    btnClose: "Unterstützung vor Ort schließen",
+                    btnClose: "Unterstützung vor Ort schließen"
                 },
                 description: "Beschreibung",
                 goals: "Ziele",
@@ -689,7 +705,7 @@ const translations = {
                     header: "Wer ist anspruchsberechtigt?",
                     yes: "Ja",
                     no: "Nein",
-                    description: "Diese Tabelle zeigt die Bedingungen, die erfüllt sein müssen, um für diese Leistung anspruchsberechtigt zu sein. Die Bedingungen basieren auf den Datenfeldern, die du in deinem Profil angegeben hast.",
+                    description: "Diese Tabelle zeigt die Bedingungen, die erfüllt sein müssen, um für diese Leistung anspruchsberechtigt zu sein. Die Bedingungen basieren auf den Datenfeldern, die Sie in Ihrem Profil angegeben haben.",
                     explanationRules: "Die Voraussetzungen für einen Anspruch können aus einfachen Bedingungen bestehen, die immer erfüllt sein müssen. Daneben gibt es Oder- und abhängige Bedingungen. Diese Bedingungen können auch kombiniert werden.",
                     orExplanationTitle: "Oder-Bedingungen",
                     orExplanationText: "Hier reicht es, eine von mehreren Möglichkeiten zu erfüllen.",
@@ -704,7 +720,7 @@ const translations = {
                     responseMustBeLessThan: "Die Antwort muss kleiner sein als",
                     responseMustBeGreaterThanOrEqualTo: "Die Antwort muss gleich oder größer sein als",
                     responseMustNotBeOneOf: "Die Antwort darf nicht eine der folgenden sein",
-                    responseMustBeOneOf: "Die Antwort muss eine der folgenden sein",
+                    responseMustBeOneOf: "Die Antwort muss eine der folgenden sein"
                 },
                 moreInfo: "Weitere Informationen sind hier verfügbar"
             }
@@ -718,15 +734,15 @@ const translations = {
             },
             gitCommits: {
                 title: "Github Commits",
-                description: "Unsere Entwicklungsarbeit ist Open Source und wird auf GitHub erfasst. Du kannst unsere letzten fünf Commits hier einsehen oder mehr auf unserer GitHub-Organisationsseite entdecken.",
+                description: "Unsere Entwicklungsarbeit ist Open Source und wird auf GitHub erfasst. Sie können unsere letzten fünf Commits hier einsehen oder mehr auf unserer GitHub-Organisationsseite entdecken.",
                 listTitle: "Die letzten 5 Commits",
                 today: "Heute",
                 yesterday: "Gestern",
                 daysAgo: "Vor {{count}} Tagen",
-                errorMessage: "Beim Abrufen der Commits ist ein Fehler aufgetreten. Bitte versuche es später erneut.",
+                errorMessage: "Beim Abrufen der Commits ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut."
             }
         }
-    },
+    }
 };
 
 export default translations;

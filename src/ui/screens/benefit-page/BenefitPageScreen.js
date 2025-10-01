@@ -27,7 +27,11 @@ const BenefitPageScreen = ({
                     <VBox sx={{ gap: { xs: 4, md: 8 } }}>
                         <BenefitPageGeneral t={t} isDesktop={isDesktop} benefitPageData={benefitPageData} />
                         <BenefitPageApplication t={t} isDesktop={isDesktop} benefitPageData={benefitPageData} />
-                        <BenefitPageLocal t={t} isDesktop={isDesktop} benefitPageData={benefitPageData} />
+                        {
+                            benefitPageData?.localHelpAvailable && (
+                                <BenefitPageLocal t={t} isDesktop={isDesktop} benefitPageData={benefitPageData} />
+                            )
+                        }
                         {featureFlags.showMermaidRuleGraph &&
                             <BenefitPageRequirements t={t} isDesktop={isDesktop} evalGraph={matchingGraph} benefitPageData={benefitPageData} />
                         }

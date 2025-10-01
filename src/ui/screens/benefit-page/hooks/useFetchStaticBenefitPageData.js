@@ -39,7 +39,6 @@ const useFetchStaticBenefitPageData = (id, language) => {
       commonPitfallsMD:     pickLang(resource?.commonPitfallsMD, language, null),
       legalBasisMD:         pickLang(resource?.legalBasisMD, language, null),
       status:               getField(resource, 'status', 'Unknown Status'),
-      applicationProcess:   pickLang(resource?.application_process, language, {}),
       examples:             pickLang(resource?.examples, language, {}),
       fundingConditions:    pickLang(resource?.funding_conditions, language, {}),
       requiredDocuments:    pickLang(resource?.required_documents, language, []),
@@ -49,6 +48,7 @@ const useFetchStaticBenefitPageData = (id, language) => {
       brief :               pickLang(resource?.general?.brief, language, null),
       scope :               pickLang(resource?.general?.scope, language, null),
       examplesList :        pickLang(resource?.general?.examples, language, null),
+      applicationProcess:   pickLang(resource?.application_process?.brief, language, null),
     };
   }, [hydrationData, id, language]);
 

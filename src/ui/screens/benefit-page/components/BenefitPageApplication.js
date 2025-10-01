@@ -194,13 +194,13 @@ const BenefitPageApplication = ({
       }}
     >
       <VBox sx={{ gap: { xs: 4, md: 8 } }} >
-        <HBox gap={1} sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
+        <HBox gap={1} sx={{ justifyContent: 'space-between', alignItems: 'flex-start' }}>
           <VBox sx={{ flex: 3, maxWidth: 800, gap: 4 }}>
             <VBox>
               <Typography variant="h2" sx={{ fontWeight: 500, wordBreak: "break-word" }}>
                 {t('app.benefitPage.applicationProcess.title')}
               </Typography>
-              <BenefitPageMarkdownElement content={benefitPageData?.brief} />
+              <BenefitPageMarkdownElement content={benefitPageData?.applicationProcess} />
             </VBox>
             <RegularButton
               onClick={() => setOpen(!open)}
@@ -211,7 +211,7 @@ const BenefitPageApplication = ({
           </VBox>
           {
             isDesktop && (
-              <VBox sx={{ flex: 1, justifyContent: 'center', alignItems: 'flex-end' }}>
+              <VBox sx={{ flex: 1, alignItems: 'flex-end' }}>
                 <img src={objectIcon} alt="logo" style={{ width: "125px" }} />
               </VBox>
             )
@@ -220,44 +220,50 @@ const BenefitPageApplication = ({
         {
           open && (
             <>
-              <VBox
-                sx={{
-                  backgroundColor: 'greyTransparent.main',
-                  borderTop: `1px solid ${theme.palette.grey.light}`,
-                  borderRadius: theme.shape.borderRadius,
-                  boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
-                  padding: 2,
-                  gap: 2,
-                }}
-              >
-                <VBox sx={{ gap: 2 }}>
-                  <VBox sx={{ gap: 2, maxWidth: 800 }}>
-                    <Typography variant="h2" sx={{ fontWeight: 400, wordBreak: "break-word", color: 'pink.main' }}>
-                      Notwendige Dokumente
-                    </Typography>
-                    <Typography variant="body1" sx={{ wordBreak: "break-word" }}>
-                      Diese Dokumente werden in der Regel für die Antragstellung benötigt. Je nach Situation können einzelne Dokumente entfallen oder hinzukommen.
-                    </Typography>
-                  </VBox>
+              {
+                benefitPageData?.necessaryDocuments?.length > 0 && (
                   <VBox
                     sx={{
-                      backgroundColor: '#fff',
-                      p: 4,
+                      backgroundColor: 'greyTransparent.main',
+                      borderTop: `1px solid ${theme.palette.grey.light}`,
                       borderRadius: theme.shape.borderRadius,
-                      backgroundImage: 'radial-gradient(#eff1f3 1px, transparent 1.5px)',
-                      backgroundSize: '16px 16px',
-                      backgroundPosition: '0 0',
+                      boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
+                      padding: 2,
+                      gap: 2,
                     }}
                   >
-                    <FormGroup>
-                      <FormControlLabel control={<Checkbox />} label="Longer text: lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor." />
-                      <FormControlLabel control={<Checkbox />} label="Longer text: lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor." />
-                      <FormControlLabel control={<Checkbox />} label="Longer text: lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor." />
-                      <FormControlLabel control={<Checkbox />} label="Longer text: lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor." />
-                    </FormGroup>
+
+                    <VBox sx={{ gap: 2 }}>
+                      <VBox sx={{ gap: 2, maxWidth: 800 }}>
+                        <Typography variant="h2" sx={{ fontWeight: 400, wordBreak: "break-word", color: 'pink.main' }}>
+                          {t('app.benefitPage.applicationProcess.necessaryDocuments.title')}
+                        </Typography>
+                        <Typography variant="body1" sx={{ wordBreak: "break-word" }}>
+                          {t('app.benefitPage.applicationProcess.necessaryDocuments.text')}
+                        </Typography>
+                      </VBox>
+                      <VBox
+                        sx={{
+                          backgroundColor: '#fff',
+                          p: 4,
+                          borderRadius: theme.shape.borderRadius,
+                          backgroundImage: 'radial-gradient(#eff1f3 1px, transparent 1.5px)',
+                          backgroundSize: '16px 16px',
+                          backgroundPosition: '0 0',
+                        }}
+                      >
+                        <FormGroup>
+                          {
+                            benefitPageData.necessaryDocuments.map((doc, idx) => (
+                              <FormControlLabel key={idx} control={<Checkbox />} label={doc} />
+                            ))
+                          }
+                        </FormGroup>
+                      </VBox>
+                    </VBox>
                   </VBox>
-                </VBox>
-              </VBox>
+                )
+              }
               <VBox
                 sx={{
                   backgroundColor: 'greyTransparent.main',
@@ -271,11 +277,10 @@ const BenefitPageApplication = ({
                 <VBox sx={{ gap: 2 }}>
                   <VBox sx={{ maxWidth: 800 }}>
                     <Typography variant="h2" sx={{ fontWeight: 400, wordBreak: "break-word", color: 'pink.main' }}>
-                      Antragsprozess
+                      {t('app.benefitPage.applicationProcess.process.title')}
                     </Typography>
                     <Typography variant="body1" sx={{ wordBreak: "break-word" }}>
-                      Der folgende Prozess zeigt die typischen Schritte, die bei der Beantragung durchlaufen werden.
-                      Je nach Vorteil können einzelne Schritte entfallen oder hinzukommen.
+                      {t('app.benefitPage.applicationProcess.process.text')}
                     </Typography>
                   </VBox>
                   <BpmnViewer xml={xml} />

@@ -19,7 +19,7 @@ const BenefitPageGeneral = ({ t, benefitPageData, isDesktop }) => {
       }}
     >
       <VBox sx={{ gap: { xs: 4, md: 8 } }} >
-        <HBox gap={1} sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
+        <HBox gap={1} sx={{ justifyContent: 'space-between', alignItems: 'flex-start' }}>
           <VBox sx={{ flex: 3, maxWidth: 800 }}>
             <Typography variant="h2" sx={{ fontWeight: 500, wordBreak: "break-word" }}>
               {benefitPageData?.title}
@@ -28,7 +28,7 @@ const BenefitPageGeneral = ({ t, benefitPageData, isDesktop }) => {
           </VBox>
           {
             isDesktop && (
-              <VBox sx={{ flex: 1, justifyContent: 'center', alignItems: 'flex-end' }}>
+              <VBox sx={{ flex: 1, alignItems: 'flex-end' }}>
                 <img src={starWoman} alt="logo" style={{ width: "125px" }} />
               </VBox>
             )
