@@ -3,10 +3,10 @@ import { Typography } from '@mui/material';
 import { VBox, HBox } from '@/ui/shared-components/LayoutBoxes';
 import theme from '@/theme';
 import BenefitPageMarkdownElement from './BenefitPageMarkDownElement';
-import RegularButton from '@/ui/shared-components/buttons/RegularButton';
+
 
 const BenefitPageExample = ({ idx, content }) => {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
 
     return (
         <VBox
@@ -24,12 +24,7 @@ const BenefitPageExample = ({ idx, content }) => {
                     <Typography variant="h2" sx={{ fontWeight: 400, wordBreak: "break-word", color: 'pink.main' }}>
                         Beispiel{content.title ? `: ${content.title}` : ` ${idx}`}
                     </Typography>
-                    <RegularButton
-                        onClick={() => setOpen(!open)}
-                        variant={'blackOutlined'}
-                        text={'beispiel anzeigen'}
-                        size={'small'}
-                    />
+
                 </HBox>
                 {open && (
                     <VBox sx={{ maxWidth: 800 }}>

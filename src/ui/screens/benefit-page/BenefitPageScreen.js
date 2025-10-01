@@ -4,9 +4,10 @@ import { VBox } from '@/ui/shared-components/LayoutBoxes';
 import BenefitPageHeader from "./components/BenefitPageHeader";
 import AppScreenWrapperContainer from '@/ui/shared-components/app-screen-wrapper/AppScreenWrapperContainer';
 import featureFlags from "@/featureFlags";
-import MermaidRulesGraph from "@/ui/screens/benefit-page/components/MermaidRulesGraph";
 import BenefitPageGeneral from './components/BenefitPageGeneral';
 import BenefitPageApplication from './components/BenefitPageApplication';
+import BenefitPageRequirements from './components/BenefitPageRequirements';
+import BenefitPageLocal from './components/BenefitPageLocal';
 
 const BenefitPageScreen = ({
     t,
@@ -26,13 +27,9 @@ const BenefitPageScreen = ({
                     <VBox sx={{ gap: { xs: 4, md: 8 } }}>
                         <BenefitPageGeneral t={t} isDesktop={isDesktop} benefitPageData={benefitPageData} />
                         <BenefitPageApplication t={t} isDesktop={isDesktop} benefitPageData={benefitPageData} />
+                        <BenefitPageLocal t={t} isDesktop={isDesktop} benefitPageData={benefitPageData} />
                         {featureFlags.showMermaidRuleGraph &&
-                            <MermaidRulesGraph
-                                isDesktop={isDesktop}
-                                evalGraph={matchingGraph}
-                                validatedStatus={validatedStatus}
-                                benefitPageData={benefitPageData}
-                            />
+                            <BenefitPageRequirements t={t} isDesktop={isDesktop} evalGraph={matchingGraph} benefitPageData={benefitPageData} />
                         }
                     </VBox>
                 </VBox>

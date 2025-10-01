@@ -6,8 +6,13 @@ import BenefitPageMarkdownElement from './BenefitPageMarkDownElement';
 import BpmnViewer from '@/ui/shared-components/bpmn-viewer/BpmnViewer';
 import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 
-const BenefitPageApplication = ({ benefitPageData }) => {
+const BenefitPageApplication = ({
+  t,
+  isDesktop,
+  benefitPageData
+}) => {
   const [open, setOpen] = useState(false);
+  const objectIcon = `${process.env.PUBLIC_URL}/assets/images/benefit-pages/airplane.svg`;
 
   const xml = `
 <?xml version="1.0" encoding="UTF-8"?>
@@ -185,17 +190,32 @@ const BenefitPageApplication = ({ benefitPageData }) => {
         padding: '32px',
         borderRadius: theme.shape.borderRadius,
         boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
-        gap: 2,
+        gap: 4,
       }}
     >
-      <VBox sx={{ gap: 4 }}>
-        <HBox gap={1} sx={{ flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center' }}>
-          <VBox sx={{ maxWidth: 800 }}>
-            <Typography variant="h2" sx={{ fontWeight: 500, wordBreak: "break-word" }}>
-              Der Antrag
-            </Typography>
-            <BenefitPageMarkdownElement content={benefitPageData?.brief} />
+      <VBox sx={{ gap: { xs: 4, md: 8 } }} >
+        <HBox gap={1} sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
+          <VBox sx={{ flex: 3, maxWidth: 800, gap: 4 }}>
+            <VBox>
+              <Typography variant="h2" sx={{ fontWeight: 500, wordBreak: "break-word" }}>
+                {t('app.benefitPage.applicationProcess.title')}
+              </Typography>
+              <BenefitPageMarkdownElement content={benefitPageData?.brief} />
+            </VBox>
+            <RegularButton
+              onClick={() => setOpen(!open)}
+              variant={'whiteOutlinedBlue'}
+              text={open ? 'app.benefitPage.applicationProcess.btnClose' : 'app.benefitPage.applicationProcess.btn'}
+              size={'small'}
+            />
           </VBox>
+          {
+            isDesktop && (
+              <VBox sx={{ flex: 1, justifyContent: 'center', alignItems: 'flex-end' }}>
+                <img src={objectIcon} alt="logo" style={{ width: "125px" }} />
+              </VBox>
+            )
+          }
         </HBox>
         {
           open && (
@@ -264,12 +284,6 @@ const BenefitPageApplication = ({ benefitPageData }) => {
             </>
           )
         }
-        <RegularButton
-          onClick={() => setOpen(!open)}
-          variant={'blackOutlined'}
-          text={'app.browseAll.learnMoreBtn'}
-          size={'small'}
-        />
       </VBox>
     </VBox>
   );

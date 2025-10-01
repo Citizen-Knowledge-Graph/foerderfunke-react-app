@@ -1,12 +1,12 @@
 import React from 'react';
-import { Typography } from "@mui/material";
+import { Typography, Box } from "@mui/material";
 import theme from '@/theme';
 import { VBox, HBox } from '@/ui/shared-components/LayoutBoxes';
 import BenefitPageMarkdownElement from './BenefitPageMarkDownElement';
 import BenefitPageExample from './BenefitPageExample';
 
-const BenefitPageGeneral = ({ benefitPageData, isDesktop }) => {
-  const starWoman = `${process.env.PUBLIC_URL}/assets/images/benefit-pages/lightbulb.svg`;
+const BenefitPageGeneral = ({ t, benefitPageData, isDesktop }) => {
+  const starWoman = `${process.env.PUBLIC_URL}/assets/images/benefit-pages/student.png`;
 
   return (
     <VBox
@@ -18,9 +18,9 @@ const BenefitPageGeneral = ({ benefitPageData, isDesktop }) => {
         gap: 2,
       }}
     >
-      <VBox sx={{ gap: 4 }}>
+      <VBox sx={{ gap: { xs: 4, md: 8 } }} >
         <HBox gap={1} sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
-          <VBox sx={{ maxWidth: 800 }}>
+          <VBox sx={{ flex: 3, maxWidth: 800 }}>
             <Typography variant="h2" sx={{ fontWeight: 500, wordBreak: "break-word" }}>
               {benefitPageData?.title}
             </Typography>
@@ -28,15 +28,20 @@ const BenefitPageGeneral = ({ benefitPageData, isDesktop }) => {
           </VBox>
           {
             isDesktop && (
-              <img src={starWoman} alt="logo" style={{ width: "125px" }} />
+              <VBox sx={{ flex: 1, justifyContent: 'center', alignItems: 'flex-end' }}>
+                <img src={starWoman} alt="logo" style={{ width: "125px" }} />
+              </VBox>
             )
           }
         </HBox>
-        {
-          benefitPageData?.examplesList && benefitPageData?.examplesList.length > 0 && benefitPageData.examplesList.map((example, idx) => (
-            <BenefitPageExample key={idx} idx={idx + 1} content={example} />
-          ))
-        }
+        <Box sx={{ display: 'flex', flexDirection: isDesktop ? 'row' : 'column', gap: 4 }}>
+          {
+            benefitPageData?.examplesList && benefitPageData?.examplesList.length > 0 && benefitPageData.examplesList.map((example, idx) => (
+              <BenefitPageExample t={t} key={idx} idx={idx + 1} content={example} />
+
+            ))
+          }
+        </Box>
       </VBox>
     </VBox>
   );

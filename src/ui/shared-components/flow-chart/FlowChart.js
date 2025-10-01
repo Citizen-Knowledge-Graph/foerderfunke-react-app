@@ -1,25 +1,153 @@
-import React, { useMemo, useState } from 'react';
-import ReactFlow, { Background } from 'reactflow';
-import 'reactflow/dist/style.css';
+import React, { useEffect, useState, useRef } from 'react';
+import theme from '@/theme';
+import { VBox } from '@/ui/shared-components/LayoutBoxes';
+import { Typography } from "@mui/material";
+import mermaid from "mermaid";
+import { graphToMermaid } from "@foerderfunke/matching-engine/src/rule-graph/EvalGraph";
+import matchingEngineManager from "@/core/managers/matchingEngineManager";
 
-export default function FlowChart({ nodes, edges, height = 500, padding = 0.2 }) {
-    const [rf, setRf] = useState(null); // React Flow instance
+function enablePanZoom(svg) {
+    if (!svg) return () => { };
 
-    const memoNodes = useMemo(() => nodes, [nodes]);
-    const memoEdges = useMemo(() => edges, [edges]);
+    if (!svg.hasAttribute("viewBox")) {
+        const bb = svg.getBBox();
+        svg.setAttribute("viewBox", `${bb.x} ${bb.y} ${bb.width} ${bb.height}`);
+    }
+
+    const vb = svg.viewBox.baseVal;
+    let isPanning = false;
+    let sx = 0, sy = 0;
+
+    const onMouseDown = (e) => {
+        if (e.button !== 0) return;
+        isPanning = true;
+        sx = e.clientX; sy = e.clientY;
+        svg.style.cursor = "grabbing";
+        e.preventDefault();
+    };
+
+    const onMouseMove = (e) => {
+        if (!isPanning) return;
+        const dx = (e.clientX - sx) * (vb.width / svg.clientWidth);
+        const dy = (e.clientY - sy) * (vb.height / svg.clientHeight);
+        vb.x -= dx; vb.y -= dy;
+        sx = e.clientX; sy = e.clientY;
+    };
+
+    const endPan = () => { isPanning = false; svg.style.cursor = "grab"; };
+
+    const onDblClick = () => {
+        const bb = svg.getBBox();
+        svg.setAttribute("viewBox", `${bb.x} ${bb.y} ${bb.width} ${bb.height}`);
+    };
+
+    svg.style.cursor = "grab";
+    svg.addEventListener("mousedown", onMouseDown);
+    svg.addEventListener("mousemove", onMouseMove);
+    svg.addEventListener("mouseup", endPan);
+    svg.addEventListener("mouseleave", endPan);
+    svg.addEventListener("dblclick", onDblClick);
+
+    return () => {
+        svg.removeEventListener("mousedown", onMouseDown);
+        svg.removeEventListener("mousemove", onMouseMove);
+        svg.removeEventListener("mouseup", endPan);
+        svg.removeEventListener("mouseleave", endPan);
+        svg.removeEventListener("dblclick", onDblClick);
+    };
+}
+
+mermaid.initialize({
+    startOnLoad: false,
+    theme: "base",
+    themeVariables: {
+        fontFamily: 'Funnel Sans, system-ui, -apple-system, Segoe UI, Roboto, sans-serif',
+        fontSize: '12px',
+        labelBackground: '#fff',
+    },
+});
+
+
+export default function FlowChart({ evalGraph }) {
+
+    const [svgContent, setSvgContent] = useState("");
+    const graphTypeEval = true;
+    const printLabels = true;
+    const orientationVertical = false;
+
+    const svgHostRef = useRef(null);
+    const cleanupRef = useRef(null);
+
+    const getSvg = () => svgHostRef.current?.querySelector("svg") || null;
+
+    const ensureViewBox = (svg) => {
+        if (!svg) return null;
+        if (!svg.viewBox || svg.viewBox.baseVal.width === 0) {
+            const bb = svg.getBBox();
+            svg.setAttribute("viewBox", `${bb.x} ${bb.y} ${bb.width} ${bb.height}`);
+        }
+        return svg.viewBox.baseVal;
+    };
 
     const zoomBy = (factor) => {
-        if (!rf) return;
-        const { zoom } = rf.getViewport();
-        rf.zoomTo(Math.max(0.2, Math.min(4, zoom * factor))); // clamp 0.2–4
+        const svg = getSvg();
+        if (!svg) return;
+        const vb = ensureViewBox(svg);
+        if (!vb) return;
+
+        const cx = vb.x + vb.width / 2;
+        const cy = vb.y + vb.height / 2;
+
+        const newW = Math.max(1, vb.width * (1 / factor));
+        const newH = Math.max(1, vb.height * (1 / factor));
+
+        vb.x = cx - newW / 2;
+        vb.y = cy - newH / 2;
+        vb.width = newW;
+        vb.height = newH;
     };
 
-    const fitWithPadding = (factor = 0.95) => {
-        if (!rf) return;
-        rf.fitView({ padding });               // fit to diagram
-        const { zoom } = rf.getViewport();     // then zoom out a touch
-        rf.zoomTo(zoom * factor);
+    const fitWithPadding = (padRatio = 0.05) => {
+        const svg = getSvg();
+        if (!svg) return;
+        const bb = svg.getBBox();
+        const padX = bb.width * padRatio;
+        const padY = bb.height * padRatio;
+        svg.setAttribute(
+            "viewBox",
+            `${bb.x - padX} ${bb.y - padY} ${bb.width + 2 * padX} ${bb.height + 2 * padY}`
+        );
     };
+
+    useEffect(() => {
+        if (!evalGraph) return;
+        const me = matchingEngineManager.matchingEngineInstance;
+        const mermaidDef = graphToMermaid(
+            graphTypeEval ? evalGraph.ruleGraph : evalGraph,
+            me, printLabels, orientationVertical
+        );
+
+        try {
+            mermaid.parse(mermaidDef);
+        } catch (parseError) {
+            console.error("Mermaid syntax error:", parseError);
+        }
+
+        mermaid
+            .render(`rulesGraph${Date.now()}`, mermaidDef)
+            .then(({ svg }) => setSvgContent(svg))
+            .catch((error) => console.error("Mermaid render error:", error));
+    }, [evalGraph, graphTypeEval, printLabels, orientationVertical]);
+
+    useEffect(() => {
+        cleanupRef.current?.();
+
+        const svg = svgHostRef.current?.querySelector('svg');
+        if (!svg) return;
+        cleanupRef.current = enablePanZoom(svg);
+
+        return () => cleanupRef.current?.();
+    }, [svgContent]);
 
     const btnStyle = {
         fontFamily: "Funnel Sans, system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
@@ -33,38 +161,37 @@ export default function FlowChart({ nodes, edges, height = 500, padding = 0.2 })
 
     return (
         <div style={{ position: "relative" }}>
-            <div
-                style={{
-                    width: "100%",
-                    height,
-                    background: "#fff",
-                    border: "1px solid #e5e7eb",
-                    borderRadius: 15,
-                    overflow: "hidden",
-                    fontFamily: "Funnel Sans, system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
+            <VBox
+                sx={{
+                    backgroundColor: 'greyTransparent.main',
+                    borderTop: `1px solid ${theme.palette.grey.light}`,
+                    borderRadius: theme.shape.borderRadius,
+                    boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
+                    padding: 2,
+                    gap: 2,
                 }}
             >
-                <ReactFlow
-                    nodes={memoNodes}
-                    edges={memoEdges}
-                    onInit={setRf}                 // <-- get instance
-                    fitView
-                    fitViewOptions={{ padding }}
-                    panOnDrag
-                    zoomOnScroll
-                    proOptions={{ hideAttribution: true }}
-                    defaultEdgeOptions={{ type: "step", markerEnd: { type: "arrowclosed" } }}
-                >
-                    <Background variant="dots" gap={12} size={1} />
-                </ReactFlow>
-            </div>
-
-            {/* overlay controls (same look as your BPMN controls) */}
+                <Typography variant="body1" component="div">
+                    <div
+                        ref={svgHostRef}
+                        style={{
+                            backgroundColor: "#fff",
+                            backgroundImage: "radial-gradient(circle, rgba(0,0,0,0.08) 1px, transparent 1px)",
+                            backgroundSize: "12px 12px",
+                            borderRadius: 15,
+                            padding: 16,
+                            overflow: "hidden",
+                            userSelect: "none",
+                        }}
+                        dangerouslySetInnerHTML={{ __html: svgContent }}
+                    />
+                </Typography>
+            </VBox>
             <div
                 style={{
                     position: "absolute",
-                    right: 8,
-                    bottom: 8,
+                    right: 24,
+                    bottom: 24,
                     display: "flex",
                     gap: 6,
                     background: "rgba(255,255,255,0.9)",
@@ -75,7 +202,7 @@ export default function FlowChart({ nodes, edges, height = 500, padding = 0.2 })
             >
                 <button onClick={() => zoomBy(1 / 1.2)} style={btnStyle}>-</button>
                 <button onClick={() => zoomBy(1.2)} style={btnStyle}>+</button>
-                <button onClick={() => fitWithPadding(0.95)} style={btnStyle}>Fit</button>
+                <button onClick={() => fitWithPadding(0.05)} style={btnStyle}>Fit</button>
             </div>
         </div>
     );
