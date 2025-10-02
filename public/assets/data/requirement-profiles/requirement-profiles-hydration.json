@@ -527,98 +527,6 @@
     "teaser": {
       "de": "Wohngeld ist eine Leistung für Menschen mit geringem Einkommen, die ihren Lebensunterhalt bzw. ihren alltäglichen Bedarf und die Miete/Wohnkosten nicht vollständig alleine stemmen können. Wohngeld wird als Zuschuss zur Miete oder zu den Kosten selbst genutzten Wohneigentums gezahlt und richtet sich nach dem eigenen Einkommen, der Miete/Wohnkosten sowie der Wohnregion.",
       "en": "Housing benefit is a benefit for people with low incomes who cannot fully cover their living expenses, daily needs, and rent/housing costs on their own. Housing allowance is granted as a subsidy for rent or the costs of owner-occupied housing and is determined based on one’s income, rent/housing costs, and the residential region."
-    },
-    "application_process": {
-      "de": {
-        "title": "Wohngeld kann bei der zuständigen Wohngeldbehörde beantragt werden. Die Antragsformulare können online heruntergeladen oder direkt bei der Behörde abgeholt werden.",
-        "links": []
-      },
-      "en": {
-        "title": "Housing benefit can be applied for at the responsible housing benefit authority.",
-        "links": []
-      }
-    },
-    "required_documents": {
-      "de": [
-        "Mietvertrag oder Mietbescheinigung",
-        "Lohn- oder Gehaltsnachweise der letzten sechs Monate",
-        "Bescheide über etwaiges anderes Einkommen (z.B. Rente, BAföG, Elterngeld, Unterhalt)",
-        "Gegebenenfalls Kontoauszüge der letzten drei Monate"
-      ],
-      "en": [
-        "Rental agreement or rental certificate",
-        "Pay slips for the last six months",
-        "Notices of any other income (e.g. pension, BAföG, parental allowance, maintenance)",
-        "Possibly bank statements for the last three months"
-      ]
-    },
-    "additional_support": {
-      "de": {
-        "title": "Für mehr Informationen und Fragen zur Antragsstellung, Anspruch, etc. wenden Sie sich an Ihre lokale Wohngeldbehörde. Einen ersten Eindruck über die Mögliche Wohngeldhöhe bietet der offizielle Wohngeld-Rechner des Bundesministerium für Wohnen, Stadtentwicklung und Bauwesen.",
-        "links": [
-          {
-            "title": "Wohngeldrechner 2023",
-            "url": "https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeldrechner/wohngeldrechner-2025_node.html"
-          }
-        ]
-      },
-      "en": {
-        "title": "For more information and questions about the application process, entitlement, etc., please contact your local housing benefit authority. The official housing benefit calculator of the Federal Ministry of Housing, Urban Development and Construction provides a first impression of the possible housing benefit amount.",
-        "links": [
-          {
-            "title": "Housing benefit calculator 2023",
-            "url": "https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeldrechner/wohngeldrechner-2025_node.html"
-          }
-        ]
-      }
-    },
-    "legal_basis": {
-      "de": {
-        "title": "Die Gesetzesgrundlage für das Wohngeld findet sich im Wohngeldgesetz.",
-        "links": [
-          {
-            "title": "Wohngeldgesetz",
-            "url": "https://www.gesetze-im-internet"
-          }
-        ]
-      },
-      "en": {
-        "title": "The legal basis for housing benefit can be found in the Housing Benefit Act.",
-        "links": [
-          {
-            "title": "Housing Benefit Act",
-            "url": "https://www.gesetze-im-internet"
-          }
-        ]
-      }
-    },
-    "further_information": {
-      "de": {
-        "title": "Hier finden Sie weitere Informationen zum Wohngeld:",
-        "links": [
-          {
-            "title": "Offiziellen Seite des Bundesministerium für Wohnen, Stadtentwicklung und Bauwesen.",
-            "url": "https://www.bmwsb.bund.de/SharedDocs/faqs/Webs/BMWSB/DE/wohnen/wohngeld/wohngeld-faq-liste.html"
-          },
-          {
-            "title": "Soziaplattform.",
-            "url": "https://sozialplattform.de/wohngeld"
-          }
-        ]
-      },
-      "en": {
-        "title": "You can find more information about housing benefit on the following websites:",
-        "links": [
-          {
-            "title": "Federal Ministry of Housing, Urban Development and Construction",
-            "url": "https://www.bmwsb.bund.de/SharedDocs/faqs/Webs/BMWSB/DE/wohnen/wohngeld/wohngeld-faq-liste.html"
-          },
-          {
-            "title": "Soziaplattform",
-            "url": "https://sozialplattform.de/wohngeld"
-          }
-        ]
-      }
     }
   },
   "ff:grundsicherung-im-alter-und-bei-erwerbsminderung": {
@@ -632,12 +540,66 @@
     "teaser": {
       "de": "Sie sind im Rentenalter, aber Ihr Geld reicht nicht aus, um Ihren Lebensunterhalt zu bezahlen? Oder sind Sie zwar noch jünger, können aber aus gesundheitlichen Gründen dauerhaft nicht arbeiten? Dann können Sie die finanzielle „Grundsicherung im Alter und bei Erwerbsminderung“ beantragen.",
       "en": "Are you receiving your pension but don’t have enough money to get by? Or are you younger but unable to work for health-related reasons? If so, you may be entitled to claim basic financial welfare for the elderly and people with reduced earnings capacity."
+    },
+    "general": {
+      "brief": {
+        "de": "Die Grundsicherung im Alter und bei Erwerbsminderung ist eine Sozialleistung, die den Lebensunterhalt sichern soll, wenn eigenes Einkommen und Vermögen nicht ausreichen. Sie richtet sich an ältere Menschen ab der Regelaltersgrenze sowie an dauerhaft voll erwerbsgeminderte Erwachsene ab 18 Jahren.\n\n&nbsp;\n\n### Zentrale Aspekte der Grundsicherung\n- **Leistungsumfang**: umfasst den monatlichen Regelsatz für den Lebensunterhalt, die Übernahme angemessener Kosten für Unterkunft und Heizung sowie Beiträge zur Kranken- und Pflegeversicherung.\n- **Höhe der Leistung**: richtet sich nach den aktuellen Regelsätzen der Sozialhilfe (2025 z. B. ca. 563 € für Alleinstehende) und den tatsächlichen Wohnkosten.\n- **Vermögens- und Einkommensprüfung**: eigenes Einkommen und Vermögen werden angerechnet; ein kleiner Schonbetrag bleibt anrechnungsfrei.\n- **Zuständige Stelle**: das Sozialamt am Wohnort der antragstellenden Person.\n- **Besonderheit**: Unterhaltsansprüche gegenüber Kindern oder Eltern werden nur geprüft, wenn deren Einkommen über 100.000 € jährlich liegt.",
+        "de_es": "Die Grundsicherung im Alter und bei Erwerbsminderung ist eine Sozialleistung, die den Lebensunterhalt sichern soll, wenn eigenes Einkommen und Vermögen nicht ausreichen. Sie richtet sich an ältere Menschen ab der Regelaltersgrenze sowie an dauerhaft voll erwerbsgeminderte Erwachsene ab 18 Jahren.\n\n&nbsp;\n\n### Zentrale Aspekte der Grundsicherung\n- **Leistungsumfang**: umfasst den monatlichen Regelsatz für den Lebensunterhalt, die Übernahme angemessener Kosten für Unterkunft und Heizung sowie Beiträge zur Kranken- und Pflegeversicherung.\n- **Höhe der Leistung**: richtet sich nach den aktuellen Regelsätzen der Sozialhilfe (2025 z. B. ca. 563 € für Alleinstehende) und den tatsächlichen Wohnkosten.\n- **Vermögens- und Einkommensprüfung**: eigenes Einkommen und Vermögen werden angerechnet; ein kleiner Schonbetrag bleibt anrechnungsfrei.\n- **Zuständige Stelle**: das Sozialamt am Wohnort der antragstellenden Person.\n- **Besonderheit**: Unterhaltsansprüche gegenüber Kindern oder Eltern werden nur geprüft, wenn deren Einkommen über 100.000 € jährlich liegt.",
+        "en": "Basic income support in old age and in case of reduced earning capacity is a social benefit intended to secure the cost of living when own income and assets are insufficient. It is aimed at older people who have reached the statutory retirement age and at adults (18+) who are permanently fully incapacitated for work.\n\n&nbsp;\n\n### Key aspects of basic income support\n- **Scope of benefits**: covers the monthly standard rate for living expenses, reasonable housing and heating costs, and contributions to health and long-term care insurance.\n- **Amount of benefit**: based on the current standard rates of social assistance (e.g., around €563 for single adults in 2025) and actual housing costs.\n- **Means test**: income and assets are taken into account; a small allowance remains exempt.\n- **Responsible authority**: the social welfare office (Sozialamt) at the applicant’s place of residence.\n- **Special rule**: maintenance obligations towards children or parents are only examined if their annual income exceeds €100,000."
+      },
+      "examples": {
+        "de": [
+          {
+            "title": "Alter",
+            "description": "Hannelore (72) aus Dresden lebt allein in einer Mietwohnung und hat nur eine kleine Rente von 400 € im Monat.\n\n&nbsp;\n\n### Unterstützung durch die Grundsicherung im Alter\n- Der Regelsatz für Alleinstehende beträgt aktuell ca. **563 €** monatlich.\n- Zusätzlich übernimmt das Sozialamt ihre angemessene Warmmiete von **400 €**.\n- Zusammen ergibt sich ein Bedarf von **963 €**. Nach Anrechnung der eigenen Rente (400 €) erhält Hannelore rund **563 € Grundsicherung** monatlich."
+          },
+          {
+            "title": "Erwerbsminderung",
+            "description": "Jonas (45) aus Essen ist dauerhaft voll erwerbsgemindert und kann keiner Arbeit mehr nachgehen. Er lebt in einer kleinen Wohnung und bezieht keine eigene Rente.\n\n&nbsp;\n\n### Unterstützung durch die Grundsicherung bei Erwerbsminderung\n- Der monatliche Regelsatz für Alleinstehende liegt bei ca. **563 €**.\n- Hinzu kommen die Kosten für Unterkunft und Heizung in Höhe von **450 €**.\n- Da Jonas kein eigenes Einkommen hat, übernimmt das Sozialamt den vollen Bedarf: insgesamt etwa **1.013 € Grundsicherung** pro Monat."
+          }
+        ],
+        "de_es": [
+          {
+            "title": "Alter",
+            "description": "Hannelore (72) aus Dresden lebt allein in einer Mietwohnung und hat nur eine kleine Rente von 400 € im Monat.\n\n&nbsp;\n\n### Unterstützung durch die Grundsicherung im Alter\n- Der Regelsatz für Alleinstehende beträgt aktuell ca. **563 €** monatlich.\n- Zusätzlich übernimmt das Sozialamt ihre angemessene Warmmiete von **400 €**.\n- Zusammen ergibt sich ein Bedarf von **963 €**. Nach Anrechnung der eigenen Rente (400 €) erhält Hannelore rund **563 € Grundsicherung** monatlich."
+          },
+          {
+            "title": "Erwerbsminderung",
+            "description": "Jonas (45) aus Essen ist dauerhaft voll erwerbsgemindert und kann keiner Arbeit mehr nachgehen. Er lebt in einer kleinen Wohnung und bezieht keine eigene Rente.\n\n&nbsp;\n\n### Unterstützung durch die Grundsicherung bei Erwerbsminderung\n- Der monatliche Regelsatz für Alleinstehende liegt bei ca. **563 €**.\n- Hinzu kommen die Kosten für Unterkunft und Heizung in Höhe von **450 €**.\n- Da Jonas kein eigenes Einkommen hat, übernimmt das Sozialamt den vollen Bedarf: insgesamt etwa **1.013 € Grundsicherung** pro Monat."
+          }
+        ],
+        "en": [
+          {
+            "title": "Old age",
+            "description": "Hannelore (72) from Dresden lives alone in a rented apartment and only has a small pension of €400 per month.\n\n&nbsp;\n\n### Support through basic income support in old age\n- The standard rate for single adults is currently about **€563** per month.\n- In addition, the social welfare office covers her reasonable warm rent of **€400**.\n- This results in a total need of **€963**. After deducting her own pension (€400), Hannelore receives around **€563 in basic income support** each month."
+          },
+          {
+            "title": "Reduced earning capacity",
+            "description": "Jonas (45) from Essen is permanently fully incapacitated for work and can no longer pursue employment. He lives in a small apartment and does not receive any pension.\n\n&nbsp;\n\n### Support through basic income support in case of reduced earning capacity\n- The monthly standard rate for single adults is about **€563**.\n- Added to this are housing and heating costs of **€450**.\n- Since Jonas has no income of his own, the social welfare office covers the full amount: about **€1,013 in basic income support** per month."
+          }
+        ]
+      }
+    },
+    "application_process": {
+      "brief": {
+        "de": "Der Antrag auf Grundsicherung im Alter und bei Erwerbsminderung wird beim zuständigen Sozialamt (Grundsicherungsamt) am Wohnort gestellt.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: das örtliche Sozialamt/Grundsicherungsamt.  \n- **Form der Antragstellung**: schriftlich mit den offiziellen Antragsunterlagen; vielerorts ist auch eine Online-Beantragung möglich; eine persönliche Vorsprache kann erforderlich sein.  \n- **Unterlagen**: Personalausweis oder Reisepass, Nachweise zu Miete und Heizkosten (z. B. Mietvertrag, Nebenkosten), Kontoauszüge, Einkommens- und Vermögensnachweise; zusätzlich bei Alter: Nachweis des Erreichens der Regelaltersgrenze; bei Erwerbsminderung: Renten- bzw. DRV-Bescheid oder ärztliche Nachweise.  \n- **Fristen**: Leistungen werden grundsätzlich ab dem Monat der Antragstellung gewährt; Weiterbewilligungsanträge rechtzeitig vor Ablauf des Bewilligungszeitraums (in der Regel 12 Monate) stellen; in Eilfällen ist eine vorläufige Entscheidung möglich.",
+        "de_es": "Der Antrag auf Grundsicherung im Alter und bei Erwerbsminderung wird beim zuständigen Sozialamt (Grundsicherungsamt) am Wohnort gestellt.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: das örtliche Sozialamt/Grundsicherungsamt.  \n- **Form der Antragstellung**: schriftlich mit den offiziellen Antragsunterlagen; vielerorts ist auch eine Online-Beantragung möglich; eine persönliche Vorsprache kann erforderlich sein.  \n- **Unterlagen**: Personalausweis oder Reisepass, Nachweise zu Miete und Heizkosten (z. B. Mietvertrag, Nebenkosten), Kontoauszüge, Einkommens- und Vermögensnachweise; zusätzlich bei Alter: Nachweis des Erreichens der Regelaltersgrenze; bei Erwerbsminderung: Renten- bzw. DRV-Bescheid oder ärztliche Nachweise.  \n- **Fristen**: Leistungen werden grundsätzlich ab dem Monat der Antragstellung gewährt; Weiterbewilligungsanträge rechtzeitig vor Ablauf des Bewilligungszeitraums (in der Regel 12 Monate) stellen; in Eilfällen ist eine vorläufige Entscheidung möglich.",
+        "en": "The application for basic income support in old age and in case of reduced earning capacity is submitted to the local social welfare office (Sozialamt) at the place of residence.\n\n&nbsp;\n\n### Important details for the application\n- **Responsible authority**: the local Social Welfare Office (Sozialamt/Grundsicherungsamt).  \n- **Form of application**: in writing using the official forms; in many regions an online application is possible; an in-person appointment may be required.  \n- **Documents**: ID or passport, proof of rent and heating costs (e.g., rental agreement, service charges), bank statements, income and asset statements; additionally, for old age: proof of reaching statutory retirement age; for reduced earning capacity: pension or DRV decision or medical evidence.  \n- **Deadlines**: benefits are generally granted from the month of application; submit renewal applications in good time before the approval period expires (usually 12 months); provisional decisions are possible in urgent cases."
+      }
     }
   },
   "ff:bildung-und-teilhabe-bei-bezug-von-buergergeld": {
     "id": "ff:bildung-und-teilhabe-bei-bezug-von-buergergeld",
     "category": "social_benefit",
     "status": "production",
+    "title": {
+      "de": "Bildung und Teilhabe - bei Bezug von Bürgergeld",
+      "en": "Education and participation - with citizen's benefit"
+    },
+    "teaser": {
+      "de": "In Deutschland sollen Kinder, Jugendliche und junge Erwachsene die gleichen Chancen haben. Wichtige Voraussetzungen für Chancengleichheit sind Bildung und die Teilnahme am sozialen und kulturellen Leben. Deswegen fördert der Staat Leistungen zur Bildung und Teilhabe, auch Bildungs- und Teilhabepaket genannt.",
+      "en": "In Germany, children, teens and young adults are supposed to have equal opportunities. Education and participation in social and cultural activities are important factors in ensuring equal opportunity. For this reason, the state provides benefits to support education and participation. This is also known as the education and participation package."
+    },
     "general": {
       "brief": {
         "de": "Leistungen für Bildung und Teilhabe (BuT) sollen Kindern, Jugendlichen und jungen Erwachsenen aus Familien mit geringem Einkommen gleiche Chancen auf Bildung und gesellschaftliche Teilhabe ermöglichen. Anspruch haben insbesondere Personen, die Bürgergeld beziehen.\n\n&nbsp;\n\n### Zentrale Leistungen für Bildung und Teilhabe\n- **Schule und Kita**: Kostenübernahme für Ausflüge, Klassenfahrten, Lernförderung und persönliche Schulausstattung.\n- **Freizeit und Kultur**: Zuschüsse für Vereinsbeiträge, Musikunterricht, Sportangebote oder kulturelle Aktivitäten.\n- **Mittagessen und Fahrten**: Kostenübernahme für gemeinsames Mittagessen in Schule oder Kita sowie Zuschüsse für Schülerbeförderung.",
@@ -677,14 +639,6 @@
         "de_es": "Der Antrag auf Leistungen aus dem Bildungs- und Teilhabepaket (BuT) wird bei der zuständigen Stelle im Rahmen des Bürgergeldbezugs gestellt.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: in der Regel das Jobcenter, das für den Bürgergeld-Bezug zuständig ist; teilweise auch die Kommune oder das Sozialamt.  \n- **Form der Antragstellung**: schriftlich über die offiziellen Antragsformulare; vielerorts ist auch eine Online-Antragstellung möglich.  \n- **Unterlagen**: erforderlich sind in der Regel Nachweise über die Teilnahme an der jeweiligen Aktivität (z. B. Schulbescheinigung, Vereinsmitgliedschaft, Bescheinigung über Mittagessen in Schule/Kita) sowie ein gültiges Ausweisdokument.  \n- **Fristen**: Anträge sollten rechtzeitig vor Beginn der Maßnahme oder Aktivität gestellt werden, da Leistungen in der Regel nicht rückwirkend bewilligt werden.",
         "en": "The application for benefits from the Education and Participation Package (BuT) must be submitted to the responsible authority within the framework of Citizens’ Benefit (Bürgergeld).\n\n&nbsp;\n\n### Important details for the application\n- **Responsible authority**: usually the Jobcenter responsible for Citizens’ Benefit; in some cases, the municipality or the social welfare office.  \n- **Form of application**: in writing via the official application forms; in many places, an online application is also possible.  \n- **Documents**: usually required are proof of participation in the respective activity (e.g., school certificate, club membership, confirmation of school/kindergarten meals) as well as a valid identification document.  \n- **Deadlines**: applications should be submitted in good time before the start of the measure or activity, as benefits are generally not granted retroactively."
       }
-    },
-    "title": {
-      "de": "Bildung und Teilhabe - bei Bezug von Bürgergeld",
-      "en": "Education and participation - with citizen's benefit"
-    },
-    "teaser": {
-      "de": "In Deutschland sollen Kinder, Jugendliche und junge Erwachsene die gleichen Chancen haben. Wichtige Voraussetzungen für Chancengleichheit sind Bildung und die Teilnahme am sozialen und kulturellen Leben. Deswegen fördert der Staat Leistungen zur Bildung und Teilhabe, auch Bildungs- und Teilhabepaket genannt.",
-      "en": "In Germany, children, teens and young adults are supposed to have equal opportunities. Education and participation in social and cultural activities are important factors in ensuring equal opportunity. For this reason, the state provides benefits to support education and participation. This is also known as the education and participation package."
     }
   },
   "ff:exist-gruendungsstipendium": {
