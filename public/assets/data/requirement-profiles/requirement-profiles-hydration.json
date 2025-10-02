@@ -552,6 +552,46 @@
     "id": "ff:bildung-und-teilhabe-bei-bezug-von-buergergeld",
     "category": "social_benefit",
     "status": "production",
+    "general": {
+      "brief": {
+        "de": "Leistungen für Bildung und Teilhabe (BuT) sollen Kindern, Jugendlichen und jungen Erwachsenen aus Familien mit geringem Einkommen gleiche Chancen auf Bildung und gesellschaftliche Teilhabe ermöglichen. Anspruch haben insbesondere Personen, die Bürgergeld beziehen.\n\n&nbsp;\n\n### Zentrale Leistungen für Bildung und Teilhabe\n- **Schule und Kita**: Kostenübernahme für Ausflüge, Klassenfahrten, Lernförderung und persönliche Schulausstattung.\n- **Freizeit und Kultur**: Zuschüsse für Vereinsbeiträge, Musikunterricht, Sportangebote oder kulturelle Aktivitäten.\n- **Mittagessen und Fahrten**: Kostenübernahme für gemeinsames Mittagessen in Schule oder Kita sowie Zuschüsse für Schülerbeförderung.",
+        "de_es": "Leistungen für Bildung und Teilhabe (BuT) sollen Kindern, Jugendlichen und jungen Erwachsenen aus Familien mit geringem Einkommen gleiche Chancen auf Bildung und gesellschaftliche Teilhabe ermöglichen. Anspruch haben insbesondere Personen, die Bürgergeld beziehen.\n\n&nbsp;\n\n### Zentrale Leistungen für Bildung und Teilhabe\n- **Schule und Kita**: Kostenübernahme für Ausflüge, Klassenfahrten, Lernförderung und persönliche Schulausstattung.\n- **Freizeit und Kultur**: Zuschüsse für Vereinsbeiträge, Musikunterricht, Sportangebote oder kulturelle Aktivitäten.\n- **Mittagessen und Fahrten**: Kostenübernahme für gemeinsames Mittagessen in Schule oder Kita sowie Zuschüsse für Schülerbeförderung.",
+        "en": "Benefits for education and participation (BuT) are intended to provide children, adolescents and young adults from low-income families with equal opportunities for education and social participation. In particular, people receiving citizen's benefit are entitled to these benefits.\n\n&nbsp;\n\n### Key benefits for education and participation\n- **School and daycare**: coverage of costs for excursions, class trips, learning support and personal school supplies.\n- **Leisure and culture**: subsidies for club memberships, music lessons, sports activities or cultural activities.\n- **Lunch and transportation**: coverage of costs for communal lunch at school or daycare as well as subsidies for student transportation."
+      },
+      "examples": {
+        "de": [
+          {
+            "description": "Mila (10) aus Dortmund lebt mit ihrer Familie im Bürgergeldbezug.\n\n&nbsp;\n\n### Unterstützung durch Bildung und Teilhabe\n- Die Kosten für ihre Klassenfahrt in der Grundschule werden vollständig übernommen.\n- Zusätzlich erhält sie eine jährliche Pauschale für Schulmaterialien wie Ranzen, Hefte und Stifte.\n- Dadurch kann Mila gleichberechtigt an schulischen Aktivitäten teilnehmen."
+          },
+          {
+            "description": "Yusuf (15) aus Bremen besucht die Oberschule und lebt mit seiner Mutter im Bürgergeldbezug.\n\n&nbsp;\n\n### Unterstützung durch Bildung und Teilhabe\n- Er erhält einen Zuschuss für den monatlichen Vereinsbeitrag im Fußballclub.\n- Außerdem übernimmt das Programm die Kosten für das gemeinsame Mittagessen in der Schule.\n- So kann Yusuf trotz knapper Familienkasse an Freizeit- und Gemeinschaftsangeboten teilnehmen."
+          }
+        ],
+        "de_es": [
+          {
+            "description": "Mila (10) aus Dortmund lebt mit ihrer Familie im Bürgergeldbezug.\n\n&nbsp;\n\n### Unterstützung durch Bildung und Teilhabe\n- Die Kosten für ihre Klassenfahrt in der Grundschule werden vollständig übernommen.\n- Zusätzlich erhält sie eine jährliche Pauschale für Schulmaterialien wie Ranzen, Hefte und Stifte.\n- Dadurch kann Mila gleichberechtigt an schulischen Aktivitäten teilnehmen."
+          },
+          {
+            "description": "Yusuf (15) aus Bremen besucht die Oberschule und lebt mit seiner Mutter im Bürgergeldbezug.\n\n&nbsp;\n\n### Unterstützung durch Bildung und Teilhabe\n- Er erhält einen Zuschuss für den monatlichen Vereinsbeitrag im Fußballclub.\n- Außerdem übernimmt das Programm die Kosten für das gemeinsame Mittagessen in der Schule.\n- So kann Yusuf trotz knapper Familienkasse an Freizeit- und Gemeinschaftsangeboten teilnehmen."
+          }
+        ],
+        "en": [
+          {
+            "description": "Mila (10) from Dortmund lives with her family, who receive Citizens’ Benefit (Bürgergeld).\n\n&nbsp;\n\n### Support through education and participation\n- The costs for her school trip in primary school are fully covered.\n- In addition, she receives an annual allowance for school supplies such as a backpack, notebooks, and pens.\n- This enables Mila to participate equally in school activities."
+          },
+          {
+            "description": "Yusuf (15) from Bremen attends secondary school and lives with his mother who receives Citizens’ Benefit (Bürgergeld).\n\n&nbsp;\n\n### Support through education and participation\n- He receives a subsidy for the monthly membership fee at his football club.\n- The program also covers the costs of school meals.\n- This allows Yusuf to take part in leisure and community activities despite the family’s limited budget."
+          }
+        ]
+      }
+    },
+    "application_process": {
+      "brief": {
+        "de": "Der Antrag auf Leistungen aus dem Bildungs- und Teilhabepaket (BuT) wird bei der zuständigen Stelle im Rahmen des Bürgergeldbezugs gestellt.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: in der Regel das Jobcenter, das für den Bürgergeld-Bezug zuständig ist; teilweise auch die Kommune oder das Sozialamt.  \n- **Form der Antragstellung**: schriftlich über die offiziellen Antragsformulare; vielerorts ist auch eine Online-Antragstellung möglich.  \n- **Unterlagen**: erforderlich sind in der Regel Nachweise über die Teilnahme an der jeweiligen Aktivität (z. B. Schulbescheinigung, Vereinsmitgliedschaft, Bescheinigung über Mittagessen in Schule/Kita) sowie ein gültiges Ausweisdokument.  \n- **Fristen**: Anträge sollten rechtzeitig vor Beginn der Maßnahme oder Aktivität gestellt werden, da Leistungen in der Regel nicht rückwirkend bewilligt werden.",
+        "de_es": "Der Antrag auf Leistungen aus dem Bildungs- und Teilhabepaket (BuT) wird bei der zuständigen Stelle im Rahmen des Bürgergeldbezugs gestellt.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: in der Regel das Jobcenter, das für den Bürgergeld-Bezug zuständig ist; teilweise auch die Kommune oder das Sozialamt.  \n- **Form der Antragstellung**: schriftlich über die offiziellen Antragsformulare; vielerorts ist auch eine Online-Antragstellung möglich.  \n- **Unterlagen**: erforderlich sind in der Regel Nachweise über die Teilnahme an der jeweiligen Aktivität (z. B. Schulbescheinigung, Vereinsmitgliedschaft, Bescheinigung über Mittagessen in Schule/Kita) sowie ein gültiges Ausweisdokument.  \n- **Fristen**: Anträge sollten rechtzeitig vor Beginn der Maßnahme oder Aktivität gestellt werden, da Leistungen in der Regel nicht rückwirkend bewilligt werden.",
+        "en": "The application for benefits from the Education and Participation Package (BuT) must be submitted to the responsible authority within the framework of Citizens’ Benefit (Bürgergeld).\n\n&nbsp;\n\n### Important details for the application\n- **Responsible authority**: usually the Jobcenter responsible for Citizens’ Benefit; in some cases, the municipality or the social welfare office.  \n- **Form of application**: in writing via the official application forms; in many places, an online application is also possible.  \n- **Documents**: usually required are proof of participation in the respective activity (e.g., school certificate, club membership, confirmation of school/kindergarten meals) as well as a valid identification document.  \n- **Deadlines**: applications should be submitted in good time before the start of the measure or activity, as benefits are generally not granted retroactively."
+      }
+    },
     "title": {
       "de": "Bildung und Teilhabe - bei Bezug von Bürgergeld",
       "en": "Education and participation - with citizen's benefit"
