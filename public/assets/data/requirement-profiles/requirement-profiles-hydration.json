@@ -420,6 +420,52 @@
     "id": "ff:berufsausbildungsbeihilfe-bab",
     "category": "social_benefit",
     "status": "production",
+    "general": {
+      "brief": {
+        "de": "Die Berufsausbildungsbeihilfe (BAB) unterstützt Auszubildende in einer anerkannten betrieblichen oder außerbetrieblichen Berufsausbildung dabei, ihren Lebensunterhalt zu sichern.\n\n&nbsp;\n\n### Zentrale Aspekte der Berufsausbildungsbeihilfe\n- **Anspruch**: in der Regel bei der ersten beruflichen Ausbildung (dual oder betrieblich), wenn die Wohnung der Eltern nicht erreichbar oder nicht zumutbar ist oder wenn außerhalb gewohnt wird. Für rein schulische Ausbildungen ist in der Regel das BAföG zuständig.\n- **Höhe**: richtet sich nach festgelegten Bedarfssätzen sowie nach dem Einkommen und Vermögen der antragstellenden Person und gegebenenfalls der Eltern, Ehegattin oder des Ehegatten sowie Lebenspartnerin oder Lebenspartners. Berücksichtigt werden unter anderem Miete, Fahrtkosten und Arbeitskleidung.\n- **Dauer**: grundsätzlich für die gesamte Zeit der geförderten Berufsausbildung.\n- **Zuständige Stelle**: die Agentur für Arbeit.",
+        "de_es": "Die Berufsausbildungsbeihilfe (BAB) unterstützt Auszubildende in einer anerkannten betrieblichen oder außerbetrieblichen Berufsausbildung dabei, ihren Lebensunterhalt zu sichern.\n\n&nbsp;\n\n### Zentrale Aspekte der Berufsausbildungsbeihilfe\n- **Anspruch**: in der Regel bei der ersten beruflichen Ausbildung (dual oder betrieblich), wenn die Wohnung der Eltern nicht erreichbar oder nicht zumutbar ist oder wenn außerhalb gewohnt wird. Für rein schulische Ausbildungen ist in der Regel das BAföG zuständig.\n- **Höhe**: richtet sich nach festgelegten Bedarfssätzen sowie nach dem Einkommen und Vermögen der antragstellenden Person und gegebenenfalls der Eltern, Ehegattin oder des Ehegatten sowie Lebenspartnerin oder Lebenspartners. Berücksichtigt werden unter anderem Miete, Fahrtkosten und Arbeitskleidung.\n- **Dauer**: grundsätzlich für die gesamte Zeit der geförderten Berufsausbildung.\n- **Zuständige Stelle**: die Agentur für Arbeit.",
+        "en": "Vocational Training Allowance (BAB) supports apprentices in recognized company-based or extra-company vocational training in covering their living expenses.\n\n&nbsp;\n\n### Key aspects of Vocational Training Allowance\n- **Eligibility**: generally for the first vocational training (dual or company-based) if living with parents is not possible or not reasonable, or if the person lives elsewhere. For purely school-based training programs, BAföG is usually responsible.\n- **Amount**: determined by standardized needs as well as the income and assets of the applicant and, where applicable, the parents, the spouse, or the life partner. Rent, travel costs, and work clothing are among the factors considered.\n- **Duration**: generally for the entire duration of the funded vocational training.\n- **Responsible authority**: the Employment Agency (Agentur für Arbeit)."
+      },
+      "examples": {
+        "de": [
+          {
+            "title": "Kfz-Mechatronikerin",
+            "description": "Miriam (21) aus Freiburg macht eine Ausbildung zur Kfz-Mechatronikerin. Da ihr Betrieb weit entfernt ist, wohnt sie in einer eigenen Wohnung am Ausbildungsort.\n\n&nbsp;\n\n### Unterstützung durch die Berufsausbildungsbeihilfe\n- Miriam erhält BAB in Höhe von etwa **350 €** monatlich für Miete, Fahrtkosten und Lebensunterhalt.\n- Die genaue Höhe richtet sich nach ihrer Ausbildungsvergütung und dem Einkommen ihrer Eltern.\n- Zuständig ist die Agentur für Arbeit."
+          },
+          {
+            "title": "Hotelfachmann",
+            "description": "Sven (19) aus Hannover absolviert eine Ausbildung zum Hotelfachmann. Weil der Wohnort seiner Eltern zu weit entfernt ist, lebt er in einer Wohngemeinschaft am Ausbildungsort.\n\n&nbsp;\n\n### Unterstützung durch die Berufsausbildungsbeihilfe\n- Sven erhält BAB in Höhe von rund **400 €** monatlich zur Unterstützung von Unterkunft und Lebensunterhalt.\n- Die genaue Höhe richtet sich nach seiner Vergütung, der Miete und dem Einkommen seiner Eltern.\n- Zuständig ist die Agentur für Arbeit."
+          }
+        ],
+        "de_es": [
+          {
+            "title": "Kfz-Mechatronikerin",
+            "description": "Miriam (21) aus Freiburg macht eine Ausbildung zur Kfz-Mechatronikerin. Da ihr Betrieb weit entfernt ist, wohnt sie in einer eigenen Wohnung am Ausbildungsort.\n\n&nbsp;\n\n### Unterstützung durch die Berufsausbildungsbeihilfe\n- Miriam erhält BAB in Höhe von etwa **350 €** monatlich für Miete, Fahrtkosten und Lebensunterhalt.\n- Die genaue Höhe richtet sich nach ihrer Ausbildungsvergütung und dem Einkommen ihrer Eltern.\n- Zuständig ist die Agentur für Arbeit."
+          },
+          {
+            "title": "Hotelfachmann",
+            "description": "Sven (19) aus Hannover absolviert eine Ausbildung zum Hotelfachmann. Weil der Wohnort seiner Eltern zu weit entfernt ist, lebt er in einer Wohngemeinschaft am Ausbildungsort.\n\n&nbsp;\n\n### Unterstützung durch die Berufsausbildungsbeihilfe\n- Sven erhält BAB in Höhe von rund **400 €** monatlich zur Unterstützung von Unterkunft und Lebensunterhalt.\n- Die genaue Höhe richtet sich nach seiner Vergütung, der Miete und dem Einkommen seiner Eltern.\n- Zuständig ist die Agentur für Arbeit."
+          }
+        ],
+        "en": [
+          {
+            "title": "Automotive Mechatronics Technician",
+            "description": "Miriam (21) from Freiburg is training to become an automotive mechatronics technician. Since her company is far away, she lives in her own apartment at the place of training.\n\n&nbsp;\n\n### Support through vocational training allowance (BAB)\n- Miriam receives BAB of about **€350** per month for rent, travel costs, and living expenses.\n- The exact amount depends on her training allowance and her parents’ income.\n- The responsible authority is the Federal Employment Agency (Agentur für Arbeit)."
+          },
+          {
+            "title": "Hotel Management Assistant",
+            "description": "Sven (19) from Hanover is training to become a hotel management assistant. Because his parents’ home is too far away, he lives in a shared apartment at the place of training.\n\n&nbsp;\n\n### Support through vocational training allowance (BAB)\n- Sven receives BAB of around **€400** per month to support housing and living expenses.\n- The exact amount depends on his training allowance, rent, and his parents’ income.\n- The responsible authority is the Federal Employment Agency (Agentur für Arbeit)."
+          }
+        ]
+      }
+    },
+    "application_process": {
+      "brief": {
+        "de": "Der Antrag auf Berufsausbildungsbeihilfe (BAB) wird bei der zuständigen Agentur für Arbeit gestellt.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: immer die örtliche Agentur für Arbeit.  \n- **Form der Antragstellung**: schriftlich über die offiziellen Antragsformulare; in vielen Regionen ist auch eine Online-Antragstellung über die Plattform der Bundesagentur für Arbeit möglich.  \n- **Unterlagen**: erforderlich sind in der Regel der Ausbildungsvertrag, Nachweise über die Ausbildungsvergütung, Angaben zur Wohnsituation (z. B. Mietvertrag) sowie Einkommensnachweise der Eltern.  \n- **Fristen**: der Antrag sollte rechtzeitig zu Beginn der Ausbildung gestellt werden; Leistungen werden frühestens ab dem Monat der Antragstellung gezahlt.",
+        "de_es": "Der Antrag auf Berufsausbildungsbeihilfe (BAB) wird bei der zuständigen Agentur für Arbeit gestellt.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: immer die örtliche Agentur für Arbeit.  \n- **Form der Antragstellung**: schriftlich über die offiziellen Antragsformulare; in vielen Regionen ist auch eine Online-Antragstellung über die Plattform der Bundesagentur für Arbeit möglich.  \n- **Unterlagen**: erforderlich sind in der Regel der Ausbildungsvertrag, Nachweise über die Ausbildungsvergütung, Angaben zur Wohnsituation (z. B. Mietvertrag) sowie Einkommensnachweise der Eltern.  \n- **Fristen**: der Antrag sollte rechtzeitig zu Beginn der Ausbildung gestellt werden; Leistungen werden frühestens ab dem Monat der Antragstellung gezahlt.",
+        "en": "The application for vocational training allowance (BAB) must be submitted to the responsible Employment Agency (Agentur für Arbeit).\n\n&nbsp;\n\n### Important details for the application\n- **Responsible authority**: always the local Employment Agency.  \n- **Form of application**: in writing using the official application forms; in many regions, an online application via the Federal Employment Agency’s platform is also possible.  \n- **Documents**: usually required are the training contract, proof of training remuneration, information about housing (e.g., rental contract), as well as parents’ income statements.  \n- **Deadlines**: the application should be submitted at the start of the training; benefits are only paid from the month of application at the earliest."
+      }
+    },
     "title": {
       "de": "Berufsausbildungsbeihilfe (BAB)",
       "en": "Vocational training allowance (BAB)"
