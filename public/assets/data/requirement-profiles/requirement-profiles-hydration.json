@@ -429,7 +429,7 @@
             "title": "Alleinstehender Eigentümer",
             "description": "Herr Schneider (62) aus Leipzig ist alleinstehend und bewohnt eine kleine Eigentumswohnung. Seine monatliche Altersrente liegt bei **1.100 €**. Für Zinsen, Tilgung und Nebenkosten fallen **500 €** an.\n\n&nbsp;\n\n### Wohngeld-Berechnung (vereinfacht)\n- Anrechenbare Belastung: 500 €\n- Einkommen und Haushaltsgröße (1 Person) werden berücksichtigt.\n- Herr Schneider erhält rund **120 € Lastenzuschuss** pro Monat.\n\nDamit wird seine Rente spürbar entlastet."
           }
-        ],        
+        ],
         "en": [
           {
             "title": "Family with children in rental apartment",
@@ -1322,82 +1322,40 @@
       "de": "Die Wolfenbüttel-Stiftung unterstützt bedürftige Kinder, hilfsbedürftige ältere Menschen sowie soziale Projekte in der Stadt Wolfenbüttel. Die Förderung erfolgt in der Regel als einmalige Zuwendung ohne Rechtsanspruch.",
       "en": "The Wolfenbüttel Foundation supports needy children, elderly people in need, and social projects within the city of Wolfenbüttel. Funding is typically provided as a one-time grant without legal entitlement."
     },
+    "general": {
+      "brief": {
+        "de": "Die Wolfenbüttel-Stiftung ist eine Bürgerstiftung mit Sitz in Wolfenbüttel, die vorrangig soziale Projekte in der Region fördert.\n\n&nbsp;\n\n### Zentrale Aspekte der Wolfenbüttel-Stiftung\n- Fokus auf soziale Unterstützung: Altenhilfe, Kinder- und Jugendhilfe, Gleichberechtigung und mildtätige Zwecke.  \n- Förderung ausschließlich von Projekten, kein Einzelpersonenförderprogramm, mit Antrag durch gemeinnützige Einrichtungen in Wolfenbüttel.  \n- Anträge müssen schriftlich eingereicht werden, und es gelten formale und inhaltliche Kriterien laut Stiftungssatzung.  \n- Förderung nur für Projekte mit Standort in der Region Wolfenbüttel, nicht im Ausland.  \n- Die Stiftung entstand im Jahr 2000 durch Zusammenlegung verschiedener Stiftungen.",
+        "de_es": "Die Wolfenbüttel-Stiftung ist eine Bürgerstiftung in Wolfenbüttel, die vor allem soziale Projekte unterstützt.\n\n&nbsp;\n\n### Wichtige Punkte zur Wolfenbüttel-Stiftung\n- Schwerpunkt: Jugend-, Alten- und Sozialhilfe.  \n- Förderfähig sind gemeinnützige Einrichtungen, nicht Einzelpersonen.  \n- Der Antrag ist schriftlich zu stellen.  \n- Es werden nur Projekte in Wolfenbüttel gefördert.  \n- Gegründet im Jahr 2000.",
+        "en": "The Wolfenbüttel Foundation is a civic foundation based in Wolfenbüttel that primarily supports social projects in the region.\n\n&nbsp;\n\n### Key aspects of the Wolfenbüttel Foundation\n- Its funding priorities include social welfare, elderly care, youth services, and promoting equality and charitable causes.  \n- It supports project-based applications by nonprofit organizations, not individual grants.  \n- Applications must be submitted in writing, and must meet formal and substantive criteria per the foundation’s statutes.  \n- Projects must be located in the Wolfenbüttel region; foreign or non-local projects are excluded.  \n- The foundation was established in 2000 by merging several local foundations."
+      },
+      "examples": {
+        "de": [
+          {
+            "title": "Jugendprojekt Musikwerkstatt",
+            "description": "Ein gemeinnütziger Verein in Wolfenbüttel organisiert eine Musikwerkstatt für Jugendliche aus sozial benachteiligten Familien.\n\n&nbsp;\n\n### Förderung durch die Wolfenbüttel-Stiftung\n- Zuschuss in Höhe von **5.000 €**.  \n- Finanzierung von Instrumenten und Probenräumen.  \n- Pädagogische Betreuung durch Fachkräfte.  "
+          },
+          {
+            "title": "Seniorencafé im Quartier",
+            "description": "Eine soziale Einrichtung richtet ein wöchentliches Seniorencafé für ältere Menschen ein.\n\n&nbsp;\n\n### Förderung durch die Wolfenbüttel-Stiftung\n- Unterstützung in Höhe von **3.000 €**.  \n- Ausstattung des Cafés und Bereitstellung von Räumlichkeiten.  \n- Finanzierung ehrenamtlicher Betreuung.  "
+          }
+        ],
+        "en": [
+          {
+            "title": "Youth Music Workshop",
+            "description": "A nonprofit association in Wolfenbüttel organizes a music workshop for socially disadvantaged young people.\n\n&nbsp;\n\n### Support by the Wolfenbüttel Foundation\n- Grant of **€5,000**.  \n- Covers instruments and rehearsal rooms.  \n- Provides educational supervision by professionals.  "
+          },
+          {
+            "title": "Neighborhood Senior Café",
+            "description": "A local social organization sets up a weekly café for senior citizens.\n\n&nbsp;\n\n### Support by the Wolfenbüttel Foundation\n- Funding of **€3,000**.  \n- Covers equipment and venue costs.  \n- Provides volunteer support for participants.  "
+          }
+        ]
+      }
+    },
     "application_process": {
-      "de": {
-        "title": "Der Antrag ist schriftlich bei der Stadt Wolfenbüttel zu stellen. Die Entscheidung über die Förderung trifft der Stiftungsvorstand.",
-        "links": [
-          {
-            "title": "Informationen und Online-Antrag",
-            "url": "https://www.wolfenbuettel.de/index.php?ModID=7&FID=2672.9007.1&object=tx%7C2672.9007.1"
-          }
-        ]
-      },
-      "en": {
-        "title": "Applications must be submitted in writing to the City of Wolfenbüttel. The foundation board decides on funding approval.",
-        "links": [
-          {
-            "title": "Information and Online Application",
-            "url": "https://www.wolfenbuettel.de/index.php?ModID=7&FID=2672.9007.1&object=tx%7C2672.9007.1"
-          }
-        ]
-      }
-    },
-    "required_documents": {
-      "de": [
-        "Vollständiger Name, Adresse und Telefonnummer für Rückfragen",
-        "Angabe der Bankverbindung",
-        "Nachweis der Bedürftigkeit",
-        "Begründung des Antrags",
-        "Zeitpunkt der benötigten Förderung (bei Projekten)",
-        "Genaue Angabe zur gewünschten Fördersumme"
-      ],
-      "en": [
-        "Full name, address and phone number for inquiries",
-        "Bank account details",
-        "Proof of financial need",
-        "Justification for the application",
-        "Requested date of funding (for projects)",
-        "Exact amount of requested funding"
-      ]
-    },
-    "funding_conditions": {
-      "de": {
-        "title": "Die Förderung erfolgt unter folgenden Bedingungen:",
-        "details": [
-          "Kein Rechtsanspruch auf Förderung",
-          "Mittel müssen zweckgebunden verwendet werden",
-          "Verwendungsnachweis muss innerhalb von 3 Monaten erbracht werden",
-          "Förderung ist einmalig und bevorzugt wechselnde Empfänger:innen"
-        ]
-      },
-      "en": {
-        "title": "Funding is subject to the following conditions:",
-        "details": [
-          "No legal entitlement to funding",
-          "Funds must be used according to the purpose stated",
-          "Proof of use must be provided within 3 months",
-          "Funding is one-time and prioritizes changing recipients"
-        ]
-      }
-    },
-    "further_information": {
-      "de": {
-        "title": "Weitere Informationen zur Stiftung:",
-        "links": [
-          {
-            "title": "Wolfenbüttel-Stiftung auf wolfenbuettel.de",
-            "url": "https://www.wolfenbuettel.de/index.php?ModID=7&FID=2672.9007.1&object=tx%7C2672.9007.1"
-          }
-        ]
-      },
-      "en": {
-        "title": "Further information about the foundation:",
-        "links": [
-          {
-            "title": "Wolfenbüttel Foundation on wolfenbuettel.de",
-            "url": "https://www.wolfenbuettel.de/index.php?ModID=7&FID=2672.9007.1&object=tx%7C2672.9007.1"
-          }
-        ]
+      "brief": {
+        "de": "Der Antrag auf Förderung durch die Wolfenbüttel-Stiftung wird direkt bei der Stiftung eingereicht.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: die Geschäftsstelle der Wolfenbüttel-Stiftung.  \n- **Form der Antragstellung**: schriftlich mit einem formlosen Förderantrag; viele Stiftungen stellen zudem ein eigenes Antragsformular zur Verfügung.  \n- **Unterlagen**: erforderlich sind eine Projektbeschreibung, ein Kosten- und Finanzierungsplan, Nachweise der Gemeinnützigkeit und ggf. weitere Unterlagen je nach Art des Projekts.  \n- **Fristen**: Anträge sollten rechtzeitig vor Projektbeginn eingereicht werden; eine rückwirkende Förderung ist in der Regel ausgeschlossen.",
+        "de_es": "Der Antrag auf Förderung durch die Wolfenbüttel-Stiftung wird direkt bei der Stiftung eingereicht.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: die Geschäftsstelle der Wolfenbüttel-Stiftung.  \n- **Form der Antragstellung**: schriftlich mit einem formlosen Förderantrag; viele Stiftungen stellen zudem ein eigenes Antragsformular zur Verfügung.  \n- **Unterlagen**: erforderlich sind eine Projektbeschreibung, ein Kosten- und Finanzierungsplan, Nachweise der Gemeinnützigkeit und eventuell weitere Unterlagen je nach Art des Projekts.  \n- **Fristen**: Anträge sollten rechtzeitig vor Projektbeginn eingereicht werden; eine rückwirkende Förderung ist in der Regel ausgeschlossen.",
+        "en": "The application for funding from the Wolfenbüttel Foundation must be submitted directly to the foundation.\n\n&nbsp;\n\n### Important details for the application\n- **Responsible authority**: the Wolfenbüttel Foundation’s office.  \n- **Form of application**: in writing with an informal funding request; many foundations also provide their own application form.  \n- **Documents**: required are a project description, a budget and financing plan, proof of nonprofit status, and possibly other documents depending on the type of project.  \n- **Deadlines**: applications should be submitted before the start of the project; retroactive funding is usually not possible."
       }
     }
   },
@@ -1734,172 +1692,50 @@
       "de": "Das Übergangsgeld dient zur Sicherung des Lebensunterhalts während einer Maßnahme zur beruflichen Rehabilitation und wird von der Bundesagentur für Arbeit gewährt.",
       "en": "The transitional allowance supports livelihood during vocational rehabilitation measures and is provided by the Federal Employment Agency."
     },
+    "general": {
+      "brief": {
+        "de": "Das Übergangsgeld der Bundesagentur für Arbeit unterstützt Menschen finanziell während beruflicher Reha-Maßnahmen, wenn sie krankheits- oder unfallbedingt ihre bisherige Tätigkeit nicht mehr ausüben können.\n\n&nbsp;\n\n### Zentrale Aspekte des Übergangsgeldes\n- **Zweck**: Sicherung des Lebensunterhalts während medizinischer oder beruflicher Rehabilitation.  \n- **Höhe**: richtet sich nach dem letzten Einkommen und beträgt in der Regel **68 %**, bei Vorhandensein von Kindern **75 %** des letzten Nettoentgelts.  \n- **Dauer**: wird für die Zeit der Teilnahme an einer Reha- oder Qualifizierungsmaßnahme gezahlt.  \n- **Zuständige Stelle**: die Bundesagentur für Arbeit (oder in manchen Fällen die Deutsche Rentenversicherung).  \n- **Kombination**: Übergangsgeld kann nicht gleichzeitig mit Arbeitslosengeld oder Bürgergeld bezogen werden.  ",
+        "de_es": "Das Übergangsgeld der Bundesagentur für Arbeit ist Geld für Menschen, die wegen Krankheit oder Unfall ihren Beruf nicht mehr machen können und an einer Reha-Maßnahme teilnehmen.\n\n&nbsp;\n\n### Wichtige Punkte\n- **Zweck**: Geld zum Leben während der Reha oder Ausbildung.  \n- **Höhe**: meist **68 %** vom letzten Einkommen, mit Kindern **75 %**.  \n- **Dauer**: nur solange wie die Maßnahme dauert.  \n- **Zuständig**: die Agentur für Arbeit oder manchmal die Rentenversicherung.  ",
+        "en": "Transition allowance (Übergangsgeld) from the Federal Employment Agency provides financial support during vocational rehabilitation measures for people who, due to illness or accident, can no longer work in their previous job.\n\n&nbsp;\n\n### Key aspects of transition allowance\n- **Purpose**: ensures basic living expenses during medical or vocational rehabilitation.  \n- **Amount**: usually **68%** of the last net income, or **75%** if the person has children.  \n- **Duration**: paid for the period of participation in the rehabilitation or qualification program.  \n- **Responsible authority**: the Federal Employment Agency (or in some cases the German Pension Insurance).  \n- **Exclusivity**: cannot be received at the same time as unemployment benefit or citizens’ benefit.  "
+      },
+      "examples": {
+        "de": [
+          {
+            "title": "Übergangsgeld ohne Kinder",
+            "description": "Andreas (45) aus Dresden war viele Jahre als Kfz-Mechaniker beschäftigt. Nach einem Arbeitsunfall kann er seinen Beruf nicht mehr ausüben und nimmt an einer Umschulung zum Technischen Zeichner teil.\n\n&nbsp;\n\n### Unterstützung durch Übergangsgeld\n- Letztes monatliches Netto: **2.000 €**.\n- Übergangsgeld: **68 %**, also etwa **1.360 €** pro Monat.\n- Zahlung für die Dauer der Umschulung.\n- Zuständig: die Bundesagentur für Arbeit."
+          },
+          {
+            "title": "Übergangsgeld mit Kindern",
+            "description": "Sabine (39) aus Nürnberg war als Verkäuferin tätig. Wegen einer chronischen Erkrankung besucht sie eine berufliche Reha-Maßnahme zur Umschulung im Bürobereich. Sie hat zwei Kinder.\n\n&nbsp;\n\n### Unterstützung durch Übergangsgeld\n- Letztes monatliches Netto: **1.800 €**.\n- Übergangsgeld: **75 %**, also etwa **1.350 €** pro Monat.\n- Zahlung solange die Maßnahme läuft.\n- Zuständig: die Bundesagentur für Arbeit."
+          }
+        ],
+        "de_es": [
+          {
+            "title": "Übergangsgeld ohne Kinder",
+            "description": "Andreas (45) aus Dresden war viele Jahre als Kfz-Mechaniker beschäftigt. Nach einem Arbeitsunfall kann er seinen Beruf nicht mehr ausüben und nimmt an einer Umschulung zum Technischen Zeichner teil.\n\n&nbsp;\n\n### Unterstützung durch Übergangsgeld\n- Letztes monatliches Netto: **2.000 €**.\n- Übergangsgeld: **68 %**, also etwa **1.360 €** pro Monat.\n- Zahlung für die Dauer der Umschulung.\n- Zuständig: die Bundesagentur für Arbeit."
+          },
+          {
+            "title": "Übergangsgeld mit Kindern",
+            "description": "Sabine (39) aus Nürnberg war als Verkäuferin tätig. Wegen einer chronischen Erkrankung besucht sie eine berufliche Reha-Maßnahme zur Umschulung im Bürobereich. Sie hat zwei Kinder.\n\n&nbsp;\n\n### Unterstützung durch Übergangsgeld\n- Letztes monatliches Netto: **1.800 €**.\n- Übergangsgeld: **75 %**, also etwa **1.350 €** pro Monat.\n- Zahlung solange die Maßnahme läuft.\n- Zuständig: die Bundesagentur für Arbeit."
+          }
+        ],
+        "en": [
+          {
+            "title": "Transition allowance without children",
+            "description": "Andreas (45) from Dresden worked for many years as a car mechanic. After a work accident he can no longer do his job and is now retraining as a technical draftsman.\n\n&nbsp;\n\n### Support through transition allowance\n- Last monthly net income: **€2,000**.\n- Transition allowance: **68%**, i.e. about **€1,360** per month.\n- Paid for the duration of the retraining.\n- Responsible authority: the Federal Employment Agency."
+          },
+          {
+            "title": "Transition allowance with children",
+            "description": "Sabine (39) from Nuremberg previously worked as a sales assistant. Due to a chronic illness she is taking part in a vocational rehabilitation program in the office field. She has two children.\n\n&nbsp;\n\n### Support through transition allowance\n- Last monthly net income: **€1,800**.\n- Transition allowance: **75%**, i.e. about **€1,350** per month.\n- Paid for the duration of the program.\n- Responsible authority: the Federal Employment Agency."
+          }
+        ]
+      }
+    },
     "application_process": {
-      "de": {
-        "title": "Vereinbaren Sie einen Termin bei Ihrer Agentur für Arbeit. In diesem Beratungsgespräch klären Sie gemeinsam mit Ihrer Berater:in Ihre Voraussetzungen und die passenden Maßnahmen. Anschließend erhalten Sie die nötigen Formulare und Hinweise zu erforderlichen Nachweisen – diese können Sie auch online ausfüllen und hochladen. Abschließend erhalten Sie einen schriftlichen Bescheid über die Bewilligung.",
-        "links": [
-          {
-            "title": "Dienststellensuche",
-            "url": "https://web.arbeitsagentur.de/portal/metasuche/suche/dienststellen"
-          }
-        ]
-      },
-      "en": {
-        "title": "First, schedule an appointment with your local Employment Agency. In this consultation, you will discuss your eligibility and suitable rehabilitation measures with your advisor. You will then receive the necessary forms and information on required documents, which can also be filled out and uploaded online. Finally, you will receive a written notice of approval.",
-        "links": [
-          {
-            "title": "Office finder",
-            "url": "https://web.arbeitsagentur.de/portal/metasuche/suche/dienststellen"
-          }
-        ]
-      }
-    },
-    "funding_conditions": {
-      "de": {
-        "title": "Der Leistungsumfang umfasst:",
-        "details": [
-          "Übergangsgeld als Lohnersatzleistung: in der Regel ca. 68 % Ihres letzten Nettogehalts (bzw. ca. 75 % bei Kindergeldberechtigung).",
-          "Übernahme der Sozialversicherungsbeiträge (Kranken-, Pflege-, Renten-, Arbeitslosen- und Unfallversicherung) während der Maßnahme.",
-          "Monatliche Zahlung nachträglich für die gesamte Dauer der Reha-Maßnahme.",
-          "Weiterzahlung bei krankheitsbedingter Unterbrechung bis zu 6 Wochen oder bei anerkannten wichtigen Gründen (z. B. Geburt, Umzug)."
-        ]
-      },
-      "en": {
-        "title": "The support package includes:",
-        "details": [
-          "Wage replacement benefit: typically about 68% of your last net income (or about 75% if you have a child eligible for child benefit).",
-          "Coverage of social insurance contributions (health, nursing care, pension, unemployment, and accident) during the program.",
-          "Monthly payments in arrears for the entire duration of the rehabilitation measure.",
-          "Continued payments for up to 6 weeks if you must interrupt for health reasons, or longer for other approved important reasons (e.g., childbirth, relocation)."
-        ]
-      }
-    },
-    "legal_basis": {
-      "de": {
-        "title": "Die gesetzlichen Grundlagen für das Übergangsgeld finden sich in folgenden Vorschriften:",
-        "links": [
-          {
-            "title": "§ 66 SGB IX – Zuständigkeit der Rehabilitationsträger",
-            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__66.html"
-          },
-          {
-            "title": "§ 67 SGB IX – Berechnung des Regelentgelts",
-            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__67.html"
-          },
-          {
-            "title": "§ 68 SGB IX – Berechnungsgrundlage in Sonderfällen",
-            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__68.html"
-          },
-          {
-            "title": "§ 69 SGB IX – Kontinuität der Bemessungsgrundlage",
-            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__69.html"
-          },
-          {
-            "title": "§ 70 SGB IX – Anpassung der Entgeltersatzleistungen",
-            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__70.html"
-          },
-          {
-            "title": "§ 71 SGB IX – Weiterzahlung der Leistungen",
-            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__71.html"
-          },
-          {
-            "title": "§ 72 SGB IX – Einkommensanrechnung",
-            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__72.html"
-          },
-          {
-            "title": "§ 118 SGB III – Übergangsgeld als besondere Leistung der Arbeitsförderung",
-            "url": "https://www.gesetze-im-internet.de/sgb_3/__118.html"
-          },
-          {
-            "title": "§ 119 SGB III – Vermittlungsziel und Rehabilitationsmaßnahmen",
-            "url": "https://www.gesetze-im-internet.de/sgb_3/__119.html"
-          },
-          {
-            "title": "§ 120 SGB III – Vorbeschäftigungszeit für das Übergangsgeld",
-            "url": "https://www.gesetze-im-internet.de/sgb_3/__120.html"
-          },
-          {
-            "title": "§ 121 SGB III – Besondere Formen der Förderung",
-            "url": "https://www.gesetze-im-internet.de/sgb_3/__121.html"
-          }
-        ]
-      },
-      "en": {
-        "title": "The legal bases for transitional allowance are set out in the following provisions:",
-        "links": [
-          {
-            "title": "Section 66 SGB IX – Responsibility of rehabilitation providers",
-            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__66.html"
-          },
-          {
-            "title": "Section 67 SGB IX – Calculation of the standard benefit",
-            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__67.html"
-          },
-          {
-            "title": "Section 68 SGB IX – Calculation basis in special cases",
-            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__68.html"
-          },
-          {
-            "title": "Section 69 SGB IX – Continuity of the calculation basis",
-            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__69.html"
-          },
-          {
-            "title": "Section 70 SGB IX – Adjustment of wage replacement benefits",
-            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__70.html"
-          },
-          {
-            "title": "Section 71 SGB IX – Continuation of payments",
-            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__71.html"
-          },
-          {
-            "title": "Section 72 SGB IX – Income offsetting",
-            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__72.html"
-          },
-          {
-            "title": "Section 118 SGB III – Transitional allowance as a special labour-promotion benefit",
-            "url": "https://www.gesetze-im-internet.de/sgb_3/__118.html"
-          },
-          {
-            "title": "Section 119 SGB III – Placement objective and rehabilitation measures",
-            "url": "https://www.gesetze-im-internet.de/sgb_3/__119.html"
-          },
-          {
-            "title": "Section 120 SGB III – Prior employment period for transitional allowance",
-            "url": "https://www.gesetze-im-internet.de/sgb_3/__120.html"
-          },
-          {
-            "title": "Section 121 SGB III – Special forms of support",
-            "url": "https://www.gesetze-im-internet.de/sgb_3/__121.html"
-          }
-        ]
-      }
-    },
-    "examples": {
-      "de": {
-        "title": "Beispielhafte Szenarien für eine Förderung:",
-        "examples": [
-          {
-            "title": "Teilzeitmaßnahme in einer beruflichen Reha-Einrichtung",
-            "text": "Ein Rehabilitand mit Behinderung hatte zuletzt ein Netto-Einkommen von 1.800 € pro Monat. Im Rahmen einer Teilzeitmaßnahme (50 % Arbeitszeit) erhält er Übergangsgeld in Höhe von ca. 1.224 € monatlich (68 % des letzten Nettoeinkommens). Bei Kindergeldberechtigung steigt dieser Betrag auf etwa 1.350 € (75 %). Diese Beträge dienen nur zur Veranschaulichung; die tatsächliche Höhe wird individuell berechnet."
-          },
-          {
-            "title": "Berufsrückkehr nach Familienpflege",
-            "text": "Eine Berufsrückkehrerin mit Behinderung beginnt eine einjährige berufliche Weiterbildung. Da sie innerhalb der letzten 12 Monate vor Maßnahmebeginn einen anerkannten Berufsabschluss erworben hat, entfällt die Vorbeschäftigungszeit. Bei einem letzten Nettogehalt von 2.000 € würde sie rund 1.360 € (68 %) bzw. 1.500 € (75 % mit Kind) Übergangsgeld erhalten. Illustrative Werte, tatsächliche Ansprüche können abweichen."
-          }
-        ]
-      },
-      "en": {
-        "title": "Example scenarios for funding:",
-        "examples": [
-          {
-            "title": "Part-time measure at a vocational rehabilitation facility",
-            "text": "A person with a disability previously earned a net salary of €1,800 per month. During a part-time program (50% working hours), they might receive about €1,224 per month as transitional allowance (68% of last net income). With an eligible child, this could increase to around €1,350 (75%). Figures are illustrative; actual amounts vary."
-          },
-          {
-            "title": "Return to work after caregiving",
-            "text": "A returning professional with a disability enrolls in a one-year training course. Having completed a recognized vocational qualification within the last 12 months, the prior-employment requirement is waived. On a last net salary of €2,000, they would receive approximately €1,360 (68%) or €1,500 (75% with a child). For illustration only; individual calculations apply."
-          }
-        ]
+      "brief": {
+        "de": "Der Antrag auf Übergangsgeld wird bei der zuständigen Agentur für Arbeit gestellt, wenn eine berufliche Reha-Maßnahme bewilligt ist.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: in der Regel die Agentur für Arbeit; in bestimmten Fällen die Deutsche Rentenversicherung.  \n- **Form der Antragstellung**: schriftlich über die offiziellen Formulare; teilweise auch online über das Portal der Bundesagentur für Arbeit möglich.  \n- **Unterlagen**: Nachweise über das letzte Einkommen (z. B. Lohnabrechnungen), Angaben zu Kindern und Familie sowie die Bewilligung der Reha-Maßnahme.  \n- **Fristen**: der Antrag sollte zeitnah nach Bewilligung der Reha-Maßnahme gestellt werden, damit die Zahlungen pünktlich einsetzen.",
+        "de_es": "Der Antrag auf Übergangsgeld wird bei der Agentur für Arbeit gestellt, wenn eine Reha-Maßnahme bewilligt ist.\n\n&nbsp;\n\n### Wichtige Punkte\n- **Zuständige Stelle**: meistens die Agentur für Arbeit, manchmal die Rentenversicherung.  \n- **Form**: schriftlich mit Formular, oft auch online möglich.  \n- **Unterlagen**: Nachweise über Einkommen, Familie und die Reha-Bewilligung.  \n- **Frist**: möglichst direkt nach Bewilligung der Maßnahme beantragen.",
+        "en": "The application for transition allowance must be submitted to the responsible employment agency once a vocational rehabilitation program has been approved.\n\n&nbsp;\n\n### Important details for the application\n- **Responsible authority**: usually the Federal Employment Agency; in some cases the German Pension Insurance.  \n- **Form of application**: in writing using official forms; in many cases also possible online via the Employment Agency’s portal.  \n- **Documents**: proof of last income (e.g. payslips), information about children and family, and the approval of the rehabilitation measure.  \n- **Deadlines**: the application should be submitted promptly after the rehabilitation program is approved to ensure timely payment."
       }
     }
   },
