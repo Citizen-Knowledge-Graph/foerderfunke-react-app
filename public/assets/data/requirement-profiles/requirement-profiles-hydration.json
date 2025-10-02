@@ -1364,6 +1364,48 @@
     "id": "ff:ausbildungsgeld",
     "status": "beta",
     "category": "social_benefit",
+    "general": {
+      "brief": {
+        "de": "Das Ausbildungsgeld ist eine Leistung zur Unterstützung von Menschen mit Behinderungen, die an einer berufsvorbereitenden Bildungsmaßnahme oder an einer besonderen Berufsausbildung teilnehmen. Ziel ist es, die Teilhabe am Arbeitsleben zu fördern.\n\n&nbsp;\n\n### Zentrale Aspekte\n- **Zielgruppe**: Menschen mit Behinderungen, die eine berufliche Erstausbildung oder Maßnahme zur Teilhabe am Arbeitsleben absolvieren.\n- **Leistung**: Monatliche finanzielle Unterstützung, deren Höhe von persönlichen Voraussetzungen wie Wohnsituation und Einkommen abhängt.\n- **Zuständige Stelle**: In der Regel die Agentur für Arbeit.",
+        "de_es": "Das Ausbildungsgeld ist eine Leistung zur Unterstützung von Menschen mit Behinderungen, die an einer berufsvorbereitenden Bildungsmaßnahme oder an einer besonderen Berufsausbildung teilnehmen. Ziel ist es, die Teilhabe am Arbeitsleben zu fördern.\n\n&nbsp;\n\n### Zentrale Aspekte\n- **Zielgruppe**: Menschen mit Behinderungen, die eine berufliche Erstausbildung oder Maßnahme zur Teilhabe am Arbeitsleben absolvieren.\n- **Leistung**: Monatliche finanzielle Unterstützung, deren Höhe von persönlichen Voraussetzungen wie Wohnsituation und Einkommen abhängt.\n- **Zuständige Stelle**: In der Regel die Agentur für Arbeit.",
+        "en": "The Ausbildungsgeld (training allowance) is a benefit that supports people with disabilities who participate in vocational preparation programs or in special vocational training. Its goal is to promote participation in working life.\n\n&nbsp;\n\n### Key Aspects\n- **Target group**: People with disabilities completing initial vocational training or measures for participation in working life.\n- **Benefit**: Monthly financial support, the amount depends on personal circumstances such as living situation and income.\n- **Responsible authority**: Usually the Employment Agency (Agentur für Arbeit)."
+      },
+      "examples": {
+        "de": [
+          {
+            "description": "Lisa (20) aus Köln hat eine Hörbehinderung und beginnt eine Ausbildung zur Kauffrau für Büromanagement.\n\n&nbsp;\n\n### Unterstützung durch Ausbildungsgeld\n- Sie erhält monatlich ein Ausbildungsgeld von **501 €**, um ihre Lebenshaltungskosten während der Ausbildung zu sichern.\n- Die Höhe richtet sich nach ihrer Wohnsituation: Da Lisa noch bei ihren Eltern wohnt, gilt der Satz für den elterlichen Haushalt.\n- Zuständig für die Bewilligung ist die Agentur für Arbeit."
+          },
+          {
+            "description": "Max (22) aus Leipzig hat eine körperliche Behinderung und beginnt eine Ausbildung zum Fachpraktiker im Gartenbau.\n\n&nbsp;\n\n### Unterstützung durch Ausbildungsgeld\n- Er erhält monatlich ein Ausbildungsgeld von **133 €**, weil er in einer Wohngruppe lebt und die Kosten für Unterkunft und Verpflegung von einem Leistungsträger übernommen werden.\n- Die Höhe richtet sich nach der Unterbringung: Bei Kostenerstattung in Wohnheim/Einrichtung gilt der reduzierte Satz.\n- Zuständig für die Bewilligung ist die Agentur für Arbeit."
+          }
+        ],
+        "de_es": [
+          {
+            "description": "Lisa (20) aus Köln hat eine Hörbehinderung und beginnt eine Ausbildung zur Kauffrau für Büromanagement.\n\n&nbsp;\n\n### Unterstützung durch Ausbildungsgeld\n- Sie erhält monatlich ein Ausbildungsgeld von **501 €**, um ihre Lebenshaltungskosten während der Ausbildung zu sichern.\n- Die Höhe richtet sich nach ihrer Wohnsituation: Da Lisa noch bei ihren Eltern wohnt, gilt der Satz für den elterlichen Haushalt.\n- Zuständig für die Bewilligung ist die Agentur für Arbeit."
+          },
+          {
+            "description": "Max (22) aus Leipzig hat eine körperliche Behinderung und beginnt eine Ausbildung zum Fachpraktiker im Gartenbau.\n\n&nbsp;\n\n### Unterstützung durch Ausbildungsgeld\n- Er erhält monatlich ein Ausbildungsgeld von **133 €**, weil er in einer Wohngruppe lebt und die Kosten für Unterkunft und Verpflegung von einem Leistungsträger übernommen werden.\n- Die Höhe richtet sich nach der Unterbringung: Bei Kostenerstattung in Wohnheim/Einrichtung gilt der reduzierte Satz.\n- Zuständig für die Bewilligung ist die Agentur für Arbeit."
+          }
+        ],
+        "en": [
+          {
+            "description": "Lisa (20) from Cologne has a hearing impairment and is starting vocational training as an office management assistant.\n\n&nbsp;\n\n### Support through training allowance\n- She receives a monthly training allowance of **€501** to cover her living expenses during the training.\n- The amount depends on her living situation: since Lisa still lives with her parents, the parental household rate applies.\n- The responsible authority for approval is the Employment Agency."
+          },
+          {
+            "description": "Max (22) from Leipzig has a physical disability and is beginning vocational training as a gardening assistant.\n\n&nbsp;\n\n### Support through training allowance\n- He receives a monthly training allowance of **€133** because he lives in a group home where the costs for accommodation and meals are covered by a benefit provider.\n- The amount depends on his type of accommodation: with cost coverage in a residential facility, the reduced rate applies.\n- The responsible authority for approval is the Employment Agency."
+          }
+        ]
+      }
+    },
+    "application_process": {
+      "brief": {
+        "de": "Der Antrag auf Ausbildungsgeld wird bei der zuständigen Agentur für Arbeit gestellt.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: immer die örtliche Agentur für Arbeit.\n- **Form der Antragstellung**: schriftlich über das offizielle Antragsformular; in vielen Regionen ist auch eine Online-Antragstellung über die Plattform der Bundesagentur für Arbeit möglich.\n- **Unterlagen**: erforderlich sind in der Regel ein Ausbildungsvertrag oder eine Maßnahmezuweisung, Nachweise über die Behinderung (z. B. ärztliche Gutachten, Feststellungsbescheid) sowie persönliche Identifikationsdokumente.\n- **Fristen**: der Antrag sollte rechtzeitig vor Beginn der Ausbildung oder Maßnahme gestellt werden, um eine lückenlose Förderung sicherzustellen.",
+
+        "de_es": "Der Antrag auf Ausbildungsgeld wird bei der zuständigen Agentur für Arbeit gestellt.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: immer die örtliche Agentur für Arbeit.\n- **Form der Antragstellung**: schriftlich über das offizielle Antragsformular; in vielen Regionen ist auch eine Online-Antragstellung über die Plattform der Bundesagentur für Arbeit möglich.\n- **Unterlagen**: erforderlich sind in der Regel ein Ausbildungsvertrag oder eine Maßnahmezuweisung, Nachweise über die Behinderung (z. B. ärztliche Gutachten, Feststellungsbescheid) sowie persönliche Identifikationsdokumente.\n- **Fristen**: der Antrag sollte rechtzeitig vor Beginn der Ausbildung oder Maßnahme gestellt werden, um eine lückenlose Förderung sicherzustellen.",
+
+        "en": "The application for Ausbildungsgeld (training allowance) must be submitted to the responsible employment agency (Agentur für Arbeit).\n\n&nbsp;\n\n### Important details for the application\n- **Responsible authority**: always the local employment agency.\n- **Form of application**: in writing via the official application form; in many regions, an online application through the Federal Employment Agency's portal is also possible.\n- **Documents**: usually required are a training contract or program assignment, proof of disability (e.g., medical reports, official disability status notice), and personal identification documents.\n- **Deadlines**: the application should be submitted before the start of the training or program to ensure continuous support."
+      }
+    },
     "title": {
       "de": "Ausbildungsgeld",
       "en": "Training Allowance"
@@ -1372,7 +1414,7 @@
       "de": "Menschen mit Behinderungen können zur Sicherung des Lebensunterhaltes Ausbildungsgeld erhalten, wenn sie an bestimmten Bildungsmaßnahmen teilnehmen. (Quelle: §§ 122 bis 126 SGB III)",
       "en": "People with disabilities can receive a training allowance to cover their living expenses if they participate in specific educational programs. (Source: §§ 122 to 126 SGB III)"
     },
-    "application_process": {
+    "application_process_OLD": {
       "de": {
         "title": "Der Antrag für das Ausbildungsgeld ist bei der Bundesagentur für Arbeit zu stellen. Weitere Informationen finden Sie auf der Website der Bundesagentur.",
         "links": [
