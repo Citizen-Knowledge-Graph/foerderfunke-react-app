@@ -154,8 +154,7 @@
     },
     "application_process": {
       "brief": {
-        "de": "Der Antrag auf Kinderzuschlag wird bei der Familienkasse der Bundesagentur für Arbeit gestellt.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: die örtliche Familienkasse der Bundesagentur für Arbeit.  \n- **Form der Antragstellung**: schriftlich über die offiziellen Antragsformulare oder online über das KiZ-Digital-Portal der Familienkasse.  \n- **Unterlagen**: erforderlich sind Nachweise über Einkommen und Vermögen der Eltern, Mietkosten oder Nachweise über andere Belastungen sowie ein gültiges Ausweisdokument.  \n- **Fristen**: der Antrag sollte möglichst früh gestellt werden, da Leistungen nur ab dem Monat der Antragstellung gezahlt werden und nicht rückwirkend."
-        ,
+        "de": "Der Antrag auf Kinderzuschlag wird bei der Familienkasse der Bundesagentur für Arbeit gestellt.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: die örtliche Familienkasse der Bundesagentur für Arbeit.  \n- **Form der Antragstellung**: schriftlich über die offiziellen Antragsformulare oder online über das KiZ-Digital-Portal der Familienkasse.  \n- **Unterlagen**: erforderlich sind Nachweise über Einkommen und Vermögen der Eltern, Mietkosten oder Nachweise über andere Belastungen sowie ein gültiges Ausweisdokument.  \n- **Fristen**: der Antrag sollte möglichst früh gestellt werden, da Leistungen nur ab dem Monat der Antragstellung gezahlt werden und nicht rückwirkend.",
         "en": "The application for the child supplement (Kinderzuschlag) must be submitted to the Family Benefits Office (Familienkasse) of the Federal Employment Agency.\n\n&nbsp;\n\n### Important details for the application\n- **Responsible authority**: the local Family Benefits Office (Familienkasse) of the Federal Employment Agency.  \n- **Form of application**: in writing using the official application forms or online via the KiZ-Digital portal of the Familienkasse.  \n- **Documents**: required are proof of parents’ income and assets, rental costs or proof of other financial burdens, and a valid identification document.  \n- **Deadlines**: the application should be submitted as early as possible, as benefits are only paid from the month of application and not retroactively."
       }
     }
@@ -1870,114 +1869,44 @@
       "de": "In einer unerwartet eintretenden Pflegesituation können Beschäftigte bis zu zehn Arbeitstage der Arbeit fernbleiben, um für einen pflegebedürftigen nahen Angehörigen die Versorgung zu organisieren oder selbst sicherzustellen. Die Freistellung ist grundsätzlich unbezahlt; zur Einkommenssicherung kann Pflegeunterstützungsgeld beantragt werden.",
       "en": "When an unexpected need for care arises, employees may take up to ten working days off to organise or provide care for a dependent close relative. The leave is generally unpaid; a care support allowance can be claimed to compensate lost earnings."
     },
+    "general": {
+      "brief": {
+        "de": "Die kurzzeitige Arbeitsverhinderung ermöglicht Beschäftigten, bis zu zehn Arbeitstage der Arbeit fernzubleiben, um in einer akuten Pflegesituation die Versorgung einer nahen Angehörigen oder eines nahen Angehörigen sicherzustellen. Während dieser Zeit besteht Anspruch auf Pflegeunterstützungsgeld.\n\n&nbsp;\n\n### Zentrale Aspekte der kurzzeitigen Arbeitsverhinderung\n- Dauer: bis zu zehn Arbeitstage pro akuter Pflegesituation.\n- Anspruchsberechtigt sind Beschäftigte, die kurzfristig die Pflege einer oder eines nahen Angehörigen übernehmen müssen.\n- Für den Verdienstausfall gibt es Pflegeunterstützungsgeld von der Pflegekasse der oder des Pflegebedürftigen.\n- Die Höhe beträgt in der Regel 90 % des ausgefallenen Nettoarbeitsentgelts (bei Einmalzahlungen 100 %).\n- Zuständig ist die Pflegekasse der oder des pflegebedürftigen Angehörigen.",
+        "de_es": "Die kurzzeitige Arbeitsverhinderung ermöglicht Beschäftigten, bis zu zehn Arbeitstage der Arbeit fernzubleiben, um in einer akuten Pflegesituation die Versorgung einer nahen Angehörigen oder eines nahen Angehörigen sicherzustellen. Während dieser Zeit besteht Anspruch auf Pflegeunterstützungsgeld.\n\n&nbsp;\n\n### Zentrale Aspekte der kurzzeitigen Arbeitsverhinderung\n- Dauer: bis zu zehn Arbeitstage pro akuter Pflegesituation.\n- Anspruchsberechtigt sind Beschäftigte, die kurzfristig die Pflege einer oder eines nahen Angehörigen übernehmen müssen.\n- Für den Verdienstausfall gibt es Pflegeunterstützungsgeld von der Pflegekasse der oder des Pflegebedürftigen.\n- Die Höhe beträgt in der Regel 90 % des ausgefallenen Nettoarbeitsentgelts (bei Einmalzahlungen 100 %).\n- Zuständig ist die Pflegekasse der oder des pflegebedürftigen Angehörigen.",
+        "en": "Short-term work leave for acute care situations allows employees to take up to ten working days off to organize or provide care for a close relative in need of immediate assistance. During this time, they are entitled to care support allowance (Pflegeunterstützungsgeld).\n\n&nbsp;\n\n### Key aspects of short-term work leave for care\n- Duration: up to ten working days per acute care situation.\n- Eligible are employees who must temporarily take over the care of a close relative.\n- Compensation for lost earnings is provided through care support allowance from the relative’s long-term care insurance fund.\n- The allowance usually amounts to 90% of the lost net income (100% if one-time payments are included).\n- The responsible authority is the care insurance fund of the dependent relative."
+      },
+      "examples": {
+        "de": [
+          {
+            "description": "Sabine (42) aus Köln arbeitet als kaufmännische Angestellte. Ihr Vater erleidet plötzlich einen Schlaganfall, sodass sie kurzfristig zehn Tage frei nimmt, um die Pflege zu organisieren.\n\n&nbsp;\n\n### Unterstützung durch Pflegeunterstützungsgeld\n- Sabine verdient netto rund 2.000 € im Monat.\n- Während der Freistellung erhält sie 90 % als Pflegeunterstützungsgeld – also etwa **1.800 €**.\n- Zuständig ist die Pflegekasse ihres Vaters.\n- Ihre Mitwirkungspflicht: Sie muss der Pflegekasse ärztliche Nachweise über die akute Pflegesituation vorlegen."
+          },
+          {
+            "description": "Markus (38) aus Dresden ist IT-Spezialist. Seine Schwester wird nach einem Unfall plötzlich pflegebedürftig, weshalb Markus fünf Tage kurzfristig aussetzt, um die Versorgung zu organisieren.\n\n&nbsp;\n\n### Unterstützung durch Pflegeunterstützungsgeld\n- Markus hat ein monatliches Nettoeinkommen von 2.500 €.\n- Er erhält 90 % als Pflegeunterstützungsgeld – also ca. **2.250 €**.\n- Zuständig ist die Pflegekasse seiner Schwester.\n- Seine Mitwirkungspflicht: Er muss die Pflegekasse unverzüglich informieren und eine ärztliche Bescheinigung der Pflegebedürftigkeit einreichen."
+          }
+        ],
+        "de_es": [
+          {
+            "description": "Sabine (42) aus Köln arbeitet als kaufmännische Angestellte. Ihr Vater erleidet plötzlich einen Schlaganfall, sodass sie kurzfristig zehn Tage frei nimmt, um die Pflege zu organisieren.\n\n&nbsp;\n\n### Unterstützung durch Pflegeunterstützungsgeld\n- Sabine verdient netto rund 2.000 € im Monat.\n- Während der Freistellung erhält sie 90 % als Pflegeunterstützungsgeld – also etwa **1.800 €**.\n- Zuständig ist die Pflegekasse ihres Vaters.\n- Ihre Mitwirkungspflicht: Sie muss der Pflegekasse ärztliche Nachweise über die akute Pflegesituation vorlegen."
+          },
+          {
+            "description": "Markus (38) aus Dresden ist IT-Spezialist. Seine Schwester wird nach einem Unfall plötzlich pflegebedürftig, weshalb Markus fünf Tage kurzfristig aussetzt, um die Versorgung zu organisieren.\n\n&nbsp;\n\n### Unterstützung durch Pflegeunterstützungsgeld\n- Markus hat ein monatliches Nettoeinkommen von 2.500 €.\n- Er erhält 90 % als Pflegeunterstützungsgeld – also ca. **2.250 €**.\n- Zuständig ist die Pflegekasse seiner Schwester.\n- Seine Mitwirkungspflicht: Er muss die Pflegekasse unverzüglich informieren und eine ärztliche Bescheinigung der Pflegebedürftigkeit einreichen."
+          }
+        ],
+        "en": [
+          {
+            "description": "Sabine (42) from Cologne works as an office clerk. When her father suddenly suffers a stroke, she takes ten days off to organize his care.\n\n&nbsp;\n\n### Support through care allowance\n- Sabine earns about €2,000 net per month.\n- During her leave she receives 90% as care support allowance – around **€1,800**.\n- The responsible authority is her father’s care insurance fund.\n- Her duty to cooperate: She must provide the care fund with medical proof of the acute care situation."
+          },
+          {
+            "description": "Markus (38) from Dresden is an IT specialist. When his sister becomes dependent on care after an accident, Markus takes five days off to arrange support.\n\n&nbsp;\n\n### Support through care allowance\n- Markus has a monthly net income of €2,500.\n- He receives 90% as care support allowance – about **€2,250**.\n- The responsible authority is his sister’s care insurance fund.\n- His duty to cooperate: He must notify the care fund immediately and submit a medical certificate of the need for care."
+          }
+        ]
+      }
+    },
     "application_process": {
-      "de": {
-        "title": "Grundsätzlich gibt es keinen formellen Antrag, um die kurzzeitige Pflegezeit zu beantragen. Beschäftigte müssen jedoch ihren Arbeitgeber unverzüglich über die Inanspruchnahme informieren und die Gründe darlegen. Unter Umständen ist ein ärztliches Attest erforderlich, um die Notwendigkeit der Pflege zu belegen.",
-        "links": [
-          {
-            "title": "Informationen & Online-Leitfaden „Hilfe in akuten Pflegesituationen“",
-            "url": "https://www.wege-zur-pflege.de/wege-zur-pflege/pflegende-angehoerige/hilfe-in-akuten-pflegesituationen"
-          },
-          {
-            "title": "Musterformular Ärztliche Bescheinigung",
-            "url": "https://www.wege-zur-pflege.de/resource/blob/252860/9a70cf71780ca2d7e0a4c891c93dd5de/aerztliche-bescheinigung-kurzzeitige-arbeitsverhinderung-data.pdf"
-          }
-        ]
-      },
-      "en": {
-        "title": "There is generally no formal application to request short-term care leave. However, employees must promptly inform their employer about the need for leave and provide reasons. In some cases, a medical certificate may be required to substantiate the need for care.",
-        "links": [
-          {
-            "title": "Information & Online Guide 'Help in Acute Care Situations'",
-            "url": "https://www.wege-zur-pflege.de/wege-zur-pflege/pflegende-angehoerige/hilfe-in-akuten-pflegesituationen"
-          },
-          {
-            "title": "Sample Form Medical Certificate",
-            "url": "https://www.wege-zur-pflege.de/resource/blob/252860/9a70cf71780ca2d7e0a4c891c93dd5de/aerztliche-bescheinigung-kurzzeitige-arbeitsverhinderung-data.pdf"
-          }
-        ]
-      }
-    },
-    "funding_conditions": {
-      "de": {
-        "title": "Leistungsumfang & Voraussetzungen:",
-        "details": [
-          "Freistellung bis zu 10 Arbeitstage pro akuter Pflegesituation (§ 2 Abs. 1 PflegeZG).",
-          "Keine Ankündigungsfrist; Verhinderung und Dauer müssen dem Arbeitgeber unverzüglich mitgeteilt werden.",
-          "Auf Verlangen Vorlage einer ärztlichen Bescheinigung, die Pflegebedürftigkeit (mind. Pflegegrad 1) und Erforderlichkeit bestätigt.",
-          "Geltung für alle Arbeitgebergrößen; während der Freistellung besteht besonderer Kündigungsschutz.",
-          "Pflegeunterstützungsgeld: 90 % des ausgefallenen Nettoarbeitsentgelts, 100 % bei beitragspflichtigen Einmalzahlungen (max. 70 % der BBG); Anspruch nur bei fehlender Entgeltfortzahlung.",
-          "Anspruch pro pflegebedürftiger Person kalenderjährlich auf 10 Arbeitstage begrenzt; Angehörige können Tage aufteilen.",
-          "Nutzung auch für im Ausland lebende Angehörige möglich, sofern diese in der deutschen Pflegeversicherung versichert sind."
-        ]
-      },
-      "en": {
-        "title": "Scope & requirements:",
-        "details": [
-          "Leave of up to 10 working days per acute care event (Sec. 2 (1) Care Leave Act).",
-          "No notice period; employee must inform the employer immediately about absence and expected duration.",
-          "Medical certificate (need for care of at least Care Level 1 and necessity of employee’s involvement) on request.",
-          "Applies to employers of any size; special protection against dismissal during leave.",
-          "Care support allowance: 90 % of lost net pay, or 100 % if subject to recent lump-sum earnings (capped at 70 % of the contribution assessment ceiling); payable only if no wage continuation is due.",
-          "Entitlement limited to 10 working days per care recipient per calendar year; family members may share the days.",
-          "Can be used for relatives abroad if they are insured in the German long-term-care scheme."
-        ]
-      }
-    },
-    "legal_basis": {
-      "de": {
-        "title": "Gesetzliche Grundlagen:",
-        "links": [
-          {
-            "title": "§ 2 Pflegezeitgesetz – Kurzzeitige Arbeitsverhinderung",
-            "url": "https://www.gesetze-im-internet.de/pflegezg/__2.html"
-          },
-          {
-            "title": "§ 44a Abs. 3 SGB XI – Pflegeunterstützungsgeld",
-            "url": "https://www.gesetze-im-internet.de/sgb_11/__44a.html"
-          }
-        ]
-      },
-      "en": {
-        "title": "Legal basis:",
-        "links": [
-          {
-            "title": "Section 2 Care Leave Act (German)",
-            "url": "https://www.gesetze-im-internet.de/pflegezg/__2.html"
-          },
-          {
-            "title": "Section 44a (3) SGB XI – Care support allowance (German)",
-            "url": "https://www.gesetze-im-internet.de/sgb_11/__44a.html"
-          }
-        ]
-      }
-    },
-    "examples": {
-      "de": {
-        "title": "Beispielszenarien:",
-        "examples": [
-          {
-            "title": "Hüftbruch der Mutter",
-            "text": "Nach dem Oberschenkelhalsbruch seiner Mutter beantragt ein Angestellter sieben Arbeitstage, um Reha-Platz und häusliche Pflege zu organisieren; er erhält Pflegeunterstützungsgeld von der Pflegekasse."
-          },
-          {
-            "title": "Pflege im Ausland",
-            "text": "Eine Arbeitnehmerin reist kurzfristig nach Spanien, um ihren dort lebenden Vater (bei deutscher Pflegekasse versichert) nach einem Schlaganfall zu versorgen; sie nutzt fünf Tage Kurzzeitige Arbeitsverhinderung und Pflegeunterstützungsgeld."
-          }
-        ]
-      },
-      "en": {
-        "title": "Example scenarios:",
-        "examples": [
-          {
-            "title": "Mother’s hip fracture",
-            "text": "After his mother’s hip fracture, an employee takes seven working days to arrange rehabilitation and home care; the health-insurance fund pays care support allowance."
-          },
-          {
-            "title": "Care abroad",
-            "text": "An employee travels to Spain to organise care for her father (insured in the German care system) after a stroke; she claims five days of short-term care leave and the allowance."
-          }
-        ]
+      "brief": {
+        "de": "Der Antrag auf Pflegeunterstützungsgeld im Rahmen einer kurzzeitigen Arbeitsverhinderung wird bei der Pflegekasse der oder des pflegebedürftigen Angehörigen gestellt. Gleichzeitig muss der eigene Arbeitgeber unverzüglich über die Arbeitsverhinderung informiert werden.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: die Pflegekasse der oder des pflegebedürftigen Angehörigen.\n- **Form der Antragstellung**: schriftlich über die Formulare der Pflegekasse oder formlos per Mitteilung; häufig auch telefonisch oder online möglich.\n- **Unterlagen**: in der Regel erforderlich sind eine ärztliche Bescheinigung über die akute Pflegebedürftigkeit und Nachweise zum Einkommen der antragstellenden Person.\n- **Fristen**: der Antrag muss unmittelbar nach Eintritt der akuten Pflegesituation gestellt werden, da Leistungen nicht rückwirkend gezahlt werden.\n- **Arbeitgeber**: Beschäftigte sind verpflichtet, den Arbeitgeber sofort über die Arbeitsverhinderung und deren voraussichtliche Dauer zu informieren.",
+        "de_es": "Der Antrag auf Pflegeunterstützungsgeld im Rahmen einer kurzzeitigen Arbeitsverhinderung wird bei der Pflegekasse der oder des pflegebedürftigen Angehörigen gestellt. Gleichzeitig muss der eigene Arbeitgeber unverzüglich über die Arbeitsverhinderung informiert werden.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: die Pflegekasse der oder des pflegebedürftigen Angehörigen.\n- **Form der Antragstellung**: schriftlich über die Formulare der Pflegekasse oder formlos per Mitteilung; häufig auch telefonisch oder online möglich.\n- **Unterlagen**: in der Regel erforderlich sind eine ärztliche Bescheinigung über die akute Pflegebedürftigkeit und Nachweise zum Einkommen der antragstellenden Person.\n- **Fristen**: der Antrag muss unmittelbar nach Eintritt der akuten Pflegesituation gestellt werden, da Leistungen nicht rückwirkend gezahlt werden.\n- **Arbeitgeber**: Beschäftigte sind verpflichtet, den Arbeitgeber sofort über die Arbeitsverhinderung und deren voraussichtliche Dauer zu informieren.",
+        "en": "The application for care support allowance (Pflegeunterstützungsgeld) as part of short-term work leave for acute care must be submitted to the care insurance fund of the dependent relative. At the same time, the employee must immediately inform their employer about the absence.\n\n&nbsp;\n\n### Important details for the application\n- **Responsible authority**: the care insurance fund of the dependent relative.\n- **Form of application**: in writing using the forms of the care fund or informally by notification; in many cases also by phone or online.\n- **Documents**: usually required are a medical certificate confirming the acute need for care and proof of the applicant’s income.\n- **Deadlines**: the application must be submitted immediately after the onset of the acute care situation, as benefits are not granted retroactively.\n- **Employer**: employees are obliged to notify their employer immediately about the absence and its expected duration."
       }
     }
   },
