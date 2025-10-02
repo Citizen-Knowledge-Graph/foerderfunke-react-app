@@ -273,6 +273,7 @@ const translations = {
                 general: {
                     exampleBtn: "Show example",
                     exampleBtnClose: "Close example",
+                    example: "Example"
                 },
                 applicationProcess: {
                     title: "The application",
@@ -650,7 +651,8 @@ const translations = {
                 eligibilityBtn: "Anspruch prüfen",
                 general: {
                     exampleBtn: "Beispiel anzeigen",
-                    exampleBtnClose: "Beispiel schließen"
+                    exampleBtnClose: "Beispiel schließen",
+                    example: "Beispiel"
                 },
                 applicationProcess: {
                     title: "Wie stelle ich den Antrag?",

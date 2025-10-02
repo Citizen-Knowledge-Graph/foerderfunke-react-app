@@ -5,7 +5,7 @@ import theme from '@/theme';
 import BenefitPageMarkdownElement from './BenefitPageMarkDownElement';
 
 
-const BenefitPageExample = ({ idx, content }) => {
+const BenefitPageExample = ({ t, idx, content }) => {
     const [open, setOpen] = useState(true);
 
     return (
@@ -23,7 +23,7 @@ const BenefitPageExample = ({ idx, content }) => {
             <VBox sx={{ gap: 2 }}>
                 <HBox sx={{ justifyContent: "space-between", alignItems: "center", cursor: "pointer" }} onClick={() => setOpen(!open)}>
                     <Typography variant="h2" sx={{ fontWeight: 400, wordBreak: "break-word", color: 'pink.main' }}>
-                        Beispiel{content.title ? `: ${content.title}` : ` ${idx}`}
+                        {t('app.benefitPage.general.example')}{content.title ? `: ${content.title}` : ` ${idx}`}
                     </Typography>
 
                 </HBox>
