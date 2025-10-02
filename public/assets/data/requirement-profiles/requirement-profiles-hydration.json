@@ -113,122 +113,50 @@
       "de": "Den Kinderzuschlag (kurz: KiZ) können Eltern bekommen, deren Einkommen für den eigenen Lebensunterhalt reicht, aber nicht oder nur knapp ausreicht, um auch für den gesamten Bedarf Ihrer Familie aufzukommen. Voraussetzung ist, dass Sie schon Kindergeld beziehen. Der Kinderzuschlag wird immer für sechs Monate am Stück bewilligt.",
       "en": "Child allowance (KiZ) is a benefit for parents whose income is sufficient to cover their own living expenses, but not enough to cover the entire needs of their family. The child allowance is always granted for six months at a time."
     },
+    "general": {
+      "brief": {
+        "de": "Der Kinderzuschlag (KiZ) ist eine Leistung für Familien mit geringem Einkommen. Er wird zusätzlich zum Kindergeld gezahlt und soll verhindern, dass Familien allein wegen der Kinder auf Bürgergeld angewiesen sind.\n\n&nbsp;\n\n### Zentrale Aspekte des Kinderzuschlags\n- Anspruchsberechtigt sind Eltern, die Kindergeld erhalten und deren Einkommen zwar den eigenen Bedarf, nicht aber den gesamten Familienbedarf deckt.\n- Die Höhe des Kinderzuschlags beträgt bis zu **297 € pro Kind und Monat** (Stand 2025).  \n- Zusätzlich können Leistungen für Bildung und Teilhabe beantragt werden.\n- Zuständig ist die Familienkasse der Bundesagentur für Arbeit.",
+        "de_es": "Der Kinderzuschlag (KiZ) ist eine Leistung für Familien mit geringem Einkommen. Er wird zusätzlich zum Kindergeld gezahlt und soll verhindern, dass Familien allein wegen der Kinder auf Bürgergeld angewiesen sind.\n\n&nbsp;\n\n### Zentrale Aspekte des Kinderzuschlags\n- Anspruchsberechtigt sind Eltern, die Kindergeld erhalten und deren Einkommen zwar den eigenen Bedarf, nicht aber den gesamten Familienbedarf deckt.\n- Die Höhe des Kinderzuschlags beträgt bis zu **297 € pro Kind und Monat** (Stand 2025).  \n- Zusätzlich können Leistungen für Bildung und Teilhabe beantragt werden.\n- Zuständig ist die Familienkasse der Bundesagentur für Arbeit.",
+        "en": "The child supplement (Kinderzuschlag, KiZ) is a benefit for families with low income. It is paid in addition to child benefit and is intended to prevent families from having to rely on Citizens’ Benefit (Bürgergeld) solely because of their children.\n\n&nbsp;\n\n### Key aspects of the child supplement\n- Eligible are parents who receive child benefit and whose income covers their own needs but not the full family needs.\n- The amount of the child supplement is up to **€297 per child per month** (as of 2025).  \n- Additional benefits for education and participation can be applied for.\n- The responsible authority is the Familienkasse of the Federal Employment Agency."
+      },
+      "examples": {
+        "de": [
+          {
+            "title": "Teilzeitbeschäftigte Mutter",
+            "description": "Anna (32) aus Bremen arbeitet in Teilzeit im Einzelhandel und hat eine 5-jährige Tochter.\n\n&nbsp;\n\n### Unterstützung durch den Kinderzuschlag\n- Annas Einkommen reicht aus, um ihren eigenen Bedarf zu decken, aber nicht den gesamten Bedarf der Familie.\n- Da ihr Einkommen nur knapp oberhalb der Mindestgrenze liegt, wird der Höchstbetrag von 297 € teilweise angerechnet. Anna erhält deshalb **250 € pro Monat** zusätzlich zum Kindergeld.\n- Über den Kinderzuschlag kann sie außerdem Leistungen für Bildung und Teilhabe in Anspruch nehmen (z. B. Zuschüsse für Kita-Mittagessen und Vereinsbeiträge)."
+          },
+          {
+            "title": "Familie mit mehreren Kindern",
+            "description": "Mehmet (40) und Aylin (38) aus Köln haben drei Kinder im Alter von 4, 8 und 12 Jahren. Beide arbeiten in Vollzeit, ihr Einkommen ist jedoch durch die hohen Wohnkosten knapp.\n\n&nbsp;\n\n### Unterstützung durch den Kinderzuschlag\n- Da das Einkommen der Eltern zwar den Eigenbedarf, aber nicht den Bedarf der gesamten Familie deckt, besteht Anspruch auf den vollen Kinderzuschlag.\n- Die Familie erhält für jedes Kind den Höchstbetrag von **297 € pro Monat**, insgesamt also **891 €** zusätzlich zum Kindergeld.\n- Damit wird die finanzielle Situation deutlich entlastet und zusätzliche Bildungsangebote für die Kinder werden möglich."
+          }
+        ],
+        "de_es": [
+          {
+            "title": "Teilzeitbeschäftigte Mutter",
+            "description": "Anna (32) aus Bremen arbeitet in Teilzeit im Einzelhandel und hat eine 5-jährige Tochter.\n\n&nbsp;\n\n### Unterstützung durch den Kinderzuschlag\n- Annas Einkommen reicht aus, um ihren eigenen Bedarf zu decken, aber nicht den gesamten Bedarf der Familie.\n- Da ihr Einkommen nur knapp oberhalb der Mindestgrenze liegt, wird der Höchstbetrag von 297 € teilweise angerechnet. Anna erhält deshalb **250 € pro Monat** zusätzlich zum Kindergeld.\n- Über den Kinderzuschlag kann sie außerdem Leistungen für Bildung und Teilhabe in Anspruch nehmen (z. B. Zuschüsse für Kita-Mittagessen und Vereinsbeiträge)."
+          },
+          {
+            "title": "Familie mit mehreren Kindern",
+            "description": "Mehmet (40) und Aylin (38) aus Köln haben drei Kinder im Alter von 4, 8 und 12 Jahren. Beide arbeiten in Vollzeit, ihr Einkommen ist jedoch durch die hohen Wohnkosten knapp.\n\n&nbsp;\n\n### Unterstützung durch den Kinderzuschlag\n- Da das Einkommen der Eltern zwar den Eigenbedarf, aber nicht den Bedarf der gesamten Familie deckt, besteht Anspruch auf den vollen Kinderzuschlag.\n- Die Familie erhält für jedes Kind den Höchstbetrag von **297 € pro Monat**, insgesamt also **891 €** zusätzlich zum Kindergeld.\n- Damit wird die finanzielle Situation deutlich entlastet und zusätzliche Bildungsangebote für die Kinder werden möglich."
+          }
+        ],
+        "en": [
+          {
+            "title": "Part-time working mother",
+            "description": "Anna (32) from Bremen works part-time in retail and has a 5-year-old daughter.\n\n&nbsp;\n\n### Support through the child supplement\n- Anna’s income is sufficient to cover her own needs but not the full needs of the family.\n- Since her income is just above the minimum threshold, the maximum amount of €297 is partially offset. Anna therefore receives **€250 per month** in addition to child benefit.\n- Through the child supplement, she can also access education and participation benefits (e.g., subsidies for daycare meals and club memberships)."
+          },
+          {
+            "title": "Family with multiple children",
+            "description": "Mehmet (40) and Aylin (38) from Cologne have three children aged 4, 8, and 12. Both work full-time, but their income is tight due to high housing costs.\n\n&nbsp;\n\n### Support through the child supplement\n- Since the parents’ income covers their own needs but not the full needs of the entire family, they are entitled to the full child supplement.\n- The family receives the maximum amount of **€297 per child per month**, totaling **€891** in addition to child benefit.\n- This significantly eases their financial situation and enables additional educational opportunities for the children."
+          }
+        ]
+      }
+    },
     "application_process": {
-      "de": {
-        "title": "Den Kinderzuschlag können Sie online auf der Seite der Bundesagentur für Arbeit beantragen. Den Papierantrag gibt es auch zum Ausdrucken. Dieser muss dann an die regional zuständige Familienkasse gesendet werden.",
-        "links": [
-          {
-            "title": "Online Antrag",
-            "url": "https://web.arbeitsagentur.de/kiz/ui/start"
-          },
-          {
-            "title": "Antrag zum Ausdrucken",
-            "url": "https://www.arbeitsagentur.de/familie-und-kinder/downloads-familie-und-kinder"
-          },
-          {
-            "title": "Familienkassen in Deutschland",
-            "url": "https://web.arbeitsagentur.de/portal/metasuche/suche/dienststellen?in=familienkassen"
-          }
-        ]
-      },
-      "en": {
-        "title": "You can apply for the child allowance online on the Federal Employment Agency website. The paper application form is also available for printing. This must then be sent to the regionally responsible family benefits office.",
-        "links": [
-          {
-            "title": "Online application",
-            "url": "https://web.arbeitsagentur.de/kiz/ui/start"
-          },
-          {
-            "title": "Application for printing",
-            "url": "https://www.arbeitsagentur.de/familie-und-kinder/downloads-familie-und-kinder"
-          },
-          {
-            "title": "Family benefits offices in Germany",
-            "url": "https://web.arbeitsagentur.de/portal/metasuche/suche/dienststellen?in=familienkassen"
-          }
-        ]
-      }
-    },
-    "required_documents": {
-      "de": [
-        "Einkommensnachweise der letzten sechs Monate",
-        "Mietvertrag oder Mietbescheinigung",
-        "Nachweise über das Einkommen des Partners oder der Partnerin",
-        "Nachweise über das Einkommen der Kinder"
-      ],
-      "en": [
-        "Income statements for the last six months",
-        "Rental agreement or rental certificate",
-        "Proof of income of the partner",
-        "Proof of income of the children"
-      ]
-    },
-    "additional_support": {
-      "de": {
-        "title": "Für mehr Informationen und Fragen zur Antragsstellung, Anspruch, etc. wendest du dich am besten an deine lokale Familienkasse.",
-        "links": [
-          {
-            "title": "Familienkassen in Deutschland",
-            "url": "https://web.arbeitsagentur.de/portal/metasuche/suche/dienststellen?in=familienkassen"
-          }
-        ]
-      },
-      "en": {
-        "title": "For more information and questions about the application process, entitlement, etc., please contact your local family benefits office.",
-        "links": [
-          {
-            "title": "Family benefits offices in Germany",
-            "url": "https://web.arbeitsagentur.de/portal/metasuche/suche/dienststellen?in=familienkassen"
-          }
-        ]
-      }
-    },
-    "legal_basis": {
-      "de": {
-        "title": "Die Gesetzesgrundlage für den Kinderzuschlag findet sich im Bundeskindergeldgesetz.",
-        "links": [
-          {
-            "title": "Bundeskindergeldgesetz",
-            "url": "https://www.gesetze-im-internet.de/bkgg_1996/BJNR137800995.html"
-          }
-        ]
-      },
-      "en": {
-        "title": "The legal basis for the child allowance can be found in the Federal Child Benefit Act.",
-        "links": [
-          {
-            "title": "Federal Child Benefit Act",
-            "url": "https://www.gesetze-im-internet.de/bkgg_1996/BJNR137800995.html"
-          }
-        ]
-      }
-    },
-    "further_information": {
-      "de": {
-        "title": "Hier finden Sie weitere Informationen zum Kinderzuschlag:",
-        "links": [
-          {
-            "title": "Familienportal des Bundes",
-            "url": "https://familienportal.de/familienportal/familienleistungen/kinderzuschlag"
-          },
-          {
-            "title": "Sozialplattform.",
-            "url": "https://sozialplattform.de/inhalt/kinderzuschlag"
-          }
-        ]
-      },
-      "en": {
-        "title": "You can find more information about the child allowance on the following websites:",
-        "links": [
-          {
-            "title": "Federal Family Portal",
-            "url": "https://familienportal.de/familienportal/familienleistungen/kinderzuschlag"
-          },
-          {
-            "title": "Sozialplattform",
-            "url": "https://sozialplattform.de/inhalt/kinderzuschlag"
-          }
-        ]
+      "brief": {
+        "de": "Der Antrag auf Kinderzuschlag wird bei der Familienkasse der Bundesagentur für Arbeit gestellt.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: die örtliche Familienkasse der Bundesagentur für Arbeit.  \n- **Form der Antragstellung**: schriftlich über die offiziellen Antragsformulare oder online über das KiZ-Digital-Portal der Familienkasse.  \n- **Unterlagen**: erforderlich sind Nachweise über Einkommen und Vermögen der Eltern, Mietkosten oder Nachweise über andere Belastungen sowie ein gültiges Ausweisdokument.  \n- **Fristen**: der Antrag sollte möglichst früh gestellt werden, da Leistungen nur ab dem Monat der Antragstellung gezahlt werden und nicht rückwirkend."
+        ,
+        "en": "The application for the child supplement (Kinderzuschlag) must be submitted to the Family Benefits Office (Familienkasse) of the Federal Employment Agency.\n\n&nbsp;\n\n### Important details for the application\n- **Responsible authority**: the local Family Benefits Office (Familienkasse) of the Federal Employment Agency.  \n- **Form of application**: in writing using the official application forms or online via the KiZ-Digital portal of the Familienkasse.  \n- **Documents**: required are proof of parents’ income and assets, rental costs or proof of other financial burdens, and a valid identification document.  \n- **Deadlines**: the application should be submitted as early as possible, as benefits are only paid from the month of application and not retroactively."
       }
     }
   },
