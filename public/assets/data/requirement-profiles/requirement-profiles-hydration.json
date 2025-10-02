@@ -402,6 +402,52 @@
     "teaser": {
       "de": "Wohngeld ist eine Leistung für Menschen mit geringem Einkommen, die ihren Lebensunterhalt bzw. ihren alltäglichen Bedarf und die Miete/Wohnkosten nicht vollständig alleine stemmen können. Wohngeld wird als Zuschuss zur Miete oder zu den Kosten selbst genutzten Wohneigentums gezahlt und richtet sich nach dem eigenen Einkommen, der Miete/Wohnkosten sowie der Wohnregion.",
       "en": "Housing benefit is a benefit for people with low incomes who cannot fully cover their living expenses, daily needs, and rent/housing costs on their own. Housing allowance is granted as a subsidy for rent or the costs of owner-occupied housing and is determined based on one’s income, rent/housing costs, and the residential region."
+    },
+    "general": {
+      "brief": {
+        "de": "Wohngeld ist ein Zuschuss zu den Wohnkosten für Haushalte mit geringem Einkommen, die ihre Unterkunft selbst finanzieren (Miete oder Eigenheimkosten). Es wird nicht gezahlt, wenn bereits Bürgergeld mit Leistungen für Unterkunft und Heizung bezogen wird.\n\n&nbsp;\n\n### Zentrale Aspekte des Wohngeldes\n- **Leistungsart**: Zuschuss, der nicht zurückgezahlt werden muss.\n- **Formen**: Mietzuschuss für Mieter:innen; Lastenzuschuss für Eigentümer:innen (z. B. für Zins-, Tilgungs- und Bewirtschaftungskosten).\n- **Berechnung**: abhängig von anrechenbarer Miete/Belastung, Haushaltsgröße und Haushaltsnettoeinkommen.\n- **Abgrenzung**: kein Anspruch bei Bürgergeld-Bezug, da dort Unterkunftskosten bereits übernommen werden.\n- **Zuständige Stelle**: die örtliche Wohngeldstelle (Stadt-/Gemeindeverwaltung oder Landratsamt).",
+        "de_es": "Wohngeld ist ein Zuschuss zu Wohnkosten für Haushalte mit wenig Einkommen. Er gilt für Miete oder Eigenheim, aber nicht wenn man Bürgergeld mit Unterkunftskosten erhält.\n\n&nbsp;\n\n### Wichtige Punkte zum Wohngeld\n- **Art**: Zuschuss, keine Rückzahlung.\n- **Für wen**: Mieter:innen (Mietzuschuss) oder Eigentümer:innen (Lastenzuschuss).\n- **Höhe**: hängt von Miete/Kosten, Haushaltsgröße und Einkommen ab.\n- **Kein Anspruch**: wenn Bürgergeld Unterkunftskosten abdeckt.\n- **Stelle**: die örtliche Wohngeldstelle.",
+        "en": "Wohngeld is a housing allowance for low-income households to help cover housing costs (rent or owner-occupied housing expenses). It is not granted if Citizens’ Benefit (Bürgergeld) already covers housing and heating costs.\n\n&nbsp;\n\n### Key aspects of Wohngeld\n- **Type**: grant that does not have to be repaid.\n- **Forms**: rent allowance for tenants; burden allowance for owner-occupiers (e.g., interest, repayment, running costs).\n- **Calculation**: based on eligible rent/burden, household size, and household net income.\n- **Exclusion**: not available when Citizens’ Benefit includes housing costs.\n- **Responsible authority**: the local Wohngeld office (municipal administration/county office)."
+      },
+      "examples": {
+        "de": [
+          {
+            "title": "Familie mit Kindern in Mietwohnung",
+            "description": "Familie Yilmaz aus Köln wohnt mit zwei Kindern in einer Mietwohnung. Die monatliche Kaltmiete beträgt **900 €**. Das Einkommen der Familie liegt bei etwa **2.200 € netto** im Monat.\n\n&nbsp;\n\n### Wohngeld-Berechnung (vereinfacht)\n- Anrechenbare Miete: 900 €\n- Einkommen und Haushaltsgröße werden berücksichtigt.\n- Die Familie erhält monatlich rund **250 € Wohngeld**.\n\nSo können sie ihre Mietkosten besser tragen, ohne Bürgergeld beantragen zu müssen."
+          },
+          {
+            "title": "Alleinstehender Eigentümer",
+            "description": "Herr Schneider (62) aus Leipzig ist alleinstehend und bewohnt eine kleine Eigentumswohnung. Seine monatliche Altersrente liegt bei **1.100 €**. Für Zinsen, Tilgung und Nebenkosten fallen **500 €** an.\n\n&nbsp;\n\n### Wohngeld-Berechnung (vereinfacht)\n- Anrechenbare Belastung: 500 €\n- Einkommen und Haushaltsgröße (1 Person) werden berücksichtigt.\n- Herr Schneider erhält rund **120 € Lastenzuschuss** pro Monat.\n\nDamit wird seine Rente spürbar entlastet."
+          }
+        ],
+        "de_es": [
+          {
+            "title": "Familie mit Kindern in Mietwohnung",
+            "description": "Familie Yilmaz aus Köln wohnt mit zwei Kindern in einer Mietwohnung. Die monatliche Kaltmiete beträgt **900 €**. Das Einkommen der Familie liegt bei etwa **2.200 € netto** im Monat.\n\n&nbsp;\n\n### Wohngeld-Berechnung (vereinfacht)\n- Anrechenbare Miete: 900 €\n- Einkommen und Haushaltsgröße werden berücksichtigt.\n- Die Familie erhält monatlich rund **250 € Wohngeld**.\n\nSo können sie ihre Mietkosten besser tragen, ohne Bürgergeld beantragen zu müssen."
+          },
+          {
+            "title": "Alleinstehender Eigentümer",
+            "description": "Herr Schneider (62) aus Leipzig ist alleinstehend und bewohnt eine kleine Eigentumswohnung. Seine monatliche Altersrente liegt bei **1.100 €**. Für Zinsen, Tilgung und Nebenkosten fallen **500 €** an.\n\n&nbsp;\n\n### Wohngeld-Berechnung (vereinfacht)\n- Anrechenbare Belastung: 500 €\n- Einkommen und Haushaltsgröße (1 Person) werden berücksichtigt.\n- Herr Schneider erhält rund **120 € Lastenzuschuss** pro Monat.\n\nDamit wird seine Rente spürbar entlastet."
+          }
+        ],        
+        "en": [
+          {
+            "title": "Family with children in rental apartment",
+            "description": "The Yilmaz family from Cologne lives with two children in a rental apartment. Their monthly rent (excluding heating) is **€900**. The family’s monthly net income is about **€2,200**.\n\n&nbsp;\n\n### Wohngeld calculation (simplified)\n- Eligible rent: €900\n- Household size and income are taken into account.\n- The family receives about **€250 Wohngeld** per month.\n\nThis helps them cover rent without having to apply for Citizens’ Benefit."
+          },
+          {
+            "title": "Single homeowner",
+            "description": "Mr. Schneider (62) from Leipzig lives alone in his small condominium. His monthly pension is **€1,100**. Mortgage, interest, and utility costs add up to **€500**.\n\n&nbsp;\n\n### Wohngeld calculation (simplified)\n- Eligible housing burden: €500\n- Household size (1 person) and income are considered.\n- Mr. Schneider receives about **€120 burden allowance** per month.\n\nThis eases the strain on his pension income."
+          }
+        ]
+      }
+    },
+    "application_process": {
+      "brief": {
+        "de": "Der Antrag auf Wohngeld wird bei der zuständigen Wohngeldstelle der Stadt- oder Gemeindeverwaltung gestellt.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: die Wohngeldstelle der Stadt-, Gemeinde- oder Kreisverwaltung am Wohnort.  \n- **Form der Antragstellung**: schriftlich mit den offiziellen Formularen; vielerorts auch online möglich.  \n- **Unterlagen**: in der Regel erforderlich sind Mietvertrag oder Nachweise über Belastungen (bei Eigentum), Einkommens- und Vermögensnachweise aller Haushaltsmitglieder sowie ein gültiges Ausweisdokument.  \n- **Fristen**: Wohngeld wird ab dem Monat der Antragstellung gezahlt, rückwirkend gibt es in der Regel keine Leistungen.  \n- **Abgrenzung**: kein Wohngeld bei gleichzeitigem Bezug von Bürgergeld, da Unterkunftskosten dort bereits berücksichtigt sind.",
+        "de_es": "Der Antrag auf Wohngeld wird bei der Wohngeldstelle der Stadt- oder Gemeindeverwaltung gestellt.\n\n&nbsp;\n\n### Wichtige Punkte zur Antragstellung\n- **Wo**: Wohngeldstelle der Stadt, Gemeinde oder des Kreises.  \n- **Wie**: mit Formularen oder online.  \n- **Nachweise**: Mietvertrag oder Kosten bei Eigentum, Einkommen und Vermögen aller Haushaltsmitglieder, Ausweis.  \n- **Frist**: gilt ab Antragstellung, keine Nachzahlung für die Vergangenheit.  \n- **Hinweis**: kein Wohngeld, wenn Bürgergeld Unterkunftskosten zahlt.",
+        "en": "The application for Wohngeld must be submitted to the local Wohngeld office at the city, municipality, or county administration.\n\n&nbsp;\n\n### Important details for the application\n- **Responsible authority**: the Wohngeld office of the local city, municipality, or county.  \n- **Form of application**: in writing via official forms; in many regions, also possible online.  \n- **Documents**: usually required are rental contract or proof of housing burden (for homeowners), income and asset statements of all household members, and valid ID.  \n- **Deadlines**: Wohngeld is paid from the month of application; generally, there is no retroactive payment.  \n- **Exclusion**: no Wohngeld if Citizens’ Benefit covers housing costs."
+      }
     }
   },
   "ff:grundsicherung-im-alter-und-bei-erwerbsminderung": {
