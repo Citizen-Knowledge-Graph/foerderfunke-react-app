@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Typography } from '@mui/material';
 import { VBox, HBox } from '@/ui/shared-components/LayoutBoxes';
 import theme from '@/theme';
@@ -6,8 +6,6 @@ import BenefitPageMarkdownElement from './BenefitPageMarkDownElement';
 
 
 const BenefitPageExample = ({ t, idx, content }) => {
-    const [open, setOpen] = useState(true);
-
     return (
         <VBox
             sx={{
@@ -21,17 +19,15 @@ const BenefitPageExample = ({ t, idx, content }) => {
             }}
         >
             <VBox sx={{ gap: 2 }}>
-                <HBox sx={{ justifyContent: "space-between", alignItems: "center", cursor: "pointer" }} onClick={() => setOpen(!open)}>
+                <HBox sx={{ justifyContent: "space-between", alignItems: "center", cursor: "pointer" }}>
                     <Typography variant="h2" sx={{ fontWeight: 400, wordBreak: "break-word", color: 'pink.main' }}>
                         {t('app.benefitPage.general.example')}{content.title ? `: ${content.title}` : ` ${idx}`}
                     </Typography>
 
                 </HBox>
-                {open && (
-                    <VBox sx={{ maxWidth: 800 }}>
-                        <BenefitPageMarkdownElement content={content?.description} />
-                    </VBox>
-                )}
+                <VBox sx={{ maxWidth: 800 }}>
+                    <BenefitPageMarkdownElement content={content?.description} />
+                </VBox>
             </VBox>
         </VBox>
     )
