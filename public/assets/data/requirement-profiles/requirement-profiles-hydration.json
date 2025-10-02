@@ -33,7 +33,7 @@
           {
             "description": "Peter (52) aus Dortmund lebt allein und leidet seit längerer Zeit an gesundheitlichen Problemen. Er kann aktuell weniger als drei Stunden täglich arbeiten, ist aber nicht dauerhaft erwerbsgemindert. Deshalb hat er keinen Anspruch auf Bürgergeld und erhält stattdessen Hilfe zum Lebensunterhalt.\n\n&nbsp;\n\n### Unterstützung durch Hilfe zum Lebensunterhalt\n- Peter erhält den monatlichen Regelsatz von **563 €** sowie die Übernahme seiner angemessenen Miet- und Heizkosten.\n- Zusätzlich bekommt er Unterstützung für notwendige Arztbesuche und Medikamente.\n- Er ist verpflichtet, dem Sozialamt regelmäßig ärztliche Nachweise und Informationen zu seiner gesundheitlichen Situation vorzulegen."
           }
-        ],        
+        ],
         "en": [
           {
             "description": "Sabine (45) from Leipzig is unable to work for several months due to a serious illness. Since she cannot receive Citizens’ Benefit and her sickness benefit has expired, she receives Assistance for Subsistence.\n\n&nbsp;\n\n### Support through Assistance for Subsistence\n- She receives the monthly standard rate of **€563** (as of 2025) and coverage of her rent and heating costs.\n- In addition, she gets a supplement for her special diet.\n- Sabine must regularly provide medical certificates of her temporary incapacity for work to the social welfare office."
@@ -64,132 +64,40 @@
       "de": "Alle Eltern, die in Deutschland leben bzw. arbeiten,  können für Ihre Kinder Kindergeld bekommen. Das Kindergeld wird unabhängig vom Einkommen der Eltern ausgezahlt. Das Kindergeld beträgt 250€ pro Monat pro Kind (Stand 2025). Kindergeld erhält man grundsätzlich bis das Kind 18 Jahre alt ist. In manchen Fällen (z.B. Ausbdildung oder Arbeitssuche) kann Kingergeld aber auch länger bezogen werden. Kindergeld muss beantragt werden, dies geht bis zu 6 Monate rückwirkend.",
       "en": "All parents living or working in Germany are entitled to child benefit for their children. Child benefit is paid regardless of the parents' income. Child benefit amounts to 250€ per month per child (as of 2025). Child benefit is generally paid until the child is 18 years old. In some cases (e.g. education or job search), child benefit can be received for a longer period. Child benefit must be applied for, this can be done up to 6 months retroactively."
     },
+    "general": {
+      "brief": {
+        "de": "Kindergeld ist eine Familienleistung zur finanziellen Unterstützung von Eltern bzw. Sorgeberechtigten für ihre Kinder.\n\n&nbsp;\n\n### Zentrale Aspekte von Kindergeld\n- **Höhe**: derzeit **255 € pro Kind und Monat** (einheitlicher Betrag).  \n- **Altersgrenzen**: grundsätzlich bis zur Vollendung des 18. Lebensjahres; bis **zum 25. Geburtstag** bei Schul-/Berufsausbildung oder Studium; bis **zum 21. Geburtstag**, wenn das Kind arbeitsuchend gemeldet ist und keine Beschäftigung hat.  \n- **Voraussetzungen**: Wohnsitz oder gewöhnlicher Aufenthalt in Deutschland; Kinder können leiblich, adoptiert, Stief- oder Pflegekinder sein.  \n- **Nachweise**: u. a. Geburtsurkunde, Steuer-Identifikationsnummern von Kind und antragstellender Person; bei Ausbildung/Studium entsprechende Bescheinigungen.  \n- **Zuständige Stelle**: die **Familienkasse** der Bundesagentur für Arbeit.  \n- **Rückwirkung**: Nachzahlung für **maximal 6 Monate** rückwirkend möglich.",
+        "de_es": "Kindergeld ist eine Familienleistung zur finanziellen Unterstützung von Eltern bzw. Sorgeberechtigten für ihre Kinder.\n\n&nbsp;\n\n### Zentrale Aspekte von Kindergeld\n- **Höhe**: derzeit **255 € pro Kind und Monat** (einheitlicher Betrag).  \n- **Altersgrenzen**: grundsätzlich bis zur Vollendung des 18. Lebensjahres; bis **zum 25. Geburtstag** bei Schul-/Berufsausbildung oder Studium; bis **zum 21. Geburtstag**, wenn das Kind arbeitsuchend gemeldet ist und keine Beschäftigung hat.  \n- **Voraussetzungen**: Wohnsitz oder gewöhnlicher Aufenthalt in Deutschland; Kinder können leiblich, adoptiert, Stief- oder Pflegekinder sein.  \n- **Nachweise**: unter anderem Geburtsurkunde, Steuer-Identifikationsnummern von Kind und antragstellender Person; bei Ausbildung/Studium entsprechende Bescheinigungen.  \n- **Zuständige Stelle**: die **Familienkasse** der Bundesagentur für Arbeit.  \n- **Rückwirkung**: Nachzahlung für **maximal 6 Monate** rückwirkend möglich.",
+        "en": "Child benefit (Kindergeld) is a family allowance that financially supports parents or legal guardians for their children.\n\n&nbsp;\n\n### Key aspects of Kindergeld\n- **Amount**: currently **€255 per child per month** (flat rate).  \n- **Age limits**: generally until the child turns 18; up to **age 25** if in school/vocational training or university; up to **age 21** if registered as a jobseeker and not employed.  \n- **Requirements**: residence or habitual residence in Germany; eligible children include biological, adopted, step- and foster children.  \n- **Proofs**: e.g., birth certificate, tax identification numbers of the child and applicant; enrollment/training certificates where applicable.  \n- **Responsible authority**: the **Familienkasse** (Family Benefits Office) of the Federal Employment Agency.  \n- **Retroactive payment**: possible for **up to 6 months** retroactively."
+      },
+      "examples": {
+        "de": [
+          {
+            "title": "Schulkind",
+            "description": "Sophie (10) aus Mainz besucht die Grundschule. Ihre Eltern erhalten für sie monatlich **255 € Kindergeld**.\n\n&nbsp;\n\n### Unterstützung durch Kindergeld\n- Das Kindergeld trägt dazu bei, Kosten für Schulmaterial, Kleidung und Freizeitaktivitäten zu decken.\n- Zuständig für die Auszahlung ist die Familienkasse."
+          },
+          {
+            "title": "Studentin über 18",
+            "description": "Jonas (20) aus Leipzig studiert Informatik an der Universität. Da er sich noch in einer Erstausbildung befindet, erhalten seine Eltern weiterhin **255 € Kindergeld** pro Monat.\n\n&nbsp;\n\n### Unterstützung durch Kindergeld\n- Das Kindergeld unterstützt die Familie bei den Lebenshaltungskosten während des Studiums.\n- Für die Fortzahlung mussten die Eltern eine Studienbescheinigung bei der Familienkasse einreichen."
+          }
+        ],
+        "en": [
+          {
+            "title": "Schoolchild",
+            "description": "Sophie (10) from Mainz attends elementary school. Her parents receive **€255 child benefit** per month for her.\n\n&nbsp;\n\n### Support through child benefit\n- The child benefit helps cover expenses for school supplies, clothing, and leisure activities.\n- The responsible authority for payment is the Familienkasse."
+          },
+          {
+            "title": "Student over 18",
+            "description": "Jonas (20) from Leipzig studies computer science at university. Since he is still in his first education, his parents continue to receive **€255 child benefit** per month.\n\n&nbsp;\n\n### Support through child benefit\n- The child benefit helps the family with living expenses during Jonas’s studies.\n- To continue payments, his parents had to submit an enrollment certificate to the Familienkasse."
+          }
+        ]
+      }
+    },
     "application_process": {
-      "de": {
-        "title": "Kindergeld kann über die Seite der Bundesagentur für Arbeit online beantragt werden. Dieser muss dann an die regional zuständige Familienkasse gesendet werden. Kindergeld für Kinder ab 18 Jahren muss gesondert beantragt werden, da entsprechende Nachweise zur Situation gefordert werden.",
-        "links": [
-          {
-            "title": "Online Antrag",
-            "url": "http://arbeitsagentur.de/familie-und-kinder/infos-rund-um-kindergeld/kindergeld-anspruch-hoehe-dauer"
-          },
-          {
-            "title": "Informationen und Antrag zum Ausdrucken",
-            "url": "https://www.arbeitsagentur.de/familie-und-kinder/infos-rund-um-kindergeld"
-          },
-          {
-            "title": "Kindergeld für Kinder ab 18 Jahren",
-            "url": "https://www.arbeitsagentur.de/familie-und-kinder/infos-rund-um-kindergeld/kindergeld-ab-18-jahren"
-          }
-        ]
-      },
-      "en": {
-        "title": "Child benefit can be applied for online via the Federal Employment Agency website. You can find information about child benefit and the official application form for printing here. This must then be sent to the regionally responsible family benefits office. You can find this here. Child benefit for children over 18 years of age must be applied for separately, as corresponding proof of the situation is required. You can find information and the application form here.",
-        "links": [
-          {
-            "title": "Online application",
-            "url": "http://arbeitsagentur.de/familie-und-kinder/infos-rund-um-kindergeld/kindergeld-anspruch-hoehe-dauer"
-          },
-          {
-            "title": "Information and application for printing",
-            "url": "https://www.arbeitsagentur.de/familie-und-kinder/infos-rund-um-kindergeld"
-          },
-          {
-            "title": "Child benefit for children over 18 years",
-            "url": "https://www.arbeitsagentur.de/familie-und-kinder/infos-rund-um-kindergeld/kindergeld-ab-18-jahren"
-          }
-        ]
-      }
-    },
-    "required_documents": {
-      "de": [
-        "Steuerliche Identifikationsnummer des Kindes",
-        "Geburtsurkunde des Kindes",
-        "Gegebenenfalls Nachweis zum Aufenthaltstitel der antragstellenden Person",
-        "Gegebenenfalls Nachweis über die Schulausbildung oder Ausbildung des Kindes",
-        "Gegebenenfalls Nachweis über die Behinderung des Kindes (falls zutreffend)"
-      ],
-      "en": [
-        "Tax identification number of the child",
-        "Birth certificate of the child",
-        "Proof of the residence permit of the applicant",
-        "Proof of the child's school education or training",
-        "Proof of the child's disability (if applicable)"
-      ]
-    },
-    "additional_support": {
-      "de": {
-        "title": "Für mehr Informationen und Fragen zur Antragsstellung, Anspruch, etc. wendest du dich am besten an deine lokale Familienkasse.",
-        "links": [
-          {
-            "title": "Familienkassen in Deutschland",
-            "url": "https://web.arbeitsagentur.de/portal/metasuche/suche/dienststellen?in=familienkassen"
-          }
-        ]
-      },
-      "en": {
-        "title": "For more information and questions about the application process, entitlement, etc., please contact your local family benefits office.",
-        "links": [
-          {
-            "title": "Family benefits offices in Germany",
-            "url": "https://web.arbeitsagentur.de/portal/metasuche/suche/dienststellen?in=familienkassen"
-          }
-        ]
-      }
-    },
-    "legal_basis": {
-      "de": {
-        "title": "Die Gesetzesgrundlage für das Kindergeld findet sich im Einkommensteuergesetz und im Bundeskindergeldgesetz.",
-        "links": [
-          {
-            "title": "Einkommensteuergesetz",
-            "url": "https://www.gesetze-im-internet.de/estg/BJNR010050934.html#BJNR010050934BJNG023403140"
-          },
-          {
-            "title": "Bundeskindergeldgesetz",
-            "url": "https://www.gesetze-im-internet.de/bkgg_1996/BJNR137800995.html"
-          }
-        ]
-      },
-      "en": {
-        "title": "The legal basis for child benefit can be found in the Income Tax Act and the Federal Child Benefit Act.",
-        "links": [
-          {
-            "title": "Income Tax Act",
-            "url": "https://www.gesetze-im-internet.de/estg/BJNR010050934.html#BJNR010050934BJNG023403140"
-          },
-          {
-            "title": "Federal Child Benefit Act",
-            "url": "https://www.gesetze-im-internet.de/bkgg_1996/BJNR137800995.html"
-          }
-        ]
-      }
-    },
-    "further_information": {
-      "de": {
-        "title": "Hier finden Sie weitere Informationen zum Kindergeld:",
-        "links": [
-          {
-            "title": "Offizielles Merkblatt zum Kindergeld",
-            "url": "https://sozialplattform.de/content/sites/default/files/2022-09/Merkblatt.pdf"
-          },
-          {
-            "title": "Sozialplattform.",
-            "url": "https://sozialplattform.de/inhalt/kindergeld"
-          }
-        ]
-      },
-      "en": {
-        "title": "You can find more information about child benefit on the following websites:",
-        "links": [
-          {
-            "title": "Official information sheet on child benefit",
-            "url": "https://sozialplattform.de/content/sites/default/files/2022-09/Merkblatt.pdf"
-          },
-          {
-            "title": "Sozialplattform",
-            "url": "https://sozialplattform.de/inhalt/kindergeld"
-          }
-        ]
+      "brief": {
+        "de": "Der Antrag auf Kindergeld wird bei der Familienkasse der Bundesagentur für Arbeit gestellt.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: die Familienkasse der Bundesagentur für Arbeit.  \n- **Form der Antragstellung**: schriftlich über das offizielle Antragsformular (KG1); eine Online-Antragstellung über das Familienkassen-Portal ist ebenfalls möglich.  \n- **Unterlagen**: erforderlich sind unter anderem die Geburtsurkunde des Kindes, Steuer-Identifikationsnummern von Kind und antragstellender Person sowie ggf. Nachweise über Ausbildung, Studium oder Arbeitslosigkeit.  \n- **Fristen**: Kindergeld wird rückwirkend höchstens für **6 Monate** gezahlt; der Antrag sollte daher frühzeitig gestellt werden.",
+        "de_es": "Der Antrag auf Kindergeld wird bei der Familienkasse der Bundesagentur für Arbeit gestellt.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: die Familienkasse der Bundesagentur für Arbeit.  \n- **Form der Antragstellung**: schriftlich über das offizielle Antragsformular (KG1); eine Online-Antragstellung über das Familienkassen-Portal ist ebenfalls möglich.  \n- **Unterlagen**: erforderlich sind unter anderem die Geburtsurkunde des Kindes, Steuer-Identifikationsnummern von Kind und antragstellender Person sowie gegebenenfalls Nachweise über Ausbildung, Studium oder Arbeitslosigkeit.  \n- **Fristen**: Kindergeld wird rückwirkend höchstens für **6 Monate** gezahlt; der Antrag sollte daher frühzeitig gestellt werden.",
+        "en": "The application for child benefit (Kindergeld) must be submitted to the Familienkasse of the Federal Employment Agency.\n\n&nbsp;\n\n### Important details for the application\n- **Responsible authority**: the Familienkasse of the Federal Employment Agency.  \n- **Form of application**: in writing using the official application form (KG1); an online application via the Familienkasse portal is also possible.  \n- **Documents**: required are, among others, the child’s birth certificate, tax identification numbers of the child and applicant, and if applicable, proof of education, studies, or unemployment.  \n- **Deadlines**: child benefit is paid retroactively for a maximum of **6 months**; therefore, the application should be submitted as early as possible."
       }
     }
   },
