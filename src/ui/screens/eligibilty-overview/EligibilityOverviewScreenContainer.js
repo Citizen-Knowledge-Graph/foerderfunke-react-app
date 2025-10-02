@@ -24,6 +24,8 @@ const EligibilityOverviewScreenContainer = () => {
     const handleChangeFilters = useFilterChangeHandler({ filters, setSearchParams, setSelectedFilters });
     const filteredEligibilityData = useFilterEligibilityData(eligibilityData, filters);
 
+    console.log('validationReport', validationReport);
+
     return (
         <EligibilityOverviewScreen
             t={t}

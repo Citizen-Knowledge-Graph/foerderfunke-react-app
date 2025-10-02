@@ -327,6 +327,46 @@
     "id": "ff:arbeitslosengeld",
     "category": "social_benefit",
     "status": "production",
+    "general": {
+      "brief": {
+        "de": "Arbeitslosengeld (ALG I) ist eine Leistung der Arbeitslosenversicherung und soll den Lebensunterhalt sichern, wenn jemand arbeitslos wird.\n\n&nbsp;\n\n### Leistungen der Arbeitslosenversicherung  \n- Anspruch haben Personen, die in den letzten 30 Monaten mindestens 12 Monate versicherungspflichtig beschäftigt waren.  \n- Die Höhe des Arbeitslosengeldes richtet sich nach dem vorherigen Einkommen.  \n- Die Leistung wird in der Regel für 6 bis 12 Monate gezahlt, bei längerer Versicherungszeit und höherem Alter auch länger.  \n- Zuständig ist die Agentur für Arbeit.",
+        "de_es": "Arbeitslosengeld (ALG I) ist eine Leistung der Arbeitslosenversicherung und soll den Lebensunterhalt sichern, wenn jemand arbeitslos wird.\n\n&nbsp;\n\n### Leistungen der Arbeitslosenversicherung  \n- Anspruch haben Personen, die in den letzten 30 Monaten mindestens 12 Monate versicherungspflichtig beschäftigt waren.  \n- Die Höhe des Arbeitslosengeldes richtet sich nach dem vorherigen Einkommen.  \n- Die Leistung wird in der Regel für 6 bis 12 Monate gezahlt, bei längerer Versicherungszeit und höherem Alter auch länger.  \n- Zuständig ist die Agentur für Arbeit.",
+        "en": "Unemployment benefit (ALG I) is an insurance-based benefit that secures the cost of living when someone becomes unemployed.\n\n&nbsp;\n\n### Benefits of unemployment insurance  \n- Eligible are persons who have been in insured employment for at least 12 months within the last 30 months.  \n- The amount of the benefit is based on the previous income.  \n- It is usually paid for 6 to 12 months, and longer for older persons with longer contribution periods.  \n- The responsible authority is the Federal Employment Agency (Agentur für Arbeit)."
+      },
+      "examples": {
+        "de": [
+          {
+            "description": "Thomas (36) aus Hamburg war mehrere Jahre als Tischler beschäftigt. Nach dem Verlust seines Arbeitsplatzes meldete er sich arbeitslos und beantragte Arbeitslosengeld I.\n\n&nbsp;\n\n### Unterstützung durch die Arbeitslosenversicherung\n- Thomas hatte zuletzt ein monatliches Nettoeinkommen von ca. 1.800 €. Davon erhält er rund 60 % als Arbeitslosengeld I – also etwa **1.080 €** pro Monat.\n- Zusätzlich erhält er Beratung und Vermittlungshilfe, um schnell wieder eine neue Stelle zu finden."
+          },
+          {
+            "description": "Elena (41) aus Leipzig war lange als Verkäuferin angestellt. Nach einer Betriebsauflösung meldete sie sich arbeitslos und stellte einen Antrag auf Arbeitslosengeld I.\n\n&nbsp;\n\n### Unterstützung durch die Arbeitslosenversicherung\n- Elenas letztes monatliches Nettoeinkommen lag bei ca. 1.500 €. Davon bekommt sie 60 % als Arbeitslosengeld I – also ungefähr **900 €** monatlich.\n- Die Agentur für Arbeit unterstützt sie zudem bei Weiterbildungen, um ihre Chancen auf dem Arbeitsmarkt zu verbessern."
+          }
+        ],
+        "de_es": [
+          {
+            "description": "Julia (27) aus Berlin ist seit ihrer Geburt auf den Rollstuhl angewiesen und arbeitet heute erfolgreich als Grafikdesignerin.\n\n&nbsp;\n\n### Unterstützung im Arbeitsalltag\n- Ihre Arbeitsassistenz Anna holt Julia jeden Morgen von zu Hause ab und bringt sie zur Arbeitsstelle.\n- Während des Arbeitstags unterstützt sie Julia bei Wegen im Büro, beim Bereitstellen von Arbeitsmaterialien und beim Umgang mit Arbeitsgeräten."
+          },
+          {
+            "description": "Markus (35) aus München hat eine Sehbehinderung und arbeitet als Tischler.\n\n&nbsp;\n\n### Unterstützung im Arbeitsalltag\n- Sein Arbeitsassistent Tom unterstützt ihn bei der Orientierung in der Werkstatt und beim sicheren Umgang mit Maschinen, die für ihn aufgrund seiner Sehbehinderung schwer zu bedienen sind.\n- Tom sorgt außerdem dafür, dass Arbeitsanweisungen und Pläne für Markus in zugänglichen Formaten verfügbar sind."
+          }
+        ],
+        "en": [
+          {
+            "description": "Thomas (36) from Hamburg worked for several years as a carpenter. After losing his job, he registered as unemployed and applied for unemployment benefit I.\n\n&nbsp;\n\n### Support from unemployment insurance\n- Thomas previously had a monthly net income of around €1,800. He receives about 60% of that as unemployment benefit I – roughly **€1,080** per month.\n- In addition, he receives counseling and job placement support to help him quickly find a new position."
+          },
+          {
+            "description": "Elena (41) from Leipzig worked for many years as a sales assistant. After her company closed, she registered as unemployed and applied for unemployment benefit I.\n\n&nbsp;\n\n### Support from unemployment insurance\n- Elena’s last monthly net income was around €1,500. She receives 60% of that as unemployment benefit I – about **€900** per month.\n- The employment agency also supports her with further training to improve her chances on the labor market."
+          }
+        ]
+      }
+    },
+    "application_process": {
+      "brief": {
+        "de": "Der Antrag auf Arbeitslosengeld I (ALG I) wird bei der zuständigen Agentur für Arbeit gestellt.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: immer die örtliche Agentur für Arbeit.\n- **Form der Antragstellung**: verpflichtende persönliche Arbeitslosmeldung bei der Agentur für Arbeit, ergänzt durch einen schriftlichen Antrag; häufig ist auch eine Online-Antragstellung über das offizielle Portal möglich.\n- **Unterlagen**: in der Regel erforderlich sind Nachweise über die vorherige Beschäftigung (z. B. Arbeitsvertrag, Kündigungsschreiben), Lohnabrechnungen sowie ein gültiges Ausweisdokument.\n- **Fristen**: die Arbeitslosmeldung muss spätestens 3 Monate vor Ende des Arbeitsverhältnisses erfolgen. Bei kürzeren Kündigungsfristen muss die Meldung innerhalb von 3 Tagen nach Kenntnis der Beendigung erfolgen.",
+        "de_es": "Der Antrag auf Arbeitslosengeld I (ALG I) wird bei der zuständigen Agentur für Arbeit gestellt.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: immer die örtliche Agentur für Arbeit.\n- **Form der Antragstellung**: verpflichtende persönliche Arbeitslosmeldung bei der Agentur für Arbeit, ergänzt durch einen schriftlichen Antrag; häufig ist auch eine Online-Antragstellung über das offizielle Portal möglich.\n- **Unterlagen**: in der Regel erforderlich sind Nachweise über die vorherige Beschäftigung (z. B. Arbeitsvertrag, Kündigungsschreiben), Lohnabrechnungen sowie ein gültiges Ausweisdokument.\n- **Fristen**: die Arbeitslosmeldung muss spätestens 3 Monate vor Ende des Arbeitsverhältnisses erfolgen. Bei kürzeren Kündigungsfristen muss die Meldung innerhalb von 3 Tagen nach Kenntnis der Beendigung erfolgen.",
+        "en": "The application for unemployment benefit I (Arbeitslosengeld I) must be submitted to the responsible employment agency (Agentur für Arbeit).\n\n&nbsp;\n\n### Important details for the application\n- **Responsible authority**: always the local Agentur für Arbeit.\n- **Form of application**: mandatory personal registration as unemployed at the employment agency, combined with a written application; in many cases, an online application via the official portal is also possible.\n- **Documents**: usually required are proof of previous employment (e.g., employment contracts, termination letter), salary statements, and personal identification documents.\n- **Deadlines**: unemployment must be registered no later than 3 months before the end of employment. If the termination is shorter than 3 months, registration must take place within 3 days of knowledge of termination."
+      }
+    },
     "title": {
       "de": "Arbeitslosengeld",
       "en": "Unemployment benefit"

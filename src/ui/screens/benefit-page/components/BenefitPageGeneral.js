@@ -18,7 +18,7 @@ const BenefitPageGeneral = ({ t, benefitPageData, isDesktop }) => {
         gap: 2,
       }}
     >
-      <VBox sx={{ gap: { xs: 4, md: 8 } }} >
+      <VBox sx={{ gap: 4 }}>
         <HBox gap={1} sx={{ justifyContent: 'space-between', alignItems: 'flex-start' }}>
           <VBox sx={{ flex: 3, maxWidth: 800 }}>
             <Typography variant="h2" sx={{ fontWeight: 500, wordBreak: "break-word" }}>

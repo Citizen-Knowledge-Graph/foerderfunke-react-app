@@ -132,11 +132,6 @@
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/bielefeld/arbeitsassistenz.ttl",
       "rpUri": "https://foerderfunke.org/default#arbeitsassistenz",
       "behindFeatureFlag": "bielefunke"
-    },
-    {
-      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/bielefeld/allgemeine-krankenversicherungspflicht.ttl",
-      "rpUri": "https://foerderfunke.org/default#allgemeine-krankenversicherungspflicht",
-      "behindFeatureFlag": "bielefunke"    
     }
   ]
 }

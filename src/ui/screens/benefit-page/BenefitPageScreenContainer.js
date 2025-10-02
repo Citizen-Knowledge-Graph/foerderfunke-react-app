@@ -36,7 +36,7 @@ const BenefitPageScreenContainer = () => {
         fetchMatchingReport();
     }, [id, activeUserId, language]);
 
-    console.log('isDesktop', isDesktop);
+    console.log('matchingGraph', matchingGraph);
 
     return (
         <BenefitPageScreen
