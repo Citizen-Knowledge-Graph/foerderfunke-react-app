@@ -301,6 +301,46 @@
     "id": "ff:bafoeg",
     "category": "social_benefit",
     "status": "production",
+    "general": {
+      "brief": {
+        "de": "BAföG (Bundesausbildungsförderungsgesetz) unterstützt Schüler:innen und Studierende finanziell während ihrer Ausbildung bzw. ihres Studiums.\n\n&nbsp;\n\n### Leistungen der Ausbildungsförderung (BAföG)\n- **Anspruch**: bei förderfähiger Schul- oder Hochschulausbildung und individuellem Bedarf (abhängig u. a. von eigenem Einkommen/Vermögen sowie dem der Eltern/Ehegatt:in).\n- **Höhe**: richtet sich nach Bedarfssätzen, Wohnsituation (z. B. mit/ohne Eltern) und Kranken-/Pflegeversicherung; teils Zuschuss-, teils Darlehensanteile.\n- **Zuständige Stelle**: das Amt für Ausbildungsförderung (für Studierende meist beim Studierendenwerk; für Schüler:innen bei Stadt/Kreis).",
+        "de_es": "BAföG (Bundesausbildungsförderungsgesetz) unterstützt Schüler:innen und Studierende finanziell während ihrer Ausbildung bzw. ihres Studiums.\n\n&nbsp;\n\n### Leistungen der Ausbildungsförderung (BAföG)\n- **Anspruch**: bei förderfähiger Schul- oder Hochschulausbildung und individuellem Bedarf (abhängig u. a. von eigenem Einkommen/Vermögen sowie dem der Eltern/Ehegatt:in).\n- **Höhe**: richtet sich nach Bedarfssätzen, Wohnsituation (z. B. mit/ohne Eltern) und Kranken-/Pflegeversicherung; teils Zuschuss-, teils Darlehensanteile.\n- **Zuständige Stelle**: das Amt für Ausbildungsförderung (für Studierende meist beim Studierendenwerk; für Schüler:innen bei Stadt/Kreis).",
+        "en": "BAföG (Federal Training Assistance Act) provides financial support to pupils and students during school or university education.\n\n&nbsp;\n\n### Benefits of BAföG (Student Aid)\n- **Eligibility**: enrolled in an eligible school or higher-education program and financially in need (based on the applicant’s and, where applicable, parents’/spouse’s income and assets).\n- **Amount**: depends on standard needs, living situation (e.g., with parents or not), and health/nursing insurance; consists of grant and loan components.\n- **Responsible authority**: the Office for Student Financial Aid (for university students typically at the local Studentenwerk; for pupils at the city/county office)."
+      },
+      "examples": {
+        "de": [
+          {
+            "description": "Miriam (21) aus Köln studiert Sozialwissenschaften an der Universität und wohnt nicht mehr bei ihren Eltern.\n\n&nbsp;\n\n### Unterstützung durch BAföG\n- Sie erhält monatlich BAföG, da ihre Eltern nur ein geringes Einkommen haben.\n- Da Miriam in einer eigenen Wohnung lebt, liegt ihr Bedarfssatz bei rund **992 €** (inkl. Zuschläge für Kranken- und Pflegeversicherung).\n- Zuständig für die Bewilligung ist das Studierendenwerk Köln."
+          },
+          {
+            "description": "Jonas (19) aus Dresden besucht eine Berufsfachschule und wohnt nicht mehr bei seinen Eltern.\n\n&nbsp;\n\n### Unterstützung durch BAföG\n- Er erhält ebenfalls BAföG, da seine Eltern ihn nicht ausreichend finanziell unterstützen können.\n- Da er in einer eigenen Unterkunft lebt, beträgt sein Bedarfssatz aktuell rund **666 €** monatlich.\n- Zuständig für die Bewilligung ist das Amt für Ausbildungsförderung bei der Stadt Dresden."
+          }
+        ],
+        "de_es": [
+          {
+            "description": "Miriam (21) aus Köln studiert Sozialwissenschaften an der Universität und wohnt nicht mehr bei ihren Eltern.\n\n&nbsp;\n\n### Unterstützung durch BAföG\n- Sie erhält monatlich BAföG, da ihre Eltern nur ein geringes Einkommen haben.\n- Da Miriam in einer eigenen Wohnung lebt, liegt ihr Bedarfssatz bei rund **992 €** (inkl. Zuschläge für Kranken- und Pflegeversicherung).\n- Zuständig für die Bewilligung ist das Studierendenwerk Köln."
+          },
+          {
+            "description": "Jonas (19) aus Dresden besucht eine Berufsfachschule und wohnt nicht mehr bei seinen Eltern.\n\n&nbsp;\n\n### Unterstützung durch BAföG\n- Er erhält ebenfalls BAföG, da seine Eltern ihn nicht ausreichend finanziell unterstützen können.\n- Da er in einer eigenen Unterkunft lebt, beträgt sein Bedarfssatz aktuell rund **666 €** monatlich.\n- Zuständig für die Bewilligung ist das Amt für Ausbildungsförderung bei der Stadt Dresden."
+          }
+        ],
+        "en": [
+          {
+            "description": "Miriam (21) from Cologne is studying social sciences at university and no longer lives with her parents.\n\n&nbsp;\n\n### Support through BAföG\n- She receives monthly BAföG because her parents have only a low income.\n- Since Miriam lives in her own apartment, her standard need is around **992** (including allowances for health and nursing insurance).\n- The responsible authority is the Cologne Studentenwerk."
+          },
+          {
+            "description": "Jonas (19) from Dresden is attending a vocational school and no longer lives with his parents.\n\n&nbsp;\n\n### Support through BAföG\n- He also receives BAföG because his parents cannot support him sufficiently financially.\n- Since he lives in his own accommodation, his standard need currently amounts to about **€666** per month.\n- The responsible authority is the Office for Student Financial Aid of the City of Dresden."
+          }
+        ]
+      }
+    },
+    "application_process": {
+      "brief": {
+        "de": "Der Antrag auf BAföG wird beim zuständigen Amt für Ausbildungsförderung gestellt.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: für Studierende das Studierendenwerk am Hochschulort, für Schüler:innen das Amt für Ausbildungsförderung bei der Stadt oder dem Landkreis.\n- **Form der Antragstellung**: schriftlich über die offiziellen Antragsformulare; häufig ist auch eine Online-Antragstellung über das BAföG-Digital-Portal möglich.\n- **Unterlagen**: in der Regel erforderlich sind Nachweise über die Ausbildung (z. B. Studien- oder Schulbescheinigung), Einkommens- und Vermögensnachweise der Antragstellenden sowie ggf. der Eltern/Ehegatt:in, und ein gültiges Ausweisdokument.\n- **Fristen**: der Antrag sollte rechtzeitig vor Beginn des Ausbildungsabschnitts gestellt werden; Leistungen werden frühestens ab dem Monat der Antragstellung gezahlt.",
+        "de_es": "Der Antrag auf BAföG wird beim zuständigen Amt für Ausbildungsförderung gestellt.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: für Studierende das Studierendenwerk am Hochschulort, für Schüler:innen das Amt für Ausbildungsförderung bei der Stadt oder dem Landkreis.\n- **Form der Antragstellung**: schriftlich über die offiziellen Antragsformulare; häufig ist auch eine Online-Antragstellung über das BAföG-Digital-Portal möglich.\n- **Unterlagen**: in der Regel erforderlich sind Nachweise über die Ausbildung (z. B. Studien- oder Schulbescheinigung), Einkommens- und Vermögensnachweise der Antragstellenden sowie ggf. der Eltern/Ehegatt:in, und ein gültiges Ausweisdokument.\n- **Fristen**: der Antrag sollte rechtzeitig vor Beginn des Ausbildungsabschnitts gestellt werden; Leistungen werden frühestens ab dem Monat der Antragstellung gezahlt.",
+        "en": "The application for BAföG must be submitted to the responsible Office for Student Financial Aid.\n\n&nbsp;\n\n### Important details for the application\n- **Responsible authority**: for university students, the Studentenwerk at the place of study; for pupils, the Office for Student Financial Aid at the city or county level.\n- **Form of application**: in writing via the official application forms; in many cases, an online application via the BAföG digital portal is also possible.\n- **Documents**: usually required are proof of education (e.g., enrollment or school certificate), income and asset statements of the applicant as well as, if applicable, of parents or spouse, and a valid identification document.\n- **Deadlines**: the application should be submitted in good time before the start of the training period; benefits are paid at the earliest from the month of application."
+      }
+    },
     "title": {
       "de": "BAföG",
       "en": "BAföG"
