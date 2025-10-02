@@ -354,6 +354,46 @@
     "id": "ff:buergergeld",
     "category": "social_benefit",
     "status": "production",
+    "general": {
+      "brief": {
+        "de": "Bürgergeld unterstützt erwerbsfähige Menschen mit geringem oder keinem Einkommen dabei, den Lebensunterhalt zu sichern. Es umfasst den Regelbedarf sowie angemessene Kosten für Unterkunft und Heizung und kann durch weitere Leistungen ergänzt werden.\n\n&nbsp;\n\n### Zentrale Aspekte des Bürgergeldes\n- **Leistungsumfang**: Regelbedarf für den Alltag, Kosten der Unterkunft und Heizung, Mehrbedarfe und einmalige Sonderbedarfe.  \n- **Förderung**: ergänzende Leistungen zur Eingliederung in Arbeit, Weiterbildungen und Coaching-Angebote.  \n- **Mitwirkungspflichten**: Zusammenarbeit mit dem Jobcenter, Teilnahme an Maßnahmen und Nachweis eigener Bemühungen.  \n- **Zuständige Stelle**: das örtliche Jobcenter.",
+        "de_es": "Bürgergeld unterstützt erwerbsfähige Menschen mit geringem oder keinem Einkommen dabei, den Lebensunterhalt zu sichern. Es umfasst den Regelbedarf sowie angemessene Kosten für Unterkunft und Heizung und kann durch weitere Leistungen ergänzt werden.\n\n&nbsp;\n\n### Zentrale Aspekte des Bürgergeldes\n- **Leistungsumfang**: Regelbedarf für den Alltag, Kosten der Unterkunft und Heizung, Mehrbedarfe und einmalige Sonderbedarfe.  \n- **Förderung**: ergänzende Leistungen zur Eingliederung in Arbeit, Weiterbildungen und Coaching-Angebote.  \n- **Mitwirkungspflichten**: Zusammenarbeit mit dem Jobcenter, Teilnahme an Maßnahmen und Nachweis eigener Bemühungen.  \n- **Zuständige Stelle**: das örtliche Jobcenter.",
+        "en": "Citizens’ Benefit (Bürgergeld) supports employable people with little or no income in covering their basic living costs. It includes the standard allowance as well as reasonable housing and heating costs, and can be supplemented by additional benefits.\n\n&nbsp;\n\n### Key aspects of Citizens’ Benefit\n- **Scope of benefits**: standard allowance for daily living, housing and heating costs, additional needs, and one-off special needs.  \n- **Support**: complementary services for integration into work, training, and coaching opportunities.  \n- **Obligations**: cooperation with the Jobcenter, participation in measures, and proof of individual efforts.  \n- **Responsible authority**: the local Jobcenter."
+      },
+      "examples": {
+        "de": [
+          {
+            "description": "Sabine (34) aus Dresden lebt allein in einer Mietwohnung und hat derzeit kein Einkommen.\n\n&nbsp;\n\n### Unterstützung durch Bürgergeld\n- Sie erhält den Regelsatz für alleinstehende Erwachsene in Höhe von **563 €** pro Monat.\n- Zusätzlich übernimmt das Jobcenter ihre angemessenen Miet- und Heizkosten.\n- Im Rahmen ihrer Mitwirkungspflicht muss Sabine regelmäßig Bewerbungsbemühungen nachweisen und an Terminen beim Jobcenter teilnehmen."
+          },
+          {
+            "description": "Ali (45) aus Köln lebt mit seiner Partnerin zusammen. Beide beziehen Bürgergeld.\n\n&nbsp;\n\n### Unterstützung durch Bürgergeld\n- Für Ali wird der Regelsatz für Erwachsene in einer Bedarfsgemeinschaft angesetzt: **506 €** monatlich.\n- Auch die anteiligen Miet- und Heizkosten der gemeinsamen Wohnung werden übernommen.\n- Im Rahmen seiner Mitwirkungspflicht muss Ali jede Veränderung seiner Einkommens- oder Wohnsituation sofort mitteilen und an Maßnahmen zur beruflichen Integration mitwirken."
+          }
+        ],
+        "de_es": [
+          {
+            "description": "Sabine (34) aus Dresden lebt allein in einer Mietwohnung und hat derzeit kein Einkommen.\n\n&nbsp;\n\n### Unterstützung durch Bürgergeld\n- Sie erhält den Regelsatz für alleinstehende Erwachsene in Höhe von **563 €** pro Monat.\n- Zusätzlich übernimmt das Jobcenter ihre angemessenen Miet- und Heizkosten.\n- Im Rahmen ihrer Mitwirkungspflicht muss Sabine regelmäßig Bewerbungsbemühungen nachweisen und an Terminen beim Jobcenter teilnehmen."
+          },
+          {
+            "description": "Ali (45) aus Köln lebt mit seiner Partnerin zusammen. Beide beziehen Bürgergeld.\n\n&nbsp;\n\n### Unterstützung durch Bürgergeld\n- Für Ali wird der Regelsatz für Erwachsene in einer Bedarfsgemeinschaft angesetzt: **506 €** monatlich.\n- Auch die anteiligen Miet- und Heizkosten der gemeinsamen Wohnung werden übernommen.\n- Im Rahmen seiner Mitwirkungspflicht muss Ali jede Veränderung seiner Einkommens- oder Wohnsituation sofort mitteilen und an Maßnahmen zur beruflichen Integration mitwirken."
+          }
+        ],
+        "en": [
+          {
+            "description": "Sabine (34) from Dresden lives alone in a rented apartment and currently has no income.\n\n&nbsp;\n\n### Support through Citizens’ Benefit\n- She receives the standard rate for single adults, which is **€563** per month.\n- In addition, the Jobcenter covers her reasonable housing and heating costs.\n- As part of her duty to cooperate, Sabine must regularly provide proof of job applications and attend appointments at the Jobcenter."
+          },
+          {
+            "description": "Ali (45) from Cologne lives with his partner. Both receive Citizens’ Benefit.\n\n&nbsp;\n\n### Support through Citizens’ Benefit\n- For Ali, the standard rate for adults in a joint household applies: **€506** per month.\n- In addition, his share of the rent and heating costs for the shared apartment is covered.\n- As part of his duty to cooperate, Ali must immediately report any changes in his income or housing situation and participate in measures for professional reintegration."
+          }
+        ]
+      }
+    },
+    "application_process": {
+      "brief": {
+        "de": "Der Antrag auf Bürgergeld wird beim zuständigen Jobcenter gestellt.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: das örtliche Jobcenter am Wohnort.  \n- **Form der Antragstellung**: schriftlich mit den offiziellen Antragsunterlagen; vielerorts ist auch eine Online-Antragstellung über das Portal der Bundesagentur für Arbeit möglich; eine persönliche Vorsprache kann erforderlich sein.  \n- **Unterlagen**: Personalausweis oder Reisepass, Nachweise zu Miete und Heizkosten (zum Beispiel Mietvertrag, Betriebskostenabrechnung), Kontoauszüge, Nachweise über Einkommen und Vermögen aller Mitglieder der Bedarfsgemeinschaft, Nachweise zur Haushaltszusammensetzung sowie gegebenenfalls weitere Belege.  \n- **Fristen**: Leistungen werden grundsätzlich ab dem Monat der Antragstellung gewährt; der Antrag sollte daher möglichst früh im Monat gestellt werden.",
+        "de_es": "Der Antrag auf Bürgergeld wird beim zuständigen Jobcenter gestellt.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: das örtliche Jobcenter am Wohnort.  \n- **Form der Antragstellung**: schriftlich mit den offiziellen Antragsunterlagen; vielerorts ist auch eine Online-Antragstellung über das Portal der Bundesagentur für Arbeit möglich; eine persönliche Vorsprache kann erforderlich sein.  \n- **Unterlagen**: Personalausweis oder Reisepass, Nachweise zu Miete und Heizkosten (zum Beispiel Mietvertrag, Betriebskostenabrechnung), Kontoauszüge, Nachweise über Einkommen und Vermögen aller Mitglieder der Bedarfsgemeinschaft, Nachweise zur Haushaltszusammensetzung sowie gegebenenfalls weitere Belege.  \n- **Fristen**: Leistungen werden grundsätzlich ab dem Monat der Antragstellung gewährt; der Antrag sollte daher möglichst früh im Monat gestellt werden.",
+        "en": "The application for Citizens’ Benefit (Bürgergeld) is submitted to the responsible Jobcenter.\n\n&nbsp;\n\n### Important details for the application\n- **Responsible authority**: the local Jobcenter at the place of residence.  \n- **Form of application**: in writing using the official forms; in many areas an online application via the Federal Employment Agency’s portal is possible; an in-person appointment may be required.  \n- **Documents**: ID card or passport, proof of rent and heating costs (for example rental agreement, service charge statements), bank statements, evidence of income and assets of all household members, proof of household composition, and additional documents where applicable.  \n- **Deadlines**: benefits are generally granted from the month in which the application is submitted; therefore, applying early in the month is advisable."
+      }
+    },
     "title": {
       "de": "Bürgergeld",
       "en": "Citizen's benefit"
