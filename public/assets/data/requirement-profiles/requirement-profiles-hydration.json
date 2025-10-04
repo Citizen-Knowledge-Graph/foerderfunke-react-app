@@ -573,6 +573,52 @@
     "teaser": {
       "de": "Das EXIST-Gründerstipendium unterstützt Studierende, Absolventinnen und Absolventen sowie Wissenschaftlerinnen und Wissenschaftler, die ihre Gründungsidee umsetzen möchten. Das Stipendium ermöglicht es, sich voll und ganz auf die Gründung zu konzentrieren und die ersten Schritte in die Selbstständigkeit zu gehen.",
       "en": "The EXIST start-up grant supports students, graduates and researchers who want to implement their start-up idea. The grant allows them to focus entirely on their start-up and take the first steps towards self-employment."
+    },
+    "general": {
+      "brief": {
+        "de": "Das EXIST-Gründungsstipendium unterstützt gründungsinteressierte Studierende, Absolvent:innen und Wissenschaftler:innen aus Hochschulen sowie außeruniversitären Forschungseinrichtungen in der Vorgründungsphase.\n\n&nbsp;\n\n### Zentrale Aspekte des EXIST-Gründungsstipendiums\n- **Ziel**: 12 Monate Zeit und Mittel, um Businessplan, Prototyp und Markteintritt vorzubereiten.\n- **Ausrichtung**: technologieorientierte oder wissensbasierte, innovative Vorhaben mit klaren Alleinstellungsmerkmalen.\n- **Team & Betreuung**: Förderung für bis zu drei Personen; nötig sind eine Hochschule/Forschungseinrichtung als Träger sowie Mentor:in und Gründungsnetzwerk.\n- **Stipendienhöhe (monatlich)**: Studierende 1.000 €, Berufsausbildung 2.000 €, Absolvent:innen 2.500 €, Promovierte 3.000 €; **Kinderzuschlag** 150 €/Kind.\n- **Sach- & Coachingmittel**: bis zu **30.000 €** (Team) bzw. **10.000 €** (Einzel) für Sachmittel sowie **5.000 €** für Coaching.\n- **Wesentliche Bedingungen**: Antrag über die Hochschule; keine parallelen Lebensunterhaltsstipendien/Beschäftigungen; Nebentätigkeit max. 20 Stunden/Monat.",
+        "de_es": "Das EXIST-Gründungsstipendium hilft dabei, eine innovative Gründung aus der Hochschule vorzubereiten – für 12 Monate mit Geld für Lebensunterhalt, Sachmittel und Coaching.\n\n&nbsp;\n\n### Wichtige Punkte\n- **Was wird gefördert?** Innovative, technologie- oder wissensbasierte Ideen.\n- **Wer?** Bis zu 3 Personen pro Team; mit Hochschule/Forschungseinrichtung, Mentor:in und Gründungsnetzwerk.\n- **Stipendium pro Monat**: Studierende 1.000 €, mit Berufsausbildung 2.000 €, Absolvent:innen 2.500 €, Promovierte 3.000 €; **Kinderzuschlag** 150 € pro Kind.\n- **Zusätzlich**: Sachmittel bis 30.000 € (Team) bzw. 10.000 € (Einzel) und Coaching bis 5.000 €.\n- **Wichtig**: Antrag läuft über die Hochschule; keine parallelen Stipendien/Beschäftigungen zur Lebensunterhaltssicherung; Nebenjob höchstens 20 Std./Monat.",
+        "en": "The EXIST Start-up Grant supports students, graduates and researchers from universities and public research institutions during the pre-start-up phase.\n\n&nbsp;\n\n### Key aspects of the EXIST Start-up Grant\n- **Purpose**: 12 months to prepare a business plan, prototype and market entry.\n- **Focus**: technology-oriented or knowledge-based, innovative projects with clear unique selling points.\n- **Team & support**: funding for up to three people; requires a host university/research institution, a mentor and a start-up support network.\n- **Monthly grant rates**: students €1,000; vocationally trained team members €2,000; graduates €2,500; PhD holders €3,000; **child allowance** €150 per child.\n- **Materials & coaching**: up to **€30,000** (team) or **€10,000** (solo) for materials plus **€5,000** for coaching.\n- **Core conditions**: application via the university; no parallel subsistence grants/employment; side jobs limited to 20 hours/month."
+      },
+      "examples": {
+        "de": [
+          {
+            "title": "Studierendenteam mit Prototyp",
+            "description": "Lisa (24) und Jonas (25) aus München studieren Maschinenbau und entwickeln im Rahmen ihrer Masterarbeiten einen innovativen 3D-Drucker für nachhaltige Materialien.\n\n&nbsp;\n\n### Unterstützung durch das EXIST-Gründungsstipendium\n- Beide erhalten monatlich **1.000 €** Stipendium als Studierende.\n- Zusätzlich gibt es **30.000 € Sachmittel**, die sie für Materialien, Software-Lizenzen und Laborausstattung einsetzen.\n- Ein erfahrener Professor betreut das Projekt als Mentor.\n- Während der 12 Monate arbeiten sie Vollzeit an Prototyp und Businessplan."
+          },
+          {
+            "title": "Promovierter Gründer mit Kind",
+            "description": "Ahmed (32) aus Berlin ist promovierter Informatiker und möchte eine KI-gestützte Software für Energieeffizienz in Gebäuden entwickeln.\n\n&nbsp;\n\n### Unterstützung durch das EXIST-Gründungsstipendium\n- Er erhält monatlich **3.000 €** Stipendium als Promovierter.\n- Zusätzlich gibt es einen **Kinderzuschlag von 150 €**, da er eine Tochter hat.\n- Für die technische Entwicklung und Marketingmaterialien stehen ihm **10.000 € Sachmittel** und **5.000 € für Coaching** zur Verfügung.\n- Seine Universität stellt die Anbindung und einen Mentor aus dem Fachbereich bereit."
+          }
+        ],
+        "de_es": [
+          {
+            "title": "Studierendenteam mit Prototyp",
+            "description": "Lisa (24) und Jonas (25) aus München studieren Maschinenbau und entwickeln im Rahmen ihrer Masterarbeiten einen innovativen 3D-Drucker für nachhaltige Materialien.\n\n&nbsp;\n\n### Unterstützung durch das EXIST-Gründungsstipendium\n- Beide erhalten monatlich **1.000 €** Stipendium als Studierende.\n- Zusätzlich gibt es **30.000 € Sachmittel**, die sie für Materialien, Software-Lizenzen und Laborausstattung einsetzen.\n- Ein erfahrener Professor betreut das Projekt als Mentor.\n- Während der 12 Monate arbeiten sie Vollzeit an Prototyp und Businessplan."
+          },
+          {
+            "title": "Promovierter Gründer mit Kind",
+            "description": "Ahmed (32) aus Berlin ist promovierter Informatiker und möchte eine KI-gestützte Software für Energieeffizienz in Gebäuden entwickeln.\n\n&nbsp;\n\n### Unterstützung durch das EXIST-Gründungsstipendium\n- Er erhält monatlich **3.000 €** Stipendium als Promovierter.\n- Zusätzlich gibt es einen **Kinderzuschlag von 150 €**, da er eine Tochter hat.\n- Für die technische Entwicklung und Marketingmaterialien stehen ihm **10.000 € Sachmittel** und **5.000 € für Coaching** zur Verfügung.\n- Seine Universität stellt die Anbindung und einen Mentor aus dem Fachbereich bereit."
+          }
+        ],
+        "en": [
+          {
+            "title": "Student team with prototype",
+            "description": "Lisa (24) and Jonas (25) from Munich are mechanical engineering students and are developing an innovative 3D printer for sustainable materials as part of their master’s theses.\n\n&nbsp;\n\n### Support through the EXIST Start-up Grant\n- Both receive a monthly stipend of **€1,000** as students.\n- They also receive **€30,000 in material funds** to cover equipment, software licenses and lab costs.\n- An experienced professor supports them as their mentor.\n- During the 12 months, they work full time on their prototype and business plan."
+          },
+          {
+            "title": "PhD founder with child",
+            "description": "Ahmed (32) from Berlin holds a PhD in computer science and wants to develop AI-based software for energy efficiency in buildings.\n\n&nbsp;\n\n### Support through the EXIST Start-up Grant\n- He receives a monthly stipend of **€3,000** as a PhD holder.\n- He also receives a **child allowance of €150** since he has a daughter.\n- For technical development and marketing, he can use **€10,000 in material funds** and **€5,000 for coaching**.\n- His university provides institutional support and a mentor from his faculty."
+          }
+        ]
+      }
+    },
+    "application_process": {
+      "brief": {
+        "de": "Der Antrag auf das EXIST-Gründungsstipendium wird über eine Hochschule oder eine außeruniversitäre Forschungseinrichtung gestellt.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: immer die Hochschule oder Forschungseinrichtung, die das Team betreut; diese reicht den Antrag beim Bundesministerium für Wirtschaft und Klimaschutz (BMWK) bzw. Projektträger Jülich (PtJ) ein.\n- **Form der Antragstellung**: Erstellung eines vollständigen Projektantrags inkl. Businessplan-Entwurf, Projektbeschreibung und Finanzplan; Einreichung erfolgt ausschließlich über die betreuende Einrichtung.\n- **Unterlagen**: notwendig sind Angaben zu Team und Qualifikation, Projektidee, Innovationsgrad, Alleinstellungsmerkmale, Verwertungsstrategie, Zeit- und Finanzierungsplan sowie die Bestätigung von Mentor:in und Gründungsnetzwerk.\n- **Fristen**: Anträge können fortlaufend eingereicht werden; die Förderung beginnt nach Bewilligung, frühestens zum gewünschten Starttermin.",
+        "de_es": "Der Antrag für das EXIST-Stipendium läuft immer über die Hochschule oder Forschungseinrichtung, die das Projekt betreut.\n\n&nbsp;\n\n### Wichtige Punkte\n- **Wo?** Antrag geht über die Hochschule/Forschungseinrichtung an den Projektträger Jülich (PtJ).\n- **Wie?** Projektantrag mit Geschäftsidee, Finanzplan und Bestätigung von Mentor:in und Gründungsnetzwerk.\n- **Welche Unterlagen?** Infos zu Team, Idee, Zeit- und Finanzierungsplan.\n- **Wann?** Jederzeit möglich; Start nach Bewilligung.",
+        "en": "The application for the EXIST Start-up Grant must be submitted via a university or a non-university research institution.\n\n&nbsp;\n\n### Important details for the application\n- **Responsible authority**: always the university or research institution hosting the team; it submits the application to the Federal Ministry for Economic Affairs and Climate Action (BMWK) via the Project Management Agency Jülich (PtJ).\n- **Form of application**: a complete project proposal including draft business plan, project description and financial plan; submission is only possible through the hosting institution.\n- **Documents**: required are details on the team and qualifications, project idea, degree of innovation, unique selling points, commercialization strategy, time and financing plan, and confirmation from a mentor and start-up support network.\n- **Deadlines**: applications can be submitted on a rolling basis; funding starts after approval, at the earliest from the chosen start date."
+      }
     }
   },
   "ff:ibb-gruendungsbonus": {
