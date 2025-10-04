@@ -941,106 +941,50 @@
       "de": "Der Brandenburg-Kredit Gründung unterstützt junge Unternehmen in Brandenburg mit zinsgünstigen Krediten für Investitionen und Betriebsmittel.",
       "en": "The Brandenburg Start-up Credit supports young businesses in Brandenburg with low-interest loans for investments and working capital."
     },
+    "general": {
+      "brief": {
+        "de": "Der **Brandenburg-Kredit Gründung** der Investitionsbank des Landes Brandenburg (ILB) ist ein zinsgünstiges Darlehen zur Finanzierung von Gründung, Festigung und Übernahme junger Unternehmen (bis 5 Jahre nach Start) im Land Brandenburg.\n\n&nbsp;\n\n### Zentrale Aspekte des Brandenburg-Kredit Gründung\n- **Zweck**: Finanzierung von Investitionen, Betriebsmitteln, Warenlager sowie Unternehmensübernahmen und -beteiligungen.  \n- **Wer wird gefördert?** Existenzgründer:innen und junge Unternehmen (in der Regel kleine und mittlere Unternehmen, aber auch größere Mittelständler).  \n- **Umfang**: Finanzierung von bis zu **100 % der förderfähigen Kosten**, Darlehenshöhe maximal **1 Mio. €** je Vorhaben.  \n- **Laufzeit/Zins**: Laufzeiten bis **20 Jahre** (mit 1–3 tilgungsfreien Jahren), Zinsbindung bis **10 Jahre**; zusätzlicher Zinsvorteil bis 0,20 %-Punkte pro Jahr für junge KMU in Regionalfördergebieten (derzeit ganz Brandenburg).  \n- **Antragstellung**: ausschließlich über die **Hausbank** (Durchleitungsprinzip); bankübliche Sicherheiten erforderlich.",
+        "de_es": "Der **Brandenburg-Kredit Gründung** ist ein günstiges Darlehen der ILB für neue Firmen in Brandenburg (bis 5 Jahre nach Start).\n\n&nbsp;\n\n### Wichtige Punkte\n- **Wofür?** Investitionen, laufende Kosten (Betriebsmittel), Warenlager sowie Übernahmen und Beteiligungen.  \n- **Wer?** Gründer:innen und junge Unternehmen.  \n- **Wie viel?** Bis **100 %** der Kosten, maximal **1 Mio. €** je Vorhaben.  \n- **Laufzeit/Zins**: bis **20 Jahre** (mit tilgungsfreien Jahren), Zinsbindung bis **10 Jahre**, zusätzlicher Zinsrabatt für KMU in ganz Brandenburg.  \n- **Antrag**: immer über die **eigene Bank**; übliche Sicherheiten nötig.",
+        "en": "The **Brandenburg Start-up Loan** (Brandenburg-Kredit Gründung) by ILB is a low-interest loan to finance start-ups, business consolidation, and takeovers of young companies (within 5 years after start) in Brandenburg.\n\n&nbsp;\n\n### Key aspects\n- **Purpose**: finance investments, working capital, inventory, as well as business takeovers and equity stakes.  \n- **Who is eligible?** Founders and young enterprises (typically SMEs, but also larger mid-caps).  \n- **Volume**: up to **100% of eligible costs**, maximum loan amount **€1 million** per project.  \n- **Terms/interest**: maturities up to **20 years** (with 1–3 grace years), fixed interest up to **10 years**; additional interest rebate up to 0.20 percentage points p. a. for young SMEs in regional aid areas (currently all of Brandenburg).  \n- **How to apply**: strictly via the **house bank** (on-lending model); customary collateral required."
+      },
+      "examples": {
+        "de": [
+          {
+            "title": "Handwerksbetrieb",
+            "description": "Lisa (29) aus Potsdam gründet eine kleine Tischlerei und benötigt Startkapital für Maschinen, Werkzeug und die Einrichtung der Werkstatt.\n\n&nbsp;\n\n### Unterstützung durch den Brandenburg-Kredit Gründung\n- Finanzierung von **Investitionen** in Maschinen und Werkstatteinrichtung.  \n- Kredit in Höhe von **120.000 €** mit einer Laufzeit von 10 Jahren.  \n- Die Hausbank beantragt den Kredit bei der ILB und sichert ihn über eine Bürgschaft ab."
+          },
+          {
+            "title": "IT-Start-up",
+            "description": "Ahmed (34) aus Cottbus gründet ein Software-Unternehmen. Er braucht Kapital für Personal, Büroausstattung und Marketing in den ersten Jahren.\n\n&nbsp;\n\n### Unterstützung durch den Brandenburg-Kredit Gründung\n- Finanzierung von **Betriebsmitteln** und **Lohnkosten** in der Startphase.  \n- Kredit in Höhe von **300.000 €** mit einer Laufzeit von 15 Jahren, davon 2 Jahre tilgungsfrei.  \n- Antragstellung über die Hausbank mit üblichen Sicherheiten."
+          }
+        ],
+        "de_es": [
+          {
+            "title": "Handwerksbetrieb",
+            "description": "Lisa (29) aus Potsdam gründet eine kleine Tischlerei und benötigt Startkapital für Maschinen, Werkzeug und die Einrichtung der Werkstatt.\n\n&nbsp;\n\n### Unterstützung durch den Brandenburg-Kredit Gründung\n- Finanzierung von **Investitionen** in Maschinen und Werkstatteinrichtung.  \n- Kredit in Höhe von **120.000 €** mit einer Laufzeit von 10 Jahren.  \n- Die Hausbank beantragt den Kredit bei der ILB und sichert ihn über eine Bürgschaft ab."
+          },
+          {
+            "title": "IT-Start-up",
+            "description": "Ahmed (34) aus Cottbus gründet ein Software-Unternehmen. Er braucht Kapital für Personal, Büroausstattung und Marketing in den ersten Jahren.\n\n&nbsp;\n\n### Unterstützung durch den Brandenburg-Kredit Gründung\n- Finanzierung von **Betriebsmitteln** und **Lohnkosten** in der Startphase.  \n- Kredit in Höhe von **300.000 €** mit einer Laufzeit von 15 Jahren, davon 2 Jahre tilgungsfrei.  \n- Antragstellung über die Hausbank mit üblichen Sicherheiten."
+          }
+        ],
+        "en": [
+          {
+            "title": "Craft business",
+            "description": "Lisa (29) from Potsdam starts a small carpentry workshop and needs start-up capital for machines, tools, and workshop setup.\n\n&nbsp;\n\n### Support through Brandenburg Start-up Loan\n- Financing **investments** in machines and workshop equipment.  \n- Loan amount of **€120,000** with a 10-year maturity.  \n- The house bank applies for the loan at ILB and secures it with a guarantee."
+          },
+          {
+            "title": "IT start-up",
+            "description": "Ahmed (34) from Cottbus founds a software company. He requires capital for staff, office equipment, and marketing during the first years.\n\n&nbsp;\n\n### Support through Brandenburg Start-up Loan\n- Financing of **working capital** and **salary costs** in the start-up phase.  \n- Loan amount of **€300,000** with a 15-year maturity, including 2 grace years.  \n- Application via the house bank with customary collateral."
+          }
+        ]
+      }
+    },
     "application_process": {
-      "de": {
-        "title": "Die Antragstellung erfolgt über die Investitionsbank des Landes Brandenburg (ILB). Weitere Details sind auf der ILB-Website zu finden.",
-        "links": [
-          {
-            "title": "Antragstellung ILB",
-            "url": "https://www.ilb.de/de/wirtschaft/darlehen/brandenburg-kredit-gruendung/"
-          }
-        ]
-      },
-      "en": {
-        "title": "Applications are submitted via the Investitionsbank des Landes Brandenburg (ILB). Further details can be found on the ILB website.",
-        "links": [
-          {
-            "title": "ILB Application",
-            "url": "https://www.ilb.de/de/wirtschaft/darlehen/brandenburg-kredit-gruendung/"
-          }
-        ]
-      }
-    },
-    "required_documents": {
-      "de": [
-        "Vollständig ausgefülltes Antragsformular",
-        "Businessplan mit Finanzierungsplan",
-        "Bonitätsnachweise und wirtschaftliche Unterlagen des Unternehmens",
-        "Nachweis der Geschäftstätigkeit in Brandenburg"
-      ],
-      "en": [
-        "Fully completed application form",
-        "Business plan with financing plan",
-        "Creditworthiness certificates and financial documents of the company",
-        "Proof of business activity in Brandenburg"
-      ]
-    },
-    "funding_conditions": {
-      "de": {
-        "title": "Die Förderkonditionen umfassen folgende Punkte:",
-        "details": [
-          "Darlehensbetrag: Bis zu 100 % der förderfähigen Kosten, maximal 25 Mio. EUR.",
-          "Zinsbindung: Maximal 10 Jahre.",
-          "Laufzeit: Bis zu 20 Jahre, mit tilgungsfreien Anlaufzeiten von bis zu 3 Jahren.",
-          "Förderfähige Kosten: Investitionen, Betriebsmittel, Warenlager, Unternehmensübernahmen."
-        ]
-      },
-      "en": {
-        "title": "The funding conditions include the following:",
-        "details": [
-          "Loan amount: Up to 100% of eligible costs, maximum €25 million.",
-          "Interest rate fixed for up to 10 years.",
-          "Term: Up to 20 years, with repayment-free periods of up to 3 years.",
-          "Eligible costs: Investments, working capital, inventory, business takeovers."
-        ]
-      }
-    },
-    "legal_basis": {
-      "de": {
-        "title": "Rechtsgrundlagen der Förderung:",
-        "links": [
-          {
-            "title": "ILB-Förderbedingungen",
-            "url": "https://www.ilb.de/de/pdf/merkblatt_57921.pdf"
-          },
-          {
-            "title": "De-Minimis-Verordnung EU",
-            "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:32003H0361"
-          }
-        ]
-      },
-      "en": {
-        "title": "Legal basis of the funding:",
-        "links": [
-          {
-            "title": "ILB Funding Conditions",
-            "url": "https://www.ilb.de/de/pdf/merkblatt_57921.pdf"
-          },
-          {
-            "title": "EU De-Minimis Regulation",
-            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32003H0361"
-          }
-        ]
-      }
-    },
-    "further_information": {
-      "de": {
-        "title": "Weitere Informationen zur ILB-Förderung:",
-        "links": [
-          {
-            "title": "Investitionsbank des Landes Brandenburg",
-            "url": "https://www.ilb.de/de/wirtschaft/darlehen/brandenburg-kredit-gruendung/"
-          }
-        ]
-      },
-      "en": {
-        "title": "Further information on ILB funding:",
-        "links": [
-          {
-            "title": "Investitionsbank des Landes Brandenburg",
-            "url": "https://www.ilb.de/de/wirtschaft/darlehen/brandenburg-kredit-gruendung/"
-          }
-        ]
+      "brief": {
+        "de": "Der Antrag auf den Brandenburg-Kredit Gründung wird nicht direkt bei der ILB gestellt, sondern immer über die jeweilige Hausbank im sogenannten Durchleitungsprinzip.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: die eigene Hausbank, die den Antrag an die Investitionsbank des Landes Brandenburg (ILB) weiterleitet.  \n- **Form der Antragstellung**: schriftlich über die Hausbank; dort werden die Unterlagen geprüft und an die ILB eingereicht.  \n- **Unterlagen**: in der Regel ein Businessplan, Finanzierungsplan, Nachweise über Eigenmittel, persönliche Unterlagen sowie Sicherheiten.  \n- **Fristen**: der Antrag muss vor Beginn des Vorhabens gestellt werden; eine nachträgliche Finanzierung ist nicht möglich.",
+        "de_es": "Der Antrag auf den Brandenburg-Kredit Gründung läuft immer über die Hausbank, nicht direkt bei der ILB.\n\n&nbsp;\n\n### Wichtige Punkte\n- **Wo?** Antrag über die Hausbank, die ihn an die ILB weitergibt.  \n- **Wie?** Schriftlich mit Formularen und Unterlagen.  \n- **Welche Unterlagen?** Businessplan, Finanzierungskonzept, Nachweise über Eigenmittel, Sicherheiten.  \n- **Frist**: Antrag unbedingt vor Projektstart stellen.",
+        "en": "The application for the Brandenburg Start-up Loan is always submitted via the house bank, not directly to ILB.\n\n&nbsp;\n\n### Important details for the application\n- **Responsible authority**: the house bank, which forwards the application to ILB.  \n- **Form of application**: in writing via the house bank, including a full set of documents.  \n- **Documents**: usually a business plan, financing plan, proof of equity, personal documents, and collateral.  \n- **Deadlines**: the application must be submitted before the project begins; retroactive financing is not possible."
       }
     }
   },
