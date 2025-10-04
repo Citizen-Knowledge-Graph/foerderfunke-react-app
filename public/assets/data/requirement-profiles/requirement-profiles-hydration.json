@@ -1046,116 +1046,50 @@
       "de": "Steuerpflichtige Unternehmen in Deutschland können eine Forschungszulage für förderfähige Aufwendungen in Grundlagenforschung, industrieller Forschung und experimenteller Entwicklung erhalten.",
       "en": "Tax-liable companies in Germany may claim a research allowance for eligible expenses related to basic research, industrial research, and experimental development."
     },
+    "general": {
+      "brief": {
+        "de": "Die Forschungszulage ist eine steuerliche Förderung für Unternehmen, die Forschung und Entwicklung (FuE) betreiben oder beauftragen.\n\n&nbsp;\n\n### Zentrale Aspekte der Forschungszulage\n- **Fördersatz**: 25 Prozent der Bemessungsgrundlage; **KMU** können eine Erhöhung um **10 Prozentpunkte** beantragen (insgesamt 35 Prozent).  \n- **Jährliche Obergrenze der Bemessungsgrundlage**: Die Summe der maßgeblichen Bemessungsgrundlagen eines Wirtschaftsjahres beträgt höchstens **10 Mio. Euro**.  \n- **Maximale Zulage pro Jahr**: bis zu **2,5 Mio. Euro**, bei KMU bis zu **3,5 Mio. Euro**.  \n- **Förderfähige Aufwendungen (Auswahl)**: FuE-Personalkosten; **Auftragsforschung** wird mit **70 %** des Entgelts angesetzt; zudem sind **abnutzbare bewegliche Wirtschaftsgüter** des Anlagevermögens förderfähig, soweit sie für das Projekt erforderlich und ausschließlich dafür genutzt werden.  \n- **Verfahren**: zweistufig – zuerst Bescheinigung durch die Bescheinigungsstelle Forschungszulage (BSFZ), anschließend Festsetzung der Zulage durch das Finanzamt.  \n- **Antragstellung**: innerhalb der steuerlichen Festsetzungsfrist (regelmäßig bis zu vier Jahre nach Ablauf des Veranlagungsjahres).",
+        "de_es": "Die Forschungszulage ist eine Steuerförderung für Firmen, die eigene oder beauftragte Forschung machen.\n\n&nbsp;\n\n### Wichtige Punkte\n- **Satz**: 25 %, für **KMU** auf Antrag 35 %.  \n- **Obergrenze**: Bemessungsgrundlage pro Jahr bis **10 Mio. Euro**.  \n- **Maximalbetrag**: bis **2,5 Mio. Euro**, bei KMU bis **3,5 Mio. Euro**.  \n- **Was zählt**: Löhne fürs FuE-Team; **Auftragsforschung** mit **70 %**; nötige **bewegliche Geräte/Maschinen** fürs Projekt.  \n- **Ablauf**: erst Bescheinigung durch Bescheinigungsstelle Forschungszulage (BSFZ), dann Steuerfestsetzung beim Finanzamt.",
+        "en": "The Research Allowance is a tax credit for companies conducting in-house or commissioned R&D.\n\n&nbsp;\n\n### Key aspects\n- **Rate**: 25%; **SMEs** may apply for an increase by **10 percentage points** (total 35%).  \n- **Annual base cap**: assessment bases per fiscal year are limited to **€10 million** in total.  \n- **Maximum credit per year**: up to **€2.5 million**, for SMEs up to **€3.5 million**.  \n- **Eligible expenses (selection)**: R&D personnel costs; **contract research** counted at **70%** of the invoice; **depreciable movable assets** required and used exclusively for the project.  \n- **Process**: two steps – Bescheinigungsstelle Forschungszulage (BSFZ) certification, then tax assessment by the tax office.  \n- **Timing**: application within the general tax assessment period (typically up to four years)."
+      },
+      "examples": {
+        "de": [
+          {
+            "title": "Mittelständisches Softwareunternehmen (KMU)",
+            "description": "Ein Softwareunternehmen mit 80 Mitarbeitenden entwickelt eine neue KI-Plattform. Im Jahr entstehen förderfähige Personalkosten von **1,2 Mio. Euro**.\n\n### Förderung\n- Bemessungsgrundlage: 1,2 Mio. Euro  \n- Fördersatz für KMU: 35 %  \n- Forschungszulage: **420.000 Euro**  \n- Ablauf: Zuerst holt das Unternehmen eine **BSFZ-Bescheinigung** ein, danach wird die Zulage über die Steuerfestsetzung berücksichtigt."
+          },
+          {
+            "title": "Großes Industrieunternehmen",
+            "description": "Ein Automobilzulieferer führt ein FuE-Projekt zur Entwicklung neuer Batteriematerialien durch. Förderfähige Kosten betragen **12 Mio. Euro**.\n\n### Förderung\n- Maximal anrechenbare Bemessungsgrundlage: 10 Mio. Euro  \n- Fördersatz: 25 %  \n- Forschungszulage: **2,5 Mio. Euro** (Obergrenze erreicht)  \n- Ablauf: Projekt wird von der **BSFZ zertifiziert**, anschließend beim Finanzamt steuerlich geltend gemacht."
+          }
+        ],
+        "de_es": [
+          {
+            "title": "Mittelständisches Softwareunternehmen (KMU)",
+            "description": "Ein Softwareunternehmen mit 80 Mitarbeitenden entwickelt eine neue KI-Plattform. Im Jahr entstehen förderfähige Personalkosten von **1,2 Mio. Euro**.\n\n### Förderung\n- Bemessungsgrundlage: 1,2 Mio. Euro  \n- Fördersatz für KMU: 35 %  \n- Forschungszulage: **420.000 Euro**  \n- Ablauf: Zuerst holt das Unternehmen eine **BSFZ-Bescheinigung** ein, danach wird die Zulage über die Steuerfestsetzung berücksichtigt."
+          },
+          {
+            "title": "Großes Industrieunternehmen",
+            "description": "Ein Automobilzulieferer führt ein FuE-Projekt zur Entwicklung neuer Batteriematerialien durch. Förderfähige Kosten betragen **12 Mio. Euro**.\n\n### Förderung\n- Maximal anrechenbare Bemessungsgrundlage: 10 Mio. Euro  \n- Fördersatz: 25 %  \n- Forschungszulage: **2,5 Mio. Euro** (Obergrenze erreicht)  \n- Ablauf: Projekt wird von der **BSFZ zertifiziert**, anschließend beim Finanzamt steuerlich geltend gemacht."
+          }
+        ],
+        "en": [
+          {
+            "title": "Medium-sized software company (SME)",
+            "description": "A software company with 80 employees develops a new AI platform. Eligible personnel costs of **€1.2 million** arise in one year.\n\n### Funding\n- Eligible base: €1.2 million  \n- Rate for SMEs: 35%  \n- Research allowance: **€420,000**  \n- Process: The company first obtains a **BSFZ certificate**, then the allowance is offset via the tax office."
+          },
+          {
+            "title": "Large industrial company",
+            "description": "An automotive supplier runs an R&D project on new battery materials. Eligible costs are **€12 million**.\n\n### Funding\n- Maximum eligible base: €10 million  \n- Rate: 25%  \n- Research allowance: **€2.5 million** (cap reached)  \n- Process: Project is **certified by BSFZ**, then claimed at the tax office."
+          }
+        ]
+      }
+    },
     "application_process": {
-      "de": {
-        "title": "Die Antragstellung erfolgt zweistufig über das BSFZ-Portal (Bescheinigungsverfahren) und das zuständige Finanzamt (Geltendmachung). Weitere Informationen sind beim Bundesministerium der Finanzen erhältlich.",
-        "links": [
-          {
-            "title": "BSFZ Portal zur Forschungszulage",
-            "url": "https://www.bescheinigung-forschungszulage.de/"
-          },
-          {
-            "title": "BMF Informationen zur Forschungszulage",
-            "url": "https://www.bundesfinanzministerium.de"
-          }
-        ]
-      },
-      "en": {
-        "title": "The application process consists of two steps: certification via the BSFZ portal and claiming via the local tax office. More information is available from the Federal Ministry of Finance.",
-        "links": [
-          {
-            "title": "BSFZ Research Allowance Portal",
-            "url": "https://www.bescheinigung-forschungszulage.de/"
-          },
-          {
-            "title": "Federal Ministry of Finance",
-            "url": "https://www.bundesfinanzministerium.de"
-          }
-        ]
-      }
-    },
-    "required_documents": {
-      "de": [
-        "Antrag auf Forschungszulage beim Finanzamt",
-        "Nachweise über förderfähige Aufwendungen (z. B. Lohnkosten, Vertragsunterlagen)"
-      ],
-      "en": [
-        "Research allowance application submitted to the tax office",
-        "Evidence of eligible expenses (e.g., personnel costs, contract documents)"
-      ]
-    },
-    "funding_conditions": {
-      "de": {
-        "title": "Förderkonditionen der Forschungszulage:",
-        "details": [
-          "Förderfähige Aufwendungen: Löhne und Gehälter für F&E-Personal, Auftragsforschung, Eigenleistungen.",
-          "Fördersatz: 25 % der förderfähigen Aufwendungen, 35 % für KMUs.",
-          "Maximale Bemessungsgrundlage: 10 Millionen Euro."
-        ]
-      },
-      "en": {
-        "title": "Funding conditions of the Research Allowance:",
-        "details": [
-          "Eligible costs: wages and salaries for R&D personnel, contract research, in-house development.",
-          "Funding rate: 25% of eligible costs, 35% for SMEs.",
-          "Maximum basis of assessment: €10 million."
-        ]
-      }
-    },
-    "legal_basis": {
-      "de": {
-        "title": "Rechtsgrundlagen der Förderung:",
-        "links": [
-          {
-            "title": "Forschungszulagengesetz (FZulG)",
-            "url": "https://www.gesetze-im-internet.de/fzulg/FZulG.pdf"
-          },
-          {
-            "title": "De-Minimis-Verordnung EU",
-            "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:32003H0361"
-          }
-        ]
-      },
-      "en": {
-        "title": "Legal basis of the funding:",
-        "links": [
-          {
-            "title": "Research Allowance Act (FZulG)",
-            "url": "https://www.gesetze-im-internet.de/fzulg/FZulG.pdf"
-          },
-          {
-            "title": "EU De-Minimis Regulation",
-            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32003H0361"
-          }
-        ]
-      }
-    },
-    "further_information": {
-      "de": {
-        "title": "Weitere Informationen zur Forschungszulage:",
-        "links": [
-          {
-            "title": "BSFZ Website",
-            "url": "https://www.bescheinigung-forschungszulage.de/"
-          },
-          {
-            "title": "Bundesfinanzministerium",
-            "url": "https://www.bundesfinanzministerium.de"
-          }
-        ]
-      },
-      "en": {
-        "title": "Further information on the Research Allowance:",
-        "links": [
-          {
-            "title": "BSFZ Website",
-            "url": "https://www.bescheinigung-forschungszulage.de/"
-          },
-          {
-            "title": "Federal Ministry of Finance",
-            "url": "https://www.bundesfinanzministerium.de"
-          }
-        ]
+      "brief": {
+        "de": "Der Antrag auf Forschungszulage erfolgt in einem zweistufigen Verfahren: Zunächst muss eine Bescheinigung über die Förderfähigkeit des Projekts bei der BSFZ beantragt werden, anschließend die eigentliche steuerliche Geltendmachung beim Finanzamt.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: für die Projektprüfung die Bescheinigungsstelle Forschungszulage (BSFZ), für die Auszahlung das Finanzamt.  \n- **Form der Antragstellung**: ausschließlich online über das BSFZ-Portal und später über ELSTER beim Finanzamt.  \n- **Unterlagen**: Projektbeschreibung mit Forschungszielen, Zeitplan und Kostenaufstellung; Nachweise zu Personal- und Sachkosten.  \n- **Fristen**: Antragstellung innerhalb der steuerlichen Festsetzungsfrist, in der Regel bis zu vier Jahre nach Ablauf des Veranlagungsjahres.",
+        "de_es": "Der Antrag auf Forschungszulage läuft in zwei Schritten: Zuerst Prüfung des Projekts durch die BSFZ, dann Steuerantrag beim Finanzamt.\n\n&nbsp;\n\n### Wichtige Punkte\n- **Stelle**: BSFZ prüft das Projekt, Finanzamt zahlt aus.  \n- **Form**: online über das BSFZ-Portal und später ELSTER.  \n- **Unterlagen**: kurze Projektbeschreibung, Kosten, Nachweise.  \n- **Frist**: bis zu vier Jahre nach Jahresende.",
+        "en": "The application for the Research Allowance follows a two-step process: first, certification of the project’s eligibility by the BSFZ, then the tax application to the tax office.\n\n&nbsp;\n\n### Important details for the application\n- **Responsible authorities**: BSFZ for project certification; tax office for payment.  \n- **Form of application**: online only via the BSFZ portal and later via ELSTER for the tax office.  \n- **Documents**: project description with research goals, timeline and cost breakdown; evidence of personnel and material costs.  \n- **Deadlines**: application must be filed within the general tax assessment period, usually up to four years after the end of the fiscal year."
       }
     }
   },
