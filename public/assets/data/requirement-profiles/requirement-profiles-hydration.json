@@ -1125,132 +1125,40 @@
       "de": "Die BEG EM Sanierung fördert Maßnahmen zur Verbesserung der Energieeffizienz und des Anteils erneuerbarer Energien bei bestehenden Gebäuden durch Zuschüsse oder Kredite. Die Förderung kann entweder über das Bundesamt für Wirtschaft und Ausfuhrkontrolle (BAFA) oder über die KFW abgewickelt werden.",
       "en": "The BEG EM Renovation program supports measures to improve energy efficiency and the share of renewable energies in existing buildings through grants or loans. Funding can be processed either through the Federal Office for Economic Affairs and Export Control (BAFA) or through KfW."
     },
-    "examples": {
-      "de": {
-        "title": "Folgende Beispiel veranschaulichen die Fördermöglichkeiten:",
-        "examples": [
-          {
-            "title": "Sanierung einer selbstgenutzten Wohneinheit",
-            "text": "Ein:e selbstnutzende:r Eigentümer:in erhält bei förderfähigen Kosten von 30.000 € einen Zuschuss von 21.000 €, wenn der maximale Fördersatz von 70 % erreicht wird – durch Kombination der Grundförderung (30 %), dem Klimageschwindigkeitsbonus (20 %, für den frühzeitigen Austausch einer fossilen Heizung) und dem Einkommensbonus (20 %, bei einem zu versteuernden Haushaltseinkommen unter 40.000 €)."
-          },
-          {
-            "title": "Heizungstausch in einem Mehrfamilienhaus mit 10 Wohneinheiten",
-            "text": "Bei einem Mehrfamilienhaus mit 10 Wohneinheiten beträgt die Höchstgrenze der förderfähigen Ausgaben für den Heizungstausch 137.000 € (30.000 € für die erste Wohneinheit, je 15.000 € für die zweite bis sechste und je 8.000 € ab der siebten), was bei der Grundförderung von 30 % (für Vermietende oder Unternehmen ohne Boni) einem Investitionszuschuss von 41.100 € entspricht."
-          }
-        ]
+    "general": {
+      "brief": {
+        "de": "Die **Bundesförderung für effiziente Gebäude – Einzelmaßnahmen (BEG EM): Sanieren** unterstützt energetische Modernisierungen an bestehenden Gebäuden (z. B. Dämmung, Fenster, Lüftung, Heizungsoptimierung), um den Energieverbrauch zu senken.\n\n&nbsp;\n\n### Zentrale Aspekte der BEG EM (Sanieren)\n- **Gefördert**: Gebäudehülle (Dach, Fassade, Außenwände, Fenster/Türen), Anlagentechnik (z. B. Lüftung, Regelungstechnik) und Heizungsoptimierung.  \n- **Höhe**: Zuschuss von 15 % auf förderfähige Kosten, maximal **12.000 € pro Jahr**.  \n- **Antrag**: vor Beginn der Arbeiten online beim **BAFA** (Bundesamt für Wirtschaft und Ausfuhrkontrolle).  \n- **Energieberater**: Pflicht bei vielen Maßnahmen. Mit einem **individuellen Sanierungsfahrplan (iSFP)** gibt es höhere Fördersätze; Beratungskosten werden bis zu 50 % übernommen.  \n- **Abgrenzung**: Heizungen mit Öl, Gas oder Kohle sind ausgeschlossen. Heizungsförderung läuft separat über die **KfW** (bis zu 70 % Zuschuss).",
+        "de_es": "Die **BEG EM: Sanieren** hilft, einzelne Energiespar-Maßnahmen am Haus zu bezahlen. Dazu gehören zum Beispiel neue Fenster, eine bessere Dämmung oder eine neue Lüftung.\n\n&nbsp;\n\n### Wichtige Punkte\n- **Gefördert**: Dämmung, Fenster/Türen, Lüftung und Heizungsoptimierung.  \n- **Höhe**: 15 % Zuschuss auf Kosten, höchstens **12.000 € pro Jahr**.  \n- **Antrag**: immer vor Start der Arbeiten online beim **BAFA** stellen.  \n- **Energieberater**: ist oft Pflicht. Mit einem **Sanierungsfahrplan (iSFP)** gibt es mehr Förderung; Beratungskosten werden extra bezuschusst.  \n- **Hinweis**: Neue Heizungen mit Öl, Gas oder Kohle werden nicht bezahlt. Heizungsförderung läuft über die **KfW** mit bis zu 70 %. ",
+        "en": "The **Federal Funding for Efficient Buildings – Individual Measures (BEG EM): Renovation** supports energy-saving upgrades to existing buildings (e.g., insulation, windows, ventilation, heating optimization) to reduce energy consumption.\n\n&nbsp;\n\n### Key aspects of BEG EM (Renovation)\n- **Eligible measures**: building envelope (roof, façade, exterior walls, windows/doors), technical systems (e.g., ventilation, controls), and heating optimization.  \n- **Funding amount**: 15% of eligible costs, up to **€12,000 per year**.  \n- **Application**: must be submitted before starting the work via **BAFA** (Federal Office for Economic Affairs and Export Control).  \n- **Energy consultant**: mandatory for many measures. With an **individual renovation roadmap (iSFP)**, higher funding rates are available; consultancy costs are subsidized up to 50%.  \n- **Note**: Oil, gas, and coal heating systems are excluded. Heating replacements are funded separately via **KfW** with grants up to 70%. "
       },
-      "en": {
-        "title": "The following examples illustrate the funding possibilities:",
-        "examples": [
+      "examples": {
+        "de": [
           {
-            "title": "Renovation of a self-occupied residential unit",
-            "text": "A self-occupying owner receives a grant of €21,000 for eligible costs of €30,000 if the maximum funding rate of 70% is reached – through a combination of the basic grant (30%), the climate speed bonus (20%, for the early replacement of a fossil heating system), and the income bonus (20%, for a taxable household income below €40,000)."
+            "title": "Fenstertausch im Einfamilienhaus",
+            "description": "Familie Schmidt aus Potsdam erneuert die alten Einfachverglasungen durch moderne Wärmeschutzfenster.\n\n&nbsp;\n\n### Förderung durch BEG EM\n- Gesamtkosten der neuen Fenster: ca. **20.000 €**.\n- Zuschuss durch das BAFA: **15 %** = **3.000 €**.\n- Antragstellung erfolgt online beim BAFA.\n- Die Familie muss vor Beginn der Arbeiten den Antrag einreichen."
           },
           {
-            "title": "Heating system replacement in a multi-family house with 10 residential units",
-            "text": "For a multi-family house with 10 residential units, the maximum limit of eligible expenses for heating system replacement is €137,000 (€30,000 for the first residential unit, €15,000 each for the second to sixth, and €8,000 each from the seventh), which corresponds to an investment grant of €41,100 with the basic grant of 30% (for landlords or companies without bonuses)."
+            "title": "Dachdämmung im Mehrfamilienhaus",
+            "description": "Herr Yilmaz aus Cottbus lässt das Dach seines Mehrfamilienhauses dämmen, um Heizkosten zu senken.\n\n&nbsp;\n\n### Förderung durch BEG EM\n- Gesamtkosten der Dämmung: ca. **50.000 €**.\n- Zuschuss durch das BAFA: **15 %** = **7.500 €**.\n- Antragstellung online beim BAFA, vor Beginn der Maßnahme.\n- Als Vermieter kann er die Kosten steuerlich geltend machen und zusätzlich die Förderung nutzen."
+          }
+        ],
+        "en": [
+          {
+            "title": "Window replacement in a single-family home",
+            "description": "The Schmidt family from Potsdam replaces old single-glass windows with modern energy-efficient windows.\n\n&nbsp;\n\n### Funding through BEG EM\n- Total cost of new windows: about **€20,000**.\n- Grant from BAFA: **15%** = **€3,000**.\n- Application submitted online to BAFA.\n- The application must be filed before starting the work."
+          },
+          {
+            "title": "Roof insulation in an apartment building",
+            "description": "Mr. Yilmaz from Cottbus insulates the roof of his apartment building to reduce heating costs.\n\n&nbsp;\n\n### Funding through BEG EM\n- Total cost of roof insulation: about **€50,000**.\n- Grant from BAFA: **15%** = **€7,500**.\n- Application submitted online to BAFA before starting the measure.\n- As a landlord, he can combine the subsidy with tax deductions."
           }
         ]
       }
     },
     "application_process": {
-      "de": {
-        "title": "Die Antragstellung erfolgt vor Vorhabensbeginn über über die Website des Bundesamt für Wirtschaft und Ausfuhrkontrolle (BAFA) oder über einen Finanzierungspartner bei einem Kredit. Details zur BEG-Richtlinie finden Sie auf der BAFA-Website.",
-        "links": [
-          {
-            "title": "BEG Antragstellung – BAFA",
-            "url": "https://www.bafa.de/DE/Energie/Effiziente_Gebaeude/Informationen_fuer_Antragstellende/informationen_fuer_antragstellende_node.html"
-          }
-        ]
-      },
-      "en": {
-        "title": "Applications must be submitted before the start of the project via the Federal Office for Economic Affairs and Export Control (BAFA) website or through a financing partner for a loan. Details on the BEG guideline can be found on the BAFA website.",
-        "links": [
-          {
-            "title": "BEG Antragstellung – BAFA",
-            "url": "https://www.bafa.de/DE/Energie/Effiziente_Gebaeude/Informationen_fuer_Antragstellende/informationen_fuer_antragstellende_node.html"
-          }
-        ]
-      }
-    },
-    "required_documents": {
-      "de": [
-        "Nachweis über den Standort des Gebäudes in Deutschland",
-        "Bestätigung zum Antrag (BzA) durch eine Energieeffizienz-Expertin bzw. einen -Experten",
-        "Technischer Projektplan mit Nachweis über Einhaltung der technischen Mindestanforderungen",
-        "Kostenschätzung für förderfähige Maßnahmen"
-      ],
-      "en": [
-        "Proof of building location in Germany",
-        "Confirmation of application (BzA) by a certified energy efficiency expert",
-        "Technical project plan confirming compliance with minimum technical requirements",
-        "Cost estimate for eligible measures"
-      ]
-    },
-    "funding_conditions": {
-      "de": {
-        "title": "Förderkonditionen der BEG EM – Sanieren:",
-        "details": [
-          "Zuschuss oder Kredit über die KfW möglich",
-          "Förderhöhe abhängig vom Maßnahmentyp und Einhaltung der Effizienzanforderungen",
-          "Zuschüsse für Fachplanung und Baubegleitung separat förderfähig"
-        ]
-      },
-      "en": {
-        "title": "Funding conditions of BEG EM – Renovation:",
-        "details": [
-          "Grant or loan available via KfW",
-          "Amount of funding depends on measure type and compliance with efficiency standards",
-          "Grants for planning and construction supervision are separately eligible"
-        ]
-      }
-    },
-    "legal_basis": {
-      "de": {
-        "title": "Rechtsgrundlagen der Förderung:",
-        "links": [
-          {
-            "title": "Förderrichtlinie des Bundesministeriums für Wirtschaft und Klimaschutz",
-            "url": "https://www.bundesanzeiger.de/pub/publication/TevdpcR9NeEp7m7RhbJ/content/TevdpcR9NeEp7m7RhbJ/BAnz%20AT%2029.12.2023%20B1.pdf"
-          }
-        ]
-      },
-      "en": {
-        "title": "Legal basis of the funding:",
-        "links": [
-          {
-            "title": "Funding guidelines of the Federal Ministry for Economic Affairs and Climate Protection",
-            "url": "https://www.bundesanzeiger.de/pub/publication/TevdpcR9NeEp7m7RhbJ/content/TevdpcR9NeEp7m7RhbJ/BAnz%20AT%2029.12.2023%20B1.pdf"
-          }
-        ]
-      }
-    },
-    "further_information": {
-      "de": {
-        "title": "Allgemeine Informationen zur Antragstellung finden Sie in den folgenden Webseiten:",
-        "links": [
-          {
-            "title": "BAFA Merkblatt zur Antragstellung",
-            "url": "https://www.bafa.de/SharedDocs/Downloads/DE/Energie/beg_merkblatt_allgemein_antragstellung.pdf?__blob=publicationFile&v=9"
-          },
-          {
-            "title": "KfW Arbeitshilfe für Produkte der BEG",
-            "url": "https://www.kfw.de/partner/KfW-Partnerportal/Architekten-Bauingenieure-Energieberater/Arbeitshilfen-Service/Arbeitshilfen-Pr%C3%A4sentationen/Arbeitshilfen-BEG/index.jsp?redirect=360896"
-          }
-        ]
-      },
-      "en": {
-        "title": "General information on the application process can be found on the following websites:",
-        "links": [
-          {
-            "title": "BAFA Information Sheet on Application",
-            "url": "https://www.bafa.de/SharedDocs/Downloads/DE/Energie/beg_merkblatt_allgemein_antragstellung.pdf?__blob=publicationFile&v=9"
-          },
-          {
-            "title": "KfW Guide for BEG Products",
-            "url": "https://www.kfw.de/partner/KfW-Partnerportal/Architekten-Bauingenieure-Energieberater/Arbeitshilfen-Service/Arbeitshilfen-Pr%C3%A4sentationen/Arbeitshilfen-BEG/index.jsp?redirect=360896"
-          }
-        ]
+      "brief": {
+        "de": "Der Antrag auf Förderung im Rahmen der BEG EM (Sanieren) wird vor Beginn der Maßnahme gestellt – in der Regel online beim BAFA.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: BAFA für Einzelmaßnahmen an Gebäudehülle, Anlagentechnik und Heizungsoptimierung; KfW für Heizungsersatz.  \n- **Form der Antragstellung**: Online-Antrag über das offizielle BAFA-Portal; für KfW-Maßnahmen über eine Hausbank oder Förderpartner.  \n- **Unterlagen**: Erforderlich sind Kostenvoranschläge, technische Nachweise der geplanten Maßnahme, Nachweise über die Einbindung eines Energieeffizienz-Experten sowie ein gültiges Ausweisdokument.  \n- **Energieberater**: Bei den meisten Maßnahmen ist die Einbindung eines Energieeffizienz-Experten Pflicht; seine Kosten werden bis zu 50 % gefördert.  \n- **Fristen**: Antrag muss vor Beginn der Maßnahme gestellt werden; rückwirkende Förderung ist ausgeschlossen.",
+        "de_es": "Den Antrag für BEG EM (Sanieren) muss man vor Start der Arbeiten stellen – meistens online beim BAFA.\n\n&nbsp;\n\n### Wichtige Punkte\n- **Zuständig**: BAFA für Fenster, Dämmung und Technik; KfW für Heizungen.  \n- **Antrag**: Online über BAFA-Portal; bei KfW über die Bank.  \n- **Unterlagen**: Kostenvoranschlag, technische Daten, Nachweis vom Energieberater und Ausweis.  \n- **Energieberater**: meist Pflicht; Kosten werden bis zu 50 % übernommen.  \n- **Fristen**: Antrag immer vor dem Start stellen, sonst keine Förderung.",
+        "en": "The application for BEG EM (Renovation) must be submitted before starting the works – usually online via BAFA.\n\n&nbsp;\n\n### Important details for the application\n- **Responsible authority**: BAFA for individual measures (building envelope, technical systems, heating optimization); KfW for heating replacement.  \n- **Form of application**: online via the BAFA portal; for KfW measures through a bank or funding partner.  \n- **Documents**: required are cost estimates, technical specifications of the planned measure, confirmation of an energy efficiency expert, and ID documents.  \n- **Energy consultant**: mandatory for most measures; fees are subsidized up to 50%.  \n- **Deadlines**: application must be submitted before starting the works; retroactive funding is excluded."
       }
     }
   },
