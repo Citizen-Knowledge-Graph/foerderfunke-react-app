@@ -27,7 +27,7 @@ const useFetchStaticBenefitPageData = (id, language) => {
       benefitScope:         pickLang(resource?.benefit_scope, language, null),
       benefitType:          pickLang(resource?.benefit_type, language, null),
       examplesMD:           pickLang(resource?.examplesMD, language, null),
-      contactMD:            pickLang(resource?.contactMD, language, null),
+      contactMD:            pickLang(resource?.contactMD, language, resource?.contactMD),
       howMD:                pickLang(resource?.howMD, language, null),
       documentsMD:          pickLang(resource?.documentsMD, language, null),
       processMD:            pickLang(resource?.processMD, language, null),
