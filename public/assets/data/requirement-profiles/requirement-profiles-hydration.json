@@ -1977,9 +1977,18 @@
       "en": "Julia Brück, 27, from Bonn, works as an office management clerk with work assistance at the Federal Agency for Civic Education. Due to her cerebral palsy and wheelchair use, assistants support her with daily tasks such as preparations at home, navigating the office, or technical activities. This allows her to focus on her actual work. She selects her assistants herself. However, since not all working hours are covered, she sometimes has to manage without support. For Julia, work assistance means more independence and the opportunity to pursue her professional goals."
     },
     "contactMD": {
-      "de": "**Landschaftsverband Westfalen-Lippe**  \nAnsprechperson für Bielefeld: Vanessa Schubert  \nGartenstraße 215  \n48147 Münster  \nTel: 0251 591-5164  \nE-Mail: vanessa.schubert@lwl.org  \n[vCard: Visitenkarte herunterladen](https://www.lwl.org/anis/vcard/1206)",
-      "de_es": "**Landschaftsverband Westfalen-Lippe**  \nAnsprechperson für Bielefeld: Vanessa Schubert  \nGartenstraße 215  \n48147 Münster  \nTel: 0251 591-5164  \nE-Mail: vanessa.schubert@lwl.org  \n[vCard: Visitenkarte herunterladen](https://www.lwl.org/anis/vcard/1206)",
-      "en": "**Regional Association of Westphalia-Lippe (LWL)**  \nContact person for Bielefeld: Vanessa Schubert  \nGartenstraße 215  \n48147 Münster  \nTel: +49 251 591-5164  \nE-Mail: vanessa.schubert@lwl.org  \n[vCard: Download contact card](https://www.lwl.org/anis/vcard/1206)"
+      "general": null,
+      "specific": [
+        {
+          "pattern": {
+            "location": "Bielefeld"
+          },
+          "PLZs": ["TODO"],
+          "de": "**Landschaftsverband Westfalen-Lippe**  \nAnsprechperson für Bielefeld: Vanessa Schubert  \nGartenstraße 215  \n48147 Münster  \nTel: 0251 591-5164  \nE-Mail: vanessa.schubert@lwl.org  \n[vCard: Visitenkarte herunterladen](https://www.lwl.org/anis/vcard/1206)",
+          "de_es": "**Landschaftsverband Westfalen-Lippe**  \nAnsprechperson für Bielefeld: Vanessa Schubert  \nGartenstraße 215  \n48147 Münster  \nTel: 0251 591-5164  \nE-Mail: vanessa.schubert@lwl.org  \n[vCard: Visitenkarte herunterladen](https://www.lwl.org/anis/vcard/1206)",
+          "en": "**Regional Association of Westphalia-Lippe (LWL)**  \nContact person for Bielefeld: Vanessa Schubert  \nGartenstraße 215  \n48147 Münster  \nTel: +49 251 591-5164  \nE-Mail: vanessa.schubert@lwl.org  \n[vCard: Download contact card](https://www.lwl.org/anis/vcard/1206)"
+        }
+      ]
     },
     "documentsMD": {
       "de": "- Schwerbehindertenausweis\n- Nachweis des Arbeitgebers das die Arbeitsplatzgestaltung nicht ausreichend ist\n- Nachweis der Arbeitsstunden\n- Businessplan [falls notwendig]\n- Bestätigung der Tragfähigkeit [falls notwendig]",

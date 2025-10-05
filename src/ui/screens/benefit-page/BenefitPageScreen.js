@@ -18,6 +18,10 @@ const BenefitPageScreen = ({
     categoryTitles,
     matchingGraph
 }) => {
+    const buildContactSection = () => {
+        // TODO
+        return <div></div>;
+    }
 
     return (
         <Layout isApp={true} logo={false} back="Back">
@@ -31,6 +35,9 @@ const BenefitPageScreen = ({
                             benefitPageData?.localHelpAvailable && (
                                 <BenefitPageLocal t={t} isDesktop={isDesktop} benefitPageData={benefitPageData} />
                             )
+                        }
+                        {
+                            buildContactSection()
                         }
                         {featureFlags.showMermaidRuleGraph &&
                             <BenefitPageRequirements t={t} isDesktop={isDesktop} evalGraph={matchingGraph} benefitPageData={benefitPageData} />
