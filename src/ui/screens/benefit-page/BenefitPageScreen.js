@@ -15,11 +15,12 @@ const BenefitPageScreen = ({
     isDesktop,
     benefitPageData,
     localisedData,
+    xml,
     validatedStatus,
     categoryTitles,
     matchingGraph
 }) => {
-   
+
     return (
         <Layout isApp={true} logo={false} back="Back">
             <AppScreenWrapperContainer backTarget={'/eligibility-overview'}>
@@ -27,7 +28,7 @@ const BenefitPageScreen = ({
                     <BenefitPageHeader id={id} benefit={benefitPageData} validatedStatus={validatedStatus} categoryTitles={categoryTitles} />
                     <VBox sx={{ gap: { xs: 4, md: 8 } }}>
                         <BenefitPageGeneral t={t} isDesktop={isDesktop} benefitPageData={benefitPageData} />
-                        <BenefitPageApplication t={t} isDesktop={isDesktop} benefitPageData={benefitPageData} />
+                        <BenefitPageApplication t={t} isDesktop={isDesktop} benefitPageData={benefitPageData} xml={xml} />
                         {
                             localisedData && (
                                 <BenefitPageLocal t={t} isDesktop={isDesktop} localisedData={localisedData} />

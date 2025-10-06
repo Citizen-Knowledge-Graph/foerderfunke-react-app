@@ -9,6 +9,8 @@ import { useLanguageStore } from '@/ui/storage/useLanguageStore';
 import matchingEngineManager from "@/core/managers/matchingEngineManager";
 import { useUserStore } from '@/ui/storage/zustand';
 import { useStore } from "@/ui/shared-components/ViewportUpdater";
+import { useFetchLocaliseData } from './hooks/useFetchLocalisedData';
+import useFetchData from '@/ui/shared-hooks/utility/useFetchResource';
 
 const BenefitPageScreenContainer = () => {
     const { id } = useParams();
@@ -21,6 +23,8 @@ const BenefitPageScreenContainer = () => {
     const categoryTitles = useBuildCategoryTitles(id, language);
     const validatedStatus = useValidatedStatus(id);
     const activeUserId = useUserStore((state) => state.activeUserId);
+    const localisedData = useFetchLocaliseData(benefitPageData);
+    const xml = useFetchData(`assets/data/xml/${id.split(":")[1]}.xml`);
 
     useEffect(() => {
         const fetchMatchingReport = async () => {
@@ -42,6 +46,8 @@ const BenefitPageScreenContainer = () => {
             id={id}
             isDesktop={isDesktop}
             benefitPageData={benefitPageData}
+            localisedData={localisedData}
+            xml={xml}
             validatedStatus={validatedStatus}
             categoryTitles={categoryTitles}
             matchingGraph={matchingGraph}
