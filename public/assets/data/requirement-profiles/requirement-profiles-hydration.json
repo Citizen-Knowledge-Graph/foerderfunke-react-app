@@ -646,98 +646,50 @@
       "de": "Das Förderprogramm 'IBB Altersgerecht Wohnen' unterstützt Vermieter:innen und Investor:innen bei der Finanzierung von Modernisierungsmaßnahmen zur Barrierereduzierung, Erhöhung des Wohnkomforts und Einbruchschutz in Berlin. Ziel ist es, altersgerechtes Wohnen zu fördern und die Lebensqualität in Wohngebäuden zu verbessern.",
       "en": "The 'IBB Altersgerecht Wohnen' funding program supports landlords and investors in financing modernization measures for barrier reduction, increased living comfort, and burglary protection in Berlin. The goal is to promote age-appropriate living and improve the quality of life in residential buildings."
     },
+    "general": {
+      "brief": {
+        "de": "Das Programm **„IBB Altersgerecht Wohnen“** unterstützt Modernisierungsmaßnahmen in Berlin, die Barrieren reduzieren, den Wohnkomfort erhöhen oder den Einbruchschutz verbessern. Es richtet sich an **Vermieter:innen, Investor:innen, Wohnungsunternehmen, Genossenschaften und Ersterwerber:innen von modernisiertem Wohnraum**.\n\n&nbsp;\n\n### Wichtige Aspekte der Förderung\n- **Ziel:** Verbesserung der Barrierefreiheit, Wohnqualität und Sicherheit in Bestandsgebäuden.\n- **Förderberechtigte:** Private und kommunale Wohnungsunternehmen, Genossenschaften, Investor:innen, Vermieter:innen und Ersterwerber:innen.\n- **Förderhöhe:** Bis zu **50.000 € pro Wohneinheit** als zinsgünstiges Darlehen über die KfW, zusätzlich um **bis zu 0,6 % p.a.** durch die IBB zinsverbilligt.\n- **Förderfähige Maßnahmen:** Einbau von Aufzügen, Abbau von Schwellen, barrierefreie Zugänge, Umbau von Bädern, Einbruchschutz.\n- **Zuständig:** Investitionsbank Berlin (**IBB**) in Zusammenarbeit mit der **KfW-Bankengruppe**.",
+        "de_es": "Das Programm **„IBB Altersgerecht Wohnen“** hilft dabei, Wohnungen in Berlin barrierefreier und sicherer zu machen. Es richtet sich an **Vermieter:innen, Wohnungsunternehmen und Investor:innen**.\n\n&nbsp;\n\n### Wichtige Punkte\n- **Ziel:** Barrieren abbauen, Sicherheit und Komfort erhöhen.\n- **Förderhöhe:** Bis zu **50.000 € pro Wohnung** als günstiger Kredit.\n- **Maßnahmen:** Aufzüge, Badumbauten, Abbau von Stufen, Einbruchschutz.\n- **Zuständig:** Die **IBB** zusammen mit der **KfW-Bank**.",
+        "en": "The **IBB 'Accessible Housing'** program supports modernization measures in Berlin that improve accessibility, comfort, and security. It targets **landlords, housing associations, cooperatives, and investors**.\n\n&nbsp;\n\n### Key aspects of the program\n- **Goal:** Reduce barriers, enhance living quality, and improve security.\n- **Eligible applicants:** Private and public housing companies, cooperatives, landlords, investors, and first-time buyers of renovated accessible housing.\n- **Funding amount:** Up to **€50,000 per housing unit** as a low-interest KfW loan, with an additional **0.6% interest subsidy per year** from IBB.\n- **Eligible measures:** Installation of elevators, bathroom conversions, removal of thresholds, barrier-free access, and burglary protection.\n- **Responsible authority:** The **Investitionsbank Berlin (IBB)** in cooperation with the **KfW Bank Group**."
+      },
+      "examples": {
+        "de": [
+          {
+            "title": "Barrierefreier Umbau einer Altbauwohnung",
+            "description": "Sabine (68) lebt in einer Eigentumswohnung in Berlin-Prenzlauer Berg und möchte ihre Wohnung altersgerecht umbauen lassen.\n\n&nbsp;\n\n### Förderung durch das Programm IBB Altersgerecht Wohnen\n- Sie plant den **Einbau eines barrierefreien Badezimmers** und den **Umbau der Wohnungseingangstür** für leichtere Zugänglichkeit.\n- Die Gesamtkosten betragen rund **30.000 €**.\n- Über das Programm erhält sie einen **zinsgünstigen Kredit von 25.000 €** mit einem reduzierten Zinssatz von **0,6 % p.a.**."
+          },
+          {
+            "title": "Einbruchschutz und Aufzugsmodernisierung im Mietshaus",
+            "description": "Ein Berliner Vermieter möchte sein Mehrfamilienhaus in Neukölln modernisieren und den Einbruchschutz verbessern.\n\n&nbsp;\n\n### Förderung durch das Programm IBB Altersgerecht Wohnen\n- Er investiert in den **Einbau neuer Sicherheitstüren**, **Beleuchtungssysteme im Eingangsbereich** und die **Modernisierung des Aufzugs**.\n- Für die fünf Wohneinheiten erhält er insgesamt **einen Kredit von 50.000 €** (10.000 € pro Einheit) über die IBB.\n- Die Finanzierung wird mit einem **Zinsvorteil von 0,6 % p.a.** gewährt."
+          }
+        ],
+        "de_es": [
+          {
+            "title": "Barrierefreier Umbau einer Altbauwohnung",
+            "description": "Sabine (68) lebt in einer Eigentumswohnung in Berlin-Prenzlauer Berg und möchte ihre Wohnung altersgerecht umbauen lassen.\n\n&nbsp;\n\n### Förderung durch das Programm IBB Altersgerecht Wohnen\n- Sie plant den **Einbau eines barrierefreien Badezimmers** und den **Umbau der Wohnungseingangstür** für leichtere Zugänglichkeit.\n- Die Gesamtkosten betragen rund **30.000 €**.\n- Über das Programm erhält sie einen **zinsgünstigen Kredit von 25.000 €** mit einem reduzierten Zinssatz von **0,6 % p.a.**."
+          },
+          {
+            "title": "Einbruchschutz und Aufzugsmodernisierung im Mietshaus",
+            "description": "Ein Berliner Vermieter möchte sein Mehrfamilienhaus in Neukölln modernisieren und den Einbruchschutz verbessern.\n\n&nbsp;\n\n### Förderung durch das Programm IBB Altersgerecht Wohnen\n- Er investiert in den **Einbau neuer Sicherheitstüren**, **Beleuchtungssysteme im Eingangsbereich** und die **Modernisierung des Aufzugs**.\n- Für die fünf Wohneinheiten erhält er insgesamt **einen Kredit von 50.000 €** (10.000 € pro Einheit) über die IBB.\n- Die Finanzierung wird mit einem **Zinsvorteil von 0,6 % p.a.** gewährt."
+          }
+        ],
+        "en": [
+          {
+            "title": "Barrier-free renovation of an old apartment",
+            "description": "Sabine (68) lives in her own apartment in Berlin-Prenzlauer Berg and wants to adapt it to be age-appropriate.\n\n&nbsp;\n\n### Support through the IBB Age-Appropriate Living Program\n- She plans to **install a barrier-free bathroom** and **modify the entrance door** for easier access.\n- The total renovation costs are about **€30,000**.\n- Through the program, she receives a **low-interest loan of €25,000** with a reduced interest rate of **0.6 % p.a.**."
+          },
+          {
+            "title": "Security and elevator modernization in a rental building",
+            "description": "A landlord in Berlin-Neukölln wants to modernize his multi-family building and improve burglary protection.\n\n&nbsp;\n\n### Support through the IBB Age-Appropriate Living Program\n- He invests in **new security doors**, **improved lighting in the entrance area**, and **elevator modernization**.\n- For five residential units, he receives **a total loan of €50,000** (€10,000 per unit) from IBB.\n- The financing includes an **interest reduction of 0.6 % p.a.**."
+          }
+        ]
+      }
+    },
     "application_process": {
-      "de": {
-        "title": "Die Förderung kann über die IBB beantragt werden. Der Antrag muss vor Beginn der Maßnahmen gestellt werden. Detaillierte Informationen zur Antragstellung sind auf der Website der IBB verfügbar.",
-        "links": [
-          {
-            "title": "IBB Altersgerecht Wohnen",
-            "url": "https://ibb.de/altersgerecht-wohnen"
-          }
-        ]
-      },
-      "en": {
-        "title": "The funding can be applied for through IBB. The application must be submitted before the start of the measures. Detailed information on the application process is available on the IBB website.",
-        "links": [
-          {
-            "title": "IBB Age-Appropriate Housing",
-            "url": "https://ibb.de/altersgerecht-wohnen"
-          }
-        ]
-      }
-    },
-    "required_documents": {
-      "de": [
-        "Ausgefülltes Antragsformular",
-        "Nachweise zur geplanten Baumaßnahme (z. B. Kostenvoranschläge, Baupläne)",
-        "Eigentumsnachweis oder Nachweis über die Vermietung",
-        "Bonitätsnachweise"
-      ],
-      "en": [
-        "Completed application form",
-        "Proof of planned construction measures (e.g., cost estimates, building plans)",
-        "Proof of ownership or rental documentation",
-        "Creditworthiness documentation"
-      ]
-    },
-    "additional_support": {
-      "de": {
-        "title": "Für weitere Informationen und Beratung können Sie sich an die IBB-Kundenbetreuung wenden.",
-        "links": [
-          {
-            "title": "Kontakt zur IBB",
-            "url": "mailto:immobilien@ibb.de"
-          }
-        ]
-      },
-      "en": {
-        "title": "For further information and advice, you can contact the IBB customer service.",
-        "links": [
-          {
-            "title": "Contact IBB",
-            "url": "mailto:immobilien@ibb.de"
-          }
-        ]
-      }
-    },
-    "legal_basis": {
-      "de": {
-        "title": "Die Förderung basiert auf den Richtlinien der KfW Bankengruppe und der IBB.",
-        "links": [
-          {
-            "title": "Förderbedingungen der IBB",
-            "url": "https://ibb.de/altersgerecht-wohnen"
-          }
-        ]
-      },
-      "en": {
-        "title": "The funding is based on the guidelines of the KfW Banking Group and IBB.",
-        "links": [
-          {
-            "title": "IBB Funding Conditions",
-            "url": "https://ibb.de/altersgerecht-wohnen"
-          }
-        ]
-      }
-    },
-    "further_information": {
-      "de": {
-        "title": "Hier finden Sie weitere Informationen zur Förderung altersgerechten Wohnens:",
-        "links": [
-          {
-            "title": "IBB Altersgerecht Wohnen",
-            "url": "https://ibb.de/altersgerecht-wohnen"
-          }
-        ]
-      },
-      "en": {
-        "title": "Here you can find more information about age-appropriate housing support:",
-        "links": [
-          {
-            "title": "IBB Age-Appropriate Housing",
-            "url": "https://ibb.de/altersgerecht-wohnen"
-          }
-        ]
+      "brief": {
+        "de": "Der Antrag auf Förderung im Programm **„IBB Altersgerecht Wohnen“** wird direkt bei der **Investitionsbank Berlin (IBB)** gestellt.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle:** Die **Investitionsbank Berlin (IBB)** als Förderbank des Landes Berlin.\n- **Form der Antragstellung:** Antragstellung erfolgt schriftlich oder online über das IBB-Förderportal; Beratung durch die IBB ist möglich.\n- **Unterlagen:** Erforderlich sind Nachweise zu Eigentumsverhältnissen, geplanten Maßnahmen (z. B. Bau- oder Modernisierungsbeschreibung, Kostenvoranschläge) sowie ggf. Genehmigungen.\n- **Fristen:** Der Antrag muss **vor Beginn der Baumaßnahmen** gestellt werden, eine rückwirkende Förderung ist ausgeschlossen.\n- **Hinweis:** Die technische Prüfung und Finanzierung erfolgen in Abstimmung mit der **KfW-Bankengruppe**, sofern deren Programme eingebunden sind.",
+        "de_es": "Der Antrag für **„IBB Altersgerecht Wohnen“** wird bei der **Investitionsbank Berlin (IBB)** gestellt.\n\n&nbsp;\n\n### Wichtige Punkte zur Antragstellung\n- **Zuständig:** Die **IBB** in Berlin.\n- **Antrag:** Schriftlich oder online über das IBB-Portal.\n- **Unterlagen:** Eigentumsnachweise, Beschreibung der Umbauten, Kostenvoranschläge.\n- **Frist:** Antrag muss **vor Beginn der Arbeiten** gestellt werden.",
+        "en": "The application for the **IBB Accessible Housing** program is submitted directly to the **Investitionsbank Berlin (IBB)**.\n\n&nbsp;\n\n### Important details for the application\n- **Responsible authority:** The **Investitionsbank Berlin (IBB)** as Berlin’s development bank.\n- **Form of application:** Written or online submission via the IBB funding portal; consultation with IBB advisors is possible.\n- **Documents:** Proof of property ownership, project description and cost estimates, and required permits where applicable.\n- **Deadlines:** Applications must be submitted **before construction or renovation begins**; retroactive funding is not possible.\n- **Note:** Technical verification and financing are coordinated with the **KfW Bank Group** when applicable."
       }
     }
   },
