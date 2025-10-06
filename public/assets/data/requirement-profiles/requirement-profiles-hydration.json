@@ -753,110 +753,50 @@
       "de": "Der Hamburg-Kredit Gründung und Nachfolge III 2025 unterstützt Existenzgründungen und Unternehmensnachfolgen in Hamburg durch langfristige Finanzierung von Investitionen und Betriebsmitteln. Das Programm bietet günstige Darlehenskonditionen und Zuschüsse für förderfähige Unternehmen.",
       "en": "The Hamburg-Kredit Start-up and Succession III 2025 supports business start-ups and successions in Hamburg through long-term financing of investments and working capital. The program offers favorable loan conditions and grants for eligible businesses."
     },
+    "general": {
+      "brief": {
+        "de": "Der Hamburg-Kredit Gründung und Nachfolge bietet zinsgünstige Darlehen für Existenzgründungen und Unternehmensübernahmen in Hamburg.\n\n&nbsp;\n\n### Zentrale Aspekte des Programms\n- **Zielgruppe**: Existenzgründer:innen, kleine und mittlere Unternehmen (KMU), Freiberufler:innen und Personen, die ein bestehendes Unternehmen übernehmen.  \n- **Fördergegenstand**: Investitionen, Betriebsmittel und Wachstumsfinanzierungen in Hamburg; auch Unternehmensübernahmen oder Beteiligungen ab 10 %.  \n- **Darlehenshöhe**: bis zu **1.000.000 €** pro Antragsteller:in, häufig in Kombination mit einer Bürgschaft der Bürgschaftsbank Hamburg (bis zu 70 %).  \n- **Bedingungen**: günstige Zinsen, flexible Laufzeiten und Tilgungsfreijahre möglich.  \n- **Besonderheit**: Bei Schaffung eines neuen Ausbildungsplatzes im Handwerk kann ein Zuschuss von bis zu **5.000 €** gewährt werden.  \n- **Zuständige Stelle**: Antragstellung über die Hausbank, Prüfung und Abwicklung durch die IFB Hamburg.",
+        "de_es": "Der Hamburg-Kredit Gründung und Nachfolge hilft Menschen, die in Hamburg ein Unternehmen gründen oder übernehmen möchten. Sie können mit dem Kredit wichtige Anschaffungen bezahlen oder ihr Geschäft vergrößern.\n\n&nbsp;\n\n### Wichtige Punkte\n- **Wer kann den Kredit bekommen**: Gründer:innen, kleine Firmen, Freiberufler:innen und Menschen, die ein Unternehmen übernehmen.  \n- **Wofür gibt es das Geld**: Für Investitionen, den täglichen Betrieb und das Wachstum eines Unternehmens in Hamburg.  \n- **Wie viel Geld**: Bis zu **1.000.000 €** sind möglich. Oft hilft die Bürgschaftsbank Hamburg, wenn eigene Sicherheiten fehlen.  \n- **Bedingungen**: Niedrige Zinsen, Ratenpause am Anfang möglich.  \n- **Extra-Zuschuss**: Wer einen neuen Ausbildungsplatz im Handwerk schafft, kann bis zu **5.000 €** zusätzlich bekommen.  \n- **Wo beantragen**: Über die Hausbank. Die IFB Hamburg prüft den Antrag.",
+        "en": "The Hamburg Loan for Start-ups and Business Succession offers low-interest loans for new businesses and company takeovers in Hamburg.\n\n&nbsp;\n\n### Key aspects of the program\n- **Target group**: Entrepreneurs, small and medium-sized enterprises (SMEs), freelancers, and people taking over an existing business.  \n- **Eligible purposes**: Investments, working capital, and growth financing in Hamburg; also business takeovers or participations starting from 10 %.  \n- **Loan amount**: Up to **€1,000,000** per applicant, often combined with a guarantee from the Hamburg Guarantee Bank (up to 70 %).  \n- **Conditions**: Favorable interest rates, flexible repayment terms, and possible grace periods.  \n- **Special feature**: A bonus of up to **€5,000** can be granted for creating a new apprenticeship position in the skilled trades.  \n- **Responsible authority**: Applications are submitted through the applicant’s bank and processed by IFB Hamburg."
+      },
+      "examples": {
+        "de": [
+          {
+            "title": "Existenzgründung im Einzelhandel",
+            "description": "Leonie (33) aus Hamburg möchte ein nachhaltiges Bekleidungsgeschäft eröffnen. Für die Ladenrenovierung, Erstausstattung und den Warenbestand benötigt sie rund 120.000 €.\n\n&nbsp;\n\n### Unterstützung durch den Hamburg-Kredit Gründung\n- Leonie erhält ein Darlehen über **120.000 €** mit günstigem Zinssatz und zwei tilgungsfreien Jahren.  \n- Die Bürgschaftsbank Hamburg übernimmt eine **70%ige Ausfallbürgschaft**, da Leonie keine hohen Sicherheiten vorweisen kann.  \n- Zusätzlich bekommt sie **5.000 € Zuschuss**, weil sie eine Auszubildende einstellt."
+          },
+          {
+            "title": "Unternehmensnachfolge im Handwerk",
+            "description": "Tobias (45) übernimmt einen bestehenden Malerbetrieb in Hamburg von seinem früheren Arbeitgeber. Für die Übernahme und Modernisierung der Werkstatt braucht er 300.000 €.\n\n&nbsp;\n\n### Unterstützung durch den Hamburg-Kredit Nachfolge\n- Tobias finanziert den Kaufpreis und neue Geräte über ein IFB-Darlehen von **300.000 €**.  \n- Dank günstiger Zinsen und **5 Jahren Laufzeit mit 1 Jahr tilgungsfrei** bleibt seine Liquidität gesichert.  \n- Die Hausbank beantragte das Darlehen direkt bei der **IFB Hamburg**, die den Antrag prüfte und bewilligte."
+          }
+        ],
+        "de_es": [
+          {
+            "title": "Neuer Laden in Hamburg",
+            "description": "Leonie (33) möchte in Hamburg ein Geschäft für nachhaltige Kleidung eröffnen. Dafür braucht sie Geld für den Laden, die Ausstattung und die erste Ware.\n\n&nbsp;\n\n### Hilfe durch den Hamburg-Kredit\n- Sie bekommt **120.000 € Kredit** mit niedrigen Zinsen und zwei Jahren ohne Rückzahlung.  \n- Eine Bürgschaftsbank sichert **70 %** des Kredits ab.  \n- Weil sie eine Auszubildende einstellt, bekommt sie **5.000 € Zuschuss**."
+          },
+          {
+            "title": "Betriebsübernahme im Handwerk",
+            "description": "Tobias (45) übernimmt eine Malerfirma in Hamburg. Für den Kauf und neue Geräte braucht er 300.000 €.\n\n&nbsp;\n\n### Hilfe durch den Hamburg-Kredit\n- Tobias bekommt **300.000 € Kredit** zu günstigen Bedingungen.  \n- Er muss im ersten Jahr noch nichts zurückzahlen.  \n- Die IFB Hamburg prüft den Antrag, seine Hausbank hilft beim Antrag."
+          }
+        ],
+        "en": [
+          {
+            "title": "Start-up in Sustainable Retail",
+            "description": "Leonie (33) from Hamburg wants to open a sustainable clothing store. She needs around €120,000 for renovations, equipment, and initial stock.\n\n&nbsp;\n\n### Support through the Hamburg Start-up Loan\n- Leonie receives a **€120,000 low-interest loan** with two years of repayment grace.  \n- The Hamburg Guarantee Bank covers **70% of the risk** as a guarantee.  \n- She also receives a **€5,000 grant** for creating an apprenticeship position."
+          },
+          {
+            "title": "Business Succession in Craftsmanship",
+            "description": "Tobias (45) is taking over a painting business in Hamburg from his former employer. He needs €300,000 for the acquisition and modernization of the workshop.\n\n&nbsp;\n\n### Support through the Hamburg Succession Loan\n- Tobias finances the takeover and equipment with an **IFB loan of €300,000**.  \n- He benefits from low interest and **a 5-year term with 1 year grace period**.  \n- The **IFB Hamburg** reviews and approves the application submitted via his house bank."
+          }
+        ]
+      }
+    },
     "application_process": {
-      "de": {
-        "title": "Der Antrag auf Förderung erfolgt über die Hamburgische Investitions- und Förderbank (IFB). Anträge müssen vor Beginn der Investition gestellt werden. Weitere Details zur Antragstellung finden Sie auf der IFB-Website.",
-        "links": [
-          {
-            "title": "Antragstellung IFB",
-            "url": "https://www.ifbhh.de/programme/gruender-und-unternehmen/gruenden-und-nachfolgen/unternehmen-gruenden/hamburg-kredit-gruendung-und-nachfolge"
-          }
-        ]
-      },
-      "en": {
-        "title": "The funding application is submitted via the Hamburgische Investitions- und Förderbank (IFB). Applications must be submitted before the investment begins. Further details on the application process can be found on the IFB website.",
-        "links": [
-          {
-            "title": "IFB Application",
-            "url": "https://www.ifbhh.de/programme/gruender-und-unternehmen/gruenden-und-nachfolgen/unternehmen-gruenden/hamburg-kredit-gruendung-und-nachfolge"
-          }
-        ]
-      }
-    },
-    "required_documents": {
-      "de": [
-        "Vollständig ausgefülltes Antragsformular",
-        "Businessplan mit Finanzierungsplan",
-        "Bonitätsnachweise und wirtschaftliche Unterlagen des Unternehmens",
-        "Nachweis über den Unternehmenssitz in Hamburg"
-      ],
-      "en": [
-        "Fully completed application form",
-        "Business plan with financing plan",
-        "Creditworthiness certificates and financial documents of the company",
-        "Proof of company headquarters in Hamburg"
-      ]
-    },
-    "funding_conditions": {
-      "de": {
-        "title": "Die Förderkonditionen des Hamburg-Kredit Gründung und Nachfolge III 2025 umfassen folgende Punkte:",
-        "details": [
-          "Darlehensbetrag: Mindestens 25.000 Euro, maximal 1.000.000 Euro.",
-          "Zinssatz: Der Zinssatz ist für die gesamte Laufzeit festgelegt und wird durch die IFB Hamburg kommuniziert.",
-          "Laufzeit: Maximal 10 Jahre, mit einer tilgungsfreien Anlaufzeit von bis zu zwei Jahren.",
-          "Sicherheiten: Die IFB kann bankübliche Sicherheiten verlangen, je nach wirtschaftlicher Situation des Unternehmens.",
-          "Förderfähige Kosten: Finanzierung von Investitionen, Betriebsmitteln und immateriellen Wirtschaftsgütern.",
-          "Zuschuss: Zusätzlich zum Darlehen kann unter bestimmten Bedingungen ein nicht rückzahlbarer Zuschuss von bis zu 5.000 Euro gewährt werden."
-        ]
-      },
-      "en": {
-        "title": "The funding conditions of the Hamburg-Kredit Start-up and Succession III 2025 include the following:",
-        "details": [
-          "Loan amount: Minimum 25,000 euros, maximum 1,000,000 euros.",
-          "Interest rate: The interest rate is fixed for the entire term and communicated by IFB Hamburg.",
-          "Term: Maximum 10 years, with a repayment-free start-up period of up to two years.",
-          "Collateral: IFB may require standard banking collateral, depending on the company's financial situation.",
-          "Eligible costs: Financing of investments, working capital, and intangible assets.",
-          "Grant: In addition to the loan, a non-repayable grant of up to 5,000 euros may be provided under certain conditions."
-        ]
-      }
-    },
-    "legal_basis": {
-      "de": {
-        "title": "Die Förderung basiert auf den Richtlinien der Hamburgischen Investitions- und Förderbank sowie EU-Vorgaben zur KMU-Förderung.",
-        "links": [
-          {
-            "title": "Förderbedingungen IFB",
-            "url": "https://www.ifbhh.de"
-          },
-          {
-            "title": "KMU-Definition der EU",
-            "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:32003H0361"
-          }
-        ]
-      },
-      "en": {
-        "title": "The funding is based on the guidelines of the Hamburgische Investitions- und Förderbank and EU regulations for SME funding.",
-        "links": [
-          {
-            "title": "IFB Funding Conditions",
-            "url": "https://www.ifbhh.de"
-          },
-          {
-            "title": "EU SME Definition",
-            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32003H0361"
-          }
-        ]
-      }
-    },
-    "further_information": {
-      "de": {
-        "title": "Hier finden Sie weitere Informationen zur IFB-Förderung:",
-        "links": [
-          {
-            "title": "Hamburg-Kredit Gründung und Nachfolge",
-            "url": "https://www.ifbhh.de/programme/gruender-und-unternehmen/gruenden-und-nachfolgen/unternehmen-gruenden/hamburg-kredit-gruendung-und-nachfolge"
-          }
-        ]
-      },
-      "en": {
-        "title": "Here you can find more information about IFB funding:",
-        "links": [
-          {
-            "title": "Hamburg-Kredit Start-up and Succession",
-            "url": "https://www.ifbhh.de/programme/gruender-und-unternehmen/gruenden-und-nachfolgen/unternehmen-gruenden/hamburg-kredit-gruendung-und-nachfolge"
-          }
-        ]
+      "brief": {
+        "de": "Der Antrag auf den Hamburg-Kredit Gründung und Nachfolge wird nicht direkt bei der IFB Hamburg gestellt, sondern über die eigene Hausbank eingereicht.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: die Hausbank der Antragstellerin oder des Antragstellers (z. B. Sparkasse, Volksbank). Diese leitet den Antrag an die IFB Hamburg weiter.  \n- **Form der Antragstellung**: die Antragstellung erfolgt über ein Bankgespräch und die Kreditunterlagen der Hausbank; eine direkte Online-Antragstellung bei der IFB ist nicht möglich.  \n- **Unterlagen**: erforderlich sind in der Regel ein Geschäftsplan mit Finanzierungsplan, Nachweise zu Eigenmitteln, Rentabilitätsvorschau sowie persönliche Unterlagen (z. B. Lebenslauf, Ausweisdokument).  \n- **Fristen**: der Antrag muss **vor Beginn des Vorhabens** gestellt werden; bereits begonnene Projekte sind nicht förderfähig.  \n- **Tipp**: Gründer:innen können sich vorab von der Handelskammer Hamburg oder der IFB-Beratung zu Fördermöglichkeiten informieren.",
+        "de_es": "Der Antrag für den Hamburg-Kredit wird über die eigene Bank gestellt, nicht direkt bei der IFB Hamburg.\n\n&nbsp;\n\n### Wichtige Infos zum Antrag\n- **Wer ist zuständig?** Die eigene Bank (zum Beispiel Sparkasse oder Volksbank) nimmt den Antrag an und schickt ihn an die IFB Hamburg.  \n- **Wie läuft der Antrag ab?** Man spricht mit der Bank und gibt alle Kreditunterlagen ab. Ein Online-Antrag bei der IFB ist nicht möglich.  \n- **Welche Unterlagen braucht man?** Einen einfachen Geschäftsplan, Finanzplan, Angaben zu eigenem Geld, Rentabilitätsvorschau und persönliche Daten (z. B. Ausweis).  \n- **Wann muss der Antrag gestellt werden?** Immer **vor dem Start des Vorhabens**. Wenn man schon angefangen hat, gibt es keine Förderung.  \n- **Tipp:** Beratung bei der Handelskammer oder der IFB hilft, die Förderung richtig zu beantragen.",
+        "en": "The application for the Hamburg Start-up and Succession Loan is submitted **through the applicant’s own bank**, not directly to the IFB Hamburg.\n\n&nbsp;\n\n### Important details for the application\n- **Responsible authority**: the applicant’s own bank (e.g. Sparkasse, Volksbank), which forwards the application to IFB Hamburg.  \n- **Form of application**: the application is made through a consultation with the bank and submission of its loan documents; direct online application via IFB is not possible.  \n- **Documents**: typically required are a business plan with financing plan, proof of own funds, profitability forecast, and personal documents (e.g. CV, ID).  \n- **Deadlines**: the application must be submitted **before starting the project**; projects already underway are not eligible.  \n- **Tip:** Founders can get prior advice from the Hamburg Chamber of Commerce or IFB advisory service."
       }
     }
   },
