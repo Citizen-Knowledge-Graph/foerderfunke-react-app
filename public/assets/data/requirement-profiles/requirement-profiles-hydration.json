@@ -1806,6 +1806,25 @@
         "en": "The application for work assistance is submitted to the respective responsible authority.\n\n&nbsp;\n\n### Important Details for Application\n- **Responsible Authorities**: Depending on the situation, these are usually the Integration Office, the Employment Agency, the Job Center, or the German Pension Insurance.\n- **Form of Application**: In writing using the official application form; some authorities also allow online applications.\n- **Documents**: Usually required are details about the workplace, a description of the necessary support, and possibly medical certificates.\n- **Deadlines**: The application should be submitted preferably before starting the job or before utilizing the assistance."
       }
     },
+    "specific": [
+      {
+        "pattern": {
+          "ff:hasResidence": "ff:hasResidence-bielefeld"
+        },
+        "PLZs": ["TODO"],
+        "de": "**Landschaftsverband Westfalen-Lippe**  \nAnsprechperson für Bielefeld: Vanessa Schubert  \nGartenstraße 215  \n48147 Münster  \nTel: 0251 591-5164  \nE-Mail: vanessa.schubert@lwl.org  \n[vCard: Visitenkarte herunterladen](https://www.lwl.org/anis/vcard/1206)",
+        "de_es": "**Landschaftsverband Westfalen-Lippe**  \nAnsprechperson für Bielefeld: Vanessa Schubert  \nGartenstraße 215  \n48147 Münster  \nTel: 0251 591-5164  \nE-Mail: vanessa.schubert@lwl.org  \n[vCard: Visitenkarte herunterladen](https://www.lwl.org/anis/vcard/1206)",
+        "en": "**Regional Association of Westphalia-Lippe (LWL)**  \nContact person for Bielefeld: Vanessa Schubert  \nGartenstraße 215  \n48147 Münster  \nTel: +49 251 591-5164  \nE-Mail: vanessa.schubert@lwl.org  \n[vCard: Download contact card](https://www.lwl.org/anis/vcard/1206)"
+      },
+      {
+        "pattern": {
+          "ff:hasResidence": "ff:hasResidence-berlin"
+        },
+        "de": "Berliner Info Test",
+        "de_es": "Berliner Info Test",
+        "en": "Berlin info test"
+      }
+    ],
     "teaser": {
       "de": "Arbeitsassistenz unterstützt Menschen mit Behinderung am Arbeitsplatz. Eine Assistenzkraft übernimmt nur die Tätigkeiten, die selbst nicht möglich sind. Die fachlichen Aufgaben erledigt die Person weiterhin selbst. Ziel ist es, Chancengleichheit im Berufsleben zu schaffen und Arbeitsplätze oder eine selbstständige Tätigkeit zu sichern. Die Kosten für die Assistenz werden übernommen.",
       "de_es": "Arbeitsassistenz hilft Menschen mit Behinderung am Arbeitsplatz. Eine Assistenzkraft macht nur die Handgriffe, die die Person wegen der Behinderung nicht selbst machen kann. Die eigentliche Arbeit macht die Person selbst. So haben Menschen mit Behinderung die gleichen Chancen im Beruf. Die Kosten für die Assistenz werden übernommen.",
@@ -1835,7 +1854,7 @@
       "specific": [
         {
           "pattern": {
-            "ff:hasResidence": "Bielefeld"
+            "ff:hasResidence": "ff:hasResidence-bielefeld"
           },
           "PLZs": ["TODO"],
           "de": "**Landschaftsverband Westfalen-Lippe**  \nAnsprechperson für Bielefeld: Vanessa Schubert  \nGartenstraße 215  \n48147 Münster  \nTel: 0251 591-5164  \nE-Mail: vanessa.schubert@lwl.org  \n[vCard: Visitenkarte herunterladen](https://www.lwl.org/anis/vcard/1206)",
@@ -1844,7 +1863,7 @@
         },
         {
           "pattern": {
-            "ff:hasResidence": "Berlin"
+            "ff:hasResidence": "ff:hasResidence-berlin"
           },
           "de": "Berliner Info Test",
           "de_es": "Berliner Info Test",

@@ -36,8 +36,6 @@ const BenefitPageScreenContainer = () => {
         fetchMatchingReport();
     }, [id, activeUserId, language]);
 
-    console.log('matchingGraph', matchingGraph);
-
     return (
         <BenefitPageScreen
             t={t}

@@ -5,7 +5,7 @@ import { Typography } from '@mui/material';
 import BenefitPageMarkdownElement from './BenefitPageMarkDownElement';
 import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 
-const BenefitPageLocal = ({ t, isDesktop, benefitPageData }) => {
+const BenefitPageLocal = ({ t, isDesktop, localisedData }) => {
     const [open, setOpen] = useState(false);
     const objectIcon = `${process.env.PUBLIC_URL}/assets/images/benefit-pages/darts.svg`;
 
@@ -24,16 +24,10 @@ const BenefitPageLocal = ({ t, isDesktop, benefitPageData }) => {
                     <VBox sx={{ flex: 3, maxWidth: 800, gap: 4 }}>
                         <VBox>
                             <Typography variant="h2" sx={{ fontWeight: 500, wordBreak: "break-word" }}>
-                            {t('app.benefitPage.local.title')}
+                                {t('app.benefitPage.local.title')}
                             </Typography>
                             <BenefitPageMarkdownElement content={t('app.benefitPage.local.description')} />
                         </VBox>
-                        <RegularButton
-                            onClick={() => setOpen(!open)}
-                            variant={'whiteOutlinedBlue'}
-                            text={open ? 'app.benefitPage.local.btnClose' : 'app.benefitPage.local.btn'}
-                            size={'small'}
-                        />
                     </VBox>
                     {
                         isDesktop && (
@@ -44,6 +38,18 @@ const BenefitPageLocal = ({ t, isDesktop, benefitPageData }) => {
                         )
                     }
                 </HBox>
+                <VBox
+                    sx={{
+                        backgroundColor: 'greyTransparent.main',
+                        borderTop: `1px solid ${theme.palette.grey.light}`,
+                        borderRadius: theme.shape.borderRadius,
+                        boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
+                        padding: 2,
+                        gap: 2,
+                    }}
+                >
+                    <BenefitPageMarkdownElement content={localisedData} />
+                </VBox>
             </VBox>
         </VBox>
     );
