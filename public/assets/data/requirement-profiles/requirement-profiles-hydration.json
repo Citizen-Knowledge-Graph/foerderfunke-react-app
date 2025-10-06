@@ -1318,92 +1318,11 @@
       "de": "Die Förderung gastronomischer Außenmöblierung unterstützt Betriebe in Wolfenbüttel bei der Anschaffung von wetterfesten und nachhaltigen Außenmöbeln für den gastronomischen Bereich.",
       "en": "The funding for gastronomic outdoor furniture supports businesses in Wolfenbüttel in acquiring weather-resistant and sustainable outdoor furniture for gastronomy."
     },
-    "application_process": {
-      "de": {
-        "title": "Der Antrag ist an das Büro der Bürgermeister:in oder die Wirtschaftsförderung der Stadt Wolfenbüttel zu richten. Es wird empfohlen im Vorfeld einer Bewerbung Kontakt mit der Stadtverwaltung aufzunehmen.",
-        "links": [
-          {
-            "title": "E-Mail-Adress der Wirtschaftsförderung",
-            "url": "mailto:wirtschaftsfoerderung@wolfenbuettel.de."
-          }
-        ]
-      },
-      "en": {
-        "title": "Applications should be addressed to the office of the mayor or the economic development department of the City of Wolfenbüttel. It is recommended to contact the city administration before applying.",
-        "links": [
-          {
-            "title": "Email address of the Economic Development Department",
-            "url": "mailto:wirtschaftsfoerderung@wolfenbuettel.de."
-          }
-        ]
-      }
-    },
-    "funding_conditions": {
-      "de": {
-        "title": "Die Förderung beinhaltet die folgenden Möglichkeiten:",
-        "details": [
-          "Der Höchstbetrag einer Förderung beträgt je Betrieb 5.000,00 €",
-          "Die Höchstquote für die Förderung von Investitionsmaßnahmen beträgt maximal 50% der nachweisbaren, förderfähigen Ausgaben des Zuwendungsempfängers.",
-          "Die Förderung wird als nicht rückzahlbarer Zuschuss der Stadt Wolfenbüttel im Rahmen einer einmaligen Anteilsfinanzierung gewährt.",
-          "Die Zweckbindung der Förderung beträgt 2 Jahre"
-        ]
-      },
-      "en": {
-        "title": "Funding is subject to the following conditions:",
-        "details": [
-          "The maximum amount of funding per business is €5,000.00",
-          "The maximum funding rate for investment measures is 50% of the verifiable eligible expenses of the grant recipient.",
-          "Funding is provided as a non-repayable grant from the City of Wolfenbüttel as part of a one-time co-financing.",
-          "The funding is tied to its purpose for 2 years."
-        ]
-      }
-    },
-    "examples": {
-      "de": {
-        "title": "Folgende Beispiele veranschaulichen die Fördermöglichkeiten:",
-        "examples": [
-          {
-            "title": "Anschaffung wetterfester Außenmöbel für ein Café",
-            "text": "Ein Café in der Innenstadt beantragt eine Förderung für die Anschaffung neuer wetterfester und nachhaltiger Außenmöbel im Wert von 10.000 €. Durch die Förderung der gastronomischen Außenmöblierung werden 5.000 € der Investitionskosten bezuschusst."
-          },
-          {
-            "title": "Erweiterung der Außenbestuhlung für ein Restaurant",
-            "text": "Ein Restaurant in Wolfenbüttel möchte seine Außenbestuhlung vergrößern. Für die wetterfesten Stühle und Tische entstehen Kosten von 15.000 €. Die Förderung deckt davon 5.000 €, da alle Kriterien erfüllt werden."
-          }
-        ]
-      },
-      "en": {
-        "title": "The following examples illustrate the funding possibilities:",
-        "examples": [
-          {
-            "title": "Acquisition of weatherproof outdoor furniture for a café",
-            "text": "A café in the city center applies for funding to acquire new weatherproof and sustainable outdoor furniture worth €10,000. Through the funding for gastronomic outdoor furniture, €5,000 of the investment costs are subsidized."
-          },
-          {
-            "title": "Expansion of outdoor seating for a restaurant",
-            "text": "A restaurant in Wolfenbüttel wants to expand its outdoor seating area. For the weatherproof chairs and tables, costs of €15,000 arise. The funding covers €7,500 of it, as all criteria are met."
-          }
-        ]
-      }
-    },
-    "further_information": {
-      "de": {
-        "title": "Weitere Informationen zur Förderung finden Sie in der Satzung:",
-        "links": [
-          {
-            "title": "Satzung zur Förderung der gastronomischen Außenmöblierung",
-            "url": "https://www.wolfenbuettel.de/loadDocument.phtml?FID=3413.8485.1&Ext=PDF"
-          }
-        ]
-      },
-      "en": {
-        "title": "Further information on the funding can be found in the statute:",
-        "links": [
-          {
-            "title": "Statute for the Promotion of Gastronomic Outdoor Furniture",
-            "url": "https://www.wolfenbuettel.de/loadDocument.phtml?FID=3413.8485.1&Ext=PDF"
-          }
-        ]
+    "general": {
+      "brief": {
+        "de": "Die Stadt Wolfenbüttel fördert mit dieser Richtlinie die **Ansiedlung und Bestandssicherung von Einzelhandelsunternehmen und Gastronomiebetrieben** in der Innenstadt.\n\n&nbsp;\n\n### Zentrale Aspekte der Förderung\n- **Ziel**: Stärkung und Belebung der Wolfenbütteler Innenstadt durch neue Geschäfte und gastronomische Angebote.\n- **Förderfähig**: Existenzgründungen, Existenzsicherungen, Errichtung, Um- oder Ausbau sowie Modernisierung von Betrieben im Innenstadtbereich.\n- **Förderhöhe**: bis zu **25 % der förderfähigen Ausgaben**, maximal **10.000 Euro** Zuschuss pro Projekt.\n- **Zielgruppe**: natürliche und juristische Personen mit Sitz oder Niederlassung in der Innenstadt (innerhalb der Okerumflut).\n- **Verwaltung**: die Förderung erfolgt durch das **Amt für Wirtschaftsförderung und Tourismus** der Stadt Wolfenbüttel.",
+        "de_es": "Die Stadt Wolfenbüttel hilft mit dieser Förderung, neue **Geschäfte und Gastronomiebetriebe** in der Innenstadt aufzubauen oder bestehende zu sichern.\n\n&nbsp;\n\n### Wichtige Punkte der Förderung\n- **Ziel**: Die Innenstadt soll lebendiger und attraktiver werden.\n- **Was wird gefördert**: Gründung, Umbau oder Modernisierung von Läden und Lokalen in der Innenstadt.\n- **Wie viel Geld**: bis zu **25 % der Kosten**, höchstens **10.000 Euro**.\n- **Wer kann das bekommen**: Personen oder Firmen, die in der Innenstadt (innerhalb der Okerumflut) ansässig sind.\n- **Zuständig**: das **Amt für Wirtschaftsförderung und Tourismus** der Stadt Wolfenbüttel.",
+        "en": "The City of Wolfenbüttel supports the **establishment and maintenance of retail businesses and restaurants** in the city center through this funding program.\n\n&nbsp;\n\n### Key aspects of the program\n- **Goal**: To strengthen and revitalize the Wolfenbüttel city center with new retail and dining offers.\n- **Eligible activities**: business start-ups, stabilization, construction, renovation, or modernization of enterprises within the city center.\n- **Funding amount**: up to **25% of eligible expenses**, with a maximum grant of **€10,000** per project.\n- **Target group**: individuals and legal entities with headquarters or branches located within the city center (inside the Okerumflut area).\n- **Administration**: managed by the **Department of Economic Development and Tourism** of the City of Wolfenbüttel."
       }
     }
   },
@@ -1419,96 +1338,50 @@
       "de": "Die Stadt Wolfenbüttel unterstützt die Ansiedlung von Einzelhandelsunternehmen und Gastronomiebetrieben in der Innenstadt mit finanziellen Zuschüssen zur Existenzgründung, Modernisierung oder Erweiterung.",
       "en": "The city of Wolfenbüttel supports the establishment of retail and gastronomy businesses in the city center with financial grants for business start-ups, modernization, or expansion."
     },
+    "general": {
+      "brief": {
+        "de": "Die Stadt Wolfenbüttel fördert mit dieser Richtlinie die **Ansiedlung und Bestandssicherung von Einzelhandelsunternehmen und Gastronomiebetrieben** in der Innenstadt.\n\n&nbsp;\n\n### Zentrale Aspekte der Förderung\n- **Ziel**: Stärkung und Belebung der Wolfenbütteler Innenstadt durch neue Geschäfte und gastronomische Angebote.\n- **Förderfähig**: Existenzgründungen, Existenzsicherungen, Errichtung, Um- oder Ausbau sowie Modernisierung von Betrieben im Innenstadtbereich.\n- **Förderhöhe**: bis zu **25 % der förderfähigen Ausgaben**, maximal **10.000 Euro** Zuschuss pro Projekt.\n- **Zielgruppe**: natürliche und juristische Personen mit Sitz oder Niederlassung in der Innenstadt (innerhalb der Okerumflut).\n- **Verwaltung**: die Förderung erfolgt durch das **Amt für Wirtschaftsförderung und Tourismus** der Stadt Wolfenbüttel.",
+        "de_es": "Die Stadt Wolfenbüttel hilft mit dieser Förderung, neue **Geschäfte und Gastronomiebetriebe** in der Innenstadt aufzubauen oder bestehende zu sichern.\n\n&nbsp;\n\n### Wichtige Punkte der Förderung\n- **Ziel**: Die Innenstadt soll lebendiger und attraktiver werden.\n- **Was wird gefördert**: Gründung, Umbau oder Modernisierung von Läden und Lokalen in der Innenstadt.\n- **Wie viel Geld**: bis zu **25 % der Kosten**, höchstens **10.000 Euro**.\n- **Wer kann das bekommen**: Personen oder Firmen, die in der Innenstadt (innerhalb der Okerumflut) ansässig sind.\n- **Zuständig**: das **Amt für Wirtschaftsförderung und Tourismus** der Stadt Wolfenbüttel.",
+        "en": "The City of Wolfenbüttel supports the **establishment and maintenance of retail businesses and restaurants** in the city center through this funding program.\n\n&nbsp;\n\n### Key aspects of the program\n- **Goal**: To strengthen and revitalize the Wolfenbüttel city center with new retail and dining offers.\n- **Eligible activities**: business start-ups, stabilization, construction, renovation, or modernization of enterprises within the city center.\n- **Funding amount**: up to **25% of eligible expenses**, with a maximum grant of **€10,000** per project.\n- **Target group**: individuals and legal entities with headquarters or branches located within the city center (inside the Okerumflut area).\n- **Administration**: managed by the **Department of Economic Development and Tourism** of the City of Wolfenbüttel."
+      },
+      "examples": {
+        "de": [
+          {
+            "title": "Neuer Buchladen in der Innenstadt",
+            "description": "Anna (34) eröffnet in der Wolfenbütteler Innenstadt einen kleinen Buchladen mit Café-Ecke.\n\n&nbsp;\n\n### Förderung durch die Stadt\n- Sie erhält einen Zuschuss von **25 % der Investitionskosten**, insgesamt **8.000 €**, für die Renovierung und Einrichtung der Geschäftsräume.\n- Gefördert werden insbesondere **Möbel, Innenausbau und Außenwerbung**.\n- Durch die Unterstützung kann Anna ihr Geschäft schneller eröffnen und zur Belebung der Innenstadt beitragen."
+          },
+          {
+            "title": "Modernisierung eines bestehenden Restaurants",
+            "description": "Mehmet (46) betreibt seit Jahren ein Restaurant in der Wolfenbütteler Innenstadt und möchte den Gastraum modernisieren.\n\n&nbsp;\n\n### Förderung durch die Stadt\n- Er erhält eine Förderung in Höhe von **5.000 €** für den **Umbau und die neue Küchenausstattung**.\n- Die Maßnahme verbessert die Energieeffizienz und schafft ein attraktiveres Angebot für Gäste.\n- Das Restaurant bleibt dadurch wettbewerbsfähig und trägt zur Innenstadtentwicklung bei."
+          }
+        ],
+        "de_es": [
+          {
+            "title": "Neuer Buchladen in der Innenstadt",
+            "description": "Anna (34) eröffnet einen Buchladen mit kleinem Café in der Innenstadt von Wolfenbüttel.\n\n&nbsp;\n\n### Unterstützung durch die Stadt\n- Sie bekommt **8.000 Euro Zuschuss** (das sind 25 % der Kosten) für Möbel, Umbau und Werbung.\n- So kann sie ihr Geschäft schneller starten und mehr Menschen in die Innenstadt bringen."
+          },
+          {
+            "title": "Restaurant wird modernisiert",
+            "description": "Mehmet (46) hat ein Restaurant in der Innenstadt und möchte es schöner machen.\n\n&nbsp;\n\n### Unterstützung durch die Stadt\n- Er bekommt **5.000 Euro Zuschuss** für Umbau und neue Küchengeräte.\n- Das Restaurant wird moderner und umweltfreundlicher und bleibt für Gäste attraktiv."
+          }
+        ],
+        "en": [
+          {
+            "title": "New Bookstore in the City Center",
+            "description": "Anna (34) opens a small bookstore with a café corner in Wolfenbüttel’s city center.\n\n&nbsp;\n\n### Support from the City\n- She receives a **€8,000 grant** (covering **25% of her total investment**) for renovation and interior design.\n- Eligible expenses include **furniture, interior remodeling, and outdoor signage**.\n- The funding helps her open the shop sooner and contributes to revitalizing the downtown area."
+          },
+          {
+            "title": "Restaurant Modernization",
+            "description": "Mehmet (46) runs a long-standing restaurant in downtown Wolfenbüttel and wants to modernize it.\n\n&nbsp;\n\n### Support from the City\n- He receives a **€5,000 grant** for **renovation and new kitchen equipment**.\n- The project improves energy efficiency and creates a more attractive dining space.\n- This helps the restaurant remain competitive and strengthens the local economy."
+          }
+        ]
+      }
+    },
     "application_process": {
-      "de": {
-        "title": "Der Antrag ist bei der Wirtschaftsförderung der Stadt Wolfenbüttel zu stellen. Es wird empfohlen, vor der Antragsstellung eine Beratung bei der Wirtschaftsförderung in Anspruch zu nehmen.",
-        "links": [
-          {
-            "title": "E-Mail-Adresse der Wirtschaftsförderung",
-            "url": "mailto:wirtschaftsfoerderung@wolfenbuettel.de"
-          }
-        ]
-      },
-      "en": {
-        "title": "Applications must be submitted to the Economic Development Office of the City of Wolfenbüttel. It is recommended to seek advice from the Economic Development Office before applying.",
-        "links": [
-          {
-            "title": "Email address of the Economic Development Office",
-            "url": "mailto:wirtschaftsfoerderung@wolfenbuettel.de"
-          }
-        ]
-      }
-    },
-    "funding_conditions": {
-      "de": {
-        "title": "Die Förderung beinhaltet die folgenden Möglichkeiten:",
-        "details": [
-          "Die Förderung kann bis zu 25% der nachweisbaren Investitionskosten abdecken",
-          "Der Höchstbetrag der Förderung beträgt 10.000,00 €",
-          "Gefördert werden Existenzgründungen, Existenzsicherung, Modernisierung und Ausbau im Einzelhandel und der Gastronomie",
-          "Der Standort muss in der Fußgängerzone oder der inneren Okerumflut liegen",
-          "Die Zweckbindung der Förderung beträgt 3 Jahre",
-          "Eine regelmäßige Erfolgskontrolle durch die Stadt Wolfenbüttel ist verpflichtend"
-        ]
-      },
-      "en": {
-        "title": "Funding is subject to the following conditions:",
-        "details": [
-          "Funding can cover up to 25% of verifiable investment costs",
-          "The maximum amount of funding is €10,000.00",
-          "Funding is available for business start-ups, business stabilization, modernization, and expansion in retail and gastronomy",
-          "The business must be located in the pedestrian zone or the inner Okerumflut",
-          "The funding is tied to its purpose for 3 years",
-          "Regular performance monitoring by the City of Wolfenbüttel is required"
-        ]
-      }
-    },
-    "examples": {
-      "de": {
-        "title": "Folgende Beispiele veranschaulichen die Fördermöglichkeiten:",
-        "examples": [
-          {
-            "title": "Modernisierung eines Einzelhandelsgeschäfts in der Fußgängerzone",
-            "text": "Ein Modegeschäft in der Fußgängerzone möchte seine Ladenfläche modernisieren. Die geplanten Investitionskosten betragen 20.000 €. Durch das Ansiedlungsprogramm wird ein Viertel der Kosten, also 5.000 €, bezuschusst."
-          },
-          {
-            "title": "Neueröffnung eines Cafés in der inneren Okerumflut",
-            "text": "Ein neues Café plant die Eröffnung in der inneren Okerumflut. Für Einrichtung und Ausstattung fallen Kosten von 10.000 € an. Die Förderung deckt davon 2.500 € ab, da alle Kriterien erfüllt werden."
-          }
-        ]
-      },
-      "en": {
-        "title": "The following examples illustrate the funding possibilities:",
-        "examples": [
-          {
-            "title": "Modernization of a retail store in the pedestrian zone",
-            "text": "A fashion store in the pedestrian zone wants to modernize its retail space. The planned investment costs amount to €20,000. The establishment program subsidizes a quarter of the costs, i.e., €5,000."
-          },
-          {
-            "title": "Opening of a new café in the inner Okerumflut",
-            "text": "A new café plans to open in the inner Okerumflut. The costs for furnishing and equipment amount to €10,000. The funding covers €2,500 of this, as all criteria are met."
-          }
-        ]
-      }
-    },
-    "further_information": {
-      "de": {
-        "title": "Weitere Informationen zur Förderung finden Sie in der Satzung:",
-        "links": [
-          {
-            "title": "Satzung zur Förderung der Einzelhandels- und Gastronomiebetriebe",
-            "url": "https://www.wolfenbuettel.de/loadDocument.phtml?FID=2093.1241.1&Ext=PDF"
-          }
-        ]
-      },
-      "en": {
-        "title": "Further information on the funding can be found in the statute:",
-        "links": [
-          {
-            "title": "Statute for the Promotion of Retail and Gastronomy Businesses",
-            "url": "https://www.wolfenbuettel.de/loadDocument.phtml?FID=2093.1241.1&Ext=PDF"
-          }
-        ]
+      "brief": {
+        "de": "Der Antrag auf Förderung wird bei der Stadt Wolfenbüttel, Abteilung Wirtschaftsförderung, eingereicht.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: Wirtschaftsförderung der Stadt Wolfenbüttel.\n- **Form der Antragstellung**: schriftlich mit dem offiziellen Antragsformular; eine persönliche Beratung vor Antragstellung wird empfohlen.\n- **Unterlagen**: erforderlich sind in der Regel ein detailliertes Unternehmenskonzept, ein Finanzierungsplan, Kostenvoranschläge für die Investitionen sowie Angaben zu den geplanten Maßnahmen.\n- **Fristen**: der Antrag muss **vor Beginn der Maßnahme** gestellt werden; rückwirkende Förderungen sind ausgeschlossen.\n- **Auszahlung**: erfolgt nach Abschluss der Maßnahme und Vorlage der Zahlungsnachweise.",
+        "de_es": "Der Antrag auf Förderung wird bei der Stadt Wolfenbüttel gestellt.\n\n&nbsp;\n\n### Wichtige Infos\n- **Wer ist zuständig**: die Wirtschaftsförderung der Stadt Wolfenbüttel.\n- **Wie beantragen**: schriftlich mit dem offiziellen Formular. Vorher kann man sich beraten lassen.\n- **Welche Unterlagen**: ein einfacher Plan zum Vorhaben, eine Kostenübersicht und Belege zu den Ausgaben.\n- **Wichtig**: Antrag immer **vor dem Start der Arbeiten** stellen. Eine Förderung im Nachhinein ist nicht möglich.\n- **Wann bekommt man das Geld**: nach Ende der Maßnahme, wenn alle Belege eingereicht wurden.",
+        "en": "The funding application must be submitted to the **City of Wolfenbüttel’s Department of Economic Development**.\n\n&nbsp;\n\n### Important details for the application\n- **Responsible authority**: City of Wolfenbüttel, Department of Economic Development.\n- **Form of application**: written submission using the official form; applicants are encouraged to seek personal consultation before applying.\n- **Documents**: typically required are a detailed business concept, financial plan, cost estimates for the planned investments, and descriptions of the intended measures.\n- **Deadlines**: the application must be submitted **before starting the project**; retroactive funding is not possible.\n- **Payment**: made after project completion and submission of proof of expenses."
       }
     }
   },
