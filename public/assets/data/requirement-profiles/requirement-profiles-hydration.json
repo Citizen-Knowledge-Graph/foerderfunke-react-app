@@ -1320,9 +1320,48 @@
     },
     "general": {
       "brief": {
-        "de": "Die Stadt Wolfenbüttel fördert mit dieser Richtlinie die **Ansiedlung und Bestandssicherung von Einzelhandelsunternehmen und Gastronomiebetrieben** in der Innenstadt.\n\n&nbsp;\n\n### Zentrale Aspekte der Förderung\n- **Ziel**: Stärkung und Belebung der Wolfenbütteler Innenstadt durch neue Geschäfte und gastronomische Angebote.\n- **Förderfähig**: Existenzgründungen, Existenzsicherungen, Errichtung, Um- oder Ausbau sowie Modernisierung von Betrieben im Innenstadtbereich.\n- **Förderhöhe**: bis zu **25 % der förderfähigen Ausgaben**, maximal **10.000 Euro** Zuschuss pro Projekt.\n- **Zielgruppe**: natürliche und juristische Personen mit Sitz oder Niederlassung in der Innenstadt (innerhalb der Okerumflut).\n- **Verwaltung**: die Förderung erfolgt durch das **Amt für Wirtschaftsförderung und Tourismus** der Stadt Wolfenbüttel.",
-        "de_es": "Die Stadt Wolfenbüttel hilft mit dieser Förderung, neue **Geschäfte und Gastronomiebetriebe** in der Innenstadt aufzubauen oder bestehende zu sichern.\n\n&nbsp;\n\n### Wichtige Punkte der Förderung\n- **Ziel**: Die Innenstadt soll lebendiger und attraktiver werden.\n- **Was wird gefördert**: Gründung, Umbau oder Modernisierung von Läden und Lokalen in der Innenstadt.\n- **Wie viel Geld**: bis zu **25 % der Kosten**, höchstens **10.000 Euro**.\n- **Wer kann das bekommen**: Personen oder Firmen, die in der Innenstadt (innerhalb der Okerumflut) ansässig sind.\n- **Zuständig**: das **Amt für Wirtschaftsförderung und Tourismus** der Stadt Wolfenbüttel.",
-        "en": "The City of Wolfenbüttel supports the **establishment and maintenance of retail businesses and restaurants** in the city center through this funding program.\n\n&nbsp;\n\n### Key aspects of the program\n- **Goal**: To strengthen and revitalize the Wolfenbüttel city center with new retail and dining offers.\n- **Eligible activities**: business start-ups, stabilization, construction, renovation, or modernization of enterprises within the city center.\n- **Funding amount**: up to **25% of eligible expenses**, with a maximum grant of **€10,000** per project.\n- **Target group**: individuals and legal entities with headquarters or branches located within the city center (inside the Okerumflut area).\n- **Administration**: managed by the **Department of Economic Development and Tourism** of the City of Wolfenbüttel."
+        "de": "Die Förderung der gastronomischen Außenmöblierung unterstützt Gastronomiebetriebe bei der Anschaffung oder Aufwertung von Mobiliar im Außenbereich, um die Aufenthaltsqualität im öffentlichen Raum zu verbessern.\n\n&nbsp;\n\n### Zentrale Aspekte der Förderung\n- **Ziel**: Verbesserung des Stadtbildes und Steigerung der Attraktivität gastronomischer Außenflächen.\n- **Gefördert werden**: Anschaffung und Aufwertung von Außenmöblierung wie Stühlen, Tischen, Sonnenschirmen, Pflanzkübeln oder Windschutzsystemen.\n- **Förderhöhe**: bis zu **50 % der zuwendungsfähigen Ausgaben**, maximal **5.000 €** pro Antrag.\n- **Mindestbetrag**: in der Regel **500 €**, um den Verwaltungsaufwand zu rechtfertigen.\n- **Zuständige Stelle**: Stadt Wolfenbüttel, Fachbereich Wirtschaftsförderung und Tourismus.",
+        "de_es": "Die Förderung der gastronomischen Außenmöblierung hilft Gastronomiebetrieben dabei, neue Möbel für den Außenbereich anzuschaffen oder vorhandene aufzuwerten. So soll das Stadtbild schöner und der Aufenthalt für Gäste angenehmer werden.\n\n&nbsp;\n\n### Wichtige Punkte\n- **Ziel**: Schönere und einladendere Außenbereiche von Cafés und Restaurants.\n- **Gefördert wird**: Mobiliar wie Stühle, Tische, Sonnenschirme oder Pflanzkübel.\n- **Höhe der Förderung**: bis zu **50 % der Kosten**, höchstens **5.000 €**.\n- **Mindestsumme**: meist **500 €**.\n- **Zuständig**: Stadt Wolfenbüttel (Wirtschaftsförderung).",
+        "en": "The funding program for outdoor catering furniture supports hospitality businesses in purchasing or upgrading outdoor furniture to improve the quality and appearance of public spaces.\n\n&nbsp;\n\n### Key aspects of the program\n- **Goal**: Enhance the cityscape and increase the attractiveness of outdoor dining areas.\n- **Eligible items**: Outdoor furniture such as chairs, tables, umbrellas, planters, or wind protection systems.\n- **Funding amount**: up to **50% of eligible expenses**, with a maximum of **€5,000** per application.\n- **Minimum amount**: usually **€500**, to justify administrative costs.\n- **Responsible authority**: City of Wolfenbüttel, Department of Economic Development and Tourism."
+      },
+      "examples": {
+        "de": [
+          {
+            "title": "Café Sonnenschein – Neue Außenmöblierung in der Innenstadt",
+            "description": "Das Café Sonnenschein in der Wolfenbütteler Innenstadt möchte seine Terrasse modernisieren.\n\n&nbsp;\n\n### Förderbeispiel\n- **Maßnahme**: Anschaffung neuer Holzstühle, Tische und Sonnenschirme für 20 Sitzplätze.  \n- **Gesamtkosten**: 8.000 €.  \n- **Förderhöhe**: 50 % = **4.000 €** Zuschuss von der Stadt.  \n- **Ergebnis**: Einheitliches, hochwertiges Erscheinungsbild und längere Aufenthaltsdauer der Gäste."
+          },
+          {
+            "title": "Restaurant Alte Schmiede – Aufwertung des Innenhofs",
+            "description": "Das Restaurant Alte Schmiede möchte den bisher ungenutzten Innenhof für den Sommerbetrieb herrichten.\n\n&nbsp;\n\n### Förderbeispiel\n- **Maßnahme**: Anschaffung von wetterfesten Tischen, Sitzbänken und Pflanzkübeln.  \n- **Gesamtkosten**: 6.000 €.  \n- **Förderhöhe**: 50 % = **3.000 €** Zuschuss.  \n- **Ergebnis**: Schaffung einer attraktiven, grünen Außenfläche mit zusätzlichen Sitzmöglichkeiten."
+          }
+        ],
+        "de_es": [
+          {
+            "title": "Café Sonnenschein – Neue Außenmöblierung in der Innenstadt",
+            "description": "Das Café Sonnenschein in der Wolfenbütteler Innenstadt möchte seine Terrasse modernisieren.\n\n&nbsp;\n\n### Förderbeispiel\n- **Maßnahme**: Anschaffung neuer Holzstühle, Tische und Sonnenschirme für 20 Sitzplätze.  \n- **Gesamtkosten**: 8.000 €.  \n- **Förderhöhe**: 50 % = **4.000 €** Zuschuss von der Stadt.  \n- **Ergebnis**: Einheitliches, hochwertiges Erscheinungsbild und längere Aufenthaltsdauer der Gäste."
+          },
+          {
+            "title": "Restaurant Alte Schmiede – Aufwertung des Innenhofs",
+            "description": "Das Restaurant Alte Schmiede möchte den bisher ungenutzten Innenhof für den Sommerbetrieb herrichten.\n\n&nbsp;\n\n### Förderbeispiel\n- **Maßnahme**: Anschaffung von wetterfesten Tischen, Sitzbänken und Pflanzkübeln.  \n- **Gesamtkosten**: 6.000 €.  \n- **Förderhöhe**: 50 % = **3.000 €** Zuschuss.  \n- **Ergebnis**: Schaffung einer attraktiven, grünen Außenfläche mit zusätzlichen Sitzmöglichkeiten."
+          }
+        ],
+        "en": [
+          {
+            "title": "Café Sonnenschein – New Outdoor Furniture in the City Center",
+            "description": "Café Sonnenschein in downtown Wolfenbüttel wants to modernize its terrace area.\n\n&nbsp;\n\n### Example of Funding\n- **Measure**: Purchase of new wooden chairs, tables, and umbrellas for 20 seats.  \n- **Total cost**: €8,000.  \n- **Funding amount**: 50% = **€4,000** grant from the city.  \n- **Result**: A cohesive, high-quality appearance and longer guest stays."
+          },
+          {
+            "title": "Restaurant Alte Schmiede – Revitalizing the Courtyard",
+            "description": "The restaurant Alte Schmiede plans to refurbish its unused courtyard for summer service.\n\n&nbsp;\n\n### Example of Funding\n- **Measure**: Purchase of weather-resistant tables, benches, and planters.  \n- **Total cost**: €6,000.  \n- **Funding amount**: 50% = **€3,000** grant.  \n- **Result**: Creation of an attractive, green outdoor area with additional seating options."
+          }
+        ]
+      }
+    },
+    "application_process": {
+      "brief": {
+        "de": "Der Antrag auf Förderung von gastronomischer Außenmöblierung wird bei der Stadt Wolfenbüttel eingereicht.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: Stadt Wolfenbüttel, Abteilung Wirtschaftsförderung.  \n- **Form der Antragstellung**: schriftlich über das offizielle Antragsformular der Stadt; Einreichung per Post oder digital möglich.  \n- **Unterlagen**: Kostenvoranschläge oder Rechnungen für geplante Anschaffungen, Beschreibung der Maßnahme (z. B. Lageplan, Fotos des Standorts), ggf. Genehmigungen für Sondernutzung öffentlicher Flächen.  \n- **Fristen**: der Antrag muss **vor Beginn der Maßnahme** gestellt werden; eine rückwirkende Förderung ist ausgeschlossen.  \n- **Auszahlung**: nach Abschluss der Maßnahme und Vorlage der Zahlungsnachweise erfolgt die Auszahlung des Zuschusses.",
+        "de_es": "Der Antrag auf Förderung von neuer Außenmöblierung für Gastronomiebetriebe wird bei der Stadt Wolfenbüttel gestellt.\n\n&nbsp;\n\n### Das Wichtigste zur Antragstellung\n- **Zuständig** ist die Stadt Wolfenbüttel (Wirtschaftsförderung).  \n- **Wie**: Antrag schriftlich oder online mit dem Formular der Stadt einreichen.  \n- **Was wird gebraucht**: Angebote oder Rechnungen, Beschreibung der Anschaffung, Fotos oder Lageplan, evtl. Genehmigung für öffentliche Flächen.  \n- **Wann**: Antrag immer **vor dem Kauf oder Baubeginn** stellen.  \n- **Auszahlung**: Zuschuss gibt es nach Fertigstellung und Nachweis der Ausgaben.",
+        "en": "The application for the outdoor furniture subsidy for gastronomy businesses is submitted to the City of Wolfenbüttel.\n\n&nbsp;\n\n### Important details for the application\n- **Responsible authority**: City of Wolfenbüttel, Department of Economic Development.  \n- **Form of application**: in writing via the official city application form; submission possible by post or digitally.  \n- **Documents**: cost estimates or invoices for planned purchases, description of the project (e.g., site plan, photos), and any necessary permits for the use of public spaces.  \n- **Deadlines**: the application must be submitted **before starting the measure**; retroactive funding is not possible.  \n- **Payment**: the grant is paid out after completion and proof of expenditure."
       }
     }
   },
