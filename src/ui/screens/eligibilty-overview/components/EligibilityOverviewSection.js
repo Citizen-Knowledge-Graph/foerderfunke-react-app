@@ -13,7 +13,7 @@ const EligibilityOverviewSection = ({ t, category, isDesktop, eligibilitySection
         <VBox sx={{ 
             gap: 4,
             backgroundColor: 'white.main',
-            padding: '32px',
+            padding: {xs: '32px 20px', md: '32px'},
             borderRadius: theme.shape.borderRadius,
         }}>
             <Typography variant="h4" sx={{ color: 'pink.main', fontWeight: '400' }}>
@@ -27,7 +27,7 @@ const EligibilityOverviewSection = ({ t, category, isDesktop, eligibilitySection
                 {eligibleBenefitsComplete.length > 0 &&
                     <EligibilityOverviewList t={t} isDesktop={isDesktop} items={eligibleBenefitsComplete} eligible={'eligible'} />}                                      
                 {ineligibleBenefits.length > 0 &&
-                    <EligibilityOverviewList t={t} isDesktop={isDesktop} items={ineligibleBenefits} eligible={'non-eligible'} />}
+                    <EligibilityOverviewList t={t} isDesktop={isDesktop}  items={ineligibleBenefits} eligible={'non-eligible'} />}
                 {undeterminableBenefits.length > 0 &&
                     <EligibilityOverviewList t={t} isDesktop={isDesktop} items={undeterminableBenefits} eligible={'indeterminate'} />}
             </VBox>
