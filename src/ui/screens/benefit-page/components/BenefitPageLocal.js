@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { VBox, HBox } from '@/ui/shared-components/LayoutBoxes';
 import theme from '@/theme';
 import { Typography } from '@mui/material';
 import BenefitPageMarkdownElement from './BenefitPageMarkDownElement';
-import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 
 const BenefitPageLocal = ({ t, isDesktop, localisedData }) => {
-    const [open, setOpen] = useState(false);
     const objectIcon = `${process.env.PUBLIC_URL}/assets/images/benefit-pages/darts.svg`;
 
     return (
