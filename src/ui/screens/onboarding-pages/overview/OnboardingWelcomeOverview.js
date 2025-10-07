@@ -58,15 +58,19 @@ const OnboardingWelcomeOverviewView = ({
                                     backgroundColor: 'white.main',
                                 }}>
                                     <VBox>
-                                        <ul>
-                                            {benefitTitles.map((title, idx) => (
-                                                <li key={idx}>
-                                                    <Typography variant="body1" sx={{ fontWeight: '400' }}>
-                                                        {title}
-                                                    </Typography>
-                                                </li>
-                                            ))}
-                                        </ul>
+                                        {benefitTitles.map((title, idx) => (
+                                            <HBox
+                                                key={idx}
+                                                sx={{
+                                                    backgroundColor: 'greyTransparent.main',
+                                                    padding: '6px 18px',
+                                                    borderRadius: theme.shape.borderRadius,
+                                                }}>
+                                                <Typography variant='body1'>
+                                                    {title}
+                                                </Typography>
+                                            </HBox>
+                                        ))}
                                     </VBox>
                                 </HBox>
                             </VBox>
@@ -80,19 +84,25 @@ const OnboardingWelcomeOverviewView = ({
                                             borderRadius: theme.shape.borderRadius,
                                             backgroundColor: 'white.main',
                                         }}>
-                                        <VBox sx={{ gap: 2 }}>
+                                        <VBox sx={{ gap: { xs: 2, md: 4 } }}>
                                             <Typography variant="h2">
                                                 {pickLang(topic.title, language, '')}
                                             </Typography>
-                                            <ul>
-                                                {rps.map((rpTitle, i) => (
-                                                    <li key={i}>
-                                                        <Typography>
+                                            <VBox sx={{ gap: 1 }}>
+                                                {rps.map((rpTitle, idx) => (
+                                                    <HBox
+                                                        key={idx}
+                                                        sx={{
+                                                            backgroundColor: 'greyTransparent.main',
+                                                            padding: '6px 18px',
+                                                            borderRadius: theme.shape.borderRadius,
+                                                        }}>
+                                                        <Typography variant='body1'>
                                                             {rpTitle}
                                                         </Typography>
-                                                    </li>
+                                                    </HBox>
                                                 ))}
-                                            </ul>
+                                            </VBox>
                                         </VBox>
                                     </HBox>
                                 ))}
