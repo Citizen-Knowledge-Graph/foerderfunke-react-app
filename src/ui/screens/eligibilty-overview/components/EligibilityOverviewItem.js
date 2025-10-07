@@ -6,9 +6,9 @@ import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 import { useSelectedBenefitsStore, useSelectedTopicsStore } from "@/ui/storage/zustand";
 import EligibilityOverviewTag from './EligibilityOverviewTag';
 import EligibilityOverviewBanner from './EligibilityOverviewBanner';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import EastIcon from '@mui/icons-material/East';
 
 const filterKeys = [
     'benefitCategories',
@@ -18,7 +18,7 @@ const filterKeys = [
     'tags'
 ];
 
-const EligibilityOverviewItem = ({ t, item, eligible }) => {
+const EligibilityOverviewItem = ({ t, item, eligible, isDesktop }) => {
     const [isVisible, setIsVisible] = useState(false);
     const setSelectedBenefits = useSelectedBenefitsStore((state) => state.setSelectedBenefits);
     const clearSelectedTopics = useSelectedTopicsStore((state) => state.clear);
@@ -52,7 +52,7 @@ const EligibilityOverviewItem = ({ t, item, eligible }) => {
                         <HBox sx={{ alignItems: 'flex-end', gap: 2, flexWrap: 'wrap', width: '100%' }}>
                             <HBox sx={{ alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
                                 <HBox sx={{ alignItems: 'center', gap: 2, flexWrap: 'wrap' }}>
-                                    <Typography variant='h2' sx={{ fontWeight: '400', wordBreak: 'break-word' }}>
+                                    <Typography variant='h2' sx={{ fontWeight: '500', wordBreak: 'break-word' }}>
                                         {item.title}
                                     </Typography>
                                     {item.status === "beta" && (
@@ -118,17 +118,19 @@ const EligibilityOverviewItem = ({ t, item, eligible }) => {
                                     <EligibilityOverviewTag
                                         key={tag.id}
                                         tag={tag.label}
+                                        isDesktop={isDesktop}
                                         tagType="benefitCategories"
                                     />
                                 ))}
                             </HBox>
                         )}
                     </HBox>
-                    <HBox sx={{ justifyContent: 'flex-end', flexWrap: 'wrap', gap: 2, alignItems: 'center', flex: 3 }}>
+                    <HBox sx={{ justifyContent: { xs: 'flex-start', md: 'flex-end' }, flexWrap: 'wrap', gap: 2, alignItems: 'center', flex: 3 }}>
                         <RegularButton
                             variant={'blackOutlined'}
                             text={'app.browseAll.learnMoreBtn'}
                             link={`/benefit-page/${item.id}`}
+                            size={isDesktop ? 'medium' : 'small'}
                         />
                         {eligible === 'indeterminate' &&
                             <RegularButton
@@ -139,7 +141,8 @@ const EligibilityOverviewItem = ({ t, item, eligible }) => {
                                 }}
                                 text={'app.browseAll.checkElBtn'}
                                 link={`/onboarding-welcome`}
-                                endIcon={<ChevronRightIcon sx={{ fontSize: '16px' }} />}
+                                endIcon={<EastIcon sx={{ fontSize: '16px' }} />}
+                                size={isDesktop ? 'medium' : 'small'}
                             />
                         }
                     </HBox>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     Typography,
     FormControl,
@@ -13,7 +13,8 @@ import EligibilityOverviewTag from './EligibilityOverviewTag';
 import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 import theme from '@/theme';
 
-const EligibilityOverviewFilter = ({ t, filterOptions, filters, onChangeFilters }) => {
+const EligibilityOverviewFilter = ({ t, filterOptions, isDesktop, filters, onChangeFilters }) => {
+    const [open, setOpen] = useState(false);
     const handleChange = (key) => (event) => {
         onChangeFilters(prev => ({
             ...prev,
@@ -44,30 +45,44 @@ const EligibilityOverviewFilter = ({ t, filterOptions, filters, onChangeFilters 
                 <Typography variant="h4" sx={{ color: 'blue.main', fontWeight: '400' }}>
                     {t('app.browseAll.filter.title')}
                 </Typography>
-                <HBox sx={{ gap: 4, flexWrap: 'wrap' }}>
-                    {Object.keys(filterOptions).length > 0 && (
-                        Object.keys(filterOptions).map((key, index) => (
-                            <FormControl key={index} sx={{ minWidth: 200 }}>
-                                <InputLabel id={`${key}-label`}>{t(`app.browseAll.filter.${key}`)}</InputLabel>
-                                <Select
-                                    labelId={`${key}-label`}
-                                    multiple
-                                    value={filters[key] || []}
-                                    onChange={handleChange(key)}
-                                    label={t(`app.browseAll.filter.${key}`)}
-                                    renderValue={() => t(`app.browseAll.filter.${key}`)}
-                                    sx={{ borderRadius: theme.shape.borderRadius }}
-                                >
-                                    {filterOptions[key].map(item => (
-                                        <MenuItem key={item.id} value={item.id}>
-                                            <Checkbox checked={!!filters[key]?.includes(item.id)} />                                            <ListItemText primary={item.label} />
-                                        </MenuItem>
-                                    ))}
-                                </Select>
-                            </FormControl>
-                        ))
-                    )}
-                </HBox>
+                {
+                    !isDesktop && (
+                        <RegularButton
+                            onClick={() => setOpen(!open)}
+                            variant={'whiteOutlinedBlue'}
+                            text={open ? 'app.browseAll.filter.btnClose' : 'app.browseAll.filter.btn'}
+                            size={'small'}
+                        />
+                    )
+                }
+                {
+                    (isDesktop || open) && (
+                        <HBox sx={{ gap: 4, flexWrap: 'wrap' }}>
+                            {Object.keys(filterOptions).length > 0 && (
+                                Object.keys(filterOptions).map((key, index) => (
+                                    <FormControl key={index} sx={{ minWidth: 200 }}>
+                                        <InputLabel id={`${key}-label`}>{t(`app.browseAll.filter.${key}`)}</InputLabel>
+                                        <Select
+                                            labelId={`${key}-label`}
+                                            multiple
+                                            value={filters[key] || []}
+                                            onChange={handleChange(key)}
+                                            label={t(`app.browseAll.filter.${key}`)}
+                                            renderValue={() => t(`app.browseAll.filter.${key}`)}
+                                            sx={{ borderRadius: theme.shape.borderRadius }}
+                                        >
+                                            {filterOptions[key].map(item => (
+                                                <MenuItem key={item.id} value={item.id}>
+                                                    <Checkbox checked={!!filters[key]?.includes(item.id)} />                                            <ListItemText primary={item.label} />
+                                                </MenuItem>
+                                            ))}
+                                        </Select>
+                                    </FormControl>
+                                ))
+                            )}
+                        </HBox>
+                    )
+                }
             </HBox>
             {
                 Object.entries(groupedSelected).length > 0 && (
@@ -84,14 +99,18 @@ const EligibilityOverviewFilter = ({ t, filterOptions, filters, onChangeFilters 
                     </HBox>
                 )
             }
-            <HBox sx={{ justifyContent: 'flex-end' }}>
-                <RegularButton
-                    text={'Clear filters'}
-                    variant={'greyContained'}
-                    onClick={() => onChangeFilters(() => ({}))}
-                    size='xsmall'
-                />
-            </HBox>
+            {
+                (isDesktop || open) && (
+                    <HBox sx={{ justifyContent: 'flex-end' }}>
+                        <RegularButton
+                            text={'Clear filters'}
+                            variant={'greyContained'}
+                            onClick={() => onChangeFilters(() => ({}))}
+                            size='xsmall'
+                        />
+                    </HBox>
+                )
+            }
         </VBox>
     );
 };

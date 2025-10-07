@@ -17,7 +17,7 @@ const BenefitPageHeader = ({ id, benefit, validatedStatus, categoryTitles }) => 
     return (
         <HBox sx={{ justifyContent: 'space-between', gap: 4, flexWrap: 'wrap' }}>
             <VBox sx={{ gap: 2 }}>
-                <Typography variant="h1">
+                <Typography variant="h1" sx={{ wordBreak: 'break-word' }}>
                     {benefit?.title}
                 </Typography>
                 <VBox sx={{ gap: 2 }}>

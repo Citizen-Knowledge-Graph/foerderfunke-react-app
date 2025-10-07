@@ -12,7 +12,7 @@ const BenefitPageMarkdownElement = ({ content, icon = null }) => {
         h4: (props) => <Typography variant="h4" gutterBottom {...props} />,
         h5: (props) => <Typography variant="h5" gutterBottom {...props} />,
         h6: (props) => <Typography variant="h6" gutterBottom {...props} />,
-        p:  (props) => <Typography variant="body1" component="p" {...props} />,
+        p: (props) => <Typography variant="body1" component="p" {...props} />,
 
         ul: ({ node, ...props }) => (
           <Box
@@ -21,7 +21,8 @@ const BenefitPageMarkdownElement = ({ content, icon = null }) => {
               mt: 0.5,
               mb: 1.25,
               pl: icon ? 0 : 2.25,
-              listStyle: icon ? "none" : "disc",
+              listStyleType: icon ? "none" : "disc",
+              listStylePosition: "outside",
             }}
             {...props}
           />
@@ -31,14 +32,12 @@ const BenefitPageMarkdownElement = ({ content, icon = null }) => {
             return (
               <Box
                 component="li"
-                sx={{ display: "flex", alignItems: "flex-start", mb: 1, listStyle: "none" }}
+                sx={{ display: "list-item", mb: 1, listStyleType: "none" }}
                 {...props}
               >
-                <Box sx={{ mr: 1, mt: "2px" }}>{icon}</Box>
-                <Box sx={{ flex: 1 }}>
-                  <Typography variant="body1" component="div">
-                    {children}
-                  </Typography>
+                <Box sx={{ display: "flex", alignItems: "flex-start" }}>
+                  <Box sx={{ mr: 1, mt: "2px" }}>{icon}</Box>
+                  <Typography variant="body1" component="div">{children}</Typography>
                 </Box>
               </Box>
             );
@@ -46,12 +45,10 @@ const BenefitPageMarkdownElement = ({ content, icon = null }) => {
           return (
             <Box
               component="li"
-              sx={{ display: "block", mb: 1 }}
+              sx={{ display: "list-item", mb: 1 }}
               {...props}
             >
-              <Typography variant="body1" component="div">
-                {children}
-              </Typography>
+              <Typography variant="body1" component="div">{children}</Typography>
             </Box>
           );
         },

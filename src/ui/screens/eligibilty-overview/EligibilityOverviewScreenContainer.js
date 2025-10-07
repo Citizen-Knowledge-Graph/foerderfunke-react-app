@@ -9,10 +9,12 @@ import { useMetadataStore, useSelectedFiltersStore } from '@/ui/storage/zustand'
 import useProduceValidationReport from './hooks/useProduceValidationReport';
 import useFilterEligibilityData from './hooks/useFilterEligibilityData';
 import { useInitialiseFilters, useFilterChangeHandler } from './hooks/useBuildFilterSetup';
+import { useStore } from "@/ui/shared-components/ViewportUpdater";
 
 const EligibilityOverviewScreenContainer = () => {
     const { t } = useTranslation();
     const language = useLanguageStore((state) => state.language);
+    const isDesktop = useStore((state) => state.isDesktop);
     const [searchParams, setSearchParams] = useSearchParams();
     const { selectedFilters, setSelectedFilters } = useSelectedFiltersStore();
 
@@ -28,6 +30,7 @@ const EligibilityOverviewScreenContainer = () => {
         <EligibilityOverviewScreen
             t={t}
             eligibilityData={filteredEligibilityData}
+            isDesktop={isDesktop}
             filterOptions={filterOptions}
             filters={filters}
             onChangeFilters={handleChangeFilters}

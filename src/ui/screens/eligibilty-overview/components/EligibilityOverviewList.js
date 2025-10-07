@@ -3,7 +3,7 @@ import { Typography } from '@mui/material';
 import { VBox } from '@/ui/shared-components/LayoutBoxes';
 import EligibilityOverviewItem from "./EligibilityOverviewItem";
 
-const EligibilityOverviewList = ({ t, items, eligible, iconPath }) => {
+const EligibilityOverviewList = ({ t, items, isDesktop, eligible, iconPath }) => {
     const headerText = (() => {
         switch (eligible) {
             case 'eligible':
@@ -28,7 +28,7 @@ const EligibilityOverviewList = ({ t, items, eligible, iconPath }) => {
             </Typography>
             <VBox sx={{ gap: 2 }}>
                 {sortedItems.map((item, index) => (
-                    <EligibilityOverviewItem t={t} key={index} item={item} eligible={eligible} iconPath={iconPath}/>
+                    <EligibilityOverviewItem t={t} key={index} isDesktop={isDesktop} item={item} eligible={eligible} iconPath={iconPath}/>
                 ))}
             </VBox>
         </VBox>

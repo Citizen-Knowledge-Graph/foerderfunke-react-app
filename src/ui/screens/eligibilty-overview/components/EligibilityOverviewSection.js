@@ -4,7 +4,7 @@ import { VBox } from "@/ui/shared-components/LayoutBoxes";
 import theme from "@/theme";
 import EligibilityOverviewList from "./EligibilityOverviewList";
 
-const EligibilityOverviewSection = ({ t, category, eligibilitySection }) => {
+const EligibilityOverviewSection = ({ t, category, isDesktop, eligibilitySection }) => {
     const eligibleBenefitsComplete = eligibilitySection['ff:eligible'] || [];
     const ineligibleBenefits = eligibilitySection['ff:ineligible'] || []
     const undeterminableBenefits = eligibilitySection['ff:missingData'] || []
@@ -25,11 +25,11 @@ const EligibilityOverviewSection = ({ t, category, eligibilitySection }) => {
                 }}
             >
                 {eligibleBenefitsComplete.length > 0 &&
-                    <EligibilityOverviewList t={t} items={eligibleBenefitsComplete} eligible={'eligible'} />}                                      
+                    <EligibilityOverviewList t={t} isDesktop={isDesktop} items={eligibleBenefitsComplete} eligible={'eligible'} />}                                      
                 {ineligibleBenefits.length > 0 &&
-                    <EligibilityOverviewList t={t} items={ineligibleBenefits} eligible={'non-eligible'} />}
+                    <EligibilityOverviewList t={t} isDesktop={isDesktop} items={ineligibleBenefits} eligible={'non-eligible'} />}
                 {undeterminableBenefits.length > 0 &&
-                    <EligibilityOverviewList t={t} items={undeterminableBenefits} eligible={'indeterminate'} />}
+                    <EligibilityOverviewList t={t} isDesktop={isDesktop} items={undeterminableBenefits} eligible={'indeterminate'} />}
             </VBox>
         </VBox >
     );

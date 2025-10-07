@@ -9,10 +9,12 @@ import EligibilityOverviewFilter from './components/EligibilityOverviewFilter';
 import RegularButton from "@/ui/shared-components/buttons/RegularButton";
 import featureFlags from "@/featureFlags";
 import { useSelectedBenefitsStore } from "@/ui/storage/zustand";
+import EastIcon from '@mui/icons-material/East';
 
 const EligibilityOverviewScreen = ({
     t,
     eligibilityData,
+    isDesktop,
     filterOptions,
     filters,
     onChangeFilters,
@@ -43,6 +45,7 @@ const EligibilityOverviewScreen = ({
                     <VBox sx={{ gap: { xs: 2, md: 4 } }}>
                         <EligibilityOverviewFilter
                             t={t}
+                            isDesktop={isDesktop}
                             filterOptions={filterOptions}
                             filters={filters}
                             onChangeFilters={onChangeFilters}
@@ -53,6 +56,7 @@ const EligibilityOverviewScreen = ({
                                 variant={'blueContained'}
                                 link='/onboarding-welcome'
                                 onClick={doSetSelectedBenefits}
+                                endIcon={<EastIcon/>}
                             />
                         }
                         {
@@ -62,6 +66,7 @@ const EligibilityOverviewScreen = ({
                                         eligibilityData["social_benefit"] && (
                                             <EligibilityOverviewSection
                                                 t={t}
+                                                isDesktop={isDesktop}
                                                 category={t('app.topicSelection.socialBenefitsTitle')}
                                                 eligibilitySection={eligibilityData["social_benefit"]}
                                             />
@@ -71,6 +76,7 @@ const EligibilityOverviewScreen = ({
                                         eligibilityData["business"] && (
                                             <EligibilityOverviewSection
                                                 t={t}
+                                                isDesktop={isDesktop}
                                                 category={t('app.topicSelection.businessTitle')}
                                                 eligibilitySection={eligibilityData["business"]}
                                             />
