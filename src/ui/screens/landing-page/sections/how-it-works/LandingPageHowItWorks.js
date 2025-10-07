@@ -89,33 +89,33 @@ const LandingPageHowItWorks = () => {
             ) : (
                 <VBox alignItems="center" sx={{ gap: 6, width: "100%" }}>
                     <Typography variant="h1">{t("home.howItWorks.header")}</Typography>
-                        <VBox sx={{ alignItems: 'center', maxWidth: "400px" }}>
-                            <Swiper
-                                spaceBetween={20}
-                                slidesPerView={1}
-                                pagination={{ clickable: true }}
-                                modules={[Pagination]}
-                                style={{
-                                    width: "100%",
-                                    "--swiper-pagination-color": "#263046",
-                                    "--swiper-pagination-bullet-inactive-color": "#d1d5db",
-                                    "--swiper-pagination-bullet-inactive-opacity": "0.4",
-                                    "--swiper-pagination-bullet-size": "10px",
-                                    "--swiper-pagination-bullet-horizontal-gap": "8px",
-                                }}
-                            >
-                                {cards.map((card, i) => (
-                                    <SwiperSlide key={i}>
-                                        <LandingPageInfoCard
-                                            title={card.title}
-                                            text={card.text}
-                                            image={mobileImages[i]}
-                                            isDesktop={false}
-                                        />
-                                    </SwiperSlide>
-                                ))}
-                            </Swiper>
-                        </VBox>
+                    <VBox sx={{ alignItems: "center", width: "100%", maxWidth: 400, overflow: "hidden" }}>
+                        <Swiper
+                            spaceBetween={20}
+                            slidesPerView={1}
+                            pagination={{ clickable: true }}
+                            modules={[Pagination]}
+                            style={{
+                                width: "100%",
+                                "--swiper-pagination-color": "#263046",
+                                "--swiper-pagination-bullet-inactive-color": "#d1d5db",
+                                "--swiper-pagination-bullet-inactive-opacity": "0.4",
+                                "--swiper-pagination-bullet-size": "10px",
+                                "--swiper-pagination-bullet-horizontal-gap": "8px",
+                            }}
+                        >
+                            {cards.map((card, i) => (
+                                <SwiperSlide key={i}>
+                                    <LandingPageInfoCard
+                                        title={card.title}
+                                        text={card.text}
+                                        image={mobileImages[i]}
+                                        isDesktop={false}
+                                    />
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    </VBox>
                 </VBox>
             )}
         </LandingPageSectionWrapper>

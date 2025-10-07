@@ -1886,18 +1886,5 @@
       "de_es": "**§ 185 SGB IX – Arbeitsassistenz**  \nMenschen mit Schwerbehinderung können Hilfe durch eine Assistenz am Arbeitsplatz bekommen. Das Integrationsamt bezahlt die vollen Kosten dafür aus einem speziellen Geldtopf.  \n\n**§ 185 Abs. 9 SGB IX – Antrag**  \nWenn das Integrationsamt nach sechs Wochen nicht über einen Antrag entschieden hat, gilt der Antrag automatisch als genehmigt. Wichtig ist, dass im Antrag genau steht, welche Leistung gewünscht wird.",
       "en": "**Section 185 SGB IX – Work Assistance**  \nPeople with severe disabilities can receive assistance at the workplace. The Integration Office pays the full costs from a special fund.  \n\n**Section 185 (9) SGB IX – Application**  \nIf the Integration Office has not decided on an application after six weeks, the application is automatically considered approved. It is important that the application clearly states which service is requested."
     }
-  },
-  "ff:allgemeine-krankenversicherungspflicht": {
-    "id": "ff:allgemeine-krankenversicherungspflicht",
-    "status": "beta",
-    "category": "social_benefit",
-    "title": {
-      "de": "Allgemeine Krankenversicherungspflicht",
-      "en": "General Health Insurance Obligation"
-    },
-    "teaser": {
-      "de": "In Deutschland besteht eine allgemeine Krankenversicherungspflicht: Jeder mit Wohnsitz oder gewöhnlichem Aufenthalt muss versichert sein, entweder in der gesetzlichen (GKV) oder der privaten Krankenversicherung (PKV). Welche Absicherung gilt, hängt von der Lebenssituation ab; bei Unklarheiten hilft die Clearingstelle weiter.",
-      "en": "In Germany, there is a general obligation to have health insurance: Everyone with a residence or habitual abode must be insured, either in the statutory (GKV) or private health insurance (PKV). The applicable coverage depends on the life situation; if in doubt, the clearing office can assist."
-    }
   }
 }
