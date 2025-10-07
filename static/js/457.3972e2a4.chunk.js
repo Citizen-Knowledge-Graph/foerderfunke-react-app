@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkfoerderfunke_react_app=self.webpackChunkfoerderfunke_react_app||[]).push([[457],{81457:(e,r,a)=>{a.d(r,{createPieServices:()=>c.f});var c=a(16695);a(14455)}}]);

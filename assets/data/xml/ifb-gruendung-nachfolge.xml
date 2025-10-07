@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:color="http://www.omg.org/spec/BPMN/non-normative/color/1.0" id="Defs_ifb_hamburg_kredit_gn" targetNamespace="https://example.org/bpmn#" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="18.6.1">
+  <bpmn:process id="p_ifb_hamburg_kredit_gn" isExecutable="false">
+    <bpmn:laneSet id="ls_ifb">
+      <bpmn:lane id="lane_applicant" name="Antragsteller:in">
+        <bpmn:flowNodeRef>s</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t7</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>e_rework</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="lane_bank" name="Hausbank">
+        <bpmn:flowNodeRef>e_disbursed</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t2</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t3</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t6</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="lane_ifb" name="IFB Hamburg">
+        <bpmn:flowNodeRef>t4</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>g</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t5</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="s" name="Start">
+      <bpmn:outgoing>f0</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:manualTask id="t1" name="Antrag bei Hausbank einreichen">
+      <bpmn:incoming>f0</bpmn:incoming>
+      <bpmn:outgoing>Flow_1ws4ip5</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:userTask id="t2" name="Bankprüfung (Bonität, Unterlagen, Sicherheiten)">
+      <bpmn:incoming>Flow_1ws4ip5</bpmn:incoming>
+      <bpmn:outgoing>f3</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sendTask id="t3" name="Antrag an IFB Hamburg weiterleiten">
+      <bpmn:incoming>f3</bpmn:incoming>
+      <bpmn:outgoing>f4</bpmn:outgoing>
+    </bpmn:sendTask>
+    <bpmn:userTask id="t4" name="IFB-Förderprüfung">
+      <bpmn:incoming>f4</bpmn:incoming>
+      <bpmn:outgoing>f5</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="g" name="Bewilligt?">
+      <bpmn:incoming>f5</bpmn:incoming>
+      <bpmn:outgoing>fy</bpmn:outgoing>
+      <bpmn:outgoing>fn</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sendTask id="t5" name="Bewilligungsmitteilung an Hausbank">
+      <bpmn:incoming>fy</bpmn:incoming>
+      <bpmn:outgoing>Flow_0206645</bpmn:outgoing>
+    </bpmn:sendTask>
+    <bpmn:userTask id="t6" name="Darlehensangebot erstellen &#38; an Antragsteller:in senden">
+      <bpmn:incoming>Flow_0206645</bpmn:incoming>
+      <bpmn:outgoing>Flow_0cvl6n8</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:manualTask id="t7" name="Darlehensangebot annehmen (Vertrag unterschreiben)">
+      <bpmn:incoming>Flow_0cvl6n8</bpmn:incoming>
+      <bpmn:outgoing>f8</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:endEvent id="e_disbursed" name="Auszahlung erfolgt">
+      <bpmn:incoming>f8</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:manualTask id="e_rework" name="Antrag überarbeiten / Alternativen prüfen">
+      <bpmn:incoming>fn</bpmn:incoming>
+    </bpmn:manualTask>
+    <bpmn:sequenceFlow id="f0" sourceRef="s" targetRef="t1" />
+    <bpmn:sequenceFlow id="f3" sourceRef="t2" targetRef="t3" />
+    <bpmn:sequenceFlow id="f4" sourceRef="t3" targetRef="t4" />
+    <bpmn:sequenceFlow id="f5" sourceRef="t4" targetRef="g" />
+    <bpmn:sequenceFlow id="fy" name="ja" sourceRef="g" targetRef="t5" />
+    <bpmn:sequenceFlow id="fn" name="nein" sourceRef="g" targetRef="e_rework" />
+    <bpmn:sequenceFlow id="f8" sourceRef="t7" targetRef="e_disbursed" />
+    <bpmn:sequenceFlow id="Flow_1ws4ip5" sourceRef="t1" targetRef="t2" />
+    <bpmn:sequenceFlow id="Flow_0206645" sourceRef="t5" targetRef="t6" />
+    <bpmn:sequenceFlow id="Flow_0cvl6n8" sourceRef="t6" targetRef="t7" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="D_ifb_hamburg_kredit_gn">
+    <bpmndi:BPMNPlane id="P_ifb" bpmnElement="p_ifb_hamburg_kredit_gn">
+      <bpmndi:BPMNShape id="L_ifb" bpmnElement="lane_ifb" isHorizontal="true" color:background-color="#F5F8FF" color:border-color="#A3A3A3">
+        <dc:Bounds x="140" y="340" width="2420" height="140" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="L_bank" bpmnElement="lane_bank" isHorizontal="true" color:background-color="#FFF7ED" color:border-color="#A3A3A3">
+        <dc:Bounds x="140" y="200" width="2420" height="140" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="L_applicant" bpmnElement="lane_applicant" isHorizontal="true" color:background-color="#F6FFF6" color:border-color="#A3A3A3">
+        <dc:Bounds x="140" y="80" width="2420" height="120" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_s" bpmnElement="s" color:background-color="#F0FFF4" color:border-color="#047857">
+        <dc:Bounds x="180" y="122" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="E_disbursed" bpmnElement="e_disbursed" color:background-color="#ECFDF5" color:border-color="#059669">
+        <dc:Bounds x="2442" y="257" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2431" y="293" width="58" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_t1" bpmnElement="t1" color:background-color="#E8F7E8" color:border-color="#2E7D32">
+        <dc:Bounds x="260" y="110" width="280" height="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_t2" bpmnElement="t2" color:background-color="#FEF3C7" color:border-color="#B45309">
+        <dc:Bounds x="600" y="240" width="300" height="70" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_t3" bpmnElement="t3" color:background-color="#FEF3C7" color:border-color="#B45309">
+        <dc:Bounds x="955" y="240" width="270" height="70" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_t4" bpmnElement="t4" color:background-color="#EAF0FF" color:border-color="#1E40AF">
+        <dc:Bounds x="1280" y="380" width="280" height="70" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="G_g" bpmnElement="g" isMarkerVisible="true" color:background-color="#F5F5F5" color:border-color="#6B7280">
+        <dc:Bounds x="1615" y="390" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1611" y="443" width="47" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_t5" bpmnElement="t5" color:background-color="#EAF0FF" color:border-color="#1E40AF">
+        <dc:Bounds x="1720" y="380" width="300" height="70" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_t6" bpmnElement="t6" color:background-color="#FEF3C7" color:border-color="#B45309">
+        <dc:Bounds x="1880" y="240" width="320" height="70" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_t7" bpmnElement="t7" color:background-color="#E8F7E8" color:border-color="#2E7D32">
+        <dc:Bounds x="2040" y="110" width="320" height="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="E_rework" bpmnElement="e_rework" color:background-color="#FFF7ED" color:border-color="#B45309">
+        <dc:Bounds x="1490" y="122" width="300" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="f0d" bpmnElement="f0">
+        <di:waypoint x="216" y="140" />
+        <di:waypoint x="260" y="140" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="f3d" bpmnElement="f3">
+        <di:waypoint x="900" y="275" />
+        <di:waypoint x="955" y="275" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="f4d" bpmnElement="f4">
+        <di:waypoint x="1225" y="275" />
+        <di:waypoint x="1250" y="275" />
+        <di:waypoint x="1250" y="415" />
+        <di:waypoint x="1280" y="415" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="f5d" bpmnElement="f5">
+        <di:waypoint x="1560" y="415" />
+        <di:waypoint x="1615" y="415" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="fyd" bpmnElement="fy">
+        <di:waypoint x="1665" y="415" />
+        <di:waypoint x="1720" y="415" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1689" y="390" width="9" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="fnd" bpmnElement="fn">
+        <di:waypoint x="1640" y="390" />
+        <di:waypoint x="1640" y="158" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1645" y="264" width="21" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="f8d" bpmnElement="f8">
+        <di:waypoint x="2360" y="140" />
+        <di:waypoint x="2400" y="140" />
+        <di:waypoint x="2400" y="275" />
+        <di:waypoint x="2442" y="275" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1ws4ip5_di" bpmnElement="Flow_1ws4ip5">
+        <di:waypoint x="540" y="140" />
+        <di:waypoint x="570" y="140" />
+        <di:waypoint x="570" y="275" />
+        <di:waypoint x="600" y="275" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0206645_di" bpmnElement="Flow_0206645">
+        <di:waypoint x="1870" y="380" />
+        <di:waypoint x="1870" y="360" />
+        <di:waypoint x="2040" y="360" />
+        <di:waypoint x="2040" y="310" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0cvl6n8_di" bpmnElement="Flow_0cvl6n8">
+        <di:waypoint x="2040" y="240" />
+        <di:waypoint x="2040" y="220" />
+        <di:waypoint x="2200" y="220" />
+        <di:waypoint x="2200" y="170" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

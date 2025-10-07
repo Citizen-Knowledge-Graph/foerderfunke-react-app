@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfoerderfunke_react_app=self.webpackChunkfoerderfunke_react_app||[]).push([[820],{60820:(e,r,a)=>{a.d(r,{createTreemapServices:()=>p.d});var p=a(81168);a(82916)}}]);
