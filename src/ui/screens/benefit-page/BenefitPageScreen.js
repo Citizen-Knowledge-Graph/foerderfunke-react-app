@@ -26,7 +26,7 @@ const BenefitPageScreen = ({
             <AppScreenWrapperContainer backTarget={'/eligibility-overview'}>
                 <VBox sx={{ gap: { xs: 4, md: 8 } }}>
                     <BenefitPageHeader id={id} benefit={benefitPageData} validatedStatus={validatedStatus} categoryTitles={categoryTitles} />
-                    <VBox sx={{ gap: { xs: 4, md: 8 } }}>
+                    <VBox sx={{ gap: { xs: 4, md: 8 }}}>
                         <BenefitPageGeneral t={t} isDesktop={isDesktop} benefitPageData={benefitPageData} />
                         <BenefitPageApplication t={t} isDesktop={isDesktop} benefitPageData={benefitPageData} xml={xml} />
                         {

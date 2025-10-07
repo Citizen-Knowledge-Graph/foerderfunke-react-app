@@ -15,7 +15,7 @@ const BenefitPageRequirements = ({ t, isDesktop, evalGraph, benefitPageData }) =
             sx={{
                 gap: 4,
                 backgroundColor: 'white.main',
-                padding: '32px',
+                padding: { xs: '32px 20px', md: '32px' },
                 borderRadius: theme.shape.borderRadius,
             }}
         >

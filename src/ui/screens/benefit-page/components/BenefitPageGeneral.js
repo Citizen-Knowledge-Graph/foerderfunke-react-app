@@ -12,7 +12,7 @@ const BenefitPageGeneral = ({ t, benefitPageData, isDesktop }) => {
     <VBox
       sx={{
         backgroundColor: 'white.main',
-        padding: '32px',
+        padding: { xs: '32px 20px', md: '32px' },
         borderRadius: theme.shape.borderRadius,
         boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
         gap: 2,
