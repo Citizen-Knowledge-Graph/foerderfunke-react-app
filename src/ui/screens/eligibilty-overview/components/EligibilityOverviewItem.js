@@ -130,6 +130,7 @@ const EligibilityOverviewItem = ({ t, item, eligible, isDesktop }) => {
                             variant={'blackOutlined'}
                             text={'app.browseAll.learnMoreBtn'}
                             link={`/benefit-page/${item.id}`}
+                            endIcon={<EastIcon sx={{ fontSize: '16px' }} />}
                             size={isDesktop ? 'medium' : 'small'}
                         />
                         {eligible === 'indeterminate' &&
