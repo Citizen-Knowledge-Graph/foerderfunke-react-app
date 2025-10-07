@@ -1,7 +1,5 @@
 import { useEffect, useRef } from "react";
-import BpmnJS from "bpmn-js/lib/Viewer";
-import ZoomScrollModule from "diagram-js/lib/navigation/zoomscroll";
-import MoveCanvasModule from "diagram-js/lib/navigation/movecanvas";
+import NavigatedViewer from "bpmn-js/lib/NavigatedViewer";
 
 /* ——— helpers ——— */
 
@@ -78,9 +76,8 @@ export default function BpmnViewer({
   useEffect(() => {
     if (!containerRef.current) return;
 
-    const viewer = new BpmnJS({
+    const viewer = new NavigatedViewer({
       container: containerRef.current,
-      additionalModules: [ZoomScrollModule, MoveCanvasModule],
       textRenderer: {
         defaultStyle: {
           fontFamily: "Funnel Sans, system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
@@ -147,7 +144,6 @@ export default function BpmnViewer({
     <div ref={wrapperRef} style={{ position: "relative" }}>
       <div
         ref={containerRef}
-        className={className}
         style={{
           width: "100%",
           height,
@@ -155,6 +151,10 @@ export default function BpmnViewer({
           borderRadius: 15,
           overflow: "hidden",
           background: "#fff",
+          touchAction: "none",        // let bpmn-js handle pan/zoom
+          WebkitUserSelect: "none",
+          userSelect: "none",
+          overscrollBehavior: "contain", // avoid scroll chaining to the page
         }}
       />
 
