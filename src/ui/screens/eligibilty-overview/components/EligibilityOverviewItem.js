@@ -104,7 +104,7 @@ const EligibilityOverviewItem = ({ t, item, eligible, isDesktop }) => {
                     justifyContent: 'space-between',
                     '& > :only-child': { marginLeft: 'auto' }
                 }}>
-                    <HBox sx={{ gap: 2, alignItems: 'center', flex: 4 }}>
+                    <HBox sx={{ gap: 2, alignItems: 'center', flex: 3 }}>
                         {
                             eligible !== 'indeterminate' && (
                                 <HBox>
