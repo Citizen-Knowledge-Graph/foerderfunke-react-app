@@ -1,10 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
 import theme from '@/theme';
-import { VBox } from '@/ui/shared-components/LayoutBoxes';
+import { HBox, VBox } from '@/ui/shared-components/LayoutBoxes';
+import AntSwitch from "@/ui/shared-components/AntSwitch";
 import { Typography } from "@mui/material";
 import mermaid from "mermaid";
 import { graphToMermaid } from "@foerderfunke/matching-engine/src/rule-graph/EvalGraph";
 import matchingEngineManager from "@/core/managers/matchingEngineManager";
+import useTranslation from "@/ui/language/useTranslation";
 
 function enablePanZoom(svg) {
     if (!svg) return () => { };
@@ -69,9 +71,10 @@ mermaid.initialize({
 
 
 export default function FlowChart({ evalGraph }) {
+    const { t } = useTranslation();
 
     const [svgContent, setSvgContent] = useState("");
-    const graphTypeEval = true;
+    const [graphTypeEval, setGraphTypeEval] = useState(false);
     const printLabels = true;
     const orientationVertical = false;
 
@@ -123,7 +126,7 @@ export default function FlowChart({ evalGraph }) {
         if (!evalGraph) return;
         const me = matchingEngineManager.matchingEngineInstance;
         const mermaidDef = graphToMermaid(
-            graphTypeEval ? evalGraph.ruleGraph : evalGraph,
+            graphTypeEval ? evalGraph : evalGraph.ruleGraph,
             me, printLabels, orientationVertical
         );
 
@@ -161,6 +164,11 @@ export default function FlowChart({ evalGraph }) {
 
     return (
         <div style={{ position: "relative" }}>
+            <HBox gap={1} alignItems="center" style={{ paddingBottom: "10px" }}>
+                <span>{t("app.benefitPage.requirements.toggleRule")}</span>
+                <AntSwitch checked={graphTypeEval} onChange={(e) => setGraphTypeEval(e.target.checked)} color="white"/>
+                <span>{t("app.benefitPage.requirements.toggleEval")}</span>
+            </HBox>
             <VBox
                 sx={{
                     backgroundColor: 'greyTransparent.main',
