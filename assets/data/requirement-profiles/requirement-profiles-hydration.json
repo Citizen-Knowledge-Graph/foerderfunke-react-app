@@ -1886,5 +1886,66 @@
       "de_es": "**§ 185 SGB IX – Arbeitsassistenz**  \nMenschen mit Schwerbehinderung können Hilfe durch eine Assistenz am Arbeitsplatz bekommen. Das Integrationsamt bezahlt die vollen Kosten dafür aus einem speziellen Geldtopf.  \n\n**§ 185 Abs. 9 SGB IX – Antrag**  \nWenn das Integrationsamt nach sechs Wochen nicht über einen Antrag entschieden hat, gilt der Antrag automatisch als genehmigt. Wichtig ist, dass im Antrag genau steht, welche Leistung gewünscht wird.",
       "en": "**Section 185 SGB IX – Work Assistance**  \nPeople with severe disabilities can receive assistance at the workplace. The Integration Office pays the full costs from a special fund.  \n\n**Section 185 (9) SGB IX – Application**  \nIf the Integration Office has not decided on an application after six weeks, the application is automatically considered approved. It is important that the application clearly states which service is requested."
     }
+  },
+  "ff:persoenliches-budget": {
+    "id": "ff:persoenliches-budget",
+    "status": "beta",
+    "category": "social_benefit",
+    "title": {
+      "de": "Persönliches Budget",
+      "de_es": "Persönliches Budget",
+      "en": "Personal Budget"
+    },
+    "teaser": {
+      "de": "Das Persönliche Budget ermöglicht Menschen mit Behinderungen oder von Behinderung bedrohten Personen, notwendige Leistungen zur Teilhabe als Geldleistung oder Gutschein zu erhalten und selbstbestimmt zu organisieren.",
+      "de_es": "Mit dem Persönlichen Budget können Menschen mit einer Behinderung oder einer drohenden Behinderung Unterstützung in Form von Geld oder Gutscheinen bekommen und selbst entscheiden, wie sie die Hilfe nutzen.",
+      "en": "The Personal Budget allows people with disabilities or at risk of disability to receive participation benefits as cash or vouchers, enabling them to organize the support they need independently."
+    },
+    "general": {
+      "brief": {
+        "de": "Das Persönliche Budget ist keine eigene Leistung, sondern eine besondere Form der Leistungserbringung. Anspruchsberechtigt sind Menschen mit Behinderung oder von Behinderung bedrohte Personen, die eigentlich Leistungen zur Teilhabe erhalten würden.\n\n&nbsp;\n\n### Zentrale Aspekte des Persönlichen Budgets\n- **Zweck**: mehr Selbstbestimmung durch eigenverantwortliche Organisation der notwendigen Hilfen.\n- **Voraussetzung**: Anspruch auf Leistungen zur Teilhabe (z. B. Eingliederungshilfe, berufliche Reha, soziale Teilhabe) oder auf Pflegeleistungen.\n- **Leistungen**: Geldleistungen oder Gutscheine, die den anerkannten individuellen Bedarf abdecken.\n- **Form**: Auszahlung in der Regel monatlich, alternativ Gutschein.\n- **Zuständige Stellen**: je nach Leistung u. a. Sozialamt, Integrationsamt, Jobcenter, Bundesagentur für Arbeit oder Pflegekasse.\n\n&nbsp;\n\n### Hinweis\n- Die Höhe des Persönlichen Budgets darf die Kosten der bisherigen Sachleistungen nicht überschreiten.\n- Vor der Bewilligung wird eine Zielvereinbarung zwischen Leistungsberechtigtem und Leistungsträger abgeschlossen (z. B. zu Zielen, Nachweisen, Qualitätssicherung).",
+        "de_es": "Das Persönliche Budget ist keine neue Leistung, sondern eine andere Art, bestehende Hilfen zu bekommen. Menschen mit einer Behinderung oder drohender Behinderung können Geld oder Gutscheine erhalten, anstatt festgelegte Sachleistungen.\n\n&nbsp;\n\n### Wichtige Punkte\n- **Ziel**: mehr Freiheit und Selbstbestimmung.\n- **Voraussetzung**: Anspruch auf Teilhabeleistungen oder Pflegeleistungen.\n- **Leistung**: monatliche Geldbeträge oder Gutscheine.\n- **Stellen**: z. B. Sozialamt, Jobcenter, Integrationsamt, Pflegekasse.\n\n&nbsp;\n\n### Hinweis\n- Das Budget darf nicht höher sein als die Kosten der bisherigen Hilfen.\n- Vorher muss eine Zielvereinbarung mit der zuständigen Behörde abgeschlossen werden.",
+        "en": "The Personal Budget is not a new benefit in itself, but a specific way of receiving existing entitlements. People with disabilities or at risk of disability, who are entitled to participation or care benefits, can request them in this form.\n\n&nbsp;\n\n### Key aspects of the Personal Budget\n- **Purpose**: more autonomy by organizing support independently.\n- **Requirement**: entitlement to participation or care benefits (e.g. rehabilitation, social participation, assistance with daily living).\n- **Benefits**: monthly cash payments or vouchers covering the recognized individual needs.\n- **Responsible authorities**: depending on the type of benefit, e.g. social welfare office, integration office, job center, employment agency, or care insurance fund.\n\n&nbsp;\n\n### Note\n- The Personal Budget may not exceed the costs of the equivalent services in kind.\n- Before approval, a target agreement is signed between the beneficiary and the authority (e.g. on goals, evidence, and quality assurance)."
+      },
+      "examples": {
+        "de": [
+          {
+            "title": "Persönliche Assistenz im Alltag",
+            "description": "Anna (32) ist Rollstuhlnutzerin und benötigt regelmäßig Unterstützung beim Einkaufen, bei Arztbesuchen und in der Freizeit.\n\n&nbsp;\n\n### Vorteile für Anna\n- Persönliches Budget von **2.500 € monatlich**\n- Kann selbst Assistent:innen einstellen\n- Flexible Organisation ihrer Unterstützung nach eigenen Bedürfnissen\n\n*Die Höhe des Budgets wurde anhand der Kosten berechnet, die ein Assistenzdienst für die gleichen Leistungen verursacht hätte.*"
+          },
+          {
+            "title": "Unterstützung für ein Kind mit Autismus",
+            "description": "Jonas (11) hat eine Autismus-Spektrum-Störung. Seine Eltern erhalten ein Persönliches Budget.\n\n&nbsp;\n\n### Vorteile für Jonas und seine Eltern\n- Persönliches Budget von **800 € monatlich**\n- Finanzierung einer **Lernbegleitung in der Schule**\n- Bezahlung einer **Freizeitassistenz**\n- Flexible Anpassung der Hilfen an den aktuellen Bedarf\n\n*Die Höhe des Budgets wurde so festgelegt, dass sie den Bedarf an Lernbegleitung und Freizeitassistenz abdeckt und den Kosten der bisherigen Sachleistungen entspricht.*"
+          }
+        ],
+        "de_es": [
+          {
+            "title": "Assistenz im Alltag",
+            "description": "Anna (32) nutzt einen Rollstuhl und braucht oft Hilfe beim Einkaufen, bei Arztterminen und in der Freizeit.\n\n&nbsp;\n\n### Vorteile für Anna\n- Persönliches Budget von **2.500 € im Monat**\n- Kann selbst Helfer:innen einstellen\n- Organisiert ihre Hilfe flexibel\n\n*Die Höhe wurde auf Basis der Kosten berechnet, die ein Assistenzdienst für dieselben Leistungen hätte.*"
+          },
+          {
+            "title": "Hilfe für ein Kind mit Autismus",
+            "description": "Jonas (11) hat Autismus. Seine Eltern bekommen ein Persönliches Budget.\n\n&nbsp;\n\n### Vorteile für Jonas und seine Eltern\n- Persönliches Budget von **800 € im Monat**\n- Finanzierung einer **Schulbegleitung**\n- Bezahlung einer **Freizeitassistenz**\n- Flexible Anpassung an Jonas’ Bedürfnisse\n\n*Das Budget wurde so berechnet, dass es die Kosten für Schulbegleitung und Freizeitassistenz abdeckt.*"
+          }
+        ],
+        "en": [
+          {
+            "title": "Personal assistance in daily life",
+            "description": "Anna (32) uses a wheelchair and regularly needs support with shopping, medical visits, and leisure activities.\n\n&nbsp;\n\n### Benefits for Anna\n- Personal Budget of **€2,500 per month**\n- Ability to **hire assistants herself**\n- Flexible organization of her support according to her own needs\n\n*The budget amount was determined based on the equivalent costs that a professional assistance service would have incurred.*"
+          },
+          {
+            "title": "Support for a child with autism",
+            "description": "Jonas (11) has an autism spectrum disorder. His parents receive a Personal Budget.\n\n&nbsp;\n\n### Benefits for Jonas and his parents\n- Personal Budget of **€800 per month**\n- Financing a **learning assistant at school**\n- Paying for a **leisure companion**\n- Flexible adaptation of support to Jonas’ current needs\n\n*The budget was calculated to cover the costs of school support and leisure assistance, in line with the equivalent in-kind services.*"
+          }
+        ]
+      }
+    },
+    "application_process": {
+      "brief": {
+        "de": "Der Antrag auf ein Persönliches Budget kann bei verschiedenen Leistungsträgern gestellt werden, z. B. beim Sozialamt, bei der Pflegekasse oder der Bundesagentur für Arbeit.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Beratung**: Vor dem Antrag ist es sinnvoll, sich an eine Beratungsstelle zu wenden. Dort wird gemeinsam geprüft, welche Hilfen benötigt werden und welcher Träger zuständig ist.\n- **Zuständige Stelle**: Wenn der Antrag bei einem Träger eingeht, der nicht der Hauptzuständige ist, muss dieser den Antrag an den richtigen Träger weiterleiten.\n- **Koordination**: Der zuständige Träger koordiniert das Verfahren und stimmt sich mit anderen beteiligten Trägern ab (z. B. Sozialamt, Pflegekasse, Integrationsamt).\n- **Unterlagen**: Nachweise über die Behinderung oder drohende Behinderung, ärztliche Befunde, Bedarfsdarstellung.\n- **Zielvereinbarung**: Nach Feststellung des Bedarfs wird eine Zielvereinbarung abgeschlossen, in der Ziele, Nachweise und Qualitätssicherung festgelegt sind.\n- **Fristen**: Es gibt keine festen Antragsfristen. Die Leistungen gelten ab Antragstellung, nicht rückwirkend.",
+        "de_es": "Ein Persönliches Budget kann man bei verschiedenen Stellen beantragen, zum Beispiel beim Sozialamt, bei der Pflegekasse oder bei der Arbeitsagentur.\n\n&nbsp;\n\n### Wichtige Punkte zum Antrag\n- **Beratung**: Vorher am besten eine Beratungsstelle aufsuchen. Dort wird gemeinsam geschaut, welche Hilfen gebraucht werden und welcher Träger zuständig ist.\n- **Stelle**: Geht der Antrag an die falsche Stelle, muss diese ihn an die richtige weiterleiten.\n- **Koordination**: Der zuständige Träger koordiniert das Verfahren und spricht mit anderen beteiligten Stellen (z. B. Sozialamt, Pflegekasse, Integrationsamt).\n- **Unterlagen**: Nachweise über die Behinderung, ärztliche Befunde, Darstellung des Bedarfs.\n- **Zielvereinbarung**: Wird nach der Bedarfsermittlung abgeschlossen und legt Ziele, Nachweise und Qualitätssicherung fest.\n- **Fristen**: Keine festen Fristen, Leistungen gelten ab Antragstellung.",
+        "en": "The application for a Personal Budget can be submitted to different providers, e.g. the social welfare office, the care insurance fund, or the employment agency.\n\n&nbsp;\n\n### Important details for the application\n- **Counseling**: It is advisable to first consult a counseling service. They help identify the required support and prepare the application.\n- **Responsible authority**: If the application is submitted to an authority that is not primarily responsible, it must forward the application to the correct one.\n- **Coordination**: The responsible authority coordinates the process and involves other relevant agencies (e.g. social welfare office, care fund, integration office).\n- **Documents**: Proof of disability or risk of disability, medical records, and a statement of needs.\n- **Target agreement**: After the needs assessment, a target agreement is signed, defining goals, required documentation, and quality assurance.\n- **Deadlines**: There are no fixed deadlines, but benefits only apply from the date of application, not retroactively."
+      }
+    }
   }
 }
