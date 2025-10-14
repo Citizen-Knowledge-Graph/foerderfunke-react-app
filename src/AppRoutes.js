@@ -15,6 +15,7 @@ import InfoScreenPrivacyContainer from '@/ui/screens/info-pages/privacy/InfoScre
 import QuestionPageRouter from '@/ui/screens/question-pages/QuestionPageRouter';
 import ImpressumPage from './ui/screens/legal/ImpressumPage';
 import DataProtection from './ui/screens/legal/DataProtection';
+import LodBarcamp from "@/ui/screens/events/LodBarcamp";
 
 const AppRoutes = () => (
     <Routes>
@@ -37,6 +38,7 @@ const AppRoutes = () => (
         <Route path="/bielefunke" element={<LandingPage runway="bielefunke" />}/>
         <Route path="/wolfenbuettel" element={<LandingPage runway="wolfenbuettel" />}/>
         <Route path="/wolfenbüttel" element={<LandingPage runway="wolfenbuettel" />}/>
+        <Route path="/lod-barcamp-bielefeld" element={<LodBarcamp/>}/>
     </Routes>
 );
 
