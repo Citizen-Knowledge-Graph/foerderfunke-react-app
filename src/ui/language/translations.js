@@ -295,6 +295,8 @@ const translations = {
                     description: "In this section you will find an overview of the key requirements that must be met for a potential entitlement.\n\nBelow, you can expand the decision tree to explore each step in more detail. If you have already completed our questionnaire, the decision tree will also show which conditions are fulfilled in your case and which may not be.",
                     btn: "Show requirements",
                     btnClose: "Close requirements",
+                    toggleRule: "Rule",
+                    toggleEval: "Evaluation",
                     eligible: "You are likely eligible",
                     notEligible: "You are likely not eligible",
                 },
@@ -675,7 +677,9 @@ const translations = {
                     title: "Wer ist anspruchsberechtigt?",
                     description: "In diesem Bereich sehen Sie eine Übersicht der wichtigsten Voraussetzungen, die erfüllt sein müssen, damit ein möglicher Anspruch besteht.\n\nUnterhalb können Sie den Entscheidungsbaum ausklappen und die einzelnen Schritte genauer nachvollziehen. Wenn Sie bereits unsere Fragestrecke durchlaufen haben, wird im Entscheidungsbaum zusätzlich dargestellt, welche Bedingungen in Ihrem Fall erfüllt sind und welche möglicherweise nicht.",
                     btn: "Anspruchsvoraussetzungen anzeigen",
-                    btnClose: "Anspruchsvoraussetzungen schließen"
+                    btnClose: "Anspruchsvoraussetzungen schließen",
+                    toggleRule: "Regeln",
+                    toggleEval: "Evaluation",
                 },
                 local: {
                     title: "Wo finde ich Unterstützung vor Ort?",
