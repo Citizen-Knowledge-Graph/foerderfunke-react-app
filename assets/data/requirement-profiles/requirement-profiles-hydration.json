@@ -2008,5 +2008,66 @@
         "en": "The application for Integration Assistance is usually submitted to the local Social Welfare Office.\n\n&nbsp;\n\n### Important details for the application\n- **Counseling**: advisable before applying to clarify needs.\n- **Responsible authority**: local or regional social welfare office.\n- **Needs assessment**: carried out in a structured process.\n- **Documents**: medical certificates, disability evidence, statement of support needs.\n- **Form of support**: can also be provided as a Personal Budget.\n- **Deadlines**: no fixed deadlines, benefits apply from the date of application."
       }
     }
+  },
+  "ff:blindengeld": {
+    "id": "ff:blindengeld",
+    "status": "beta",
+    "category": "social_benefit",
+    "title": {
+      "de": "Blindengeld",
+      "de_es": "Blindengeld",
+      "en": "Blindness Allowance"
+    },
+    "teaser": {
+      "de": "Das Blindengeld ist ein monatlicher Nachteilsausgleich für blinde Menschen, der von den Bundesländern gezahlt wird. Die Höhe variiert je nach Bundesland.",
+      "de_es": "Blindengeld ist Geld, das blinde Menschen jeden Monat bekommen. Wie viel, hängt vom Bundesland ab.",
+      "en": "Blindness Allowance is a monthly compensation for blind people, provided by the federal states. The amount varies by state."
+    },
+    "general": {
+      "brief": {
+        "de": "Das Blindengeld ist eine **landesrechtliche Leistung** und wird monatlich als Nachteilsausgleich gezahlt. Es soll behinderungsbedingte Mehrkosten wie Haushaltshilfe, Vorlesedienste oder Hilfsmittel ausgleichen.\n\n&nbsp;\n\n### Zentrale Aspekte des Blindengeldes\n- **Zweck**: Ausgleich behinderungsbedingter Mehrkosten.\n- **Voraussetzung**: Anerkannte Blindheit; in manchen Ländern zusätzlich Leistungen für hochgradig Sehbehinderte oder Taubblinde.\n- **Leistungen**: Monatliche Geldzahlung, Höhe je nach Bundesland unterschiedlich.\n- **Zuständige Stelle**: Landesbehörden oder Sozialämter.",
+        "de_es": "Blindengeld ist eine Leistung vom Bundesland. Es wird jeden Monat gezahlt und soll extra Kosten wegen der Behinderung ausgleichen, zum Beispiel für Hilfe im Haushalt, Vorlesen oder Hilfsmittel.\n\n&nbsp;\n\n### Wichtige Punkte\n- **Ziel**: Ausgleich für zusätzliche Kosten.\n- **Voraussetzung**: Blindheit; in manchen Ländern auch Geld für stark Sehbehinderte oder Taubblinde.\n- **Leistung**: Monatliches Geld, Höhe je nach Bundesland.\n- **Stelle**: Sozialamt oder Landesbehörde.",
+        "en": "Blindness Allowance is a **state-level benefit**, paid monthly to compensate disability-related extra costs, such as household help, reading services, or assistive devices.\n\n&nbsp;\n\n### Key aspects of Blindness Allowance\n- **Purpose**: Compensation for disability-related additional costs.\n- **Requirement**: Recognized blindness; in some states, additional benefits for people with severe visual impairment or deafblindness.\n- **Benefit**: Monthly cash payment, amount varies by federal state.\n- **Responsible authority**: State authority or social welfare office."
+      },
+      "examples": {
+        "de": [
+          {
+            "title": "Erwachsene Person in Bayern",
+            "description": "Thomas (56) lebt in Bayern und ist von Geburt an blind.\n\n&nbsp;\n\n### Vorteile für Thomas\n- Er erhält monatlich **Blindengeld in Höhe von rund 700 €**.\n- Das Geld wird unabhängig davon gezahlt, wofür er es nutzt.\n- Er kann die Pauschale frei verwenden, z. B. für Hilfsmittel, Assistenz oder zur Deckung allgemeiner Mehrkosten durch die Blindheit.\n\n*Blindengeld ist eine pauschale Leistung und nicht an bestimmte Verwendungszwecke gebunden.*"
+          },
+          {
+            "title": "Kind mit Blindheit in Hessen",
+            "description": "Mila (8) lebt mit ihren Eltern in Hessen und ist blind.\n\n&nbsp;\n\n### Vorteile für Mila und ihre Eltern\n- Sie erhält monatlich **Blindengeld für Minderjährige in Höhe von rund 140 €**.\n- Das Geld wird unabhängig vom Verwendungszweck ausgezahlt.\n- Die Eltern können es frei einsetzen, um zusätzliche Aufwendungen auszugleichen.\n\n*Auch für Kinder gilt: Blindengeld ist zweckfrei und variiert je nach Bundesland.*"
+          }
+        ],
+        "de_es": [
+          {
+            "title": "Erwachsene Person in Bayern",
+            "description": "Thomas (56) lebt in Bayern und ist blind.\n\n&nbsp;\n\n### Vorteile für Thomas\n- Er bekommt jeden Monat **ca. 700 € Blindengeld**.\n- Es spielt keine Rolle, wofür er das Geld nutzt.\n- Thomas kann die Pauschale frei verwenden.\n\n*Blindengeld ist eine Pauschale ohne Zweckbindung.*"
+          },
+          {
+            "title": "Kind mit Blindheit in Hessen",
+            "description": "Mila (8) wohnt in Hessen und ist blind.\n\n&nbsp;\n\n### Vorteile für Mila\n- Sie erhält monatlich **ca. 140 € Blindengeld für Kinder**.\n- Das Geld ist zweckfrei.\n- Die Eltern können es nach Bedarf nutzen.\n\n*Blindengeld ist auch für Kinder eine pauschale Leistung, unabhängig vom Verwendungszweck.*"
+          }
+        ],
+        "en": [
+          {
+            "title": "Adult recipient in Bavaria",
+            "description": "Thomas (56) lives in Bavaria and has been blind since birth.\n\n&nbsp;\n\n### Benefits for Thomas\n- He receives a **monthly Blindness Allowance of about €700**.\n- The money is paid regardless of how he uses it.\n- He can freely use the allowance, e.g. for assistive devices, support, or general extra costs of blindness.\n\n*The allowance is a lump-sum benefit, not tied to specific spending.*"
+          },
+          {
+            "title": "Child recipient in Hesse",
+            "description": "Mila (8) lives in Hesse and is blind.\n\n&nbsp;\n\n### Benefits for Mila and her parents\n- She receives a **monthly Blindness Allowance for minors of about 140**.\n- The allowance is paid without usage restrictions.\n- Her parents can use it freely to cover additional expenses.\n\n*For children too, Blindness Allowance is a lump-sum payment without usage restrictions.*"
+          }
+        ]
+      }
+    },
+    "application_process": {
+      "brief": {
+        "de": "Der Antrag wird bei der zuständigen Landesbehörde oder beim Sozialamt gestellt.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: je nach Bundesland Landesamt oder Sozialamt.\n- **Form**: Schriftlicher Antrag, teils auch online möglich.\n- **Unterlagen**: Nachweis der Blindheit (ärztliche Gutachten, Feststellungsbescheid).\n- **Bewilligung**: Leistung wird ab Antragstellung gezahlt, nicht rückwirkend.",
+        "de_es": "Den Antrag stellt man beim Sozialamt oder bei einer Landesbehörde.\n\n&nbsp;\n\n### Wichtige Punkte\n- **Stelle**: hängt vom Bundesland ab.\n- **Antrag**: schriftlich oder manchmal online.\n- **Unterlagen**: ärztliche Nachweise über Blindheit.\n- **Start**: Geld gibt es ab Antragstellung.",
+        "en": "The application is submitted to the competent state authority or the social welfare office.\n\n&nbsp;\n\n### Important details for the application\n- **Responsible authority**: depends on the federal state.\n- **Form**: written application, sometimes online.\n- **Documents**: medical proof of blindness (expert opinion, official certification).\n- **Start of benefit**: payments apply from the date of application, not retroactively."
+      }
+    }
   }
 }

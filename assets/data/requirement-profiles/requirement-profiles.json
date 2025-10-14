@@ -142,6 +142,10 @@
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/bielefeld/eingliederungshilfe.ttl",
       "rpUri": "https://foerderfunke.org/default#eingliederungshilfe",
       "behindFeatureFlag": "bielefunke"
+    },
+    {
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/blindengeld.ttl",
+      "rpUri": "https://foerderfunke.org/default#blindengeld"
     }
   ]
 }
