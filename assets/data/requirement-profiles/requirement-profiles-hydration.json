@@ -1947,5 +1947,66 @@
         "en": "The application for a Personal Budget can be submitted to different providers, e.g. the social welfare office, the care insurance fund, or the employment agency.\n\n&nbsp;\n\n### Important details for the application\n- **Counseling**: It is advisable to first consult a counseling service. They help identify the required support and prepare the application.\n- **Responsible authority**: If the application is submitted to an authority that is not primarily responsible, it must forward the application to the correct one.\n- **Coordination**: The responsible authority coordinates the process and involves other relevant agencies (e.g. social welfare office, care fund, integration office).\n- **Documents**: Proof of disability or risk of disability, medical records, and a statement of needs.\n- **Target agreement**: After the needs assessment, a target agreement is signed, defining goals, required documentation, and quality assurance.\n- **Deadlines**: There are no fixed deadlines, but benefits only apply from the date of application, not retroactively."
       }
     }
+  },
+  "ff:eingliederungshilfe": {
+    "id": "ff:eingliederungshilfe",
+    "status": "beta",
+    "category": "social_benefit",
+    "title": {
+      "de": "Eingliederungshilfe",
+      "de_es": "Eingliederungshilfe",
+      "en": "Integration Assistance"
+    },
+    "teaser": {
+      "de": "Die Eingliederungshilfe unterstützt Menschen mit Behinderungen oder von Behinderung bedrohte Personen dabei, ein möglichst selbstbestimmtes Leben zu führen und gleichberechtigt an der Gesellschaft teilzuhaben.",
+      "de_es": "Die Eingliederungshilfe hilft Menschen mit einer Behinderung oder mit drohender Behinderung, selbstbestimmter zu leben und am gesellschaftlichen Leben teilzunehmen.",
+      "en": "Integration Assistance supports people with disabilities or those at risk of disability in leading a self-determined life and participating equally in society."
+    },
+    "general": {
+      "brief": {
+        "de": "Die Eingliederungshilfe ist eine zentrale Leistung der Sozialhilfe. Sie richtet sich an Menschen mit Behinderungen oder von Behinderung bedrohte Personen, die dadurch wesentlich im täglichen Leben eingeschränkt sind.\n\n&nbsp;\n\n### Zentrale Aspekte der Eingliederungshilfe\n- **Zweck**: Förderung der Selbstbestimmung und gleichberechtigten Teilhabe.\n- **Voraussetzung**: Vorliegen einer Behinderung oder drohenden Behinderung, die zu wesentlichen Einschränkungen im Alltag führt.\n- **Leistungen**: u. a. Assistenz im Alltag, Schul- oder Studienbegleitung, Hilfen zur Mobilität, medizinische oder berufliche Rehabilitation, Wohn- und Freizeitassistenz.\n- **Form**: Sachleistungen, Dienstleistungen oder Geldleistungen (z. B. auch über ein Persönliches Budget).\n- **Zuständige Stelle**: in der Regel das örtliche oder überörtliche Sozialamt.\n- Der individuelle **Bedarf** wird im Rahmen eines Bedarfsermittlungsverfahrens festgestellt.",
+        "de_es": "Die Eingliederungshilfe ist eine Hilfe der Sozialhilfe. Sie richtet sich an Menschen mit Behinderung oder drohender Behinderung, die stark im Alltag eingeschränkt sind.\n\n&nbsp;\n\n### Wichtige Punkte\n- **Ziel**: selbstbestimmtes Leben und Teilhabe.\n- **Voraussetzung**: Behinderung oder drohende Behinderung mit wesentlichen Einschränkungen.\n- **Leistung**: Assistenz im Alltag, Hilfe in Schule oder Ausbildung, Unterstützung bei Arbeit und Wohnen.\n- **Form**: Sachleistungen oder Geldleistungen (auch als Persönliches Budget).\n- **Stelle**: meist das Sozialamt.\n- Der **Bedarf** wird in einem Verfahren festgestellt.",
+        "en": "Integration Assistance is a key benefit of social welfare. It supports people with disabilities or those at risk of disability if they are significantly limited in their daily lives.\n\n&nbsp;\n\n### Key aspects of Integration Assistance\n- **Purpose**: to promote autonomy and equal participation.\n- **Requirement**: existence or risk of a disability leading to significant daily life limitations.\n- **Benefits**: e.g. daily life assistance, school or university support, mobility assistance, medical or vocational rehabilitation, housing and leisure assistance.\n- **Form**: services in kind, professional services, or cash benefits (also via Personal Budget).\n- **Responsible authority**: usually the local or regional Social Welfare Office.\n- **Needs** are determined in an official assessment process."
+      },
+      "examples": {
+        "de": [
+          {
+            "title": "Schulbegleitung",
+            "description": "Lea (9) hat eine geistige Behinderung und besucht eine Grundschule.\n\n&nbsp;\n\n### Vorteile für Lea\n- Schulbegleitung durch eine Assistenzkraft\n- Unterstützung im Unterricht und bei Pausen\n- Förderung der sozialen Teilhabe\n\n*Die Hilfe wurde gewährt, weil ohne Unterstützung ein Schulbesuch nicht möglich wäre.*"
+          },
+          {
+            "title": "Arbeitsassistenz",
+            "description": "Mehmet (41) ist sehbehindert und arbeitet in einem Büro.\n\n&nbsp;\n\n### Vorteile für Mehmet\n- Assistenzkraft unterstützt bei der Bearbeitung von Schriftstücken\n- Ermöglicht selbstständige Berufsausübung\n- Sicherung des Arbeitsplatzes\n\n*Die Unterstützung wurde bewilligt, da sie notwendig ist, um die Erwerbstätigkeit trotz Behinderung auszuüben.*"
+          }
+        ],
+        "de_es": [
+          {
+            "title": "Schulbegleitung",
+            "description": "Lea (9) hat eine geistige Behinderung und geht in die Grundschule.\n\n&nbsp;\n\n### Vorteile für Lea\n- Hilfe durch eine Begleitperson\n- Unterstützung im Unterricht und in den Pausen\n- Mehr Teilhabe mit anderen Kindern\n\n*Die Hilfe wird gegeben, weil Lea ohne Unterstützung nicht am Unterricht teilnehmen könnte.*"
+          },
+          {
+            "title": "Arbeitsassistenz",
+            "description": "Mehmet (41) ist sehbehindert und arbeitet im Büro.\n\n&nbsp;\n\n### Vorteile für Mehmet\n- Hilfe beim Lesen und Bearbeiten von Dokumenten\n- Macht eigenständiges Arbeiten möglich\n- Arbeitsplatz bleibt erhalten\n\n*Die Hilfe wurde bewilligt, weil sie für die Arbeit trotz Behinderung nötig ist.*"
+          }
+        ],
+        "en": [
+          {
+            "title": "School assistance",
+            "description": "Lea (9) has an intellectual disability and attends elementary school.\n\n&nbsp;\n\n### Benefits for Lea\n- Support person accompanies her in class\n- Assistance during lessons and breaks\n- Encourages social participation\n\n*The assistance was granted because school attendance would not be possible without support.*"
+          },
+          {
+            "title": "Workplace assistance",
+            "description": "Mehmet (41) is visually impaired and works in an office.\n\n&nbsp;\n\n### Benefits for Mehmet\n- Assistant helps with reading and processing documents\n- Enables independent work\n- Ensures job security\n\n*The support was approved as it is essential for continuing his employment despite the disability.*"
+          }
+        ]
+      }
+    },
+    "application_process": {
+      "brief": {
+        "de": "Der Antrag auf Eingliederungshilfe wird in der Regel beim örtlichen Sozialamt gestellt.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Beratung**: Vor Antragstellung ist eine Beratung sinnvoll, um den individuellen Bedarf zu klären.\n- **Zuständige Stelle**: örtliches oder überörtliches Sozialamt.\n- **Bedarfsermittlung**: erfolgt durch ein strukturiertes Verfahren (z. B. BEI_BW, ITP).\n- **Unterlagen**: Nachweise zur Behinderung, ärztliche Gutachten, Beschreibung des Unterstützungsbedarfs.\n- **Formen der Hilfe**: können auch als Persönliches Budget ausgezahlt werden.\n- **Fristen**: kein fester Termin, Leistungen gelten ab Antragstellung.",
+        "de_es": "Den Antrag auf Eingliederungshilfe stellt man beim Sozialamt.\n\n&nbsp;\n\n### Wichtige Punkte\n- **Beratung**: Vorher Beratung sinnvoll.\n- **Stelle**: zuständig ist das Sozialamt.\n- **Ermittlung**: Bedarf wird in einem Verfahren festgestellt.\n- **Unterlagen**: ärztliche Gutachten, Nachweise zur Behinderung, Beschreibung des Bedarfs.\n- **Form**: auch als Persönliches Budget möglich.\n- **Fristen**: Leistungen gelten ab Antragstellung.",
+        "en": "The application for Integration Assistance is usually submitted to the local Social Welfare Office.\n\n&nbsp;\n\n### Important details for the application\n- **Counseling**: advisable before applying to clarify needs.\n- **Responsible authority**: local or regional social welfare office.\n- **Needs assessment**: carried out in a structured process.\n- **Documents**: medical certificates, disability evidence, statement of support needs.\n- **Form of support**: can also be provided as a Personal Budget.\n- **Deadlines**: no fixed deadlines, benefits apply from the date of application."
+      }
+    }
   }
 }
