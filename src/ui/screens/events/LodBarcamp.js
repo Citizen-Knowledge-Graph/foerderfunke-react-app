@@ -222,7 +222,9 @@ const LodBarcamp = () => {
                                     <VBox>
                                         <Typography variant="h2" sx={{ color: "pink.main" }}>Dokumentation</Typography>
                                         <Typography variant="body1">
-                                            <a href="https://pad.okfn.de/p/LOD-Barcamp-Bielefeld" target="_blank">Etherpad bei der OKF</a> &rarr; für Sessionvorschläge, Ablaufplan und alle Art Informationen, die wir oder ihr vorab und währenddessen offen teilen wollt
+                                            <a href="https://pad.okfn.de/p/LOD-Barcamp-Bielefeld" target="_blank" rel="noreferrer">
+                                                Etherpad bei der OKF
+                                            </a> &rarr; für Sessionvorschläge, Ablaufplan und alle Art Informationen, die wir oder ihr vorab und währenddessen offen teilen wollt
                                         </Typography>
                                     </VBox>
                                 </VBox>
