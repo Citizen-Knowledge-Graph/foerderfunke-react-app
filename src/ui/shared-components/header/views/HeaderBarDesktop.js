@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useTranslation from "@/ui/language/useTranslation";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { HBox } from '@/ui/shared-components/LayoutBoxes';
 import LogoBar from '@/ui/shared-components/LogoBar';
 import LandingPageHollowButtonDesktop from '@/ui/screens/landing-page/components/LandingPageButtonDesktop';
@@ -22,6 +22,8 @@ const HeaderBarDesktop = ({ isApp, runway }) => {
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
+
+    const location = useLocation();
 
     return (
         <HBox sx={{
@@ -59,20 +61,22 @@ const HeaderBarDesktop = ({ isApp, runway }) => {
                 </Link>
 
             </HBox>
-            <HBox justifyContent={'flex-end'} alignItems={'center'}>
-                <HBox gap={5}>
-                    {!isApp ?
-                        <RegularButton
-                            text={isSmallScreen ? 'home.global.actionButtonShort' : 'home.global.actionButton'}
-                            variant={'blackOutlined'}
-                            link='/user-routing'
-                        /> : null}
-                    <LandingPageHollowButtonDesktop isApp={isApp} text={t('home.menu.catalog')} to={'/eligibility-overview'} />
-                    <LandingPageHollowButtonDesktop isApp={isApp} text={t('home.menu.improve')} to={'/#feedback'} />
-                    <LandingPageHollowButtonDesktop isApp={isApp} text={t('home.menu.aboutUs')} to={"/#about-us"} />
-                    <LanguageDropdown isApp={isApp} />
+            {location.pathname !== '/lod-barcamp-bielefeld' &&
+                <HBox justifyContent={'flex-end'} alignItems={'center'}>
+                    <HBox gap={5}>
+                        {!isApp ?
+                            <RegularButton
+                                text={isSmallScreen ? 'home.global.actionButtonShort' : 'home.global.actionButton'}
+                                variant={'blackOutlined'}
+                                link='/user-routing'
+                            /> : null}
+                        <LandingPageHollowButtonDesktop isApp={isApp} text={t('home.menu.catalog')} to={'/eligibility-overview'} />
+                        <LandingPageHollowButtonDesktop isApp={isApp} text={t('home.menu.improve')} to={'/#feedback'} />
+                        <LandingPageHollowButtonDesktop isApp={isApp} text={t('home.menu.aboutUs')} to={"/#about-us"} />
+                        <LanguageDropdown isApp={isApp} />
+                    </HBox>
                 </HBox>
-            </HBox>
+            }
         </HBox >
     )
 }
