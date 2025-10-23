@@ -26,13 +26,11 @@ const EligibilityOverviewItem = ({ t, item, eligible, isDesktop }) => {
     return (
         <VBox
             sx={{
-                display: 'flex',
-                flexDirection: 'column',
                 gap: 3,
                 border: `1px solid ${theme.palette.white.dark}`,
                 boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
                 padding: 4,
-                borderRadius: theme.shape.borderRadius,
+                borderRadius: theme.shape.borderRadius
             }}
         >
             <HBox
@@ -99,12 +97,12 @@ const EligibilityOverviewItem = ({ t, item, eligible, isDesktop }) => {
                 )}
                 <HBox sx={{
                     flexWrap: 'wrap',
-                    gap: 2,
+                    gap: { xs: 0, md: 2 },
                     alignItems: 'center',
                     justifyContent: 'space-between',
                     '& > :only-child': { marginLeft: 'auto' }
                 }}>
-                    <HBox sx={{ gap: 2, alignItems: 'center', flex: 3 }}>
+                    <HBox sx={{ gap: 2, alignItems: 'center', flex: { xs: 0, md: 3 } }}>
                         {
                             eligible !== 'indeterminate' && (
                                 <HBox>
@@ -112,7 +110,7 @@ const EligibilityOverviewItem = ({ t, item, eligible, isDesktop }) => {
                                 </HBox>
                             )
                         }
-                        {!isVisible && (
+                        {!isVisible && isDesktop && (
                             <HBox sx={{ flexWrap: 'wrap', gap: 1 }}>
                                 {item.benefitCategories?.map(tag => (
                                     <EligibilityOverviewTag
@@ -125,7 +123,14 @@ const EligibilityOverviewItem = ({ t, item, eligible, isDesktop }) => {
                             </HBox>
                         )}
                     </HBox>
-                    <HBox sx={{ justifyContent: { xs: 'flex-start', md: 'flex-end' }, flexWrap: 'wrap', gap: 2, alignItems: 'center', flex: 3 }}>
+                    <HBox sx={{ 
+                        justifyContent: { xs: 'flex-start', md: 'flex-end' }, 
+                        flexWrap: 'wrap', 
+                        gap: 2, 
+                        alignItems: 'center', 
+                        flex: 3
+                    }}
+                    >
                         <RegularButton
                             variant={'blackOutlined'}
                             text={'app.browseAll.learnMoreBtn'}
