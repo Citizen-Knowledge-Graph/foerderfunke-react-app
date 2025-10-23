@@ -45,7 +45,6 @@ const EligibilityOverviewScreen = ({
                     <VBox sx={{ gap: { xs: 2, md: 4 } }}>
                         <EligibilityOverviewFilter
                             t={t}
-                            isDesktop={isDesktop}
                             filterOptions={filterOptions}
                             filters={filters}
                             onChangeFilters={onChangeFilters}

@@ -257,6 +257,7 @@ const translations = {
                     administrativeLevels: "Administrative level",
                     providingAgencies: "Providing agency",
                     associatedLaws: "Associated law",
+                    btnClear: "Clear filters",
                     btnClose: "Close filter",
                     btn: "Open filter",
                     tags: "Tag",
@@ -644,6 +645,7 @@ const translations = {
                     administrativeLevels: "Verwaltungsebene",
                     providingAgencies: "Zuständige Behörde",
                     associatedLaws: "Zugehöriges Gesetz",
+                    btnReset: "Alle zurücksetzen",
                     btnClose: "Filter schließen",
                     btn: "Filter öffnen",
                     tags: "Schlagwort"
