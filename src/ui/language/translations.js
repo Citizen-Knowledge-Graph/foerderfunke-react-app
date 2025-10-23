@@ -40,6 +40,9 @@ const translations = {
                 }
             },
             fact: {
+                header: "Your Support",
+                headerText: "is not a",
+                rotatingWords: ["coincidence", "luxury", "privilege"],
                 subHeader: "unclaimed social benefits per year",
                 text: "We are on a mission to make social benefits in Germany accessible and easy to understand by everyone. We show you what social benefits you might be eligible for and point you the way to apply for them."
             },
@@ -431,6 +434,9 @@ const translations = {
                 }
             },
             fact: {
+                header: "Unterstützung",
+                headerText: "ist kein",
+                rotatingWords: ["Zufall", "Luxus", "Privileg"],
                 subHeader: "nicht in Anspruch genommener Sozialleistungen pro Jahr",
                 text: "Mit FörderFunke möchten wir erreichen, dass Sozialleistungen in Deutschland für alle zugänglich und leicht verständlich sind. Wir zeigen Ihnen, auf welche Sozialleistungen Sie Anspruch haben könnten und wie Sie sie beantragen können."
             },
