@@ -1,7 +1,5 @@
 const defaultFlags = {
-    subindividuals: false,
-    showMermaidRuleGraph: true,
-    bielefunke: true
+    subindividuals: false
 };
 
 const getFeatureFlag = (flag) => {
@@ -11,8 +9,6 @@ const getFeatureFlag = (flag) => {
 
 const featureFlags = {
     subindividuals: getFeatureFlag('subindividuals'),
-    showMermaidRuleGraph: getFeatureFlag('showMermaidRuleGraph'),
-    bielefunke: getFeatureFlag('bielefunke')
 };
 
 export const setFeatureFlag = (flag, value) => {

@@ -4,7 +4,6 @@ import { HBox, VBox } from "@/ui/shared-components/LayoutBoxes";
 import RegularButton from "@/ui/shared-components/buttons/RegularButton";
 import LandingPageSectionWrapper from "../../components/LandingPageSectionWrapper";
 import LandingPageTopSectionShared from "./components/LandingPageTopSectionShared";
-import featureFlags from "@/featureFlags";
 import { Typography } from "@mui/material";
 import { Link } from 'react-router-dom';
 
@@ -21,7 +20,7 @@ const LandingPageTopSection = ({ runway }) => {
                     <VBox sx={{ width: "50%", alignItems: "center" }}>
                         <VBox sx={{ maxWidth: "600px", gap: 4 }}>
                             <LandingPageTopSectionShared />
-                            {runway === "bielefunke" && featureFlags.bielefunke && (
+                            {runway === "bielefunke" && (
                                 <VBox
                                     sx={(theme) => ({
                                         padding: 4,
