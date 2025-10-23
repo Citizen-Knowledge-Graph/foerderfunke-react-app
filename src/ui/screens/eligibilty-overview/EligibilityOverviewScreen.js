@@ -53,7 +53,7 @@ const EligibilityOverviewScreen = ({
                         {featureFlags.bielefunke && atLeastOneWithMissingData() &&
                             <RegularButton
                                 text={"Noch offene Ansprüche prüfen"}
-                                variant={'blueContained'}
+                                variant={'blackContained'}
                                 link='/onboarding-welcome'
                                 onClick={doSetSelectedBenefits}
                                 endIcon={<EastIcon/>}

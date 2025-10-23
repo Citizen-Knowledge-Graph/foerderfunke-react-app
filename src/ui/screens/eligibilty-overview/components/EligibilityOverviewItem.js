@@ -23,6 +23,10 @@ const EligibilityOverviewItem = ({ t, item, eligible, isDesktop }) => {
     const setSelectedBenefits = useSelectedBenefitsStore((state) => state.setSelectedBenefits);
     const clearSelectedTopics = useSelectedTopicsStore((state) => state.clear);
 
+    const hasFirstSectionChildren =
+        eligible !== 'indeterminate' ||
+        (!isVisible && isDesktop && item.benefitCategories?.length > 0);
+
     return (
         <VBox
             sx={{
@@ -97,37 +101,35 @@ const EligibilityOverviewItem = ({ t, item, eligible, isDesktop }) => {
                 )}
                 <HBox sx={{
                     flexWrap: 'wrap',
-                    gap: { xs: 0, md: 2 },
+                    gap: hasFirstSectionChildren ? 2 : 0,
                     alignItems: 'center',
                     justifyContent: 'space-between',
                     '& > :only-child': { marginLeft: 'auto' }
                 }}>
                     <HBox sx={{ gap: 2, alignItems: 'center', flex: { xs: 0, md: 3 } }}>
-                        {
-                            eligible !== 'indeterminate' && (
-                                <HBox>
+                        <HBox sx={{ flexWrap: 'wrap', gap: 1 }}>
+                            {
+                                eligible !== 'indeterminate' && (
                                     <EligibilityOverviewBanner t={t} eligible={eligible} />
-                                </HBox>
-                            )
-                        }
-                        {!isVisible && isDesktop && (
-                            <HBox sx={{ flexWrap: 'wrap', gap: 1 }}>
-                                {item.benefitCategories?.map(tag => (
+                                )
+                            }
+                            {!isVisible && isDesktop &&
+                                item.benefitCategories?.map(tag => (
                                     <EligibilityOverviewTag
                                         key={tag.id}
                                         tag={tag.label}
                                         isDesktop={isDesktop}
                                         tagType="benefitCategories"
                                     />
-                                ))}
-                            </HBox>
-                        )}
+                                ))
+                            }
+                        </HBox>
                     </HBox>
-                    <HBox sx={{ 
-                        justifyContent: { xs: 'flex-start', md: 'flex-end' }, 
-                        flexWrap: 'wrap', 
-                        gap: 2, 
-                        alignItems: 'center', 
+                    <HBox sx={{
+                        justifyContent: { xs: 'flex-start', md: 'flex-end' },
+                        flexWrap: 'wrap',
+                        gap: 2,
+                        alignItems: 'center',
                         flex: 3
                     }}
                     >
