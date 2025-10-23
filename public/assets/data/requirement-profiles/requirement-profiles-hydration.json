@@ -1080,17 +1080,66 @@
       }
     }
   },
-  "ff:wolfenbuettel-stiftung": {
-    "id": "ff:wolfenbuettel-stiftung",
+  "ff:wolfenbuettel-stiftung-person": {
+    "id": "ff:wolfenbuettel-stiftung-person",
     "status": "beta",
     "category": "social_benefit",
     "title": {
-      "de": "Wolfenbüttel-Stiftung",
-      "en": "Wolfenbüttel Foundation"
+      "de": "Wolfenbüttel Stiftung - Privatperson",
+      "en": "Wolfenbüttel Foundation - Person"
     },
     "teaser": {
-      "de": "Die Wolfenbüttel-Stiftung unterstützt bedürftige Kinder, hilfsbedürftige ältere Menschen sowie soziale Projekte in der Stadt Wolfenbüttel. Die Förderung erfolgt in der Regel als einmalige Zuwendung ohne Rechtsanspruch.",
-      "en": "The Wolfenbüttel Foundation supports needy children, elderly people in need, and social projects within the city of Wolfenbüttel. Funding is typically provided as a one-time grant without legal entitlement."
+      "de": "Die Wolfenbüttel-Stiftung unterstützt bedürftige Kinder, hilfsbedürftige und ältere Menschen in der Stadt Wolfenbüttel. Die Förderung erfolgt in der Regel als einmalige Zuwendung ohne Rechtsanspruch.",
+      "en": "The Wolfenbüttel Foundation supports needy children and elderly people in need within the city of Wolfenbüttel. Funding is typically provided as a one-time grant without legal entitlement."
+    },
+    "general": {
+      "brief": {
+        "de": "Die Wolfenbüttel-Stiftung ist eine Bürgerstiftung mit Sitz in Wolfenbüttel, die vorrangig soziale Projekte in der Region fördert.\n\n&nbsp;\n\n### Zentrale Aspekte der Wolfenbüttel-Stiftung\n- Fokus auf soziale Unterstützung: Altenhilfe, Kinder- und Jugendhilfe, Gleichberechtigung und mildtätige Zwecke.  \n- Förderung ausschließlich von Projekten, kein Einzelpersonenförderprogramm, mit Antrag durch gemeinnützige Einrichtungen in Wolfenbüttel.  \n- Anträge müssen schriftlich eingereicht werden, und es gelten formale und inhaltliche Kriterien laut Stiftungssatzung.  \n- Förderung nur für Projekte mit Standort in der Region Wolfenbüttel, nicht im Ausland.  \n- Die Stiftung entstand im Jahr 2000 durch Zusammenlegung verschiedener Stiftungen.",
+        "de_es": "Die Wolfenbüttel-Stiftung ist eine Bürgerstiftung in Wolfenbüttel, die vor allem soziale Projekte unterstützt.\n\n&nbsp;\n\n### Wichtige Punkte zur Wolfenbüttel-Stiftung\n- Schwerpunkt: Jugend-, Alten- und Sozialhilfe.  \n- Förderfähig sind gemeinnützige Einrichtungen, nicht Einzelpersonen.  \n- Der Antrag ist schriftlich zu stellen.  \n- Es werden nur Projekte in Wolfenbüttel gefördert.  \n- Gegründet im Jahr 2000.",
+        "en": "The Wolfenbüttel Foundation is a civic foundation based in Wolfenbüttel that primarily supports social projects in the region.\n\n&nbsp;\n\n### Key aspects of the Wolfenbüttel Foundation\n- Its funding priorities include social welfare, elderly care, youth services, and promoting equality and charitable causes.  \n- It supports project-based applications by nonprofit organizations, not individual grants.  \n- Applications must be submitted in writing, and must meet formal and substantive criteria per the foundation’s statutes.  \n- Projects must be located in the Wolfenbüttel region; foreign or non-local projects are excluded.  \n- The foundation was established in 2000 by merging several local foundations."
+      },
+      "examples": {
+        "de": [
+          {
+            "title": "Jugendprojekt Musikwerkstatt",
+            "description": "Ein gemeinnütziger Verein in Wolfenbüttel organisiert eine Musikwerkstatt für Jugendliche aus sozial benachteiligten Familien.\n\n&nbsp;\n\n### Förderung durch die Wolfenbüttel-Stiftung\n- Zuschuss in Höhe von **5.000 €**.  \n- Finanzierung von Instrumenten und Probenräumen.  \n- Pädagogische Betreuung durch Fachkräfte.  "
+          },
+          {
+            "title": "Seniorencafé im Quartier",
+            "description": "Eine soziale Einrichtung richtet ein wöchentliches Seniorencafé für ältere Menschen ein.\n\n&nbsp;\n\n### Förderung durch die Wolfenbüttel-Stiftung\n- Unterstützung in Höhe von **3.000 €**.  \n- Ausstattung des Cafés und Bereitstellung von Räumlichkeiten.  \n- Finanzierung ehrenamtlicher Betreuung.  "
+          }
+        ],
+        "en": [
+          {
+            "title": "Youth Music Workshop",
+            "description": "A nonprofit association in Wolfenbüttel organizes a music workshop for socially disadvantaged young people.\n\n&nbsp;\n\n### Support by the Wolfenbüttel Foundation\n- Grant of **€5,000**.  \n- Covers instruments and rehearsal rooms.  \n- Provides educational supervision by professionals.  "
+          },
+          {
+            "title": "Neighborhood Senior Café",
+            "description": "A local social organization sets up a weekly café for senior citizens.\n\n&nbsp;\n\n### Support by the Wolfenbüttel Foundation\n- Funding of **€3,000**.  \n- Covers equipment and venue costs.  \n- Provides volunteer support for participants.  "
+          }
+        ]
+      }
+    },
+    "application_process": {
+      "brief": {
+        "de": "Der Antrag auf Förderung durch die Wolfenbüttel-Stiftung wird direkt bei der Stiftung eingereicht.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: die Geschäftsstelle der Wolfenbüttel-Stiftung.  \n- **Form der Antragstellung**: schriftlich mit einem formlosen Förderantrag; viele Stiftungen stellen zudem ein eigenes Antragsformular zur Verfügung.  \n- **Unterlagen**: erforderlich sind eine Projektbeschreibung, ein Kosten- und Finanzierungsplan, Nachweise der Gemeinnützigkeit und ggf. weitere Unterlagen je nach Art des Projekts.  \n- **Fristen**: Anträge sollten rechtzeitig vor Projektbeginn eingereicht werden; eine rückwirkende Förderung ist in der Regel ausgeschlossen.",
+        "de_es": "Der Antrag auf Förderung durch die Wolfenbüttel-Stiftung wird direkt bei der Stiftung eingereicht.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: die Geschäftsstelle der Wolfenbüttel-Stiftung.  \n- **Form der Antragstellung**: schriftlich mit einem formlosen Förderantrag; viele Stiftungen stellen zudem ein eigenes Antragsformular zur Verfügung.  \n- **Unterlagen**: erforderlich sind eine Projektbeschreibung, ein Kosten- und Finanzierungsplan, Nachweise der Gemeinnützigkeit und eventuell weitere Unterlagen je nach Art des Projekts.  \n- **Fristen**: Anträge sollten rechtzeitig vor Projektbeginn eingereicht werden; eine rückwirkende Förderung ist in der Regel ausgeschlossen.",
+        "en": "The application for funding from the Wolfenbüttel Foundation must be submitted directly to the foundation.\n\n&nbsp;\n\n### Important details for the application\n- **Responsible authority**: the Wolfenbüttel Foundation’s office.  \n- **Form of application**: in writing with an informal funding request; many foundations also provide their own application form.  \n- **Documents**: required are a project description, a budget and financing plan, proof of nonprofit status, and possibly other documents depending on the type of project.  \n- **Deadlines**: applications should be submitted before the start of the project; retroactive funding is usually not possible."
+      }
+    }
+  },
+  "ff:wolfenbuettel-stiftung-organisation": {
+    "id": "ff:wolfenbuettel-stiftung-organisation",
+    "status": "beta",
+    "category": "social_benefit",
+    "title": {
+      "de": "Wolfenbüttel Stiftung - Organisation",
+      "en": "Wolfenbüttel Foundation - Organisation"
+    },
+    "teaser": {
+      "de": "Die Wolfenbüttel-Stiftung unterstützt soziale Projekte in der Stadt Wolfenbüttel. Die Förderung erfolgt in der Regel als einmalige Zuwendung ohne Rechtsanspruch.",
+      "en": "The Wolfenbüttel Foundation supports social projects within the city of Wolfenbüttel. Funding is typically provided as a one-time grant without legal entitlement."
     },
     "general": {
       "brief": {
