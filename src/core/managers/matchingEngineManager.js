@@ -21,6 +21,7 @@ const matchingEngineManager = {
             );
 
             const engine = new MatchingEngine();
+            if (featureFlags.matchingEnginePerformanceLogging) engine.turnOnPerformanceLogging()
             engine.addDef(await resourceService.fetchResourceWithCache(validationConfig["def"]))
 
             for (const { fileUrl, behindFeatureFlag } of validationConfig["queries"]) {

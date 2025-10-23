@@ -1,5 +1,6 @@
 const defaultFlags = {
-    subindividuals: false
+    subindividuals: false,
+    matchingEnginePerformanceLogging: false
 };
 
 const getFeatureFlag = (flag) => {
@@ -9,6 +10,7 @@ const getFeatureFlag = (flag) => {
 
 const featureFlags = {
     subindividuals: getFeatureFlag('subindividuals'),
+    matchingEnginePerformanceLogging: getFeatureFlag('matchingEnginePerformanceLogging')
 };
 
 export const setFeatureFlag = (flag, value) => {
