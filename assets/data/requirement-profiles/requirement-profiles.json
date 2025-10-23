@@ -1,9 +1,4 @@
 {
-  "datafields": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/datafields.ttl",
-  "datafields-bielefeld": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/bielefeld/datafields-bielefeld.ttl",
-  "definitions": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/definitions.ttl",
-  "materialization": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/materialization.ttl",
-  "consistency": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/consistency.ttl",
   "def": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/build/def.built.ttl",
   "queries": [
     {
@@ -109,43 +104,35 @@
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/bielefeld/schwerbehindertenausweis.ttl",
-      "rpUri": "https://foerderfunke.org/default#schwerbehindertenausweis",
-      "behindFeatureFlag": "bielefunke"
+      "rpUri": "https://foerderfunke.org/default#schwerbehindertenausweis"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/bielefeld/erwerbsminderungsrente-voll.ttl",
-      "rpUri": "https://foerderfunke.org/default#erwerbsminderungsrente-voll",
-      "behindFeatureFlag": "bielefunke"
+      "rpUri": "https://foerderfunke.org/default#erwerbsminderungsrente-voll"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/bielefeld/erwerbsminderungsrente-teilweise.ttl",
-      "rpUri": "https://foerderfunke.org/default#erwerbsminderungsrente-teilweise",
-      "behindFeatureFlag": "bielefunke"
+      "rpUri": "https://foerderfunke.org/default#erwerbsminderungsrente-teilweise"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/bielefeld/substitutionstherapie-regulaer.ttl",
-      "rpUri": "https://foerderfunke.org/default#substitutionstherapie-regulaer",
-      "behindFeatureFlag": "bielefunke"
+      "rpUri": "https://foerderfunke.org/default#substitutionstherapie-regulaer"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/bielefeld/substitutionstherapie-diamorphin.ttl",
-      "rpUri": "https://foerderfunke.org/default#substitutionstherapie-diamorphin",
-      "behindFeatureFlag": "bielefunke"
+      "rpUri": "https://foerderfunke.org/default#substitutionstherapie-diamorphin"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/bielefeld/arbeitsassistenz.ttl",
-      "rpUri": "https://foerderfunke.org/default#arbeitsassistenz",
-      "behindFeatureFlag": "bielefunke"
+      "rpUri": "https://foerderfunke.org/default#arbeitsassistenz"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/bielefeld/persoenliches-budget.ttl",
-      "rpUri": "https://foerderfunke.org/default#persoenliches-budget",
-      "behindFeatureFlag": "bielefunke"
+      "rpUri": "https://foerderfunke.org/default#persoenliches-budget"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/bielefeld/eingliederungshilfe.ttl",
-      "rpUri": "https://foerderfunke.org/default#eingliederungshilfe",
-      "behindFeatureFlag": "bielefunke"
+      "rpUri": "https://foerderfunke.org/default#eingliederungshilfe"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/blindengeld.ttl",
