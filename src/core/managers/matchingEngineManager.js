@@ -20,20 +20,8 @@ const matchingEngineManager = {
                 "assets/data/requirement-profiles/requirement-profiles.json"
             );
 
-            /*const datafieldsString = await resourceService.fetchResourceWithCache(validationConfig["datafields"]);
-            const datafieldsBielefeldString = await resourceService.fetchResourceWithCache(validationConfig["datafields-bielefeld"]);
-            const definitionsString = await resourceService.fetchResourceWithCache(validationConfig["definitions"]);
-            const materializationString = await resourceService.fetchResourceWithCache(validationConfig["materialization"]);
-            const consistencyString = await resourceService.fetchResourceWithCache(validationConfig["consistency"]);*/
-            const defString = await resourceService.fetchResourceWithCache(validationConfig["def"]);
-
             const engine = new MatchingEngine();
-            /*engine.addDatafieldsTurtle(datafieldsString)
-            engine.addDatafieldsTurtle(datafieldsBielefeldString)
-            engine.addDefinitionsTurtle(definitionsString);
-            engine.addMaterializationTurtle(materializationString);
-            engine.addConsistencyTurtle(consistencyString);*/
-            engine.addDef(defString)
+            engine.addDef(await resourceService.fetchResourceWithCache(validationConfig["def"]))
 
             for (const { fileUrl, behindFeatureFlag } of validationConfig["queries"]) {
                 if (behindFeatureFlag && !featureFlags[behindFeatureFlag]) continue;

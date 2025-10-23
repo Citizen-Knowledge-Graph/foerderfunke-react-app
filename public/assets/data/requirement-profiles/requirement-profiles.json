@@ -1,9 +1,4 @@
 {
-  "datafields": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/datafields.ttl",
-  "datafields-bielefeld": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/bielefeld/datafields-bielefeld.ttl",
-  "definitions": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/definitions.ttl",
-  "materialization": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/materialization.ttl",
-  "consistency": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/consistency.ttl",
   "def": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/build/def.built.ttl",
   "queries": [
     {
