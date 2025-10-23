@@ -35,7 +35,7 @@ const BenefitPageScreen = ({
                             )
                         }
                         {featureFlags.showMermaidRuleGraph &&
-                            <BenefitPageRequirements t={t} isDesktop={isDesktop} evalGraph={matchingGraph} benefitPageData={benefitPageData} />
+                            <BenefitPageRequirements t={t} validatedStatus={validatedStatus} isDesktop={isDesktop} evalGraph={matchingGraph} />
                         }
                     </VBox>
                 </VBox>

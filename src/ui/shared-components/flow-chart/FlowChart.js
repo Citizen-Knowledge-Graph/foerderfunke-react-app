@@ -70,11 +70,11 @@ mermaid.initialize({
 });
 
 
-export default function FlowChart({ evalGraph }) {
+export default function FlowChart({ evalGraph, validatedStatus }) {
     const { t } = useTranslation();
 
     const [svgContent, setSvgContent] = useState("");
-    const [graphTypeEval, setGraphTypeEval] = useState(false);
+    const [graphTypeEval, setGraphTypeEval] = useState(validatedStatus);
     const printLabels = true;
     const orientationVertical = false;
 

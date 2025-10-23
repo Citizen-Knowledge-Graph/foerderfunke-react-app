@@ -6,7 +6,7 @@ import BenefitPageMarkdownElement from './BenefitPageMarkDownElement';
 import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 import FlowChart from '@/ui/shared-components/flow-chart/FlowChart';
 
-const BenefitPageRequirements = ({ t, isDesktop, evalGraph, benefitPageData }) => {
+const BenefitPageRequirements = ({ t, validatedStatus, isDesktop, evalGraph }) => {
     const [open, setOpen] = useState(false);
     const objectIcon = `${process.env.PUBLIC_URL}/assets/images/benefit-pages/tree.svg`;
 
@@ -46,7 +46,7 @@ const BenefitPageRequirements = ({ t, isDesktop, evalGraph, benefitPageData }) =
                 </HBox>
                 {
                     open && (
-                        <FlowChart evalGraph={evalGraph} />
+                        <FlowChart evalGraph={evalGraph} validatedStatus={validatedStatus} />
                     )
                 }
             </VBox>
