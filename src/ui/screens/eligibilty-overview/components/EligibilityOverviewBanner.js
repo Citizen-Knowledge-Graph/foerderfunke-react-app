@@ -25,6 +25,12 @@ const EligibilityOverviewBanner = ({ t, eligible }) => {
                     border: '1px solid rgba(255, 0, 0, 0.2)',
                     backgroundColor: 'error.light'
                 }
+            case 'ineligible':
+                return {
+                    text: 'app.browseAll.item.notEligible',
+                    border: '1px solid rgba(255, 0, 0, 0.2)',
+                    backgroundColor: 'error.light'
+                }
             default:
                 return {
                     text: 'app.browseAll.item.missingData',
@@ -36,11 +42,13 @@ const EligibilityOverviewBanner = ({ t, eligible }) => {
     const eligibilityIcon = (() => {
         switch (eligible) {
             case 'eligible':
-                return <CheckIcon sx={{ fontSize: '16px' }} />;
+                return <CheckIcon sx={{ fontSize: '20spx' }} />;
             case 'non-eligible':
-                return <ClearIcon sx={{ fontSize: '16px' }} />;
+                return <ClearIcon sx={{ fontSize: '20px' }} />;
+            case 'ineligible':
+                return <ClearIcon sx={{ fontSize: '20px' }} />;
             default:
-                return <ClearIcon sx={{ fontSize: '16px' }} />;
+                return <ClearIcon sx={{ fontSize: '20px' }} />;
         }
     })();
 

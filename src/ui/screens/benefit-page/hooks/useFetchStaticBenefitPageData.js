@@ -20,7 +20,7 @@ const useFetchStaticBenefitPageData = (id, language) => {
     const resource = hydrationData[id] || {};
     return {
       title:                pickLang(resource?.title, language, 'Unknown Title'),
-      leikaId:              getField(resource, 'leika_id', 'Unknown Id'),
+      leikaId:              getField(resource, 'leika_id', null),
       teaser:               pickLang(resource?.teaser, language, null),
       brief :               pickLang(resource?.general?.brief, language, null),
       scope :               pickLang(resource?.general?.scope, language, null),

@@ -7,7 +7,10 @@ const useValidatedStatus = (id) => {
     return useMemo(() => {
         if (!validationReport) return false;
         const report = validationReport?.['ff:hasEvaluatedRequirementProfile']?.find(rp => rp['ff:hasRpUri']['@id'] === id);
-        return report?.["ff:hasEligibilityStatus"]["@id"] !== "ff:missingData" || false;
+        return {
+            validatedStatus: report?.["ff:hasEligibilityStatus"]["@id"] !== "ff:missingData" || false,
+            validationResult: report?.["ff:hasEligibilityStatus"]["@id"]?.replace(/^ff:/, "") || null
+        }
     }, [id, validationReport]);
 };
 

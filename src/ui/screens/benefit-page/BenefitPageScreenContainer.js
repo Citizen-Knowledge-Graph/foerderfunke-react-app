@@ -21,7 +21,7 @@ const BenefitPageScreenContainer = () => {
 
     const benefitPageData = useFetchStaticBenefitPageData(id, language);
     const categoryTitles = useBuildCategoryTitles(id, language);
-    const validatedStatus = useValidatedStatus(id);
+    const {validatedStatus, validationResult} = useValidatedStatus(id);
     const activeUserId = useUserStore((state) => state.activeUserId);
     const localisedData = useFetchLocaliseData(benefitPageData);
     const xml = useFetchData(`assets/data/xml/${id.split(":")[1]}.xml`);
@@ -49,6 +49,7 @@ const BenefitPageScreenContainer = () => {
             localisedData={localisedData}
             xml={xml}
             validatedStatus={validatedStatus}
+            validationResult={validationResult}
             categoryTitles={categoryTitles}
             matchingGraph={matchingGraph}
         />

@@ -6,8 +6,15 @@ import { HBox, VBox } from "@/ui/shared-components/LayoutBoxes";
 import { useSelectedBenefitsStore, useSelectedTopicsStore } from "@/ui/storage/zustand";
 import useTranslation from "@/ui/language/useTranslation";
 import theme from "@/theme";
+import EligibilityOverviewBanner from "../../eligibilty-overview/components/EligibilityOverviewBanner";
 
-const BenefitPageHeader = ({ id, benefit, validatedStatus, categoryTitles }) => {
+const BenefitPageHeader = ({
+    id,
+    benefit,
+    validatedStatus,
+    validationResult,
+    categoryTitles
+}) => {
     const { t } = useTranslation();
     const [leiKaInfo, setLeiKaInfo] = useState(false);
 
@@ -15,34 +22,47 @@ const BenefitPageHeader = ({ id, benefit, validatedStatus, categoryTitles }) => 
     const clearSelectedTopics = useSelectedTopicsStore((state) => state.clear);
 
     return (
-        <HBox sx={{ justifyContent: 'space-between', gap: 4, flexWrap: 'wrap' }}>
-            <VBox sx={{ gap: 2 }}>
+        <HBox sx={{ justifyContent: 'space-between', gap: {xs: 2, md: 4}, flexWrap: 'wrap' }}>
+            <VBox sx={{ gap: {xs: 2, md: 4} }}>
                 <Typography variant="h1" sx={{ wordBreak: 'break-word' }}>
                     {benefit?.title}
                 </Typography>
                 <VBox sx={{ gap: 2 }}>
                     <VBox sx={{ gap: 1 }}>
+                        {
+                            validatedStatus && (
+                                <HBox>
+                                    <EligibilityOverviewBanner t={t} eligible={validationResult} />
+                                </HBox>
+                            )
+                        }
                         <HBox sx={{ gap: 1, alignItems: 'center' }}>
-                            <Typography variant="body2" sx={{ color: 'black.light' }}>
-                                LeiKa-Id: {benefit?.leikaId}
-                            </Typography>
-                            <IconButton
-                                sx={{
-                                    width: 24,
-                                    height: 24,
-                                    borderRadius: theme.shape.circle,
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    backgroundColor: 'white',
-                                    '&:hover': {
-                                        backgroundColor: 'black.light',
-                                    },
-                                }}
-                                onClick={() => setLeiKaInfo(!leiKaInfo)}
-                            >
-                                <InfoOutlinedIcon sx={{ fontSize: 16, color: 'black.light' }} />
-                            </IconButton>
+                            {
+                                benefit?.leikaId && (
+                                    <>
+                                        <Typography variant="body2" sx={{ color: 'black.light' }}>
+                                            LeiKa-Id: {benefit?.leikaId}
+                                        </Typography>
+                                        <IconButton
+                                            sx={{
+                                                width: 24,
+                                                height: 24,
+                                                borderRadius: theme.shape.circle,
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                backgroundColor: 'white',
+                                                '&:hover': {
+                                                    backgroundColor: 'black.light',
+                                                },
+                                            }}
+                                            onClick={() => setLeiKaInfo(!leiKaInfo)}
+                                        >
+                                            <InfoOutlinedIcon sx={{ fontSize: 16, color: 'black.light' }} />
+                                        </IconButton>
+                                    </>
+                                )
+                            }
                         </HBox>
                         {leiKaInfo && (
                             <Typography variant="body2" sx={{ color: 'black.light' }}>
