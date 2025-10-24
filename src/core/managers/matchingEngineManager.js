@@ -43,11 +43,6 @@ const matchingEngineManager = {
         return engine;
     },
 
-    async fetchMetadata(language = "en") {
-        const engine = await this.initMatchingEngine(language);
-        return engine.metadata || {};
-    },
-
     // fetchValidationReport and fetchQuizReport could probably be unified further to only expose fetchMatchingReport() TODO
     async fetchMatchingReport(userId, rps, lang = "en") {
         if (!this.matchingEngineInstance) {

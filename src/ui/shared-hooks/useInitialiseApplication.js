@@ -49,12 +49,10 @@ export const useInitialiseApplication = () => {
 
                 // Call init(language) once after construction
                 lastInitializedLang.current = language; // prevent duplicate init
-                await matchingEngineManager.initMatchingEngine(language);
+                const engine = await matchingEngineManager.initMatchingEngine(language);
 
                 // Fetch metadata and report
-                const metadata = await matchingEngineManager.fetchMetadata(language);
-                console.log("Fetched metadata:", metadata);
-                metadataStore.updateMetadata(metadata || "empty");
+                metadataStore.updateMetadata(engine.metadata || "empty");
 
                 // It this necessary initially or only later? TODO
                 const report = await matchingEngineManager.fetchValidationReport(fixedUserId, language);
@@ -92,7 +90,7 @@ export const useInitialiseApplication = () => {
                 console.log(`🔁 Setting Matching Engine for language: ${language}`);
                 await matchingEngineManager.matchingEngineInstance.init(language);
 
-                const metadata = await matchingEngineManager.fetchMetadata(language);
+                const metadata = matchingEngineManager.matchingEngineInstance.engine.metadata;
                 metadataStore.updateMetadata(metadata || "empty");
 
                 const report = await matchingEngineManager.fetchValidationReport(fixedUserId, language);
