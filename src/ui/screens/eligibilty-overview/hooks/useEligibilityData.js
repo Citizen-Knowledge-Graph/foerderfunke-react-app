@@ -1,5 +1,4 @@
 import { useMemo } from "react";
-import featureFlags from "@/featureFlags";
 import { pickLang } from "@/ui/language/useTranslation";
 
 const useEligibilityData = (validationReport, metadata, hydrationData, language) => {
@@ -154,16 +153,14 @@ const useEligibilityData = (validationReport, metadata, hydrationData, language)
       ),
     };
 
-    if (featureFlags.bielefunke) {
-      filterOptions.tags = Array.from(
-        new Map(
-          allReports
-            .flatMap(r => r.tags || [])
-            .filter(Boolean)
-            .map(cat => [cat.id, cat])
-          ).values()
-        )
-    }
+    filterOptions.tags = Array.from(
+      new Map(
+        allReports
+          .flatMap(r => r.tags || [])
+          .filter(Boolean)
+          .map(cat => [cat.id, cat])
+        ).values()
+      );
 
     const eligibilityData = allReports.reduce((acc, report) => {
       const { category, result } = report;

@@ -7,7 +7,6 @@ import EligibilityOverviewHeader from "./components/EligibilityOverviewHeader";
 import EligibilityOverviewSection from "./components/EligibilityOverviewSection";
 import EligibilityOverviewFilter from './components/EligibilityOverviewFilter';
 import RegularButton from "@/ui/shared-components/buttons/RegularButton";
-import featureFlags from "@/featureFlags";
 import { useSelectedBenefitsStore } from "@/ui/storage/zustand";
 import EastIcon from '@mui/icons-material/East';
 
@@ -49,7 +48,7 @@ const EligibilityOverviewScreen = ({
                             filters={filters}
                             onChangeFilters={onChangeFilters}
                         />
-                        {featureFlags.bielefunke && atLeastOneWithMissingData() &&
+                        {atLeastOneWithMissingData() &&
                             <RegularButton
                                 text={"Noch offene Ansprüche prüfen"}
                                 variant={'blackContained'}

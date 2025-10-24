@@ -1,7 +1,6 @@
 const defaultFlags = {
     subindividuals: false,
-    showMermaidRuleGraph: true,
-    bielefunke: true
+    matchingEnginePerformanceLogging: false
 };
 
 const getFeatureFlag = (flag) => {
@@ -11,8 +10,7 @@ const getFeatureFlag = (flag) => {
 
 const featureFlags = {
     subindividuals: getFeatureFlag('subindividuals'),
-    showMermaidRuleGraph: getFeatureFlag('showMermaidRuleGraph'),
-    bielefunke: getFeatureFlag('bielefunke')
+    matchingEnginePerformanceLogging: getFeatureFlag('matchingEnginePerformanceLogging')
 };
 
 export const setFeatureFlag = (flag, value) => {
