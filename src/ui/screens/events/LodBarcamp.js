@@ -43,16 +43,24 @@ const LodBarcamp = () => {
                                         href="https://codefor.de/bielefeld/"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        sx={{ cursor: 'pointer', color: 'inherit' }}
+                                        sx={{
+                                            fontWeight: 'bold',
+                                            cursor: 'pointer', color: 'pink.main',
+                                            textDecoration: 'none'
+                                        }}
                                     >
                                         Code for Bielefeld
                                     </Link>
-                                    {" "}
+                                    {", "}
                                     <Link
                                         href="https://okfn.de/"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        sx={{ cursor: 'pointer', color: 'inherit' }}
+                                        sx={{
+                                            fontWeight: 'bold',
+                                            cursor: 'pointer', color: 'pink.main',
+                                            textDecoration: 'none'
+                                        }}
                                     >
                                         Open Knowledge Foundation Deutschland
                                     </Link>
@@ -61,7 +69,11 @@ const LodBarcamp = () => {
                                         href="https://spark-up.de/"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        sx={{ cursor: 'pointer', color: 'inherit' }}
+                                        sx={{
+                                            fontWeight: 'bold',
+                                            cursor: 'pointer', color: 'pink.main',
+                                            textDecoration: 'none'
+                                        }}
                                     >
                                         sparkup
                                     </Link>
@@ -70,7 +82,11 @@ const LodBarcamp = () => {
                                         href="https://foerderfunke.org/"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        sx={{ cursor: 'pointer', color: 'inherit' }}
+                                        sx={{
+                                            fontWeight: 'bold',
+                                            cursor: 'pointer', color: 'pink.main',
+                                            textDecoration: 'none'
+                                        }}
                                     >
                                         FörderFunke
                                     </Link>
