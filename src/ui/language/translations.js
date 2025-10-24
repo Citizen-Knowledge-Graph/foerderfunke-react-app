@@ -649,7 +649,7 @@ const translations = {
                     btnReset: "Alle zurücksetzen",
                     btnClose: "Filter schließen",
                     btn: "Filter öffnen",
-                    tags: "Schlagwort"
+                    tags: "Tags"
                 },
                 item: {
                     eligible: "Sie haben womöglich Anspruch",
