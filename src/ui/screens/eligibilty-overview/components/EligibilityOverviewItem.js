@@ -6,6 +6,7 @@ import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 import { useSelectedBenefitsStore, useSelectedTopicsStore } from "@/ui/storage/zustand";
 import EligibilityOverviewTag from './EligibilityOverviewTag';
 import EligibilityOverviewBanner from './EligibilityOverviewBanner';
+import EligibilityOverviewOrgTag from './EligibilityOverviewOrgTag';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import EastIcon from '@mui/icons-material/East';
@@ -24,7 +25,7 @@ const EligibilityOverviewItem = ({ t, item, eligible, isDesktop }) => {
     const clearSelectedTopics = useSelectedTopicsStore((state) => state.clear);
 
     const hasFirstSectionChildren =
-        eligible !== 'indeterminate' ||
+        eligible !== 'indeterminate' || item.targetClass ||
         (!isVisible && isDesktop && item.benefitCategories?.length > 0);
 
     return (
@@ -111,6 +112,11 @@ const EligibilityOverviewItem = ({ t, item, eligible, isDesktop }) => {
                             {
                                 eligible !== 'indeterminate' && (
                                     <EligibilityOverviewBanner t={t} eligible={eligible} />
+                                )
+                            }
+                            {   
+                                item.targetClass && (
+                                    <EligibilityOverviewOrgTag t={t} />
                                 )
                             }
                             {!isVisible && isDesktop &&

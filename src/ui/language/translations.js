@@ -265,7 +265,8 @@ const translations = {
                 item: {
                     eligible: "You are likely eligible",
                     notEligible: "You are likely not eligible",
-                }
+                },
+                orgTag: "For organisations"
             },
             profile: {
                 header: "Your locally stored profile",
@@ -653,7 +654,8 @@ const translations = {
                 item: {
                     eligible: "Sie haben womöglich Anspruch",
                     notEligible: "Sie haben voraussichtlich keinen Anspruch"
-                }
+                },
+                orgTag: "Für Organisationen"
             },
             profile: {
                 header: "Ihr lokal gespeichertes Profil",

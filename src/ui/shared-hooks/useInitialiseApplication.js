@@ -53,6 +53,7 @@ export const useInitialiseApplication = () => {
 
                 // Fetch metadata and report
                 const metadata = await matchingEngineManager.fetchMetadata(language);
+                console.log("Fetched metadata:", metadata);
                 metadataStore.updateMetadata(metadata || "empty");
 
                 // It this necessary initially or only later? TODO

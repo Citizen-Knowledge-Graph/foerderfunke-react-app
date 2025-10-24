@@ -50,7 +50,7 @@ const theme = createTheme({
             tangerineOrange: '#FF8531',
             tangerineOrangeTransparent: 'rgba(255, 133, 49, 0.1)',
             plumPurple: '#BC5090',
-            plumPurpleTransparent: 'rgba(188, 80, 144, 0.1)',
+            plumPurpleTransparent: 'rgba(188, 80, 144, 0.5)',
             darkGrey: '#333333',
             darkGreyTransparent: 'rgba(51, 51, 51, 0.1)',
             lightGrey: '#BDBDBD',

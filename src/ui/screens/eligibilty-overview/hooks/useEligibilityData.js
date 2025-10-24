@@ -91,6 +91,9 @@ const useEligibilityData = (validationReport, metadata, hydrationData, language)
           }))
         : [];
 
+      // target Class
+      const targetClass = rpMetadata?.['ff:targetClass']?.['@id'] || null;
+
       return {
         uri: rpUri,
         result,
@@ -108,7 +111,8 @@ const useEligibilityData = (validationReport, metadata, hydrationData, language)
         providingAgencies,
         tags,
         administrativeLevels,
-        benefitCategories
+        benefitCategories,
+        targetClass
       };
     });
 

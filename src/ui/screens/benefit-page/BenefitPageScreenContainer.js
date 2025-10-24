@@ -11,6 +11,7 @@ import { useUserStore } from '@/ui/storage/zustand';
 import { useStore } from "@/ui/shared-components/ViewportUpdater";
 import { useFetchLocaliseData } from './hooks/useFetchLocalisedData';
 import useFetchData from '@/ui/shared-hooks/utility/useFetchResource';
+import useFetchTargetClass from './hooks/useFetchTargetClass';
 
 const BenefitPageScreenContainer = () => {
     const { id } = useParams();
@@ -25,6 +26,7 @@ const BenefitPageScreenContainer = () => {
     const activeUserId = useUserStore((state) => state.activeUserId);
     const localisedData = useFetchLocaliseData(benefitPageData);
     const xml = useFetchData(`assets/data/xml/${id.split(":")[1]}.xml`);
+    const targetClass = useFetchTargetClass(id);
 
     useEffect(() => {
         const fetchMatchingReport = async () => {
@@ -50,6 +52,7 @@ const BenefitPageScreenContainer = () => {
             xml={xml}
             validatedStatus={validatedStatus}
             validationResult={validationResult}
+            targetClass={targetClass}
             categoryTitles={categoryTitles}
             matchingGraph={matchingGraph}
         />

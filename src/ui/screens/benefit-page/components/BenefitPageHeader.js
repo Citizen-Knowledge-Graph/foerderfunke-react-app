@@ -7,12 +7,14 @@ import { useSelectedBenefitsStore, useSelectedTopicsStore } from "@/ui/storage/z
 import useTranslation from "@/ui/language/useTranslation";
 import theme from "@/theme";
 import EligibilityOverviewBanner from "../../eligibilty-overview/components/EligibilityOverviewBanner";
+import EligibilityOverviewOrgTag from "../../eligibilty-overview/components/EligibilityOverviewOrgTag";
 
 const BenefitPageHeader = ({
     id,
     benefit,
     validatedStatus,
     validationResult,
+    targetClass,
     categoryTitles
 }) => {
     const { t } = useTranslation();
@@ -22,20 +24,30 @@ const BenefitPageHeader = ({
     const clearSelectedTopics = useSelectedTopicsStore((state) => state.clear);
 
     return (
-        <HBox sx={{ justifyContent: 'space-between', gap: {xs: 2, md: 4}, flexWrap: 'wrap' }}>
-            <VBox sx={{ gap: {xs: 2, md: 4} }}>
+        <HBox sx={{ justifyContent: 'space-between', gap: { xs: 2, md: 4 }, flexWrap: 'wrap' }}>
+            <VBox sx={{ gap: { xs: 2, md: 4 } }}>
                 <Typography variant="h1" sx={{ wordBreak: 'break-word' }}>
                     {benefit?.title}
                 </Typography>
                 <VBox sx={{ gap: 2 }}>
                     <VBox sx={{ gap: 1 }}>
-                        {
-                            validatedStatus && (
-                                <HBox>
-                                    <EligibilityOverviewBanner t={t} eligible={validationResult} />
-                                </HBox>
-                            )
-                        }
+                        <HBox sx={{ 
+                            gap: (validatedStatus || targetClass) ? 2 : 0, 
+                            alignItems: 'center' 
+                        }}>
+                            {
+                                validatedStatus && (
+                                    <HBox>
+                                        <EligibilityOverviewBanner t={t} eligible={validationResult} />
+                                    </HBox>
+                                )
+                            }
+                            {
+                                targetClass && (
+                                    <EligibilityOverviewOrgTag t={t} />
+                                )
+                            }
+                        </HBox>
                         <HBox sx={{ gap: 1, alignItems: 'center' }}>
                             {
                                 benefit?.leikaId && (

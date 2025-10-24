@@ -16,6 +16,7 @@ const BenefitPageScreen = ({
     benefitPageData,
     localisedData,
     xml,
+    targetClass,
     validatedStatus,
     validationResult,
     categoryTitles,
@@ -26,7 +27,14 @@ const BenefitPageScreen = ({
         <Layout isApp={true} logo={false} back="Back">
             <AppScreenWrapperContainer backTarget={'/eligibility-overview'}>
                 <VBox sx={{ gap: { xs: 4, md: 8 } }}>
-                    <BenefitPageHeader id={id} benefit={benefitPageData} validatedStatus={validatedStatus} validationResult={validationResult} categoryTitles={categoryTitles} />
+                    <BenefitPageHeader 
+                        id={id} 
+                        benefit={benefitPageData} 
+                        validatedStatus={validatedStatus} 
+                        validationResult={validationResult} 
+                        targetClass={targetClass} 
+                        categoryTitles={categoryTitles}
+                    />
                     <VBox sx={{ gap: { xs: 4, md: 8 }}}>
                         <BenefitPageGeneral t={t} isDesktop={isDesktop} benefitPageData={benefitPageData} />
                         <BenefitPageApplication t={t} isDesktop={isDesktop} benefitPageData={benefitPageData} xml={xml} />

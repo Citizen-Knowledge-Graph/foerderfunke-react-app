@@ -59,7 +59,7 @@ const EligibilityOverviewBanner = ({ t, eligible }) => {
             padding: '6px 18px',
             borderRadius: theme.shape.borderRadius,
             alignItems: 'center',
-            gap: 1,
+            gap: 1
         }}>
             <Typography variant="body1">{t(eligibilityBannerType.text)}</Typography>
             {eligibilityIcon}
