@@ -1,9 +1,9 @@
 import React from 'react';
 import { ArrowBack as ArrowBackIcon } from '@mui/icons-material';
 import { Typography, Button } from '@mui/material';
-import { HBox } from '../../../shared-components/LayoutBoxes';
-import theme from "../../../../theme";
-import useTranslation from "../../../language/useTranslation";
+import { HBox } from '@/ui/shared-components/LayoutBoxes';
+import theme from "@/theme";
+import useTranslation from "@/ui/language/useTranslation";
 
 const QuestionPageBackButton = ({ handleBack }) => {
     const { t } = useTranslation();
