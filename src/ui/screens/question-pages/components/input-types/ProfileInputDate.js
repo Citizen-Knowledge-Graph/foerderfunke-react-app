@@ -10,11 +10,11 @@ const ProfileInputDate = ({ t, value, setValue, error }) => {
 
     const handleChange = (newValue) => {
         if (newValue && dayjs.isDayjs(newValue)) {
-          setValue(newValue.format('YYYY-MM-DD'));
+            setValue(newValue.format('YYYY-MM-DD'));
         } else {
-          setValue(null);
+            setValue(null);
         }
-      };
+    };
 
     return (
         <>
@@ -24,15 +24,23 @@ const ProfileInputDate = ({ t, value, setValue, error }) => {
                         label={t('app.datafields.pickBday')}
                         value={value ? dayjs(value, 'YYYY-MM-DD') : null}
                         onChange={handleChange}
-                        sx={{
-                            '& .MuiInputLabel-root.Mui-focused': {
-                                color: 'blue.main',
+                        slotProps={{
+                            textField: {
+                                sx: {
+                                    minWidth: (theme) => `calc(${theme.typography.pxToRem(8 * t('app.datafields.pickBday').length)} + 60px)`,
+                                },
                             },
-                            '& .MuiOutlinedInput-root': {
-                                '&:hover fieldset': { borderColor: 'blue.main' },
-                                '&.Mui-focused fieldset': { borderColor: 'blue.main' }
-                            }
                         }}
+                        sx={
+                            {
+                                '& .MuiInputLabel-root.Mui-focused': {
+                                    color: 'blue.main',
+                                },
+                                '& .MuiOutlinedInput-root': {
+                                    '&:hover fieldset': { borderColor: 'blue.main' },
+                                    '&.Mui-focused fieldset': { borderColor: 'blue.main' }
+                                }
+                            }}
                     />
                 </FormControl>
             </LocalizationProvider>
