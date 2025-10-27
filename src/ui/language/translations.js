@@ -498,7 +498,7 @@ const translations = {
             legal: {
                 impressum: {
                     title: "Impressum",
-                    declaration5TMG: "Angaben gemäß § 5 DDG",
+                    declaration5DDG: "Angaben gemäß § 5 DDG",
                     representedBy: "Vertreten durch",
                     registered: "Eintragung",
                     director: "Geschäftsführer",
