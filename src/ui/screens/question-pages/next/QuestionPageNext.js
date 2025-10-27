@@ -20,7 +20,7 @@ const QuestionPageNext = ({
     
     return (
         <Layout isApp={true} logo={false}>
-            <AppScreenWrapper scrollKey={currentQuestion} backTarget={'/onboarding-welcome'} >
+            <AppScreenWrapper scrollKey={currentQuestion} backTarget={questionsCount[0] > 1 ? null : '/onboarding-welcome'} >
                 <VBox sx={{ gap: 2 }}>
                     <QuestionPageHeader t={t} eligibleRPs={eligibleRPs} />
                     <QuestionPageQuestionsCount

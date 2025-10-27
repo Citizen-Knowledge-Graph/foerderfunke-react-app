@@ -16,14 +16,14 @@ const QuestionPageBackButton = ({ handleBack }) => {
                     gap: theme.spacing(1),
                     padding: '0',
                     backgroundColor: 'transparent',
-                    color: 'black.light',
+                    color: 'pink.main',
                     '&:hover': {
                         backgroundColor: 'transparent',
-                        color: 'black.light',
+                        color: 'black.main',
                     },
                     '&:focus': {
                         backgroundColor: 'transparent',
-                        color: 'black.light',
+                        color: 'pink.main',
                     }
                 }}
                 onClick={handleBack}

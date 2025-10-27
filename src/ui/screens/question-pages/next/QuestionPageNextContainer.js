@@ -49,7 +49,6 @@ const QuestionPageNextContainer = () => {
         navigate
     });
 
-    // Some props for the UI
     const eligibleRPs = useMemo(() => {
         if (!validationReport?.reports || !metadata?.['ff:hasRP']) return [];
 
