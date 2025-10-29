@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { VBox, HBox } from "@/ui/shared-components/LayoutBoxes";
 import { Typography } from "@mui/material";
 import useTranslation from "@/ui/language/useTranslation";
 import theme from "@/theme";
 import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 import useUserProfileData from "../hooks/useUserProfileData";
+import featureFlags from '@/featureFlags';
 
 
 const ProfileDataList = () => {
+    const [open, setOpen] = useState(null);
     const { t } = useTranslation();
     const userProfileData = useUserProfileData();
 
@@ -28,14 +30,42 @@ const ProfileDataList = () => {
                                     }}
                                     justifyContent={'center'}
                                 >
-                                    <Typography variant='body2'>
-                                        {label}
-                                    </Typography>
-                                    <Typography variant='h2' sx={{
-                                        fontWeight: '500', wordWrap: "break-word",
+                                    <HBox sx={{
+                                        justifyContent: 'space-between',
+                                        alignItems: 'flex-end',
+                                        flexWrap: 'wrap'
                                     }}>
-                                        {value}
-                                    </Typography>
+                                        <VBox>
+                                            <Typography variant='body2'>
+                                                {label}
+                                            </Typography>
+                                            <Typography variant='h2' sx={{
+                                                fontWeight: '500', wordWrap: "break-word",
+                                            }}>
+                                                {value}
+                                            </Typography>
+                                        </VBox>
+                                        <VBox>
+                                            {
+                                                featureFlags.profileUpdates && (
+                                                    <RegularButton
+                                                        onClick={() => setOpen(open === index ? null : index)}
+                                                        variant={'transparentPink'}
+                                                        text={'update'}
+                                                        size={'xsmall'}
+                                                    />
+                                                )
+                                            }
+
+                                        </VBox>
+                                    </HBox>
+                                    {
+                                        featureFlags.profileUpdates && open === index && (
+                                            <Typography variant='body2' sx={{ marginTop: 2 }}>
+                                                {t('app.profile.updateInfoHint')}
+                                            </Typography>
+                                        )
+                                    }
                                 </VBox>
                             ))}
                     </VBox>) : (
