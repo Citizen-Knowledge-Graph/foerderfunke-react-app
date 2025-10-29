@@ -230,7 +230,7 @@ const translations = {
             },
             browseAll: {
                 header: "Your potential benefits",
-                profileBtn: "locally stored profile",
+                profileBtn: "Locally stored profile",
                 disclaimerTitle: "Informal Evaluation",
                 disclaimerText: "The results are based on the information you provided. They are not legally binding and should be considered as informational or advisory.",
                 info: "Results are not legally binding and should be considered as informational or advisory",
@@ -619,7 +619,7 @@ const translations = {
             },
             browseAll: {
                 header: "Ihre potenziellen Leistungen",
-                profileBtn: "lokal gespeichertes Profil",
+                profileBtn: "Lokal gespeichertes Profil",
                 disclaimerTitle: "Unverbindliche Bewertung",
                 disclaimerText: "Die Ergebnisse basieren auf den von Ihnen angegebenen Informationen. Sie sind nicht rechtsverbindlich und sollten als informativ oder beratend betrachtet werden.",
                 info: "Die Ergebnisse sind nicht rechtsverbindlich und sollten als informativ oder beratend betrachtet werden.",
