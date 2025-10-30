@@ -1,14 +1,29 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import theme from '@/theme';
 import { HBox, VBox } from '@/ui/shared-components/LayoutBoxes';
 import { Typography } from "@mui/material";
 import BenefitPageMarkdownElement from './BenefitPageMarkDownElement';
 import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 import FlowChart from '@/ui/shared-components/flow-chart/FlowChart';
+import matchingEngineManager from "@/core/managers/matchingEngineManager";
+import featureFlags from '@/featureFlags';
+
 
 const BenefitPageRequirements = ({ t, validatedStatus, isDesktop, evalGraph }) => {
     const [open, setOpen] = useState(validatedStatus);
+    const [violations, setViolations] = useState(null);
     const objectIcon = `${process.env.PUBLIC_URL}/assets/images/benefit-pages/tree.svg`;
+
+    useEffect(() => {
+        async function fetchEvalGraph() {
+            const violations = await matchingEngineManager.fetchWrittenViolations(evalGraph)
+            setViolations(violations);
+            console.log("Fetched written violations:", violations);
+        }
+        if (validatedStatus && evalGraph && featureFlags.writtenViolations) {
+            fetchEvalGraph();
+        }
+    }, [validatedStatus, evalGraph]);
 
     return (
         <VBox
@@ -28,6 +43,34 @@ const BenefitPageRequirements = ({ t, validatedStatus, isDesktop, evalGraph }) =
                             </Typography>
                             <BenefitPageMarkdownElement content={t('app.benefitPage.requirements.description')} />
                         </VBox>
+                        {
+                            featureFlags.writtenViolations && validatedStatus && violations?.length > 0 && (
+                                <VBox
+                                    sx={{
+                                        backgroundColor: 'greyTransparent.main',
+                                        borderTop: `1px solid ${theme.palette.grey.light}`,
+                                        borderRadius: theme.shape.borderRadius,
+                                        boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
+                                        padding: 2,
+                                        gap: 2,
+                                        flex: 1,
+                                    }}
+                                >
+                                    <Typography variant="h3" sx={{ fontWeight: 500 }}>
+                                        {t('app.benefitPage.requirements.writtenViolationsTitle')}
+                                    </Typography>
+                                    <VBox sx={{ gap: 1 }}>
+                                        {
+                                            violations.map((violation, index) => (
+                                                <Typography key={index} variant="body1" sx={{ color: 'error.main' }}>
+                                                    {violation}
+                                                </Typography>
+                                            ))
+                                        }
+                                    </VBox>
+                                </VBox>
+                            )
+                        }
                         <RegularButton
                             onClick={() => setOpen(!open)}
                             variant={'whiteOutlinedBlue'}

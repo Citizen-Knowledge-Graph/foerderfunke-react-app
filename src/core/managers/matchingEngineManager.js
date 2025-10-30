@@ -3,6 +3,7 @@ import { FORMAT } from "@foerderfunke/matching-engine/src/queries.js";
 import resourceService from "@/core/services/resourceService";
 import userManager from "@/core/managers/userManager";
 import { convertUserProfileToTurtle } from "@foerderfunke/matching-engine/src/profile-conversion";
+import { violationsToText } from "@foerderfunke/matching-engine/src/rule-graph/GraphUtils.js"
 import { expand } from "@foerderfunke/sem-ops-utils";
 import featureFlags from "@/featureFlags";
 
@@ -80,6 +81,18 @@ const matchingEngineManager = {
             userProfileTurtle,
             expandedRp
         );
+    },
+
+    async fetchWrittenViolations(evalGraph) {
+        if (!this.matchingEngineInstance) {
+            throw new Error("Matching Engine not initialized.");
+        }
+
+        if (!evalGraph) {
+            throw new Error("Evaluation graph is required to fetch written violations.");
+        }
+        
+        return violationsToText(evalGraph, this.matchingEngineInstance);
     }
 };
 

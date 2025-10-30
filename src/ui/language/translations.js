@@ -304,6 +304,7 @@ const translations = {
                     toggleEval: "Evaluation",
                     eligible: "You are likely eligible",
                     notEligible: "You are likely not eligible",
+                    writtenViolationsTitle: "Unmet requirements"
                 },
                 local: {
                     title: "Local information",
@@ -690,6 +691,9 @@ const translations = {
                     btnClose: "Anspruchsvoraussetzungen schließen",
                     toggleRule: "Regeln",
                     toggleEval: "Evaluation",
+                    eligible: "Sie sind voraussichtlich anspruchsberechtigt",
+                    notEligible: "Sie sind voraussichtlich nicht anspruchsberechtigt",
+                    writtenViolationsTitle: "Nicht erfüllte Voraussetzungen"
                 },
                 local: {
                     title: "Wo finde ich Unterstützung vor Ort?",
