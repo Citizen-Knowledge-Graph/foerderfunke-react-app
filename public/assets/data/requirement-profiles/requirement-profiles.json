@@ -129,6 +129,10 @@
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/blindengeld.ttl",
       "rpUri": "https://foerderfunke.org/default#blindengeld"
-    }
+    },
+    {
+      "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/blindenhilfe.ttl",
+      "rpUri": "https://foerderfunke.org/default#blindenhilfe"
+    }    
   ]
 }

@@ -2115,5 +2115,66 @@
         "en": "The application is submitted to the competent state authority or the social welfare office.\n\n&nbsp;\n\n### Important details for the application\n- **Responsible authority**: depends on the federal state.\n- **Form**: written application, sometimes online.\n- **Documents**: medical proof of blindness (expert opinion, official certification).\n- **Start of benefit**: payments apply from the date of application, not retroactively."
       }
     }
+  },
+  "ff:blindenhilfe": {
+    "id": "ff:blindenhilfe",
+    "status": "beta",
+    "category": "social_benefit",
+    "title": {
+      "de": "Blindenhilfe",
+      "de_es": "Blindenhilfe",
+      "en": "Blindness Assistance"
+    },
+    "teaser": {
+      "de": "Die Blindenhilfe ist eine Sozialhilfeleistung nach § 72 SGB XII für blinde Menschen. Sie wird gezahlt, wenn Einkommen und Vermögen die blindheitsbedingten Mehrkosten nicht decken. Blindengeld der Länder wird dabei angerechnet.",
+      "de_es": "Blindenhilfe ist Geld vom Sozialamt für blinde Menschen, wenn eigenes Geld nicht reicht. Blindengeld vom Bundesland wird abgezogen.",
+      "en": "Blindness Assistance is a means-tested social welfare benefit under § 72 SGB XII. It supports blind people when income or assets are insufficient. State Blindness Allowance is offset."
+    },
+    "general": {
+      "brief": {
+        "de": "Die Blindenhilfe ist eine **Leistung der Sozialhilfe** (§ 72 SGB XII). Sie gleicht blindheitsbedingte Mehraufwendungen aus und ist abhängig von Einkommen und Vermögen. Grundlage ist die anerkannte Blindheit nach den versorgungsmedizinischen Kriterien.\n\n&nbsp;\n\n### Zentrale Aspekte der Blindenhilfe\n- **Zweck**: Ausgleich blindheitsbedingter Mehrkosten wie Assistenz, Haushaltshilfe oder Hilfsmittel\n- **Voraussetzung**: Anerkannte Blindheit und Bedürftigkeit nach dem Zwölften Buch Sozialgesetzbuch (SGB XII). Bedürftig ist, wer seinen Lebensunterhalt nicht aus eigenem Einkommen oder Vermögen decken kann.\n- **Leistung**: Monatliche Geldleistung, deren Höhe sich an pauschalen Beträgen orientiert (z. B. 913,19 € für Erwachsene, 457,38 € für Minderjährige, Stand Juli 2025)\n- **Landesblindengeld**: Oft kurz Blindengeld bezeichnet. Eine eigene Leistung der Bundesländer als pauschaler Nachteilsausgleich. Es wird vollständig auf die Blindenhilfe angerechnet, da es denselben Zweck erfüllt\n- **Weitere Anrechnungen**: Leistungen der Pflegeversicherung werden pauschal teilweise abgezogen, um Doppelleistungen zu vermeiden\n- **Zuständigkeit**: Das örtliche Sozialamt ist für die Bewilligung zuständig",
+        "de_es": "Blindenhilfe ist eine **Sozialhilfeleistung** nach § 72 SGB XII. Sie hilft, zusätzliche Kosten wegen Blindheit zu bezahlen, und hängt vom Einkommen und Vermögen ab. Grundlage ist die anerkannte Blindheit nach medizinischen Regeln.\n\n&nbsp;\n\n### Wichtige Punkte zur Blindenhilfe\n- **Ziel**: Ausgleich von Extra-Kosten durch Blindheit wie Hilfe im Haushalt oder Hilfsmittel\n- **Voraussetzung**: Anerkannte Blindheit und zu wenig Geld. Bedürftig ist, wer seinen Lebensunterhalt nicht aus eigenem Geld bestreiten kann\n- **Leistung**: Monatliches Geld, das sich an festen Beträgen orientiert (z. B. 913,19 € für Erwachsene, 457,38 € für Kinder, Stand Juli 2025)\n- **Landesblindengeld**: Auch 'Blindengeld' genannt. Eine eigene Zahlung vom Bundesland als Ausgleich. Sie wird ganz auf die Blindenhilfe angerechnet, weil sie denselben Zweck hat\n- **Weitere Anrechnungen**: Pflegegeld wird teilweise abgezogen, um doppelte Leistungen zu vermeiden\n- **Stelle**: Das Sozialamt vor Ort entscheidet über den Antrag",
+        "en": "Blindness Assistance is a **social welfare benefit** under § 72 of the German Social Code XII. It compensates for additional costs caused by blindness and depends on a person’s income and assets. The basis is officially recognized blindness according to medical assessment criteria.\n\n&nbsp;\n\n### Key aspects of Blindness Assistance\n- **Purpose**: To compensate for blindness-related extra expenses such as assistance, household help, or assistive devices\n- **Requirement**: Recognized blindness and financial need under the German Social Code XII. A person is considered in need if they cannot cover their living expenses from their own income or assets\n- **Benefit**: Monthly payment based on fixed reference amounts (e.g. €913.19 for adults, €457.38 for minors as of July 2025)\n- **State Blindness Allowance**: Often called 'Blindengeld'. A separate benefit from the federal states that serves as a flat-rate compensation for disadvantages. It is fully offset against Blindness Assistance because it serves the same purpose\n- **Further offsets**: Benefits from long-term care insurance are partly deducted to avoid double benefits\n- **Authority**: The local social welfare office is responsible for approval"
+      },
+      "examples": {
+        "de": [
+          {
+            "title": "Erwachsene Person mit Blindengeld",
+            "description": "Thomas (56) ist blind und lebt in Niedersachsen.\n\n&nbsp;\n\n### Vorteile für Thomas\n- Das **Landesblindengeld in Niedersachsen** beträgt **450 €** pro Monat.\n- Die **Blindenhilfe nach § 72 SGB XII** sieht für Volljährige **913,19 €** monatlich vor.\n- Da das Landesblindengeld denselben Zweck erfüllt, wird es **voll auf die Blindenhilfe angerechnet**.\n- Das Sozialamt zahlt daher **die Differenz** von **463,19 €** als Blindenhilfe aus."
+          },
+          {        
+            "title": "Pflegebedürftige Person mit Pflegegrad",
+            "description": "Maria (72) ist blind und hat **Pflegegrad 3**.\n\n&nbsp;\n\n### Auswirkungen auf ihre Blindenhilfe\n- Der Regelsatz der **Blindenhilfe** beträgt **913,19 €** monatlich.\n- Maria erhält zusätzlich **Pflegegeld nach Pflegegrad 3** in Höhe von **599 €** aus der Pflegeversicherung.\n- Davon werden **40 % (239,60 €)** pauschal auf die Blindenhilfe angerechnet, weil beide Leistungen ähnliche Unterstützungen abdecken.\n- Ihre **Blindenhilfe verringert sich dadurch auf 673,59 €** monatlich."
+          }
+        ],
+        "de_es": [
+          {
+            "title": "Erwachsene Person mit Blindengeld",
+            "description": "Thomas (56) lebt in Niedersachsen und ist blind.\n\n&nbsp;\n\n### Vorteile für Thomas\n- Er bekommt **913,19 € Blindenhilfe**, wenn er kein eigenes Einkommen hat.\n- Sein **Blindengeld vom Land** wird **voll abgezogen**.\n- Das Sozialamt zahlt nur die **Differenz**, wenn nötig."
+          },
+          {
+            "title": "Pflegebedürftige Person",
+            "description": "Maria (72) ist blind und hat Pflegegrad 3.\n\n&nbsp;\n\n### Folgen für die Blindenhilfe\n- Sie bekommt **Pflegegeld**.\n- Dieses wird **teilweise abgezogen**, weil es ähnliche Hilfe ersetzt.\n- So ist ihre **Blindenhilfe etwas kleiner**."
+          }
+        ],
+        "en": [
+          {
+            "title": "Adult with state allowance",
+            "description": "Thomas (56) is blind and lives in Lower Saxony.\n\n&nbsp;\n\n### Benefits for Thomas\n- He receives **€913.19 Blindness Assistance** if he has no other income.\n- His **state Blindness Allowance** is **fully offset** against this payment.\n- The welfare office covers only the **remaining difference** if his income is below the threshold."
+          },
+          {
+            "title": "Person receiving care benefits",
+            "description": "Maria (72) is blind and has care level 3.\n\n&nbsp;\n\n### Effect on her benefit\n- She receives **nursing care insurance payments**.\n- These are **partly deducted**, as they cover similar needs.\n- Her **Blindness Assistance is therefore reduced**."
+          }
+        ]
+      }
+    },
+    "application_process": {
+      "brief": {
+        "de": "Der Antrag wird beim **örtlich zuständigen Sozialamt** gestellt.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: Sozialamt am Wohnsitz\n- **Form**: Schriftlicher Antrag, teils auch online möglich\n- **Unterlagen**: Nachweis der Blindheit (ärztliches Gutachten oder Schwerbehindertenausweis mit Merkzeichen *Bl*) sowie Einkommens- und Vermögensnachweise\n- **Anrechnung**: Landesblindengeld wird vollständig, Pflegeleistungen teilweise angerechnet\n- **Beginn**: Leistung gilt ab Antragstellung, nicht rückwirkend",
+        "de_es": "Antrag beim **Sozialamt**.\n\n&nbsp;\n\n### Wichtige Punkte\n- **Stelle**: Sozialamt am Wohnort\n- **Antrag**: schriftlich oder online möglich\n- **Unterlagen**: Nachweise zu Blindheit, Einkommen und Vermögen\n- **Anrechnung**: Blindengeld voll, Pflegeleistungen teilweise\n- **Start**: ab Antragstellung",
+        "en": "Apply at the **local social welfare office**.\n\n&nbsp;\n\n### Important details\n- **Authority**: Local welfare office\n- **Form**: Written application, sometimes online\n- **Documents**: Proof of blindness (medical report or disability card with mark *Bl*) and proof of income and assets\n- **Offsets**: State Blindness Allowance fully, care benefits partly\n- **Start**: Payments from the date of application"
+      }
+    }
   }
 }

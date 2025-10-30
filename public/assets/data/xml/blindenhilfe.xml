@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:color="http://www.omg.org/spec/BPMN/non-normative/color/1.0" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" id="Defs_blindenhilfe_colored" targetNamespace="https://example.org/bpmn#" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="18.6.1">
+  <bpmn:process id="blindenhilfe_process" isExecutable="false">
+    <bpmn:laneSet id="ls_bh">
+      <bpmn:lane id="lane_applicant_bh" name="Antragsteller:in">
+        <bpmn:flowNodeRef>bh_s</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>bh_t0</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>bh_t6</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>bh_e_no</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="lane_sozialamt_bh" name="zuständiger Träger (Sozialamt)">
+        <bpmn:flowNodeRef>bh_t1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>bh_t3</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>bh_t4</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>bh_t5</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>bh_g</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>bh_e_ok</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="bh_s" name="Start">
+      <bpmn:outgoing>bh_f0</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:manualTask id="bh_t0" name="Antrag auf Blindenhilfe stellen">
+      <bpmn:incoming>bh_f0</bpmn:incoming>
+      <bpmn:outgoing>bh_f1</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:userTask id="bh_t1" name="Unterlagen prüfen (Vollständigkeit)">
+      <bpmn:incoming>bh_f1</bpmn:incoming>
+      <bpmn:outgoing>bh_f2</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="bh_t3" name="Bedürftigkeit prüfen (Einkommen/Vermögen)">
+      <bpmn:incoming>bh_f2</bpmn:incoming>
+      <bpmn:outgoing>bh_f4</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="bh_t4" name="Anrechnung Landesblindengeld ermitteln">
+      <bpmn:incoming>bh_f4</bpmn:incoming>
+      <bpmn:outgoing>bh_f5</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="bh_t5" name="Anrechnung Pflegeleistungen (pauschal) ermitteln">
+      <bpmn:incoming>bh_f5</bpmn:incoming>
+      <bpmn:outgoing>bh_f6</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="bh_g" name="Anspruch gegeben?">
+      <bpmn:incoming>bh_f6</bpmn:incoming>
+      <bpmn:outgoing>bh_fy</bpmn:outgoing>
+      <bpmn:outgoing>bh_fn</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:endEvent id="bh_e_ok" name="Bewilligt">
+      <bpmn:incoming>bh_fy</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:manualTask id="bh_t6" name="Widerspruch möglich">
+      <bpmn:incoming>bh_fn</bpmn:incoming>
+      <bpmn:outgoing>bh_f7</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:endEvent id="bh_e_no" name="Abgelehnt">
+      <bpmn:incoming>bh_f7</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="bh_f0" sourceRef="bh_s" targetRef="bh_t0" />
+    <bpmn:sequenceFlow id="bh_f1" sourceRef="bh_t0" targetRef="bh_t1" />
+    <bpmn:sequenceFlow id="bh_f2" sourceRef="bh_t1" targetRef="bh_t3" />
+    <bpmn:sequenceFlow id="bh_f4" sourceRef="bh_t3" targetRef="bh_t4" />
+    <bpmn:sequenceFlow id="bh_f5" sourceRef="bh_t4" targetRef="bh_t5" />
+    <bpmn:sequenceFlow id="bh_f6" sourceRef="bh_t5" targetRef="bh_g" />
+    <bpmn:sequenceFlow id="bh_fy" name="ja" sourceRef="bh_g" targetRef="bh_e_ok" />
+    <bpmn:sequenceFlow id="bh_fn" name="nein" sourceRef="bh_g" targetRef="bh_t6" />
+    <bpmn:sequenceFlow id="bh_f7" sourceRef="bh_t6" targetRef="bh_e_no" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="D_blindenhilfe">
+    <bpmndi:BPMNPlane id="P_blindenhilfe" bpmnElement="blindenhilfe_process">
+      <bpmndi:BPMNShape id="L_sozialamt_bh" bpmnElement="lane_sozialamt_bh" isHorizontal="true" color:background-color="#F5F8FF" color:border-color="#A3A3A3">
+        <dc:Bounds x="160" y="200" width="1760" height="150" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="L_applicant_bh" bpmnElement="lane_applicant_bh" isHorizontal="true" color:background-color="#F6FFF6" color:border-color="#A3A3A3">
+        <dc:Bounds x="160" y="80" width="1760" height="120" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="D_bh_s" bpmnElement="bh_s" color:background-color="#F0FFF4" color:border-color="#047857">
+        <dc:Bounds x="200" y="122" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="D_bh_t0" bpmnElement="bh_t0" color:background-color="#E8F7E8" color:border-color="#2E7D32">
+        <dc:Bounds x="260" y="110" width="240" height="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="D_bh_t1" bpmnElement="bh_t1" color:background-color="#EAF0FF" color:border-color="#1E40AF">
+        <dc:Bounds x="540" y="235" width="210" height="70" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="D_bh_t3" bpmnElement="bh_t3" color:background-color="#EAF0FF" color:border-color="#1E40AF">
+        <dc:Bounds x="790" y="235" width="240" height="70" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="D_bh_t4" bpmnElement="bh_t4" color:background-color="#EAF0FF" color:border-color="#1E40AF">
+        <dc:Bounds x="1070" y="235" width="240" height="70" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="D_bh_t5" bpmnElement="bh_t5" color:background-color="#EAF0FF" color:border-color="#1E40AF">
+        <dc:Bounds x="1350" y="235" width="260" height="70" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="D_bh_g" bpmnElement="bh_g" isMarkerVisible="true" color:background-color="#F5F5F5" color:border-color="#6B7280">
+        <dc:Bounds x="1655" y="245" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1656" y="295" width="49" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="D_bh_t6" bpmnElement="bh_t6" color:background-color="#E8F7E8" color:border-color="#2E7D32">
+        <dc:Bounds x="1565" y="110" width="230" height="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="D_bh_e_ok" bpmnElement="bh_e_ok" bioc:stroke="#205022" bioc:fill="#c8e6c9" color:background-color="#c8e6c9" color:border-color="#205022">
+        <dc:Bounds x="1832" y="252" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1830" y="288" width="41" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="D_bh_e_no" bpmnElement="bh_e_no" color:background-color="#FEF2F2" color:border-color="#B91C1C">
+        <dc:Bounds x="1832" y="122" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1825" y="158" width="50" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="bh_f0d" bpmnElement="bh_f0" color:border-color="#2E7D32">
+        <di:waypoint x="236" y="140" />
+        <di:waypoint x="260" y="140" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="bh_f1d" bpmnElement="bh_f1">
+        <di:waypoint x="500" y="140" />
+        <di:waypoint x="520" y="140" />
+        <di:waypoint x="520" y="270" />
+        <di:waypoint x="540" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="bh_f2d" bpmnElement="bh_f2">
+        <di:waypoint x="750" y="270" />
+        <di:waypoint x="790" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="bh_f4d" bpmnElement="bh_f4">
+        <di:waypoint x="1030" y="270" />
+        <di:waypoint x="1070" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="bh_f5d" bpmnElement="bh_f5">
+        <di:waypoint x="1310" y="270" />
+        <di:waypoint x="1350" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="bh_f6d" bpmnElement="bh_f6">
+        <di:waypoint x="1610" y="270" />
+        <di:waypoint x="1655" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="bh_fyd" bpmnElement="bh_fy" color:border-color="#1E40AF">
+        <di:waypoint x="1705" y="270" />
+        <di:waypoint x="1832" y="270" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1755" y="245" width="9" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="bh_fnd" bpmnElement="bh_fn" color:border-color="#2E7D32">
+        <di:waypoint x="1680" y="245" />
+        <di:waypoint x="1680" y="170" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1639" y="210" width="21" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="bh_f7d" bpmnElement="bh_f7" color:border-color="#B91C1C">
+        <di:waypoint x="1795" y="140" />
+        <di:waypoint x="1832" y="140" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
