@@ -7,7 +7,7 @@ import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 import FlowChart from '@/ui/shared-components/flow-chart/FlowChart';
 
 const BenefitPageRequirements = ({ t, validatedStatus, isDesktop, evalGraph }) => {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(validatedStatus);
     const objectIcon = `${process.env.PUBLIC_URL}/assets/images/benefit-pages/tree.svg`;
 
     return (
