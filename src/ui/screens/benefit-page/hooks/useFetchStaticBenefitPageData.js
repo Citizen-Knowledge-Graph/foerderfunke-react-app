@@ -27,6 +27,7 @@ const useFetchStaticBenefitPageData = (id, language) => {
       examplesList :        pickLang(resource?.general?.examples, language, null),
       applicationProcess:   pickLang(resource?.application_process?.brief, language, null),
       localisedData:        resource?.specific ? resource.specific : null,
+      customHints:          resource?.customHints ? resource.customHints : null,
     };
   }, [hydrationData, id, language]);
 

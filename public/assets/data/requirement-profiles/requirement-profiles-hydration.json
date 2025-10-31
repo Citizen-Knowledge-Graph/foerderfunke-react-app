@@ -1702,6 +1702,16 @@
       "de": "Substitutionstherapie",
       "en": "Substitution Therapy"
     },
+    "customHints": [
+      {
+        "pattern": {
+          "ff:healthInsurance": false
+        },
+        "de": "Sie haben angegeben, dass Sie keine Krankenversicherung haben. Bitte beachten Sie, dass sie darauf einen Anspruch haben und es Voraussetzung für diese Leistung ist.",
+        "de_es": "Sie haben angegeben, dass Sie keine Krankenversicherung haben. Bitte beachten Sie, dass sie darauf einen Anspruch haben und es Voraussetzung für diese Leistung ist.",
+        "en": "You have indicated that you do not have health insurance. Please note that you are entitled to it and it is a prerequisite for this benefit."
+      }
+    ],
     "teaser": {
       "de": "In der Suchtmedizin ist die Substitutionstherapie eine Behandlung, bei der heroinabhängige Menschen ein ärztlich verordnetes Ersatzopioid wie Methadon oder Buprenorphin erhalten. Ziel der Behandlung ist es, den Konsum von Heroin zu verhindern, bzw. zu verringern.",
       "de_es": "In der Suchtmedizin gibt es die Substitutionstherapie. Das heißt, Menschen, die von Heroin abhängig sind, bekommen ein anderes Medikament. Das Medikament ersetzt das Heroin. Das Medikament ist zum Beispiel Methadon oder Buprenorphin. Die Menschen bekommen das Medikament von einem Arzt oder einer Ärztin. So sollen die Menschen weniger Heroin nehmen oder gar kein Heroin mehr nehmen.",

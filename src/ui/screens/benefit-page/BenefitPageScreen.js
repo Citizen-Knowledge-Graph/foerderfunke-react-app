@@ -7,6 +7,7 @@ import BenefitPageGeneral from './components/BenefitPageGeneral';
 import BenefitPageApplication from './components/BenefitPageApplication';
 import BenefitPageRequirements from './components/BenefitPageRequirements';
 import BenefitPageLocal from './components/BenefitPageLocal';
+import BenefitPageCustomHints from "@/ui/screens/benefit-page/components/BenefitPageCustomHints";
 
 const BenefitPageScreen = ({
     t,
@@ -14,6 +15,7 @@ const BenefitPageScreen = ({
     isDesktop,
     benefitPageData,
     localisedData,
+    customHints,
     xml,
     targetClass,
     validatedStatus,
@@ -35,6 +37,11 @@ const BenefitPageScreen = ({
                         categoryTitles={categoryTitles}
                     />
                     <VBox sx={{ gap: { xs: 4, md: 8 }}}>
+                        {
+                            customHints && customHints.length > 0 && (
+                                <BenefitPageCustomHints t={t} isDesktop={isDesktop} customHints={customHints} />
+                            )
+                        }
                         <BenefitPageGeneral t={t} isDesktop={isDesktop} benefitPageData={benefitPageData} />
                         <BenefitPageApplication t={t} isDesktop={isDesktop} benefitPageData={benefitPageData} xml={xml} />
                         {

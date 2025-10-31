@@ -10,6 +10,7 @@ import matchingEngineManager from "@/core/managers/matchingEngineManager";
 import { useUserStore } from '@/ui/storage/zustand';
 import { useStore } from "@/ui/shared-components/ViewportUpdater";
 import { useFetchLocaliseData } from './hooks/useFetchLocalisedData';
+import { useFetchCustomBenefitPageHints } from "@/ui/screens/benefit-page/hooks/useFetchCustomBenefitPageHints";
 import useFetchData from '@/ui/shared-hooks/utility/useFetchResource';
 import useFetchTargetClass from './hooks/useFetchTargetClass';
 
@@ -24,7 +25,8 @@ const BenefitPageScreenContainer = () => {
     const categoryTitles = useBuildCategoryTitles(id, language);
     const {validatedStatus, validationResult} = useValidatedStatus(id);
     const activeUserId = useUserStore((state) => state.activeUserId);
-    const localisedData = useFetchLocaliseData(benefitPageData);
+    const localisedData = useFetchLocaliseData(benefitPageData); // merge this logic with customHints? TODO
+    const customHints = useFetchCustomBenefitPageHints(benefitPageData);
     const xml = useFetchData(`assets/data/xml/${id.split(":")[1]}.xml`);
     const targetClass = useFetchTargetClass(id);
 
@@ -49,6 +51,7 @@ const BenefitPageScreenContainer = () => {
             isDesktop={isDesktop}
             benefitPageData={benefitPageData}
             localisedData={localisedData}
+            customHints={customHints}
             xml={xml}
             validatedStatus={validatedStatus}
             validationResult={validationResult}

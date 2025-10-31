@@ -312,6 +312,9 @@ const translations = {
                     btn: "Show local information",
                     btnClose: "Close local information",
                 },
+                customHints: {
+                    title: "Hints for you based on your profile"
+                },
                 goals: "Goals",
                 benefitType: "Benefit type",
                 benefitScope: "Benefit scope",
@@ -700,6 +703,9 @@ const translations = {
                     description: "Für Ihre Region stehen ergänzende Informationen und Unterstützungsangebote zur Verfügung.",
                     btn: "Unterstützung vor Ort anzeigen",
                     btnClose: "Unterstützung vor Ort schließen"
+                },
+                customHints: {
+                    title: "Hinweise für Sie, basierend auf Ihrem Profil"
                 },
                 description: "Beschreibung",
                 goals: "Ziele",
