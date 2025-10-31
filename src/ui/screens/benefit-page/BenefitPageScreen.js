@@ -8,6 +8,7 @@ import BenefitPageApplication from './components/BenefitPageApplication';
 import BenefitPageRequirements from './components/BenefitPageRequirements';
 import BenefitPageLocal from './components/BenefitPageLocal';
 import BenefitPageCustomHints from "@/ui/screens/benefit-page/components/BenefitPageCustomHints";
+import featureFlags from "@/featureFlags";
 
 const BenefitPageScreen = ({
     t,
@@ -38,7 +39,7 @@ const BenefitPageScreen = ({
                     />
                     <VBox sx={{ gap: { xs: 4, md: 8 }}}>
                         {
-                            customHints && customHints.length > 0 && (
+                            featureFlags.customHints && customHints && customHints.length > 0 && (
                                 <BenefitPageCustomHints t={t} isDesktop={isDesktop} customHints={customHints} />
                             )
                         }
