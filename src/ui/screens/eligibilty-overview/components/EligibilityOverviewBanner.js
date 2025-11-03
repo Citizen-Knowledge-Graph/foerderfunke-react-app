@@ -56,7 +56,7 @@ const EligibilityOverviewBanner = ({ t, eligible }) => {
         <HBox sx={{
             backgroundColor: eligibilityBannerType.backgroundColor,
             border: eligibilityBannerType.border || 'none',
-            padding: '6px 18px',
+            padding: '6px 12px 6px 18px',
             borderRadius: theme.shape.borderRadius,
             alignItems: 'center',
             gap: 1
