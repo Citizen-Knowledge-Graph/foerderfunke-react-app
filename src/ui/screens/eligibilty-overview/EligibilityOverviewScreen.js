@@ -51,7 +51,7 @@ const EligibilityOverviewScreen = ({
                         {atLeastOneWithMissingData() &&
                             <RegularButton
                                 text={"Noch offene Ansprüche prüfen"}
-                                variant={'blackContained'}
+                                variant={'pinkContained'}
                                 link='/onboarding-welcome'
                                 onClick={doSetSelectedBenefits}
                                 endIcon={<EastIcon/>}

@@ -48,12 +48,22 @@ const buttonStyles = {
     },
     pinkContained: {
         backgroundColor: "pink.main",
-        color: "black.main",
+        color: "white.main",
         borderColor: "pink.main",
         "&:hover": {
             backgroundColor: "black.main",
             color: "white.main",
             borderColor: "black.main",
+        },
+    },
+    blueMain: {
+        backgroundColor: "blue.main",
+        color: "black.main",
+        borderColor: "blue.main",
+        "&:hover": {
+            backgroundColor: "white.main",
+            color: "blue.main",
+            borderColor: "blue.main",
         },
     },
     blueContained: {
