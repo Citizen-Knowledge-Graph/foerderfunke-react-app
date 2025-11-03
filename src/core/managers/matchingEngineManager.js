@@ -68,6 +68,10 @@ const matchingEngineManager = {
         return await this.fetchMatchingReport(userId, requirementProfiles.map(rp => expand(rp)), language);
     },
 
+    async fetchDetailsForDatafield(datafield) {
+        return await this.matchingEngineInstance.getDetailsForDatafield(datafield);
+    },
+
     async fetchEvaluationGraph(userId, requirementProfile, language = "en") {
         if (!this.matchingEngineInstance) {
             await this.initMatchingEngine(language);

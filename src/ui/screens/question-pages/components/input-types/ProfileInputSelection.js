@@ -1,44 +1,62 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { FormControl, FormControlLabel, RadioGroup, Radio, Typography } from "@mui/material";
 
-const ProfileInputSelection = ({ value, setValue, currentField, error }) => {
+const ProfileInputSelection = ({
+  value,
+  setValue,
+  answerOptions,
+  error,
+  optionsFormat = "rdf",
+}) => {
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
 
-    const handleChange = (event) => {
-        setValue(event.target.value);
-    };
+  const normalizedOptions = useMemo(() => {
+    if (!answerOptions) return [];
+    if (optionsFormat === "rdf") {
+      return answerOptions.map((choice) => ({
+        value: choice?.['@id'],
+        label: choice?.['rdfs:label']?.['@value'],
+      })).filter(opt => opt.value && opt.label);
+    }
+    // flat format
+    return answerOptions.map((choice) => ({
+      value: choice?.option,
+      label: choice?.optionLabel,
+    })).filter(opt => opt.value && opt.label);
+  }, [answerOptions, optionsFormat]);
 
-    return (
-        <FormControl component="fieldset" fullWidth>
-            <RadioGroup
-                value={value}
-                onChange={handleChange}
-                sx={{ gap: 2 }}
-            >
-                {
-                    currentField?.['ff:hasAnswerOption'].map((choice, i) => (
-                        <FormControlLabel
-                            key={i}
-                            value={choice?.['@id']}
-                            control={
-                                <Radio 
-                                    sx={{
-                                        color: "white",
-                                        '&.Mui-checked': { color: "yellow.dark" }
-                                    }} 
-                                />
-                            }
-                            label={choice?.['rdfs:label']?.['@value']}
-                        />
-                    ))
-                }
-            </RadioGroup>
-            {error && (
-                <Typography variant="body1" color="error">
-                    {error}
-                </Typography>
-            )}
-        </FormControl>
-    );
+  return (
+    <FormControl component="fieldset" fullWidth>
+      <RadioGroup
+        value={value}
+        onChange={handleChange}
+        sx={{ gap: 2 }}
+      >
+        {normalizedOptions.map((opt, i) => (
+          <FormControlLabel
+            key={i}
+            value={opt.value}
+            control={
+              <Radio
+                sx={{
+                  color: "white",
+                  '&.Mui-checked': { color: "yellow.dark" }
+                }}
+              />
+            }
+            label={opt.label}
+          />
+        ))}
+      </RadioGroup>
+      {error && (
+        <Typography variant="body1" color="error">
+          {error}
+        </Typography>
+      )}
+    </FormControl>
+  );
 };
 
 export default ProfileInputSelection;

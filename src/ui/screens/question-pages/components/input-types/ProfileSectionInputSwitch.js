@@ -11,13 +11,13 @@ const ProfileSectionInputSwitch = ({ t, value, setValue, currentField, error }) 
             return <ProfileInputSelection
                 value={value}
                 setValue={setValue}
-                currentField={currentField}
+                answerOptions={currentField?.['ff:hasAnswerOption']}
                 error={error} />;
         case 'ff:selection_multiple':
             return <ProfileInputMultiSelection
                 value={value}
                 setValue={setValue}
-                currentField={currentField}
+                answerOptions={currentField?.['ff:hasAnswerOption']}
                 error={error} />;
         case 'xsd:date':
             return <ProfileInputDate

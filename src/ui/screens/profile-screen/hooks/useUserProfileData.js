@@ -19,6 +19,7 @@ const useUserProfileData = () => {
                 let dfValue = convertUserValueRaw(value, dfObj, t);
                 dfValue = dfObj?.['@id'] === "ff:vermoegen" ? formatEuro(dfValue) : dfValue;
                 return {
+                    id: key,
                     label: dfLabel,
                     value: dfValue
                 };

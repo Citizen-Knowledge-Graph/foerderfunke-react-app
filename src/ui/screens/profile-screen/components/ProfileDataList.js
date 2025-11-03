@@ -6,12 +6,17 @@ import theme from "@/theme";
 import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 import useUserProfileData from "../hooks/useUserProfileData";
 import featureFlags from '@/featureFlags';
-
+import useSetupProfileUpdate from '../hooks/useSetupProfileUpdate';
+import ProfileUpdateField from './ProfileUpdateField';
+import useUpdateDatafield from '../hooks/useUpdateDatafield';
 
 const ProfileDataList = () => {
+    const [updateDatafield, setUpdateDatafield] = useState(null);
     const [open, setOpen] = useState(null);
     const { t } = useTranslation();
     const userProfileData = useUserProfileData();
+    const { datafieldDetails, currentValue, setCurrentValue } = useSetupProfileUpdate(updateDatafield);
+    const handleUpdateClick = useUpdateDatafield(updateDatafield, datafieldDetails, setOpen);
 
     return (
         <VBox sx={{ gap: 2 }}>
@@ -19,12 +24,12 @@ const ProfileDataList = () => {
                 userProfileData.length > 0 ? (
                     <VBox sx={{ gap: 2 }}>
                         {
-                            userProfileData.map(({ label, value }, index) => (
+                            userProfileData.map(({ id, label, value }, index) => (
                                 <VBox
                                     key={index}
-                                    gap={0}
+                                    gap={4}
                                     sx={{
-                                        padding: '32px',
+                                        padding: 4,
                                         borderRadius: theme.shape.borderRadius,
                                         backgroundColor: 'white.main',
                                     }}
@@ -32,7 +37,7 @@ const ProfileDataList = () => {
                                 >
                                     <HBox sx={{
                                         justifyContent: 'space-between',
-                                        alignItems: 'flex-end',
+                                        alignItems: 'flex-start',
                                         flexWrap: 'wrap'
                                     }}>
                                         <VBox>
@@ -49,8 +54,12 @@ const ProfileDataList = () => {
                                             {
                                                 featureFlags.profileUpdates && (
                                                     <RegularButton
-                                                        onClick={() => setOpen(open === index ? null : index)}
-                                                        variant={'transparentPink'}
+                                                        onClick={
+                                                            () => {
+                                                                setOpen(open === index ? null : index)
+                                                                setUpdateDatafield(id)
+                                                            }}
+                                                        variant={'transparentPinkOutlined'}
                                                         text={'update'}
                                                         size={'xsmall'}
                                                     />
@@ -60,10 +69,15 @@ const ProfileDataList = () => {
                                         </VBox>
                                     </HBox>
                                     {
-                                        featureFlags.profileUpdates && open === index && (
-                                            <Typography variant='body2' sx={{ marginTop: 2 }}>
-                                                {t('app.profile.updateInfoHint')}
-                                            </Typography>
+                                        featureFlags.profileUpdates && open === index && datafieldDetails && (
+                                            <ProfileUpdateField
+                                                t={t}
+                                                datafieldDetails={datafieldDetails}
+                                                value={currentValue}
+                                                setValue={setCurrentValue}
+                                                error={null}
+                                                handleAddClick={handleUpdateClick}
+                                            />
                                         )
                                     }
                                 </VBox>

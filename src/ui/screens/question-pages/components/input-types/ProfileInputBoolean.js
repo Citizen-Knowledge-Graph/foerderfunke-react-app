@@ -1,6 +1,6 @@
 import React from 'react';
 import { FormControlLabel, Typography, Radio, RadioGroup, FormControl } from '@mui/material';
-import useTranslation from "../../../../language/useTranslation";
+import useTranslation from "@/ui/language/useTranslation";
 
 const ProfileInputBoolean = ({ value, setValue, error }) => {
     const { t } = useTranslation();
@@ -19,7 +19,7 @@ const ProfileInputBoolean = ({ value, setValue, error }) => {
                     [[false, t('app.datafields.boolNo')], [true, t('app.datafields.boolYes')]].map((choice, i) => (
                         <FormControlLabel
                             key={i}
-                            sx={{ mb: 2 }} // Increased spacing between entries
+                            sx={{ mb: 2 }}
                             value={choice[0]}
                             control={<Radio />}
                             label={choice[1]}
