@@ -29,7 +29,7 @@ const ProfileUpdateField = ({
                 <Typography variant='h4' sx={{ fontWeight: '400' }}>
                     {datafieldDetails?.question}
                 </Typography>
-                {datafieldDetails?.comment.length > 0 && (
+                {datafieldDetails?.comment?.length > 0 && (
                     <HBox sx={{ alignItems: 'center' }}>
                         <Typography variant='body2'>
                             {t('app.questions.showComment')}
