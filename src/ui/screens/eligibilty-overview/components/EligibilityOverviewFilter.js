@@ -89,7 +89,8 @@ const EligibilityOverviewFilter = ({ t, filterOptions, filters, onChangeFilters 
                                 >
                                     {filterOptions[key].map(item => (
                                         <MenuItem key={item.id} value={item.id}>
-                                            <Checkbox checked={!!filters[key]?.includes(item.id)} />                                            <ListItemText primary={item.label} />
+                                            <Checkbox checked={!!filters[key]?.includes(item.id)} />
+                                            <ListItemText primary={item.label} />
                                         </MenuItem>
                                     ))}
                                 </Select>

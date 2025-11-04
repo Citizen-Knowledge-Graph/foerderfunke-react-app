@@ -7,6 +7,7 @@ import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 import FlowChart from '@/ui/shared-components/flow-chart/FlowChart';
 import matchingEngineManager from "@/core/managers/matchingEngineManager";
 import featureFlags from '@/featureFlags';
+import ClearIcon from '@mui/icons-material/Clear';
 
 
 const BenefitPageRequirements = ({ t, validatedStatus, isDesktop, evalGraph }) => {
@@ -59,12 +60,32 @@ const BenefitPageRequirements = ({ t, validatedStatus, isDesktop, evalGraph }) =
                                     <Typography variant="h3" sx={{ fontWeight: 500 }}>
                                         {t('app.benefitPage.requirements.writtenViolationsTitle')}
                                     </Typography>
-                                    <VBox sx={{ gap: 1 }}>
+                                    <VBox sx={{ gap: 2 }}>
                                         {
                                             violations.map((violation, index) => (
-                                                <Typography key={index} variant="body1" sx={{ color: 'error.main' }}>
-                                                    {violation}
-                                                </Typography>
+                                                <HBox
+                                                    key={index}
+                                                    sx={{ gap: 2, alignItems: 'center' }}
+                                                >
+                                                    <VBox
+                                                        sx={{
+                                                            flexShrink: 0,
+                                                            width: '24px',
+                                                            height: '24px',
+                                                            justifyContent: 'center',
+                                                            alignItems: 'center',
+                                                            backgroundColor: 'error.light',
+                                                            borderRadius: '50%',
+                                                        }}
+                                                    >
+                                                        <ClearIcon sx={{ fontSize: '20px' }} />
+                                                    </VBox>
+                                                    <Typography
+                                                        variant="body1" sx={{ color: 'black.main' }}
+                                                        component="div"
+                                                        dangerouslySetInnerHTML={{ __html: violation }}
+                                                    />
+                                                </HBox>
                                             ))
                                         }
                                     </VBox>
