@@ -1,30 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import theme from '@/theme';
 import { HBox, VBox } from '@/ui/shared-components/LayoutBoxes';
 import { Typography } from "@mui/material";
 import BenefitPageMarkdownElement from './BenefitPageMarkDownElement';
 import RegularButton from '@/ui/shared-components/buttons/RegularButton';
 import FlowChart from '@/ui/shared-components/flow-chart/FlowChart';
-import matchingEngineManager from "@/core/managers/matchingEngineManager";
 import featureFlags from '@/featureFlags';
 import ClearIcon from '@mui/icons-material/Clear';
 
 
-const BenefitPageRequirements = ({ t, validatedStatus, isDesktop, evalGraph }) => {
+const BenefitPageRequirements = ({ t, validatedStatus, isDesktop, evalGraph, violations }) => {
     const [open, setOpen] = useState(validatedStatus);
-    const [violations, setViolations] = useState(null);
     const objectIcon = `${process.env.PUBLIC_URL}/assets/images/benefit-pages/tree.svg`;
-
-    useEffect(() => {
-        async function fetchEvalGraph() {
-            const violations = await matchingEngineManager.fetchWrittenViolations(evalGraph)
-            setViolations(violations);
-            console.log("Fetched written violations:", violations);
-        }
-        if (validatedStatus && evalGraph && featureFlags.writtenViolations) {
-            fetchEvalGraph();
-        }
-    }, [validatedStatus, evalGraph]);
 
     return (
         <VBox

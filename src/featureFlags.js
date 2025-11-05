@@ -2,7 +2,7 @@ const defaultFlags = {
     subindividuals: false,
     matchingEnginePerformanceLogging: false,
     profileUpdates: false,
-    writtenViolations: false,
+    writtenViolations: true,
     customHints: false,
 };
 

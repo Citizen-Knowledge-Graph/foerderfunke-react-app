@@ -22,7 +22,8 @@ const BenefitPageScreen = ({
     validatedStatus,
     validationResult,
     categoryTitles,
-    matchingGraph
+    matchingGraph,
+    violations
 }) => {
 
     return (
@@ -50,7 +51,13 @@ const BenefitPageScreen = ({
                                 <BenefitPageLocal t={t} isDesktop={isDesktop} localisedData={localisedData} />
                             )
                         }
-                        <BenefitPageRequirements t={t} validatedStatus={validatedStatus} isDesktop={isDesktop} evalGraph={matchingGraph} />
+                        <BenefitPageRequirements 
+                            t={t} 
+                            validatedStatus={validatedStatus} 
+                            isDesktop={isDesktop} 
+                            evalGraph={matchingGraph} 
+                            violations={violations}
+                        />
                     </VBox>
                 </VBox>
             </AppScreenWrapperContainer>

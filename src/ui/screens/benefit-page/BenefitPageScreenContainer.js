@@ -13,17 +13,20 @@ import { useFetchLocaliseData } from './hooks/useFetchLocalisedData';
 import { useFetchCustomBenefitPageHints } from "@/ui/screens/benefit-page/hooks/useFetchCustomBenefitPageHints";
 import useFetchData from '@/ui/shared-hooks/utility/useFetchResource';
 import useFetchTargetClass from './hooks/useFetchTargetClass';
+import featureFlags from '@/featureFlags';
+
 
 const BenefitPageScreenContainer = () => {
     const { id } = useParams();
     const { t } = useTranslation();
     const isDesktop = useStore((state) => state.isDesktop);
     const [matchingGraph, setMatchingGraph] = useState(null);
+    const [violations, setViolations] = useState(null);
     const language = useLanguageStore((state) => state.language);
 
     const benefitPageData = useFetchStaticBenefitPageData(id, language);
     const categoryTitles = useBuildCategoryTitles(id, language);
-    const {validatedStatus, validationResult} = useValidatedStatus(id);
+    const { validatedStatus, validationResult } = useValidatedStatus(id);
     const activeUserId = useUserStore((state) => state.activeUserId);
     const localisedData = useFetchLocaliseData(benefitPageData); // merge this logic with customHints? TODO
     const customHints = useFetchCustomBenefitPageHints(benefitPageData);
@@ -44,6 +47,17 @@ const BenefitPageScreenContainer = () => {
         fetchMatchingReport();
     }, [id, activeUserId, language]);
 
+    useEffect(() => {
+        async function fetchEvalGraph() {
+            const violations = await matchingEngineManager.fetchWrittenViolations(matchingGraph)
+            setViolations(violations);
+        }
+        if (validatedStatus && matchingGraph && featureFlags.writtenViolations) {
+            fetchEvalGraph();
+        }
+    }, [validatedStatus, matchingGraph]);
+
+
     return (
         <BenefitPageScreen
             t={t}
@@ -58,6 +72,7 @@ const BenefitPageScreenContainer = () => {
             targetClass={targetClass}
             categoryTitles={categoryTitles}
             matchingGraph={matchingGraph}
+            violations={violations}
         />
     );
 };
