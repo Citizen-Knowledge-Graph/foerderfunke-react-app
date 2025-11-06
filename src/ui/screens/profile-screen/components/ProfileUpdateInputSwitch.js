@@ -4,12 +4,10 @@ import ProfileInputInteger from "../../question-pages/components/input-types/Pro
 import ProfileInputDate from "../../question-pages/components/input-types/ProfileInputDate";
 import ProfileInputBoolean from "../../question-pages/components/input-types/ProfileInputBoolean";
 import ProfileInputMultiSelection from "../../question-pages/components/input-types/ProfileInputMultiSelection";
-import { shrink } from "@foerderfunke/sem-ops-utils";
 
 
 const ProfileUpdateInputSwitch = ({ t, value, setValue, datafieldDetails, error }) => {
-    const shortenedUri = shrink(datafieldDetails?.datatype);
-    switch (shortenedUri) {
+    switch (datafieldDetails?.datatype) {
         case 'ff:selection':
             return <ProfileInputSelection
                 value={value}

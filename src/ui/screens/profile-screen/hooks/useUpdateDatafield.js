@@ -15,11 +15,9 @@ export default function useUpdateDatafield(datafield, datafieldDetails, setOpen)
   const handleUpdateClick = useCallback(
     async (value) => {
       if (!datafield) return;
-      console.log('Updating datafield:', datafield, 'with value:', value);
       try {
-        const shrunkValue = shrink(value);
-        await validateValue(shrunkValue);
-        await addProfileData(shrunkValue);
+        await validateValue(value);
+        await addProfileData(value);
         setOpen(false);
       } catch (err) {
         console.error('Error handling update click:', err);

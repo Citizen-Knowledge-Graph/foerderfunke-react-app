@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
 import { Checkbox, FormControlLabel, FormGroup, FormLabel, Typography } from '@mui/material';
 import useTranslation from "@/ui/language/useTranslation";
-import { expand } from "@foerderfunke/sem-ops-utils";
 
 const ProfileInputMultiSelection = ({
     value,
@@ -33,32 +32,16 @@ const ProfileInputMultiSelection = ({
         return map;
     }, [answerOptions, optionsFormat]);
 
-    const normalizedValue = useMemo(() => {
-        if (!Array.isArray(value)) return [];
-        if (optionsFormat === "flat") {
-            return value.map((v) => expand(v));
-        }
-        return value;
-    }, [value, optionsFormat]);
-
     const handleChange = (event) => {
         const selectedValue = event.target.name;
         const isChecked = event.target.checked;
 
         if (isChecked) {
-            setValue((prevValue = []) => {
-                const toStore = optionsFormat === "flat" ? expand(selectedValue) : selectedValue;
-                if (prevValue.includes(toStore)) return prevValue;
-                return [...prevValue, toStore];
+            setValue((prevValue) => {
+                return prevValue ? [...prevValue, selectedValue] : [selectedValue];
             });
         } else {
-            setValue((prevValue = []) => {
-                const expandedToRemove = optionsFormat === "flat" ? expand(selectedValue) : selectedValue;
-                // remove both the expanded and the raw form to be safe
-                return prevValue.filter(
-                    (item) => item !== expandedToRemove && item !== selectedValue
-                );
-            });
+            setValue(value.filter((item) => item !== selectedValue));
         }
     };
 
@@ -72,7 +55,7 @@ const ProfileInputMultiSelection = ({
                         sx={{ mb: 2 }}
                         control={
                             <Checkbox
-                                checked={normalizedValue.includes(key)}
+                                checked={value.includes(key)}
                                 onChange={handleChange}
                                 name={key}
                             />

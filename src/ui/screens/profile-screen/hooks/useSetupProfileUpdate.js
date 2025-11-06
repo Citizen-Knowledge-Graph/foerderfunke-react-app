@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import matchingEngineManager from "@/core/managers/matchingEngineManager";
-import { expand } from "@foerderfunke/sem-ops-utils";
 import userManager from '@/core/managers/userManager';
 import { useUserStore } from '@/ui/storage/zustand';
 
@@ -10,14 +9,12 @@ export default function useSetupProfileUpdate(datafield) {
 
   useEffect(() => {
     if (!datafield) return;
-
-    const expanded = expand(datafield);
     let active = true;
 
     (async () => {
       try {
         // 1) fetch details
-        const details = await matchingEngineManager.fetchDetailsForDatafield(expanded);
+        const details = await matchingEngineManager.fetchDetailsForDatafield(datafield);
         if (!active) return;
         setDatafieldDetails(details);
 
