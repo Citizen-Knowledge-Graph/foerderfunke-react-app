@@ -9,7 +9,7 @@ const ProfileInputMultiSelection = ({
     error,
     optionsFormat = "rdf",
 }) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation();;
 
     const choices = useMemo(() => {
         const map = {};
@@ -55,7 +55,7 @@ const ProfileInputMultiSelection = ({
                         sx={{ mb: 2 }}
                         control={
                             <Checkbox
-                                checked={value.includes(key)}
+                                checked={Array.isArray(value) ? value.includes(key) : false}
                                 onChange={handleChange}
                                 name={key}
                             />
