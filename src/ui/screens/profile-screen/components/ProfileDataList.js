@@ -29,7 +29,7 @@ const ProfileDataList = () => {
                                     key={index}
                                     gap={4}
                                     sx={{
-                                        padding: 4,
+                                        padding: { xs: 2, sm: 4 },
                                         borderRadius: theme.shape.borderRadius,
                                         backgroundColor: 'white.main',
                                     }}

@@ -47,6 +47,14 @@ const ProfileInputSelection = ({
               />
             }
             label={opt.label}
+            sx={{
+              alignItems: "flex-start",
+              '& .MuiFormControlLabel-label': {
+                whiteSpace: "normal",
+                wordBreak: "break-word",
+                overflowWrap: "anywhere",
+              },
+            }}
           />
         ))}
       </RadioGroup>
