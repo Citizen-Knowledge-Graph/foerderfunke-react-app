@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { VBox, HBox } from "@/ui/shared-components/LayoutBoxes";
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import useTranslation from "@/ui/language/useTranslation";
 import theme from "@/theme";
 import RegularButton from '@/ui/shared-components/buttons/RegularButton';
@@ -35,10 +35,13 @@ const ProfileDataList = () => {
                                     }}
                                     justifyContent={'center'}
                                 >
-                                    <HBox sx={{
+                                    <Box sx={{
+                                        display: 'flex',
+                                        flexDirection: { xs: 'column', sm: 'row' },
                                         justifyContent: 'space-between',
                                         alignItems: 'flex-start',
-                                        flexWrap: 'wrap'
+                                        flexWrap: 'wrap',
+                                        gap: 2,
                                     }}>
                                         <VBox>
                                             <Typography variant='body2'>
@@ -67,7 +70,7 @@ const ProfileDataList = () => {
                                             }
 
                                         </VBox>
-                                    </HBox>
+                                    </Box>
                                     {
                                         featureFlags.profileUpdates && open === index && datafieldDetails && (
                                             <ProfileUpdateField
