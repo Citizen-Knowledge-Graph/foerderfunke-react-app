@@ -656,8 +656,8 @@ const translations = {
                     tags: "Tags"
                 },
                 item: {
-                    eligible: "Sie haben womöglich Anspruch",
-                    notEligible: "Sie haben voraussichtlich keinen Anspruch"
+                    eligible: "Womöglich Anspruch",
+                    notEligible: "Voraussichtlich kein Anspruch"
                 },
                 orgTag: "Für Organisationen"
             },

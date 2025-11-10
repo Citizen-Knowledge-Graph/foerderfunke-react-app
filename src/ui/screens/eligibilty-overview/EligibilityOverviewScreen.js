@@ -47,6 +47,7 @@ const EligibilityOverviewScreen = ({
                             filterOptions={filterOptions}
                             filters={filters}
                             onChangeFilters={onChangeFilters}
+                            isDesktop={isDesktop}
                         />
                         {atLeastOneWithMissingData() &&
                             <RegularButton
