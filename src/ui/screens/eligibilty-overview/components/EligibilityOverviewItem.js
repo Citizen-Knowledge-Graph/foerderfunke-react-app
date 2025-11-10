@@ -31,10 +31,10 @@ const EligibilityOverviewItem = ({ t, item, eligible, isDesktop }) => {
     return (
         <VBox
             sx={{
-                gap: 3,
+                gap: 4,
                 border: `1px solid ${theme.palette.white.dark}`,
                 boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
-                padding: 4,
+                padding: { xs: 2, sm: 4 },
                 borderRadius: theme.shape.borderRadius
             }}
         >

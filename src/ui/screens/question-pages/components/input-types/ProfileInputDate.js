@@ -26,9 +26,13 @@ const ProfileInputDate = ({ t, value, setValue, error }) => {
                         onChange={handleChange}
                         slotProps={{
                             textField: {
-                                sx: {
-                                    minWidth: (theme) => `calc(${theme.typography.pxToRem(8 * t('app.datafields.pickBday').length)} + 60px)`,
-                                },
+                                fullWidth: true,
+                                sx: (theme) => ({
+                                    width: '100%',
+                                    [theme.breakpoints.up('sm')]: {
+                                        maxWidth: 360,
+                                    },
+                                }),
                             },
                         }}
                         sx={
