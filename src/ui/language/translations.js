@@ -315,6 +315,9 @@ const translations = {
                 customHints: {
                     title: "Hints for you based on your profile"
                 },
+                links: {
+                    title: "Helpful links",
+                },
                 goals: "Goals",
                 benefitType: "Benefit type",
                 benefitScope: "Benefit scope",
@@ -706,6 +709,9 @@ const translations = {
                 },
                 customHints: {
                     title: "Hinweise für Sie, basierend auf Ihrem Profil"
+                },
+                links: {
+                    title: "Nützliche Links",
                 },
                 description: "Beschreibung",
                 goals: "Ziele",

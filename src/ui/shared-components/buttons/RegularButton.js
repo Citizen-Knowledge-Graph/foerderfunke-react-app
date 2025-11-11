@@ -38,6 +38,8 @@ const RegularButton = ({
   const chosenSizeStyles = sizeStyles[size] || sizeStyles.medium;
   const chosenVariantStyles = buttonStyles[variant] || buttonStyles.default;
 
+  const isExternal = link && /^https?:\/\//.test(link);
+
   return (
     <Button
       variant="contained"
@@ -48,7 +50,14 @@ const RegularButton = ({
         ...chosenVariantStyles,
       }}
       {...(link
-        ? {
+        ? isExternal
+          ? {
+            component: "a",
+            href: link,
+            target: "_blank",
+            rel: "noopener noreferrer",
+          }
+          : {
             component: Link,
             to: link,
           }

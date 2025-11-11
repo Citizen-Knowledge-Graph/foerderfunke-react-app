@@ -1094,7 +1094,7 @@
     },
     "general": {
       "brief": {
-        "de": "Die Wolfenbüttel-Stiftung unterstützt unbemittelte Familien sowie Institutionen und Körperschaften in der Stadt Wolfenbüttel, die soziale Projekte umsetzen.\n\n&nbsp;\n\n### Zentrale Aspekte der Förderung für Privatpersonen und Familien\n- Unterstützung für Kinder unbemittelter Eltern zur Förderung ihrer Erziehung sowie ihrer körperlichen und geistigen Entwicklung.  \n- Hilfe für ältere und hilfsbedürftige Personen in besonderen Lebenslagen.  \n- Förderungen erfolgen in der Regel als einmalige finanzielle Beihilfe, zum Beispiel als Weihnachtsbeihilfe oder zweckgebundene Unterstützung.  \n- Antragstellung erfolgt schriftlich, mit kurzer Begründung und Nachweis der Bedürftigkeit.  \n- Kein Rechtsanspruch auf Förderung; jede Anfrage wird individuell geprüft.  \n\n&nbsp;\n\n**Hinweis:** Die Wolfenbüttel-Stiftung bietet auch Fördermöglichkeiten für Institutionen und Körperschaften in Wolfenbüttel, die Kinder-, Jugend- oder Frauenförderung betreiben (siehe „Wolfenbüttel Stiftung – Organisation“).",
+        "de": "Die Wolfenbüttel-Stiftung unterstützt unbemittelte Familien sowie Institutionen und Körperschaften in der Stadt Wolfenbüttel, die soziale Projekte umsetzen.\n\n&nbsp;\n\n### Zentrale Aspekte der Förderung für Privatpersonen und Familien\n- Unterstützung für Kinder unbemittelter Eltern zur Förderung ihrer Erziehung sowie ihrer körperlichen und geistigen Entwicklung.  \n- Hilfe für ältere und hilfsbedürftige Personen in besonderen Lebenslagen.  \n- Förderungen erfolgen in der Regel als einmalige finanzielle Beihilfe, zum Beispiel als Weihnachtsbeihilfe oder zweckgebundene Unterstützung.  \n- Die Antragstellung erfolgt Online. Bitte geben Sie hierbei eine kurze Ihres Anliegens an und legen nach Abschluss einen Verwendungsnachweis vor.  \n- Kein Rechtsanspruch auf Förderung; jede Anfrage wird individuell geprüft.  \n\n&nbsp;\n\n**Hinweis:** Die Wolfenbüttel-Stiftung bietet auch Fördermöglichkeiten für Institutionen und Körperschaften in Wolfenbüttel, die Kinder-, Jugend- oder Frauenförderung betreiben (siehe „Wolfenbüttel Stiftung – Organisation“).",
         "en": "The Wolfenbüttel Foundation supports low-income families as well as institutions and organizations in the city of Wolfenbüttel that implement social projects.\n\n&nbsp;\n\n### Key aspects of support for individuals and families\n- Assistance for children from low-income families to promote their education and physical as well as mental development.  \n- Support for elderly and needy individuals facing difficult life circumstances.  \n- Funding is generally provided as a one-time financial grant, for example as a Christmas allowance or other targeted support.  \n- Applications must be submitted in writing, including a brief explanation and proof of need.  \n- There is no legal entitlement; each request is reviewed individually.  \n\n&nbsp;\n\n**Note:** The Wolfenbüttel Foundation also provides funding opportunities for institutions and organizations in Wolfenbüttel that support children, youth, or women (see “Wolfenbüttel Foundation – Organisation”)."
       },
       "examples": {
@@ -1125,9 +1125,34 @@
         "de": "Der Antrag auf Unterstützung durch die Wolfenbüttel-Stiftung kann formlos schriftlich gestellt werden.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: die Geschäftsstelle der Wolfenbüttel-Stiftung.  \n- **Form der Antragstellung**: formlos schriftlich mit kurzer Begründung und Nachweisen zur finanziellen Situation.  \n- **Unterlagen**: Angaben zur Person, zur Bedarfssituation und ggf. Nachweise über Einkommen oder besondere Umstände.  \n- **Fristen**: laufende Antragsmöglichkeit; rechtzeitig vor einer geplanten Anschaffung oder Maßnahme einreichen.  \n- Hinweis: Für gemeinnützige Organisationen existiert ein separates Förderprogramm.",
         "en": "Applications for support from the Wolfenbüttel Foundation can be submitted informally in writing.\n\n&nbsp;\n\n### Important details for the application\n- **Responsible office**: Wolfenbüttel Foundation office.  \n- **Form of application**: informal written request including justification and proof of financial need.  \n- **Documents**: personal details, description of the situation, and supporting evidence of financial hardship if available.  \n- **Deadlines**: applications can be submitted at any time; preferably before planned expenses.  \n- Note: A separate funding program exists for nonprofit organizations."
       }
+    },
+    "links": {
+      "de": [
+        {
+          "title": "Online Antrag",
+          "description": "Hier können Sie den Antrag auf Unterstützung durch die Wolfenbüttel-Stiftung online stellen.",
+          "url": "https://portal.wolfenbuettel.de/dienstleistungen/-/egov-bis-detail/dienstleistung/35312/show"
+        },
+        {
+          "title": "Wolfenbüttel-Stiftung Webseite",
+          "description": "Weitere Informationen zur Wolfenbüttel-Stiftung finden Sie auf der offiziellen Webseite.",
+          "url": "https://www.wolfenbuettel.de/index.php?ModID=7&FID=2672.9008.1&object=tx%7C2672.9008.1"
+        }
+      ],
+      "en": [
+        {
+          "title": "Online Application",
+          "description": "Here you can submit your application for support from the Wolfenbüttel Foundation online.",
+          "url": "https://portal.wolfenbuettel.de/dienstleistungen/-/egov-bis-detail/dienstleistung/35312/show"
+        },
+        {
+          "title": "Wolfenbüttel Foundation Website",
+          "description": "For more information about the Wolfenbüttel Foundation, visit the official website.",
+          "url": "https://www.wolfenbuettel.de/index.php?ModID=7&FID=2672.9008.1&object=tx%7C2672.9008.1"
+        }
+      ]
     }
   },
-
   "ff:wolfenbuettel-stiftung-organisation": {
     "id": "ff:wolfenbuettel-stiftung-organisation",
     "status": "beta",
@@ -1142,7 +1167,7 @@
     },
     "general": {
       "brief": {
-        "de": "Die Wolfenbüttel-Stiftung unterstützt Institutionen und Körperschaften in der Stadt Wolfenbüttel, die soziale Projekte umsetzen und dabei Hilfsbedürftige, Kinder- und Jugendarbeit oder Frauenförderung unterstützen.\n\n&nbsp;\n\n### Zentrale Aspekte der Förderung für Organisationen und Vereine\n- Förderung von Projekten, die dem Stiftungszweck entsprechen – insbesondere in den Bereichen Kinder- und Jugendhilfe, Altenhilfe, soziale Unterstützung und Gleichstellung.  \n- Unterstützung erfolgt in der Regel als einmalige Zuwendung ohne wiederkehrenden Anspruch.  \n- Antragstellung erfolgt schriftlich mit Projektbeschreibung, Finanzierungsplan und kurzer Begründung des Bedarfs.  \n- Kein Rechtsanspruch auf Förderung; jede Anfrage wird individuell geprüft.  \n\n&nbsp;\n\n**Hinweis:** Die Wolfenbüttel-Stiftung bietet auch direkte Unterstützung für unbemittelte Familien sowie ältere und hilfsbedürftige Personen (siehe „Wolfenbüttel Stiftung – Privatperson und Familie“).",
+        "de": "Die Wolfenbüttel-Stiftung unterstützt Institutionen und Körperschaften in der Stadt Wolfenbüttel, die soziale Projekte umsetzen und dabei Hilfsbedürftige, Kinder- und Jugendarbeit oder Frauenförderung unterstützen.\n\n&nbsp;\n\n### Zentrale Aspekte der Förderung für Organisationen und Vereine\n- Förderung von Projekten, die dem Stiftungszweck entsprechen – insbesondere in den Bereichen Kinder- und Jugendhilfe, Altenhilfe, soziale Unterstützung und Gleichstellung.  \n- Unterstützung erfolgt in der Regel als einmalige Zuwendung ohne wiederkehrenden Anspruch.  \n- Die Antragstellung erfolgt Online. Bitte geben Sie hierbei eine kurze Projektbeschreibung an und legen nach Abschluss einen Verwendungsnachweis vor. \n- Kein Rechtsanspruch auf Förderung; jede Anfrage wird individuell geprüft.\n\n&nbsp;\n\n**Hinweis:** Die Wolfenbüttel-Stiftung bietet auch direkte Unterstützung für unbemittelte Familien sowie ältere und hilfsbedürftige Personen (siehe „Wolfenbüttel Stiftung – Privatperson und Familie“).",
         "en": "The Wolfenbüttel Foundation supports institutions and organizations in the city of Wolfenbüttel that carry out social projects and promote assistance for people in need, youth work, or the advancement of women.\n\n&nbsp;\n\n### Key aspects of support for organizations and associations\n- Funding for projects that serve the foundation’s purpose, particularly in the areas of child and youth welfare, elderly care, social support, and equality.  \n- Support is generally provided as a one-time grant without recurring entitlement.  \n- Applications must be submitted in writing, including a project description, budget plan, and short justification of the need.  \n- There is no legal entitlement; each application is reviewed individually.  \n\n&nbsp;\n\n**Note:** The Wolfenbüttel Foundation also provides direct assistance for low-income families as well as elderly and needy individuals (see “Wolfenbüttel Foundation – Individuals and Families”)."
       },
       "examples": {
@@ -1173,6 +1198,32 @@
         "de": "Der Antrag auf Förderung durch die Wolfenbüttel-Stiftung wird direkt bei der Stiftung eingereicht.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: die Geschäftsstelle der Wolfenbüttel-Stiftung.  \n- **Form der Antragstellung**: schriftlich mit einem formlosen Förderantrag oder dem Antragsformular der Stiftung.  \n- **Unterlagen**: Projektbeschreibung, Kosten- und Finanzierungsplan, Nachweis der Gemeinnützigkeit und ggf. weitere Unterlagen.  \n- **Fristen**: rechtzeitig vor Projektbeginn einreichen; rückwirkende Förderung ausgeschlossen.  \n- Hinweis: Für Privatpersonen und Familien gibt es ein separates Unterstützungsangebot.",
         "en": "The application for funding from the Wolfenbüttel Foundation must be submitted directly to the foundation.\n\n&nbsp;\n\n### Important details for the application\n- **Responsible office**: Wolfenbüttel Foundation office.  \n- **Form of application**: written request, either informal or using the foundation’s form.  \n- **Documents**: project description, budget and financing plan, proof of nonprofit status, and other supporting materials as required.  \n- **Deadlines**: applications should be submitted before project start; retroactive funding is excluded.  \n- Note: A separate support program exists for individuals and families."
       }
+    },
+    "links": {
+      "de": [
+        {
+          "title": "Online Antrag",
+          "description": "Hier können Sie den Antrag auf Unterstützung durch die Wolfenbüttel-Stiftung online stellen.",
+          "url": "https://portal.wolfenbuettel.de/dienstleistungen/-/egov-bis-detail/dienstleistung/35312/show"
+        },
+        {
+          "title": "Wolfenbüttel-Stiftung Webseite",
+          "description": "Weitere Informationen zur Wolfenbüttel-Stiftung finden Sie auf der offiziellen Webseite.",
+          "url": "https://www.wolfenbuettel.de/index.php?ModID=7&FID=2672.9008.1&object=tx%7C2672.9008.1"
+        }
+      ],
+      "en": [
+        {
+          "title": "Online Application",
+          "description": "Here you can submit your application for support from the Wolfenbüttel Foundation online.",
+          "url": "https://portal.wolfenbuettel.de/dienstleistungen/-/egov-bis-detail/dienstleistung/35312/show"
+        },
+        {
+          "title": "Wolfenbüttel Foundation Website",
+          "description": "For more information about the Wolfenbüttel Foundation, visit the official website.",
+          "url": "https://www.wolfenbuettel.de/index.php?ModID=7&FID=2672.9008.1&object=tx%7C2672.9008.1"
+        }
+      ]
     }
   },
   "ff:ausbildungsgeld": {
@@ -2162,7 +2213,7 @@
             "title": "Erwachsene Person mit Blindengeld",
             "description": "Thomas (56) ist blind und lebt in Niedersachsen.\n\n&nbsp;\n\n### Vorteile für Thomas\n- Das **Landesblindengeld in Niedersachsen** beträgt **450 €** pro Monat.\n- Die **Blindenhilfe nach § 72 SGB XII** sieht für Volljährige **913,19 €** monatlich vor.\n- Da das Landesblindengeld denselben Zweck erfüllt, wird es **voll auf die Blindenhilfe angerechnet**.\n- Das Sozialamt zahlt daher **die Differenz** von **463,19 €** als Blindenhilfe aus."
           },
-          {        
+          {
             "title": "Pflegebedürftige Person mit Pflegegrad",
             "description": "Maria (72) ist blind und hat **Pflegegrad 3**.\n\n&nbsp;\n\n### Auswirkungen auf ihre Blindenhilfe\n- Der Regelsatz der **Blindenhilfe** beträgt **913,19 €** monatlich.\n- Maria erhält zusätzlich **Pflegegeld nach Pflegegrad 3** in Höhe von **599 €** aus der Pflegeversicherung.\n- Davon werden **40 % (239,60 €)** pauschal auf die Blindenhilfe angerechnet, weil beide Leistungen ähnliche Unterstützungen abdecken.\n- Ihre **Blindenhilfe verringert sich dadurch auf 673,59 €** monatlich."
           }

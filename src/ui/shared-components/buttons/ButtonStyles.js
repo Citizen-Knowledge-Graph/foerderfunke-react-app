@@ -116,6 +116,15 @@ const buttonStyles = {
             borderColor: "black.main",
         },
     },
+    transparentBlueOutlined: {
+        backgroundColor: "transparent",
+        color: "blue.dark",
+        borderColor: "blue.main",
+        "&:hover": {
+            backgroundColor: "blue.main",
+            color: "blue.dark",
+        },
+    },    
     default: {
         backgroundColor: "yellow.main",
         color: "black.main",

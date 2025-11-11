@@ -25,6 +25,7 @@ const useFetchStaticBenefitPageData = (id, language) => {
       brief :               pickLang(resource?.general?.brief, language, null),
       scope :               pickLang(resource?.general?.scope, language, null),
       examplesList :        pickLang(resource?.general?.examples, language, null),
+      linksList:            pickLang(resource?.links, language, null),  
       applicationProcess:   pickLang(resource?.application_process?.brief, language, null),
       localisedData:        resource?.specific ? resource.specific : null,
       customHints:          resource?.customHints ? resource.customHints : null,
