@@ -62,7 +62,7 @@ const ProfileInputMultiSelection = ({
                         label={label}
                         sx={{
                             mb: 2,
-                            alignItems: "flex-start",
+                            alignItems: "center",
                             '& .MuiFormControlLabel-label': {
                                 whiteSpace: "normal",
                                 wordBreak: "break-word",

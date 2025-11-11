@@ -48,7 +48,7 @@ const ProfileInputSelection = ({
             }
             label={opt.label}
             sx={{
-              alignItems: "flex-start",
+              alignItems: "center",
               '& .MuiFormControlLabel-label': {
                 whiteSpace: "normal",
                 wordBreak: "break-word",
