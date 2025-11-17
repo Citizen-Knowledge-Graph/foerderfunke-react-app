@@ -3,91 +3,91 @@
   "queries": [
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/01-hilfe-zum-lebensunterhalt.ttl",
-      "rpUri": "https://foerderfunke.org/default#hilfe-zum-lebensunterhalt"
+      "rpUri": "https://foerderfunke.org/default#hlu"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/02-kindergeld.ttl",
-      "rpUri": "https://foerderfunke.org/default#kindergeld"
+      "rpUri": "https://foerderfunke.org/default#kdg"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/03-kinderzuschlag.ttl",
-      "rpUri": "https://foerderfunke.org/default#kinderzuschlag"
+      "rpUri": "https://foerderfunke.org/default#kzl"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/04-bafoeg.ttl",
-      "rpUri": "https://foerderfunke.org/default#bafoeg"
+      "rpUri": "https://foerderfunke.org/default#bfg"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/05-buergergeld.ttl",
-      "rpUri": "https://foerderfunke.org/default#buergergeld"
+      "rpUri": "https://foerderfunke.org/default#bgd"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/06-arbeitslosengeld.ttl",
-      "rpUri": "https://foerderfunke.org/default#arbeitslosengeld"
+      "rpUri": "https://foerderfunke.org/default#alg"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/07-berufsausbildungsbeihilfe-bab.ttl",
-      "rpUri": "https://foerderfunke.org/default#berufsausbildungsbeihilfe-bab"
+      "rpUri": "https://foerderfunke.org/default#bab"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/08-wohngeld.ttl",
-      "rpUri": "https://foerderfunke.org/default#wohngeld"
+      "rpUri": "https://foerderfunke.org/default#wog"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/09-grundsicherung-im-alter-und-bei-erwerbsminderung.ttl",
-      "rpUri": "https://foerderfunke.org/default#grundsicherung-im-alter-und-bei-erwerbsminderung"
+      "rpUri": "https://foerderfunke.org/default#gsi"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/10-bildung-und-teilhabe-bei-bezug-von-buergergeld.ttl",
-      "rpUri": "https://foerderfunke.org/default#bildung-und-teilhabe-bei-bezug-von-buergergeld"
+      "rpUri": "https://foerderfunke.org/default#but"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/exist-gruendungsstipendium.ttl",
-      "rpUri": "https://foerderfunke.org/default#exist-gruendungsstipendium"
+      "rpUri": "https://foerderfunke.org/default#exs"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/ibb-gruendungsbonus.ttl",
-      "rpUri": "https://foerderfunke.org/default#ibb-gruendungsbonus"
+      "rpUri": "https://foerderfunke.org/default#igb"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/ibb-altersgerecht-wohnen.ttl",
-      "rpUri": "https://foerderfunke.org/default#ibb-altersgerecht-wohnen"
+      "rpUri": "https://foerderfunke.org/default#iaw"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/ifb-gruendung-nachfolge.ttl",
-      "rpUri": "https://foerderfunke.org/default#ifb-gruendung-nachfolge"
+      "rpUri": "https://foerderfunke.org/default#ifn"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/ilb-kredit-gruendung.ttl",
-      "rpUri": "https://foerderfunke.org/default#ilb-kredit-gruendung"
+      "rpUri": "https://foerderfunke.org/default#ilg"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/forschungszulage.ttl",
-      "rpUri": "https://foerderfunke.org/default#forschungszulage"
+      "rpUri": "https://foerderfunke.org/default#fzl"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/bundesfoerderung-effiziente-gebaeude.ttl",
-      "rpUri": "https://foerderfunke.org/default#bundesfoerderung-effiziente-gebaeude"
+      "rpUri": "https://foerderfunke.org/default#beg"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/wolfenbuettel-stiftung-person.ttl",
-      "rpUri": "https://foerderfunke.org/default#wolfenbuettel-stiftung-person"
+      "rpUri": "https://foerderfunke.org/default#wfstp"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/wolfenbuettel-stiftung-organisation.ttl",
-      "rpUri": "https://foerderfunke.org/default#wolfenbuettel-stiftung-organisation"
+      "rpUri": "https://foerderfunke.org/default#wfsto"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/ausbildungsgeld.ttl",
-      "rpUri": "https://foerderfunke.org/default#ausbildungsgeld"
+      "rpUri": "https://foerderfunke.org/default#asg"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/uebergangsgeld.ttl",
-      "rpUri": "https://foerderfunke.org/default#uebergangsgeld"
+      "rpUri": "https://foerderfunke.org/default#ueg"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/kurzzeitige-arbeitsverhinderung.ttl",
-      "rpUri": "https://foerderfunke.org/default#kurzzeitige-arbeitsverhinderung"
+      "rpUri": "https://foerderfunke.org/default#kav"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/03-kinderzuschlag-v2.ttl",
@@ -96,43 +96,43 @@
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/bielefeld/schwerbehindertenausweis.ttl",
-      "rpUri": "https://foerderfunke.org/default#schwerbehindertenausweis"
+      "rpUri": "https://foerderfunke.org/default#sba"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/bielefeld/erwerbsminderungsrente-voll.ttl",
-      "rpUri": "https://foerderfunke.org/default#erwerbsminderungsrente-voll"
+      "rpUri": "https://foerderfunke.org/default#emv"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/bielefeld/erwerbsminderungsrente-teilweise.ttl",
-      "rpUri": "https://foerderfunke.org/default#erwerbsminderungsrente-teilweise"
+      "rpUri": "https://foerderfunke.org/default#emt"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/bielefeld/substitutionstherapie-regulaer.ttl",
-      "rpUri": "https://foerderfunke.org/default#substitutionstherapie-regulaer"
+      "rpUri": "https://foerderfunke.org/default#str"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/bielefeld/substitutionstherapie-diamorphin.ttl",
-      "rpUri": "https://foerderfunke.org/default#substitutionstherapie-diamorphin"
+      "rpUri": "https://foerderfunke.org/default#std"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/bielefeld/arbeitsassistenz.ttl",
-      "rpUri": "https://foerderfunke.org/default#arbeitsassistenz"
+      "rpUri": "https://foerderfunke.org/default#aas"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/bielefeld/persoenliches-budget.ttl",
-      "rpUri": "https://foerderfunke.org/default#persoenliches-budget"
+      "rpUri": "https://foerderfunke.org/default#pbg"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/bielefeld/eingliederungshilfe.ttl",
-      "rpUri": "https://foerderfunke.org/default#eingliederungshilfe"
+      "rpUri": "https://foerderfunke.org/default#egh"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/blindengeld.ttl",
-      "rpUri": "https://foerderfunke.org/default#blindengeld"
+      "rpUri": "https://foerderfunke.org/default#blg"
     },
     {
       "fileUrl": "https://raw.githubusercontent.com/Citizen-Knowledge-Graph/knowledge-base/main/shacl/beta/blindenhilfe.ttl",
-      "rpUri": "https://foerderfunke.org/default#blindenhilfe"
+      "rpUri": "https://foerderfunke.org/default#blh"
     }    
   ]
 }

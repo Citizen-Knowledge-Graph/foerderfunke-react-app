@@ -1,6 +1,6 @@
 {
-  "ff:hilfe-zum-lebensunterhalt": {
-    "id": "ff:hilfe-zum-lebensunterhalt",
+  "ff:hlu": {
+    "id": "ff:hlu",
     "category": "social_benefit",
     "status": "production",
     "title": {
@@ -52,8 +52,8 @@
       }
     }
   },
-  "ff:kindergeld": {
-    "id": "ff:kindergeld",
+  "ff:kdg": {
+    "id": "ff:kdg",
     "category": "social_benefit",
     "status": "production",
     "title": {
@@ -101,8 +101,8 @@
       }
     }
   },
-  "ff:kinderzuschlag": {
-    "id": "ff:kinderzuschlag",
+  "ff:kzl": {
+    "id": "ff:kzl",
     "category": "social_benefit",
     "status": "production",
     "title": {
@@ -172,8 +172,8 @@
       "en": "dev"
     }
   },
-  "ff:bafoeg": {
-    "id": "ff:bafoeg",
+  "ff:bfg": {
+    "id": "ff:bfg",
     "category": "social_benefit",
     "status": "production",
     "general": {
@@ -225,8 +225,8 @@
       "en": "Are you looking to study or complete your secondary school education and require financial support? Then BAföG is just what you need. Keep reading to find out all the details about Germany’s student support scheme and how to apply for BAföG."
     }
   },
-  "ff:buergergeld": {
-    "id": "ff:buergergeld",
+  "ff:bgd": {
+    "id": "ff:bgd",
     "category": "social_benefit",
     "status": "production",
     "general": {
@@ -278,8 +278,8 @@
       "en": "If you are not currently employed and are not entitled to unemployment benefit, you may be entitled to unemployment benefit II. This also applies if you earn so little that you cannot meet your living costs."
     }
   },
-  "ff:arbeitslosengeld": {
-    "id": "ff:arbeitslosengeld",
+  "ff:alg": {
+    "id": "ff:alg",
     "category": "social_benefit",
     "status": "production",
     "general": {
@@ -331,8 +331,8 @@
       "en": "Unemployment benefit, or ALG (from the German word Arbeitslosengeld), provides a social safety net in case you lose your job or training position. It replaces part of your missing income so that you can continue to pay your bills."
     }
   },
-  "ff:berufsausbildungsbeihilfe-bab": {
-    "id": "ff:berufsausbildungsbeihilfe-bab",
+  "ff:bab": {
+    "id": "ff:bab",
     "category": "social_benefit",
     "status": "production",
     "general": {
@@ -390,8 +390,8 @@
       "en": "Vocational training allowance, or Berufsausbildungsbeihilfe (BAB), is a form of financial assistance for young people who are in vocational training for the first time. It helps them pay for things like rent, food or transport costs."
     }
   },
-  "ff:wohngeld": {
-    "id": "ff:wohngeld",
+  "ff:wog": {
+    "id": "ff:wog",
     "category": "social_benefit",
     "status": "production",
     "leika_id": "99107023037000",
@@ -450,8 +450,8 @@
       }
     }
   },
-  "ff:grundsicherung-im-alter-und-bei-erwerbsminderung": {
-    "id": "ff:grundsicherung-im-alter-und-bei-erwerbsminderung",
+  "ff:gsi": {
+    "id": "ff:gsi",
     "category": "social_benefit",
     "status": "production",
     "title": {
@@ -509,8 +509,8 @@
       }
     }
   },
-  "ff:bildung-und-teilhabe-bei-bezug-von-buergergeld": {
-    "id": "ff:bildung-und-teilhabe-bei-bezug-von-buergergeld",
+  "ff:but": {
+    "id": "ff:but",
     "category": "social_benefit",
     "status": "production",
     "title": {
@@ -562,8 +562,8 @@
       }
     }
   },
-  "ff:exist-gruendungsstipendium": {
-    "id": "ff:exist-gruendungsstipendium",
+  "ff:exs": {
+    "id": "ff:exs",
     "category": "business",
     "status": "beta",
     "title": {
@@ -621,8 +621,8 @@
       }
     }
   },
-  "ff:ibb-gruendungsbonus": {
-    "id": "ff:ibb-gruendungsbonus",
+  "ff:igb": {
+    "id": "ff:igb",
     "category": "business",
     "status": "beta",
     "title": {
@@ -680,8 +680,8 @@
       }
     }
   },
-  "ff:ibb-altersgerecht-wohnen": {
-    "id": "ff:ibb-altersgerecht-wohnen",
+  "ff:iaw": {
+    "id": "ff:iaw",
     "category": "business",
     "status": "beta",
     "title": {
@@ -739,8 +739,8 @@
       }
     }
   },
-  "ff:ifb-gruendung-nachfolge": {
-    "id": "ff:ifb-gruendung-nachfolge",
+  "ff:ifn": {
+    "id": "ff:ifn",
     "category": "business",
     "status": "beta",
     "title": {
@@ -913,8 +913,8 @@
       }
     }
   },
-  "ff:ilb-kredit-gruendung": {
-    "id": "ff:ilb-kredit-gruendung",
+  "ff:ilg": {
+    "id": "ff:ilg",
     "category": "business",
     "status": "beta",
     "title": {
@@ -972,8 +972,8 @@
       }
     }
   },
-  "ff:forschungszulage": {
-    "id": "ff:forschungszulage",
+  "ff:fzl": {
+    "id": "ff:fzl",
     "category": "business",
     "status": "beta",
     "title": {
@@ -1031,8 +1031,8 @@
       }
     }
   },
-  "ff:bundesfoerderung-effiziente-gebaeude": {
-    "id": "ff:bundesfoerderung-effiziente-gebaeude",
+  "ff:beg": {
+    "id": "ff:beg",
     "category": "business",
     "status": "beta",
     "title": {
@@ -1080,8 +1080,8 @@
       }
     }
   },
-  "ff:wolfenbuettel-stiftung-person": {
-    "id": "ff:wolfenbuettel-stiftung-person",
+  "ff:wfstp": {
+    "id": "ff:wfstp",
     "status": "beta",
     "category": "social_benefit",
     "title": {
@@ -1153,8 +1153,8 @@
       ]
     }
   },
-  "ff:wolfenbuettel-stiftung-organisation": {
-    "id": "ff:wolfenbuettel-stiftung-organisation",
+  "ff:wfsto": {
+    "id": "ff:wfsto",
     "status": "beta",
     "category": "social_benefit",
     "title": {
@@ -1226,8 +1226,8 @@
       ]
     }
   },
-  "ff:ausbildungsgeld": {
-    "id": "ff:ausbildungsgeld",
+  "ff:asg": {
+    "id": "ff:asg",
     "status": "beta",
     "category": "social_benefit",
     "general": {
@@ -1341,8 +1341,8 @@
       }
     }
   },
-  "ff:wolfenbuettel-gastronomische-aussenmoeblierung": {
-    "id": "ff:wolfenbuettel-gastronomische-aussenmoeblierung",
+  "ff:wfgam": {
+    "id": "ff:wfgam",
     "status": "beta",
     "category": "business",
     "title": {
@@ -1400,8 +1400,8 @@
       }
     }
   },
-  "ff:wolfenbuettel-ansiedlung": {
-    "id": "ff:wolfenbuettel-ansiedlung",
+  "ff:wfa": {
+    "id": "ff:wfa",
     "status": "beta",
     "category": "business",
     "title": {
@@ -1459,8 +1459,8 @@
       }
     }
   },
-  "ff:uebergangsgeld": {
-    "id": "ff:uebergangsgeld",
+  "ff:ueg": {
+    "id": "ff:ueg",
     "status": "beta",
     "category": "social_benefit",
     "title": {
@@ -1518,8 +1518,8 @@
       }
     }
   },
-  "ff:kurzzeitige-arbeitsverhinderung": {
-    "id": "ff:kurzzeitige-arbeitsverhinderung",
+  "ff:kav": {
+    "id": "ff:kav",
     "status": "beta",
     "category": "social_benefit",
     "title": {
@@ -1571,8 +1571,8 @@
       }
     }
   },
-  "ff:schwerbehindertenausweis": {
-    "id": "ff:schwerbehindertenausweis",
+  "ff:sba": {
+    "id": "ff:sba",
     "status": "beta",
     "category": "social_benefit",
     "title": {
@@ -1631,8 +1631,8 @@
       }
     }
   },
-  "ff:erwerbsminderungsrente-voll": {
-    "id": "ff:erwerbsminderungsrente-voll",
+  "ff:emv": {
+    "id": "ff:emv",
     "status": "beta",
     "category": "social_benefit",
     "title": {
@@ -1691,8 +1691,8 @@
       }
     }
   },
-  "ff:erwerbsminderungsrente-teilweise": {
-    "id": "ff:erwerbsminderungsrente-teilweise",
+  "ff:emt": {
+    "id": "ff:emt",
     "status": "beta",
     "category": "social_benefit",
     "title": {
@@ -1745,8 +1745,8 @@
       }
     }
   },
-  "ff:substitutionstherapie-regulaer": {
-    "id": "ff:substitutionstherapie-regulaer",
+  "ff:str": {
+    "id": "ff:str",
     "status": "beta",
     "category": "social_benefit",
     "title": {
@@ -1805,8 +1805,8 @@
       }
     }
   },
-  "ff:substitutionstherapie-diamorphin": {
-    "id": "ff:substitutionstherapie-diamorphin",
+  "ff:std": {
+    "id": "ff:std",
     "status": "beta",
     "category": "social_benefit",
     "title": {
@@ -1869,8 +1869,8 @@
       }
     }
   },
-  "ff:arbeitsassistenz": {
-    "id": "ff:arbeitsassistenz",
+  "ff:aas": {
+    "id": "ff:aas",
     "status": "beta",
     "category": "social_benefit",
     "title": {
@@ -2004,8 +2004,8 @@
       "en": "**Section 185 SGB IX – Work Assistance**  \nPeople with severe disabilities can receive assistance at the workplace. The Integration Office pays the full costs from a special fund.  \n\n**Section 185 (9) SGB IX – Application**  \nIf the Integration Office has not decided on an application after six weeks, the application is automatically considered approved. It is important that the application clearly states which service is requested."
     }
   },
-  "ff:persoenliches-budget": {
-    "id": "ff:persoenliches-budget",
+  "ff:pbg": {
+    "id": "ff:pbg",
     "status": "beta",
     "category": "social_benefit",
     "title": {
@@ -2065,8 +2065,8 @@
       }
     }
   },
-  "ff:eingliederungshilfe": {
-    "id": "ff:eingliederungshilfe",
+  "ff:egh": {
+    "id": "ff:egh",
     "status": "beta",
     "category": "social_benefit",
     "title": {
@@ -2126,8 +2126,8 @@
       }
     }
   },
-  "ff:blindengeld": {
-    "id": "ff:blindengeld",
+  "ff:blg": {
+    "id": "ff:blg",
     "status": "beta",
     "category": "social_benefit",
     "title": {
@@ -2187,8 +2187,8 @@
       }
     }
   },
-  "ff:blindenhilfe": {
-    "id": "ff:blindenhilfe",
+  "ff:blh": {
+    "id": "ff:blh",
     "status": "beta",
     "category": "social_benefit",
     "title": {
