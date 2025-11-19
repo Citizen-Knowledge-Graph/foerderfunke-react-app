@@ -22,13 +22,13 @@ const BenefitPageLinks = ({ t, linksList }) => {
                         {t('app.benefitPage.links.title')}
                     </Typography>
                 </HBox>
-                <HBox sx={{flexWrap: 'wrap', gap: 2}}>
+                <VBox sx={{flexWrap: 'wrap', gap: 2}}>
                     {
                         linksList?.map((link, i) =>
                             <BenefitPageLinkButton key={i} t={t} link={link} />
                         )
                     }
-                </HBox>            
+                </VBox>            
             </VBox >
         </VBox >
     );

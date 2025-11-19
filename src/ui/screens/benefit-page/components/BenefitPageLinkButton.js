@@ -10,17 +10,18 @@ const BenefitPageLinkButton = ({ link }) => {
     return (
         <VBox
             sx={{
-                width: { xs: '100%', sm: 250 },
-                padding: { xs: 2, sm: 4 },
+                maxWidth: 800,
+                padding: { xs: 2, sm: 2 },
                 backgroundColor: "transparent",
                 border: "1px solid",
-                borderColor: "blue.main",
+                borderColor: "blue.dark",
                 boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
-                borderRadius: theme.shape.borderRadius
+                borderRadius: theme.shape.borderRadius,
+                gap: 2,
 
             }}
         >
-            <VBox sx={{ gap: 2 }} >
+            <VBox sx={{ gap: 1 }} >
                 <Typography variant="h4" sx={{ fontWeight: 500, wordBreak: "break-word" }}>
                     {link?.title}
                 </Typography>
@@ -28,7 +29,7 @@ const BenefitPageLinkButton = ({ link }) => {
                     {link?.description}
                 </Typography>
                 <RegularButton
-                    variant="transparentBlueOutlined"
+                    variant="whiteOutlinedBlue"
                     size='small'
                     text={'Link öffnen'}
                     link={link?.url}
