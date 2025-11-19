@@ -26,6 +26,18 @@ const BenefitPageLocal = ({ t, isDesktop, localisedData }) => {
                             </Typography>
                             <BenefitPageMarkdownElement content={t('app.benefitPage.local.description')} />
                         </VBox>
+                        <VBox
+                            sx={{
+                                backgroundColor: 'greyTransparent.main',
+                                borderTop: `1px solid ${theme.palette.grey.light}`,
+                                borderRadius: theme.shape.borderRadius,
+                                boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
+                                padding: 2,
+                                gap: 2,
+                            }}
+                        >
+                            <BenefitPageMarkdownElement content={localisedData} />
+                        </VBox>
                     </VBox>
                     {
                         isDesktop && (
@@ -36,18 +48,6 @@ const BenefitPageLocal = ({ t, isDesktop, localisedData }) => {
                         )
                     }
                 </HBox>
-                <VBox
-                    sx={{
-                        backgroundColor: 'greyTransparent.main',
-                        borderTop: `1px solid ${theme.palette.grey.light}`,
-                        borderRadius: theme.shape.borderRadius,
-                        boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
-                        padding: 2,
-                        gap: 2,
-                    }}
-                >
-                    <BenefitPageMarkdownElement content={localisedData} />
-                </VBox>
             </VBox>
         </VBox>
     );
