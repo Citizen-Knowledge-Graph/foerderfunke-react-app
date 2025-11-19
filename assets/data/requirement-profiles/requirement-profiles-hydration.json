@@ -1122,8 +1122,8 @@
     },
     "application_process": {
       "brief": {
-        "de": "Der Antrag auf Unterstützung durch die Wolfenbüttel-Stiftung kann formlos schriftlich gestellt werden.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: die Geschäftsstelle der Wolfenbüttel-Stiftung.  \n- **Form der Antragstellung**: formlos schriftlich mit kurzer Begründung und Nachweisen zur finanziellen Situation.  \n- **Unterlagen**: Angaben zur Person, zur Bedarfssituation und ggf. Nachweise über Einkommen oder besondere Umstände.  \n- **Fristen**: laufende Antragsmöglichkeit; rechtzeitig vor einer geplanten Anschaffung oder Maßnahme einreichen.  \n- Hinweis: Für gemeinnützige Organisationen existiert ein separates Förderprogramm.",
-        "en": "Applications for support from the Wolfenbüttel Foundation can be submitted informally in writing.\n\n&nbsp;\n\n### Important details for the application\n- **Responsible office**: Wolfenbüttel Foundation office.  \n- **Form of application**: informal written request including justification and proof of financial need.  \n- **Documents**: personal details, description of the situation, and supporting evidence of financial hardship if available.  \n- **Deadlines**: applications can be submitted at any time; preferably before planned expenses.  \n- Note: A separate funding program exists for nonprofit organizations."
+        "de": "Der Antrag auf Unterstützung durch die Wolfenbüttel-Stiftung kann formlos schriftlich gestellt werden.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: der Fachbereich Beteiligungen (203) der Stadt Wolfenbüttel.  \n- **Form der Antragstellung**: formlos schriftlich mit kurzer Begründung und Nachweisen zur finanziellen Situation.  \n- **Unterlagen**: Angaben zur Person, zur Bedarfssituation und ggf. Nachweise über Einkommen oder besondere Umstände.  \n- **Fristen**: laufende Antragsmöglichkeit; rechtzeitig vor einer geplanten Anschaffung oder Maßnahme einreichen.  \n- Hinweis: Für gemeinnützige Organisationen existiert ein separates Förderprogramm.",
+        "en": "Applications for support from the Wolfenbüttel Foundation can be submitted informally in writing.\n\n&nbsp;\n\n### Important details for the application\n- **Responsible office**: Department Beteiligungen (203) of the City of Wolfenbüttel.  \n- **Form of application**: informal written request including justification and proof of financial need.  \n- **Documents**: personal details, description of the situation, and supporting evidence of financial hardship if available.  \n- **Deadlines**: applications can be submitted at any time; preferably before planned expenses.  \n- Note: A separate funding program exists for nonprofit organizations."
       }
     },
     "links": {
@@ -1151,7 +1151,17 @@
           "url": "https://www.wolfenbuettel.de/index.php?ModID=7&FID=2672.9008.1&object=tx%7C2672.9008.1"
         }
       ]
-    }
+    },
+    "specific": [
+      {
+        "pattern": {
+          "ff:hasResidence": "ff:hasResidence-wolfenbuettel"
+        },
+        "de": "**Fachbereich Beteiligungen (203)**  \nAnsprechperson: Daniel Zumpe  \nStadtmarkt 3-6  \n38300 Wolfenbüttel  \nTel: +49 5331 86-0  \nE-Mail: finanzen@wolfenbuettel.de",
+        "de_es": "**Fachbereich Beteiligungen (203)**  \nAnsprechperson: Daniel Zumpe  \nStadtmarkt 3-6  \n38300 Wolfenbüttel  \nTel: +49 5331 86-0  \nE-Mail: finanzen@wolfenbuettel.de",
+        "en": "**Department of Investments (203)**  \nContact person: Daniel Zumpe  \nStadtmarkt 3–6  \n38300 Wolfenbüttel  \nTel: +49 5331 86-0  \nE-Mail: finanzen@wolfenbuettel.de"
+      }
+    ]
   },
   "ff:wfsto": {
     "id": "ff:wfsto",
@@ -1195,8 +1205,8 @@
     },
     "application_process": {
       "brief": {
-        "de": "Der Antrag auf Förderung durch die Wolfenbüttel-Stiftung wird direkt bei der Stiftung eingereicht.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: die Geschäftsstelle der Wolfenbüttel-Stiftung.  \n- **Form der Antragstellung**: schriftlich mit einem formlosen Förderantrag oder dem Antragsformular der Stiftung.  \n- **Unterlagen**: Projektbeschreibung, Kosten- und Finanzierungsplan, Nachweis der Gemeinnützigkeit und ggf. weitere Unterlagen.  \n- **Fristen**: rechtzeitig vor Projektbeginn einreichen; rückwirkende Förderung ausgeschlossen.  \n- Hinweis: Für Privatpersonen und Familien gibt es ein separates Unterstützungsangebot.",
-        "en": "The application for funding from the Wolfenbüttel Foundation must be submitted directly to the foundation.\n\n&nbsp;\n\n### Important details for the application\n- **Responsible office**: Wolfenbüttel Foundation office.  \n- **Form of application**: written request, either informal or using the foundation’s form.  \n- **Documents**: project description, budget and financing plan, proof of nonprofit status, and other supporting materials as required.  \n- **Deadlines**: applications should be submitted before project start; retroactive funding is excluded.  \n- Note: A separate support program exists for individuals and families."
+        "de": "Der Antrag auf Förderung durch die Wolfenbüttel-Stiftung wird direkt bei der Stiftung eingereicht.\n\n&nbsp;\n\n### Wichtige Details zur Antragstellung\n- **Zuständige Stelle**: der Fachbereich Beteiligungen (203) der Stadt Wolfenbüttel.  \n- **Form der Antragstellung**: schriftlich mit einem formlosen Förderantrag oder dem Antragsformular der Stiftung.  \n- **Unterlagen**: Projektbeschreibung, Kosten- und Finanzierungsplan, Nachweis der Gemeinnützigkeit und ggf. weitere Unterlagen.  \n- **Fristen**: rechtzeitig vor Projektbeginn einreichen; rückwirkende Förderung ausgeschlossen.  \n- Hinweis: Für Privatpersonen und Familien gibt es ein separates Unterstützungsangebot.",
+        "en": "The application for funding from the Wolfenbüttel Foundation must be submitted directly to the foundation.\n\n&nbsp;\n\n### Important details for the application\n- **Responsible office**: Department Beteiligungen (203) of the City of Wolfenbüttel.  \n- **Form of application**: written request, either informal or using the foundation’s form.  \n- **Documents**: project description, budget and financing plan, proof of nonprofit status, and other supporting materials as required.  \n- **Deadlines**: applications should be submitted before project start; retroactive funding is excluded.  \n- Note: A separate support program exists for individuals and families."
       }
     },
     "links": {
@@ -1224,7 +1234,17 @@
           "url": "https://www.wolfenbuettel.de/index.php?ModID=7&FID=2672.9008.1&object=tx%7C2672.9008.1"
         }
       ]
-    }
+    },
+    "specific": [
+      {
+        "pattern": {
+          "ff:hasResidence": "ff:hasResidence-wolfenbuettel"
+        },
+        "de": "**Fachbereich Beteiligungen (203)**  \nAnsprechperson: Daniel Zumpe  \nStadtmarkt 3-6  \n38300 Wolfenbüttel  \nTel: +49 5331 86-0  \nE-Mail: finanzen@wolfenbuettel.de",
+        "de_es": "**Fachbereich Beteiligungen (203)**  \nAnsprechperson: Daniel Zumpe  \nStadtmarkt 3-6  \n38300 Wolfenbüttel  \nTel: +49 5331 86-0  \nE-Mail: finanzen@wolfenbuettel.de",
+        "en": "**Department of Investments (203)**  \nContact person: Daniel Zumpe  \nStadtmarkt 3–6  \n38300 Wolfenbüttel  \nTel: +49 5331 86-0  \nE-Mail: finanzen@wolfenbuettel.de"
+      }
+    ]
   },
   "ff:asg": {
     "id": "ff:asg",
