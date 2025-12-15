@@ -30,6 +30,7 @@ const BenefitPageScreenContainer = () => {
     const activeUserId = useUserStore((state) => state.activeUserId);
     const localisedData = useFetchLocaliseData(benefitPageData); // merge this logic with customHints? TODO
     const customHints = useFetchCustomBenefitPageHints(benefitPageData);
+    console.log("Custom ID:", id.split(":")[1]);
     const xml = useFetchData(`assets/data/xml/${id.split(":")[1]}.xml`);
     const targetClass = useFetchTargetClass(id);
 

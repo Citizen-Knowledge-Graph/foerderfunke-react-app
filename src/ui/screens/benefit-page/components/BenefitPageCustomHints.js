@@ -4,7 +4,7 @@ import { VBox } from '@/ui/shared-components/LayoutBoxes';
 import theme from '@/theme';
 import WarningAmberIcon from '@mui/icons-material/WarningAmber';
 
-const BenefitPageCustomHints = ({ t, isDesktop, customHints }) => {
+const BenefitPageCustomHints = ({ t, customHints }) => {
     return (
         <VBox sx={{
             backgroundColor: theme.palette.error.light,
