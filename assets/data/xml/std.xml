@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:color="http://www.omg.org/spec/BPMN/non-normative/color/1.0" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" id="Defs_dht_lane_centered_simple_even" targetNamespace="https://example.org/bpmn#" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="18.6.1">
+  <bpmn:process id="p_dht_simple" isExecutable="false">
+    <bpmn:laneSet id="ls_dht">
+      <bpmn:lane id="lane_agency" name="Ambulanz">
+        <bpmn:flowNodeRef>t2</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t3</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="lane_user" name="Antragsteller:in">
+        <bpmn:flowNodeRef>s</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t0</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t7</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>e_no</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_1wp7gph" name="Krankenkasse">
+        <bpmn:flowNodeRef>t8</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>g_dec</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t5</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>e_ok</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="s" name="Start">
+      <bpmn:outgoing>f0</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:manualTask id="t0" name="Antrag bei spezialisierter Ambulanz stellen">
+      <bpmn:incoming>f0</bpmn:incoming>
+      <bpmn:outgoing>f2</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:userTask id="t2" name="Vorprüfung in Ambulanz (Kriterien &#38; Unterlagen)">
+      <bpmn:incoming>f2</bpmn:incoming>
+      <bpmn:outgoing>Flow_165t7lu</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sendTask id="t3" name="Antrag an Krankenkasse übermitteln">
+      <bpmn:incoming>Flow_165t7lu</bpmn:incoming>
+      <bpmn:outgoing>f_to_insurer</bpmn:outgoing>
+    </bpmn:sendTask>
+    <bpmn:userTask id="t8" name="Leistungsprüfung durch Krankenkasse">
+      <bpmn:incoming>f_to_insurer</bpmn:incoming>
+      <bpmn:outgoing>f_decision</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="g_dec" name="Genehmigt?">
+      <bpmn:incoming>f_decision</bpmn:incoming>
+      <bpmn:outgoing>fy</bpmn:outgoing>
+      <bpmn:outgoing>fn</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sendTask id="t5" name="Bescheid zuschicken">
+      <bpmn:incoming>fy</bpmn:incoming>
+      <bpmn:outgoing>f6</bpmn:outgoing>
+    </bpmn:sendTask>
+    <bpmn:endEvent id="e_ok" name="Genehmigt">
+      <bpmn:incoming>f6</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:manualTask id="t7" name="Widerspruch möglich">
+      <bpmn:incoming>fn</bpmn:incoming>
+      <bpmn:outgoing>f7</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:endEvent id="e_no" name="Abgelehnt">
+      <bpmn:incoming>f7</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="f0" sourceRef="s" targetRef="t0" />
+    <bpmn:sequenceFlow id="f2" sourceRef="t0" targetRef="t2" />
+    <bpmn:sequenceFlow id="f_to_insurer" sourceRef="t3" targetRef="t8" />
+    <bpmn:sequenceFlow id="f_decision" sourceRef="t8" targetRef="g_dec" />
+    <bpmn:sequenceFlow id="fy" name="ja" sourceRef="g_dec" targetRef="t5" />
+    <bpmn:sequenceFlow id="fn" name="nein" sourceRef="g_dec" targetRef="t7" />
+    <bpmn:sequenceFlow id="f6" sourceRef="t5" targetRef="e_ok" />
+    <bpmn:sequenceFlow id="f7" sourceRef="t7" targetRef="e_no" />
+    <bpmn:sequenceFlow id="Flow_165t7lu" sourceRef="t2" targetRef="t3" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="D_dht_simple_even">
+    <bpmndi:BPMNPlane id="P_dht_simple_even" bpmnElement="p_dht_simple">
+      <bpmndi:BPMNShape id="L_user" bpmnElement="lane_user" isHorizontal="true" bioc:stroke="#0d4372" bioc:fill="#bbdefb" color:background-color="#bbdefb" color:border-color="#0d4372">
+        <dc:Bounds x="150" y="80" width="2120" height="120" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="L_agency" bpmnElement="lane_agency" isHorizontal="true">
+        <dc:Bounds x="150" y="200" width="2120" height="160" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_1wp7gph_di" bpmnElement="Lane_1wp7gph" isHorizontal="true">
+        <dc:Bounds x="150" y="360" width="2120" height="160" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Ds" bpmnElement="s" color:background-color="#F0FFF4" color:border-color="#047857">
+        <dc:Bounds x="200" y="122" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Dt0" bpmnElement="t0" color:background-color="#E8F7E8" color:border-color="#2E7D32">
+        <dc:Bounds x="260" y="110" width="280" height="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Dt7" bpmnElement="t7" color:background-color="#E8F7E8" color:border-color="#B45309">
+        <dc:Bounds x="1905" y="110" width="230" height="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Deno" bpmnElement="e_no" color:background-color="#FEF2F2" color:border-color="#B91C1C">
+        <dc:Bounds x="2182" y="122" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2175" y="158" width="50" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Dt2" bpmnElement="t2" color:background-color="#EAF0FF" color:border-color="#1E40AF">
+        <dc:Bounds x="620" y="245" width="360" height="70" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Dt3" bpmnElement="t3" color:background-color="#EAF0FF" color:border-color="#1E40AF">
+        <dc:Bounds x="1070" y="245" width="300" height="70" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Dt8" bpmnElement="t8" color:background-color="#EAF0FF" color:border-color="#1E40AF">
+        <dc:Bounds x="1450" y="405" width="280" height="70" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="G_dec" bpmnElement="g_dec" isMarkerVisible="true" color:background-color="#F5F5F5" color:border-color="#6B7280">
+        <dc:Bounds x="1785" y="415" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1780" y="475" width="60" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Dt5" bpmnElement="t5" color:background-color="#EAF0FF" color:border-color="#1E40AF">
+        <dc:Bounds x="1900" y="405" width="240" height="70" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Deok" bpmnElement="e_ok" color:background-color="#ECFDF5" color:border-color="#059669">
+        <dc:Bounds x="2182" y="422" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2173" y="458" width="54" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="f0d" bpmnElement="f0">
+        <di:waypoint x="236" y="140" />
+        <di:waypoint x="260" y="140" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="f2d" bpmnElement="f2">
+        <di:waypoint x="540" y="140" />
+        <di:waypoint x="560" y="140" />
+        <di:waypoint x="560" y="280" />
+        <di:waypoint x="620" y="280" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="f_to_insurer_d" bpmnElement="f_to_insurer">
+        <di:waypoint x="1370" y="280" />
+        <di:waypoint x="1410" y="280" />
+        <di:waypoint x="1410" y="440" />
+        <di:waypoint x="1450" y="440" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="f_decision_d" bpmnElement="f_decision">
+        <di:waypoint x="1730" y="440" />
+        <di:waypoint x="1785" y="440" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="fyd" bpmnElement="fy">
+        <di:waypoint x="1835" y="440" />
+        <di:waypoint x="1900" y="440" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1865" y="415" width="9" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="fnd" bpmnElement="fn">
+        <di:waypoint x="1810" y="415" />
+        <di:waypoint x="1810" y="140" />
+        <di:waypoint x="1905" y="140" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1779" y="188" width="21" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="f6d" bpmnElement="f6">
+        <di:waypoint x="2140" y="440" />
+        <di:waypoint x="2182" y="440" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="f7d" bpmnElement="f7">
+        <di:waypoint x="2135" y="140" />
+        <di:waypoint x="2182" y="140" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_165t7lu_di" bpmnElement="Flow_165t7lu">
+        <di:waypoint x="980" y="280" />
+        <di:waypoint x="1070" y="280" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
