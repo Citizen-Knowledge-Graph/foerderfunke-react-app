@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfoerderfunke_react_app=self.webpackChunkfoerderfunke_react_app||[]).push([[919],{10919(e,r,a){a.d(r,{createInfoServices:()=>c.v});var c=a(23690);a(1855)}}]);

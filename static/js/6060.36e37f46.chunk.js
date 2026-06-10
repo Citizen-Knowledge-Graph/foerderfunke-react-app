@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfoerderfunke_react_app=self.webpackChunkfoerderfunke_react_app||[]).push([[6060],{56060(e,r,a){a.d(r,{createGitGraphServices:()=>p.b});var p=a(31667);a(1855)}}]);

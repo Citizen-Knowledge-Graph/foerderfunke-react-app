@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfoerderfunke_react_app=self.webpackChunkfoerderfunke_react_app||[]).push([[794],{10794(e,r,a){a.d(r,{createEventModelingServices:()=>c.g});var c=a(66737);a(1855)}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfoerderfunke_react_app=self.webpackChunkfoerderfunke_react_app||[]).push([[2106],{22106(e,r,a){a.d(r,{createWardleyServices:()=>c.J});var c=a(77132);a(1855)}}]);

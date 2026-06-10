@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfoerderfunke_react_app=self.webpackChunkfoerderfunke_react_app||[]).push([[4279],{34279(e,r,a){a.d(r,{createPacketServices:()=>c.$});var c=a(8541);a(1855)}}]);

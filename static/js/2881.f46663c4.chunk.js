@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfoerderfunke_react_app=self.webpackChunkfoerderfunke_react_app||[]).push([[2881],{2881(e,r,a){a.d(r,{createRadarServices:()=>c.f});var c=a(64065);a(1855)}}]);
